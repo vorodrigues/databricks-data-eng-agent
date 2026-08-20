@@ -1,0 +1,32 @@
+# Job serverless bronze -> silver -> gold.
+# Uma tarefa por tabela; dependencias garantem a ordem das camadas. Serverless (sem
+# job_clusters) para minimizar startup. Reutilize ingest_cdc.py (silver) e transform_gold.py
+# (gold) parametrizando cada tarefa; adicione novas tarefas conforme o modelo cresce.
+resources:
+  jobs:
+    etl_medallion:
+      name: etl_medallion
+      tasks:
+        # ---- SILVER: ingestao CDC (bronze -> silver) --------------------------
+        - task_key: silver_clientes
+          notebook_task:
+            notebook_path: ../src/notebooks/ingest_cdc.py
+            base_parameters:
+              catalogo: ${var.catalog}
+              schema_origem: ${var.schema_bronze}
+              schema_destino: ${var.schema_silver}
+              # estado da silver como fonte de verdade (projecao, renomeacao, chaves, watermark)
+              caminho_estado: ${workspace.file_path}/schemas/silver/clientes.yaml
+
+        # ---- GOLD: transformacao de negocio (silver -> gold) ------------------
+        - task_key: gold_dim_cliente
+          depends_on:
+            - task_key: silver_clientes
+          notebook_task:
+            notebook_path: ../src/notebooks/transform_gold.py
+            base_parameters:
+              catalogo: ${var.catalog}
+              schema_origem: ${var.schema_silver}
+              schema_destino: ${var.schema_gold}
+              # estado da gold como fonte de verdade (projecao, entidade, chaves, sk, watermark)
+              caminho_estado: ${workspace.file_path}/schemas/gold/dim_cliente.yaml

@@ -1,0 +1,372 @@
+tabela: rbco
+camada: bronze
+comentario: "Item de documento de entrada de fatura com atribuição de conta"
+ingestao: cdc
+fonte: sap.rbco
+chave_primaria: [mandt, belnr, gjahr, buzei, cobl_nr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: belnr
+    tipo: string
+    comentario: "Número do documento de verificação de faturas"
+    pii: nenhum
+    nulo: false
+  - nome: gjahr
+    tipo: string
+    comentario: "Exercício fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: buzei
+    tipo: int
+    comentario: "Item do documento de fatura"
+    pii: nenhum
+    nulo: false
+  - nome: cobl_nr
+    tipo: string
+    comentario: "Número sequencial da atribuição de conta"
+    pii: nenhum
+    nulo: false
+  - nome: wrbtr
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: sgtxt
+    tipo: string
+    comentario: "Texto do item"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Código de jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: mwskz
+    tipo: string
+    comentario: "Código de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: bpmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade na unidade de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: shkzg
+    tipo: string
+    comentario: "Indicador de débito/crédito"
+    pii: nenhum
+    nulo: true
+  - nome: bnkan_fw
+    tipo: decimal(23,2)
+    comentario: "Parcela de custos de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: xnegp
+    tipo: string
+    comentario: "Indicador de lançamento negativo"
+    pii: nenhum
+    nulo: true
+  - nome: xskrl
+    tipo: string
+    comentario: "Indicador de exclusão de desconto de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: mwart
+    tipo: string
+    comentario: "Tipo de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: fwbas
+    tipo: decimal(23,2)
+    comentario: "Base de cálculo do imposto na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: hwbas
+    tipo: decimal(23,2)
+    comentario: "Base de cálculo do imposto na moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: menge_f
+    tipo: decimal(38,9)
+    comentario: "Quantidade (número de ponto flutuante — campo interno)"
+    pii: nenhum
+    nulo: true
+  - nome: bpmng_f
+    tipo: decimal(38,9)
+    comentario: "Quantidade na unidade de pedido (ponto flutuante — campo interno)"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro (planta)"
+    pii: nenhum
+    nulo: true
+  - nome: zekkn
+    tipo: int
+    comentario: "Número sequencial da atribuição de conta"
+    pii: nenhum
+    nulo: true
+  - nome: xunpl
+    tipo: string
+    comentario: "Atribuição de conta não planejada na verificação de faturas"
+    pii: nenhum
+    nulo: true
+  - nome: anln1
+    tipo: string
+    comentario: "Número do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: anln2
+    tipo: string
+    comentario: "Número do subativo"
+    pii: nenhum
+    nulo: true
+  - nome: aplzl
+    tipo: string
+    comentario: "Número do roteiro de operação"
+    pii: nenhum
+    nulo: true
+  - nome: aufnr
+    tipo: string
+    comentario: "Número da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: dabrz
+    tipo: date
+    comentario: "Data de referência para liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: fipos
+    tipo: string
+    comentario: "Item de comprometimento"
+    pii: nenhum
+    nulo: true
+  - nome: fistl
+    tipo: string
+    comentario: "Centro de fundos"
+    pii: nenhum
+    nulo: true
+  - nome: fkber
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: geber
+    tipo: string
+    comentario: "Fundo"
+    pii: nenhum
+    nulo: true
+  - nome: grant_nbr
+    tipo: string
+    comentario: "Subvenção (grant)"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Área de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: imkey
+    tipo: string
+    comentario: "Chave de imóvel"
+    pii: nenhum
+    nulo: true
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controle"
+    pii: nenhum
+    nulo: true
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: kstrg
+    tipo: string
+    comentario: "Objeto de custo"
+    pii: nenhum
+    nulo: true
+  - nome: paobjnr
+    tipo: string
+    comentario: "Número do segmento de rentabilidade"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: ps_psp_pnr
+    tipo: string
+    comentario: "Elemento WBS (estrutura analítica do projeto)"
+    pii: nenhum
+    nulo: true
+  - nome: recid
+    tipo: string
+    comentario: "Regra de emissão de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: saknr
+    tipo: string
+    comentario: "Conta contábil (razão geral)"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln
+    tipo: string
+    comentario: "Número do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vbelp
+    tipo: string
+    comentario: "Item do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vptnr
+    tipo: string
+    comentario: "Parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: lstar
+    tipo: string
+    comentario: "Tipo de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: prznr
+    tipo: string
+    comentario: "Processo de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: aufpl
+    tipo: string
+    comentario: "Número do roteiro da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: bzdat
+    tipo: date
+    comentario: "Data de valor do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: erlkz
+    tipo: string
+    comentario: "Indicador de conclusão do item"
+    pii: nenhum
+    nulo: true
+  - nome: fikrs
+    tipo: string
+    comentario: "Área de gestão financeira (FM)"
+    pii: nenhum
+    nulo: true
+  - nome: kblnr
+    tipo: string
+    comentario: "Número de fundos reservados"
+    pii: nenhum
+    nulo: true
+  - nome: kblpos
+    tipo: string
+    comentario: "Item do documento de fundos reservados"
+    pii: nenhum
+    nulo: true
+  - nome: pargb
+    tipo: string
+    comentario: "Área de negócio do parceiro comercial"
+    pii: nenhum
+    nulo: true
+  - nome: pernr
+    tipo: string
+    comentario: "Número do funcionário"
+    pii: indireto
+    nulo: true
+  - nome: nplnr
+    tipo: string
+    comentario: "Número da rede (project network)"
+    pii: nenhum
+    nulo: true
+  - nome: vornr
+    tipo: string
+    comentario: "Número da atividade da rede"
+    pii: nenhum
+    nulo: true
+  - nome: zuonr
+    tipo: string
+    comentario: "Campo de atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: abper
+    tipo: string
+    comentario: "Período de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: ledat
+    tipo: date
+    comentario: "Data de criação da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: budget_pd
+    tipo: string
+    comentario: "Período orçamentário"
+    pii: nenhum
+    nulo: true
+  - nome: measure
+    tipo: string
+    comentario: "Programa financiado"
+    pii: nenhum
+    nulo: true
+  - nome: fmfgus_key
+    tipo: string
+    comentario: "Campos governamentais dos EUA"
+    pii: nenhum
+    nulo: true
+  - nome: koart
+    tipo: string
+    comentario: "Tipo de conta"
+    pii: nenhum
+    nulo: true
+  - nome: spgrs
+    tipo: string
+    comentario: "Motivo de bloqueio: valor do item"
+    pii: nenhum
+    nulo: true
+  - nome: aa_final_ind
+    tipo: string
+    comentario: "Indicador de atribuição de conta final"
+    pii: nenhum
+    nulo: true
+  - nome: aa_final_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade de atribuição de conta final"
+    pii: nenhum
+    nulo: true
+  - nome: aa_final_qty_f
+    tipo: decimal(38,9)
+    comentario: "Quantidade de atribuição de conta final (ponto flutuante)"
+    pii: nenhum
+    nulo: true
+  - nome: parked_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade de fatura estacionada"
+    pii: nenhum
+    nulo: true
+  - nome: parked_qty_f
+    tipo: decimal(38,9)
+    comentario: "Quantidade de fatura estacionada (ponto flutuante)"
+    pii: nenhum
+    nulo: true

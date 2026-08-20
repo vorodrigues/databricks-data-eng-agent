@@ -1,0 +1,48 @@
+# Exemplo — camada SILVER (modelo IDENTICO a fonte, apos limpeza).
+# Silver preserva o grao da bronze/fonte; aplica limpeza (tipos, trims, dedup, padronizacao)
+# e renomeacao para nomes de negocio via o notebook parametrizado ingest_cdc.py, que le este
+# YAML como fonte de verdade. Incremental (watermark) e idempotente (MERGE pela chave).
+tabela: clientes
+camada: silver
+comentario: "Clientes limpos e padronizados — espelho de bronze.kna1 apos limpeza."
+
+ingestao: cdc
+fonte: bronze.kna1
+watermark: _ingerido_em          # coluna (nome silver) usada no incremental
+
+chave_primaria: [mandt, kunnr]
+
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante SAP (client)."
+    pii: nenhum
+    nulo: false
+  - nome: kunnr
+    tipo: string
+    comentario: "Numero do cliente."
+    pii: indireto
+    nulo: false
+  - nome: nome
+    tipo: string
+    origem: name1                # renomeacao: fonte 'name1' -> silver 'nome'
+    comentario: "Nome do cliente, com espacos normalizados."
+    pii: direto
+    nulo: true
+  - nome: documento_fiscal
+    tipo: string
+    origem: stcd1                # renomeacao: fonte 'stcd1' -> silver 'documento_fiscal'
+    comentario: "Numero de identificacao fiscal (CNPJ/CPF), sem mascara."
+    pii: sensivel
+    nulo: true
+  - nome: cod_pais
+    tipo: string
+    origem: land1                # renomeacao: fonte 'land1' -> silver 'cod_pais'
+    comentario: "Chave do pais (ISO)."
+    pii: nenhum
+    nulo: true
+  - nome: _ingerido_em
+    tipo: timestamp
+    comentario: "Timestamp de ingestao na bronze, propagado para o incremental (auditoria)."
+    pii: nenhum
+    nulo: false

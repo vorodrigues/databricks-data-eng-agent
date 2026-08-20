@@ -1,0 +1,437 @@
+tabela: ekbe
+camada: bronze
+comentario: "Histórico por documento de compra"
+ingestao: cdc
+fonte: sap.ekbe
+chave_primaria: [mandt, ebeln, ebelp, vgabe, gjahr, belnr, buzei, etens]
+colunas:
+  - nome: arewb
+    tipo: decimal(23,2)
+    comentario: "Valor de compensação GR/IR na moeda estrangeira"
+    pii: nenhum
+    nulo: true
+  - nome: arewr
+    tipo: decimal(23,2)
+    comentario: "Valor de compensação GR/IR na moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: arewr_pop
+    tipo: decimal(23,2)
+    comentario: "Valor de compensação GR/IR na moeda local (paralelo)"
+    pii: nenhum
+    nulo: true
+  - nome: areww
+    tipo: decimal(23,2)
+    comentario: "Valor de compensação GR/IR na moeda estrangeira (alternativa)"
+    pii: nenhum
+    nulo: true
+  - nome: bamng
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: bekkn
+    tipo: string
+    comentario: "Número sequencial da atribuição de conta do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: belnr
+    tipo: string
+    comentario: "Número do documento de material"
+    pii: nenhum
+    nulo: false
+  - nome: bewtp
+    tipo: string
+    comentario: "Categoria do histórico do pedido de compra"
+    pii: nenhum
+    nulo: false
+  - nome: bldat
+    tipo: date
+    comentario: "Data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: bpmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade na unidade de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: bpmng_pop
+    tipo: decimal(23,2)
+    comentario: "Quantidade na unidade de pedido (paralelo)"
+    pii: nenhum
+    nulo: true
+  - nome: bpweb
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado GR avaliado na unidade de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: bpwes
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado GR na unidade de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: budat
+    tipo: date
+    comentario: "Data de lançamento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: buzei
+    tipo: int
+    comentario: "Item do documento de material"
+    pii: nenhum
+    nulo: false
+  - nome: bwart
+    tipo: string
+    comentario: "Tipo de movimento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: bwtar
+    tipo: string
+    comentario: "Tipo de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: charg
+    tipo: string
+    comentario: "Lote"
+    pii: nenhum
+    nulo: true
+  - nome: cpudt
+    tipo: date
+    comentario: "Data de entrada do registro"
+    pii: nenhum
+    nulo: true
+  - nome: cputm
+    tipo: string
+    comentario: "Hora de entrada do registro"
+    pii: nenhum
+    nulo: true
+  - nome: dmbtr
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: dmbtr_pop
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda local (paralelo)"
+    pii: nenhum
+    nulo: true
+  - nome: ebeln
+    tipo: string
+    comentario: "Número do pedido de compra"
+    pii: nenhum
+    nulo: false
+  - nome: ebelp
+    tipo: string
+    comentario: "Item do pedido de compra"
+    pii: nenhum
+    nulo: false
+  - nome: elikz
+    tipo: string
+    comentario: "Indicador de entrega concluída"
+    pii: nenhum
+    nulo: true
+  - nome: ematn
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: etens
+    tipo: string
+    comentario: "Número sequencial do histórico"
+    pii: nenhum
+    nulo: false
+  - nome: et_upd
+    tipo: string
+    comentario: "Indicador de atualização de linha de programação"
+    pii: nenhum
+    nulo: true
+  - nome: evere
+    tipo: string
+    comentario: "Conformidade com instrução de remessa"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_collection
+    tipo: string
+    comentario: "Coleção (moda/vestuário)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_season
+    tipo: string
+    comentario: "Coleção de temporada"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_season_year
+    tipo: string
+    comentario: "Ano da temporada"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_theme
+    tipo: string
+    comentario: "Tema da coleção"
+    pii: nenhum
+    nulo: true
+  - nome: gjahr
+    tipo: string
+    comentario: "Ano do documento de material"
+    pii: nenhum
+    nulo: false
+  - nome: grund
+    tipo: string
+    comentario: "Motivo do movimento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: hswae
+    tipo: string
+    comentario: "Moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: introw
+    tipo: string
+    comentario: "Linha de serviço"
+    pii: nenhum
+    nulo: true
+  - nome: inv_item_origin
+    tipo: string
+    comentario: "Origem do item de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: j_sc_die_comp_f
+    tipo: string
+    comentario: "Indicador de conclusão de ferramental"
+    pii: nenhum
+    nulo: true
+  - nome: knumv
+    tipo: string
+    comentario: "Número de condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: kudif
+    tipo: decimal(23,2)
+    comentario: "Diferença de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: lemin
+    tipo: string
+    comentario: "Indicador de devolução de serviço"
+    pii: nenhum
+    nulo: true
+  - nome: lfbnr
+    tipo: string
+    comentario: "Número do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: lfgja
+    tipo: string
+    comentario: "Exercício fiscal do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: lfpos
+    tipo: string
+    comentario: "Item do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: logsy
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: lsmeh
+    tipo: string
+    comentario: "Unidade de medida da nota de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: lsmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade da nota de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: true
+  - nome: menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: menge_pop
+    tipo: decimal(23,2)
+    comentario: "Quantidade (paralelo)"
+    pii: nenhum
+    nulo: true
+  - nome: mwskz
+    tipo: string
+    comentario: "Código de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: packno
+    tipo: string
+    comentario: "Número do pacote de serviços"
+    pii: nenhum
+    nulo: true
+  - nome: reewr
+    tipo: decimal(23,2)
+    comentario: "Valor da fatura na moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: refwr
+    tipo: decimal(23,2)
+    comentario: "Valor da fatura na moeda estrangeira"
+    pii: nenhum
+    nulo: true
+  - nome: retamtp_fc
+    tipo: decimal(23,2)
+    comentario: "Retenção lançada na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: retamtp_lc
+    tipo: decimal(23,2)
+    comentario: "Retenção de garantia lançada na moeda da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: retamt_fc
+    tipo: decimal(23,2)
+    comentario: "Retenção na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: retamt_lc
+    tipo: decimal(23,2)
+    comentario: "Retenção na moeda da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: rewrb
+    tipo: decimal(23,2)
+    comentario: "Valor da fatura na moeda estrangeira (alternativa)"
+    pii: nenhum
+    nulo: true
+  - nome: saprl
+    tipo: string
+    comentario: "Release SAP"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_scat
+    tipo: string
+    comentario: "Segmento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: shkzg
+    tipo: string
+    comentario: "Indicador de débito/crédito"
+    pii: nenhum
+    nulo: true
+  - nome: srvpos
+    tipo: string
+    comentario: "Número da linha de serviço"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln_st
+    tipo: string
+    comentario: "Número da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: vbelp_st
+    tipo: string
+    comentario: "Item da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: vgabe
+    tipo: string
+    comentario: "Tipo de transação/evento"
+    pii: nenhum
+    nulo: false
+  - nome: waers
+    tipo: string
+    comentario: "Moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: weora
+    tipo: string
+    comentario: "Indicador de aceitação de origem"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro (planta)"
+    pii: nenhum
+    nulo: true
+  - nome: wesbb
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado GR avaliado na unidade de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: wesbs
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado GR na unidade de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: wkurs
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: wrbtr
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: wrbtr_pop
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda do documento (paralelo)"
+    pii: nenhum
+    nulo: true
+  - nome: wrf_charstc1
+    tipo: string
+    comentario: "Valor de característica 1"
+    pii: nenhum
+    nulo: true
+  - nome: wrf_charstc2
+    tipo: string
+    comentario: "Valor de característica 2"
+    pii: nenhum
+    nulo: true
+  - nome: wrf_charstc3
+    tipo: string
+    comentario: "Valor de característica 3"
+    pii: nenhum
+    nulo: true
+  - nome: xblnr
+    tipo: string
+    comentario: "Número de referência"
+    pii: nenhum
+    nulo: true
+  - nome: xmacc
+    tipo: string
+    comentario: "Indicador de atribuição de conta múltipla"
+    pii: nenhum
+    nulo: true
+  - nome: xunpl
+    tipo: string
+    comentario: "Atribuição de conta não planejada na verificação de faturas"
+    pii: nenhum
+    nulo: true
+  - nome: xwoff
+    tipo: string
+    comentario: "Indicador de cálculo de valor em aberto"
+    pii: nenhum
+    nulo: true
+  - nome: xwsbr
+    tipo: string
+    comentario: "Indicador de estorno de EM apesar de ER"
+    pii: nenhum
+    nulo: true
+  - nome: zekkn
+    tipo: int
+    comentario: "Número sequencial da atribuição de conta"
+    pii: nenhum
+    nulo: true

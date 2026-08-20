@@ -1,0 +1,222 @@
+tabela: t156
+camada: bronze
+comentario: "Tipo de movimento de materiais"
+ingestao: cdc
+fonte: sap.t156
+chave_primaria: [mandt, bwart, shkzg]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bwart
+    tipo: string
+    comentario: "Tipo de movimento"
+    pii: nenhum
+    nulo: false
+  - nome: shkzg
+    tipo: string
+    comentario: "Indicador de debito/credito"
+    pii: nenhum
+    nulo: false
+  - nome: kzwes
+    tipo: string
+    comentario: "Estoque bloqueado de entrada de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: kzvbu
+    tipo: string
+    comentario: "Tipo de lancamento de consumo"
+    pii: nenhum
+    nulo: true
+  - nome: kzdru
+    tipo: string
+    comentario: "Indicador de impressao de item"
+    pii: nenhum
+    nulo: true
+  - nome: kzkon
+    tipo: string
+    comentario: "Controle de conta para movimentos de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: chneu
+    tipo: string
+    comentario: "Indicador de criacao de novo lote"
+    pii: nenhum
+    nulo: true
+  - nome: kzzde
+    tipo: string
+    comentario: "Manter dados de status do lote"
+    pii: nenhum
+    nulo: true
+  - nome: rstyp
+    tipo: string
+    comentario: "Tipo de atribuicao de conta da reserva"
+    pii: nenhum
+    nulo: true
+  - nome: selpa
+    tipo: string
+    comentario: "Parametro de selecao para exibicao de lista"
+    pii: nenhum
+    nulo: true
+  - nome: xlaut
+    tipo: string
+    comentario: "Criar deposito automaticamente"
+    pii: nenhum
+    nulo: true
+  - nome: kzstr
+    tipo: string
+    comentario: "Relevante para estatistica"
+    pii: nenhum
+    nulo: true
+  - nome: kzgru
+    tipo: string
+    comentario: "Motivo de controle de movimento"
+    pii: nenhum
+    nulo: true
+  - nome: xinvb
+    tipo: string
+    comentario: "Gerar documento de inventario fisico"
+    pii: nenhum
+    nulo: true
+  - nome: qssbw
+    tipo: string
+    comentario: "Mecanismo de inspecao/teste de qualidade (QA)"
+    pii: nenhum
+    nulo: true
+  - nome: kzbwa
+    tipo: string
+    comentario: "Categoria do tipo de movimento"
+    pii: nenhum
+    nulo: true
+  - nome: xstbw
+    tipo: string
+    comentario: "Indicador de tipo de movimento de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: xpbed
+    tipo: string
+    comentario: "Reducao de necessidades independentes"
+    pii: nenhum
+    nulo: true
+  - nome: xwsbr
+    tipo: string
+    comentario: "Estorno de entrada de mercadoria apesar de fatura ja lancada"
+    pii: nenhum
+    nulo: true
+  - nome: kzmhd
+    tipo: string
+    comentario: "Verificar data de validade (shelf life)"
+    pii: nenhum
+    nulo: true
+  - nome: kzcla
+    tipo: string
+    comentario: "Classificacao de lote para movimentos de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: xkoko
+    tipo: string
+    comentario: "Indicador de conta de elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: xkcfc
+    tipo: string
+    comentario: "Classificacao estendida do lote"
+    pii: nenhum
+    nulo: true
+  - nome: xnebe
+    tipo: string
+    comentario: "Geracao automatica de ordem de compra"
+    pii: nenhum
+    nulo: true
+  - nome: j_1bnfrel
+    tipo: string
+    comentario: "Relevancia para nota fiscal (Brasil)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1bnftype
+    tipo: string
+    comentario: "Tipo de nota fiscal (Brasil)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1bitmtyp
+    tipo: string
+    comentario: "Tipo de item de nota fiscal (Brasil)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1bspcsto
+    tipo: string
+    comentario: "Caso especial de CFOP da nota fiscal (Brasil)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1bpartyp
+    tipo: string
+    comentario: "Tipo de parceiro de nota fiscal (Brasil)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1bparvw
+    tipo: string
+    comentario: "Funcao do parceiro de nota fiscal (Brasil)"
+    pii: nenhum
+    nulo: true
+  - nome: rules
+    tipo: string
+    comentario: "Regra de determinacao de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: j_1arevidx
+    tipo: string
+    comentario: "Relevante para reavaliacao (Argentina)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1adoccl
+    tipo: string
+    comentario: "Classe de documento (Argentina)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1aexpkz
+    tipo: string
+    comentario: "Indicador de exportacao (Argentina)"
+    pii: nenhum
+    nulo: true
+  - nome: xoarc
+    tipo: string
+    comentario: "Armazenamento ativo no movimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: bustr
+    tipo: string
+    comentario: "Referencia de string de lancamento contabil"
+    pii: nenhum
+    nulo: true
+  - nome: kzdir
+    tipo: string
+    comentario: "Indicador de direcao do movimento (entrada/saida)"
+    pii: nenhum
+    nulo: true
+  - nome: oij1bnffi
+    tipo: string
+    comentario: "Indicador de criacao de NF/FI (Brasil - setor Oil & Gas)"
+    pii: nenhum
+    nulo: true
+  - nome: mill_cpconf
+    tipo: string
+    comentario: "Copiar caracteristica (setor Mill)"
+    pii: nenhum
+    nulo: true
+  - nome: co_wipb_cpconf
+    tipo: string
+    comentario: "Copiar caracteristicas para lote WIP (CO)"
+    pii: nenhum
+    nulo: true
+  - nome: xwipb
+    tipo: string
+    comentario: "Tipo de movimento permite lotes WIP"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_dealloc
+    tipo: string
+    comentario: "Desalocacao automatica (moda)"
+    pii: nenhum
+    nulo: true

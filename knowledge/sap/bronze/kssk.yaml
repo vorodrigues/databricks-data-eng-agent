@@ -1,0 +1,77 @@
+tabela: kssk
+camada: bronze
+comentario: "Tabela de alocação: objeto para classe"
+ingestao: cdc
+fonte: sap.kssk
+chave_primaria: [mandt, objek, mafid, klart, clint, adzhl]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: objek
+    tipo: string
+    comentario: "Objeto alocado"
+    pii: nenhum
+    nulo: false
+  - nome: mafid
+    tipo: string
+    comentario: "Indicador: objeto ou classe"
+    pii: nenhum
+    nulo: false
+  - nome: klart
+    tipo: string
+    comentario: "Tipo de classe"
+    pii: nenhum
+    nulo: false
+  - nome: clint
+    tipo: string
+    comentario: "Número interno da classe"
+    pii: nenhum
+    nulo: false
+  - nome: adzhl
+    tipo: string
+    comentario: "Contador interno"
+    pii: nenhum
+    nulo: false
+  - nome: zaehl
+    tipo: string
+    comentario: "Posição"
+    pii: nenhum
+    nulo: true
+  - nome: statu
+    tipo: string
+    comentario: "Status da alocação"
+    pii: nenhum
+    nulo: true
+  - nome: stdcl
+    tipo: string
+    comentario: "Classe padrão (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: rekri
+    tipo: string
+    comentario: "Recursivo (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: aennr
+    tipo: string
+    comentario: "Número de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: datuv
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: lkenz
+    tipo: string
+    comentario: "Indicador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: datub
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true

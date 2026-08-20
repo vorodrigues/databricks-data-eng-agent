@@ -1,0 +1,217 @@
+tabela: skb1
+camada: bronze
+comentario: "Mestre de conta contabil por empresa (SKB1)"
+ingestao: cdc
+fonte: sap.skb1
+chave_primaria: [mandt, bukrs, saknr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Codigo da empresa"
+    pii: nenhum
+    nulo: false
+  - nome: saknr
+    tipo: string
+    comentario: "Numero da conta contabil (G/L)"
+    pii: nenhum
+    nulo: false
+  - nome: begru
+    tipo: string
+    comentario: "Grupo de autorizacao"
+    pii: nenhum
+    nulo: true
+  - nome: busab
+    tipo: string
+    comentario: "Abreviatura do atendente contabil"
+    pii: nenhum
+    nulo: true
+  - nome: datlz
+    tipo: date
+    comentario: "Data do ultimo calculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: fdgrv
+    tipo: string
+    comentario: "Grupo de planejamento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: fdlev
+    tipo: string
+    comentario: "Nivel de planejamento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: fipls
+    tipo: string
+    comentario: "Indicador de orcamento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: fstag
+    tipo: string
+    comentario: "Grupo de status de campo"
+    pii: nenhum
+    nulo: true
+  - nome: hbkid
+    tipo: string
+    comentario: "Banco proprio (house bank)"
+    pii: nenhum
+    nulo: true
+  - nome: hktid
+    tipo: string
+    comentario: "ID da conta bancaria propria"
+    pii: nenhum
+    nulo: true
+  - nome: kdfsl
+    tipo: string
+    comentario: "Chave de diferenca de taxa de cambio"
+    pii: nenhum
+    nulo: true
+  - nome: mitkz
+    tipo: string
+    comentario: "Conta de reconciliacao por tipo de conta"
+    pii: nenhum
+    nulo: true
+  - nome: mwskz
+    tipo: string
+    comentario: "Categoria de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: stext
+    tipo: string
+    comentario: "Texto adicional da conta contabil"
+    pii: nenhum
+    nulo: true
+  - nome: vzskz
+    tipo: string
+    comentario: "Indicador de calculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda da conta"
+    pii: nenhum
+    nulo: true
+  - nome: wmeth
+    tipo: string
+    comentario: "Conta gerenciada em sistema externo"
+    pii: nenhum
+    nulo: true
+  - nome: xgkon
+    tipo: string
+    comentario: "Relevante para fluxo de caixa"
+    pii: nenhum
+    nulo: true
+  - nome: xintb
+    tipo: string
+    comentario: "Lancar somente automaticamente"
+    pii: nenhum
+    nulo: true
+  - nome: xkres
+    tipo: string
+    comentario: "Exibicao de itens de linha"
+    pii: nenhum
+    nulo: true
+  - nome: xloeb
+    tipo: string
+    comentario: "Marcado para exclusao"
+    pii: nenhum
+    nulo: true
+  - nome: xnkon
+    tipo: string
+    comentario: "Complementar lancamentos automaticos"
+    pii: nenhum
+    nulo: true
+  - nome: xopvw
+    tipo: string
+    comentario: "Gestao de itens em aberto"
+    pii: nenhum
+    nulo: true
+  - nome: xspeb
+    tipo: string
+    comentario: "Bloqueado para lancamento"
+    pii: nenhum
+    nulo: true
+  - nome: zindt
+    tipo: date
+    comentario: "Data-chave do ultimo calculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: zinrt
+    tipo: string
+    comentario: "Frequencia de calculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: zuawa
+    tipo: string
+    comentario: "Chave de classificacao"
+    pii: nenhum
+    nulo: true
+  - nome: altkt
+    tipo: string
+    comentario: "Numero de conta alternativo"
+    pii: nenhum
+    nulo: true
+  - nome: xmitk
+    tipo: string
+    comentario: "Conta de reconciliacao pronta para entrada"
+    pii: nenhum
+    nulo: true
+  - nome: recid
+    tipo: string
+    comentario: "Indicador de recuperacao"
+    pii: nenhum
+    nulo: true
+  - nome: fipos
+    tipo: string
+    comentario: "Item de compromisso (commitment item)"
+    pii: nenhum
+    nulo: true
+  - nome: xmwno
+    tipo: string
+    comentario: "Lancamento sem imposto permitido"
+    pii: nenhum
+    nulo: true
+  - nome: xsalh
+    tipo: string
+    comentario: "Saldos somente em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: bewgp
+    tipo: string
+    comentario: "Grupo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: infky
+    tipo: string
+    comentario: "Chave de inflacao"
+    pii: nenhum
+    nulo: true
+  - nome: togru
+    tipo: string
+    comentario: "Grupo de tolerancia"
+    pii: nenhum
+    nulo: true
+  - nome: xlgclr
+    tipo: string
+    comentario: "Compensacao especifica por grupo de razao"
+    pii: nenhum
+    nulo: true
+  - nome: mcakey
+    tipo: string
+    comentario: "Chave MCA"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,283 @@
+tabela: profit_centers
+camada: gold
+comentario: "Expõe definições mestre de centros de lucro de CEPC e CEPCT, incluindo intervalos de vigência, empresas, segmentos, responsáveis, indicadores de bloqueio e nomes/descrições multilíngues, para avaliação de desempenho e relatório por segmento."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.cepc, silver.cepct, silver.csks, silver.cskt]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to_date_datbi
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: controlling_area_kokrs
+    tipo: string
+    comentario: "Área de controladoria"
+    pii: nenhum
+    nulo: true
+  - nome: language_spras
+    tipo: string
+    comentario: "Chave de idioma da descrição"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_date_datab
+    tipo: date
+    comentario: "Válido de"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_ersda
+    tipo: date
+    comentario: "Inserido em"
+    pii: nenhum
+    nulo: true
+  - nome: entered_by_usnam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: field_name_of_co_pa_characteristic_merkmal
+    tipo: string
+    comentario: "Característica CO-PA"
+    pii: nenhum
+    nulo: true
+  - nome: department_abtei
+    tipo: string
+    comentario: "Departamento"
+    pii: nenhum
+    nulo: true
+  - nome: person_responsible_for_profit_center_verak
+    tipo: string
+    comentario: "Responsável pelo centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: user_responsible_for_the_profit_center_verak_user
+    tipo: string
+    comentario: "Usuário responsável"
+    pii: nenhum
+    nulo: true
+  - nome: currency_key_waers
+    tipo: string
+    comentario: "Moeda"
+    pii: nenhum
+    nulo: true
+  - nome: successor_profit_center_nprctr
+    tipo: string
+    comentario: "Centro de lucro sucessor"
+    pii: nenhum
+    nulo: true
+  - nome: country_key_land1
+    tipo: string
+    comentario: "Chave do país/região"
+    pii: nenhum
+    nulo: true
+  - nome: title_anred
+    tipo: string
+    comentario: "Título"
+    pii: nenhum
+    nulo: true
+  - nome: name1_name1
+    tipo: string
+    comentario: "Nome 1"
+    pii: nenhum
+    nulo: true
+  - nome: name2_name2
+    tipo: string
+    comentario: "Nome 2"
+    pii: nenhum
+    nulo: true
+  - nome: name3_name3
+    tipo: string
+    comentario: "Nome 3"
+    pii: nenhum
+    nulo: true
+  - nome: name4_name4
+    tipo: string
+    comentario: "Nome 4"
+    pii: nenhum
+    nulo: true
+  - nome: city_ort01
+    tipo: string
+    comentario: "Cidade"
+    pii: nenhum
+    nulo: true
+  - nome: district_ort02
+    tipo: string
+    comentario: "Distrito"
+    pii: nenhum
+    nulo: true
+  - nome: street_and_house_number_stras
+    tipo: string
+    comentario: "Rua e número"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_pfach
+    tipo: string
+    comentario: "Caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: postal_code_pstlz
+    tipo: string
+    comentario: "CEP"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_postal_code_pstl2
+    tipo: string
+    comentario: "CEP da caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: ctr_language_spras
+    tipo: string
+    comentario: "Chave de idioma (centro de custo)"
+    pii: nenhum
+    nulo: true
+  - nome: telebox_number_telbx
+    tipo: string
+    comentario: "Número de telebox"
+    pii: nenhum
+    nulo: true
+  - nome: first_telephone_number_telf1
+    tipo: string
+    comentario: "Telefone 1"
+    pii: nenhum
+    nulo: true
+  - nome: second_telephone_number_telf2
+    tipo: string
+    comentario: "Telefone 2"
+    pii: nenhum
+    nulo: true
+  - nome: fax_number_telfx
+    tipo: string
+    comentario: "Número de fax"
+    pii: nenhum
+    nulo: true
+  - nome: teletex_number_teltx
+    tipo: string
+    comentario: "Número de teletex"
+    pii: nenhum
+    nulo: true
+  - nome: telex_number_telx1
+    tipo: string
+    comentario: "Número de telex"
+    pii: nenhum
+    nulo: true
+  - nome: data_communication_line_no_datlt
+    tipo: string
+    comentario: "Linha de dados"
+    pii: nenhum
+    nulo: true
+  - nome: printer_name_for_profit_center_drnam
+    tipo: string
+    comentario: "Nome da impressora do centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_area_khinr
+    tipo: string
+    comentario: "Área de hierarquia do centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Empresa"
+    pii: nenhum
+    nulo: true
+  - nome: joint_venture_vname
+    tipo: string
+    comentario: "Joint venture"
+    pii: nenhum
+    nulo: true
+  - nome: recovery_indicator_recid
+    tipo: string
+    comentario: "Indicador de recuperação"
+    pii: nenhum
+    nulo: true
+  - nome: equity_type_etype
+    tipo: string
+    comentario: "Tipo de participação acionária"
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: region_state_regio
+    tipo: string
+    comentario: "Região"
+    pii: nenhum
+    nulo: true
+  - nome: usage_of_the_condition_table_kvewe
+    tipo: string
+    comentario: "Uso da tabela de condição"
+    pii: nenhum
+    nulo: true
+  - nome: application_kappl
+    tipo: string
+    comentario: "Aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: procedure_pricing_kalsm
+    tipo: string
+    comentario: "Procedimento de precificação"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_logsystem
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: lock_indicator_lock_ind
+    tipo: string
+    comentario: "Indicador de bloqueio"
+    pii: nenhum
+    nulo: true
+  - nome: template_for_formula_planning_in_profit_centers_pca_template
+    tipo: string
+    comentario: "Modelo de planejamento de fórmula do centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: segment_for_segmental_reporting_segment
+    tipo: string
+    comentario: "Segmento para relatório por segmento"
+    pii: nenhum
+    nulo: true
+  - nome: txt_valid_to_date_datbi
+    tipo: date
+    comentario: "Válido até (texto)"
+    pii: nenhum
+    nulo: true
+  - nome: general_name_ktext
+    tipo: string
+    comentario: "Nome geral"
+    pii: nenhum
+    nulo: true
+  - nome: long_text_ltext
+    tipo: string
+    comentario: "Texto longo"
+    pii: nenhum
+    nulo: true
+  - nome: search_term_for_matchcode_search_mctxt
+    tipo: string
+    comentario: "Texto do centro de lucro (para busca)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora da última atualização no sistema de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora do carregamento no BigQuery"
+    pii: nenhum
+    nulo: true

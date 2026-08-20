@@ -1,0 +1,727 @@
+tabela: afru
+camada: bronze
+comentario: "Confirmacoes de ordens de producao"
+ingestao: cdc
+fonte: sap.afru
+chave_primaria: [mandt, rueck, rmzhl, split]
+colunas:
+  - nome: abarb
+    tipo: string
+    comentario: "Grau de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por (usuario SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: anzma
+    tipo: string
+    comentario: "Numero de funcionarios"
+    pii: nenhum
+    nulo: true
+  - nome: aplfl
+    tipo: string
+    comentario: "Sequencia"
+    pii: nenhum
+    nulo: true
+  - nome: aplzl
+    tipo: string
+    comentario: "Contador"
+    pii: nenhum
+    nulo: true
+  - nome: arbid
+    tipo: string
+    comentario: "ID do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: aueru
+    tipo: string
+    comentario: "Confirmacao final"
+    pii: nenhum
+    nulo: true
+  - nome: aufnr
+    tipo: string
+    comentario: "Numero da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: aufpl
+    tipo: string
+    comentario: "Numero da lista de tarefas da operacao"
+    pii: nenhum
+    nulo: true
+  - nome: ausor
+    tipo: string
+    comentario: "Limpar reservas abertas"
+    pii: nenhum
+    nulo: true
+  - nome: belnr_ist
+    tipo: string
+    comentario: "Numero do documento contabil (real)"
+    pii: nenhum
+    nulo: true
+  - nome: belnr_umb
+    tipo: string
+    comentario: "Numero do documento contabil (reclassificacao)"
+    pii: nenhum
+    nulo: true
+  - nome: bemot
+    tipo: string
+    comentario: "Indicador contabil"
+    pii: nenhum
+    nulo: true
+  - nome: budat
+    tipo: date
+    comentario: "Data de lancamento"
+    pii: nenhum
+    nulo: true
+  - nome: canum
+    tipo: string
+    comentario: "Numero CA"
+    pii: nenhum
+    nulo: true
+  - nome: catsbelnr
+    tipo: string
+    comentario: "Numero do documento CATS"
+    pii: nenhum
+    nulo: true
+  - nome: catspeinh
+    tipo: string
+    comentario: "Unidade de preco CATS"
+    pii: nenhum
+    nulo: true
+  - nome: catsprice
+    tipo: decimal(23,2)
+    comentario: "Preco CATS"
+    pii: nenhum
+    nulo: true
+  - nome: catstcurr
+    tipo: string
+    comentario: "Moeda da transacao CATS"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por (usuario SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: ersda
+    tipo: date
+    comentario: "Data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: erzet
+    tipo: string
+    comentario: "Hora de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: exerd
+    tipo: date
+    comentario: "Criado em (externo)"
+    pii: nenhum
+    nulo: true
+  - nome: exerz
+    tipo: string
+    comentario: "Hora (externo)"
+    pii: nenhum
+    nulo: true
+  - nome: exnam
+    tipo: string
+    comentario: "Criado por (externo)"
+    pii: nenhum
+    nulo: true
+  - nome: extid
+    tipo: string
+    comentario: "Chave externa"
+    pii: nenhum
+    nulo: true
+  - nome: gmein
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: gmnga
+    tipo: decimal(23,2)
+    comentario: "Quantidade confirmada (bom)"
+    pii: nenhum
+    nulo: true
+  - nome: grund
+    tipo: string
+    comentario: "Motivo do desvio"
+    pii: nenhum
+    nulo: true
+  - nome: idaue
+    tipo: string
+    comentario: "Unidade da duracao real"
+    pii: nenhum
+    nulo: true
+  - nome: idaur
+    tipo: decimal(23,2)
+    comentario: "Duracao real"
+    pii: nenhum
+    nulo: true
+  - nome: iebd
+    tipo: date
+    comentario: "Data de fim do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: iebz
+    tipo: string
+    comentario: "Hora de fim do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: iedd
+    tipo: date
+    comentario: "Data de fim da execucao"
+    pii: nenhum
+    nulo: true
+  - nome: iedz
+    tipo: string
+    comentario: "Hora de fim real"
+    pii: nenhum
+    nulo: true
+  - nome: ierd
+    tipo: date
+    comentario: "Data de fim do setup"
+    pii: nenhum
+    nulo: true
+  - nome: ierz
+    tipo: string
+    comentario: "Hora de fim do setup"
+    pii: nenhum
+    nulo: true
+  - nome: ile01
+    tipo: string
+    comentario: "Unidade/atividade 1"
+    pii: nenhum
+    nulo: true
+  - nome: ile02
+    tipo: string
+    comentario: "Unidade/atividade 2"
+    pii: nenhum
+    nulo: true
+  - nome: ile03
+    tipo: string
+    comentario: "Unidade/atividade 3"
+    pii: nenhum
+    nulo: true
+  - nome: ile04
+    tipo: string
+    comentario: "Unidade/atividade 4"
+    pii: nenhum
+    nulo: true
+  - nome: ile05
+    tipo: string
+    comentario: "Unidade/atividade 5"
+    pii: nenhum
+    nulo: true
+  - nome: ile06
+    tipo: string
+    comentario: "Unidade/atividade 6"
+    pii: nenhum
+    nulo: true
+  - nome: ipre1
+    tipo: string
+    comentario: "Unidade do processo"
+    pii: nenhum
+    nulo: true
+  - nome: iprk1
+    tipo: string
+    comentario: "Sem atividade restante"
+    pii: nenhum
+    nulo: true
+  - nome: iprz1
+    tipo: decimal(23,2)
+    comentario: "Quantidade do processo a confirmar"
+    pii: nenhum
+    nulo: true
+  - nome: isad
+    tipo: date
+    comentario: "Data de inicio do desmonte"
+    pii: nenhum
+    nulo: true
+  - nome: isaz
+    tipo: string
+    comentario: "Hora de inicio do desmonte"
+    pii: nenhum
+    nulo: true
+  - nome: isbd
+    tipo: date
+    comentario: "Data de inicio do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: isbz
+    tipo: string
+    comentario: "Hora de inicio do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: isdd
+    tipo: date
+    comentario: "Data de inicio da execucao"
+    pii: nenhum
+    nulo: true
+  - nome: isdz
+    tipo: string
+    comentario: "Hora de inicio real"
+    pii: nenhum
+    nulo: true
+  - nome: iserh
+    tipo: decimal(23,2)
+    comentario: "Tempo de pausa"
+    pii: nenhum
+    nulo: true
+  - nome: ism01
+    tipo: decimal(23,2)
+    comentario: "Atividade a confirmar 1"
+    pii: nenhum
+    nulo: true
+  - nome: ism02
+    tipo: decimal(23,2)
+    comentario: "Atividade a confirmar 2"
+    pii: nenhum
+    nulo: true
+  - nome: ism03
+    tipo: decimal(23,2)
+    comentario: "Atividade a confirmar 3"
+    pii: nenhum
+    nulo: true
+  - nome: ism04
+    tipo: decimal(23,2)
+    comentario: "Atividade a confirmar 4"
+    pii: nenhum
+    nulo: true
+  - nome: ism05
+    tipo: decimal(23,2)
+    comentario: "Atividade a confirmar 5"
+    pii: nenhum
+    nulo: true
+  - nome: ism06
+    tipo: decimal(23,2)
+    comentario: "Atividade a confirmar 6"
+    pii: nenhum
+    nulo: true
+  - nome: ismne
+    tipo: string
+    comentario: "Unidade do trabalho (restante)"
+    pii: nenhum
+    nulo: true
+  - nome: ismnu
+    tipo: string
+    comentario: "Unidade do trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: ismnw
+    tipo: decimal(23,2)
+    comentario: "Trabalho real"
+    pii: nenhum
+    nulo: true
+  - nome: kapid
+    tipo: string
+    comentario: "ID de capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: kaptprog
+    tipo: string
+    comentario: "Definicao de turno"
+    pii: nenhum
+    nulo: true
+  - nome: laeda
+    tipo: date
+    comentario: "Data da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: learr
+    tipo: string
+    comentario: "Tipo de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: lek01
+    tipo: string
+    comentario: "Sem atividade restante 1"
+    pii: nenhum
+    nulo: true
+  - nome: lek02
+    tipo: string
+    comentario: "Sem atividade restante 2"
+    pii: nenhum
+    nulo: true
+  - nome: lek03
+    tipo: string
+    comentario: "Sem atividade restante 3"
+    pii: nenhum
+    nulo: true
+  - nome: lek04
+    tipo: string
+    comentario: "Sem atividade restante 4"
+    pii: nenhum
+    nulo: true
+  - nome: lek05
+    tipo: string
+    comentario: "Sem atividade restante 5"
+    pii: nenhum
+    nulo: true
+  - nome: lek06
+    tipo: string
+    comentario: "Sem atividade restante 6"
+    pii: nenhum
+    nulo: true
+  - nome: leknw
+    tipo: decimal(23,2)
+    comentario: "Trabalho restante zero"
+    pii: nenhum
+    nulo: true
+  - nome: licha
+    tipo: string
+    comentario: "Lote do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: lmnga
+    tipo: decimal(23,2)
+    comentario: "Quantidade a confirmar (bom)"
+    pii: nenhum
+    nulo: true
+  - nome: loart
+    tipo: string
+    comentario: "Tipo de salario"
+    pii: nenhum
+    nulo: true
+  - nome: logrp
+    tipo: string
+    comentario: "Grupo salarial"
+    pii: nenhum
+    nulo: true
+  - nome: ltxa1
+    tipo: string
+    comentario: "Texto da confirmacao"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: manur
+    tipo: string
+    comentario: "Tipo de confirmacao"
+    pii: nenhum
+    nulo: true
+  - nome: meilr
+    tipo: string
+    comentario: "Confirmacao de marco"
+    pii: nenhum
+    nulo: true
+  - nome: meinh
+    tipo: string
+    comentario: "Unidade de confirmacao"
+    pii: nenhum
+    nulo: true
+  - nome: me_2nd_conf_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade de retrabalho (ME)"
+    pii: nenhum
+    nulo: true
+  - nome: me_sfcid
+    tipo: string
+    comentario: "SFC do MES"
+    pii: nenhum
+    nulo: true
+  - nome: myear
+    tipo: string
+    comentario: "Ano do documento de material"
+    pii: nenhum
+    nulo: true
+  - nome: nodat
+    tipo: string
+    comentario: "Sem atualizacao de data"
+    pii: nenhum
+    nulo: true
+  - nome: obcha
+    tipo: string
+    comentario: "Lote original"
+    pii: nenhum
+    nulo: true
+  - nome: obmat
+    tipo: string
+    comentario: "Material do lote original"
+    pii: nenhum
+    nulo: true
+  - nome: odaue
+    tipo: string
+    comentario: "Unidade da duracao restante"
+    pii: nenhum
+    nulo: true
+  - nome: odaur
+    tipo: decimal(23,2)
+    comentario: "Duracao restante"
+    pii: nenhum
+    nulo: true
+  - nome: ofe01
+    tipo: string
+    comentario: "Unidade do valor padrao previsto 1"
+    pii: nenhum
+    nulo: true
+  - nome: ofe02
+    tipo: string
+    comentario: "Unidade do valor padrao previsto 2"
+    pii: nenhum
+    nulo: true
+  - nome: ofe03
+    tipo: string
+    comentario: "Unidade do valor padrao previsto 3"
+    pii: nenhum
+    nulo: true
+  - nome: ofe04
+    tipo: string
+    comentario: "Unidade do valor padrao previsto 4"
+    pii: nenhum
+    nulo: true
+  - nome: ofe05
+    tipo: string
+    comentario: "Unidade do valor padrao previsto 5"
+    pii: nenhum
+    nulo: true
+  - nome: ofe06
+    tipo: string
+    comentario: "Unidade do valor padrao previsto 6"
+    pii: nenhum
+    nulo: true
+  - nome: ofm01
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 1"
+    pii: nenhum
+    nulo: true
+  - nome: ofm02
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 2"
+    pii: nenhum
+    nulo: true
+  - nome: ofm03
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 3"
+    pii: nenhum
+    nulo: true
+  - nome: ofm04
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 4"
+    pii: nenhum
+    nulo: true
+  - nome: ofm05
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 5"
+    pii: nenhum
+    nulo: true
+  - nome: ofm06
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 6"
+    pii: nenhum
+    nulo: true
+  - nome: ofmne
+    tipo: string
+    comentario: "Unidade do trabalho restante (previsao)"
+    pii: nenhum
+    nulo: true
+  - nome: ofmnu
+    tipo: string
+    comentario: "Unidade do trabalho (previsao)"
+    pii: nenhum
+    nulo: true
+  - nome: ofmnw
+    tipo: decimal(23,2)
+    comentario: "Trabalho restante (previsao)"
+    pii: nenhum
+    nulo: true
+  - nome: opre1
+    tipo: string
+    comentario: "Unidade do processo restante"
+    pii: nenhum
+    nulo: true
+  - nome: oprz1
+    tipo: decimal(23,2)
+    comentario: "Quantidade restante do processo de negocio"
+    pii: nenhum
+    nulo: true
+  - nome: origf
+    tipo: string
+    comentario: "Origem"
+    pii: nenhum
+    nulo: true
+  - nome: orind
+    tipo: string
+    comentario: "Aplicacao"
+    pii: nenhum
+    nulo: true
+  - nome: packno
+    tipo: string
+    comentario: "Numero do pacote"
+    pii: nenhum
+    nulo: true
+  - nome: pdsnr
+    tipo: string
+    comentario: "Numero"
+    pii: nenhum
+    nulo: true
+  - nome: pedd
+    tipo: date
+    comentario: "Data de fim prevista"
+    pii: nenhum
+    nulo: true
+  - nome: pedz
+    tipo: string
+    comentario: "Hora de fim prevista"
+    pii: nenhum
+    nulo: true
+  - nome: pernr
+    tipo: string
+    comentario: "Numero do funcionario (RH)"
+    pii: indireto
+    nulo: true
+  - nome: prz01
+    tipo: string
+    comentario: "Processo de negocio"
+    pii: nenhum
+    nulo: true
+  - nome: qualf
+    tipo: string
+    comentario: "Aptidao"
+    pii: nenhum
+    nulo: true
+  - nome: rmnga
+    tipo: decimal(23,2)
+    comentario: "Quantidade de retrabalho"
+    pii: nenhum
+    nulo: true
+  - nome: rmzhl
+    tipo: string
+    comentario: "Contador da confirmacao"
+    pii: nenhum
+    nulo: false
+  - nome: rmzhl_mst
+    tipo: string
+    comentario: "Contador da confirmacao mestre"
+    pii: nenhum
+    nulo: true
+  - nome: role_id
+    tipo: string
+    comentario: "Papel do portal"
+    pii: nenhum
+    nulo: true
+  - nome: rueck
+    tipo: string
+    comentario: "Numero da confirmacao"
+    pii: nenhum
+    nulo: false
+  - nome: rueck_mst
+    tipo: string
+    comentario: "Numero da confirmacao mestre"
+    pii: nenhum
+    nulo: true
+  - nome: satza
+    tipo: string
+    comentario: "Tipo de registro"
+    pii: nenhum
+    nulo: true
+  - nome: schgrup
+    tipo: string
+    comentario: "Agrupamento de turno"
+    pii: nenhum
+    nulo: true
+  - nome: skokrs
+    tipo: string
+    comentario: "Area de controlling"
+    pii: nenhum
+    nulo: true
+  - nome: skostl
+    tipo: string
+    comentario: "Centro de custo emissor"
+    pii: nenhum
+    nulo: true
+  - nome: smeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade da operacao"
+    pii: nenhum
+    nulo: true
+  - nome: split
+    tipo: string
+    comentario: "Numero do split"
+    pii: nenhum
+    nulo: false
+  - nome: stndr
+    tipo: string
+    comentario: "Confirmacao padrao"
+    pii: nenhum
+    nulo: true
+  - nome: stokz
+    tipo: string
+    comentario: "Estornado"
+    pii: nenhum
+    nulo: true
+  - nome: stzhl
+    tipo: string
+    comentario: "Confirmacao cancelada"
+    pii: nenhum
+    nulo: true
+  - nome: sumnr
+    tipo: string
+    comentario: "No do no de operacao superior"
+    pii: nenhum
+    nulo: true
+  - nome: txtsp
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: uccha
+    tipo: string
+    comentario: "Lote do processo"
+    pii: nenhum
+    nulo: true
+  - nome: ucmat
+    tipo: string
+    comentario: "Material do lote do processo"
+    pii: nenhum
+    nulo: true
+  - nome: vornr
+    tipo: string
+    comentario: "Numero da atividade"
+    pii: nenhum
+    nulo: true
+  - nome: wablnr
+    tipo: string
+    comentario: "Documento de material"
+    pii: nenhum
+    nulo: true
+  - nome: weblnr
+    tipo: string
+    comentario: "Documento com erro de movimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: true
+  - nome: wty_ind
+    tipo: string
+    comentario: "Garantia"
+    pii: nenhum
+    nulo: true
+  - nome: xmnga
+    tipo: decimal(23,2)
+    comentario: "Quantidade de sucata a confirmar"
+    pii: nenhum
+    nulo: true
+  - nome: zausw
+    tipo: string
+    comentario: "Numero do ID de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: zcode
+    tipo: string
+    comentario: "No de referencia para codigo SV"
+    pii: nenhum
+    nulo: true
+  - nome: zeier
+    tipo: string
+    comentario: "Unidade do tempo de pausa"
+    pii: nenhum
+    nulo: true

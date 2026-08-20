@@ -1,0 +1,12 @@
+# Exemplo — DATA CLASSIFICATION (deteccao automatica de PII no catalogo).
+# Estado declarativo de UMA config de data classification. Lido por
+# enable_data_classification.py, que chama w.data_classification.create_catalog_config(...).
+# Uma config por catalogo (maximo). SDK:
+# https://databricks-sdk-py.readthedocs.io/en/latest/workspace/dataclassification/data_classification.html
+# Local no projeto: schemas/governanca/data_classification.yaml
+tipo: data_classification
+comentario: "Ativa a classificacao automatica de dados (PII) no catalogo do projeto."
+
+# Catalogo alvo. Use ${var.catalog} do bundle; o notebook resolve pelo widget 'catalogo'.
+catalogo: ${var.catalog}
+habilitado: true

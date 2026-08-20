@@ -1,0 +1,582 @@
+tabela: vbrk
+camada: bronze
+comentario: "Documento de faturamento: dados do cabeçalho (Billing Document Header Data)"
+ingestao: cdc
+fonte: sap.vbrk
+chave_primaria: [mandt, vbeln]
+colunas:
+  - nome: aedat
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: akkur
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio da carta de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: akwae
+    tipo: string
+    comentario: "Moeda da carta de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: belnr
+    tipo: string
+    comentario: "Número do documento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: bstnk_vf
+    tipo: string
+    comentario: "Número do pedido de compra do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: bupla
+    tipo: string
+    comentario: "Estabelecimento fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: bvtyp
+    tipo: string
+    comentario: "Tipo de banco parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: bzirk
+    tipo: string
+    comentario: "Distrito de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: cityc
+    tipo: string
+    comentario: "Código de cidade"
+    pii: nenhum
+    nulo: true
+  - nome: cmkuf
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio de dados de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmwae
+    tipo: string
+    comentario: "Moeda de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: counc
+    tipo: string
+    comentario: "Código do condado/município"
+    pii: nenhum
+    nulo: true
+  - nome: cpkur
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio definida no documento"
+    pii: nenhum
+    nulo: true
+  - nome: dpc_rel
+    tipo: string
+    comentario: "Indicador de relevância DPC"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação do documento"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Usuário criador do documento"
+    pii: indireto
+    nulo: true
+  - nome: erzet
+    tipo: string
+    comentario: "Hora de criação do documento"
+    pii: nenhum
+    nulo: true
+  - nome: exnum
+    tipo: string
+    comentario: "Número de dados de comércio exterior"
+    pii: nenhum
+    nulo: true
+  - nome: expkz
+    tipo: string
+    comentario: "Indicador de exportação"
+    pii: nenhum
+    nulo: true
+  - nome: fkart
+    tipo: string
+    comentario: "Tipo de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: fkart_ab
+    tipo: string
+    comentario: "Tipo de faturamento por competência"
+    pii: nenhum
+    nulo: true
+  - nome: fkart_rl
+    tipo: string
+    comentario: "Tipo de lista de faturas"
+    pii: nenhum
+    nulo: true
+  - nome: fkdat
+    tipo: date
+    comentario: "Data de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: fkdat_rl
+    tipo: date
+    comentario: "Data de faturamento da lista de faturas"
+    pii: nenhum
+    nulo: true
+  - nome: fkk_docstat
+    tipo: string
+    comentario: "Status adicional de contabilidade financeira"
+    pii: nenhum
+    nulo: true
+  - nome: fksto
+    tipo: string
+    comentario: "Indicador de fatura cancelada/estornada"
+    pii: nenhum
+    nulo: true
+  - nome: fktyp
+    tipo: string
+    comentario: "Categoria de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: fktyp_crm
+    tipo: string
+    comentario: "Categoria de faturamento CRM"
+    pii: nenhum
+    nulo: true
+  - nome: fk_source_sys
+    tipo: string
+    comentario: "Sistema de origem do faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: gjahr
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: glo_log_ref1_hd
+    tipo: string
+    comentario: "Referência específica do país 1 (cabeçalho)"
+    pii: nenhum
+    nulo: true
+  - nome: hityp_pr
+    tipo: string
+    comentario: "Tipo de hierarquia para precificação"
+    pii: nenhum
+    nulo: true
+  - nome: inco1
+    tipo: string
+    comentario: "Incoterms (parte 1)"
+    pii: nenhum
+    nulo: true
+  - nome: inco2
+    tipo: string
+    comentario: "Incoterms (parte 2)"
+    pii: nenhum
+    nulo: true
+  - nome: inco2_l
+    tipo: string
+    comentario: "Local Incoterms 1"
+    pii: nenhum
+    nulo: true
+  - nome: inco3_l
+    tipo: string
+    comentario: "Local Incoterms 2"
+    pii: nenhum
+    nulo: true
+  - nome: incov
+    tipo: string
+    comentario: "Versão dos Incoterms"
+    pii: nenhum
+    nulo: true
+  - nome: j_1afitp
+    tipo: string
+    comentario: "Tipo de imposto (Argentina)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1tpbupl
+    tipo: string
+    comentario: "Código de filial (localização)"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm
+    tipo: string
+    comentario: "Esquema de precificação"
+    pii: nenhum
+    nulo: true
+  - nome: kappl
+    tipo: string
+    comentario: "Aplicação SAP (área de determinação de condições)"
+    pii: nenhum
+    nulo: true
+  - nome: kdgrp
+    tipo: string
+    comentario: "Grupo de clientes"
+    pii: nenhum
+    nulo: true
+  - nome: kidno
+    tipo: string
+    comentario: "Referência de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: kkber
+    tipo: string
+    comentario: "Área de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: knkli
+    tipo: string
+    comentario: "Conta de crédito do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: knuma
+    tipo: string
+    comentario: "Número do acordo comercial"
+    pii: nenhum
+    nulo: true
+  - nome: knumv
+    tipo: string
+    comentario: "Número de condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: konda
+    tipo: string
+    comentario: "Grupo de preços"
+    pii: nenhum
+    nulo: true
+  - nome: ktgrd
+    tipo: string
+    comentario: "Grupo de determinação de conta do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: kunag
+    tipo: string
+    comentario: "Código do cliente destinatário da mercadoria (sold-to party)"
+    pii: indireto
+    nulo: true
+  - nome: kunrg
+    tipo: string
+    comentario: "Código do pagador"
+    pii: indireto
+    nulo: true
+  - nome: kurrf
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio contábil"
+    pii: nenhum
+    nulo: true
+  - nome: kurrf_dat
+    tipo: date
+    comentario: "Data de conversão da taxa de câmbio contábil"
+    pii: nenhum
+    nulo: true
+  - nome: kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: land1
+    tipo: string
+    comentario: "País de destino"
+    pii: nenhum
+    nulo: true
+  - nome: landtx
+    tipo: string
+    comentario: "País de origem para declaração de impostos"
+    pii: nenhum
+    nulo: true
+  - nome: lcnum
+    tipo: string
+    comentario: "Número do documento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: logsys
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: maber
+    tipo: string
+    comentario: "Área de cobrança (dunning area)"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mansp
+    tipo: string
+    comentario: "Bloqueio de cobrança"
+    pii: nenhum
+    nulo: true
+  - nome: mndid
+    tipo: string
+    comentario: "Referência de mandato SEPA"
+    pii: nenhum
+    nulo: true
+  - nome: mndvg
+    tipo: string
+    comentario: "Indicador de relevância SEPA (mandato)"
+    pii: nenhum
+    nulo: true
+  - nome: mrnkz
+    tipo: string
+    comentario: "Indicador de manutenção manual de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: mschl
+    tipo: string
+    comentario: "Chave de cobrança (dunning key)"
+    pii: nenhum
+    nulo: true
+  - nome: mwsbk
+    tipo: decimal(23,2)
+    comentario: "Valor de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: netwr
+    tipo: decimal(23,2)
+    comentario: "Valor líquido do documento de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: nrzas
+    tipo: string
+    comentario: "Número de documento legal secundário ou identificador fiscal específico do país"
+    pii: sensivel
+    nulo: true
+  - nome: numpg
+    tipo: int
+    comentario: "Número de páginas do documento"
+    pii: nenhum
+    nulo: true
+  - nome: pay_type
+    tipo: string
+    comentario: "Tipo de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: pltyp
+    tipo: string
+    comentario: "Tipo de lista de preços"
+    pii: nenhum
+    nulo: true
+  - nome: poper
+    tipo: string
+    comentario: "Período de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: regio
+    tipo: string
+    comentario: "Região do destinatário"
+    pii: nenhum
+    nulo: true
+  - nome: rfbsk
+    tipo: string
+    comentario: "Status de lançamento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: rplnr
+    tipo: string
+    comentario: "Número do plano de cartão de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: sepon
+    tipo: string
+    comentario: "Indicador de relevância SEPA (pagamento)"
+    pii: nenhum
+    nulo: true
+  - nome: sfakn
+    tipo: string
+    comentario: "Número do documento de faturamento cancelado/estornado de referência"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Divisão de produtos"
+    pii: nenhum
+    nulo: true
+  - nome: spe_billing_ind
+    tipo: string
+    comentario: "Indicador de faturamento EWM"
+    pii: nenhum
+    nulo: true
+  - nome: sppaym
+    tipo: string
+    comentario: "Método de pagamento especial"
+    pii: nenhum
+    nulo: true
+  - nome: sppord
+    tipo: string
+    comentario: "Pedido de venda vinculado"
+    pii: nenhum
+    nulo: true
+  - nome: stafo
+    tipo: string
+    comentario: "Grupo de atualização de estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: stceg
+    tipo: string
+    comentario: "Número de registro de IVA do parceiro"
+    pii: sensivel
+    nulo: true
+  - nome: stceg_h
+    tipo: string
+    comentario: "Número de imposto sobre vendas de origem"
+    pii: sensivel
+    nulo: true
+  - nome: stceg_l
+    tipo: string
+    comentario: "Número de imposto sobre vendas do país"
+    pii: sensivel
+    nulo: true
+  - nome: stgrd
+    tipo: string
+    comentario: "Motivo do estorno"
+    pii: nenhum
+    nulo: true
+  - nome: stwae
+    tipo: string
+    comentario: "Moeda estatística"
+    pii: nenhum
+    nulo: true
+  - nome: taxk1
+    tipo: string
+    comentario: "Classificação de imposto do cliente 1"
+    pii: nenhum
+    nulo: true
+  - nome: taxk2
+    tipo: string
+    comentario: "Classificação de imposto do cliente 2"
+    pii: nenhum
+    nulo: true
+  - nome: taxk3
+    tipo: string
+    comentario: "Classificação de imposto do cliente 3"
+    pii: nenhum
+    nulo: true
+  - nome: taxk4
+    tipo: string
+    comentario: "Classificação de imposto do cliente 4"
+    pii: nenhum
+    nulo: true
+  - nome: taxk5
+    tipo: string
+    comentario: "Classificação de imposto do cliente 5"
+    pii: nenhum
+    nulo: true
+  - nome: taxk6
+    tipo: string
+    comentario: "Classificação de imposto do cliente 6"
+    pii: nenhum
+    nulo: true
+  - nome: taxk7
+    tipo: string
+    comentario: "Classificação de imposto do cliente 7"
+    pii: nenhum
+    nulo: true
+  - nome: taxk8
+    tipo: string
+    comentario: "Classificação de imposto do cliente 8"
+    pii: nenhum
+    nulo: true
+  - nome: taxk9
+    tipo: string
+    comentario: "Classificação de imposto do cliente 9"
+    pii: nenhum
+    nulo: true
+  - nome: valdt
+    tipo: date
+    comentario: "Data de valor fixo para pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: valtg
+    tipo: int
+    comentario: "Dias adicionais de valor para pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln
+    tipo: string
+    comentario: "Número do documento de faturamento"
+    pii: nenhum
+    nulo: false
+  - nome: vbtyp
+    tipo: string
+    comentario: "Categoria do documento SD"
+    pii: nenhum
+    nulo: true
+  - nome: vbtyp_ext
+    tipo: string
+    comentario: "Extensão da categoria do documento SD"
+    pii: nenhum
+    nulo: true
+  - nome: vbund
+    tipo: string
+    comentario: "Empresa parceira comercial (intercompanhia)"
+    pii: nenhum
+    nulo: true
+  - nome: vkont
+    tipo: string
+    comentario: "Conta de contrato"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vsbed
+    tipo: string
+    comentario: "Condições de expedição"
+    pii: nenhum
+    nulo: true
+  - nome: vtref
+    tipo: string
+    comentario: "Número do contrato de referência"
+    pii: nenhum
+    nulo: true
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: waerk
+    tipo: string
+    comentario: "Moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: xblnr
+    tipo: string
+    comentario: "Número de referência externa"
+    pii: nenhum
+    nulo: true
+  - nome: xegdr
+    tipo: string
+    comentario: "Indicador de operação triangular da UE"
+    pii: nenhum
+    nulo: true
+  - nome: zlsch
+    tipo: string
+    comentario: "Método de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zterm
+    tipo: string
+    comentario: "Condições de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zukri
+    tipo: string
+    comentario: "Critérios de combinação de documentos"
+    pii: nenhum
+    nulo: true
+  - nome: zuonr
+    tipo: string
+    comentario: "Campo de atribuição (assignment)"
+    pii: nenhum
+    nulo: true

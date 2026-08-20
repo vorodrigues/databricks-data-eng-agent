@@ -1,0 +1,107 @@
+tabela: wcocoi
+camada: bronze
+comentario: "Contrato de condição: item"
+ingestao: cdc
+fonte: sap.wcocoi
+chave_primaria: [client, num, item_guid]
+colunas:
+  - nome: client
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: num
+    tipo: string
+    comentario: "Número do contrato de condição"
+    pii: nenhum
+    nulo: false
+  - nome: item_guid
+    tipo: string
+    comentario: "GUID do item do contrato de condição"
+    pii: nenhum
+    nulo: false
+  - nome: guid
+    tipo: string
+    comentario: "GUID do contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: eligible_cust
+    tipo: string
+    comentario: "Cliente elegível"
+    pii: indireto
+    nulo: true
+  - nome: eligible_vendor
+    tipo: string
+    comentario: "Fornecedor elegível"
+    pii: indireto
+    nulo: true
+  - nome: list_num
+    tipo: string
+    comentario: "Número da lista"
+    pii: nenhum
+    nulo: true
+  - nome: exclusion
+    tipo: string
+    comentario: "Excluir parceiro (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: reference
+    tipo: string
+    comentario: "Referência para parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: deact
+    tipo: string
+    comentario: "Contrato de condição/parceiro inativo (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: date_from
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: date_to
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: eligible_plant
+    tipo: string
+    comentario: "Planta elegível"
+    pii: nenhum
+    nulo: true
+  - nome: quantity
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_measure
+    tipo: string
+    comentario: "Unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: _dataaging
+    tipo: string
+    comentario: "Valor de filtro para envelhecimento de dados"
+    pii: nenhum
+    nulo: true
+  - nome: amount
+    tipo: decimal(23,2)
+    comentario: "Valor"
+    pii: nenhum
+    nulo: true
+  - nome: currency
+    tipo: string
+    comentario: "Moeda"
+    pii: nenhum
+    nulo: true
+  - nome: material
+    tipo: string
+    comentario: "Material"
+    pii: nenhum
+    nulo: true
+  - nome: ext_guid
+    tipo: string
+    comentario: "GUID externo do item elegível"
+    pii: nenhum
+    nulo: true

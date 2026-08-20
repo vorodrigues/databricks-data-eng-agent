@@ -1,0 +1,222 @@
+tabela: vbfa
+camada: bronze
+comentario: "Fluxo do documento de vendas"
+ingestao: cdc
+fonte: sap.vbfa
+chave_primaria: [mandt, vbelv, posnv, vbeln, posnn]
+colunas:
+  - nome: abges
+    tipo: string
+    comentario: "Quantidade garantida"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: bdart
+    tipo: string
+    comentario: "Tipo de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: brgew
+    tipo: decimal(23,2)
+    comentario: "Peso bruto"
+    pii: nenhum
+    nulo: true
+  - nome: bwart
+    tipo: string
+    comentario: "Tipo de movimento"
+    pii: nenhum
+    nulo: true
+  - nome: cmeth
+    tipo: string
+    comentario: "Metodo de conversao"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: erzet
+    tipo: string
+    comentario: "Hora de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: fktyp
+    tipo: string
+    comentario: "Categoria de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: fplnr
+    tipo: string
+    comentario: "Numero do plano de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: fpltr
+    tipo: string
+    comentario: "Item do plano de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: gewei
+    tipo: string
+    comentario: "Unidade de peso"
+    pii: nenhum
+    nulo: true
+  - nome: kzbef
+    tipo: string
+    comentario: "Gestao de estoques ativa"
+    pii: nenhum
+    nulo: true
+  - nome: lgnum
+    tipo: string
+    comentario: "Numero do deposito (WM)"
+    pii: nenhum
+    nulo: true
+  - nome: logsys
+    tipo: string
+    comentario: "Sistema logico"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Numero do material"
+    pii: nenhum
+    nulo: true
+  - nome: meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: mjahr
+    tipo: string
+    comentario: "Ano do documento de material"
+    pii: nenhum
+    nulo: true
+  - nome: ntgew
+    tipo: decimal(23,2)
+    comentario: "Peso liquido"
+    pii: nenhum
+    nulo: true
+  - nome: plart
+    tipo: string
+    comentario: "Tipo de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: plmin
+    tipo: string
+    comentario: "Indicador de quantidade positiva/negativa"
+    pii: nenhum
+    nulo: true
+  - nome: posnn
+    tipo: string
+    comentario: "Item do documento subsequente"
+    pii: nenhum
+    nulo: false
+  - nome: posnv
+    tipo: string
+    comentario: "Item do documento antecessor"
+    pii: nenhum
+    nulo: false
+  - nome: rfmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: rfmng_flo
+    tipo: decimal(23,2)
+    comentario: "Quantidade de referencia (original)"
+    pii: nenhum
+    nulo: true
+  - nome: rfmng_flt
+    tipo: decimal(23,2)
+    comentario: "Quantidade de referencia (transformada)"
+    pii: nenhum
+    nulo: true
+  - nome: rfwrt
+    tipo: decimal(23,2)
+    comentario: "Valor de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: sobkz
+    tipo: string
+    comentario: "Indicador de estoque especial"
+    pii: nenhum
+    nulo: true
+  - nome: sonum
+    tipo: string
+    comentario: "Numero do estoque especial"
+    pii: nenhum
+    nulo: true
+  - nome: stufe
+    tipo: string
+    comentario: "Nivel hierarquico do fluxo"
+    pii: nenhum
+    nulo: true
+  - nome: taqui
+    tipo: string
+    comentario: "Identificacao de confirmacao MM-WM"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln
+    tipo: string
+    comentario: "Numero do documento subsequente"
+    pii: nenhum
+    nulo: false
+  - nome: vbelv
+    tipo: string
+    comentario: "Numero do documento antecessor"
+    pii: nenhum
+    nulo: false
+  - nome: vbtypext_n
+    tipo: string
+    comentario: "Extensao da categoria do documento subsequente"
+    pii: nenhum
+    nulo: true
+  - nome: vbtypext_v
+    tipo: string
+    comentario: "Extensao da categoria do documento antecessor"
+    pii: nenhum
+    nulo: true
+  - nome: vbtyp_n
+    tipo: string
+    comentario: "Categoria do documento subsequente"
+    pii: nenhum
+    nulo: true
+  - nome: vbtyp_v
+    tipo: string
+    comentario: "Categoria do documento antecessor"
+    pii: nenhum
+    nulo: true
+  - nome: voleh
+    tipo: string
+    comentario: "Unidade de volume"
+    pii: nenhum
+    nulo: true
+  - nome: volum
+    tipo: decimal(23,2)
+    comentario: "Volume"
+    pii: nenhum
+    nulo: true
+  - nome: vrkme
+    tipo: string
+    comentario: "Unidade de venda"
+    pii: nenhum
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda para estatisticas"
+    pii: nenhum
+    nulo: true
+  - nome: wbsta
+    tipo: string
+    comentario: "Status de movimento de mercadoria"
+    pii: nenhum
+    nulo: true

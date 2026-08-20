@@ -1,0 +1,32 @@
+tabela: dd02t
+camada: bronze
+comentario: "Textos descritivos de tabelas do dicionario de dados SAP (DD), independente de mandante"
+ingestao: cdc
+fonte: sap.dd02t
+chave_primaria: [tabname, ddlanguage, as4local, as4vers]
+colunas:
+  - nome: tabname
+    tipo: string
+    comentario: "Nome da tabela no dicionario SAP"
+    pii: nenhum
+    nulo: false
+  - nome: ddlanguage
+    tipo: string
+    comentario: "Chave de idioma do dicionario"
+    pii: nenhum
+    nulo: false
+  - nome: as4local
+    tipo: string
+    comentario: "Status de ativacao do objeto"
+    pii: nenhum
+    nulo: false
+  - nome: as4vers
+    tipo: string
+    comentario: "Versao do objeto no dicionario"
+    pii: nenhum
+    nulo: false
+  - nome: ddtext
+    tipo: string
+    comentario: "Descricao resumida da tabela"
+    pii: nenhum
+    nulo: true

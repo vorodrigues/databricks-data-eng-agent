@@ -1,0 +1,38 @@
+tabela: storage_locations
+camada: gold
+comentario: "Dados mestre de depositos/locais de estocagem do SAP T001L, mapeando locais a seus centros e divisoes."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.t001w, silver.t001l]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, plant_werks, storage_location_lgort]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro (WERKS)"
+    pii: nenhum
+    nulo: false
+  - nome: storage_location_lgort
+    tipo: string
+    comentario: "Deposito/local de estocagem (LGORT)"
+    pii: nenhum
+    nulo: false
+  - nome: storage_location_text_lgobe
+    tipo: string
+    comentario: "Descricao do deposito"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

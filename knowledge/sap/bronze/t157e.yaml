@@ -1,0 +1,32 @@
+tabela: t157e
+camada: bronze
+comentario: "Tabela de textos para motivos de movimento de material (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t157e
+chave_primaria: [mandt, spras, bwart, grund]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: bwart
+    tipo: string
+    comentario: "Tipo de movimento"
+    pii: nenhum
+    nulo: false
+  - nome: grund
+    tipo: string
+    comentario: "Codigo do motivo do movimento"
+    pii: nenhum
+    nulo: false
+  - nome: grtxt
+    tipo: string
+    comentario: "Descricao do motivo do movimento"
+    pii: nenhum
+    nulo: true

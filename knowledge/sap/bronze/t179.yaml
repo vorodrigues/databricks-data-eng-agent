@@ -1,0 +1,22 @@
+tabela: t179
+camada: bronze
+comentario: "Hierarquias de produtos de materiais do SAP"
+ingestao: cdc
+fonte: sap.t179
+chave_primaria: [mandt, prodh]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: prodh
+    tipo: string
+    comentario: "Hierarquia de produto"
+    pii: nenhum
+    nulo: false
+  - nome: stufe
+    tipo: int
+    comentario: "Numero do nivel na hierarquia"
+    pii: nenhum
+    nulo: true

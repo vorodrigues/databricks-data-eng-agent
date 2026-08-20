@@ -1,0 +1,32 @@
+tabela: t005s
+camada: bronze
+comentario: "Chaves de regiao/provincia para calculo de impostos"
+ingestao: cdc
+fonte: sap.t005s
+chave_primaria: [mandt, land1, bland]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: land1
+    tipo: string
+    comentario: "Chave do pais"
+    pii: nenhum
+    nulo: false
+  - nome: bland
+    tipo: string
+    comentario: "Regiao/estado"
+    pii: nenhum
+    nulo: false
+  - nome: fprcd
+    tipo: string
+    comentario: "Codigo de imposto provincial"
+    pii: nenhum
+    nulo: true
+  - nome: herbl
+    tipo: string
+    comentario: "Estado de fabricacao"
+    pii: nenhum
+    nulo: true

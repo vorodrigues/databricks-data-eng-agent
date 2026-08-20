@@ -1,0 +1,382 @@
+tabela: knvk
+camada: bronze
+comentario: "Contatos do mestre de clientes (pessoas de contato)"
+ingestao: cdc
+fonte: sap.knvk
+chave_primaria: [mandt, parnr, kunnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: parnr
+    tipo: string
+    comentario: "Número da pessoa de contato"
+    pii: nenhum
+    nulo: false
+  - nome: kunnr
+    tipo: string
+    comentario: "Número do cliente"
+    pii: indireto
+    nulo: false
+  - nome: namev
+    tipo: string
+    comentario: "Primeiro nome"
+    pii: direto
+    nulo: true
+  - nome: name1
+    tipo: string
+    comentario: "Sobrenome/nome"
+    pii: direto
+    nulo: true
+  - nome: ort01
+    tipo: string
+    comentario: "Cidade"
+    pii: indireto
+    nulo: true
+  - nome: adrnd
+    tipo: string
+    comentario: "Endereço comercial"
+    pii: nenhum
+    nulo: true
+  - nome: adrnp
+    tipo: string
+    comentario: "Endereço residencial"
+    pii: nenhum
+    nulo: true
+  - nome: abtpa
+    tipo: string
+    comentario: "Departamento do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: abtnr
+    tipo: string
+    comentario: "Departamento"
+    pii: nenhum
+    nulo: true
+  - nome: uepar
+    tipo: string
+    comentario: "Pessoa de nível superior"
+    pii: nenhum
+    nulo: true
+  - nome: telf1
+    tipo: string
+    comentario: "Telefone 1"
+    pii: direto
+    nulo: true
+  - nome: anred
+    tipo: string
+    comentario: "Forma de tratamento"
+    pii: nenhum
+    nulo: true
+  - nome: pafkt
+    tipo: string
+    comentario: "Função"
+    pii: nenhum
+    nulo: true
+  - nome: parvo
+    tipo: string
+    comentario: "Autoridade"
+    pii: nenhum
+    nulo: true
+  - nome: pavip
+    tipo: string
+    comentario: "VIP (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: parge
+    tipo: string
+    comentario: "Gênero"
+    pii: sensivel
+    nulo: true
+  - nome: parla
+    tipo: string
+    comentario: "Idioma"
+    pii: nenhum
+    nulo: true
+  - nome: gbdat
+    tipo: date
+    comentario: "Data de nascimento"
+    pii: sensivel
+    nulo: true
+  - nome: vrtnr
+    tipo: string
+    comentario: "Número do representante"
+    pii: nenhum
+    nulo: true
+  - nome: bryth
+    tipo: string
+    comentario: "Frequência de visitas"
+    pii: nenhum
+    nulo: true
+  - nome: akver
+    tipo: string
+    comentario: "Hábitos de compra"
+    pii: nenhum
+    nulo: true
+  - nome: nmail
+    tipo: string
+    comentario: "Material de publicidade (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: parau
+    tipo: string
+    comentario: "Observações"
+    pii: nenhum
+    nulo: true
+  - nome: parh1
+    tipo: string
+    comentario: "Atributo 1"
+    pii: nenhum
+    nulo: true
+  - nome: parh2
+    tipo: string
+    comentario: "Atributo 2"
+    pii: nenhum
+    nulo: true
+  - nome: parh3
+    tipo: string
+    comentario: "Atributo 3"
+    pii: nenhum
+    nulo: true
+  - nome: parh4
+    tipo: string
+    comentario: "Atributo 4"
+    pii: nenhum
+    nulo: true
+  - nome: parh5
+    tipo: string
+    comentario: "Atributo 5"
+    pii: nenhum
+    nulo: true
+  - nome: moab1
+    tipo: string
+    comentario: "Disponível segunda-feira (início 1)"
+    pii: nenhum
+    nulo: true
+  - nome: mobi1
+    tipo: string
+    comentario: "Disponível segunda-feira (fim 1)"
+    pii: nenhum
+    nulo: true
+  - nome: moab2
+    tipo: string
+    comentario: "Disponível segunda-feira (início 2)"
+    pii: nenhum
+    nulo: true
+  - nome: mobi2
+    tipo: string
+    comentario: "Disponível segunda-feira (fim 2)"
+    pii: nenhum
+    nulo: true
+  - nome: diab1
+    tipo: string
+    comentario: "Disponível terça-feira (início 1)"
+    pii: nenhum
+    nulo: true
+  - nome: dibi1
+    tipo: string
+    comentario: "Disponível terça-feira (fim 1)"
+    pii: nenhum
+    nulo: true
+  - nome: diab2
+    tipo: string
+    comentario: "Disponível terça-feira (início 2)"
+    pii: nenhum
+    nulo: true
+  - nome: dibi2
+    tipo: string
+    comentario: "Disponível terça-feira (fim 2)"
+    pii: nenhum
+    nulo: true
+  - nome: miab1
+    tipo: string
+    comentario: "Disponível quarta-feira (início 1)"
+    pii: nenhum
+    nulo: true
+  - nome: mibi1
+    tipo: string
+    comentario: "Disponível quarta-feira (fim 1)"
+    pii: nenhum
+    nulo: true
+  - nome: miab2
+    tipo: string
+    comentario: "Disponível quarta-feira (início 2)"
+    pii: nenhum
+    nulo: true
+  - nome: mibi2
+    tipo: string
+    comentario: "Disponível quarta-feira (fim 2)"
+    pii: nenhum
+    nulo: true
+  - nome: doab1
+    tipo: string
+    comentario: "Disponível quinta-feira (início 1)"
+    pii: nenhum
+    nulo: true
+  - nome: dobi1
+    tipo: string
+    comentario: "Disponível quinta-feira (fim 1)"
+    pii: nenhum
+    nulo: true
+  - nome: doab2
+    tipo: string
+    comentario: "Disponível quinta-feira (início 2)"
+    pii: nenhum
+    nulo: true
+  - nome: dobi2
+    tipo: string
+    comentario: "Disponível quinta-feira (fim 2)"
+    pii: nenhum
+    nulo: true
+  - nome: frab1
+    tipo: string
+    comentario: "Disponível sexta-feira (início 1)"
+    pii: nenhum
+    nulo: true
+  - nome: frbi1
+    tipo: string
+    comentario: "Disponível sexta-feira (fim 1)"
+    pii: nenhum
+    nulo: true
+  - nome: frab2
+    tipo: string
+    comentario: "Disponível sexta-feira (início 2)"
+    pii: nenhum
+    nulo: true
+  - nome: frbi2
+    tipo: string
+    comentario: "Disponível sexta-feira (fim 2)"
+    pii: nenhum
+    nulo: true
+  - nome: saab1
+    tipo: string
+    comentario: "Disponível sábado (início 1)"
+    pii: nenhum
+    nulo: true
+  - nome: sabi1
+    tipo: string
+    comentario: "Disponível sábado (fim 1)"
+    pii: nenhum
+    nulo: true
+  - nome: saab2
+    tipo: string
+    comentario: "Disponível sábado (início 2)"
+    pii: nenhum
+    nulo: true
+  - nome: sabi2
+    tipo: string
+    comentario: "Disponível sábado (fim 2)"
+    pii: nenhum
+    nulo: true
+  - nome: soab1
+    tipo: string
+    comentario: "Disponível domingo (início 1)"
+    pii: nenhum
+    nulo: true
+  - nome: sobi1
+    tipo: string
+    comentario: "Disponível domingo (fim 1)"
+    pii: nenhum
+    nulo: true
+  - nome: soab2
+    tipo: string
+    comentario: "Disponível domingo (início 2)"
+    pii: nenhum
+    nulo: true
+  - nome: sobi2
+    tipo: string
+    comentario: "Disponível domingo (fim 2)"
+    pii: nenhum
+    nulo: true
+  - nome: pakn1
+    tipo: string
+    comentario: "Atributo 6"
+    pii: nenhum
+    nulo: true
+  - nome: pakn2
+    tipo: string
+    comentario: "Atributo 7"
+    pii: nenhum
+    nulo: true
+  - nome: pakn3
+    tipo: string
+    comentario: "Atributo 8"
+    pii: nenhum
+    nulo: true
+  - nome: pakn4
+    tipo: string
+    comentario: "Atributo 9"
+    pii: nenhum
+    nulo: true
+  - nome: pakn5
+    tipo: string
+    comentario: "Atributo 10"
+    pii: nenhum
+    nulo: true
+  - nome: sortl
+    tipo: string
+    comentario: "Termo de pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: famst
+    tipo: string
+    comentario: "Estado civil"
+    pii: sensivel
+    nulo: true
+  - nome: spnam
+    tipo: string
+    comentario: "Apelido"
+    pii: direto
+    nulo: true
+  - nome: titel_ap
+    tipo: string
+    comentario: "Título/função"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: duefl
+    tipo: string
+    comentario: "Status de transferência de dados para próxima versão"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Número do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: loevm
+    tipo: string
+    comentario: "Indicador central de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: kzherk
+    tipo: string
+    comentario: "Indicador de origem"
+    pii: nenhum
+    nulo: true
+  - nome: adrnp_2
+    tipo: string
+    comentario: "Número de endereço (secundário)"
+    pii: nenhum
+    nulo: true
+  - nome: prsnr
+    tipo: string
+    comentario: "Número de pessoa"
+    pii: nenhum
+    nulo: true
+  - nome: cvp_xblck_k
+    tipo: string
+    comentario: "Indicador de finalidade de negócio concluída (flag)"
+    pii: nenhum
+    nulo: true

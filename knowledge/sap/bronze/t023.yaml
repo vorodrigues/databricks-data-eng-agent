@@ -1,0 +1,82 @@
+tabela: t023
+camada: bronze
+comentario: "Grupos de materiais"
+ingestao: cdc
+fonte: sap.t023
+chave_primaria: [mandt, matkl]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matkl
+    tipo: string
+    comentario: "Grupo de materiais"
+    pii: nenhum
+    nulo: false
+  - nome: spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: lref3
+    tipo: string
+    comentario: "Referência logística"
+    pii: nenhum
+    nulo: true
+  - nome: wwgda
+    tipo: string
+    comentario: "Material de referência do grupo de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: wwgpa
+    tipo: string
+    comentario: "Material do grupo de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: abtnr
+    tipo: string
+    comentario: "Número do departamento"
+    pii: nenhum
+    nulo: true
+  - nome: begru
+    tipo: string
+    comentario: "Grupo de autorização"
+    pii: nenhum
+    nulo: true
+  - nome: gewei
+    tipo: string
+    comentario: "Unidade de peso padrão"
+    pii: nenhum
+    nulo: true
+  - nome: j_1bnbm
+    tipo: string
+    comentario: "Código NCM (Nomenclatura Comum do Mercosul)"
+    pii: nenhum
+    nulo: true
+  - nome: bklas
+    tipo: string
+    comentario: "Classe de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: ekwsl
+    tipo: string
+    comentario: "Chave de valor de compra"
+    pii: nenhum
+    nulo: true
+  - nome: anlkl
+    tipo: string
+    comentario: "Classe de ativo"
+    pii: nenhum
+    nulo: true
+  - nome: def_schdsc
+    tipo: string
+    comentario: "Cenário padrão"
+    pii: nenhum
+    nulo: true
+  - nome: price_group
+    tipo: string
+    comentario: "Grupo de nível de preço"
+    pii: nenhum
+    nulo: true

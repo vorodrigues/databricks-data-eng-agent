@@ -1,0 +1,27 @@
+tabela: t095t
+camada: bronze
+comentario: "Nomes dos determinantes de conta do ativo imobilizado (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t095t
+chave_primaria: [mandt, spras, ktogr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: ktogr
+    tipo: string
+    comentario: "Determinante de conta do ativo"
+    pii: nenhum
+    nulo: false
+  - nome: ktgrtx
+    tipo: string
+    comentario: "Descricao do determinante de conta"
+    pii: nenhum
+    nulo: true

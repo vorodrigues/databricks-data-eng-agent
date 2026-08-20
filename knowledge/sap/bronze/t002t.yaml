@@ -1,0 +1,22 @@
+tabela: t002t
+camada: bronze
+comentario: "Textos das chaves de idioma do SAP (independente de mandante)"
+ingestao: cdc
+fonte: sap.t002t
+chave_primaria: [spras, sprsl]
+colunas:
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma de exibicao"
+    pii: nenhum
+    nulo: false
+  - nome: sprsl
+    tipo: string
+    comentario: "Chave de idioma descrito"
+    pii: nenhum
+    nulo: false
+  - nome: sptxt
+    tipo: string
+    comentario: "Nome do idioma"
+    pii: nenhum
+    nulo: true

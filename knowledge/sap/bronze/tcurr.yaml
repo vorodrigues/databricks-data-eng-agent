@@ -1,0 +1,47 @@
+tabela: tcurr
+camada: bronze
+comentario: "Taxas de câmbio (TCURR)"
+ingestao: cdc
+fonte: sap.tcurr
+chave_primaria: [mandt, kurst, fcurr, tcurr, gdatu]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: false
+  - nome: fcurr
+    tipo: string
+    comentario: "Moeda de origem"
+    pii: nenhum
+    nulo: false
+  - nome: tcurr
+    tipo: string
+    comentario: "Moeda de destino"
+    pii: nenhum
+    nulo: false
+  - nome: gdatu
+    tipo: date
+    comentario: "Válido a partir de (data)"
+    pii: nenhum
+    nulo: false
+  - nome: ukurs
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: ffact
+    tipo: decimal(23,2)
+    comentario: "Fator de conversão (moeda de origem)"
+    pii: nenhum
+    nulo: true
+  - nome: tfact
+    tipo: decimal(23,2)
+    comentario: "Fator de conversão (moeda de destino)"
+    pii: nenhum
+    nulo: true

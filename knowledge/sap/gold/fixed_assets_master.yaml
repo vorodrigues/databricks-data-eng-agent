@@ -1,0 +1,788 @@
+tabela: fixed_assets_master
+camada: gold
+comentario: "Consolida dados mestre de ativos imobilizados do SAP a partir de ANLA, ANLH e ANKT, combinando detalhes do ativo, número principal e descrições da classe para relatórios de ciclo de vida e propriedade."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.anla, silver.anlh, silver.ankt, silver.anlb, silver.t093b, silver.t093t, silver.t090nat, silver.t093c, silver.anlz, silver.t095t, silver.t098t]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: asset_number_anln1
+    tipo: string
+    comentario: "Número principal do ativo imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: asset_subnumber_anln2
+    tipo: string
+    comentario: "Subnúmero do ativo imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: last_sno_assigned_luntn
+    tipo: int
+    comentario: "Último subnúmero atribuído"
+    pii: nenhum
+    nulo: true
+  - nome: last_line_item_no__lanep
+    tipo: int
+    comentario: "Último número de item de linha"
+    pii: nenhum
+    nulo: true
+  - nome: change_type_of_asset_main_number_anupd
+    tipo: string
+    comentario: "Tipo de alteração do número principal do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: first_sub_no_assignd_funtn
+    tipo: int
+    comentario: "Primeiro subnúmero atribuído"
+    pii: nenhum
+    nulo: true
+  - nome: asset_main_no_text_anlhtxt
+    tipo: string
+    comentario: "Texto do número principal do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: asset_class_anlkl
+    tipo: string
+    comentario: "Classe do ativo imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: short_text_txk20
+    tipo: string
+    comentario: "Texto curto da classe do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: description_txk50
+    tipo: string
+    comentario: "Descrição da classe do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: asset_class_description_txt50
+    tipo: string
+    comentario: "Descrição da classe do ativo (50 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: asset_class_description_txa50
+    tipo: string
+    comentario: "Descrição adicional da classe do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: long_text_exists_of_asset_class_xltxid
+    tipo: string
+    comentario: "Indicador de existência de texto longo da classe do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: tech_asset_gegst
+    tipo: string
+    comentario: "Ativo técnico (referência ao PM)"
+    pii: nenhum
+    nulo: true
+  - nome: asset_type_anlar
+    tipo: string
+    comentario: "Tipo do ativo imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Usuário que criou o registro"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_erdat
+    tipo: date
+    comentario: "Data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: changed_by_aenam
+    tipo: string
+    comentario: "Usuário que alterou o registro por último"
+    pii: nenhum
+    nulo: true
+  - nome: changed_on_aedat
+    tipo: date
+    comentario: "Data da última alteração do registro"
+    pii: nenhum
+    nulo: true
+  - nome: mark_for_deletion_xloev
+    tipo: string
+    comentario: "Indicador de marcação para exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: locked_to_acquis__xspeb
+    tipo: string
+    comentario: "Indicador de bloqueio para aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: screen_layout_rule_felei
+    tipo: string
+    comentario: "Regra de layout de tela do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: acct_determination_ktogr
+    tipo: string
+    comentario: "Chave de determinação de conta contábil"
+    pii: nenhum
+    nulo: true
+  - nome: line_item_settlement_xopvw
+    tipo: string
+    comentario: "Indicador de liquidação por item individual"
+    pii: nenhum
+    nulo: true
+  - nome: asset_category_anltp
+    tipo: string
+    comentario: "Categoria do ativo imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: acquisition_year_zujhr
+    tipo: string
+    comentario: "Ano da primeira aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: first_acquis_period_zuper
+    tipo: string
+    comentario: "Período da primeira aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: first_acquisition_on_zugdt
+    tipo: date
+    comentario: "Data da primeira aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: capitalized_on_aktiv
+    tipo: date
+    comentario: "Data de capitalização do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: last_retmt_on_abgdt
+    tipo: date
+    comentario: "Data da última baixa do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: deactivation_on_deakt
+    tipo: date
+    comentario: "Data de desativação do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: plnd_retirement_on_gplab
+    tipo: date
+    comentario: "Data planejada para baixa do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: ordered_on_bstdt
+    tipo: date
+    comentario: "Data de encomenda do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: evaluation_group_1_ord41
+    tipo: string
+    comentario: "Grupo de avaliação 1"
+    pii: nenhum
+    nulo: true
+  - nome: evaluation_group_2_ord42
+    tipo: string
+    comentario: "Grupo de avaliação 2"
+    pii: nenhum
+    nulo: true
+  - nome: evaluation_group_3_ord43
+    tipo: string
+    comentario: "Grupo de avaliação 3"
+    pii: nenhum
+    nulo: true
+  - nome: evaluation_group_4_ord44
+    tipo: string
+    comentario: "Grupo de avaliação 4"
+    pii: nenhum
+    nulo: true
+  - nome: asset_super_number_anlue
+    tipo: string
+    comentario: "Número superior do ativo (agrupador)"
+    pii: nenhum
+    nulo: true
+  - nome: sort_key_zuawa
+    tipo: string
+    comentario: "Chave de ordenação do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: manage_historically_aneqk
+    tipo: string
+    comentario: "Indicador de gestão histórica do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: compl_ind__aneqs
+    tipo: string
+    comentario: "Indicador de conclusão do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: vendor_lifnr
+    tipo: string
+    comentario: "Código do fornecedor do ativo"
+    pii: indireto
+    nulo: true
+  - nome: country_of_origin_land1
+    tipo: string
+    comentario: "País de origem do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: supplier_name_liefe
+    tipo: string
+    comentario: "Nome do fornecedor do ativo"
+    pii: direto
+    nulo: true
+  - nome: manufacturer_herst
+    tipo: string
+    comentario: "Nome do fabricante"
+    pii: nenhum
+    nulo: true
+  - nome: property_indicator_eigkz
+    tipo: string
+    comentario: "Indicador de propriedade do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: original_asset_aibn1
+    tipo: string
+    comentario: "Número do ativo original (AuC)"
+    pii: nenhum
+    nulo: true
+  - nome: asset_subnumber_auc_aibn2
+    tipo: string
+    comentario: "Subnúmero do ativo em construção (AuC)"
+    pii: nenhum
+    nulo: true
+  - nome: acq_orig_asset_on_aibdt
+    tipo: date
+    comentario: "Data de aquisição do ativo original"
+    pii: nenhum
+    nulo: true
+  - nome: org_acquisition_year_urjhr
+    tipo: string
+    comentario: "Ano de aquisição original"
+    pii: nenhum
+    nulo: true
+  - nome: original_value_urwrt
+    tipo: decimal(23,2)
+    comentario: "Valor original do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: in_house_prod_perc__antei
+    tipo: decimal(23,2)
+    comentario: "Percentual de produção interna"
+    pii: nenhum
+    nulo: true
+  - nome: not_in_use_projn
+    tipo: string
+    comentario: "Não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: investment_order_eaufn
+    tipo: string
+    comentario: "Número da ordem de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_of_measure_meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: type_name_typbz
+    tipo: string
+    comentario: "Nome do tipo de ativo"
+    pii: nenhum
+    nulo: true
+  - nome: investment_reason_izwek
+    tipo: string
+    comentario: "Motivo do investimento"
+    pii: nenhum
+    nulo: true
+  - nome: include_asset_inken
+    tipo: string
+    comentario: "Indicador de inclusão do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: last_inventory_on_ivdat
+    tipo: date
+    comentario: "Data do último inventário físico"
+    pii: nenhum
+    nulo: true
+  - nome: inventory_note_invzu
+    tipo: string
+    comentario: "Nota de inventário"
+    pii: nenhum
+    nulo: true
+  - nome: classification_key_vmgli
+    tipo: string
+    comentario: "Chave de classificação do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: manual_net_worth_val_xvrmw
+    tipo: string
+    comentario: "Indicador de valor patrimonial líquido manual"
+    pii: nenhum
+    nulo: true
+  - nome: man_net_wrth_val__wrtma
+    tipo: decimal(23,2)
+    comentario: "Valor patrimonial líquido definido manualmente"
+    pii: nenhum
+    nulo: true
+  - nome: assessed_val_ehwrt
+    tipo: decimal(23,2)
+    comentario: "Valor avaliado do imóvel"
+    pii: nenhum
+    nulo: true
+  - nome: conveyance_on_aufla
+    tipo: date
+    comentario: "Data de transferência de propriedade"
+    pii: nenhum
+    nulo: true
+  - nome: notice_on_ehwzu
+    tipo: date
+    comentario: "Data do aviso de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: assmt_notice_tax_no__ehwnr
+    tipo: string
+    comentario: "Número fiscal do aviso de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: land_register_of_gruvo
+    tipo: string
+    comentario: "Cartório de registro de imóveis"
+    pii: nenhum
+    nulo: true
+  - nome: entry_by_grein
+    tipo: string
+    comentario: "Lançado por (cartório)"
+    pii: nenhum
+    nulo: true
+  - nome: vol_page_ser_no_grbnd
+    tipo: string
+    comentario: "Volume/página/número de série do registro"
+    pii: nenhum
+    nulo: true
+  - nome: land_register_page_grblt
+    tipo: string
+    comentario: "Página do registro de imóveis"
+    pii: nenhum
+    nulo: true
+  - nome: landregentry_seqno__grlfd
+    tipo: string
+    comentario: "Número de sequência do lançamento no registro"
+    pii: nenhum
+    nulo: true
+  - nome: ld_reg_map_plot_flurk
+    tipo: string
+    comentario: "Mapa e parcela do registro de imóveis"
+    pii: nenhum
+    nulo: true
+  - nome: plot_number_flurn
+    tipo: string
+    comentario: "Número da parcela (registro de imóveis)"
+    pii: nenhum
+    nulo: true
+  - nome: tax_office_fiamt
+    tipo: string
+    comentario: "Repartição fiscal responsável"
+    pii: nenhum
+    nulo: true
+  - nome: municipality_stadt
+    tipo: string
+    comentario: "Município do imóvel"
+    pii: nenhum
+    nulo: true
+  - nome: reason_for_man_val__grund
+    tipo: string
+    comentario: "Motivo da avaliação manual"
+    pii: nenhum
+    nulo: true
+  - nome: area_unit_feins
+    tipo: string
+    comentario: "Unidade de área"
+    pii: nenhum
+    nulo: true
+  - nome: area_grufl
+    tipo: decimal(23,2)
+    comentario: "Área do imóvel"
+    pii: nenhum
+    nulo: true
+  - nome: inventory_number_invnr
+    tipo: string
+    comentario: "Número de inventário do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: trading_partner_vbund
+    tipo: string
+    comentario: "Empresa parceira comercial"
+    pii: nenhum
+    nulo: true
+  - nome: language_key_of_asset_master_spras
+    tipo: string
+    comentario: "Chave de idioma do mestre do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: description_of_asset_master_txt50
+    tipo: string
+    comentario: "Descrição do mestre do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: additional_description_of_asset_master_txaa50
+    tipo: string
+    comentario: "Descrição adicional do mestre do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: long_text_exists_of_asset_master_xltxid
+    tipo: string
+    comentario: "Indicador de texto longo do mestre do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: long_text_exists_xverid
+    tipo: string
+    comentario: "Indicador de texto longo (visão de versão)"
+    pii: nenhum
+    nulo: true
+  - nome: techn_view_long_text_xtchid
+    tipo: string
+    comentario: "Indicador de texto longo (visão técnica)"
+    pii: nenhum
+    nulo: true
+  - nome: longtxt_c_acc_view_xkalid
+    tipo: string
+    comentario: "Indicador de texto longo (visão contábil)"
+    pii: nenhum
+    nulo: true
+  - nome: long_text_exists_xherid
+    tipo: string
+    comentario: "Indicador de texto longo (visão do proprietário)"
+    pii: nenhum
+    nulo: true
+  - nome: long_text_exists_xleaid
+    tipo: string
+    comentario: "Indicador de texto longo (visão de leasing)"
+    pii: nenhum
+    nulo: true
+  - nome: leasing_company_leafi
+    tipo: string
+    comentario: "Empresa de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: agreement_date_lvdat
+    tipo: date
+    comentario: "Data do contrato de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: notice_date_lkdat
+    tipo: date
+    comentario: "Data do aviso de encerramento do leasing"
+    pii: nenhum
+    nulo: true
+  - nome: lease_start_date_leabg
+    tipo: date
+    comentario: "Data de início do leasing"
+    pii: nenhum
+    nulo: true
+  - nome: lease_length_lejar
+    tipo: int
+    comentario: "Duração do leasing em anos"
+    pii: nenhum
+    nulo: true
+  - nome: lease_in_periods_leper
+    tipo: int
+    comentario: "Duração do leasing em períodos"
+    pii: nenhum
+    nulo: true
+  - nome: payment_cycle_lryth
+    tipo: string
+    comentario: "Ciclo de pagamento do leasing"
+    pii: nenhum
+    nulo: true
+  - nome: lease_payment_legeb
+    tipo: decimal(23,2)
+    comentario: "Valor da parcela de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: base_value_as_new_lbasw
+    tipo: decimal(23,2)
+    comentario: "Valor base como novo"
+    pii: nenhum
+    nulo: true
+  - nome: purchase_price_lkauf
+    tipo: decimal(23,2)
+    comentario: "Preço de compra do bem em leasing"
+    pii: nenhum
+    nulo: true
+  - nome: monthly_int_rate_lmzin
+    tipo: decimal(23,2)
+    comentario: "Taxa de juros mensal do leasing"
+    pii: nenhum
+    nulo: true
+  - nome: annual_interest_rate_lzins
+    tipo: decimal(23,2)
+    comentario: "Taxa de juros anual do leasing"
+    pii: nenhum
+    nulo: true
+  - nome: last_posting_date_ltzbw
+    tipo: date
+    comentario: "Data do último lançamento de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: posted_payments_lkuza
+    tipo: int
+    comentario: "Número de parcelas de leasing lançadas"
+    pii: nenhum
+    nulo: true
+  - nome: interest_posted_lkuzi
+    tipo: decimal(23,2)
+    comentario: "Juros de leasing lançados"
+    pii: nenhum
+    nulo: true
+  - nome: long_term_liability_llavb
+    tipo: decimal(23,2)
+    comentario: "Passivo de longo prazo do leasing"
+    pii: nenhum
+    nulo: true
+  - nome: no_lease_payments_leanz
+    tipo: int
+    comentario: "Número total de parcelas de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: agreement_number_lvtnr
+    tipo: string
+    comentario: "Número do contrato de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: supplementary_text_letxt
+    tipo: string
+    comentario: "Texto complementar do leasing"
+    pii: nenhum
+    nulo: true
+  - nome: capitalize_fixed_asset_xaktiv
+    tipo: string
+    comentario: "Indicador de capitalização do ativo imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: change_type_of_asset_master_anupd
+    tipo: string
+    comentario: "Tipo de alteração do mestre do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: last_document_number_lblnr
+    tipo: string
+    comentario: "Número do último documento lançado"
+    pii: nenhum
+    nulo: true
+  - nome: maintain_date_view0_xv0dt
+    tipo: date
+    comentario: "Data de manutenção da visão 0"
+    pii: nenhum
+    nulo: true
+  - nome: view0_changed_by_xv0nm
+    tipo: string
+    comentario: "Usuário que alterou a visão 0"
+    pii: nenhum
+    nulo: true
+  - nome: maintain_date_v1_xv1dt
+    tipo: date
+    comentario: "Data de manutenção da visão 1"
+    pii: nenhum
+    nulo: true
+  - nome: v1_changed_by_xv1nm
+    tipo: string
+    comentario: "Usuário que alterou a visão 1"
+    pii: nenhum
+    nulo: true
+  - nome: maintain_date_v2_xv2dt
+    tipo: date
+    comentario: "Data de manutenção da visão 2"
+    pii: nenhum
+    nulo: true
+  - nome: view2_changed_by_xv2nm
+    tipo: string
+    comentario: "Usuário que alterou a visão 2"
+    pii: nenhum
+    nulo: true
+  - nome: maintain_date_v3_xv3dt
+    tipo: date
+    comentario: "Data de manutenção da visão 3"
+    pii: nenhum
+    nulo: true
+  - nome: view3_changed_by_xv3nm
+    tipo: string
+    comentario: "Usuário que alterou a visão 3"
+    pii: nenhum
+    nulo: true
+  - nome: maintain_date_view4_xv4dt
+    tipo: date
+    comentario: "Data de manutenção da visão 4"
+    pii: nenhum
+    nulo: true
+  - nome: view4_changed_by_xv4nm
+    tipo: string
+    comentario: "Usuário que alterou a visão 4"
+    pii: nenhum
+    nulo: true
+  - nome: maintain_date_v5_xv5dt
+    tipo: date
+    comentario: "Data de manutenção da visão 5"
+    pii: nenhum
+    nulo: true
+  - nome: view5_changed_by_xv5nm
+    tipo: string
+    comentario: "Usuário que alterou a visão 5"
+    pii: nenhum
+    nulo: true
+  - nome: maintain_date_v6_xv6dt
+    tipo: date
+    comentario: "Data de manutenção da visão 6"
+    pii: nenhum
+    nulo: true
+  - nome: view6_changed_by_xv6nm
+    tipo: string
+    comentario: "Usuário que alterou a visão 6"
+    pii: nenhum
+    nulo: true
+  - nome: connection_to_sap_real_estate_managment_aimmo
+    tipo: string
+    comentario: "Conexão com gestão imobiliária SAP RE"
+    pii: nenhum
+    nulo: true
+  - nome: object_number_objnr
+    tipo: string
+    comentario: "Número do objeto CO"
+    pii: nenhum
+    nulo: true
+  - nome: type_leart
+    tipo: string
+    comentario: "Tipo de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: advance_payments_lvors
+    tipo: decimal(23,2)
+    comentario: "Pagamentos antecipados de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: evaluation_group_5_gdlgrp
+    tipo: string
+    comentario: "Grupo de avaliação 5"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_posnr
+    tipo: string
+    comentario: "Elemento WBS associado ao ativo"
+    pii: nenhum
+    nulo: true
+  - nome: do_not_take_memo_value_into_account_xerwrt
+    tipo: string
+    comentario: "Indicador de não considerar valor residual contábil"
+    pii: nenhum
+    nulo: true
+  - nome: purchased_used_xafabch
+    tipo: string
+    comentario: "Indicador de ativo adquirido usado"
+    pii: nenhum
+    nulo: true
+  - nome: group_asset_xanlgr
+    tipo: string
+    comentario: "Indicador de ativo de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: description_mcoa1
+    tipo: string
+    comentario: "Descrição do plano de contas do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: investment_measure_xinvm
+    tipo: string
+    comentario: "Indicador de medida de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: serial_number_sernr
+    tipo: string
+    comentario: "Número de série do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: envir_investment_umwkz
+    tipo: string
+    comentario: "Indicador de investimento ambiental"
+    pii: nenhum
+    nulo: true
+  - nome: last_reval_on_lrvdat
+    tipo: date
+    comentario: "Data da última reavaliação"
+    pii: nenhum
+    nulo: true
+  - nome: change_asset_master_record_from_equipmen_act_change_pm
+    tipo: string
+    comentario: "Alteração do mestre do ativo a partir do equipamento PM"
+    pii: nenhum
+    nulo: true
+  - nome: time_dependent_parameters_exist_has_tddp
+    tipo: string
+    comentario: "Indicador de existência de parâmetros dependentes de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: reorganization_date_last_reorg_date
+    tipo: date
+    comentario: "Data da última reorganização do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: internal_code
+    tipo: string
+    comentario: "Código interno do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: approval_document_number_approval_number
+    tipo: string
+    comentario: "Número do documento de aprovação"
+    pii: nenhum
+    nulo: true
+  - nome: approval_version
+    tipo: string
+    comentario: "Versão de aprovação do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: investment_asset_number_bogus_anln1
+    tipo: string
+    comentario: "Número do ativo de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: asset_version
+    tipo: string
+    comentario: "Versão do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: account_determination_description_ktgrtx
+    tipo: string
+    comentario: "Descrição da determinação de conta contábil"
+    pii: nenhum
+    nulo: true
+  - nome: reason_for_manual_valuation_description_grdtx
+    tipo: string
+    comentario: "Descrição do motivo da avaliação manual"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da última atualização na fonte de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

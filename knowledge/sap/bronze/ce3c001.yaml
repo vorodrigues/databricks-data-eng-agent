@@ -1,0 +1,327 @@
+tabela: ce3c001
+camada: bronze
+comentario: "Dados reais de rentabilidade por segmento (CO-PA) - objeto de rentabilidade C001 (CE3C001)"
+ingestao: cdc
+fonte: sap.ce3c001
+chave_primaria: [mandt, paobjnr, gjahr, vrgar, versi, perbl, paledger]  # baixa confiança: pasubnr pode ser parte da PK em algumas versões do esquema CO-PA
+colunas:
+  - nome: absmg001
+    tipo: decimal(23,2)
+    comentario: "Quantidade de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: ausfr001
+    tipo: decimal(23,2)
+    comentario: "Frete de saída"
+    pii: nenhum
+    nulo: true
+  - nome: erlos001
+    tipo: decimal(23,2)
+    comentario: "Receita de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: gjahr
+    tipo: string
+    comentario: "Exercício fiscal (gjahr)"
+    pii: nenhum
+    nulo: false
+  - nome: hrkft
+    tipo: string
+    comentario: "Origem do lançamento CO-PA (hrkft)"
+    pii: nenhum
+    nulo: true
+  - nome: kwboni001
+    tipo: decimal(23,2)
+    comentario: "Bonificações"
+    pii: nenhum
+    nulo: true
+  - nome: kwfrgr001
+    tipo: decimal(23,2)
+    comentario: "Frete"
+    pii: nenhum
+    nulo: true
+  - nome: kwgohd001
+    tipo: decimal(23,2)
+    comentario: "Custos administrativos"
+    pii: nenhum
+    nulo: true
+  - nome: kwinsr001
+    tipo: decimal(23,2)
+    comentario: "Seguros"
+    pii: nenhum
+    nulo: true
+  - nome: kwkdrb001
+    tipo: decimal(23,2)
+    comentario: "Desconto de cliente"
+    pii: nenhum
+    nulo: true
+  - nome: kwmarb001
+    tipo: decimal(23,2)
+    comentario: "Desconto de material"
+    pii: nenhum
+    nulo: true
+  - nome: kwmkad001
+    tipo: decimal(23,2)
+    comentario: "Custos de publicidade"
+    pii: nenhum
+    nulo: true
+  - nome: kwmkpr001
+    tipo: decimal(23,2)
+    comentario: "Custos de promoção"
+    pii: nenhum
+    nulo: true
+  - nome: kwsgek001
+    tipo: decimal(23,2)
+    comentario: "Outros custos indiretos"
+    pii: nenhum
+    nulo: true
+  - nome: kwskto001
+    tipo: decimal(23,2)
+    comentario: "Desconto de caixa"
+    pii: nenhum
+    nulo: true
+  - nome: kwvkpv001
+    tipo: decimal(23,2)
+    comentario: "Comissão de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: kwwtva001
+    tipo: decimal(23,2)
+    comentario: "Custos variáveis de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mraba001
+    tipo: decimal(23,2)
+    comentario: "Desconto por quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: paledger
+    tipo: string
+    comentario: "Tipo de moeda / ledger CO-PA (paledger)"
+    pii: nenhum
+    nulo: false
+  - nome: paobjnr
+    tipo: string
+    comentario: "Número do segmento de rentabilidade (paobjnr)"
+    pii: nenhum
+    nulo: false
+  - nome: papaobjnr
+    tipo: string
+    comentario: "Segmento de rentabilidade do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: papasubnr
+    tipo: string
+    comentario: "Subnúmero do segmento de rentabilidade do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: pasubnr
+    tipo: string
+    comentario: "Subnúmero do segmento de rentabilidade"
+    pii: nenhum
+    nulo: true
+  - nome: perbl
+    tipo: string
+    comentario: "Período/exercício fiscal (perbl)"
+    pii: nenhum
+    nulo: false
+  - nome: plikz
+    tipo: string
+    comentario: "Indicador plan/real (plikz)"
+    pii: nenhum
+    nulo: true
+  - nome: rabat001
+    tipo: decimal(23,2)
+    comentario: "Outros descontos"
+    pii: nenhum
+    nulo: true
+  - nome: rec_waers
+    tipo: string
+    comentario: "Moeda do registro"
+    pii: nenhum
+    nulo: true
+  - nome: timestmp
+    tipo: timestamp
+    comentario: "Data/hora de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: updat
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Usuário que realizou a última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: versi
+    tipo: string
+    comentario: "Versão CO-PA (versi)"
+    pii: nenhum
+    nulo: false
+  - nome: vrgar
+    tipo: string
+    comentario: "Tipo de registro CO-PA (vrgar)"
+    pii: nenhum
+    nulo: false
+  - nome: vrprs001
+    tipo: decimal(23,2)
+    comentario: "Valor do estoque (custo dos produtos vendidos)"
+    pii: nenhum
+    nulo: true
+  - nome: vtrgk001
+    tipo: decimal(23,2)
+    comentario: "Overhead de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vv910001
+    tipo: decimal(23,2)
+    comentario: "Receita por despesas/viagens"
+    pii: nenhum
+    nulo: true
+  - nome: vv950001
+    tipo: decimal(23,2)
+    comentario: "Despesas de viagem"
+    pii: nenhum
+    nulo: true
+  - nome: vv970001
+    tipo: decimal(23,2)
+    comentario: "Custos de terceiros"
+    pii: nenhum
+    nulo: true
+  - nome: vvfgs001
+    tipo: decimal(23,2)
+    comentario: "Brindes / mercadorias gratuitas"
+    pii: nenhum
+    nulo: true
+  - nome: vvipv001
+    tipo: decimal(23,2)
+    comentario: "Variância de preço de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: vviqv001
+    tipo: decimal(23,2)
+    comentario: "Variância de quantidade de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: vvlcf001
+    tipo: decimal(23,2)
+    comentario: "Custos de mão de obra fixos"
+    pii: nenhum
+    nulo: true
+  - nome: vvlcv001
+    tipo: decimal(23,2)
+    comentario: "Custos de mão de obra variáveis"
+    pii: nenhum
+    nulo: true
+  - nome: vvlsv001
+    tipo: decimal(23,2)
+    comentario: "Variância de tamanho de lote"
+    pii: nenhum
+    nulo: true
+  - nome: vvmat001
+    tipo: decimal(23,2)
+    comentario: "Custos de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: vvmcf001
+    tipo: decimal(23,2)
+    comentario: "Custos de fabricação fixos"
+    pii: nenhum
+    nulo: true
+  - nome: vvmcv001
+    tipo: decimal(23,2)
+    comentario: "Custos de fabricação variáveis"
+    pii: nenhum
+    nulo: true
+  - nome: vvmdi001
+    tipo: decimal(23,2)
+    comentario: "Diferença de inventário"
+    pii: nenhum
+    nulo: true
+  - nome: vvmep001
+    tipo: decimal(23,2)
+    comentario: "Preço externo do material"
+    pii: nenhum
+    nulo: true
+  - nome: vvmpv001
+    tipo: decimal(23,2)
+    comentario: "Variância de preço misto"
+    pii: nenhum
+    nulo: true
+  - nome: vvmsk001
+    tipo: decimal(23,2)
+    comentario: "Custos de marketing"
+    pii: nenhum
+    nulo: true
+  - nome: vvn10001
+    tipo: decimal(23,2)
+    comentario: "Receita não operacional"
+    pii: nenhum
+    nulo: true
+  - nome: vvn20001
+    tipo: decimal(23,2)
+    comentario: "Despesa não operacional"
+    pii: nenhum
+    nulo: true
+  - nome: vvn30001
+    tipo: decimal(23,2)
+    comentario: "Impostos"
+    pii: nenhum
+    nulo: true
+  - nome: vvocf001
+    tipo: decimal(23,2)
+    comentario: "Custos indiretos fixos"
+    pii: nenhum
+    nulo: true
+  - nome: vvocv001
+    tipo: decimal(23,2)
+    comentario: "Custos indiretos variáveis"
+    pii: nenhum
+    nulo: true
+  - nome: vvopv001
+    tipo: decimal(23,2)
+    comentario: "Variância de preço de saída"
+    pii: nenhum
+    nulo: true
+  - nome: vvrdc001
+    tipo: decimal(23,2)
+    comentario: "Pesquisa e desenvolvimento (P&D)"
+    pii: nenhum
+    nulo: true
+  - nome: vvrem001
+    tipo: decimal(23,2)
+    comentario: "Variância de entrada remanescente"
+    pii: nenhum
+    nulo: true
+  - nome: vvres001
+    tipo: decimal(23,2)
+    comentario: "Variância de uso de recursos"
+    pii: nenhum
+    nulo: true
+  - nome: vvrva001
+    tipo: decimal(23,2)
+    comentario: "Variância remanescente"
+    pii: nenhum
+    nulo: true
+  - nome: vvscr001
+    tipo: decimal(23,2)
+    comentario: "Sucata (scrap)"
+    pii: nenhum
+    nulo: true
+  - nome: vvy01001
+    tipo: decimal(23,2)
+    comentario: "Custos de material CO-bypass"
+    pii: nenhum
+    nulo: true
+  - nome: vwgk001
+    tipo: decimal(23,2)
+    comentario: "Overhead administrativo"
+    pii: nenhum
+    nulo: true

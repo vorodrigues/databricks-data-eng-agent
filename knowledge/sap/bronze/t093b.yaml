@@ -1,0 +1,117 @@
+tabela: t093b
+camada: bronze
+comentario: "Parâmetros de empresa para área de depreciação"
+ingestao: cdc
+fonte: sap.t093b
+chave_primaria: [mandt, bukrs, afabe]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: false
+  - nome: afabe
+    tipo: string
+    comentario: "Área de depreciação"
+    pii: nenhum
+    nulo: false
+  - nome: waers
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: runden
+    tipo: string
+    comentario: "Número de casas para arredondamento do valor líquido contábil"
+    pii: nenhum
+    nulo: true
+  - nome: erwert
+    tipo: decimal(23,2)
+    comentario: "Valor residual mínimo (valor de memória)"
+    pii: nenhum
+    nulo: true
+  - nome: gwgwrt
+    tipo: decimal(23,2)
+    comentario: "Valor máximo para bem de baixo custo (para lançamento)"
+    pii: nenhum
+    nulo: true
+  - nome: umrwrt
+    tipo: decimal(23,2)
+    comentario: "Valor líquido contábil para alteração de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: gwgbst
+    tipo: decimal(23,2)
+    comentario: "Valor máximo para bem de baixo custo (para pedido de compra)"
+    pii: nenhum
+    nulo: true
+  - nome: filler
+    tipo: string
+    comentario: "Indicador de cálculo de depreciação em meios períodos"
+    pii: nenhum
+    nulo: true
+  - nome: rndahk
+    tipo: string
+    comentario: "Número de casas para arredondamento do valor de reposição"
+    pii: nenhum
+    nulo: true
+  - nome: abgja
+    tipo: string
+    comentario: "Exercício fiscal encerrado"
+    pii: nenhum
+    nulo: true
+  - nome: afrhy
+    tipo: string
+    comentario: "Ciclo de lançamento de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: xanzum
+    tipo: string
+    comentario: "Capitalizar AuC sem adiantamento (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: versn_011
+    tipo: string
+    comentario: "Versão de demonstrações financeiras"
+    pii: nenhum
+    nulo: true
+  - nome: x445r
+    tipo: string
+    comentario: "Distribuir depreciação por semanas (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: xakpl
+    tipo: string
+    comentario: "Gerenciar ativos em grupo (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: basrnd
+    tipo: string
+    comentario: "Base de arredondamento"
+    pii: nenhum
+    nulo: true
+  - nome: metrnd
+    tipo: string
+    comentario: "Método de arredondamento"
+    pii: nenhum
+    nulo: true
+  - nome: periv
+    tipo: string
+    comentario: "Variante de exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: toleranz
+    tipo: decimal(23,2)
+    comentario: "Valor de tolerância no cálculo de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: kzrbwb_afabe
+    tipo: string
+    comentario: "Área lança valor líquido contábil no baixo de ativo (indicador)"
+    pii: nenhum
+    nulo: true

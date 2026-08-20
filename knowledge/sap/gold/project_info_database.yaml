@@ -1,0 +1,258 @@
+tabela: project_info_database
+camada: gold
+comentario: "Expõe valores reais, orçados, comprometidos e planejados por período e exercício fiscal para projetos SAP e elementos EAP da Base de Dados de Informações de Projeto (RPSCO)."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.proj, silver.prps, silver.prte, silver.prhi, silver.rpsco]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: object_number_objnr
+    tipo: string
+    comentario: "Número do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: ledger_lednr
+    tipo: string
+    comentario: "Razão contábil"
+    pii: nenhum
+    nulo: true
+  - nome: value_type_wrttp
+    tipo: string
+    comentario: "Tipo de valor"
+    pii: nenhum
+    nulo: true
+  - nome: object_indicator_trgkz
+    tipo: string
+    comentario: "Indicador do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_year_gjahr
+    tipo: string
+    comentario: "Exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: value_category_acpos
+    tipo: string
+    comentario: "Categoria de valor"
+    pii: nenhum
+    nulo: true
+  - nome: budget_type_vorga
+    tipo: string
+    comentario: "Tipo de orçamento"
+    pii: nenhum
+    nulo: true
+  - nome: version_versn
+    tipo: string
+    comentario: "Versão"
+    pii: nenhum
+    nulo: true
+  - nome: category_abkat
+    tipo: string
+    comentario: "Categoria"
+    pii: nenhum
+    nulo: true
+  - nome: fund_geber
+    tipo: string
+    comentario: "Fundo"
+    pii: nenhum
+    nulo: true
+  - nome: transaction_currency_twaer
+    tipo: string
+    comentario: "Moeda da transação"
+    pii: nenhum
+    nulo: true
+  - nome: period_block_perbl
+    tipo: string
+    comentario: "Bloco de períodos"
+    pii: nenhum
+    nulo: true
+  - nome: debit_type_beltp
+    tipo: string
+    comentario: "Tipo de débito"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp00
+    tipo: decimal(23,2)
+    comentario: "Valor do período 00"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp01
+    tipo: decimal(23,2)
+    comentario: "Valor do período 01"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp02
+    tipo: decimal(23,2)
+    comentario: "Valor do período 02"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp03
+    tipo: decimal(23,2)
+    comentario: "Valor do período 03"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp04
+    tipo: decimal(23,2)
+    comentario: "Valor do período 04"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp05
+    tipo: decimal(23,2)
+    comentario: "Valor do período 05"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp06
+    tipo: decimal(23,2)
+    comentario: "Valor do período 06"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp07
+    tipo: decimal(23,2)
+    comentario: "Valor do período 07"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp08
+    tipo: decimal(23,2)
+    comentario: "Valor do período 08"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp09
+    tipo: decimal(23,2)
+    comentario: "Valor do período 09"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp10
+    tipo: decimal(23,2)
+    comentario: "Valor do período 10"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp11
+    tipo: decimal(23,2)
+    comentario: "Valor do período 11"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp12
+    tipo: decimal(23,2)
+    comentario: "Valor do período 12"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp13
+    tipo: decimal(23,2)
+    comentario: "Valor do período 13"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp14
+    tipo: decimal(23,2)
+    comentario: "Valor do período 14"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp15
+    tipo: decimal(23,2)
+    comentario: "Valor do período 15"
+    pii: nenhum
+    nulo: true
+  - nome: period_value_wlp16
+    tipo: decimal(23,2)
+    comentario: "Valor do período 16"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp00
+    tipo: decimal(23,2)
+    comentario: "Valor anual 00"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp01
+    tipo: decimal(23,2)
+    comentario: "Valor anual 01"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp02
+    tipo: decimal(23,2)
+    comentario: "Valor anual 02"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp03
+    tipo: decimal(23,2)
+    comentario: "Valor anual 03"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp04
+    tipo: decimal(23,2)
+    comentario: "Valor anual 04"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp05
+    tipo: decimal(23,2)
+    comentario: "Valor anual 05"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp06
+    tipo: decimal(23,2)
+    comentario: "Valor anual 06"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp07
+    tipo: decimal(23,2)
+    comentario: "Valor anual 07"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp08
+    tipo: decimal(23,2)
+    comentario: "Valor anual 08"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp09
+    tipo: decimal(23,2)
+    comentario: "Valor anual 09"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp10
+    tipo: decimal(23,2)
+    comentario: "Valor anual 10"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp11
+    tipo: decimal(23,2)
+    comentario: "Valor anual 11"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp12
+    tipo: decimal(23,2)
+    comentario: "Valor anual 12"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp13
+    tipo: decimal(23,2)
+    comentario: "Valor anual 13"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp14
+    tipo: decimal(23,2)
+    comentario: "Valor anual 14"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp15
+    tipo: decimal(23,2)
+    comentario: "Valor anual 15"
+    pii: nenhum
+    nulo: true
+  - nome: annual_value_wtp16
+    tipo: decimal(23,2)
+    comentario: "Valor anual 16"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora da última atualização no sistema de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora do carregamento no BigQuery"
+    pii: nenhum
+    nulo: true

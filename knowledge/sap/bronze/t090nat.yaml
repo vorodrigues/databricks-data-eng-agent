@@ -1,0 +1,32 @@
+tabela: t090nat
+camada: bronze
+comentario: "Textos de chaves de depreciacao do ativo imobilizado (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t090nat
+chave_primaria: [mandt, spras, afapl, afasl]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: afapl
+    tipo: string
+    comentario: "Plano de depreciacao (chart of depreciation)"
+    pii: nenhum
+    nulo: false
+  - nome: afasl
+    tipo: string
+    comentario: "Chave de depreciacao"
+    pii: nenhum
+    nulo: false
+  - nome: afatxt
+    tipo: string
+    comentario: "Descricao da chave de depreciacao"
+    pii: nenhum
+    nulo: true

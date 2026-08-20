@@ -1,0 +1,57 @@
+tabela: setleaf
+camada: bronze
+comentario: "Valores em conjuntos (folhas)"
+ingestao: cdc
+fonte: sap.setleaf
+chave_primaria: [mandt, setclass, subclass, setname, lineid]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: setclass
+    tipo: string
+    comentario: "Classe do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: subclass
+    tipo: string
+    comentario: "Unidade organizacional (subclasse)"
+    pii: nenhum
+    nulo: false
+  - nome: setname
+    tipo: string
+    comentario: "Nome do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: lineid
+    tipo: string
+    comentario: "Linha do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: valsign
+    tipo: string
+    comentario: "Sinal de seleção (INCL/EXCL)"
+    pii: nenhum
+    nulo: true
+  - nome: valoption
+    tipo: string
+    comentario: "Opção de seleção"
+    pii: nenhum
+    nulo: true
+  - nome: valfrom
+    tipo: string
+    comentario: "Valor inicial do intervalo"
+    pii: nenhum
+    nulo: true
+  - nome: valto
+    tipo: string
+    comentario: "Valor final do intervalo"
+    pii: nenhum
+    nulo: true
+  - nome: seqnr
+    tipo: string
+    comentario: "Número sequencial da linha do conjunto"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,67 @@
+tabela: t024e
+camada: bronze
+comentario: "Organizações de compras"
+ingestao: cdc
+fonte: sap.t024e
+chave_primaria: [mandt, ekorg]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: ekorg
+    tipo: string
+    comentario: "Organização de compras"
+    pii: nenhum
+    nulo: false
+  - nome: ekotx
+    tipo: string
+    comentario: "Descrição da organização de compras"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: txadr
+    tipo: string
+    comentario: "Nome do texto do remetente"
+    pii: nenhum
+    nulo: true
+  - nome: txkop
+    tipo: string
+    comentario: "Texto do cabeçalho da carta"
+    pii: nenhum
+    nulo: true
+  - nome: txfus
+    tipo: string
+    comentario: "Nome do texto do rodapé"
+    pii: nenhum
+    nulo: true
+  - nome: txgru
+    tipo: string
+    comentario: "Texto de encerramento da carta"
+    pii: nenhum
+    nulo: true
+  - nome: kalse
+    tipo: string
+    comentario: "Grupo de esquema de preços da organização de compras"
+    pii: nenhum
+    nulo: true
+  - nome: mkals
+    tipo: string
+    comentario: "Esquema de preço de mercado"
+    pii: nenhum
+    nulo: true
+  - nome: bpeff
+    tipo: string
+    comentario: "Preço efetivo (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs_ntr
+    tipo: string
+    comentario: "Código de empresa para liquidação de subsidiária"
+    pii: nenhum
+    nulo: true

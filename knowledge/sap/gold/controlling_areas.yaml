@@ -1,0 +1,333 @@
+tabela: controlling_areas
+camada: gold
+comentario: "Dados mestre das áreas de controladoria configuradas no SAP a partir de TKA01, incluindo hierarquias padrão, configurações de moeda, plano de contas e variante de exercício, para suporte a alocações de overhead corporativo."
+entidade: obt
+ingestao: custom
+fontes: [silver.tka01, silver.tka02, silver.cskb, silver.csku]
+chave_primaria: [client_mandt, controlling_area_kokrs]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: controlling_area_kokrs
+    tipo: string
+    comentario: "Área de controladoria (kokrs)"
+    pii: nenhum
+    nulo: false
+  - nome: controlling_area_name_bezei
+    tipo: string
+    comentario: "Nome da área de controladoria"
+    pii: nenhum
+    nulo: true
+  - nome: currency_code_waers
+    tipo: string
+    comentario: "Moeda da área de controladoria (waers)"
+    pii: nenhum
+    nulo: true
+  - nome: chart_of_accounts_ktopl
+    tipo: string
+    comentario: "Plano de contas (ktopl)"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_year_variant_lmona
+    tipo: string
+    comentario: "Variante de exercício fiscal (lmona)"
+    pii: nenhum
+    nulo: true
+  - nome: cocd_to_co_area_kokfi
+    tipo: string
+    comentario: "Código de alocação (área CO = empresa ou contabilidade de custos entre empresas)"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_logsystem
+    tipo: string
+    comentario: "Sistema lógico (logsystem)"
+    pii: nenhum
+    nulo: true
+  - nome: distribution_method_alemt
+    tipo: string
+    comentario: "Método de distribuição de centros de lucro via ALE"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_master_data_md_logsystem
+    tipo: string
+    comentario: "Sistema lógico para manutenção de dados mestre"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_std_hierarchy_khinr
+    tipo: string
+    comentario: "Hierarquia padrão de centros de custo (khinr)"
+    pii: nenhum
+    nulo: true
+  - nome: convert_revenue_komp1
+    tipo: string
+    comentario: "Indicador: receita deve ser convertida"
+    pii: nenhum
+    nulo: true
+  - nome: productive_indicator_komp0
+    tipo: string
+    comentario: "Indicador produtivo da área de controladoria"
+    pii: nenhum
+    nulo: true
+  - nome: reserve_komp2
+    tipo: string
+    comentario: "Indicador reservado (não utilizado atualmente)"
+    pii: nenhum
+    nulo: true
+  - nome: operating_concern_erkrs
+    tipo: string
+    comentario: "Objeto de rentabilidade (erkrs)"
+    pii: nenhum
+    nulo: true
+  - nome: dummy_profit_center_dprct
+    tipo: string
+    comentario: "Centro de lucro fictício (dprct)"
+    pii: nenhum
+    nulo: true
+  - nome: hierarchy_area_phinr
+    tipo: string
+    comentario: "Área de hierarquia de centros de lucro (phinr)"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_ledger_pcldg
+    tipo: string
+    comentario: "Ledger de centros de lucro (pcldg)"
+    pii: nenhum
+    nulo: true
+  - nome: elim_intern_bus_vol_pcbel
+    tipo: string
+    comentario: "Indicador: eliminação de volume de negócio interno na contabilidade de centros de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: diff_ccode_currency_xwbuk
+    tipo: string
+    comentario: "Indicador: moeda diferente da empresa é permitida"
+    pii: nenhum
+    nulo: true
+  - nome: hierarchy_area_bphinr
+    tipo: string
+    comentario: "Área de hierarquia padrão (bphinr)"
+    pii: nenhum
+    nulo: true
+  - nome: bus_proc_ale_active_xbpale
+    tipo: string
+    comentario: "Indicador: ALE ativo para processo de negócio (custos de processo)"
+    pii: nenhum
+    nulo: true
+  - nome: celem_vend_dwnpaymnt_kstar_fin
+    tipo: string
+    comentario: "Elemento de custo para adiantamentos a fornecedores sem referência a pedido"
+    pii: nenhum
+    nulo: true
+  - nome: revtyp_cus_downpaymt_kstar_fid
+    tipo: string
+    comentario: "Tipo de receita para adiantamentos de clientes sem referência a ordem de venda"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_local_currency_pcacur
+    tipo: string
+    comentario: "Moeda local para contabilidade de centros de lucro (pcacur)"
+    pii: nenhum
+    nulo: true
+  - nome: currency_type_for_profit_ctr_acctg_pcacurtp
+    tipo: string
+    comentario: "Tipo de moeda para relatório da contabilidade de centros de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: transaction_currency_pcatrcur
+    tipo: string
+    comentario: "Indicador: armazenar moeda de transação em EC-PCA"
+    pii: nenhum
+    nulo: true
+  - nome: currency_type_ctyp
+    tipo: string
+    comentario: "Tipo de moeda da área de controladoria (ctyp)"
+    pii: nenhum
+    nulo: true
+  - nome: recon_ledger_active_rclac
+    tipo: string
+    comentario: "Indicador: ledger de reconciliação ativo"
+    pii: nenhum
+    nulo: true
+  - nome: document_type_blart
+    tipo: string
+    comentario: "Tipo de documento para lançamentos de reconciliação"
+    pii: nenhum
+    nulo: true
+  - nome: fm_area_fikrs
+    tipo: string
+    comentario: "Área de gestão financeira (fikrs)"
+    pii: nenhum
+    nulo: true
+  - nome: acct_determination_for_primary_celms_rcl_primac
+    tipo: string
+    comentario: "Determinação de conta para elementos de custo primários no ledger de reconciliação"
+    pii: nenhum
+    nulo: true
+  - nome: ale_distribution_method_pca_alemt
+    tipo: string
+    comentario: "Método de distribuição de centros de lucro via ALE (PCA)"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_view_pca_valu
+    tipo: string
+    comentario: "Visão de avaliação (PCA)"
+    pii: nenhum
+    nulo: true
+  - nome: currency_and_valuation_profile_cvprof
+    tipo: string
+    comentario: "Perfil de moeda e avaliação (cvprof)"
+    pii: nenhum
+    nulo: true
+  - nome: cv_profile_active_cvact
+    tipo: string
+    comentario: "Indicador: perfil de moeda e avaliação ativo"
+    pii: nenhum
+    nulo: true
+  - nome: person_responsible_vname
+    tipo: string
+    comentario: "Responsável pela área de controladoria (vname)"
+    pii: nenhum
+    nulo: true
+  - nome: account_control_transfer_valuation_diff_pca_acc_diff
+    tipo: string
+    comentario: "Controle de conta para transferência de diferenças de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: valview_for_calcbase_tp_valohb
+    tipo: string
+    comentario: "Visão de avaliação para base de cálculo"
+    pii: nenhum
+    nulo: true
+  - nome: default_profit_ctr_defprctr
+    tipo: string
+    comentario: "Centro de lucro padrão para processos não atribuídos"
+    pii: nenhum
+    nulo: true
+  - nome: hide_entry_in_input_help_f_obsolete
+    tipo: string
+    comentario: "Indicador: ocultar entrada na ajuda de pesquisa (obsoleto)"
+    pii: nenhum
+    nulo: true
+  - nome: leading_fin_stmnt_version_leading_fsv
+    tipo: string
+    comentario: "Versão líder de demonstrações financeiras"
+    pii: nenhum
+    nulo: true
+  - nome: do_not_use_std_hier_auth_use_no_std
+    tipo: string
+    comentario: "Indicador: não usar hierarquia padrão para autorizações (USE)"
+    pii: nenhum
+    nulo: true
+  - nome: hierarchy_1_auth_use_add1
+    tipo: string
+    comentario: "Indicador: usar 1ª hierarquia alternativa para autorizações (USE)"
+    pii: nenhum
+    nulo: true
+  - nome: hierarchy_2_auth_use_add2
+    tipo: string
+    comentario: "Indicador: usar 2ª hierarquia alternativa para autorizações (USE)"
+    pii: nenhum
+    nulo: true
+  - nome: do_not_use_std_hier_auth_ke_no_std
+    tipo: string
+    comentario: "Indicador: não usar hierarquia padrão para autorizações (KE)"
+    pii: nenhum
+    nulo: true
+  - nome: hierarchy_1_auth_ke_use_add1
+    tipo: string
+    comentario: "Indicador: usar 1ª hierarquia alternativa para autorizações (KE)"
+    pii: nenhum
+    nulo: true
+  - nome: hierarchy_2_auth_ke_use_add2
+    tipo: string
+    comentario: "Indicador: usar 2ª hierarquia alternativa para autorizações (KE)"
+    pii: nenhum
+    nulo: true
+  - nome: alternative_use_of_object_currency_objcur_use
+    tipo: string
+    comentario: "Uso alternativo de moeda de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_type_objcur_kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio para moeda de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: transltn_date_type_objcur_curdt
+    tipo: string
+    comentario: "Tipo de data de tradução para moeda de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: source_currency_type_objcur_srcct
+    tipo: string
+    comentario: "Tipo de moeda de origem para moeda de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: equal_currency_preferred_objcur_srcal
+    tipo: string
+    comentario: "Indicador: moeda igual preferida para moeda de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true
+  - nome: cvprof
+    tipo: string
+    comentario: "Perfil de moeda e avaliação (campo duplicado)"
+    pii: nenhum
+    nulo: true
+  - nome: cvact
+    tipo: string
+    comentario: "Indicador: perfil de moeda e avaliação ativo (campo duplicado)"
+    pii: nenhum
+    nulo: true
+  - nome: vname
+    tipo: string
+    comentario: "Responsável pela área de controladoria (campo duplicado)"
+    pii: nenhum
+    nulo: true
+  - nome: leading_fsv
+    tipo: string
+    comentario: "Versão líder de demonstrações financeiras (campo duplicado)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_use_no_std
+    tipo: string
+    comentario: "Indicador: não usar hierarquia padrão para autorizações (campo duplicado)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_use_add1
+    tipo: string
+    comentario: "Indicador: usar 1ª hierarquia alternativa para autorizações (campo duplicado)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_use_add2
+    tipo: string
+    comentario: "Indicador: usar 2ª hierarquia alternativa para autorizações (campo duplicado)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_ke_no_std
+    tipo: string
+    comentario: "Indicador: não usar hierarquia padrão KE (campo duplicado)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_ke_use_add1
+    tipo: string
+    comentario: "Indicador: usar 1ª hierarquia alternativa KE (campo duplicado)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_ke_use_add2
+    tipo: string
+    comentario: "Indicador: usar 2ª hierarquia alternativa KE (campo duplicado)"
+    pii: nenhum
+    nulo: true

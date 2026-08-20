@@ -1,0 +1,208 @@
+tabela: rebates_settlement_calendar
+camada: gold
+comentario: "Registra as datas do calendario de liquidacao e referencias de documentos de liquidacao do WB2_D_SETTL_CAL para monitorar o status de pagamento e as frequencias de avaliacao."
+entidade: obt
+ingestao: custom
+fontes: [silver.wb2_d_bvdetail, silver.wb2_d_settl_cal, silver.wcocoh, silver.wcocoi]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: condition_contract_num
+    tipo: string
+    comentario: "Numero do contrato de condicao"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_date_settl_date
+    tipo: date
+    comentario: "Data de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_date_sequential_id_settl_date_seq_id
+    tipo: string
+    comentario: "ID sequencial da data de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_date_type_settl_date_type
+    tipo: string
+    comentario: "Tipo da data de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_calendar_guid
+    tipo: string
+    comentario: "GUID do calendario de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: reference_settlement_date_ref_settl_date
+    tipo: date
+    comentario: "Data de liquidacao de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: ref_settlement_date_sequential_id_ref_settl_date_seq_id
+    tipo: string
+    comentario: "ID sequencial da data de liquidacao de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_execution_date_settl_exec_date
+    tipo: date
+    comentario: "Data de execucao da liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: business_volume_date_from_busvol_date_from
+    tipo: date
+    comentario: "Data inicial do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: business_volume_date_to_busvol_date_to
+    tipo: date
+    comentario: "Data final do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_date_usage_settl_date_usage
+    tipo: string
+    comentario: "Uso da data de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: fixed_value_date_valdt
+    tipo: date
+    comentario: "Data de valor fixa"
+    pii: nenhum
+    nulo: true
+  - nome: external_calendar_guid_ext_guid
+    tipo: string
+    comentario: "GUID do calendario externo"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_settlement_date_settl_date
+    tipo: string
+    comentario: "Ano da data de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_settlement_date_settl_date
+    tipo: string
+    comentario: "Trimestre da data de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_settlement_date_settl_date
+    tipo: string
+    comentario: "Mes da data de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_settlement_date_settl_date
+    tipo: string
+    comentario: "Semana da data de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_reference_settlement_date_ref_settl_date
+    tipo: string
+    comentario: "Ano da data de liquidacao de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_reference_settlement_date_ref_settl_date
+    tipo: string
+    comentario: "Trimestre da data de liquidacao de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_reference_settlement_date_ref_settl_date
+    tipo: string
+    comentario: "Mes da data de liquidacao de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_reference_settlement_date_ref_settl_date
+    tipo: string
+    comentario: "Semana da data de liquidacao de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_settlement_execution_date_settl_exec_date
+    tipo: string
+    comentario: "Ano da data de execucao da liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_settlement_execution_date_settl_exec_date
+    tipo: string
+    comentario: "Trimestre da data de execucao da liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_settlement_execution_date_settl_exec_date
+    tipo: string
+    comentario: "Mes da data de execucao da liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_settlement_execution_date_settl_exec_date
+    tipo: string
+    comentario: "Semana da data de execucao da liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_business_volume_date_from_busvol_date_from
+    tipo: string
+    comentario: "Ano da data inicial do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_business_volume_date_from_busvol_date_from
+    tipo: string
+    comentario: "Trimestre da data inicial do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_business_volume_date_from_busvol_date_from
+    tipo: string
+    comentario: "Mes da data inicial do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_business_volume_date_from_busvol_date_from
+    tipo: string
+    comentario: "Semana da data inicial do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_business_volume_date_to_busvol_date_to
+    tipo: string
+    comentario: "Ano da data final do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_business_volume_date_to_busvol_date_to
+    tipo: string
+    comentario: "Trimestre da data final do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_business_volume_date_to_busvol_date_to
+    tipo: string
+    comentario: "Mes da data final do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_business_volume_date_to_busvol_date_to
+    tipo: string
+    comentario: "Semana da data final do volume de negocios"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_fixed_value_date_valdt
+    tipo: string
+    comentario: "Ano da data de valor fixa"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_fixed_value_date_valdt
+    tipo: string
+    comentario: "Trimestre da data de valor fixa"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_fixed_value_date_valdt
+    tipo: string
+    comentario: "Mes da data de valor fixa"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_fixed_value_date_valdt
+    tipo: string
+    comentario: "Semana da data de valor fixa"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

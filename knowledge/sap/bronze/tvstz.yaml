@@ -1,0 +1,97 @@
+tabela: tvstz
+camada: bronze
+comentario: "Unidade organizacional: pontos de expedição por planta"
+ingestao: cdc
+fonte: sap.tvstz
+chave_primaria: [mandt, vsbed, ladgr, werks]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: vsbed
+    tipo: string
+    comentario: "Condições de expedição"
+    pii: nenhum
+    nulo: false
+  - nome: ladgr
+    tipo: string
+    comentario: "Grupo de carga"
+    pii: nenhum
+    nulo: false
+  - nome: werks
+    tipo: string
+    comentario: "Planta"
+    pii: nenhum
+    nulo: false
+  - nome: lgort
+    tipo: string
+    comentario: "Depósito"
+    pii: nenhum
+    nulo: true
+  - nome: vstel
+    tipo: string
+    comentario: "Ponto de expedição proposto"
+    pii: nenhum
+    nulo: true
+  - nome: vste1
+    tipo: string
+    comentario: "Ponto de expedição manual 1"
+    pii: nenhum
+    nulo: true
+  - nome: vste2
+    tipo: string
+    comentario: "Ponto de expedição manual 2"
+    pii: nenhum
+    nulo: true
+  - nome: vste3
+    tipo: string
+    comentario: "Ponto de expedição manual 3"
+    pii: nenhum
+    nulo: true
+  - nome: vste4
+    tipo: string
+    comentario: "Ponto de expedição manual 4"
+    pii: nenhum
+    nulo: true
+  - nome: vste5
+    tipo: string
+    comentario: "Ponto de expedição manual 5"
+    pii: nenhum
+    nulo: true
+  - nome: vste6
+    tipo: string
+    comentario: "Ponto de expedição manual 6"
+    pii: nenhum
+    nulo: true
+  - nome: vste7
+    tipo: string
+    comentario: "Ponto de expedição manual 7"
+    pii: nenhum
+    nulo: true
+  - nome: vste8
+    tipo: string
+    comentario: "Ponto de expedição manual 8"
+    pii: nenhum
+    nulo: true
+  - nome: vste9
+    tipo: string
+    comentario: "Ponto de expedição manual 9"
+    pii: nenhum
+    nulo: true
+  - nome: vste10
+    tipo: string
+    comentario: "Ponto de expedição manual 10"
+    pii: nenhum
+    nulo: true
+  - nome: vste11
+    tipo: string
+    comentario: "Ponto de expedição manual 11"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,38 @@
+tabela: divisions
+camada: gold
+comentario: "Dados mestre de divisoes do SAP TSPA, enriquecidos com descricoes multilinguagem de TSPAT."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.tvko, silver.tvkot, silver.tvtw, silver.tvtwt, silver.tspa, silver.tspat]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, division_spart, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: division_spart
+    tipo: string
+    comentario: "Divisao (SPART)"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma (SPRAS)"
+    pii: nenhum
+    nulo: false
+  - nome: name_vtext
+    tipo: string
+    comentario: "Nome da divisao"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

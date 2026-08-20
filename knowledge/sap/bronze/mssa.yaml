@@ -1,0 +1,92 @@
+tabela: mssa
+camada: bronze
+comentario: "Total de pedidos de cliente em carteira"
+ingestao: cdc
+fonte: sap.mssa
+chave_primaria: [mandt, matnr, werks, sobkz, vbeln, posnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: werks
+    tipo: string
+    comentario: "Planta"
+    pii: nenhum
+    nulo: false
+  - nome: sobkz
+    tipo: string
+    comentario: "Tipo de estoque especial"
+    pii: nenhum
+    nulo: false
+  - nome: vbeln
+    tipo: string
+    comentario: "Documento de venda"
+    pii: nenhum
+    nulo: false
+  - nome: posnr
+    tipo: string
+    comentario: "Item do documento de venda (SD)"
+    pii: nenhum
+    nulo: false
+  - nome: lfgja
+    tipo: string
+    comentario: "Ano do período atual"
+    pii: nenhum
+    nulo: true
+  - nome: lfmon
+    tipo: string
+    comentario: "Período atual"
+    pii: nenhum
+    nulo: true
+  - nome: salab
+    tipo: decimal(23,2)
+    comentario: "Estoque livre (irrestrito)"
+    pii: nenhum
+    nulo: true
+  - nome: sains
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: saspe
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: saein
+    tipo: decimal(23,2)
+    comentario: "Estoque de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: ersda
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: kzbws
+    tipo: string
+    comentario: "Avaliação de estoque especial (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: satra
+    tipo: decimal(23,2)
+    comentario: "Estoque em trânsito"
+    pii: nenhum
+    nulo: true
+  - nome: sarue
+    tipo: decimal(23,2)
+    comentario: "Estoque em retorno"
+    pii: nenhum
+    nulo: true
+  - nome: sabwe
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado de entrada avaliado (pedido de venda)"
+    pii: nenhum
+    nulo: true

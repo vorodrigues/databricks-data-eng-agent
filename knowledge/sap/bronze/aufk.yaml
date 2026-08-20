@@ -1,0 +1,562 @@
+tabela: aufk
+camada: bronze
+comentario: "Dados mestre de ordens internas"
+ingestao: cdc
+fonte: sap.aufk
+chave_primaria: [mandt, aufnr]
+colunas:
+  - nome: /cum/auest
+    tipo: string
+    comentario: "Custos estimados automaticamente (CUM)"
+    pii: nenhum
+    nulo: true
+  - nome: /cum/cmnum
+    tipo: string
+    comentario: "Numero da medida de construcao (CUM)"
+    pii: nenhum
+    nulo: true
+  - nome: /cum/desnum
+    tipo: string
+    comentario: "Numero do projeto de design (CUM)"
+    pii: nenhum
+    nulo: true
+  - nome: /cum/indcu
+    tipo: string
+    comentario: "Indicador de ordem CUM"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: aufnr
+    tipo: string
+    comentario: "Numero da ordem"
+    pii: nenhum
+    nulo: false
+  - nome: auart
+    tipo: string
+    comentario: "Tipo de ordem"
+    pii: nenhum
+    nulo: true
+  - nome: autyp
+    tipo: string
+    comentario: "Categoria da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: refnr
+    tipo: string
+    comentario: "Ordem de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por (usuario SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Ultima alteracao por (usuario SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data da ultima alteracao da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: ktext
+    tipo: string
+    comentario: "Descricao breve da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: ltext
+    tipo: string
+    comentario: "Indicador de texto longo existente"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Empresa (company code)"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro (plant)"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Area de negocio"
+    pii: nenhum
+    nulo: true
+  - nome: kokrs
+    tipo: string
+    comentario: "Area de controlling"
+    pii: nenhum
+    nulo: true
+  - nome: cckey
+    tipo: string
+    comentario: "Chave do coletor de custos"
+    pii: nenhum
+    nulo: true
+  - nome: kostv
+    tipo: string
+    comentario: "Centro de custo responsavel"
+    pii: nenhum
+    nulo: true
+  - nome: stort
+    tipo: string
+    comentario: "Localizacao/centro"
+    pii: nenhum
+    nulo: true
+  - nome: sowrk
+    tipo: string
+    comentario: "Centro de localizacao"
+    pii: nenhum
+    nulo: true
+  - nome: astkz
+    tipo: string
+    comentario: "Indicador estatistico"
+    pii: nenhum
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: astnr
+    tipo: string
+    comentario: "Status da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: stdat
+    tipo: date
+    comentario: "Data de alteracao de status"
+    pii: nenhum
+    nulo: true
+  - nome: estnr
+    tipo: string
+    comentario: "Status atingido"
+    pii: nenhum
+    nulo: true
+  - nome: phas0
+    tipo: string
+    comentario: "Fase criada"
+    pii: nenhum
+    nulo: true
+  - nome: phas1
+    tipo: string
+    comentario: "Fase liberada"
+    pii: nenhum
+    nulo: true
+  - nome: phas2
+    tipo: string
+    comentario: "Fase concluida tecnicamente"
+    pii: nenhum
+    nulo: true
+  - nome: phas3
+    tipo: string
+    comentario: "Fase fechada"
+    pii: nenhum
+    nulo: true
+  - nome: pdat1
+    tipo: date
+    comentario: "Data de liberacao planejada"
+    pii: nenhum
+    nulo: true
+  - nome: pdat2
+    tipo: date
+    comentario: "Data de conclusao planejada"
+    pii: nenhum
+    nulo: true
+  - nome: pdat3
+    tipo: date
+    comentario: "Data de fechamento planejada"
+    pii: nenhum
+    nulo: true
+  - nome: idat1
+    tipo: date
+    comentario: "Data real de liberacao"
+    pii: nenhum
+    nulo: true
+  - nome: idat2
+    tipo: date
+    comentario: "Data real de conclusao tecnica"
+    pii: nenhum
+    nulo: true
+  - nome: idat3
+    tipo: date
+    comentario: "Data real de fechamento"
+    pii: nenhum
+    nulo: true
+  - nome: objid
+    tipo: string
+    comentario: "ID do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: vogrp
+    tipo: string
+    comentario: "Grupo de transacoes nao permitidas"
+    pii: nenhum
+    nulo: true
+  - nome: loekz
+    tipo: string
+    comentario: "Indicador de exclusao"
+    pii: nenhum
+    nulo: true
+  - nome: plgkz
+    tipo: string
+    comentario: "Indicador de itens de plano"
+    pii: nenhum
+    nulo: true
+  - nome: kvewe
+    tipo: string
+    comentario: "Utilizacao do esquema de condicoes"
+    pii: nenhum
+    nulo: true
+  - nome: kappl
+    tipo: string
+    comentario: "Aplicacao do esquema de condicoes"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm
+    tipo: string
+    comentario: "Esquema de custeio"
+    pii: nenhum
+    nulo: true
+  - nome: zschl
+    tipo: string
+    comentario: "Chave de overhead"
+    pii: nenhum
+    nulo: true
+  - nome: abkrs
+    tipo: string
+    comentario: "Grupo de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: kstar
+    tipo: string
+    comentario: "Elemento de custo de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo de liquidacao"
+    pii: nenhum
+    nulo: true
+  - nome: saknr
+    tipo: string
+    comentario: "Conta do razao geral"
+    pii: nenhum
+    nulo: true
+  - nome: setnm
+    tipo: string
+    comentario: "Conjunto de alocacao"
+    pii: nenhum
+    nulo: true
+  - nome: cycle
+    tipo: string
+    comentario: "Lancamentos reais do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: sdate
+    tipo: date
+    comentario: "Data de inicio"
+    pii: nenhum
+    nulo: true
+  - nome: seqnr
+    tipo: string
+    comentario: "Numero de sequencia"
+    pii: nenhum
+    nulo: true
+  - nome: user0
+    tipo: string
+    comentario: "Solicitante (campo configuravel pelo usuario)"
+    pii: indireto
+    nulo: true
+  - nome: user1
+    tipo: string
+    comentario: "Telefone (campo configuravel pelo usuario)"
+    pii: direto
+    nulo: true
+  - nome: user2
+    tipo: string
+    comentario: "Responsavel (campo configuravel pelo usuario)"
+    pii: direto
+    nulo: true
+  - nome: user3
+    tipo: string
+    comentario: "Telefone (campo configuravel pelo usuario)"
+    pii: direto
+    nulo: true
+  - nome: user4
+    tipo: string
+    comentario: "Custos estimados (campo configuravel pelo usuario)"
+    pii: nenhum
+    nulo: true
+  - nome: user5
+    tipo: string
+    comentario: "Data de solicitacao (campo configuravel pelo usuario)"
+    pii: nenhum
+    nulo: true
+  - nome: user6
+    tipo: string
+    comentario: "Departamento (campo configuravel pelo usuario)"
+    pii: nenhum
+    nulo: true
+  - nome: user7
+    tipo: string
+    comentario: "Inicio do trabalho (campo configuravel pelo usuario)"
+    pii: nenhum
+    nulo: true
+  - nome: user8
+    tipo: string
+    comentario: "Fim do trabalho (campo configuravel pelo usuario)"
+    pii: nenhum
+    nulo: true
+  - nome: user9
+    tipo: string
+    comentario: "Aprovacao de trabalho (campo configuravel pelo usuario)"
+    pii: nenhum
+    nulo: true
+  - nome: objnr
+    tipo: string
+    comentario: "Numero do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: pspel
+    tipo: string
+    comentario: "Elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: awsls
+    tipo: string
+    comentario: "Chave de variancia"
+    pii: nenhum
+    nulo: true
+  - nome: abgsl
+    tipo: string
+    comentario: "Chave de analise de resultado"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Jurisdicao fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: func_area
+    tipo: string
+    comentario: "Area funcional"
+    pii: nenhum
+    nulo: true
+  - nome: scope
+    tipo: string
+    comentario: "Classe de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: plint
+    tipo: string
+    comentario: "Planejamento integrado"
+    pii: nenhum
+    nulo: true
+  - nome: kdauf
+    tipo: string
+    comentario: "Ordem de vendas vinculada"
+    pii: nenhum
+    nulo: true
+  - nome: kdpos
+    tipo: string
+    comentario: "Item da ordem de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: aufex
+    tipo: string
+    comentario: "Numero de ordem externo"
+    pii: nenhum
+    nulo: true
+  - nome: ivpro
+    tipo: string
+    comentario: "Perfil de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: logsystem
+    tipo: string
+    comentario: "Sistema logico"
+    pii: nenhum
+    nulo: true
+  - nome: flg_mltps
+    tipo: string
+    comentario: "Indicador de multiplos itens"
+    pii: nenhum
+    nulo: true
+  - nome: abukr
+    tipo: string
+    comentario: "Empresa solicitante"
+    pii: nenhum
+    nulo: true
+  - nome: akstl
+    tipo: string
+    comentario: "Centro de custo solicitante"
+    pii: nenhum
+    nulo: true
+  - nome: sizecl
+    tipo: string
+    comentario: "Escala de tamanho do investimento"
+    pii: nenhum
+    nulo: true
+  - nome: izwek
+    tipo: string
+    comentario: "Motivo de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: umwkz
+    tipo: string
+    comentario: "Indicador de investimento ambiental"
+    pii: nenhum
+    nulo: true
+  - nome: kstempf
+    tipo: string
+    comentario: "Receptor de custo"
+    pii: nenhum
+    nulo: true
+  - nome: zschm
+    tipo: string
+    comentario: "Perfil de juros"
+    pii: nenhum
+    nulo: true
+  - nome: pkosa
+    tipo: string
+    comentario: "Coletor de custos (pkosa)"
+    pii: nenhum
+    nulo: true
+  - nome: anfaufnr
+    tipo: string
+    comentario: "Ordem solicitante"
+    pii: nenhum
+    nulo: true
+  - nome: procnr
+    tipo: string
+    comentario: "Numero do processo produtivo"
+    pii: nenhum
+    nulo: true
+  - nome: proty
+    tipo: string
+    comentario: "Categoria do processo"
+    pii: nenhum
+    nulo: true
+  - nome: rsord
+    tipo: string
+    comentario: "Ordem de recondicionamento"
+    pii: nenhum
+    nulo: true
+  - nome: bemot
+    tipo: string
+    comentario: "Indicador de contabilizacao"
+    pii: nenhum
+    nulo: true
+  - nome: adrnra
+    tipo: string
+    comentario: "Numero de endereco"
+    pii: indireto
+    nulo: true
+  - nome: erfzeit
+    tipo: string
+    comentario: "Hora de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: aezeit
+    tipo: string
+    comentario: "Hora da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: cstg_vrnt
+    tipo: string
+    comentario: "Variante de custeio"
+    pii: nenhum
+    nulo: true
+  - nome: costestnr
+    tipo: string
+    comentario: "Numero da estimativa de custo"
+    pii: nenhum
+    nulo: true
+  - nome: veraa_user
+    tipo: string
+    comentario: "Usuario responsavel pela ordem"
+    pii: direto
+    nulo: true
+  - nome: vname
+    tipo: string
+    comentario: "Joint venture"
+    pii: nenhum
+    nulo: true
+  - nome: recid
+    tipo: string
+    comentario: "Indicador de recuperacao (JV)"
+    pii: nenhum
+    nulo: true
+  - nome: etype
+    tipo: string
+    comentario: "Tipo de participacao (equity)"
+    pii: nenhum
+    nulo: true
+  - nome: otype
+    tipo: string
+    comentario: "Tipo de objeto do joint venture"
+    pii: nenhum
+    nulo: true
+  - nome: jv_jibcl
+    tipo: string
+    comentario: "Classe JIB/JIBE"
+    pii: nenhum
+    nulo: true
+  - nome: jv_jibsa
+    tipo: string
+    comentario: "Subclasse A do JIB/JIBE"
+    pii: nenhum
+    nulo: true
+  - nome: jv_oco
+    tipo: string
+    comentario: "Objeto de custo original (JV)"
+    pii: nenhum
+    nulo: true
+  - nome: vaplz
+    tipo: string
+    comentario: "Posto de trabalho principal"
+    pii: nenhum
+    nulo: true
+  - nome: wawrk
+    tipo: string
+    comentario: "Centro do posto de trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: ferc_ind
+    tipo: string
+    comentario: "Indicador regulatorio (FERC)"
+    pii: nenhum
+    nulo: true
+  - nome: claim_control
+    tipo: string
+    comentario: "Indicador de controle de criacao de sinistro"
+    pii: nenhum
+    nulo: true
+  - nome: update_needed
+    tipo: string
+    comentario: "Indicador: sinistro inconsistente com a ordem"
+    pii: nenhum
+    nulo: true
+  - nome: update_control
+    tipo: string
+    comentario: "Gatilho de atualizacao de sinistro"
+    pii: nenhum
+    nulo: true

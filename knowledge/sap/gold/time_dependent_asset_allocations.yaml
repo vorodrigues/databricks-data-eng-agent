@@ -1,0 +1,193 @@
+tabela: time_dependent_asset_allocations
+camada: gold
+comentario: "Rastreia as alocacoes organizacionais com dependencia temporal de ativos fixos (centro de custo, centro de lucro, planta, etc.) a partir da ANLZ do SAP."
+entidade: obt
+ingestao: custom
+fontes: [silver.anla, silver.anlh, silver.ankt, silver.anlb, silver.t093b, silver.t093t, silver.t090nat, silver.t093c, silver.anlz, silver.t095t, silver.t098t]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Codigo da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: asset_number_anln1
+    tipo: string
+    comentario: "Numero principal do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: asset_subnumber_anln2
+    tipo: string
+    comentario: "Sub-numero do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to_bdatu
+    tipo: date
+    comentario: "Valido ate (data final de vigencia)"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_adatu
+    tipo: date
+    comentario: "Valido a partir de (data inicial de vigencia)"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Planta"
+    pii: nenhum
+    nulo: true
+  - nome: business_area_gsber
+    tipo: string
+    comentario: "Area de negocio"
+    pii: nenhum
+    nulo: true
+  - nome: activity_type_lstar
+    tipo: string
+    comentario: "Tipo de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: shift_factor_msfak
+    tipo: string
+    comentario: "Fator de turno (depreciacao)"
+    pii: nenhum
+    nulo: true
+  - nome: asset_shutdown_xstil
+    tipo: string
+    comentario: "Indicador de paralisacao do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: location_stort
+    tipo: string
+    comentario: "Localizacao fisica do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: internal_order_caufn
+    tipo: string
+    comentario: "Ordem interna"
+    pii: nenhum
+    nulo: true
+  - nome: room_raumn
+    tipo: string
+    comentario: "Numero da sala"
+    pii: nenhum
+    nulo: true
+  - nome: maintenance_order_iaufn
+    tipo: string
+    comentario: "Ordem de manutencao"
+    pii: nenhum
+    nulo: true
+  - nome: functional_location_tplnr
+    tipo: string
+    comentario: "Local de instalacao funcional (PM)"
+    pii: nenhum
+    nulo: true
+  - nome: change_type_anupd
+    tipo: string
+    comentario: "Tipo de alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_txjcd
+    tipo: string
+    comentario: "Jurisdicao fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_maint_ipsnr
+    tipo: string
+    comentario: "Elemento WBS para manutencao"
+    pii: nenhum
+    nulo: true
+  - nome: license_plate_number_kfzkz
+    tipo: string
+    comentario: "Placa do veiculo"
+    pii: indireto
+    nulo: true
+  - nome: personnel_number_pernr
+    tipo: string
+    comentario: "Numero de pessoal do responsavel"
+    pii: indireto
+    nulo: true
+  - nome: resp_cost_center_kostlv
+    tipo: string
+    comentario: "Centro de custo responsavel"
+    pii: nenhum
+    nulo: true
+  - nome: funds_center_fistl
+    tipo: string
+    comentario: "Centro de fundo (funds center)"
+    pii: nenhum
+    nulo: true
+  - nome: fund_geber
+    tipo: string
+    comentario: "Fundo"
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_fkber
+    tipo: string
+    comentario: "Area funcional"
+    pii: nenhum
+    nulo: true
+  - nome: grant_grant_nbr
+    tipo: string
+    comentario: "Subvencao (grant)"
+    pii: nenhum
+    nulo: true
+  - nome: fund_geber2
+    tipo: string
+    comentario: "Fundo 2"
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_fkber2
+    tipo: string
+    comentario: "Area funcional 2"
+    pii: nenhum
+    nulo: true
+  - nome: grant_grant_nbr2
+    tipo: string
+    comentario: "Subvencao 2 (grant)"
+    pii: nenhum
+    nulo: true
+  - nome: funds_center_fistl2
+    tipo: string
+    comentario: "Centro de fundo 2 (funds center)"
+    pii: nenhum
+    nulo: true
+  - nome: real_estate_key_imkey
+    tipo: string
+    comentario: "Chave de imovel (real estate)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_costs_ps_psp_pnr2
+    tipo: string
+    comentario: "Elemento WBS para custos"
+    pii: nenhum
+    nulo: true
+  - nome: budget_period_budget_pd
+    tipo: string
+    comentario: "Periodo de orcamento"
+    pii: nenhum
+    nulo: true
+  - nome: budget_period_budget_pd2
+    tipo: string
+    comentario: "Periodo de orcamento 2"
+    pii: nenhum
+    nulo: true
+  - nome: segment_segment
+    tipo: string
+    comentario: "Segmento contabil"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true

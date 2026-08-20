@@ -1,0 +1,368 @@
+tabela: countries
+camada: gold
+comentario: "Registros mestre de países a partir das tabelas SAP T005 e T005T, com nomes localizados, padrões de formatação, configurações regionais e mapeamentos de códigos internacionais para suporte a análises de comércio internacional."
+entidade: obt
+ingestao: custom
+fontes: [silver.t001, silver.t002, silver.t002t, silver.t005, silver.t005t, silver.t005k, silver.t005s, silver.t005u, silver.tj02t]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: country_key_land1
+    tipo: string
+    comentario: "Chave do país (land1)"
+    pii: nenhum
+    nulo: true
+  - nome: country_name_landx
+    tipo: string
+    comentario: "Nome do país (landx)"
+    pii: nenhum
+    nulo: true
+  - nome: language_spras
+    tipo: string
+    comentario: "Idioma (spras)"
+    pii: nenhum
+    nulo: true
+  - nome: nationality_natio
+    tipo: string
+    comentario: "Nacionalidade (natio)"
+    pii: nenhum
+    nulo: true
+  - nome: country_name_max50_landx50
+    tipo: string
+    comentario: "Nome do país - 50 caracteres (landx50)"
+    pii: nenhum
+    nulo: true
+  - nome: nationality_max50_natio50
+    tipo: string
+    comentario: "Nacionalidade - 50 caracteres (natio50)"
+    pii: nenhum
+    nulo: true
+  - nome: super_region_text_prq_spregt
+    tipo: string
+    comentario: "Texto da super-região"
+    pii: nenhum
+    nulo: true
+  - nome: vehicle_country_key_landk
+    tipo: string
+    comentario: "Chave de país para veículos (landk)"
+    pii: nenhum
+    nulo: true
+  - nome: postal_code_length_lnplz
+    tipo: string
+    comentario: "Comprimento do CEP"
+    pii: nenhum
+    nulo: true
+  - nome: postal_code_check_rule_prplz
+    tipo: string
+    comentario: "Regra de verificação do CEP"
+    pii: nenhum
+    nulo: true
+  - nome: address_routine_addrs
+    tipo: string
+    comentario: "Rotina de layout de endereço (addrs)"
+    pii: nenhum
+    nulo: true
+  - nome: street_postal_code_required_xplzs
+    tipo: string
+    comentario: "Indicador: CEP de rua obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_postal_code_required_xplpf
+    tipo: string
+    comentario: "Indicador: CEP de caixa postal obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: country_language_spras
+    tipo: string
+    comentario: "Idioma do país"
+    pii: nenhum
+    nulo: true
+  - nome: country_version_flag_xland
+    tipo: string
+    comentario: "Indicador: versão do país ativa"
+    pii: nenhum
+    nulo: true
+  - nome: print_country_name_flag_xaddr
+    tipo: string
+    comentario: "Indicador: imprimir nome do país no endereço"
+    pii: nenhum
+    nulo: true
+  - nome: name_format_nmfmt
+    tipo: string
+    comentario: "Formato de nome padrão (nmfmt)"
+    pii: nenhum
+    nulo: true
+  - nome: city_file_check_xregs
+    tipo: string
+    comentario: "Indicador: verificação de arquivo de cidades ativa"
+    pii: nenhum
+    nulo: true
+  - nome: street_specific_postal_code_xplst
+    tipo: string
+    comentario: "Indicador: CEP específico por rua"
+    pii: nenhum
+    nulo: true
+  - nome: country_iso_code_intca
+    tipo: string
+    comentario: "Código ISO do país (2 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: iso_country_code_3char_intca3
+    tipo: string
+    comentario: "Código ISO do país (3 caracteres alfabéticos)"
+    pii: nenhum
+    nulo: true
+  - nome: iso_country_code_num3_intcn3
+    tipo: string
+    comentario: "Código ISO numérico do país (3 dígitos)"
+    pii: nenhum
+    nulo: true
+  - nome: eu_member_xegld
+    tipo: string
+    comentario: "Indicador: membro da União Europeia"
+    pii: nenhum
+    nulo: true
+  - nome: discount_base_net_xskfn
+    tipo: string
+    comentario: "Indicador: base de desconto é o valor líquido"
+    pii: nenhum
+    nulo: true
+  - nome: tax_base_net_xmwsn
+    tipo: string
+    comentario: "Indicador: base de imposto é o valor líquido"
+    pii: nenhum
+    nulo: true
+  - nome: bank_account_length_lnbkn
+    tipo: string
+    comentario: "Comprimento do número de conta bancária"
+    pii: nenhum
+    nulo: true
+  - nome: bank_account_check_rule_prbkn
+    tipo: string
+    comentario: "Regra de verificação do número de conta bancária"
+    pii: nenhum
+    nulo: true
+  - nome: bank_number_length_lnblz
+    tipo: string
+    comentario: "Comprimento do número do banco (agência)"
+    pii: nenhum
+    nulo: true
+  - nome: bank_number_check_rule_prblz
+    tipo: string
+    comentario: "Regra de verificação do número do banco"
+    pii: nenhum
+    nulo: true
+  - nome: post_office_bank_account_length_lnpsk
+    tipo: string
+    comentario: "Comprimento do número de conta de cheque postal"
+    pii: nenhum
+    nulo: true
+  - nome: post_office_bank_check_rule_prpsk
+    tipo: string
+    comentario: "Regra de verificação de cheque postal"
+    pii: nenhum
+    nulo: true
+  - nome: use_bank_check_module_xprbk
+    tipo: string
+    comentario: "Indicador: usar módulo de verificação bancária"
+    pii: nenhum
+    nulo: true
+  - nome: bank_key_bnkey
+    tipo: string
+    comentario: "Tipo de chave bancária (bnkey)"
+    pii: nenhum
+    nulo: true
+  - nome: bank_key_length_lnbks
+    tipo: string
+    comentario: "Comprimento da chave bancária"
+    pii: nenhum
+    nulo: true
+  - nome: bank_key_check_rule_prbks
+    tipo: string
+    comentario: "Regra de verificação da chave bancária"
+    pii: nenhum
+    nulo: true
+  - nome: use_tax_check_module_xprso
+    tipo: string
+    comentario: "Indicador: usar módulo de verificação fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: vat_registration_check_rule_pruin
+    tipo: string
+    comentario: "Regra de verificação do registro IVA"
+    pii: nenhum
+    nulo: true
+  - nome: vat_registration_length_uinln
+    tipo: string
+    comentario: "Comprimento do número de registro IVA"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_1_length_lnst1
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 1"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_1_check_rule_prst1
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 1"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_2_length_lnst2
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 2"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_2_check_rule_prst2
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 2"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_3_length_lnst3
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 3"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_3_check_rule_prst3
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 3"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_4_length_lnst4
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 4"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_4_check_rule_prst4
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 4"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_5_length_lnst5
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 5"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_5_check_rule_prst5
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 5"
+    pii: nenhum
+    nulo: true
+  - nome: duevo_nationality_landd
+    tipo: string
+    comentario: "Nacionalidade DUEVO (landd)"
+    pii: nenhum
+    nulo: true
+  - nome: procedure_pricing_kalsm
+    tipo: string
+    comentario: "Procedimento de precificação (kalsm)"
+    pii: nenhum
+    nulo: true
+  - nome: alternative_country_key_landa
+    tipo: string
+    comentario: "Chave alternativa do país (landa)"
+    pii: nenhum
+    nulo: true
+  - nome: bill_of_exchange_period_wechf
+    tipo: string
+    comentario: "Prazo de pagamento de letra de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: short_name_foreign_trade_lkvrz
+    tipo: string
+    comentario: "Abreviação do país para comércio exterior (lkvrz)"
+    pii: nenhum
+    nulo: true
+  - nome: intrastat_code_intcn
+    tipo: string
+    comentario: "Código Intrastat (intcn)"
+    pii: nenhum
+    nulo: true
+  - nome: decimal_point_format_xdezp
+    tipo: string
+    comentario: "Formato de ponto decimal"
+    pii: nenhum
+    nulo: true
+  - nome: date_format_datfm
+    tipo: string
+    comentario: "Formato de data"
+    pii: nenhum
+    nulo: true
+  - nome: index_based_currency_curin
+    tipo: string
+    comentario: "Moeda baseada em índice (curin)"
+    pii: nenhum
+    nulo: true
+  - nome: hard_currency_curha
+    tipo: string
+    comentario: "Moeda forte (curha)"
+    pii: nenhum
+    nulo: true
+  - nome: country_currency_waers
+    tipo: string
+    comentario: "Moeda do país (waers)"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_type_kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio (kurst)"
+    pii: nenhum
+    nulo: true
+  - nome: chart_of_depreciation_afapl
+    tipo: string
+    comentario: "Plano de depreciação (afapl)"
+    pii: nenhum
+    nulo: true
+  - nome: max_low_value_asset_amount_gwgwrt
+    tipo: decimal(23,2)
+    comentario: "Valor máximo de bem de baixo valor para lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: net_book_value_changeover_umrwrt
+    tipo: decimal(23,2)
+    comentario: "Valor contábil líquido para conversão de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: post_net_book_value_flag_kzrbwb
+    tipo: string
+    comentario: "Indicador: lançar valor contábil líquido"
+    pii: nenhum
+    nulo: true
+  - nome: transfer_down_payments_flag_xanzum
+    tipo: string
+    comentario: "Indicador: transferir adiantamentos sem pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: withholding_tax_concepts_ctnconcept
+    tipo: string
+    comentario: "Conceito de numeração de certificados de retenção na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: taxes_individual_service_level_kzsrv
+    tipo: string
+    comentario: "Indicador: impostos no nível de serviço individual"
+    pii: nenhum
+    nulo: true
+  - nome: display_capital_goods_flag_xxinve
+    tipo: string
+    comentario: "Indicador: exibir bens de capital"
+    pii: nenhum
+    nulo: true
+  - nome: super_region_per_country_sureg
+    tipo: string
+    comentario: "Super-região por país (sureg)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

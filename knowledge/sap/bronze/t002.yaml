@@ -1,0 +1,27 @@
+tabela: t002
+camada: bronze
+comentario: "Chaves de idioma do SAP (componente BC-I18), independente de mandante"
+ingestao: cdc
+fonte: sap.t002
+chave_primaria: [spras]
+colunas:
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: laspez
+    tipo: string
+    comentario: "Especificacoes do idioma"
+    pii: nenhum
+    nulo: true
+  - nome: lahq
+    tipo: string
+    comentario: "Grau de traducao do idioma"
+    pii: nenhum
+    nulo: true
+  - nome: laiso
+    tipo: string
+    comentario: "Codigo ISO 639 do idioma"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,768 @@
+tabela: group_journal_entries
+camada: gold
+comentario: "Registra lançamentos contábeis de consolidação em nível de grupo a partir da tabela ACDOCU do S/4HANA, suportando relatórios de consolidação financeira corporativa."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.acdoca, silver.acdocu, silver.finsc_ledger, silver.finsc_ledger_t, silver.tf200, silver.tf201, silver.fincs_ref_vers_r, silver.tcurx]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_rclnt, ledger_rldnr, dimension_rdimen, fiscal_year_ryear, document_number_docnr, line_item_docln, language_key_langu]
+colunas:
+  - nome: client_rclnt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: ledger_rldnr
+    tipo: string
+    comentario: "Razão contábil"
+    pii: nenhum
+    nulo: false
+  - nome: dimension_rdimen
+    tipo: string
+    comentario: "Dimensão de consolidação"
+    pii: nenhum
+    nulo: false
+  - nome: fiscal_year_ryear
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: document_number_docnr
+    tipo: string
+    comentario: "Número do documento de consolidação"
+    pii: nenhum
+    nulo: false
+  - nome: line_item_docln
+    tipo: string
+    comentario: "Número do item do documento"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_langu
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: record_type_rrcty
+    tipo: string
+    comentario: "Tipo de registro (real, plano etc.)"
+    pii: nenhum
+    nulo: true
+  - nome: version_rvers
+    tipo: string
+    comentario: "Versão de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: version_description_txt
+    tipo: string
+    comentario: "Descrição da versão de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: balance_transaction_currency_rtcur
+    tipo: string
+    comentario: "Moeda da transação de saldo"
+    pii: nenhum
+    nulo: true
+  - nome: local_currency_rhcur
+    tipo: string
+    comentario: "Moeda local da unidade de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: group_currency_rkcur
+    tipo: string
+    comentario: "Moeda do grupo de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_of_measure_runit
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: posting_period_poper
+    tipo: string
+    comentario: "Período de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: period_year_fiscyearper
+    tipo: string
+    comentario: "Período e ano fiscal combinados"
+    pii: nenhum
+    nulo: true
+  - nome: document_category_docct
+    tipo: string
+    comentario: "Categoria do documento de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: company_rcomp
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: consolidation_unit_rbunit
+    tipo: string
+    comentario: "Unidade de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: chart_of_accounts_ritclg
+    tipo: string
+    comentario: "Plano de contas de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: fs_item_ritem
+    tipo: string
+    comentario: "Item de demonstrativo financeiro (FS item)"
+    pii: nenhum
+    nulo: true
+  - nome: partner_unit_rbuptr
+    tipo: string
+    comentario: "Unidade de consolidação parceira"
+    pii: nenhum
+    nulo: true
+  - nome: consolidation_group_rcongr
+    tipo: string
+    comentario: "Grupo de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: original_company_code_robukrs
+    tipo: string
+    comentario: "Código da empresa de origem"
+    pii: nenhum
+    nulo: true
+  - nome: subitem_type_sityp
+    tipo: string
+    comentario: "Tipo de subitem de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: subitem_subit
+    tipo: string
+    comentario: "Subitem de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: posting_level_plevl
+    tipo: string
+    comentario: "Nível de lançamento de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: apportionment_flag_rpflg
+    tipo: string
+    comentario: "Indicador de rateio"
+    pii: nenhum
+    nulo: true
+  - nome: translation_flag_rtflg
+    tipo: string
+    comentario: "Indicador de conversão cambial"
+    pii: nenhum
+    nulo: true
+  - nome: document_type_docty
+    tipo: string
+    comentario: "Tipo de documento de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: acquisition_year_yracq
+    tipo: string
+    comentario: "Ano de aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: acquisition_period_pracq
+    tipo: string
+    comentario: "Período de aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: investee_unit_coicu
+    tipo: string
+    comentario: "Unidade investida"
+    pii: nenhum
+    nulo: true
+  - nome: investor_unit_uppcu
+    tipo: string
+    comentario: "Unidade investidora"
+    pii: nenhum
+    nulo: true
+  - nome: amount_in_balance_transaction_currency_tsl
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda da transação de saldo"
+    pii: nenhum
+    nulo: true
+  - nome: amount_in_local_currency_hsl
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: amount_in_group_currency_ksl
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_msl
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: text_sgtxt
+    tipo: string
+    comentario: "Texto do item do documento"
+    pii: nenhum
+    nulo: true
+  - nome: automatic_posting_autom
+    tipo: string
+    comentario: "Indicador de lançamento automático"
+    pii: nenhum
+    nulo: true
+  - nome: transaction_activ
+    tipo: string
+    comentario: "Transação de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: cross_company_document_number_bvorg
+    tipo: string
+    comentario: "Número do documento intercompanhia"
+    pii: nenhum
+    nulo: true
+  - nome: posting_date_budat
+    tipo: date
+    comentario: "Data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: value_date_wsdat
+    tipo: date
+    comentario: "Data de valor"
+    pii: nenhum
+    nulo: true
+  - nome: reference_document_number_refdocnr
+    tipo: string
+    comentario: "Número do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: reference_fiscal_year_refryear
+    tipo: string
+    comentario: "Ano fiscal do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: reference_line_item_refdocln
+    tipo: string
+    comentario: "Item do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: reference_document_category_refdocct
+    tipo: string
+    comentario: "Categoria do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: reference_transaction_refactiv
+    tipo: string
+    comentario: "Transação de referência"
+    pii: nenhum
+    nulo: true
+  - nome: timestamp_timestamp
+    tipo: timestamp
+    comentario: "Timestamp do documento"
+    pii: nenhum
+    nulo: true
+  - nome: entry_date_cpudt
+    tipo: date
+    comentario: "Data de entrada do documento"
+    pii: nenhum
+    nulo: true
+  - nome: entry_time_cputm
+    tipo: string
+    comentario: "Hora de entrada do documento"
+    pii: nenhum
+    nulo: true
+  - nome: user_name_usnam
+    tipo: string
+    comentario: "Nome do usuário que lançou o documento"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_document_number_rvsdocnr
+    tipo: string
+    comentario: "Número do documento de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: original_document_number_orndocnr
+    tipo: string
+    comentario: "Número do documento original"
+    pii: nenhum
+    nulo: true
+  - nome: document_bundle_number_bunnr
+    tipo: string
+    comentario: "Número do pacote de documentos"
+    pii: nenhum
+    nulo: true
+  - nome: co_activity_coiac
+    tipo: string
+    comentario: "Atividade CO de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: co_activity_number_coinr
+    tipo: string
+    comentario: "Número da atividade CO"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_year_revyear
+    tipo: string
+    comentario: "Ano fiscal do estorno"
+    pii: nenhum
+    nulo: true
+  - nome: reference_procedure_awtyp
+    tipo: string
+    comentario: "Procedimento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: reference_org_unit_aworg
+    tipo: string
+    comentario: "Unidade organizacional de referência"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_logsys
+    tipo: string
+    comentario: "Sistema lógico de origem"
+    pii: nenhum
+    nulo: true
+  - nome: chart_of_accounts_ktopl
+    tipo: string
+    comentario: "Plano de contas local"
+    pii: nenhum
+    nulo: true
+  - nome: account_racct
+    tipo: string
+    comentario: "Número da conta contábil"
+    pii: nenhum
+    nulo: true
+  - nome: reference_xblnr
+    tipo: string
+    comentario: "Número de referência externa"
+    pii: nenhum
+    nulo: true
+  - nome: assignment_zuonr
+    tipo: string
+    comentario: "Campo de atribuição contábil"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_rcntr
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_rfarea
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: business_area_rbusa
+    tipo: string
+    comentario: "Área de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: controlling_area_kokrs
+    tipo: string
+    comentario: "Área de controladoria (CO)"
+    pii: nenhum
+    nulo: true
+  - nome: segment_segment
+    tipo: string
+    comentario: "Segmento de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: sender_cost_center_scntr
+    tipo: string
+    comentario: "Centro de custo remetente"
+    pii: nenhum
+    nulo: true
+  - nome: partner_profit_center_pprctr
+    tipo: string
+    comentario: "Centro de lucro parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: partner_functional_area_sfarea
+    tipo: string
+    comentario: "Área funcional do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: partner_business_area_sbusa
+    tipo: string
+    comentario: "Área de negócios do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: trading_partner_rassc
+    tipo: string
+    comentario: "Empresa parceira comercial"
+    pii: nenhum
+    nulo: true
+  - nome: partner_segment_psegment
+    tipo: string
+    comentario: "Segmento do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: order_aufnr
+    tipo: string
+    comentario: "Número da ordem interna"
+    pii: nenhum
+    nulo: true
+  - nome: customer_kunnr
+    tipo: string
+    comentario: "Código do cliente"
+    pii: indireto
+    nulo: true
+  - nome: vendor_lifnr
+    tipo: string
+    comentario: "Código do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: material_matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: true
+  - nome: material_group_matkl_mm
+    tipo: string
+    comentario: "Grupo de material (MM)"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro (planta)"
+    pii: nenhum
+    nulo: true
+  - nome: transaction_type_rmvct
+    tipo: string
+    comentario: "Tipo de transação de movimentação"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_ps_psp_pnr
+    tipo: string
+    comentario: "Número interno do elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_ps_posid
+    tipo: string
+    comentario: "ID externo do elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: project_definition_ps_pspid
+    tipo: string
+    comentario: "Definição do projeto"
+    pii: nenhum
+    nulo: true
+  - nome: billing_type_fkart
+    tipo: string
+    comentario: "Tipo de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: sales_organization_vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: distribution_channel_vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: division_spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: product_sold_matnr_copa
+    tipo: string
+    comentario: "Produto vendido (CO-PA)"
+    pii: nenhum
+    nulo: true
+  - nome: product_sold_group_matkl
+    tipo: string
+    comentario: "Grupo do produto vendido"
+    pii: nenhum
+    nulo: true
+  - nome: customer_group_kdgrp
+    tipo: string
+    comentario: "Grupo de clientes"
+    pii: nenhum
+    nulo: true
+  - nome: country_land1
+    tipo: string
+    comentario: "País"
+    pii: nenhum
+    nulo: true
+  - nome: industry_brsch
+    tipo: string
+    comentario: "Setor industrial"
+    pii: nenhum
+    nulo: true
+  - nome: sales_district_bzirk
+    tipo: string
+    comentario: "Distrito de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: bill_to_party_kunre
+    tipo: string
+    comentario: "Parceiro de faturamento (destinatário da fatura)"
+    pii: indireto
+    nulo: true
+  - nome: ship_to_party_kunwe
+    tipo: string
+    comentario: "Parceiro de entrega (destinatário da mercadoria)"
+    pii: indireto
+    nulo: true
+  - nome: group_key_konzs
+    tipo: string
+    comentario: "Chave do grupo corporativo"
+    pii: nenhum
+    nulo: true
+  - nome: ad_hoc_item_adhocitem
+    tipo: string
+    comentario: "Item ad hoc de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: ad_hoc_set_adhocset
+    tipo: string
+    comentario: "Conjunto ad hoc de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: ad_hoc_set_item_adhocsetitem
+    tipo: string
+    comentario: "Item do conjunto ad hoc de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: reason_code_rcode
+    tipo: string
+    comentario: "Código de motivo do lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: original_type_orig_type
+    tipo: string
+    comentario: "Tipo de origem do lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: original_reference_orig_ref
+    tipo: string
+    comentario: "Referência original do lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: dummy_dummy_cje_incl_eew_ps
+    tipo: string
+    comentario: "Campo dummy (extensão)"
+    pii: nenhum
+    nulo: true
+  - nome: structure_version_strvs
+    tipo: string
+    comentario: "Versão de estrutura de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: data_entry_version_inpvs
+    tipo: string
+    comentario: "Versão de entrada de dados"
+    pii: nenhum
+    nulo: true
+  - nome: translation_method_version_ctrvs
+    tipo: string
+    comentario: "Versão do método de conversão cambial"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_version_curvs
+    tipo: string
+    comentario: "Versão das taxas de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: ledger_version_ldrvs
+    tipo: string
+    comentario: "Versão do razão contábil"
+    pii: nenhum
+    nulo: true
+  - nome: fix_version_fixvs
+    tipo: string
+    comentario: "Versão fixa"
+    pii: nenhum
+    nulo: true
+  - nome: tax_rate_version_taxvs
+    tipo: string
+    comentario: "Versão da taxa de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: consolidation_of_investments_version_coivs
+    tipo: string
+    comentario: "Versão do método de consolidação de investimentos (C/I)"
+    pii: nenhum
+    nulo: true
+  - nome: invest_version_invvs
+    tipo: string
+    comentario: "Versão de alterações em investimentos"
+    pii: nenhum
+    nulo: true
+  - nome: equity_change_version_equvs
+    tipo: string
+    comentario: "Versão de alterações no patrimônio líquido"
+    pii: nenhum
+    nulo: true
+  - nome: goodwill_version_gwavs
+    tipo: string
+    comentario: "Versão de goodwill"
+    pii: nenhum
+    nulo: true
+  - nome: hidden_reserves_version_hirvs
+    tipo: string
+    comentario: "Versão de reservas ocultas"
+    pii: nenhum
+    nulo: true
+  - nome: hidden_reserves_reversal_version_rhrvs
+    tipo: string
+    comentario: "Versão de estorno de reservas ocultas"
+    pii: nenhum
+    nulo: true
+  - nome: equity_holding_version_assvs
+    tipo: string
+    comentario: "Versão de participações acionárias"
+    pii: nenhum
+    nulo: true
+  - nome: reclassification_version_rclvs
+    tipo: string
+    comentario: "Versão de reclassificação"
+    pii: nenhum
+    nulo: true
+  - nome: ipi_version_ipivs
+    tipo: string
+    comentario: "Versão IPI de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: attribute_version_atrvs
+    tipo: string
+    comentario: "Versão de atributos"
+    pii: nenhum
+    nulo: true
+  - nome: report_rule_version_rrlvs
+    tipo: string
+    comentario: "Versão da regra de relatório"
+    pii: nenhum
+    nulo: true
+  - nome: fs_item_mapping_version_impvs
+    tipo: string
+    comentario: "Versão do mapeamento de itens FS"
+    pii: nenhum
+    nulo: true
+  - nome: fs_item_attribute_version_iatvs
+    tipo: string
+    comentario: "Versão dos atributos de itens FS"
+    pii: nenhum
+    nulo: true
+  - nome: base_version_dbsvs
+    tipo: string
+    comentario: "Versão base de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: carry_forward_version_bcfind
+    tipo: string
+    comentario: "Indicador de versão para transporte de saldo"
+    pii: nenhum
+    nulo: true
+  - nome: copy_version_cpyrd
+    tipo: string
+    comentario: "Indicador de cópia de versão"
+    pii: nenhum
+    nulo: true
+  - nome: copy_consolidation_entries_version_cpyce
+    tipo: string
+    comentario: "Indicador de cópia de lançamentos de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: overwrite_version_ovrrd
+    tipo: string
+    comentario: "Indicador de sobrescrita de versão"
+    pii: nenhum
+    nulo: true
+  - nome: overwrite_consolidation_entries_version_ovrce
+    tipo: string
+    comentario: "Indicador de sobrescrita de lançamentos de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: plan_version_planvers
+    tipo: string
+    comentario: "Versão para dados de plano"
+    pii: nenhum
+    nulo: true
+  - nome: source_category_category_src
+    tipo: string
+    comentario: "Categoria de origem para consolidação de plano"
+    pii: nenhum
+    nulo: true
+  - nome: source_ledger_rldnr_src
+    tipo: string
+    comentario: "Razão de origem para consolidação de plano"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_year_variant_periv
+    tipo: string
+    comentario: "Variante do ano fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: reference_version_ref_version
+    tipo: string
+    comentario: "Versão de referência"
+    pii: nenhum
+    nulo: true
+  - nome: external_version_type_ext_version_type
+    tipo: string
+    comentario: "Tipo de versão externa"
+    pii: nenhum
+    nulo: true
+  - nome: execution_mode_exec_mode
+    tipo: string
+    comentario: "Modo de execução (run mode)"
+    pii: nenhum
+    nulo: true
+  - nome: version_group_currency_group_curr
+    tipo: string
+    comentario: "Moeda do grupo da versão de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: source_ledger_rldnr_source
+    tipo: string
+    comentario: "Razão contábil de origem"
+    pii: nenhum
+    nulo: true
+  - nome: consolidation_ledger_rldnr_cons
+    tipo: string
+    comentario: "Razão contábil da versão de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: consolidation_unit_attributes_cuavs
+    tipo: string
+    comentario: "Atributos da unidade de consolidação"
+    pii: nenhum
+    nulo: true
+  - nome: reference_version_group_currency_group_curr
+    tipo: string
+    comentario: "Moeda do grupo da versão de referência"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_posting_date_budat
+    tipo: int
+    comentario: "Ano da data de lançamento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_posting_date_budat
+    tipo: int
+    comentario: "Mês da data de lançamento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_posting_date_budat
+    tipo: int
+    comentario: "Trimestre da data de lançamento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_posting_date_budat
+    tipo: int
+    comentario: "Semana da data de lançamento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da última atualização na fonte de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

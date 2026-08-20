@@ -1,0 +1,83 @@
+tabela: company_codes
+camada: gold
+comentario: "Estruturas corporativas centrais a partir de T001, detalhando localidades, moedas base, planos de contas e variantes de exercício fiscal ativas."
+entidade: obt
+ingestao: custom
+fontes: [silver.t001, silver.t002, silver.t002t, silver.t005, silver.t005t, silver.t005k, silver.t005s, silver.t005u, silver.tj02t]
+chave_primaria: [client_mandt, company_code_bukrs]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: false
+  - nome: currency_code_waers
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: company_text_butxt
+    tipo: string
+    comentario: "Nome do código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: city_name_ort01
+    tipo: string
+    comentario: "Cidade"
+    pii: nenhum
+    nulo: true
+  - nome: country_land1
+    tipo: string
+    comentario: "Chave de país"
+    pii: nenhum
+    nulo: true
+  - nome: language_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: chart_of_accounts_ktopl
+    tipo: string
+    comentario: "Plano de contas"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_year_variant_periv
+    tipo: string
+    comentario: "Variante de exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: company_rcomp
+    tipo: string
+    comentario: "Empresa"
+    pii: nenhum
+    nulo: true
+  - nome: credit_control_area_kkber
+    tipo: string
+    comentario: "Área de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: country_chart_of_accounts_ktop2
+    tipo: string
+    comentario: "Plano de contas do país"
+    pii: nenhum
+    nulo: true
+  - nome: funds_management_fikrs
+    tipo: string
+    comentario: "Área de gerenciamento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

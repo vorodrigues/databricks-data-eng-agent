@@ -1,0 +1,258 @@
+tabela: material_cross_plant_batches
+camada: gold
+comentario: "Registro central entre centros de lotes de material SAP da MCH1, rastreando detalhes universais do lote como datas de fabricação e validade, propriedades de prazo de validade, referências de fornecedor e status do lote."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.mch1, silver.mcha, silver.mchb, silver.makt, silver.t001w]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, material_number_matnr, batch_number_charg, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: batch_number_charg
+    tipo: string
+    comentario: "Número do lote"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: material_description_maktx
+    tipo: string
+    comentario: "Descrição do material"
+    pii: nenhum
+    nulo: true
+  - nome: deletion_flag_for_all_data_in_a_batch_lvorm
+    tipo: string
+    comentario: "Marcador de exclusão do lote"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_ersda
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: changed_by_aenam
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: last_changed_on_laeda
+    tipo: date
+    comentario: "Última alteração em"
+    pii: nenhum
+    nulo: true
+  - nome: availability_date_verab
+    tipo: date
+    comentario: "Disponível a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: shelf_life_expiration_or_best_before_date_vfdat
+    tipo: date
+    comentario: "Data de validade / data de consumo preferencial"
+    pii: nenhum
+    nulo: true
+  - nome: batch_status_key_zusch
+    tipo: string
+    comentario: "Chave de status do lote"
+    pii: nenhum
+    nulo: true
+  - nome: batch_in_restricted_use_stock_zustd
+    tipo: string
+    comentario: "Lote em estoque de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: last_status_change_date_zaedt
+    tipo: date
+    comentario: "Data da última mudança de status"
+    pii: nenhum
+    nulo: true
+  - nome: vendors_account_number_lifnr
+    tipo: string
+    comentario: "Número da conta do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: supplier_batch_number_licha
+    tipo: string
+    comentario: "Número do lote do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: original_batch_number_vlcha
+    tipo: string
+    comentario: "Número do lote original"
+    pii: nenhum
+    nulo: true
+  - nome: original_plant_vlwrk
+    tipo: string
+    comentario: "Centro original"
+    pii: nenhum
+    nulo: true
+  - nome: original_material_vlmat
+    tipo: string
+    comentario: "Material original"
+    pii: nenhum
+    nulo: true
+  - nome: batch_id
+    tipo: string
+    comentario: "ID do lote"
+    pii: nenhum
+    nulo: true
+  - nome: single_unit_batch_indicator_xpcbt
+    tipo: string
+    comentario: "Indicador de lote de unidade única"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_issue_for_batch_chame
+    tipo: string
+    comentario: "Unidade de saída do lote"
+    pii: nenhum
+    nulo: true
+  - nome: date_of_last_goods_receipt_lwedt
+    tipo: date
+    comentario: "Data do último recebimento de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: date_for_free_use1_fvdt1
+    tipo: date
+    comentario: "Data de uso livre 1"
+    pii: nenhum
+    nulo: true
+  - nome: date_for_free_use2_fvdt2
+    tipo: date
+    comentario: "Data de uso livre 2"
+    pii: nenhum
+    nulo: true
+  - nome: date_for_free_use3_fvdt3
+    tipo: date
+    comentario: "Data de uso livre 3"
+    pii: nenhum
+    nulo: true
+  - nome: date_for_free_use4_fvdt4
+    tipo: date
+    comentario: "Data de uso livre 4"
+    pii: nenhum
+    nulo: true
+  - nome: date_for_free_use5_fvdt5
+    tipo: date
+    comentario: "Data de uso livre 5"
+    pii: nenhum
+    nulo: true
+  - nome: date_for_free_use6_fvdt6
+    tipo: date
+    comentario: "Data de uso livre 6"
+    pii: nenhum
+    nulo: true
+  - nome: country_of_origin_of_material_herkl
+    tipo: string
+    comentario: "País de origem do material"
+    pii: nenhum
+    nulo: true
+  - nome: region_of_origin_of_material_herkr
+    tipo: string
+    comentario: "Região de origem do material"
+    pii: nenhum
+    nulo: true
+  - nome: material_group_for_intrastat_mtver
+    tipo: string
+    comentario: "Grupo de material para intrastat"
+    pii: nenhum
+    nulo: true
+  - nome: next_inspection_date_qndat
+    tipo: date
+    comentario: "Data da próxima inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: date_of_manufacture_hsdat
+    tipo: date
+    comentario: "Data de fabricação"
+    pii: nenhum
+    nulo: true
+  - nome: internal_object_number_batch_classification_cuobj_bm
+    tipo: string
+    comentario: "Número interno do objeto de classificação de lote"
+    pii: nenhum
+    nulo: true
+  - nome: batch_is_no_longer_active_deact_bm
+    tipo: string
+    comentario: "Lote não mais ativo"
+    pii: nenhum
+    nulo: true
+  - nome: type_of_batch_batch_type
+    tipo: string
+    comentario: "Tipo de lote"
+    pii: nenhum
+    nulo: true
+  - nome: utc_timestamp_in_short_form_ersda_tmstp
+    tipo: timestamp
+    comentario: "Carimbo de data/hora UTC (formato curto) de criação"
+    pii: nenhum
+    nulo: true
+  - nome: time_zone_ersda_tz_sys
+    tipo: string
+    comentario: "Fuso horário do sistema"
+    pii: nenhum
+    nulo: true
+  - nome: time_zone_ersda_tz_usr
+    tipo: string
+    comentario: "Fuso horário do usuário"
+    pii: nenhum
+    nulo: true
+  - nome: date_of_certification_zfdat
+    tipo: date
+    comentario: "Data de certificação"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_timestamp_creation_datetime
+    tipo: timestamp
+    comentario: "Carimbo de data/hora de criação"
+    pii: nenhum
+    nulo: true
+  - nome: last_change_timestamp_lastchange_datetime
+    tipo: timestamp
+    comentario: "Carimbo de data/hora da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: serialization_type_sttpec_sertype
+    tipo: string
+    comentario: "Tipo de serialização"
+    pii: nenhum
+    nulo: true
+  - nome: batch_production_plant_sttpec_plant
+    tipo: string
+    comentario: "Centro de produção do lote"
+    pii: nenhum
+    nulo: true
+  - nome: synchronization_time_stamp_sttpec_synctime
+    tipo: timestamp
+    comentario: "Carimbo de data/hora de sincronização"
+    pii: nenhum
+    nulo: true
+  - nome: synchronization_active_sttpec_syncact
+    tipo: string
+    comentario: "Sincronização ativa"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora da última atualização no sistema de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora do carregamento no BigQuery"
+    pii: nenhum
+    nulo: true

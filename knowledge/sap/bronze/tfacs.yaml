@@ -1,0 +1,97 @@
+tabela: tfacs
+camada: bronze
+comentario: "Calendário de fábrica (exibição)"
+ingestao: cdc
+fonte: sap.tfacs
+chave_primaria: [ident, jahr] # client-independent; sem mandt
+colunas:
+  - nome: ident
+    tipo: string
+    comentario: "ID do calendário de fábrica"
+    pii: nenhum
+    nulo: false
+  - nome: jahr
+    tipo: string
+    comentario: "Ano armazenado"
+    pii: nenhum
+    nulo: false
+  - nome: mon01
+    tipo: string
+    comentario: "Dias úteis em janeiro"
+    pii: nenhum
+    nulo: true
+  - nome: mon02
+    tipo: string
+    comentario: "Dias úteis em fevereiro"
+    pii: nenhum
+    nulo: true
+  - nome: mon03
+    tipo: string
+    comentario: "Dias úteis em março"
+    pii: nenhum
+    nulo: true
+  - nome: mon04
+    tipo: string
+    comentario: "Dias úteis em abril"
+    pii: nenhum
+    nulo: true
+  - nome: mon05
+    tipo: string
+    comentario: "Dias úteis em maio"
+    pii: nenhum
+    nulo: true
+  - nome: mon06
+    tipo: string
+    comentario: "Dias úteis em junho"
+    pii: nenhum
+    nulo: true
+  - nome: mon07
+    tipo: string
+    comentario: "Dias úteis em julho"
+    pii: nenhum
+    nulo: true
+  - nome: mon08
+    tipo: string
+    comentario: "Dias úteis em agosto"
+    pii: nenhum
+    nulo: true
+  - nome: mon09
+    tipo: string
+    comentario: "Dias úteis em setembro"
+    pii: nenhum
+    nulo: true
+  - nome: mon10
+    tipo: string
+    comentario: "Dias úteis em outubro"
+    pii: nenhum
+    nulo: true
+  - nome: mon11
+    tipo: string
+    comentario: "Dias úteis em novembro"
+    pii: nenhum
+    nulo: true
+  - nome: mon12
+    tipo: string
+    comentario: "Dias úteis em dezembro"
+    pii: nenhum
+    nulo: true
+  - nome: basis
+    tipo: string
+    comentario: "Início da numeração dos dias"
+    pii: nenhum
+    nulo: true
+  - nome: fenum
+    tipo: string
+    comentario: "Número de dias úteis no ano"
+    pii: nenhum
+    nulo: true
+  - nome: wenum
+    tipo: string
+    comentario: "Número de dias de trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: load
+    tipo: string
+    comentario: "Indicador de buffer"
+    pii: nenhum
+    nulo: true

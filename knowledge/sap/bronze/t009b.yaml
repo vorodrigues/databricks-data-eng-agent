@@ -1,0 +1,42 @@
+tabela: t009b
+camada: bronze
+comentario: "Períodos da variante de exercício fiscal"
+ingestao: cdc
+fonte: sap.t009b
+chave_primaria: [mandt, periv, bdatj, bumon, butag]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: periv
+    tipo: string
+    comentario: "Variante do exercício fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: bdatj
+    tipo: string
+    comentario: "Ano"
+    pii: nenhum
+    nulo: false
+  - nome: bumon
+    tipo: string
+    comentario: "Mês do calendário"
+    pii: nenhum
+    nulo: false
+  - nome: butag
+    tipo: string
+    comentario: "Dia do calendário"
+    pii: nenhum
+    nulo: false
+  - nome: poper
+    tipo: string
+    comentario: "Período de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: reljr
+    tipo: string
+    comentario: "Deslocamento de ano"
+    pii: nenhum
+    nulo: true

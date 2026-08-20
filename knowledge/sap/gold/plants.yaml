@@ -1,0 +1,313 @@
+tabela: plants
+camada: gold
+comentario: "Dados mestre de centros produtivos (SAP T001W): mapeamento de unidades de produção com endereços, atribuições organizacionais e parâmetros operacionais."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.t001w, silver.t001l]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, plant_werks]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: plant_werks
+    tipo: string
+    comentario: "Código do centro produtivo (plant)"
+    pii: nenhum
+    nulo: false
+  - nome: name_name1
+    tipo: string
+    comentario: "Nome do centro produtivo"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_area_bwkey
+    tipo: string
+    comentario: "Área de avaliação de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: customer_number_of_plant_kunnr
+    tipo: string
+    comentario: "Número de cliente associado ao centro"
+    pii: indireto
+    nulo: true
+  - nome: vendor_number_of_plant_lifnr
+    tipo: string
+    comentario: "Número de fornecedor associado ao centro"
+    pii: indireto
+    nulo: true
+  - nome: factory_calendar_key_fabkl
+    tipo: string
+    comentario: "Chave do calendário de fábrica"
+    pii: nenhum
+    nulo: true
+  - nome: name2_name2
+    tipo: string
+    comentario: "Descrição adicional do centro produtivo"
+    pii: nenhum
+    nulo: true
+  - nome: street_and_house_number_stras
+    tipo: string
+    comentario: "Rua e número do endereço do centro"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_pfach
+    tipo: string
+    comentario: "Caixa postal do centro"
+    pii: nenhum
+    nulo: true
+  - nome: postal_code_pstlz
+    tipo: string
+    comentario: "CEP do centro"
+    pii: nenhum
+    nulo: true
+  - nome: city_ort01
+    tipo: string
+    comentario: "Cidade do centro"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_organization_ekorg
+    tipo: string
+    comentario: "Organização de compras"
+    pii: nenhum
+    nulo: true
+  - nome: sales_organization_for_intercompany_billing_vkorg
+    tipo: string
+    comentario: "Organização de vendas para faturamento intercompanhia"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_batch_status_management_active_chazv
+    tipo: string
+    comentario: "Indicador de gestão de status de lote ativa"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_conditions_at_plant_level_kkowk
+    tipo: string
+    comentario: "Indicador de condições no nível do centro"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_source_list_requirement_kordb
+    tipo: string
+    comentario: "Indicador de requisito de lista de fontes"
+    pii: nenhum
+    nulo: true
+  - nome: activating_requirements_planning_bedpl
+    tipo: string
+    comentario: "Ativação do planejamento de necessidades"
+    pii: nenhum
+    nulo: true
+  - nome: country_key_land1
+    tipo: string
+    comentario: "Chave de país"
+    pii: nenhum
+    nulo: true
+  - nome: region_county_regio
+    tipo: string
+    comentario: "Região/estado"
+    pii: nenhum
+    nulo: true
+  - nome: county_code_counc
+    tipo: string
+    comentario: "Código do condado/município"
+    pii: nenhum
+    nulo: true
+  - nome: city_code_cityc
+    tipo: string
+    comentario: "Código de cidade"
+    pii: nenhum
+    nulo: true
+  - nome: address_adrnr
+    tipo: string
+    comentario: "Número do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: maintenance_planning_plant_iwerk
+    tipo: string
+    comentario: "Centro de planejamento de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: distribution_channel_for_intercompany_billing_vtweg
+    tipo: string
+    comentario: "Canal de distribuição para faturamento intercompanhia"
+    pii: nenhum
+    nulo: true
+  - nome: division_for_intercompany_billing_spart
+    tipo: string
+    comentario: "Divisão para faturamento intercompanhia"
+    pii: nenhum
+    nulo: true
+  - nome: language_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: sop_plant_wksop
+    tipo: string
+    comentario: "Centro de planejamento SOP"
+    pii: nenhum
+    nulo: true
+  - nome: variance_key_awsls
+    tipo: string
+    comentario: "Chave de variância"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_batch_status_management_active_chazv_old
+    tipo: string
+    comentario: "Indicador legado de gestão de status de lote"
+    pii: nenhum
+    nulo: true
+  - nome: plant_category_vlfkz
+    tipo: string
+    comentario: "Categoria do centro produtivo"
+    pii: nenhum
+    nulo: true
+  - nome: sales_district_bzirk
+    tipo: string
+    comentario: "Distrito de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: supply_region_zone1
+    tipo: string
+    comentario: "Região de abastecimento"
+    pii: nenhum
+    nulo: true
+  - nome: tax_indicator_plant_taxiw
+    tipo: string
+    comentario: "Indicador de imposto do centro (compras)"
+    pii: nenhum
+    nulo: true
+  - nome: take_regular_vendor_into_account_bzqhl
+    tipo: string
+    comentario: "Indicador de consideração do fornecedor habitual"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_days_for_first_reminder_expediter_let01
+    tipo: int
+    comentario: "Número de dias para o primeiro lembrete ao fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_days_for_second_reminder_expediter_let02
+    tipo: int
+    comentario: "Número de dias para o segundo lembrete ao fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_days_for_third_reminder_expediter_let03
+    tipo: int
+    comentario: "Número de dias para o terceiro lembrete ao fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: text_name_of_1st_dunning_of_vendor_declarations_txnam_ma1
+    tipo: string
+    comentario: "Nome do objeto de texto para 1ª rodada de cobrança de declarações de fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: text_name_of_2nd_dunning_of_vendor_declarations_txnam_ma2
+    tipo: string
+    comentario: "Nome do objeto de texto para 2ª rodada de cobrança de declarações de fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: text_name_of_3rd_dunning_of_vendor_declarations_txnam_ma3
+    tipo: string
+    comentario: "Nome do objeto de texto para 3ª rodada de cobrança de declarações de fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_days_for_po_tolerance_compress_info_records_su_betol
+    tipo: int
+    comentario: "Número de dias de tolerância para compressão de pedidos de compra"
+    pii: nenhum
+    nulo: true
+  - nome: business_place_j_1bbranch
+    tipo: string
+    comentario: "Estabelecimento fiscal (Brasil)"
+    pii: nenhum
+    nulo: true
+  - nome: rule_for_determining_the_sales_area_for_stock_transfers_vtbfi
+    tipo: string
+    comentario: "Regra para determinação da área de vendas em transferências de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: distribution_profile_at_plant_level_fprfw
+    tipo: string
+    comentario: "Perfil de distribuição no nível do centro"
+    pii: nenhum
+    nulo: true
+  - nome: central_archiving_marker_for_master_record_achvm
+    tipo: string
+    comentario: "Marcador de arquivamento central do registro mestre"
+    pii: nenhum
+    nulo: true
+  - nome: batch_record_type_of_dms_used_dvsart
+    tipo: string
+    comentario: "Tipo de sistema de gestão documental (DMS) do registro de lote"
+    pii: nenhum
+    nulo: true
+  - nome: node_type_supply_chain_network_nodetype
+    tipo: string
+    comentario: "Tipo de nó na rede de cadeia de suprimentos"
+    pii: nenhum
+    nulo: true
+  - nome: structure_for_name_formation_nschema
+    tipo: string
+    comentario: "Estrutura para formação do nome"
+    pii: nenhum
+    nulo: true
+  - nome: cost_object_controlling_linking_active_pkosa
+    tipo: string
+    comentario: "Indicador de vinculação de controlling de objeto de custo ativa"
+    pii: nenhum
+    nulo: true
+  - nome: updating_is_active_for_mixed_costing_misch
+    tipo: string
+    comentario: "Indicador de atualização ativa para custeio misto"
+    pii: nenhum
+    nulo: true
+  - nome: updating_is_active_in_actual_costing_mgvupd
+    tipo: string
+    comentario: "Indicador de atualização ativa no custeio real"
+    pii: nenhum
+    nulo: true
+  - nome: shipping_point_receiving_point_vstel
+    tipo: string
+    comentario: "Ponto de expedição/recebimento"
+    pii: nenhum
+    nulo: true
+  - nome: update_of_activity_consumption_in_the_quantity_structure_mgvlaupd
+    tipo: string
+    comentario: "Indicador de atualização do consumo de atividade na estrutura de quantidades"
+    pii: nenhum
+    nulo: true
+  - nome: control_of_credit_of_cost_centers_mgvlareval
+    tipo: string
+    comentario: "Controle de crédito de centros de custo"
+    pii: nenhum
+    nulo: true
+  - nome: invoke_added_function_source_determination_via_atp_sourcing
+    tipo: string
+    comentario: "Função adicional de determinação de fonte via ATP (disponibilidade para promessa)"
+    pii: nenhum
+    nulo: true
+  - nome: store_category_to_differentiate_store_shop_storetype
+    tipo: string
+    comentario: "Categoria da loja"
+    pii: nenhum
+    nulo: true
+  - nome: superior_department_store_dep_store
+    tipo: string
+    comentario: "Loja de departamento superior"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

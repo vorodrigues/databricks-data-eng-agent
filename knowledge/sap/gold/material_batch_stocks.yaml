@@ -1,0 +1,218 @@
+tabela: material_batch_stocks
+camada: gold
+comentario: "Rastreia quantidades fisicas de estoque por lote, planta e deposito a partir da MCHB do SAP, incluindo estoque livre, bloqueado, em transferencia, com uso restrito e devolucoes."
+entidade: obt
+ingestao: custom
+fontes: [silver.mch1, silver.mcha, silver.mchb, silver.makt, silver.t001w]
+chave_primaria: [client_mandt, material_number_matnr, plant_werks, storage_location_lgort, batch_number_charg, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Numero do material"
+    pii: nenhum
+    nulo: false
+  - nome: plant_werks
+    tipo: string
+    comentario: "Planta"
+    pii: nenhum
+    nulo: false
+  - nome: storage_location_lgort
+    tipo: string
+    comentario: "Deposito (almoxarifado)"
+    pii: nenhum
+    nulo: false
+  - nome: batch_number_charg
+    tipo: string
+    comentario: "Numero do lote"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: material_description_maktx
+    tipo: string
+    comentario: "Descricao do material"
+    pii: nenhum
+    nulo: true
+  - nome: plant_name_name1
+    tipo: string
+    comentario: "Nome da planta"
+    pii: nenhum
+    nulo: true
+  - nome: stock_deletion_flag_lvorm
+    tipo: string
+    comentario: "Indicador de exclusao de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_ersda
+    tipo: date
+    comentario: "Data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: last_changed_on_laeda
+    tipo: date
+    comentario: "Data da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: changed_by_aenam
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: year_current_period_lfgja
+    tipo: string
+    comentario: "Ano do periodo atual"
+    pii: nenhum
+    nulo: true
+  - nome: current_period_lfmon
+    tipo: string
+    comentario: "Periodo atual"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_blocking_indicator_sperc
+    tipo: string
+    comentario: "Indicador de bloqueio de inventario fisico"
+    pii: nenhum
+    nulo: true
+  - nome: unrestricted_use_stock_clabs
+    tipo: decimal(23,2)
+    comentario: "Estoque de livre utilizacao"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_transfer_cumlm
+    tipo: decimal(23,2)
+    comentario: "Estoque em transferencia"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_quality_inspection_cinsm
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspecao de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: restricted_use_stock_ceinm
+    tipo: decimal(23,2)
+    comentario: "Estoque com uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_stock_cspem
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_stock_returns_cretm
+    tipo: decimal(23,2)
+    comentario: "Estoque de devolucoes bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: unrestricted_use_stock_valuation_period_cvmla
+    tipo: decimal(23,2)
+    comentario: "Estoque livre no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_transfer_valuation_period_cvmum
+    tipo: decimal(23,2)
+    comentario: "Estoque em transferencia no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_quality_inspection_valuation_period_cvmin
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspecao no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: restricted_use_stock_valuation_period_cvmei
+    tipo: decimal(23,2)
+    comentario: "Estoque com uso restrito no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_stock_valuation_period_cvmsp
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_stock_returns_valuation_period_cvmre
+    tipo: decimal(23,2)
+    comentario: "Estoque de devolucoes bloqueado no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_indicator_unrestricted_use_stock_kzicl
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque livre (periodo atual)"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_indicator_quality_inspection_stock_kzicq
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque em inspecao (periodo atual)"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_indicator_restricted_use_stock_kzice
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque com uso restrito (periodo atual)"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_indicator_blocked_stock_kzics
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque bloqueado (periodo atual)"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_indicator_unrestricted_use_stock_previous_period_kzvcl
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque livre (periodo anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_indicator_quality_inspection_stock_previous_period_kzvcq
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque em inspecao (periodo anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_indicator_restricted_use_stock_previous_period_kzvce
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque com uso restrito (periodo anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_indicator_blocked_stock_previous_period_kzvcs
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque bloqueado (periodo anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: country_of_origin_of_material_herkl
+    tipo: string
+    comentario: "Pais de origem do material"
+    pii: nenhum
+    nulo: true
+  - nome: date_of_last_count_chdll
+    tipo: date
+    comentario: "Data da ultima contagem de inventario"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_year_of_current_period_chjin
+    tipo: string
+    comentario: "Ano de inventario fisico do periodo atual"
+    pii: nenhum
+    nulo: true
+  - nome: mchb_chrue
+    tipo: string
+    comentario: "Indicador de relancamento/sincronizacao de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

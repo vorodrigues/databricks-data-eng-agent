@@ -1,0 +1,52 @@
+tabela: fagl_011zc
+camada: bronze
+comentario: "Versão de demonstrações financeiras: atribuição de itens a contas contábeis"
+ingestao: cdc
+fonte: sap.fagl_011zc
+chave_primaria: [mandt, versn, ergsl, vonkt, ktopl]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: versn
+    tipo: string
+    comentario: "Versão de demonstrações financeiras"
+    pii: nenhum
+    nulo: false
+  - nome: ergsl
+    tipo: string
+    comentario: "Item das demonstrações financeiras"
+    pii: nenhum
+    nulo: false
+  - nome: vonkt
+    tipo: string
+    comentario: "Conta contábil inicial do intervalo"
+    pii: nenhum
+    nulo: false
+  - nome: biskt
+    tipo: string
+    comentario: "Conta contábil final do intervalo"
+    pii: nenhum
+    nulo: true
+  - nome: xsoll
+    tipo: string
+    comentario: "Indicador de débito (D)"
+    pii: nenhum
+    nulo: true
+  - nome: xhabn
+    tipo: string
+    comentario: "Indicador de crédito (C)"
+    pii: nenhum
+    nulo: true
+  - nome: xverd
+    tipo: string
+    comentario: "Saldo de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: ktopl
+    tipo: string
+    comentario: "Plano de contas"
+    pii: nenhum
+    nulo: false

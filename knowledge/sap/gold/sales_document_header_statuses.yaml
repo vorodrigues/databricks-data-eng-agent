@@ -1,0 +1,248 @@
+tabela: sales_document_header_statuses
+camada: gold
+comentario: "Captura os status de processamento, entrega e faturamento do cabeçalho do documento de venda do SAP VBUK (ECC) ou VBAK (S4)."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.vbak, silver.vbap, silver.vbep, silver.vbpa, silver.tcurx, silver.vbfa, silver.vbuk, silver.vbup, silver.lips]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_vbeln
+    tipo: string
+    comentario: "Número do documento de venda"
+    pii: nenhum
+    nulo: true
+  - nome: reference_document_header_status_rfstk
+    tipo: string
+    comentario: "Status do cabeçalho do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: overall_reference_status_all_items_rfgsk
+    tipo: string
+    comentario: "Status geral de referência de todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: confirmation_status_bestk
+    tipo: string
+    comentario: "Status de confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_status_lfstk
+    tipo: string
+    comentario: "Status de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: overall_delivery_status_lfgsk
+    tipo: string
+    comentario: "Status geral de entrega de todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: total_goods_movement_status_wbstk
+    tipo: string
+    comentario: "Status total de movimentação de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: order_related_billing_status_all_items_fksak
+    tipo: string
+    comentario: "Status de faturamento por ordem de todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: rejections_status_abstk
+    tipo: string
+    comentario: "Status de rejeição"
+    pii: nenhum
+    nulo: true
+  - nome: overall_processing_status_gbstk
+    tipo: string
+    comentario: "Status geral de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: incompletion_status_all_items_uvals
+    tipo: string
+    comentario: "Status de incompletude de todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_incompletion_status_all_items_uvvls
+    tipo: string
+    comentario: "Status de incompletude de entrega de todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: billing_incompletion_status_all_items_uvfas
+    tipo: string
+    comentario: "Status de incompletude de faturamento de todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: incompletion_status_header_uvall
+    tipo: string
+    comentario: "Status de incompletude do cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_incompletion_status_header_uvvlk
+    tipo: string
+    comentario: "Status de incompletude de entrega do cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: billing_incompletion_status_header_uvfak
+    tipo: string
+    comentario: "Status de incompletude de faturamento do cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: pricing_incompletion_status_all_items_uvprs
+    tipo: string
+    comentario: "Status de incompletude de precificação de todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: document_category_vbtyp
+    tipo: string
+    comentario: "Categoria do documento"
+    pii: nenhum
+    nulo: true
+  - nome: changed_on_aedat
+    tipo: date
+    comentario: "Alterado em"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves1_header_status_uvk01
+    tipo: string
+    comentario: "Status reserva do cliente 1 (cabeçalho)"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves2_header_status_uvk02
+    tipo: string
+    comentario: "Status reserva do cliente 2 (cabeçalho)"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves3_header_status_uvk03
+    tipo: string
+    comentario: "Status reserva do cliente 3 (cabeçalho)"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves4_header_status_uvk04
+    tipo: string
+    comentario: "Status reserva do cliente 4 (cabeçalho)"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves5_header_status_uvk05
+    tipo: string
+    comentario: "Status reserva do cliente 5 (cabeçalho)"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves1_sum_of_all_items_uvs01
+    tipo: string
+    comentario: "Soma reserva do cliente 1 - todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves2_sum_of_all_items_uvs02
+    tipo: string
+    comentario: "Soma reserva do cliente 2 - todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves3_sum_of_all_items_uvs03
+    tipo: string
+    comentario: "Soma reserva do cliente 3 - todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves4_sum_of_all_items_uvs04
+    tipo: string
+    comentario: "Soma reserva do cliente 4 - todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves5_sum_of_all_items_uvs05
+    tipo: string
+    comentario: "Soma reserva do cliente 5 - todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_credit_check_against_maximum_document_value_cmpsc
+    tipo: string
+    comentario: "Status da verificação de crédito contra o valor máximo do documento"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_credit_check_against_terms_of_payment_cmpsd
+    tipo: string
+    comentario: "Status da verificação de crédito contra condições de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_credit_check_against_financial_document_cmpsi
+    tipo: string
+    comentario: "Status da verificação de crédito contra documento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_credit_check_against_export_credit_insurance_cmpsj
+    tipo: string
+    comentario: "Status da verificação de crédito contra seguro de crédito à exportação"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_credit_check_against_payment_card_authorization_cmpsk
+    tipo: string
+    comentario: "Status da verificação de crédito contra autorização de cartão de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: overall_status_of_credit_checks_cmgst
+    tipo: string
+    comentario: "Status geral das verificações de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: transportation_planning_status_header_trsta
+    tipo: string
+    comentario: "Status de planejamento de transporte do cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: confirmation_status_for_ale_costa
+    tipo: string
+    comentario: "Status de confirmação para ALE"
+    pii: nenhum
+    nulo: true
+  - nome: delay_status_dcstk
+    tipo: string
+    comentario: "Status de atraso"
+    pii: nenhum
+    nulo: true
+  - nome: billing_block_status_fsstk
+    tipo: string
+    comentario: "Status de bloqueio de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: overall_delivery_block_status_all_items_lsstk
+    tipo: string
+    comentario: "Status geral de bloqueio de entrega de todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: overall_block_status_header_spstg
+    tipo: string
+    comentario: "Status geral de bloqueio do cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: status_funds_management_fmstk
+    tipo: string
+    comentario: "Status de gestão financeira (FM)"
+    pii: nenhum
+    nulo: true
+  - nome: manual_completion_of_contract_manek
+    tipo: string
+    comentario: "Conclusão manual do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_credit_check_sap_credit_management_cmps_cm
+    tipo: string
+    comentario: "Status da verificação de crédito no SAP Credit Management"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_technical_error_sap_credit_management_cmps_te
+    tipo: string
+    comentario: "Status de erro técnico no SAP Credit Management"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora da última atualização no sistema de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora do carregamento no BigQuery"
+    pii: nenhum
+    nulo: true

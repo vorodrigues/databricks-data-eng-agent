@@ -1,0 +1,72 @@
+tabela: fagl_011pc
+camada: bronze
+comentario: "Versão de demonstrações financeiras: itens da estrutura"
+ingestao: cdc
+fonte: sap.fagl_011pc
+chave_primaria: [mandt, versn, id]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: versn
+    tipo: string
+    comentario: "Versão de demonstrações financeiras"
+    pii: nenhum
+    nulo: false
+  - nome: id
+    tipo: string
+    comentario: "ID do nó"
+    pii: nenhum
+    nulo: false
+  - nome: type
+    tipo: string
+    comentario: "Tipo do nó"
+    pii: nenhum
+    nulo: true
+  - nome: ergsl
+    tipo: string
+    comentario: "Item das demonstrações financeiras"
+    pii: nenhum
+    nulo: true
+  - nome: parent
+    tipo: string
+    comentario: "ID do nó pai"
+    pii: nenhum
+    nulo: true
+  - nome: child
+    tipo: string
+    comentario: "ID do nó filho"
+    pii: nenhum
+    nulo: true
+  - nome: nextn
+    tipo: string
+    comentario: "ID do próximo nó"
+    pii: nenhum
+    nulo: true
+  - nome: stufe
+    tipo: string
+    comentario: "Nível de hierarquia"
+    pii: nenhum
+    nulo: true
+  - nome: summe
+    tipo: string
+    comentario: "Indicador de totais"
+    pii: nenhum
+    nulo: true
+  - nome: sign
+    tipo: string
+    comentario: "Inversão de sinal (+/-)"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Alterado em"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Nome do usuário"
+    pii: nenhum
+    nulo: true

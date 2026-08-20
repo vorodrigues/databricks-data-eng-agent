@@ -1,0 +1,39 @@
+# Databricks Asset Bundle — raiz do projeto de engenharia de dados.
+# Preencha os campos <PREENCHER>. Catalogo/schemas nunca hardcoded: use ${var.*}.
+bundle:
+  name: <PREENCHER_nome_do_projeto>
+
+variables:
+  catalog:
+    description: Catalogo do Unity Catalog para as camadas medallion.
+    default: <PREENCHER>
+  schema_bronze:
+    description: Schema da camada bronze (modelo fonte, dados brutos).
+    default: bronze
+  schema_silver:
+    description: Schema da camada silver (identico a fonte, limpo).
+    default: silver
+  schema_gold:
+    description: Schema da camada gold (modelo destino, star schema).
+    default: gold
+  warehouse_id:
+    description: SQL warehouse usado por validate_state.py para consultar o Unity Catalog.
+    default: <PREENCHER>
+
+include:
+  - resources/*.yml
+
+# Auth (perfil da Databricks CLI) NAO fica aqui — e local/por usuario. Use `--profile`
+# ou a variavel de ambiente DATABRICKS_CONFIG_PROFILE. A CLI casa o perfil pelo `host`.
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: <PREENCHER_host_dev>
+      root_path: /Workspace/Shared/${bundle.name}/dev
+  prod:
+    mode: production
+    workspace:
+      host: <PREENCHER_host_prod>
+      root_path: /Workspace/Shared/${bundle.name}/prod

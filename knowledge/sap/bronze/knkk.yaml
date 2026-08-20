@@ -1,0 +1,187 @@
+tabela: knkk
+camada: bronze
+comentario: "Gestão de crédito do cliente: dados da área de crédito"
+ingestao: cdc
+fonte: sap.knkk
+chave_primaria: [mandt, kunnr, kkber]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kunnr
+    tipo: string
+    comentario: "Cliente"
+    pii: indireto
+    nulo: false
+  - nome: kkber
+    tipo: string
+    comentario: "Área de crédito"
+    pii: nenhum
+    nulo: false
+  - nome: klimk
+    tipo: decimal(23,2)
+    comentario: "Limite de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: knkli
+    tipo: string
+    comentario: "Conta de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: sauft
+    tipo: decimal(23,2)
+    comentario: "Valor de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: skfor
+    tipo: decimal(23,2)
+    comentario: "Total de recebíveis"
+    pii: nenhum
+    nulo: true
+  - nome: ssobl
+    tipo: decimal(23,2)
+    comentario: "Responsabilidades especiais"
+    pii: nenhum
+    nulo: true
+  - nome: uedat
+    tipo: date
+    comentario: "Data de excedência do limite de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: xchng
+    tipo: string
+    comentario: "Indicador de bloqueio de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por (usuário SAP)"
+    pii: indireto
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: ctlpc
+    tipo: string
+    comentario: "Categoria de risco"
+    pii: nenhum
+    nulo: true
+  - nome: dtrev
+    tipo: date
+    comentario: "Última revisão interna"
+    pii: nenhum
+    nulo: true
+  - nome: crblb
+    tipo: string
+    comentario: "Bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: sbgrp
+    tipo: string
+    comentario: "Grupo de representante de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: nxtrv
+    tipo: date
+    comentario: "Próxima revisão interna"
+    pii: nenhum
+    nulo: true
+  - nome: kraus
+    tipo: string
+    comentario: "Número de informação de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: paydb
+    tipo: string
+    comentario: "Indicador D&B"
+    pii: nenhum
+    nulo: true
+  - nome: dbrat
+    tipo: string
+    comentario: "Rating D&B"
+    pii: nenhum
+    nulo: true
+  - nome: revdb
+    tipo: date
+    comentario: "Última revisão externa"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Alterado em"
+    pii: nenhum
+    nulo: true
+  - nome: aetxt
+    tipo: date
+    comentario: "Data de alteração do texto"
+    pii: nenhum
+    nulo: true
+  - nome: grupp
+    tipo: string
+    comentario: "Grupo de crédito do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por (usuário SAP)"
+    pii: indireto
+    nulo: true
+  - nome: sbdat
+    tipo: date
+    comentario: "Data de referência"
+    pii: nenhum
+    nulo: true
+  - nome: kdgrp
+    tipo: string
+    comentario: "Grupo de clientes"
+    pii: nenhum
+    nulo: true
+  - nome: cashd
+    tipo: date
+    comentario: "Data do último pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: casha
+    tipo: decimal(23,2)
+    comentario: "Valor do último pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: cashc
+    tipo: string
+    comentario: "Moeda do último pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: dbpay
+    tipo: string
+    comentario: "Índice de pagamento D&B"
+    pii: nenhum
+    nulo: true
+  - nome: dbrtg
+    tipo: string
+    comentario: "Rating D&B (índice alternativo)"
+    pii: nenhum
+    nulo: true
+  - nome: dbekr
+    tipo: decimal(23,2)
+    comentario: "Limite de crédito recomendado"
+    pii: nenhum
+    nulo: true
+  - nome: dbwae
+    tipo: string
+    comentario: "Moeda do limite recomendado"
+    pii: nenhum
+    nulo: true
+  - nome: dbmon
+    tipo: string
+    comentario: "Monitoramento"
+    pii: nenhum
+    nulo: true
+  - nome: absbt
+    tipo: decimal(23,2)
+    comentario: "Recebíveis garantidos"
+    pii: nenhum
+    nulo: true

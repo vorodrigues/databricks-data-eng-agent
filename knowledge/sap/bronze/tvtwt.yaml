@@ -1,0 +1,27 @@
+tabela: tvtwt
+camada: bronze
+comentario: "Textos dos canais de distribuicao (dependente de idioma)"
+ingestao: cdc
+fonte: sap.tvtwt
+chave_primaria: [mandt, spras, vtweg]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuicao"
+    pii: nenhum
+    nulo: false
+  - nome: vtext
+    tipo: string
+    comentario: "Nome do canal de distribuicao"
+    pii: nenhum
+    nulo: true

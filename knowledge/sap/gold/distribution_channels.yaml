@@ -1,0 +1,38 @@
+tabela: distribution_channels
+camada: gold
+comentario: "Dicionario mestre de canais de distribuicao do SAP TVTW, enriquecido com nomes multilinguagem de TVTWT."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.tvko, silver.tvkot, silver.tvtw, silver.tvtwt, silver.tspa, silver.tspat]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, distribution_channel_vtweg, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: distribution_channel_vtweg
+    tipo: string
+    comentario: "Canal de distribuicao (VTWEG)"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma (SPRAS)"
+    pii: nenhum
+    nulo: false
+  - nome: name_vtext
+    tipo: string
+    comentario: "Nome do canal de distribuicao"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

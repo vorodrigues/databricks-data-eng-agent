@@ -1,0 +1,98 @@
+tabela: universal_journal_entry_ledgers
+camada: gold
+comentario: "Lista mestre de razões definidos no S/4HANA a partir de FINSC_LEDGER, enriquecida com descrições multilíngues de FINSC_LEDGER_T."
+entidade: obt
+ingestao: custom
+fontes: [silver.acdoca, silver.acdocu, silver.finsc_ledger, silver.finsc_ledger_t, silver.tf200, silver.tf201, silver.fincs_ref_vers_r, silver.tcurx]
+chave_primaria: [client_mandt, ledger_rldnr, language_langu]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: ledger_rldnr
+    tipo: string
+    comentario: "ID do razão (ledger)"
+    pii: nenhum
+    nulo: false
+  - nome: language_langu
+    tipo: string
+    comentario: "Idioma"
+    pii: nenhum
+    nulo: false
+  - nome: ledger_name_name
+    tipo: string
+    comentario: "Nome do razão"
+    pii: nenhum
+    nulo: true
+  - nome: ledger_type_ledger_type
+    tipo: string
+    comentario: "Tipo de razão"
+    pii: nenhum
+    nulo: true
+  - nome: extension_ledger_type_ext_ledger_type
+    tipo: string
+    comentario: "Tipo de razão de extensão"
+    pii: nenhum
+    nulo: true
+  - nome: owner_application_appl
+    tipo: string
+    comentario: "Aplicação proprietária"
+    pii: nenhum
+    nulo: true
+  - nome: sub_application_subappl
+    tipo: string
+    comentario: "Sub-aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: leading_ledger_indicator_xleading
+    tipo: string
+    comentario: "Indicador de razão líder"
+    pii: nenhum
+    nulo: true
+  - nome: underlying_ledger_core
+    tipo: string
+    comentario: "Razão subjacente"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_type_valutyp
+    tipo: string
+    comentario: "Tipo de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_subtype_valusubtyp
+    tipo: string
+    comentario: "Subtipo de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: manual_postings_not_allowed_man_post_not_allwd
+    tipo: string
+    comentario: "Lançamentos manuais não permitidos (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: accounting_principle_acc_principle
+    tipo: string
+    comentario: "Princípio contábil corporativo"
+    pii: nenhum
+    nulo: true
+  - nome: fallback_ledger_fallback_ledger
+    tipo: string
+    comentario: "Razão de reserva (fallback)"
+    pii: nenhum
+    nulo: true
+  - nome: technical_ledger_tech_ledger
+    tipo: string
+    comentario: "Razão técnico (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: cash_ledger_indicator_xcash_ledger
+    tipo: string
+    comentario: "Indicador de razão de caixa"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

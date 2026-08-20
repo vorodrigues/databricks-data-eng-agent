@@ -1,0 +1,32 @@
+tabela: t023t
+camada: bronze
+comentario: "Descricoes de grupos de materiais (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t023t
+chave_primaria: [mandt, spras, matkl]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: matkl
+    tipo: string
+    comentario: "Grupo de material"
+    pii: nenhum
+    nulo: false
+  - nome: wgbez
+    tipo: string
+    comentario: "Descricao do grupo de material (18 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: wgbez60
+    tipo: string
+    comentario: "Descricao longa do grupo de material (60 caracteres)"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,377 @@
+tabela: eket
+camada: bronze
+comentario: "Linhas de programação do acordo de fornecimento"
+ingestao: cdc
+fonte: sap.eket
+chave_primaria: [mandt, ebeln, ebelp, etenr]
+colunas:
+  - nome: abart
+    tipo: string
+    comentario: "Tipo de remessa"
+    pii: nenhum
+    nulo: true
+  - nome: altdt
+    tipo: date
+    comentario: "Data de entrega anterior"
+    pii: nenhum
+    nulo: true
+  - nome: ameng
+    tipo: decimal(23,2)
+    comentario: "Quantidade anterior"
+    pii: nenhum
+    nulo: true
+  - nome: anzsn
+    tipo: int
+    comentario: "Número de números de série"
+    pii: nenhum
+    nulo: true
+  - nome: aulwe
+    tipo: string
+    comentario: "Rota de programação"
+    pii: nenhum
+    nulo: true
+  - nome: banfn
+    tipo: string
+    comentario: "Requisição de compra"
+    pii: nenhum
+    nulo: true
+  - nome: bedat
+    tipo: date
+    comentario: "Data do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: bnfpo
+    tipo: string
+    comentario: "Item da requisição de compra"
+    pii: nenhum
+    nulo: true
+  - nome: budg_type
+    tipo: string
+    comentario: "Tipo de orçamento"
+    pii: nenhum
+    nulo: true
+  - nome: cd_locno
+    tipo: string
+    comentario: "Número de localização APO"
+    pii: nenhum
+    nulo: true
+  - nome: cd_loctype
+    tipo: string
+    comentario: "Tipo de localização APO"
+    pii: nenhum
+    nulo: true
+  - nome: charg
+    tipo: string
+    comentario: "Lote"
+    pii: nenhum
+    nulo: true
+  - nome: check_type
+    tipo: string
+    comentario: "Tipo de verificação OTB"
+    pii: nenhum
+    nulo: true
+  - nome: chkom
+    tipo: string
+    comentario: "Alteração de componentes (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: cncl_ancmnt_done
+    tipo: string
+    comentario: "Notificação de cancelamento realizada (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: dabmg
+    tipo: decimal(23,2)
+    comentario: "Quantidade reduzida (MRP)"
+    pii: nenhum
+    nulo: true
+  - nome: dat01
+    tipo: date
+    comentario: "Data comprometida"
+    pii: nenhum
+    nulo: true
+  - nome: dateshift_number
+    tipo: int
+    comentario: "Número de deslocamentos de data"
+    pii: nenhum
+    nulo: true
+  - nome: dl_id
+    tipo: string
+    comentario: "ID da linha de data"
+    pii: nenhum
+    nulo: true
+  - nome: dng_date
+    tipo: date
+    comentario: "Data do lembrete"
+    pii: nenhum
+    nulo: true
+  - nome: dng_time
+    tipo: string
+    comentario: "Hora do lembrete"
+    pii: nenhum
+    nulo: true
+  - nome: ebeln
+    tipo: string
+    comentario: "Número do documento de compras"
+    pii: nenhum
+    nulo: false
+  - nome: ebelp
+    tipo: string
+    comentario: "Item do documento de compras"
+    pii: nenhum
+    nulo: false
+  - nome: eindt
+    tipo: date
+    comentario: "Data de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: eldat
+    tipo: date
+    comentario: "Data de fim do recebimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: eluhr
+    tipo: string
+    comentario: "Hora de fim do recebimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: estkz
+    tipo: string
+    comentario: "Indicador de criação"
+    pii: nenhum
+    nulo: true
+  - nome: etenr
+    tipo: string
+    comentario: "Linha de programação"
+    pii: nenhum
+    nulo: false
+  - nome: fixkz
+    tipo: string
+    comentario: "Indicador de fixação"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_os_id
+    tipo: string
+    comentario: "ID do grupo de programação de ordem"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_ralloc_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade alocada de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_salloc_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade de estoque alocado"
+    pii: nenhum
+    nulo: true
+  - nome: geo_route
+    tipo: string
+    comentario: "Rota geográfica"
+    pii: nenhum
+    nulo: true
+  - nome: glmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade entregue"
+    pii: nenhum
+    nulo: true
+  - nome: gts_ind
+    tipo: string
+    comentario: "Tipo de tráfego de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: handoverdate
+    tipo: date
+    comentario: "Data de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: handovertime
+    tipo: string
+    comentario: "Hora de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: handover_date
+    tipo: date
+    comentario: "Data de transferência (alternativa)"
+    pii: nenhum
+    nulo: true
+  - nome: key_id
+    tipo: string
+    comentario: "Número de orçamento"
+    pii: nenhum
+    nulo: true
+  - nome: lddat
+    tipo: date
+    comentario: "Data de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: lduhr
+    tipo: string
+    comentario: "Hora de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: licha
+    tipo: string
+    comentario: "Lote do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: lpein
+    tipo: string
+    comentario: "Categoria da data de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: mahnz
+    tipo: int
+    comentario: "Número de lembretes/expedidores"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mbdat
+    tipo: date
+    comentario: "Data de disponibilidade do material"
+    pii: nenhum
+    nulo: true
+  - nome: mbuhr
+    tipo: string
+    comentario: "Hora de preparação do material"
+    pii: nenhum
+    nulo: true
+  - nome: menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade programada"
+    pii: nenhum
+    nulo: true
+  - nome: mng02
+    tipo: decimal(23,2)
+    comentario: "Quantidade comprometida"
+    pii: nenhum
+    nulo: true
+  - nome: nodisp
+    tipo: string
+    comentario: "Reserva/requisição de compra (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: no_scem
+    tipo: string
+    comentario: "Sem controle SCEM (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: otb_curr
+    tipo: string
+    comentario: "Moeda OTB"
+    pii: nenhum
+    nulo: true
+  - nome: otb_reason
+    tipo: string
+    comentario: "Motivo OTB"
+    pii: nenhum
+    nulo: true
+  - nome: otb_res_value
+    tipo: decimal(23,2)
+    comentario: "Orçamento reservado"
+    pii: nenhum
+    nulo: true
+  - nome: otb_spec_value
+    tipo: decimal(23,2)
+    comentario: "Orçamento de liberação especial"
+    pii: nenhum
+    nulo: true
+  - nome: otb_status
+    tipo: string
+    comentario: "Status da verificação OTB"
+    pii: nenhum
+    nulo: true
+  - nome: otb_value
+    tipo: decimal(23,2)
+    comentario: "Orçamento necessário"
+    pii: nenhum
+    nulo: true
+  - nome: qunum
+    tipo: string
+    comentario: "Acordo de quota"
+    pii: nenhum
+    nulo: true
+  - nome: qupos
+    tipo: string
+    comentario: "Item do acordo de quota"
+    pii: nenhum
+    nulo: true
+  - nome: route_gts
+    tipo: string
+    comentario: "Código de rota GTS"
+    pii: nenhum
+    nulo: true
+  - nome: rsnum
+    tipo: string
+    comentario: "Reserva"
+    pii: nenhum
+    nulo: true
+  - nome: sernr
+    tipo: string
+    comentario: "Número de explosão de BOM"
+    pii: nenhum
+    nulo: true
+  - nome: slfdt
+    tipo: date
+    comentario: "Data de entrega relevante para estatística"
+    pii: nenhum
+    nulo: true
+  - nome: spr_rsn_profile
+    tipo: string
+    comentario: "Perfil de motivo OTB para liberação especial"
+    pii: nenhum
+    nulo: true
+  - nome: tddat
+    tipo: date
+    comentario: "Data de planejamento de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: tduhr
+    tipo: string
+    comentario: "Hora de planejamento de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: tsp
+    tipo: string
+    comentario: "Agente de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: uzeit
+    tipo: string
+    comentario: "Hora"
+    pii: nenhum
+    nulo: true
+  - nome: verid
+    tipo: string
+    comentario: "Versão de produção"
+    pii: nenhum
+    nulo: true
+  - nome: wadat
+    tipo: date
+    comentario: "Data de saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: wamng
+    tipo: decimal(23,2)
+    comentario: "Quantidade emitida"
+    pii: nenhum
+    nulo: true
+  - nome: wauhr
+    tipo: string
+    comentario: "Hora de saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: wemng
+    tipo: decimal(23,2)
+    comentario: "Quantidade entregue (recebimento)"
+    pii: nenhum
+    nulo: true
+  - nome: wesbb
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado GR avaliado (un. pedido)"
+    pii: nenhum
+    nulo: true

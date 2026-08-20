@@ -1,0 +1,27 @@
+tabela: tvkot
+camada: bronze
+comentario: "Textos das organizacoes de vendas (dependente de idioma)"
+ingestao: cdc
+fonte: sap.tvkot
+chave_primaria: [mandt, spras, vkorg]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: vkorg
+    tipo: string
+    comentario: "Organizacao de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: vtext
+    tipo: string
+    comentario: "Nome da organizacao de vendas"
+    pii: nenhum
+    nulo: true

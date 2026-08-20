@@ -1,0 +1,63 @@
+tabela: financial_statement_version_assignments
+camada: gold
+comentario: "Mapeamento e atribuição de itens de demonstrações financeiras a contas contábeis a partir de FAGL_011ZC, verificando atribuições de plano de contas e estruturas de nós de reporte."
+entidade: obt
+ingestao: custom
+fontes: [silver.fagl_011pc, silver.fagl_011qt, silver.fagl_011zc]
+chave_primaria: [client_mandt, financial_statement_version_versn, financial_statement_item_ergsl, chart_of_accounts_ktopl, gl_account_from_vonkt]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: financial_statement_version_versn
+    tipo: string
+    comentario: "Versão de demonstrações financeiras"
+    pii: nenhum
+    nulo: false
+  - nome: financial_statement_item_ergsl
+    tipo: string
+    comentario: "Item das demonstrações financeiras"
+    pii: nenhum
+    nulo: false
+  - nome: chart_of_accounts_ktopl
+    tipo: string
+    comentario: "Plano de contas"
+    pii: nenhum
+    nulo: false
+  - nome: gl_account_from_vonkt
+    tipo: string
+    comentario: "Conta contábil inicial do intervalo"
+    pii: nenhum
+    nulo: false
+  - nome: gl_account_to_biskt
+    tipo: string
+    comentario: "Conta contábil final do intervalo"
+    pii: nenhum
+    nulo: true
+  - nome: debit_balance_indicator_xsoll
+    tipo: string
+    comentario: "Indicador de débito (D)"
+    pii: nenhum
+    nulo: true
+  - nome: credit_balance_indicator_xhabn
+    tipo: string
+    comentario: "Indicador de crédito (C)"
+    pii: nenhum
+    nulo: true
+  - nome: group_balance_indicator_xverd
+    tipo: string
+    comentario: "Saldo de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

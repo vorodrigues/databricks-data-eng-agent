@@ -1,0 +1,77 @@
+tabela: dd08l
+camada: bronze
+comentario: "Definições de relacionamento (chaves estrangeiras do ABAP DD)"
+ingestao: cdc
+fonte: sap.dd08l
+chave_primaria: [tabname, fieldname, as4local, as4vers] # client-independent; sem mandt
+colunas:
+  - nome: tabname
+    tipo: string
+    comentario: "Nome da tabela que contém a chave estrangeira"
+    pii: nenhum
+    nulo: false
+  - nome: fieldname
+    tipo: string
+    comentario: "Nome do campo de chave estrangeira a ser verificado"
+    pii: nenhum
+    nulo: false
+  - nome: as4local
+    tipo: string
+    comentario: "Status de ativação do objeto de repositório"
+    pii: nenhum
+    nulo: false
+  - nome: as4vers
+    tipo: string
+    comentario: "Versão da entrada"
+    pii: nenhum
+    nulo: false
+  - nome: checktable
+    tipo: string
+    comentario: "Nome da tabela de verificação da chave estrangeira"
+    pii: nenhum
+    nulo: true
+  - nome: frkart
+    tipo: string
+    comentario: "Fator de dependência para chaves estrangeiras semânticas"
+    pii: nenhum
+    nulo: true
+  - nome: clasfield
+    tipo: string
+    comentario: "Classificação interna de chaves estrangeiras (parcial etc.)"
+    pii: nenhum
+    nulo: true
+  - nome: clasvalue
+    tipo: string
+    comentario: "Valores do campo de classificação do tipo CLAS"
+    pii: nenhum
+    nulo: true
+  - nome: cardleft
+    tipo: string
+    comentario: "Cardinalidade do lado esquerdo do relacionamento"
+    pii: nenhum
+    nulo: true
+  - nome: card
+    tipo: string
+    comentario: "Cardinalidade (lado direito) do relacionamento"
+    pii: nenhum
+    nulo: true
+  - nome: checkflag
+    tipo: string
+    comentario: "Sem verificação no Screen Painter / opção de verificação da chave estrangeira"
+    pii: nenhum
+    nulo: true
+  - nome: arbgb
+    tipo: string
+    comentario: "Área de aplicação (classe de mensagem) vinculada à validação de chave estrangeira"
+    pii: nenhum
+    nulo: true
+  - nome: msgnr
+    tipo: string
+    comentario: "Número da mensagem de erro de validação de chave estrangeira"
+    pii: nenhum
+    nulo: true
+  - nome: noinherit
+    tipo: string
+    comentario: "Herança desativada para a chave estrangeira (indicador)"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,917 @@
+tabela: afvv
+camada: bronze
+comentario: "Estrutura de BD das quantidades, datas e valores da operação"
+ingestao: cdc
+fonte: sap.afvv
+chave_primaria: [mandt, aufpl, aplzl]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: aufpl
+    tipo: string
+    comentario: "Número da lista de tarefas da operação"
+    pii: nenhum
+    nulo: false
+  - nome: aplzl
+    tipo: int
+    comentario: "Contador interno da operação"
+    pii: nenhum
+    nulo: false
+  - nome: meinh
+    tipo: string
+    comentario: "Unidade da operação"
+    pii: nenhum
+    nulo: true
+  - nome: umren
+    tipo: int
+    comentario: "Denominador da conversão de unidade"
+    pii: nenhum
+    nulo: true
+  - nome: umrez
+    tipo: int
+    comentario: "Numerador da conversão de unidade"
+    pii: nenhum
+    nulo: true
+  - nome: bmsch
+    tipo: decimal(23,2)
+    comentario: "Quantidade base"
+    pii: nenhum
+    nulo: true
+  - nome: zmerh
+    tipo: decimal(23,2)
+    comentario: "Tempo de pausa"
+    pii: nenhum
+    nulo: true
+  - nome: zeier
+    tipo: string
+    comentario: "Unidade do tempo de pausa"
+    pii: nenhum
+    nulo: true
+  - nome: vge01
+    tipo: string
+    comentario: "Unidade do valor padrão 1"
+    pii: nenhum
+    nulo: true
+  - nome: vgw01
+    tipo: decimal(23,2)
+    comentario: "Valor padrão 1"
+    pii: nenhum
+    nulo: true
+  - nome: vge02
+    tipo: string
+    comentario: "Unidade do valor padrão 2"
+    pii: nenhum
+    nulo: true
+  - nome: vgw02
+    tipo: decimal(23,2)
+    comentario: "Valor padrão 2"
+    pii: nenhum
+    nulo: true
+  - nome: vge03
+    tipo: string
+    comentario: "Unidade do valor padrão 3"
+    pii: nenhum
+    nulo: true
+  - nome: vgw03
+    tipo: decimal(23,2)
+    comentario: "Valor padrão 3"
+    pii: nenhum
+    nulo: true
+  - nome: vge04
+    tipo: string
+    comentario: "Unidade do valor padrão 4"
+    pii: nenhum
+    nulo: true
+  - nome: vgw04
+    tipo: decimal(23,2)
+    comentario: "Valor padrão 4"
+    pii: nenhum
+    nulo: true
+  - nome: vge05
+    tipo: string
+    comentario: "Unidade do valor padrão 5"
+    pii: nenhum
+    nulo: true
+  - nome: vgw05
+    tipo: decimal(23,2)
+    comentario: "Valor padrão 5"
+    pii: nenhum
+    nulo: true
+  - nome: vge06
+    tipo: string
+    comentario: "Unidade do valor padrão 6"
+    pii: nenhum
+    nulo: true
+  - nome: vgw06
+    tipo: decimal(23,2)
+    comentario: "Valor padrão 6"
+    pii: nenhum
+    nulo: true
+  - nome: zeimu
+    tipo: string
+    comentario: "Unidade do tempo mínimo de sobreposição"
+    pii: nenhum
+    nulo: true
+  - nome: zminu
+    tipo: decimal(23,2)
+    comentario: "Tempo mínimo de sobreposição"
+    pii: nenhum
+    nulo: true
+  - nome: minwe
+    tipo: decimal(23,2)
+    comentario: "Quantidade mínima de envio antecipado"
+    pii: nenhum
+    nulo: true
+  - nome: zeimb
+    tipo: string
+    comentario: "Unidade do tempo mínimo de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: zminb
+    tipo: decimal(23,2)
+    comentario: "Tempo mínimo de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: zeilm
+    tipo: string
+    comentario: "Unidade do tempo máximo de espera"
+    pii: nenhum
+    nulo: true
+  - nome: zlmax
+    tipo: decimal(23,2)
+    comentario: "Tempo máximo de espera"
+    pii: nenhum
+    nulo: true
+  - nome: zeilp
+    tipo: string
+    comentario: "Unidade do tempo de espera requerido"
+    pii: nenhum
+    nulo: true
+  - nome: zlpro
+    tipo: decimal(23,2)
+    comentario: "Tempo mínimo de espera"
+    pii: nenhum
+    nulo: true
+  - nome: zeiwn
+    tipo: string
+    comentario: "Unidade do tempo padrão de fila"
+    pii: nenhum
+    nulo: true
+  - nome: zwnor
+    tipo: decimal(23,2)
+    comentario: "Tempo padrão de fila"
+    pii: nenhum
+    nulo: true
+  - nome: zeiwm
+    tipo: string
+    comentario: "Unidade do tempo mínimo de fila"
+    pii: nenhum
+    nulo: true
+  - nome: zwmin
+    tipo: decimal(23,2)
+    comentario: "Tempo mínimo de fila"
+    pii: nenhum
+    nulo: true
+  - nome: zeitn
+    tipo: string
+    comentario: "Unidade do tempo padrão de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: ztnor
+    tipo: decimal(23,2)
+    comentario: "Tempo padrão de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: zeitm
+    tipo: string
+    comentario: "Unidade do tempo mínimo de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: ztmin
+    tipo: decimal(23,2)
+    comentario: "Tempo mínimo de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: plifz
+    tipo: int
+    comentario: "Prazo de entrega planejado (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: dauno
+    tipo: decimal(23,2)
+    comentario: "Duração normal"
+    pii: nenhum
+    nulo: true
+  - nome: daune
+    tipo: string
+    comentario: "Unidade da duração normal"
+    pii: nenhum
+    nulo: true
+  - nome: daumi
+    tipo: decimal(23,2)
+    comentario: "Duração mínima"
+    pii: nenhum
+    nulo: true
+  - nome: daume
+    tipo: string
+    comentario: "Unidade da duração mínima"
+    pii: nenhum
+    nulo: true
+  - nome: einsa
+    tipo: string
+    comentario: "Restrição de início da operação"
+    pii: nenhum
+    nulo: true
+  - nome: einse
+    tipo: string
+    comentario: "Restrição de término da operação"
+    pii: nenhum
+    nulo: true
+  - nome: arbei
+    tipo: decimal(23,2)
+    comentario: "Trabalho planejado"
+    pii: nenhum
+    nulo: true
+  - nome: arbeh
+    tipo: string
+    comentario: "Unidade do trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: mgvrg
+    tipo: decimal(23,2)
+    comentario: "Quantidade da operação"
+    pii: nenhum
+    nulo: true
+  - nome: asvrg
+    tipo: decimal(23,2)
+    comentario: "Quantidade de refugo"
+    pii: nenhum
+    nulo: true
+  - nome: lmnga
+    tipo: decimal(23,2)
+    comentario: "Rendimento confirmado"
+    pii: nenhum
+    nulo: true
+  - nome: xmnga
+    tipo: decimal(23,2)
+    comentario: "Refugo confirmado"
+    pii: nenhum
+    nulo: true
+  - nome: gmnga
+    tipo: decimal(23,2)
+    comentario: "Rendimento confirmado acumulado"
+    pii: nenhum
+    nulo: true
+  - nome: ism01
+    tipo: decimal(23,2)
+    comentario: "Atividade confirmada 1"
+    pii: nenhum
+    nulo: true
+  - nome: ism02
+    tipo: decimal(23,2)
+    comentario: "Atividade confirmada 2"
+    pii: nenhum
+    nulo: true
+  - nome: ism03
+    tipo: decimal(23,2)
+    comentario: "Atividade confirmada 3"
+    pii: nenhum
+    nulo: true
+  - nome: ism04
+    tipo: decimal(23,2)
+    comentario: "Atividade confirmada 4"
+    pii: nenhum
+    nulo: true
+  - nome: ism05
+    tipo: decimal(23,2)
+    comentario: "Atividade confirmada 5"
+    pii: nenhum
+    nulo: true
+  - nome: ism06
+    tipo: decimal(23,2)
+    comentario: "Atividade confirmada 6"
+    pii: nenhum
+    nulo: true
+  - nome: ismnw
+    tipo: decimal(23,2)
+    comentario: "Trabalho real"
+    pii: nenhum
+    nulo: true
+  - nome: fsavd
+    tipo: date
+    comentario: "Data mais cedo de início (planejamento)"
+    pii: nenhum
+    nulo: true
+  - nome: fsavz
+    tipo: string
+    comentario: "Hora mais cedo de início (planejamento)"
+    pii: nenhum
+    nulo: true
+  - nome: fssbd
+    tipo: date
+    comentario: "Data mais cedo de início do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: fssbz
+    tipo: string
+    comentario: "Hora mais cedo de início do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: fssad
+    tipo: date
+    comentario: "Data mais cedo de início do desmontagem"
+    pii: nenhum
+    nulo: true
+  - nome: fssaz
+    tipo: string
+    comentario: "Hora mais cedo de início da desmontagem"
+    pii: nenhum
+    nulo: true
+  - nome: fsedd
+    tipo: date
+    comentario: "Data mais cedo de término"
+    pii: nenhum
+    nulo: true
+  - nome: fsedz
+    tipo: string
+    comentario: "Hora mais cedo de término"
+    pii: nenhum
+    nulo: true
+  - nome: fssld
+    tipo: date
+    comentario: "Data mais cedo de início (liberação)"
+    pii: nenhum
+    nulo: true
+  - nome: fsslz
+    tipo: string
+    comentario: "Hora mais cedo de início (liberação)"
+    pii: nenhum
+    nulo: true
+  - nome: fseld
+    tipo: date
+    comentario: "Data mais cedo de término (liberação)"
+    pii: nenhum
+    nulo: true
+  - nome: fselz
+    tipo: string
+    comentario: "Hora mais cedo de término (liberação)"
+    pii: nenhum
+    nulo: true
+  - nome: ssavd
+    tipo: date
+    comentario: "Data mais tarde de início (planejamento)"
+    pii: nenhum
+    nulo: true
+  - nome: ssavz
+    tipo: string
+    comentario: "Hora mais tarde de início (planejamento)"
+    pii: nenhum
+    nulo: true
+  - nome: sssbd
+    tipo: date
+    comentario: "Data mais tarde de início do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: sssbz
+    tipo: string
+    comentario: "Hora mais tarde de início do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: sssad
+    tipo: date
+    comentario: "Data mais tarde de início da desmontagem"
+    pii: nenhum
+    nulo: true
+  - nome: sssaz
+    tipo: string
+    comentario: "Hora mais tarde de início da desmontagem"
+    pii: nenhum
+    nulo: true
+  - nome: ssedd
+    tipo: date
+    comentario: "Data mais tarde de término"
+    pii: nenhum
+    nulo: true
+  - nome: ssedz
+    tipo: string
+    comentario: "Hora mais tarde de término"
+    pii: nenhum
+    nulo: true
+  - nome: sssld
+    tipo: date
+    comentario: "Data mais tarde de início (liberação)"
+    pii: nenhum
+    nulo: true
+  - nome: ssslz
+    tipo: string
+    comentario: "Hora mais tarde de início (liberação)"
+    pii: nenhum
+    nulo: true
+  - nome: sseld
+    tipo: date
+    comentario: "Data mais tarde de término (liberação)"
+    pii: nenhum
+    nulo: true
+  - nome: sselz
+    tipo: string
+    comentario: "Hora mais tarde de término (liberação)"
+    pii: nenhum
+    nulo: true
+  - nome: isavd
+    tipo: date
+    comentario: "Data real de início da operação"
+    pii: nenhum
+    nulo: true
+  - nome: ieavd
+    tipo: date
+    comentario: "Data real de término da operação"
+    pii: nenhum
+    nulo: true
+  - nome: isdd
+    tipo: date
+    comentario: "Data real de início (data)"
+    pii: nenhum
+    nulo: true
+  - nome: isdz
+    tipo: string
+    comentario: "Hora real de início (hora)"
+    pii: nenhum
+    nulo: true
+  - nome: ierd
+    tipo: date
+    comentario: "Data de término do setup"
+    pii: nenhum
+    nulo: true
+  - nome: ierz
+    tipo: string
+    comentario: "Hora de término do setup"
+    pii: nenhum
+    nulo: true
+  - nome: isbd
+    tipo: date
+    comentario: "Data de início do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: isbz
+    tipo: string
+    comentario: "Hora de início do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: iebd
+    tipo: date
+    comentario: "Data real de término do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: iebz
+    tipo: string
+    comentario: "Hora real de término do processamento"
+    pii: nenhum
+    nulo: true
+  - nome: isad
+    tipo: date
+    comentario: "Data de início da desmontagem"
+    pii: nenhum
+    nulo: true
+  - nome: isaz
+    tipo: string
+    comentario: "Hora de início da desmontagem"
+    pii: nenhum
+    nulo: true
+  - nome: iedd
+    tipo: date
+    comentario: "Data real de término (data)"
+    pii: nenhum
+    nulo: true
+  - nome: iedz
+    tipo: string
+    comentario: "Hora real de término (hora)"
+    pii: nenhum
+    nulo: true
+  - nome: pedd
+    tipo: date
+    comentario: "Data prevista de término"
+    pii: nenhum
+    nulo: true
+  - nome: pedz
+    tipo: string
+    comentario: "Hora prevista de término"
+    pii: nenhum
+    nulo: true
+  - nome: puffr
+    tipo: decimal(23,2)
+    comentario: "Folga livre"
+    pii: nenhum
+    nulo: true
+  - nome: pufgs
+    tipo: decimal(23,2)
+    comentario: "Folga total"
+    pii: nenhum
+    nulo: true
+  - nome: ntanf
+    tipo: date
+    comentario: "Restrição de data de início"
+    pii: nenhum
+    nulo: true
+  - nome: ntanz
+    tipo: string
+    comentario: "Restrição de hora de início"
+    pii: nenhum
+    nulo: true
+  - nome: ntend
+    tipo: date
+    comentario: "Restrição de data de término"
+    pii: nenhum
+    nulo: true
+  - nome: ntenz
+    tipo: string
+    comentario: "Restrição de hora de término"
+    pii: nenhum
+    nulo: true
+  - nome: ewstd
+    tipo: date
+    comentario: "Data prevista de início"
+    pii: nenhum
+    nulo: true
+  - nome: ewstz
+    tipo: string
+    comentario: "Hora prevista de início"
+    pii: nenhum
+    nulo: true
+  - nome: ewend
+    tipo: date
+    comentario: "Data prevista de término"
+    pii: nenhum
+    nulo: true
+  - nome: ewenz
+    tipo: string
+    comentario: "Hora prevista de término"
+    pii: nenhum
+    nulo: true
+  - nome: ewdan
+    tipo: decimal(23,2)
+    comentario: "Duração normal prevista"
+    pii: nenhum
+    nulo: true
+  - nome: ewdne
+    tipo: string
+    comentario: "Unidade da duração normal prevista"
+    pii: nenhum
+    nulo: true
+  - nome: ewdam
+    tipo: decimal(23,2)
+    comentario: "Duração mínima prevista"
+    pii: nenhum
+    nulo: true
+  - nome: ewdme
+    tipo: string
+    comentario: "Unidade da duração mínima prevista"
+    pii: nenhum
+    nulo: true
+  - nome: ewste
+    tipo: string
+    comentario: "Restrição de término previsto"
+    pii: nenhum
+    nulo: true
+  - nome: ewsta
+    tipo: string
+    comentario: "Restrição de início previsto"
+    pii: nenhum
+    nulo: true
+  - nome: wartz
+    tipo: decimal(23,2)
+    comentario: "Tempo de fila"
+    pii: nenhum
+    nulo: true
+  - nome: wrtze
+    tipo: string
+    comentario: "Unidade do tempo de fila"
+    pii: nenhum
+    nulo: true
+  - nome: ruest
+    tipo: decimal(23,2)
+    comentario: "Tempo de setup"
+    pii: nenhum
+    nulo: true
+  - nome: rstze
+    tipo: string
+    comentario: "Unidade do tempo de setup"
+    pii: nenhum
+    nulo: true
+  - nome: bearz
+    tipo: decimal(23,2)
+    comentario: "Tempo de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: beaze
+    tipo: string
+    comentario: "Unidade do tempo de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: abrue
+    tipo: decimal(23,2)
+    comentario: "Tempo de desmontagem"
+    pii: nenhum
+    nulo: true
+  - nome: aruze
+    tipo: string
+    comentario: "Unidade do tempo de desmontagem"
+    pii: nenhum
+    nulo: true
+  - nome: liegz
+    tipo: decimal(23,2)
+    comentario: "Tempo de espera"
+    pii: nenhum
+    nulo: true
+  - nome: ligze
+    tipo: string
+    comentario: "Unidade do tempo de espera"
+    pii: nenhum
+    nulo: true
+  - nome: tranz
+    tipo: decimal(23,2)
+    comentario: "Tempo de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: traze
+    tipo: string
+    comentario: "Unidade do tempo de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: iserh
+    tipo: decimal(23,2)
+    comentario: "Tempo de pausa real"
+    pii: nenhum
+    nulo: true
+  - nome: ofm01
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 1"
+    pii: nenhum
+    nulo: true
+  - nome: ofm02
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 2"
+    pii: nenhum
+    nulo: true
+  - nome: ofm03
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 3"
+    pii: nenhum
+    nulo: true
+  - nome: ofm04
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 4"
+    pii: nenhum
+    nulo: true
+  - nome: ofm05
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 5"
+    pii: nenhum
+    nulo: true
+  - nome: ofm06
+    tipo: decimal(23,2)
+    comentario: "Valor previsto 6"
+    pii: nenhum
+    nulo: true
+  - nome: ofmnw
+    tipo: decimal(23,2)
+    comentario: "Trabalho previsto"
+    pii: nenhum
+    nulo: true
+  - nome: bzoffb
+    tipo: date
+    comentario: "Data de referência para início"
+    pii: nenhum
+    nulo: true
+  - nome: ehoffb
+    tipo: string
+    comentario: "Unidade do deslocamento de início"
+    pii: nenhum
+    nulo: true
+  - nome: offstb
+    tipo: decimal(23,2)
+    comentario: "Deslocamento em relação ao início"
+    pii: nenhum
+    nulo: true
+  - nome: offste
+    tipo: decimal(23,2)
+    comentario: "Deslocamento em relação ao término"
+    pii: nenhum
+    nulo: true
+  - nome: bzoffe
+    tipo: date
+    comentario: "Data de referência para término"
+    pii: nenhum
+    nulo: true
+  - nome: ehoffe
+    tipo: string
+    comentario: "Unidade do deslocamento de término"
+    pii: nenhum
+    nulo: true
+  - nome: fpavd
+    tipo: date
+    comentario: "Data mais cedo de início programada"
+    pii: nenhum
+    nulo: true
+  - nome: fpavz
+    tipo: string
+    comentario: "Hora mais cedo de início programada"
+    pii: nenhum
+    nulo: true
+  - nome: fpedd
+    tipo: date
+    comentario: "Data mais cedo de término programada"
+    pii: nenhum
+    nulo: true
+  - nome: fpedz
+    tipo: string
+    comentario: "Hora mais cedo de término programada"
+    pii: nenhum
+    nulo: true
+  - nome: spavd
+    tipo: date
+    comentario: "Data mais tarde de início programada"
+    pii: nenhum
+    nulo: true
+  - nome: spavz
+    tipo: string
+    comentario: "Hora mais tarde de início programada"
+    pii: nenhum
+    nulo: true
+  - nome: spedd
+    tipo: date
+    comentario: "Data mais tarde de término programada"
+    pii: nenhum
+    nulo: true
+  - nome: spedz
+    tipo: string
+    comentario: "Hora mais tarde de término programada"
+    pii: nenhum
+    nulo: true
+  - nome: beazp
+    tipo: string
+    comentario: "Unidade do tempo de processamento (previsto)"
+    pii: nenhum
+    nulo: true
+  - nome: pufgp
+    tipo: decimal(23,2)
+    comentario: "Folga total (prevista)"
+    pii: nenhum
+    nulo: true
+  - nome: puffp
+    tipo: decimal(23,2)
+    comentario: "Folga livre (prevista)"
+    pii: nenhum
+    nulo: true
+  - nome: bearp
+    tipo: decimal(23,2)
+    comentario: "Tempo de processamento (previsto)"
+    pii: nenhum
+    nulo: true
+  - nome: epanf
+    tipo: date
+    comentario: "Data de início liberada (dispatched)"
+    pii: nenhum
+    nulo: true
+  - nome: epanz
+    tipo: string
+    comentario: "Hora de início liberada (dispatched)"
+    pii: nenhum
+    nulo: true
+  - nome: epend
+    tipo: date
+    comentario: "Data de término liberada (dispatched)"
+    pii: nenhum
+    nulo: true
+  - nome: epenz
+    tipo: string
+    comentario: "Hora de término liberada (dispatched)"
+    pii: nenhum
+    nulo: true
+  - nome: pdau
+    tipo: decimal(23,2)
+    comentario: "Duração prevista a partir da confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: pdae
+    tipo: string
+    comentario: "Unidade da duração prevista"
+    pii: nenhum
+    nulo: true
+  - nome: knote
+    tipo: decimal(23,2)
+    comentario: "Pontos"
+    pii: nenhum
+    nulo: true
+  - nome: vstzw
+    tipo: string
+    comentario: "Função de prazo"
+    pii: nenhum
+    nulo: true
+  - nome: vstga
+    tipo: string
+    comentario: "Motivo de desvio"
+    pii: nenhum
+    nulo: true
+  - nome: qrastzeht
+    tipo: string
+    comentario: "Unidade de tempo de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: qrastzfak
+    tipo: decimal(23,2)
+    comentario: "Fator de tempo de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: qrastmeng
+    tipo: decimal(23,2)
+    comentario: "Intervalo de quantidade para inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: qrastereh
+    tipo: string
+    comentario: "Unidade de medida do intervalo de grade"
+    pii: nenhum
+    nulo: true
+  - nome: aufkt
+    tipo: decimal(23,2)
+    comentario: "Fator de execução"
+    pii: nenhum
+    nulo: true
+  - nome: rmnga
+    tipo: decimal(23,2)
+    comentario: "Quantidade de retrabalho"
+    pii: nenhum
+    nulo: true
+  - nome: ile01
+    tipo: string
+    comentario: "Unidade da atividade 1"
+    pii: nenhum
+    nulo: true
+  - nome: ile02
+    tipo: string
+    comentario: "Unidade da atividade 2"
+    pii: nenhum
+    nulo: true
+  - nome: ile03
+    tipo: string
+    comentario: "Unidade da atividade 3"
+    pii: nenhum
+    nulo: true
+  - nome: ile04
+    tipo: string
+    comentario: "Unidade da atividade 4"
+    pii: nenhum
+    nulo: true
+  - nome: ile05
+    tipo: string
+    comentario: "Unidade da atividade 5"
+    pii: nenhum
+    nulo: true
+  - nome: ile06
+    tipo: string
+    comentario: "Unidade da atividade 6"
+    pii: nenhum
+    nulo: true
+  - nome: rwfak
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: iprz1
+    tipo: decimal(23,2)
+    comentario: "Quantidade confirmada no processo"
+    pii: nenhum
+    nulo: true
+  - nome: ipre1
+    tipo: string
+    comentario: "Unidade do processo"
+    pii: nenhum
+    nulo: true
+  - nome: iprk1
+    tipo: string
+    comentario: "Sem atividade restante no processo"
+    pii: nenhum
+    nulo: true
+  - nome: takt
+    tipo: decimal(23,2)
+    comentario: "Tempo takt"
+    pii: nenhum
+    nulo: true
+  - nome: oprz1
+    tipo: decimal(23,2)
+    comentario: "Quantidade restante no processo de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: opre1
+    tipo: string
+    comentario: "Unidade da quantidade restante no processo"
+    pii: nenhum
+    nulo: true
+  - nome: pspm_indicator
+    tipo: string
+    comentario: "Indicador PSPM"
+    pii: nenhum
+    nulo: true

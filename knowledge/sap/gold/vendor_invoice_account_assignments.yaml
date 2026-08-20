@@ -1,0 +1,418 @@
+tabela: vendor_invoice_account_assignments
+camada: gold
+comentario: "Detalha as imputações contábeis dos itens de linha de notas fiscais de fornecedores do SAP RBCO, mapeando transações para centros de custo, centros de lucro, contas de razão geral e elementos WBS."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.rbco, silver.rbkp, silver.rseg]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, invoice_document_number_belnr, fiscal_year_gjahr, invoice_item_buzei, sequential_number_account_assignment_zekkn, sequential_number_cobl_nr]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: invoice_document_number_belnr
+    tipo: string
+    comentario: "Número do documento de nota fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: fiscal_year_gjahr
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: invoice_item_buzei
+    tipo: int
+    comentario: "Item da nota fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: sequential_number_account_assignment_zekkn
+    tipo: string
+    comentario: "Número sequencial da imputação contábil"
+    pii: nenhum
+    nulo: false
+  - nome: sequential_number_cobl_nr
+    tipo: string
+    comentario: "Número sequencial no documento de imputação contábil"
+    pii: nenhum
+    nulo: false
+  - nome: main_asset_number_anln1
+    tipo: string
+    comentario: "Número do ativo principal"
+    pii: nenhum
+    nulo: true
+  - nome: asset_subnumber_anln2
+    tipo: string
+    comentario: "Subnúmero do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: routing_number_aplzl
+    tipo: string
+    comentario: "Número de roteiro de operações"
+    pii: nenhum
+    nulo: true
+  - nome: order_number_aufnr
+    tipo: string
+    comentario: "Número da ordem de produção/serviço"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_reference_date_dabrz
+    tipo: date
+    comentario: "Data de referência para liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: commitment_item_fipos
+    tipo: string
+    comentario: "Item de compromisso"
+    pii: nenhum
+    nulo: true
+  - nome: funds_center_fistl
+    tipo: string
+    comentario: "Centro de fundos"
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_fkber
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: fund_geber
+    tipo: string
+    comentario: "Fundo"
+    pii: nenhum
+    nulo: true
+  - nome: grant_number_grant_nbr
+    tipo: string
+    comentario: "Concessão/subvenção"
+    pii: nenhum
+    nulo: true
+  - nome: business_area_gsber
+    tipo: string
+    comentario: "Área de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: real_estate_object_key_imkey
+    tipo: string
+    comentario: "Chave do objeto imobiliário"
+    pii: nenhum
+    nulo: true
+  - nome: controlling_area_kokrs
+    tipo: string
+    comentario: "Área de controladoria"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: cost_object_kstrg
+    tipo: string
+    comentario: "Objeto de custo"
+    pii: nenhum
+    nulo: true
+  - nome: profitability_segment_number_paobjnr
+    tipo: string
+    comentario: "Número do segmento de lucratividade"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_ps_psp_pnr
+    tipo: string
+    comentario: "Elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: rules_issuing_invoice_recid
+    tipo: string
+    comentario: "Regras para emissão de nota fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: general_ledger_account_saknr
+    tipo: string
+    comentario: "Número da conta de razão geral"
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_number_vbeln
+    tipo: string
+    comentario: "Número do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_item_vbelp
+    tipo: string
+    comentario: "Item do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: partner_account_number_vptnr
+    tipo: string
+    comentario: "Número de conta do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: unplanned_account_assignment_indicator_xunpl
+    tipo: string
+    comentario: "Indicador: imputação contábil não planejada"
+    pii: nenhum
+    nulo: true
+  - nome: activity_type_lstar
+    tipo: string
+    comentario: "Tipo de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: business_process_prznr
+    tipo: string
+    comentario: "Processo de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: routing_number_operations_order_aufpl
+    tipo: string
+    comentario: "Número de roteiro de operações da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: asset_value_date_bzdat
+    tipo: date
+    comentario: "Data de valor do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: negative_posting_indicator_xnegp
+    tipo: string
+    comentario: "Indicador: lançamento negativo"
+    pii: nenhum
+    nulo: true
+  - nome: used_earmarked_funds_indicator_erlkz
+    tipo: string
+    comentario: "Indicador: dotação de fundos utilizada"
+    pii: nenhum
+    nulo: true
+  - nome: financial_management_area_fikrs
+    tipo: string
+    comentario: "Área de gestão financeira"
+    pii: nenhum
+    nulo: true
+  - nome: earmarked_funds_document_number_kblnr
+    tipo: string
+    comentario: "Número do documento de dotação de fundos"
+    pii: nenhum
+    nulo: true
+  - nome: earmarked_funds_document_item_number_kblpos
+    tipo: string
+    comentario: "Número do item do documento de dotação de fundos"
+    pii: nenhum
+    nulo: true
+  - nome: trading_partner_business_area_pargb
+    tipo: string
+    comentario: "Área de negócios do parceiro comercial"
+    pii: nenhum
+    nulo: true
+  - nome: personnel_number_pernr
+    tipo: string
+    comentario: "Número do funcionário (pessoal)"
+    pii: indireto
+    nulo: true
+  - nome: network_number_account_assignment_nplnr
+    tipo: string
+    comentario: "Número de rede para imputação contábil"
+    pii: nenhum
+    nulo: true
+  - nome: operation_activity_number_vornr
+    tipo: string
+    comentario: "Número da operação/atividade"
+    pii: nenhum
+    nulo: true
+  - nome: assignment_number_zuonr
+    tipo: string
+    comentario: "Número de atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: tax_type_mwart
+    tipo: string
+    comentario: "Tipo de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_period_abper
+    tipo: string
+    comentario: "Período de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_creation_date_ledat
+    tipo: date
+    comentario: "Data de criação da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_menge_f
+    tipo: decimal(38,9)
+    comentario: "Quantidade (ponto flutuante)"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_po_price_unit_bpmng_f
+    tipo: decimal(38,9)
+    comentario: "Quantidade na unidade de preço do pedido de compra (ponto flutuante)"
+    pii: nenhum
+    nulo: true
+  - nome: budget_period_budget_pd
+    tipo: string
+    comentario: "Período orçamentário"
+    pii: nenhum
+    nulo: true
+  - nome: funded_program_measure
+    tipo: string
+    comentario: "Programa financiado"
+    pii: nenhum
+    nulo: true
+  - nome: us_government_fields_fmfgus_key
+    tipo: string
+    comentario: "Campos do governo federal dos Estados Unidos"
+    pii: nenhum
+    nulo: true
+  - nome: account_type_koart
+    tipo: string
+    comentario: "Tipo de conta"
+    pii: nenhum
+    nulo: true
+  - nome: final_account_assignment_indicator_aa_final_ind
+    tipo: string
+    comentario: "Indicador de imputação contábil final"
+    pii: nenhum
+    nulo: true
+  - nome: final_account_assignment_quantity_aa_final_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade de imputação contábil final"
+    pii: nenhum
+    nulo: true
+  - nome: final_account_assignment_quantity_float_aa_final_qty_f
+    tipo: decimal(38,9)
+    comentario: "Quantidade de imputação contábil final (ponto flutuante)"
+    pii: nenhum
+    nulo: true
+  - nome: parked_invoice_quantity_parked_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade de nota fiscal estacionada"
+    pii: nenhum
+    nulo: true
+  - nome: parked_invoice_quantity_float_parked_qty_f
+    tipo: decimal(38,9)
+    comentario: "Quantidade de nota fiscal estacionada (ponto flutuante)"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: true
+  - nome: debit_credit_indicator_shkzg
+    tipo: string
+    comentario: "Indicador de débito/crédito"
+    pii: nenhum
+    nulo: true
+  - nome: tax_code_mwskz
+    tipo: string
+    comentario: "Código de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_po_price_unit_bpmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade na unidade de preço do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_measure_meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_item_amount_spgrs
+    tipo: string
+    comentario: "Motivo de bloqueio: valor do item"
+    pii: nenhum
+    nulo: true
+  - nome: item_text_sgtxt
+    tipo: string
+    comentario: "Texto do item"
+    pii: nenhum
+    nulo: true
+  - nome: line_item_cash_discount_not_liable_indicator_xskrl
+    tipo: string
+    comentario: "Indicador: item de linha não sujeito a desconto financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: amount_wrbtr
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do documento (sinal invertido para notas de crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_costs_distribution_amount_bnkan_fw
+    tipo: decimal(23,2)
+    comentario: "Valor de distribuição de custos de entrega (sinal invertido para notas de crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: tax_base_amount_fwbas
+    tipo: decimal(23,2)
+    comentario: "Base de cálculo do imposto em moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: tax_base_amount_local_currency_hwbas
+    tipo: decimal(23,2)
+    comentario: "Base de cálculo do imposto em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_asset_value_date_bzdat
+    tipo: int
+    comentario: "Ano da data de valor do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_asset_value_date_bzdat
+    tipo: int
+    comentario: "Mês da data de valor do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_asset_value_date_bzdat
+    tipo: int
+    comentario: "Trimestre da data de valor do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_asset_value_date_bzdat
+    tipo: int
+    comentario: "Semana da data de valor do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_delivery_creation_date_ledat
+    tipo: int
+    comentario: "Ano da data de criação da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_delivery_creation_date_ledat
+    tipo: int
+    comentario: "Mês da data de criação da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_delivery_creation_date_ledat
+    tipo: int
+    comentario: "Trimestre da data de criação da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_delivery_creation_date_ledat
+    tipo: int
+    comentario: "Semana da data de criação da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

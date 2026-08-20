@@ -1,0 +1,27 @@
+tabela: t134t
+camada: bronze
+comentario: "Descricoes dos tipos de material (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t134t
+chave_primaria: [mandt, spras, mtart]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: mtart
+    tipo: string
+    comentario: "Tipo de material"
+    pii: nenhum
+    nulo: false
+  - nome: mtbez
+    tipo: string
+    comentario: "Descricao do tipo de material"
+    pii: nenhum
+    nulo: true

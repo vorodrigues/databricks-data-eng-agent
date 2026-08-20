@@ -1,0 +1,257 @@
+tabela: anlb
+camada: bronze
+comentario: "Parâmetros de depreciação do ativo fixo"
+ingestao: cdc
+fonte: sap.anlb
+chave_primaria: [mandt, bukrs, anln1, anln2, afabe, bdatu]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Empresa"
+    pii: nenhum
+    nulo: false
+  - nome: anln1
+    tipo: string
+    comentario: "Número do ativo"
+    pii: nenhum
+    nulo: false
+  - nome: anln2
+    tipo: string
+    comentario: "Subnúmero do ativo"
+    pii: nenhum
+    nulo: false
+  - nome: afabe
+    tipo: string
+    comentario: "Área de depreciação"
+    pii: nenhum
+    nulo: false
+  - nome: bdatu
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: false
+  - nome: adatu
+    tipo: date
+    comentario: "Válido de"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Alterado em"
+    pii: nenhum
+    nulo: true
+  - nome: xloev
+    tipo: string
+    comentario: "Marcador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: xspeb
+    tipo: string
+    comentario: "Bloqueado para lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: felei
+    tipo: string
+    comentario: "Regra de layout de tela"
+    pii: nenhum
+    nulo: true
+  - nome: xnega
+    tipo: string
+    comentario: "Valores negativos permitidos"
+    pii: nenhum
+    nulo: true
+  - nome: xgwgk
+    tipo: string
+    comentario: "Verificação de ativo de baixo valor"
+    pii: nenhum
+    nulo: true
+  - nome: xunta
+    tipo: string
+    comentario: "Depreciação no número de ativo principal"
+    pii: nenhum
+    nulo: true
+  - nome: afabg
+    tipo: date
+    comentario: "Data de início do cálculo de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: zinbg
+    tipo: date
+    comentario: "Data de início do cálculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: safbg
+    tipo: date
+    comentario: "Data de início da depreciação especial"
+    pii: nenhum
+    nulo: true
+  - nome: invsl
+    tipo: string
+    comentario: "Suporte a investimentos"
+    pii: nenhum
+    nulo: true
+  - nome: afasl
+    tipo: string
+    comentario: "Chave de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: ndjar
+    tipo: int
+    comentario: "Vida útil em anos"
+    pii: nenhum
+    nulo: true
+  - nome: ndper
+    tipo: int
+    comentario: "Vida útil em períodos"
+    pii: nenhum
+    nulo: true
+  - nome: naprz
+    tipo: decimal(23,2)
+    comentario: "Taxa percentual de depreciação ordinária"
+    pii: nenhum
+    nulo: true
+  - nome: saprz
+    tipo: decimal(23,2)
+    comentario: "Taxa percentual de depreciação especial"
+    pii: nenhum
+    nulo: true
+  - nome: wbind
+    tipo: string
+    comentario: "Série de índices de reavaliação"
+    pii: nenhum
+    nulo: true
+  - nome: alind
+    tipo: string
+    comentario: "Índice dependente da idade"
+    pii: nenhum
+    nulo: true
+  - nome: aprop
+    tipo: decimal(23,2)
+    comentario: "Parcela de depreciação variável"
+    pii: nenhum
+    nulo: true
+  - nome: umjar
+    tipo: int
+    comentario: "Ano de conversão do método de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: ndurj
+    tipo: int
+    comentario: "Vida útil original em anos"
+    pii: nenhum
+    nulo: true
+  - nome: ndurp
+    tipo: int
+    comentario: "Vida útil original em períodos"
+    pii: nenhum
+    nulo: true
+  - nome: schrw
+    tipo: decimal(23,2)
+    comentario: "Valor residual"
+    pii: nenhum
+    nulo: true
+  - nome: lgjan
+    tipo: string
+    comentario: "Último exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: perfy
+    tipo: string
+    comentario: "Escala por período"
+    pii: nenhum
+    nulo: true
+  - nome: anupd
+    tipo: string
+    comentario: "Tipo de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: aufwtg
+    tipo: string
+    comentario: "Reavaliação"
+    pii: nenhum
+    nulo: true
+  - nome: xafbe
+    tipo: string
+    comentario: "Área de depreciação desativada"
+    pii: nenhum
+    nulo: true
+  - nome: anlgr
+    tipo: string
+    comentario: "Ativo de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: anlgr2
+    tipo: string
+    comentario: "Subnúmero do ativo de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: vyear
+    tipo: string
+    comentario: "Ano de aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: vmnth
+    tipo: string
+    comentario: "Mês de aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: inbda
+    tipo: date
+    comentario: "Data de prontidão operacional"
+    pii: nenhum
+    nulo: true
+  - nome: abgdat_b
+    tipo: date
+    comentario: "Data do último abate do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: deakt_b
+    tipo: date
+    comentario: "Desativado em"
+    pii: nenhum
+    nulo: true
+  - nome: j_1aarvkey
+    tipo: string
+    comentario: "Chave de reavaliação (Argentina)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1aaltdat
+    tipo: date
+    comentario: "Data da última reavaliação (Argentina)"
+    pii: nenhum
+    nulo: true
+  - nome: j_1aaltidx
+    tipo: string
+    comentario: "Último índice utilizado (Argentina)"
+    pii: nenhum
+    nulo: true
+  - nome: schrw_proz
+    tipo: decimal(23,2)
+    comentario: "Percentual do valor residual"
+    pii: nenhum
+    nulo: true
+  - nome: umper
+    tipo: int
+    comentario: "Período de conversão do método de depreciação"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,218 @@
+tabela: sales_document_item_statuses
+camada: gold
+comentario: "Captura os status de separacao, entrega e faturamento dos itens de documentos de vendas a partir da VBUP do SAP (ECC) ou VBAP/LIPS (S4)."
+entidade: obt
+ingestao: custom
+fontes: [silver.vbak, silver.vbap, silver.vbep, silver.vbpa, silver.tcurx, silver.vbfa, silver.vbuk, silver.vbup, silver.lips]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_vbeln
+    tipo: string
+    comentario: "Numero do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_item_posnr
+    tipo: string
+    comentario: "Numero do item do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: reference_status_rfsta
+    tipo: string
+    comentario: "Status de referencia do item"
+    pii: nenhum
+    nulo: true
+  - nome: overall_status_of_reference_rfgsa
+    tipo: string
+    comentario: "Status global de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: confirmation_status_of_document_item_besta
+    tipo: string
+    comentario: "Status de confirmacao do item do documento"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_status_lfsta
+    tipo: string
+    comentario: "Status de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: overall_delivery_status_of_the_item_lfgsa
+    tipo: string
+    comentario: "Status global de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: goods_movement_status_wbsta
+    tipo: string
+    comentario: "Status de movimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: billing_status_of_delivery_fksta
+    tipo: string
+    comentario: "Status de faturamento da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: billing_status_for_order_fksaa
+    tipo: string
+    comentario: "Status de faturamento do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: rejection_status_for_sd_item_absta
+    tipo: string
+    comentario: "Status de rejeicao do item SD"
+    pii: nenhum
+    nulo: true
+  - nome: overall_processing_status_of_the_sd_document_item_gbsta
+    tipo: string
+    comentario: "Status global de processamento do item SD"
+    pii: nenhum
+    nulo: true
+  - nome: picking_status_putaway_status_kosta
+    tipo: string
+    comentario: "Status de separacao (picking) / armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_warehouse_management_activities_lvsta
+    tipo: string
+    comentario: "Status das atividades de gestao de deposito (WM)"
+    pii: nenhum
+    nulo: true
+  - nome: general_incompletion_status_of_item_uvall
+    tipo: string
+    comentario: "Status de incompletude geral do item"
+    pii: nenhum
+    nulo: true
+  - nome: incompletion_status_of_the_item_with_regard_to_delivery_uvvlk
+    tipo: string
+    comentario: "Status de incompletude do item em relacao a entrega"
+    pii: nenhum
+    nulo: true
+  - nome: item_incompletion_status_with_respect_to_billing_uvfak
+    tipo: string
+    comentario: "Status de incompletude do item em relacao ao faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: pricing_for_item_is_incomplete_uvprs
+    tipo: string
+    comentario: "Precificacao do item incompleta"
+    pii: nenhum
+    nulo: true
+  - nome: intercompany_billing_status_fkivp
+    tipo: string
+    comentario: "Status de faturamento intercompanhia"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves1_item_status_uvp01
+    tipo: string
+    comentario: "Status de reserva de cliente 1"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves2_item_status_uvp02
+    tipo: string
+    comentario: "Status de reserva de cliente 2"
+    pii: nenhum
+    nulo: true
+  - nome: item_reserves3_item_status_uvp03
+    tipo: string
+    comentario: "Status de reserva de item 3"
+    pii: nenhum
+    nulo: true
+  - nome: item_reserves4_item_status_uvp04
+    tipo: string
+    comentario: "Status de reserva de item 4"
+    pii: nenhum
+    nulo: true
+  - nome: customer_reserves5_item_status_uvp05
+    tipo: string
+    comentario: "Status de reserva de cliente 5"
+    pii: nenhum
+    nulo: true
+  - nome: packing_status_of_item_pksta
+    tipo: string
+    comentario: "Status de embalagem do item"
+    pii: nenhum
+    nulo: true
+  - nome: confirmation_status_of_picking_putaway_koqua
+    tipo: string
+    comentario: "Status de confirmacao de separacao/armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_credit_check_against_financial_document_cmppi
+    tipo: string
+    comentario: "Status de verificacao de credito contra documento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_credit_check_against_export_credit_insurance_cmppj
+    tipo: string
+    comentario: "Status de verificacao de credito contra seguro de exportacao"
+    pii: nenhum
+    nulo: true
+  - nome: incomplete_status_of_item_for_picking_putaway_uvpik
+    tipo: string
+    comentario: "Status de incompletude do item para separacao/armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: incomplete_status_of_item_for_packaging_uvpak
+    tipo: string
+    comentario: "Status de incompletude do item para embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: incomplete_status_of_item_regarding_goods_issue_uvwak
+    tipo: string
+    comentario: "Status de incompletude do item para saida de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: delay_status_dcsta
+    tipo: string
+    comentario: "Status de atraso do item"
+    pii: nenhum
+    nulo: true
+  - nome: decentralized_whse_processing_vlstp
+    tipo: string
+    comentario: "Processamento descentralizado de deposito"
+    pii: nenhum
+    nulo: true
+  - nome: billing_block_status_for_items_fssta
+    tipo: string
+    comentario: "Status de bloqueio de faturamento do item"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_block_status_for_item_lssta
+    tipo: string
+    comentario: "Status de bloqueio de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: pod_status_on_item_level_pdsta
+    tipo: string
+    comentario: "Status de prova de entrega (POD) no nivel do item"
+    pii: nenhum
+    nulo: true
+  - nome: manual_completion_of_contract_manek
+    tipo: string
+    comentario: "Conclusao manual do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: inbound_delivery_item_not_yet_complete_on_hold_hdall
+    tipo: string
+    comentario: "Item de entrega de entrada nao concluido (em espera)"
+    pii: nenhum
+    nulo: true
+  - nome: ifrs15_relevance
+    tipo: string
+    comentario: "Indicador de relevancia IFRS 15 (somente S4)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

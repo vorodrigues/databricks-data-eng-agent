@@ -1,0 +1,927 @@
+tabela: afvc
+camada: bronze
+comentario: "Operação dentro de uma ordem (PP/PM/PS)"
+ingestao: cdc
+fonte: sap.afvc
+chave_primaria: [mandt, aufpl, aplzl]
+colunas:
+  - nome: /cum/cuguid
+    tipo: string
+    comentario: "GUID de configuracao de variante (Variant Configuration)."
+    pii: nenhum
+    nulo: true
+  - nome: /isdfps/objnr
+    tipo: string
+    comentario: "Número de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: ablad
+    tipo: string
+    comentario: "Ponto de descarga"
+    pii: nenhum
+    nulo: true
+  - nome: ablipkz
+    tipo: string
+    comentario: "Indicador de simulação de desmontagem/espera"
+    pii: nenhum
+    nulo: true
+  - nome: adpsp
+    tipo: string
+    comentario: "Elemento de referência PM/PS"
+    pii: nenhum
+    nulo: true
+  - nome: adrn2
+    tipo: string
+    comentario: "Número de endereço 2"
+    pii: nenhum
+    nulo: true
+  - nome: adrnr
+    tipo: string
+    comentario: "Número de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: aennr
+    tipo: string
+    comentario: "Número de alteração de engenharia"
+    pii: nenhum
+    nulo: true
+  - nome: afnam
+    tipo: string
+    comentario: "Nome do solicitante"
+    pii: direto
+    nulo: true
+  - nome: anfko
+    tipo: string
+    comentario: "Centro de custo solicitante"
+    pii: nenhum
+    nulo: true
+  - nome: anfkokrs
+    tipo: string
+    comentario: "Área de controlling"
+    pii: nenhum
+    nulo: true
+  - nome: anlzu
+    tipo: string
+    comentario: "Condição do sistema"
+    pii: nenhum
+    nulo: true
+  - nome: anzma
+    tipo: int
+    comentario: "Número de funcionários"
+    pii: nenhum
+    nulo: true
+  - nome: anzzl
+    tipo: int
+    comentario: "Número"
+    pii: nenhum
+    nulo: true
+  - nome: aplfl
+    tipo: string
+    comentario: "Sequência"
+    pii: nenhum
+    nulo: true
+  - nome: aplzl
+    tipo: string
+    comentario: "Contador interno de operação"
+    pii: nenhum
+    nulo: false
+  - nome: arbid
+    tipo: string
+    comentario: "ID do objeto (recurso)"
+    pii: nenhum
+    nulo: true
+  - nome: arbii
+    tipo: string
+    comentario: "ID do objeto (interno)"
+    pii: nenhum
+    nulo: true
+  - nome: aufak
+    tipo: string
+    comentario: "Sucata"
+    pii: nenhum
+    nulo: true
+  - nome: aufpl
+    tipo: string
+    comentario: "Número da lista de tarefas de operação (roteiro)"
+    pii: nenhum
+    nulo: false
+  - nome: banfn
+    tipo: string
+    comentario: "Número de solicitação de compra"
+    pii: nenhum
+    nulo: true
+  - nome: bedid
+    tipo: string
+    comentario: "ID de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: bednr
+    tipo: string
+    comentario: "Número de rastreamento de requisição"
+    pii: nenhum
+    nulo: true
+  - nome: bedzl
+    tipo: int
+    comentario: "Contador de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: bnfpo
+    tipo: string
+    comentario: "Número do item da solicitação de compra"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Empresa"
+    pii: nenhum
+    nulo: true
+  - nome: ch_proc
+    tipo: string
+    comentario: "Tipo de processo de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: clasf
+    tipo: string
+    comentario: "Sumarização"
+    pii: nenhum
+    nulo: true
+  - nome: cuobj_arb
+    tipo: string
+    comentario: "Número interno do objeto (configurável)"
+    pii: nenhum
+    nulo: true
+  - nome: cy_seqnrv
+    tipo: string
+    comentario: "Número de sequência"
+    pii: nenhum
+    nulo: true
+  - nome: ddehn
+    tipo: string
+    comentario: "Duração flexível"
+    pii: nenhum
+    nulo: true
+  - nome: ebeln
+    tipo: string
+    comentario: "Número do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: ebelp
+    tipo: string
+    comentario: "Item do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: ebort
+    tipo: string
+    comentario: "Ponto de instalação"
+    pii: nenhum
+    nulo: true
+  - nome: ekgrp
+    tipo: string
+    comentario: "Grupo de compradores"
+    pii: nenhum
+    nulo: true
+  - nome: ekorg
+    tipo: string
+    comentario: "Organização de compras"
+    pii: nenhum
+    nulo: true
+  - nome: equnr
+    tipo: string
+    comentario: "Número do equipamento"
+    pii: nenhum
+    nulo: true
+  - nome: erfsicht
+    tipo: string
+    comentario: "Visão de registro"
+    pii: nenhum
+    nulo: true
+  - nome: esokz
+    tipo: string
+    comentario: "Categoria de registro de informação"
+    pii: nenhum
+    nulo: true
+  - nome: evgew
+    tipo: decimal(23,2)
+    comentario: "Peso POC"
+    pii: nenhum
+    nulo: true
+  - nome: flies
+    tipo: string
+    comentario: "Produção em fluxo contínuo"
+    pii: nenhum
+    nulo: true
+  - nome: fordn
+    tipo: string
+    comentario: "Ordem de estrutura"
+    pii: nenhum
+    nulo: true
+  - nome: fordp
+    tipo: string
+    comentario: "Item da ordem de estrutura"
+    pii: nenhum
+    nulo: true
+  - nome: fplnr
+    tipo: string
+    comentario: "Número do plano de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: frdlb
+    tipo: string
+    comentario: "Subcontratação"
+    pii: nenhum
+    nulo: true
+  - nome: frsp
+    tipo: string
+    comentario: "Mais cedo/mais tarde"
+    pii: nenhum
+    nulo: true
+  - nome: frunv
+    tipo: string
+    comentario: "Dados externos incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: func_area
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Área de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: indet
+    tipo: string
+    comentario: "Chave de cálculo"
+    pii: nenhum
+    nulo: true
+  - nome: infnr
+    tipo: string
+    comentario: "Registro de informação de compras"
+    pii: nenhum
+    nulo: true
+  - nome: istkn
+    tipo: string
+    comentario: "Nó do item"
+    pii: nenhum
+    nulo: true
+  - nome: istnr
+    tipo: string
+    comentario: "Lista técnica (BOM)"
+    pii: nenhum
+    nulo: true
+  - nome: istpo
+    tipo: string
+    comentario: "Contador"
+    pii: nenhum
+    nulo: true
+  - nome: istru
+    tipo: string
+    comentario: "Montagem"
+    pii: nenhum
+    nulo: true
+  - nome: istty
+    tipo: string
+    comentario: "Categoria da BOM"
+    pii: nenhum
+    nulo: true
+  - nome: iupoz
+    tipo: string
+    comentario: "Número do subitem"
+    pii: nenhum
+    nulo: true
+  - nome: kalid
+    tipo: string
+    comentario: "ID do calendário de fábrica"
+    pii: nenhum
+    nulo: true
+  - nome: kalnr
+    tipo: string
+    comentario: "Número de estimativa de custo"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm
+    tipo: string
+    comentario: "Folha de cálculo de custo"
+    pii: nenhum
+    nulo: true
+  - nome: kapt_puffr
+    tipo: string
+    comentario: "Campo sem descricao na fonte (kapt_puffr)."
+    pii: nenhum
+    nulo: true
+  - nome: klvar
+    tipo: string
+    comentario: "Variante de custeio"
+    pii: nenhum
+    nulo: true
+  - nome: knobj
+    tipo: string
+    comentario: "Número de atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: ktsch
+    tipo: string
+    comentario: "Chave de texto padrão"
+    pii: nenhum
+    nulo: true
+  - nome: kunn2
+    tipo: string
+    comentario: "Número de cliente"
+    pii: indireto
+    nulo: true
+  - nome: kzfeat
+    tipo: string
+    comentario: "Indicador de caracteristica (feature)."
+    pii: nenhum
+    nulo: true
+  - nome: kzfix
+    tipo: string
+    comentario: "Indicador: preço fixo"
+    pii: nenhum
+    nulo: true
+  - nome: kzlgf
+    tipo: string
+    comentario: "Processamento externo LSI"
+    pii: nenhum
+    nulo: true
+  - nome: kzwrtf
+    tipo: string
+    comentario: "Indicador: preço fixo (valor)"
+    pii: nenhum
+    nulo: true
+  - nome: lar01
+    tipo: string
+    comentario: "Tipo de atividade 1"
+    pii: nenhum
+    nulo: true
+  - nome: lar02
+    tipo: string
+    comentario: "Tipo de atividade 2"
+    pii: nenhum
+    nulo: true
+  - nome: lar03
+    tipo: string
+    comentario: "Tipo de atividade 3"
+    pii: nenhum
+    nulo: true
+  - nome: lar04
+    tipo: string
+    comentario: "Tipo de atividade 4"
+    pii: nenhum
+    nulo: true
+  - nome: lar05
+    tipo: string
+    comentario: "Tipo de atividade 5"
+    pii: nenhum
+    nulo: true
+  - nome: lar06
+    tipo: string
+    comentario: "Tipo de atividade 6"
+    pii: nenhum
+    nulo: true
+  - nome: larnt
+    tipo: string
+    comentario: "Tipo de atividade padrão"
+    pii: nenhum
+    nulo: true
+  - nome: lek01
+    tipo: string
+    comentario: "Sem atividade restante 1"
+    pii: nenhum
+    nulo: true
+  - nome: lek02
+    tipo: string
+    comentario: "Sem atividade restante 2"
+    pii: nenhum
+    nulo: true
+  - nome: lek03
+    tipo: string
+    comentario: "Sem atividade restante 3"
+    pii: nenhum
+    nulo: true
+  - nome: lek04
+    tipo: string
+    comentario: "Sem atividade restante 4"
+    pii: nenhum
+    nulo: true
+  - nome: lek05
+    tipo: string
+    comentario: "Sem atividade restante 5"
+    pii: nenhum
+    nulo: true
+  - nome: lek06
+    tipo: string
+    comentario: "Sem atividade restante 6"
+    pii: nenhum
+    nulo: true
+  - nome: leknw
+    tipo: string
+    comentario: "Sem trabalho restante"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Número do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: loanz
+    tipo: int
+    comentario: "Número de bilhetes de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: loart
+    tipo: string
+    comentario: "Tipo de salário"
+    pii: nenhum
+    nulo: true
+  - nome: loekz
+    tipo: string
+    comentario: "Indicador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: logrp
+    tipo: string
+    comentario: "Grupo de salário"
+    pii: nenhum
+    nulo: true
+  - nome: ltxa1
+    tipo: string
+    comentario: "Texto resumido da operação"
+    pii: nenhum
+    nulo: true
+  - nome: ltxa2
+    tipo: string
+    comentario: "Descrição da operação"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matkl
+    tipo: string
+    comentario: "Grupo de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: mat_prkst
+    tipo: string
+    comentario: "Planejamento de material"
+    pii: nenhum
+    nulo: true
+  - nome: mes_operid
+    tipo: string
+    comentario: "Número da operação MES"
+    pii: nenhum
+    nulo: true
+  - nome: mes_stepid
+    tipo: string
+    comentario: "ID de etapa MES"
+    pii: nenhum
+    nulo: true
+  - nome: mill_oc_aufnr_mo
+    tipo: string
+    comentario: "Ordem combinada (Mill)"
+    pii: nenhum
+    nulo: true
+  - nome: mlstn
+    tipo: string
+    comentario: "Utilização"
+    pii: nenhum
+    nulo: true
+  - nome: netzkont
+    tipo: string
+    comentario: "Atribuição de conta"
+    pii: nenhum
+    nulo: true
+  - nome: no_disp
+    tipo: string
+    comentario: "Efetivo no planejamento de material"
+    pii: nenhum
+    nulo: true
+  - nome: nprio
+    tipo: string
+    comentario: "Prioridade"
+    pii: nenhum
+    nulo: true
+  - nome: nptxtky
+    tipo: string
+    comentario: "Número de texto"
+    pii: nenhum
+    nulo: true
+  - nome: objektid
+    tipo: string
+    comentario: "ID do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: objnr
+    tipo: string
+    comentario: "Número do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: objtype
+    tipo: string
+    comentario: "Indicador de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: otype
+    tipo: string
+    comentario: "Tipo de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: owaer
+    tipo: string
+    comentario: "Moeda do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: packno
+    tipo: string
+    comentario: "Número do pacote"
+    pii: nenhum
+    nulo: true
+  - nome: pdest
+    tipo: string
+    comentario: "Impressora"
+    pii: nenhum
+    nulo: true
+  - nome: peinh
+    tipo: int
+    comentario: "Unidade de preço"
+    pii: nenhum
+    nulo: true
+  - nome: pernr
+    tipo: string
+    comentario: "Número de pessoal"
+    pii: indireto
+    nulo: true
+  - nome: phflg
+    tipo: string
+    comentario: "Indicador: fase"
+    pii: nenhum
+    nulo: true
+  - nome: phseq
+    tipo: string
+    comentario: "Destino de registro de controle"
+    pii: nenhum
+    nulo: true
+  - nome: plnal
+    tipo: string
+    comentario: "Contador de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: plnfl
+    tipo: string
+    comentario: "Sequência"
+    pii: nenhum
+    nulo: true
+  - nome: plnkn
+    tipo: string
+    comentario: "Nó da lista de tarefas"
+    pii: nenhum
+    nulo: true
+  - nome: plnnr
+    tipo: string
+    comentario: "Grupo"
+    pii: nenhum
+    nulo: true
+  - nome: plnty
+    tipo: string
+    comentario: "Tipo de lista de tarefas"
+    pii: nenhum
+    nulo: true
+  - nome: pprio
+    tipo: string
+    comentario: "Prioridade"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: preis
+    tipo: decimal(23,2)
+    comentario: "Preço"
+    pii: nenhum
+    nulo: true
+  - nome: prkst
+    tipo: decimal(23,2)
+    comentario: "Montante"
+    pii: nenhum
+    nulo: true
+  - nome: prod_act
+    tipo: string
+    comentario: "Atividade de produção"
+    pii: nenhum
+    nulo: true
+  - nome: projn
+    tipo: string
+    comentario: "Elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: prz01
+    tipo: string
+    comentario: "Processo de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: prznt
+    tipo: decimal(23,2)
+    comentario: "Percentual"
+    pii: nenhum
+    nulo: true
+  - nome: pspnr
+    tipo: string
+    comentario: "Elemento WBS padrão"
+    pii: nenhum
+    nulo: true
+  - nome: pvzkn
+    tipo: int
+    comentario: "Contador"
+    pii: nenhum
+    nulo: true
+  - nome: qkzprfrei
+    tipo: string
+    comentario: "Sem relação"
+    pii: nenhum
+    nulo: true
+  - nome: qkzprmeng
+    tipo: string
+    comentario: "Relacionado a quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: qkzprzeit
+    tipo: string
+    comentario: "Relacionado a tempo"
+    pii: nenhum
+    nulo: true
+  - nome: qkztlsbest
+    tipo: string
+    comentario: "Último lote parcial atribuído"
+    pii: nenhum
+    nulo: true
+  - nome: qkzztmg1
+    tipo: string
+    comentario: "Confirmação de lote parcial de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: qlkapar
+    tipo: string
+    comentario: "Categoria de capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: qpart
+    tipo: string
+    comentario: "Tipo de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: qppktabs
+    tipo: string
+    comentario: "Conclusão do ponto de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: qualf
+    tipo: string
+    comentario: "Adequação"
+    pii: nenhum
+    nulo: true
+  - nome: rasch
+    tipo: string
+    comentario: "Chave de tipo de setup"
+    pii: nenhum
+    nulo: true
+  - nome: rfgrp
+    tipo: string
+    comentario: "Categoria do grupo de setup"
+    pii: nenhum
+    nulo: true
+  - nome: rfippnt
+    tipo: string
+    comentario: "Ponto de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rfpnt
+    tipo: string
+    comentario: "Ponto de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rfsch
+    tipo: string
+    comentario: "Chave do grupo de setup"
+    pii: nenhum
+    nulo: true
+  - nome: rmzhl
+    tipo: int
+    comentario: "Contador"
+    pii: nenhum
+    nulo: true
+  - nome: rsanz
+    tipo: int
+    comentario: "Número de boletos de confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: rstra
+    tipo: string
+    comentario: "Estratégia de redução"
+    pii: nenhum
+    nulo: true
+  - nome: rstuf
+    tipo: string
+    comentario: "Nível de redução"
+    pii: nenhum
+    nulo: true
+  - nome: rueck
+    tipo: string
+    comentario: "Confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: sakto
+    tipo: string
+    comentario: "Elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: sched_end
+    tipo: string
+    comentario: "Sol. de compra no final"
+    pii: nenhum
+    nulo: true
+  - nome: scope
+    tipo: string
+    comentario: "Classe do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: selkz
+    tipo: string
+    comentario: "Custo"
+    pii: nenhum
+    nulo: true
+  - nome: sortl
+    tipo: string
+    comentario: "Termo de classificação"
+    pii: nenhum
+    nulo: true
+  - nome: spanz
+    tipo: int
+    comentario: "Número de divisões"
+    pii: nenhum
+    nulo: true
+  - nome: splim
+    tipo: int
+    comentario: "Número máximo de divisões"
+    pii: nenhum
+    nulo: true
+  - nome: spmus
+    tipo: string
+    comentario: "Divisão obrigatória"
+    pii: nenhum
+    nulo: true
+  - nome: stdkn
+    tipo: string
+    comentario: "Nós"
+    pii: nenhum
+    nulo: true
+  - nome: steus
+    tipo: string
+    comentario: "Chave de controle"
+    pii: nenhum
+    nulo: true
+  - nome: subsys
+    tipo: string
+    comentario: "Sistema QDR"
+    pii: nenhum
+    nulo: true
+  - nome: sumnr
+    tipo: string
+    comentario: "Nó da operação superior"
+    pii: nenhum
+    nulo: true
+  - nome: techs
+    tipo: string
+    comentario: "Variante padrão"
+    pii: nenhum
+    nulo: true
+  - nome: tplnr
+    tipo: string
+    comentario: "Local funcional"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: txtsp
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: uekan
+    tipo: string
+    comentario: "Sobreposição opcional"
+    pii: nenhum
+    nulo: true
+  - nome: uemus
+    tipo: string
+    comentario: "Sobreposição obrigatória"
+    pii: nenhum
+    nulo: true
+  - nome: vertl
+    tipo: string
+    comentario: "Distribuição interna"
+    pii: nenhum
+    nulo: true
+  - nome: vgwts
+    tipo: string
+    comentario: "Chave de valor padrão"
+    pii: nenhum
+    nulo: true
+  - nome: vintv
+    tipo: string
+    comentario: "Incremento de operação"
+    pii: nenhum
+    nulo: true
+  - nome: vornr
+    tipo: string
+    comentario: "Atividade"
+    pii: nenhum
+    nulo: true
+  - nome: vplal
+    tipo: string
+    comentario: "Contador de grupo referenciado"
+    pii: nenhum
+    nulo: true
+  - nome: vplfl
+    tipo: string
+    comentario: "Sequência referenciada"
+    pii: nenhum
+    nulo: true
+  - nome: vplnr
+    tipo: string
+    comentario: "Grupo referenciado"
+    pii: nenhum
+    nulo: true
+  - nome: vplty
+    tipo: string
+    comentario: "Tipo de lista de tarefas referenciada"
+    pii: nenhum
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda"
+    pii: nenhum
+    nulo: true
+  - nome: wempf
+    tipo: string
+    comentario: "Destinatário de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: werki
+    tipo: string
+    comentario: "Centro (interno)"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: true
+  - nome: wkurs
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: wty_ind
+    tipo: string
+    comentario: "Garantia"
+    pii: nenhum
+    nulo: true
+  - nome: zaehl
+    tipo: string
+    comentario: "Contador"
+    pii: nenhum
+    nulo: true
+  - nome: zcode
+    tipo: string
+    comentario: "Número de referência para código SV"
+    pii: nenhum
+    nulo: true
+  - nome: zerma
+    tipo: string
+    comentario: "Tipo de cálculo"
+    pii: nenhum
+    nulo: true
+  - nome: zgdat
+    tipo: date
+    comentario: "Data de cálculo"
+    pii: nenhum
+    nulo: true
+  - nome: zschl
+    tipo: string
+    comentario: "Chave de overhead"
+    pii: nenhum
+    nulo: true
+  - nome: zulnr
+    tipo: string
+    comentario: "Base de cálculo"
+    pii: nenhum
+    nulo: true

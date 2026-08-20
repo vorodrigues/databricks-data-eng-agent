@@ -1,0 +1,82 @@
+tabela: wb2_d_settl_cal
+camada: bronze
+comentario: "Calendário de liquidação de bonificações (rebates)"
+ingestao: cdc
+fonte: sap.wb2_d_settl_cal
+chave_primaria: [mandt, num, settl_date, settl_date_seq_id]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: num
+    tipo: string
+    comentario: "Número do contrato de condição"
+    pii: nenhum
+    nulo: false
+  - nome: settl_date
+    tipo: date
+    comentario: "Data de liquidação"
+    pii: nenhum
+    nulo: false
+  - nome: settl_date_seq_id
+    tipo: string
+    comentario: "ID sequencial da data de liquidação"
+    pii: nenhum
+    nulo: false
+  - nome: settl_date_type
+    tipo: string
+    comentario: "Tipo de data de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: guid
+    tipo: string
+    comentario: "GUID do calendário de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: ref_settl_date
+    tipo: date
+    comentario: "Data de liquidação de referência"
+    pii: nenhum
+    nulo: true
+  - nome: ref_settl_date_seq_id
+    tipo: string
+    comentario: "ID sequencial da data de liquidação de referência"
+    pii: nenhum
+    nulo: true
+  - nome: settl_exec_date
+    tipo: date
+    comentario: "Data de execução da liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: busvol_date_from
+    tipo: date
+    comentario: "Data inicial do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: busvol_date_to
+    tipo: date
+    comentario: "Data final do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: settl_date_usage
+    tipo: string
+    comentario: "Uso da data de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: valdt
+    tipo: date
+    comentario: "Data de valor fixa"
+    pii: nenhum
+    nulo: true
+  - nome: _dataaging
+    tipo: string
+    comentario: "Valor de filtro para envelhecimento de dados"
+    pii: nenhum
+    nulo: true
+  - nome: ext_guid
+    tipo: string
+    comentario: "GUID externo do calendário"
+    pii: nenhum
+    nulo: true

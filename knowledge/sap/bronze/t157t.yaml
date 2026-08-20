@@ -1,0 +1,37 @@
+tabela: t157t
+camada: bronze
+comentario: "Descricao dos campos do bloco de disponibilidade (verificacao de disponibilidade)"
+ingestao: cdc
+fonte: sap.t157t
+chave_primaria: [mandt, spras, feldn]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: feldn
+    tipo: string
+    comentario: "Nome do campo"
+    pii: nenhum
+    nulo: false
+  - nome: text20
+    tipo: string
+    comentario: "Descricao do campo (20 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true

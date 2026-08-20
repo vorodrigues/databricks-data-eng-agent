@@ -1,0 +1,138 @@
+tabela: materials_by_storage_location
+camada: gold
+comentario: "Níveis de estoque de materiais por depósito (SAP MARD/MAKT/T001W/T001L), com descrições multilíngues de materiais, nomes de centros produtivos e locais de armazenamento."
+entidade: obt
+ingestao: custom
+fontes: [silver.mara, silver.marc, silver.mard, silver.t001l, silver.t001w, silver.makt, silver.t134, silver.t134t, silver.t023, silver.t023t]
+chave_primaria: [client_mandt, material_number_matnr, language_key_spras, plant_werks, storage_location_lgort]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: material_text_maktx
+    tipo: string
+    comentario: "Descrição do material"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro produtivo (plant)"
+    pii: nenhum
+    nulo: false
+  - nome: plant_name_name1
+    tipo: string
+    comentario: "Nome do centro produtivo"
+    pii: nenhum
+    nulo: true
+  - nome: storage_location_lgort
+    tipo: string
+    comentario: "Depósito (local de armazenamento)"
+    pii: nenhum
+    nulo: false
+  - nome: storage_location_text_lgobe
+    tipo: string
+    comentario: "Descrição do depósito"
+    pii: nenhum
+    nulo: true
+  - nome: maintenance_status_pstat
+    tipo: string
+    comentario: "Status de manutenção do mestre de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: flag_material_for_deletion_at_storage_location_level_lvorm
+    tipo: string
+    comentario: "Flag de exclusão do material no nível de depósito"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_year_of_current_period_lfgja
+    tipo: string
+    comentario: "Ano do exercício fiscal do período atual"
+    pii: nenhum
+    nulo: true
+  - nome: current_period_lfmon
+    tipo: string
+    comentario: "Período corrente (mês)"
+    pii: nenhum
+    nulo: true
+  - nome: physical_inventory_blocking_indicator_sperr
+    tipo: string
+    comentario: "Indicador de bloqueio de inventário físico"
+    pii: nenhum
+    nulo: true
+  - nome: valuated_unrestricted_use_stock_labst
+    tipo: decimal(23,2)
+    comentario: "Estoque de livre utilização avaliado"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_transfer_umlme
+    tipo: decimal(23,2)
+    comentario: "Estoque em transferência"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_quality_inspection_insme
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: restricted_use_stock_einme
+    tipo: decimal(23,2)
+    comentario: "Estoque de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_stock_speme
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_returns_retme
+    tipo: decimal(23,2)
+    comentario: "Estoque em devoluções"
+    pii: nenhum
+    nulo: true
+  - nome: unrestricted_use_stock_in_previous_period_vmlab
+    tipo: decimal(23,2)
+    comentario: "Estoque de livre utilização no período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_transfer_in_previous_period_vmuml
+    tipo: decimal(23,2)
+    comentario: "Estoque em transferência no período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_quality_inspection_in_previous_period_vmins
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade no período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: restricted_use_stock_in_previous_period_vmein
+    tipo: decimal(23,2)
+    comentario: "Estoque de uso restrito no período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_stock_in_previous_period_vmspe
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado no período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: stock_in_returns_in_previous_period_vmret
+    tipo: decimal(23,2)
+    comentario: "Estoque em devoluções no período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_ersda
+    tipo: date
+    comentario: "Data de criação do registro"
+    pii: nenhum
+    nulo: true

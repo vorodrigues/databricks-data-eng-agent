@@ -1,0 +1,22 @@
+tabela: tspa
+camada: bronze
+comentario: "Divisoes de vendas (unidade organizacional de vendas)"
+ingestao: cdc
+fonte: sap.tspa
+chave_primaria: [mandt, spart]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spart
+    tipo: string
+    comentario: "Divisao"
+    pii: nenhum
+    nulo: false
+  - nome: hide
+    tipo: string
+    comentario: "Indicador para ocultar valor na ajuda de entrada"
+    pii: nenhum
+    nulo: true

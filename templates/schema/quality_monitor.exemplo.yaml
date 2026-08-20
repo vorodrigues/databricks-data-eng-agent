@@ -1,0 +1,13 @@
+# Exemplo — QUALITY MONITOR (monitoramento de qualidade/anomalias).
+# Estado declarativo de UM quality monitor. Lido por create_quality_monitor.py, que chama
+# w.quality_monitor_v2.create_quality_monitor(...). SDK:
+# https://databricks-sdk-py.readthedocs.io/en/latest/workspace/qualitymonitorv2/quality_monitor_v2.html
+# Local no projeto: schemas/governanca/<nome>.yaml
+tipo: quality_monitor
+comentario: "Monitora qualidade e anomalias das tabelas do schema gold."
+
+# Objeto monitorado: 'schema' (recomendado — cobre todas as tabelas) ou 'table'.
+objeto_tipo: schema                 # schema | table
+# Nome completo do objeto (o notebook resolve o UUID). Para schema: catalogo.schema.
+objeto_nome: gold                   # use o nome do schema (o notebook prefixa o catalogo)
+deteccao_anomalias: true

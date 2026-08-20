@@ -1,0 +1,27 @@
+tabela: tvstt
+camada: bronze
+comentario: "Textos dos pontos de expedicao/recebimento (dependente de idioma)"
+ingestao: cdc
+fonte: sap.tvstt
+chave_primaria: [mandt, spras, vstel]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: vstel
+    tipo: string
+    comentario: "Ponto de expedicao/recebimento"
+    pii: nenhum
+    nulo: false
+  - nome: vtext
+    tipo: string
+    comentario: "Descricao do ponto de expedicao"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,26 @@
+# Template de definicao de estado de UMA tabela (um arquivo por tabela).
+# Local: schemas/<camada>/<tabela>.yaml   (camada = bronze | silver | gold)
+# Este arquivo e a fonte de verdade do estado local, validada contra o Unity Catalog
+# por validate_state.py. Preencha todos os campos obrigatorios.
+
+tabela: <nome_da_tabela>          # obrigatorio
+camada: bronze                    # bronze | silver | gold
+comentario: "<descricao da tabela>"   # obrigatorio — toda tabela tem comentario
+
+ingestao: cdc                     # cdc | scd_type1 | custom (como esta tabela e carregada)
+fonte: <schema.tabela_de_origem>  # tabela de origem (bronze->silver->gold)
+watermark: <coluna_watermark>     # coluna (nome nesta tabela) usada no incremental; omita se full
+
+chave_primaria: [<coluna_pk>]     # obrigatorio — toda tabela tem chave primaria
+
+chaves_estrangeiras:              # opcional
+  - colunas: [<coluna_fk>]
+    referencia: <schema.tabela(coluna)>
+
+colunas:                          # obrigatorio — toda coluna tem comentario e classificacao de PII
+  - nome: <coluna>
+    tipo: string                  # tipos Spark SQL: string, bigint, int, decimal(38,9), timestamp, date, boolean...
+    origem: <coluna_na_fonte>     # opcional — nome na tabela fonte, se diferente de 'nome' (renomeacao)
+    comentario: "<descricao da coluna>"
+    pii: nenhum                   # nenhum | direto | indireto | sensivel
+    nulo: false                   # true = aceita NULL

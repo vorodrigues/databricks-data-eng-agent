@@ -1,0 +1,387 @@
+tabela: kako
+camada: bronze
+comentario: "Segmento de cabeçalho de capacidade produtiva"
+ingestao: cdc
+fonte: sap.kako
+chave_primaria: [mandt, werks, kapid]
+colunas:
+  - nome: ang_max
+    tipo: decimal(23,2)
+    comentario: "Capacidade máxima"
+    pii: nenhum
+    nulo: true
+  - nome: ang_min
+    tipo: decimal(23,2)
+    comentario: "Capacidade mínima"
+    pii: nenhum
+    nulo: true
+  - nome: ang_unit
+    tipo: string
+    comentario: "Unidade de medida da capacidade disponível"
+    pii: nenhum
+    nulo: true
+  - nome: azmax
+    tipo: int
+    comentario: "Número máximo de capacidades individuais"
+    pii: nenhum
+    nulo: true
+  - nome: aznor
+    tipo: int
+    comentario: "Número normal de capacidades individuais"
+    pii: nenhum
+    nulo: true
+  - nome: basne
+    tipo: decimal(23,2)
+    comentario: "Denominador da capacidade base"
+    pii: nenhum
+    nulo: true
+  - nome: baszl
+    tipo: decimal(23,2)
+    comentario: "Numerador da capacidade base"
+    pii: nenhum
+    nulo: true
+  - nome: begzt
+    tipo: string
+    comentario: "Hora de início"
+    pii: nenhum
+    nulo: true
+  - nome: brgru
+    tipo: string
+    comentario: "Grupo de autorização"
+    pii: nenhum
+    nulo: true
+  - nome: br_quant
+    tipo: decimal(23,2)
+    comentario: "Quantidade de unidades de medida"
+    pii: nenhum
+    nulo: true
+  - nome: br_qunit
+    tipo: string
+    comentario: "Unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: br_time
+    tipo: decimal(23,2)
+    comentario: "Número de unidades de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: br_tunit
+    tipo: string
+    comentario: "Unidade de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: buffertime
+    tipo: int
+    comentario: "Tempo de buffer"
+    pii: nenhum
+    nulo: true
+  - nome: buffertime_unit
+    tipo: string
+    comentario: "Unidade de medida do buffer"
+    pii: nenhum
+    nulo: true
+  - nome: campaign_ppds
+    tipo: string
+    comentario: "Relevante para campanha (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: campaign_snp
+    tipo: string
+    comentario: "Tamanho de lote entre períodos (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: capacity_a
+    tipo: decimal(23,2)
+    comentario: "Capacidade do bucket"
+    pii: nenhum
+    nulo: true
+  - nome: capacity_a_unit
+    tipo: string
+    comentario: "Unidade do bucket"
+    pii: nenhum
+    nulo: true
+  - nome: define_buckets
+    tipo: string
+    comentario: "Definição de buckets"
+    pii: nenhum
+    nulo: true
+  - nome: dim_storage
+    tipo: string
+    comentario: "Dimensão de armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: endzt
+    tipo: string
+    comentario: "Hora de término"
+    pii: nenhum
+    nulo: true
+  - nome: finity_level
+    tipo: string
+    comentario: "Nível de finitude"
+    pii: nenhum
+    nulo: true
+  - nome: is_bottleneck
+    tipo: string
+    comentario: "Recurso gargalo (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: kalid
+    tipo: string
+    comentario: "ID do calendário fabril"
+    pii: nenhum
+    nulo: true
+  - nome: kapar
+    tipo: string
+    comentario: "Categoria de capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: kapavo
+    tipo: string
+    comentario: "Pode ser usada por várias operações (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: kapeh
+    tipo: string
+    comentario: "Unidade de medida da capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: kapid
+    tipo: string
+    comentario: "ID de capacidade"
+    pii: nenhum
+    nulo: false
+  - nome: kapie
+    tipo: string
+    comentario: "ID de capacidade interna"
+    pii: nenhum
+    nulo: true
+  - nome: kaplpl
+    tipo: string
+    comentario: "Sem planejamento de longo prazo (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: kapter
+    tipo: string
+    comentario: "Relevante para programação finita (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: lc_days_minus
+    tipo: int
+    comentario: "Dias negativos"
+    pii: nenhum
+    nulo: true
+  - nome: lc_days_plus
+    tipo: int
+    comentario: "Dias positivos"
+    pii: nenhum
+    nulo: true
+  - nome: loss_factor
+    tipo: decimal(23,2)
+    comentario: "Fator de perda (%)"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: max_storage
+    tipo: decimal(23,2)
+    comentario: "Nível máximo de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: mdrmodel
+    tipo: string
+    comentario: "Taxa dependente do produto"
+    pii: nenhum
+    nulo: true
+  - nome: mehr
+    tipo: string
+    comentario: "Possui capacidades individuais (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: min_overlap
+    tipo: decimal(23,2)
+    comentario: "Sobreposição máxima"
+    pii: nenhum
+    nulo: true
+  - nome: min_overlap_unit
+    tipo: string
+    comentario: "Unidade de medida da sobreposição"
+    pii: nenhum
+    nulo: true
+  - nome: min_storage
+    tipo: decimal(23,2)
+    comentario: "Quantidade mínima de produção"
+    pii: nenhum
+    nulo: true
+  - nome: mix_plan_type
+    tipo: string
+    comentario: "Capacidade finita (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: mosid
+    tipo: string
+    comentario: "Agrupamento de turnos"
+    pii: nenhum
+    nulo: true
+  - nome: name
+    tipo: string
+    comentario: "Descrição da capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: ngrad
+    tipo: decimal(23,2)
+    comentario: "Taxa de utilização da capacidade (%)"
+    pii: nenhum
+    nulo: true
+  - nome: num_of_periods
+    tipo: int
+    comentario: "Número de períodos"
+    pii: nenhum
+    nulo: true
+  - nome: overlap_buckets
+    tipo: string
+    comentario: "Atividade sobrepõe períodos (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: pause
+    tipo: int
+    comentario: "Tempo de pausa (segundos)"
+    pii: nenhum
+    nulo: true
+  - nome: period
+    tipo: string
+    comentario: "Tipo de período"
+    pii: nenhum
+    nulo: true
+  - nome: planr
+    tipo: string
+    comentario: "Grupo planejador de capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: poolk
+    tipo: string
+    comentario: "Capacidade em pool (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: pp_bucket_fact
+    tipo: string
+    comentario: "Fator de bucket"
+    pii: nenhum
+    nulo: true
+  - nome: pp_bucket_schema
+    tipo: string
+    comentario: "Esquema de bucket"
+    pii: nenhum
+    nulo: true
+  - nome: pp_def_buckets
+    tipo: string
+    comentario: "Definição de bucket"
+    pii: nenhum
+    nulo: true
+  - nome: refan
+    tipo: int
+    comentario: "Número (capacidade de referência)"
+    pii: nenhum
+    nulo: true
+  - nome: refaz
+    tipo: int
+    comentario: "Número (capacidade)"
+    pii: nenhum
+    nulo: true
+  - nome: refid
+    tipo: string
+    comentario: "ID de capacidade de referência"
+    pii: nenhum
+    nulo: true
+  - nome: restype
+    tipo: string
+    comentario: "Categoria de recurso"
+    pii: nenhum
+    nulo: true
+  - nome: ritt_flg
+    tipo: string
+    comentario: "Takt time independente de taxa (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: snplc
+    tipo: string
+    comentario: "Não relevante para SNP (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: sort
+    tipo: string
+    comentario: "String de classificação"
+    pii: nenhum
+    nulo: true
+  - nome: start_on_grid
+    tipo: string
+    comentario: "Programar na grade (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: storage_capable
+    tipo: string
+    comentario: "Características de armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: storage_to_zero
+    tipo: string
+    comentario: "Zerar níveis de preenchimento restantes (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: storage_unit
+    tipo: string
+    comentario: "Unidade de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: suppk
+    tipo: string
+    comentario: "Limites de capacidade disponível (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: sync_start
+    tipo: string
+    comentario: "Início sincronizado (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: tstream_external
+    tipo: string
+    comentario: "Capacidade externa (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: type
+    tipo: string
+    comentario: "Tipo de recurso"
+    pii: nenhum
+    nulo: true
+  - nome: ueberlast
+    tipo: decimal(23,2)
+    comentario: "Sobrecarga (%)"
+    pii: nenhum
+    nulo: true
+  - nome: underload
+    tipo: decimal(23,2)
+    comentario: "Carga mínima (%)"
+    pii: nenhum
+    nulo: true
+  - nome: util_bucket
+    tipo: decimal(23,2)
+    comentario: "Taxa de utilização do bucket (%)"
+    pii: nenhum
+    nulo: true
+  - nome: versa
+    tipo: string
+    comentario: "Versão ativa"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro (planta)"
+    pii: nenhum
+    nulo: false

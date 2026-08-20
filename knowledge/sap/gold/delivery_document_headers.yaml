@@ -1,0 +1,1423 @@
+tabela: delivery_document_headers
+camada: gold
+comentario: "Cabeçalhos de documentos de entrega SAP (LIKP): registro central de entregas de saída ou entrada, com detalhes logísticos e de expedição incluindo datas, pontos de expedição, tipos de entrega, pesos, rotas e status de liberação de crédito."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.likp, silver.lips, silver.tcurx, silver.tvlst]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, document_number_vbeln]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)."
+    pii: nenhum
+    nulo: false
+  - nome: document_number_vbeln
+    tipo: string
+    comentario: "Número do documento de entrega (VBELN)."
+    pii: nenhum
+    nulo: false
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Usuário que criou o documento de entrega."
+    pii: indireto
+    nulo: true
+  - nome: creation_time_erzet
+    tipo: string
+    comentario: "Hora de criação do documento de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: creation_date_erdat
+    tipo: date
+    comentario: "Data de criação do documento de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: sales_district_bzirk
+    tipo: string
+    comentario: "Distrito de vendas."
+    pii: nenhum
+    nulo: true
+  - nome: shipping_point_receiving_point_vstel
+    tipo: string
+    comentario: "Ponto de expedição/recebimento (VSTEL)."
+    pii: nenhum
+    nulo: true
+  - nome: sales_organization_vkorg
+    tipo: string
+    comentario: "Organização de vendas (VKORG)."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_type_lfart
+    tipo: string
+    comentario: "Tipo de entrega (LFART)."
+    pii: nenhum
+    nulo: true
+  - nome: complete_delivery_defined_indicator_autlf
+    tipo: string
+    comentario: "Indicador de entrega completa: todos os itens devem ser entregues juntos em uma única entrega."
+    pii: nenhum
+    nulo: true
+  - nome: order_combination_indicator_kzazu
+    tipo: string
+    comentario: "Indicador de combinação de múltiplos pedidos em uma única entrega."
+    pii: nenhum
+    nulo: true
+  - nome: planned_goods_movement_date_wadat
+    tipo: date
+    comentario: "Data planejada de movimentação de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: loading_date_lddat
+    tipo: date
+    comentario: "Data de carregamento."
+    pii: nenhum
+    nulo: true
+  - nome: transportation_planning_date_tddat
+    tipo: date
+    comentario: "Data de planejamento de transporte."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_date_lfdat
+    tipo: date
+    comentario: "Data de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: picking_date_kodat
+    tipo: date
+    comentario: "Data de separação (picking)."
+    pii: nenhum
+    nulo: true
+  - nome: unloading_point_ablad
+    tipo: string
+    comentario: "Ponto de descarregamento."
+    pii: nenhum
+    nulo: true
+  - nome: incoterms_part1_inco1
+    tipo: string
+    comentario: "Incoterms (Parte 1)."
+    pii: nenhum
+    nulo: true
+  - nome: incoterms_part2_inco2
+    tipo: string
+    comentario: "Incoterms (Parte 2)."
+    pii: nenhum
+    nulo: true
+  - nome: export_indicator_expkz
+    tipo: string
+    comentario: "Indicador de exportação."
+    pii: nenhum
+    nulo: true
+  - nome: route_route
+    tipo: string
+    comentario: "Rota de transporte planejada para a entrega."
+    pii: nenhum
+    nulo: true
+  - nome: billing_block_in_sales_document_faksk
+    tipo: string
+    comentario: "Bloqueio de faturamento no cabeçalho do documento de vendas."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_block_document_header_lifsk
+    tipo: string
+    comentario: "Bloqueio de entrega no cabeçalho do documento de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_category_vbtyp
+    tipo: string
+    comentario: "Categoria do documento de vendas (VBTYP)."
+    pii: nenhum
+    nulo: true
+  - nome: customer_factory_calendar_knfak
+    tipo: string
+    comentario: "Calendário de fábrica do cliente."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_priority_lprio
+    tipo: string
+    comentario: "Prioridade de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: shipping_conditions_vsbed
+    tipo: string
+    comentario: "Condições de expedição."
+    pii: nenhum
+    nulo: true
+  - nome: ship_to_party_kunnr
+    tipo: string
+    comentario: "Parceiro de entrega — destinatário da mercadoria (KUNNR)."
+    pii: indireto
+    nulo: true
+  - nome: sold_to_party_kunag
+    tipo: string
+    comentario: "Parceiro comprador — quem realizou o pedido (KUNAG)."
+    pii: indireto
+    nulo: true
+  - nome: customer_group_kdgrp
+    tipo: string
+    comentario: "Grupo de clientes."
+    pii: nenhum
+    nulo: true
+  - nome: total_weight_btgew
+    tipo: decimal(23,2)
+    comentario: "Peso total da entrega."
+    pii: nenhum
+    nulo: true
+  - nome: net_weight_ntgew
+    tipo: decimal(23,2)
+    comentario: "Peso líquido da entrega."
+    pii: nenhum
+    nulo: true
+  - nome: weight_unit_gewei
+    tipo: string
+    comentario: "Unidade de peso."
+    pii: nenhum
+    nulo: true
+  - nome: volume_volum
+    tipo: decimal(23,2)
+    comentario: "Volume da entrega."
+    pii: nenhum
+    nulo: true
+  - nome: volume_unit_voleh
+    tipo: string
+    comentario: "Unidade de volume."
+    pii: nenhum
+    nulo: true
+  - nome: total_packages_anzpk
+    tipo: int
+    comentario: "Quantidade total de volumes/embalagens."
+    pii: nenhum
+    nulo: true
+  - nome: picked_items_location_berot
+    tipo: string
+    comentario: "Localização dos itens separados."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_time_lfuhr
+    tipo: string
+    comentario: "Hora de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: weight_group_grulg
+    tipo: string
+    comentario: "Grupo de peso para entrega."
+    pii: nenhum
+    nulo: true
+  - nome: loading_point_lstel
+    tipo: string
+    comentario: "Ponto de carregamento."
+    pii: nenhum
+    nulo: true
+  - nome: transportation_group_tragr
+    tipo: string
+    comentario: "Grupo de transporte."
+    pii: nenhum
+    nulo: true
+  - nome: proposed_billing_type_fkarv
+    tipo: string
+    comentario: "Tipo de faturamento proposto para documento de faturamento relacionado à entrega."
+    pii: nenhum
+    nulo: true
+  - nome: proposed_billing_date_fkdat
+    tipo: date
+    comentario: "Data proposta de faturamento para índice e impressão."
+    pii: nenhum
+    nulo: true
+  - nome: invoice_dates_perfk
+    tipo: string
+    comentario: "Perfil de datas de faturamento (identificação do calendário de faturas)."
+    pii: nenhum
+    nulo: true
+  - nome: route_routa
+    tipo: string
+    comentario: "Rota específica atribuída ao documento de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: update_group_for_statistics_stafo
+    tipo: string
+    comentario: "Grupo de atualização para estatísticas em sistemas de informação logística."
+    pii: nenhum
+    nulo: true
+  - nome: procedure_kalsm
+    tipo: string
+    comentario: "Procedimento de precificação aplicado ao documento de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: condition_number_knumv
+    tipo: string
+    comentario: "Número único da condição de precificação do documento."
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_currency_key_waerk
+    tipo: string
+    comentario: "Moeda do documento de vendas."
+    pii: nenhum
+    nulo: true
+  - nome: sales_office_vkbur
+    tipo: string
+    comentario: "Escritório de vendas."
+    pii: nenhum
+    nulo: true
+  - nome: shipping_processing_time_vbeak
+    tipo: string
+    comentario: "Tempo de processamento de expedição para o documento completo."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_combination_criteria_zukrl
+    tipo: string
+    comentario: "Critérios de combinação para entrega."
+    pii: nenhum
+    nulo: true
+  - nome: distribution_delivery_verur
+    tipo: string
+    comentario: "Entrega de distribuição (processamento descentralizado)."
+    pii: nenhum
+    nulo: true
+  - nome: communication_number_commn
+    tipo: string
+    comentario: "Número de comunicação para interface Q-API."
+    pii: nenhum
+    nulo: true
+  - nome: statistics_currency_stwae
+    tipo: string
+    comentario: "Moeda de estatísticas."
+    pii: nenhum
+    nulo: true
+  - nome: statistics_exchange_rate_stcur
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio para estatísticas."
+    pii: nenhum
+    nulo: true
+  - nome: foreign_trade_data_number_exnum
+    tipo: string
+    comentario: "Número de dados de comércio exterior em documentos MM/SD."
+    pii: nenhum
+    nulo: true
+  - nome: changed_by_aenam
+    tipo: string
+    comentario: "Usuário que realizou a última alteração no documento."
+    pii: indireto
+    nulo: true
+  - nome: changed_on_aedat
+    tipo: date
+    comentario: "Data da última alteração."
+    pii: nenhum
+    nulo: true
+  - nome: warehouse_number_lgnum
+    tipo: string
+    comentario: "Número do depósito (LGNUM)."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_within_one_warehouse_lispl
+    tipo: string
+    comentario: "Indicador de entrega dentro de um único depósito."
+    pii: nenhum
+    nulo: true
+  - nome: intercompany_billing_sales_organization_vkoiv
+    tipo: string
+    comentario: "Organização de vendas para faturamento intercompany."
+    pii: nenhum
+    nulo: true
+  - nome: intercompany_billing_distribution_channel_vtwiv
+    tipo: string
+    comentario: "Canal de distribuição para faturamento intercompany."
+    pii: nenhum
+    nulo: true
+  - nome: intercompany_billing_division_spaiv
+    tipo: string
+    comentario: "Divisão para faturamento intercompany."
+    pii: nenhum
+    nulo: true
+  - nome: intercompany_billing_type_fkaiv
+    tipo: string
+    comentario: "Tipo de faturamento para faturamento intercompany."
+    pii: nenhum
+    nulo: true
+  - nome: intercompany_billing_price_date_pioiv
+    tipo: date
+    comentario: "Data de preço para faturamento intercompany."
+    pii: nenhum
+    nulo: true
+  - nome: intercompany_billing_date_fkdiv
+    tipo: date
+    comentario: "Data de faturamento intercompany."
+    pii: nenhum
+    nulo: true
+  - nome: intercompany_billing_customer_number_kuniv
+    tipo: string
+    comentario: "Número de cliente para faturamento intercompany (KUNNR)."
+    pii: indireto
+    nulo: true
+  - nome: credit_control_area_kkber
+    tipo: string
+    comentario: "Área de controle de crédito."
+    pii: nenhum
+    nulo: true
+  - nome: credit_account_knkli
+    tipo: string
+    comentario: "Conta de crédito para determinação do limite de crédito do cliente na entrega."
+    pii: indireto
+    nulo: true
+  - nome: customer_credit_group_grupp
+    tipo: string
+    comentario: "Grupo de crédito do cliente."
+    pii: nenhum
+    nulo: true
+  - nome: credit_representative_group_sbgrp
+    tipo: string
+    comentario: "Grupo de representante de crédito para gestão de crédito."
+    pii: nenhum
+    nulo: true
+  - nome: credit_management_risk_category_ctlpc
+    tipo: string
+    comentario: "Categoria de risco de gestão de crédito."
+    pii: nenhum
+    nulo: true
+  - nome: credit_control_area_currency_key_cmwae
+    tipo: string
+    comentario: "Moeda da área de controle de crédito."
+    pii: nenhum
+    nulo: true
+  - nome: released_credit_value_amtbl
+    tipo: decimal(23,2)
+    comentario: "Valor de crédito liberado no documento."
+    pii: nenhum
+    nulo: true
+  - nome: bill_of_lading_bolnr
+    tipo: string
+    comentario: "Número do conhecimento de embarque."
+    pii: nenhum
+    nulo: true
+  - nome: vendor_account_number_lifnr
+    tipo: string
+    comentario: "Número de conta do fornecedor (LIFNR)."
+    pii: indireto
+    nulo: true
+  - nome: means_of_transport_type_traty
+    tipo: string
+    comentario: "Tipo de meio de transporte."
+    pii: nenhum
+    nulo: true
+  - nome: means_of_transport_id_traid
+    tipo: string
+    comentario: "Identificação do meio de transporte."
+    pii: nenhum
+    nulo: true
+  - nome: credit_release_date_cmfre
+    tipo: date
+    comentario: "Data de liberação de crédito do documento bloqueado por verificação de crédito."
+    pii: nenhum
+    nulo: true
+  - nome: next_date_cmngv
+    tipo: date
+    comentario: "Próxima data relevante para a entrega (ex.: data de separação ou saída de mercadorias)."
+    pii: nenhum
+    nulo: true
+  - nome: goods_receipt_issue_slip_number_xabln
+    tipo: string
+    comentario: "Número do comprovante de entrada/saída de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: document_date_bldat
+    tipo: date
+    comentario: "Data do documento de entrega (pode diferir da data de criação ou da data de movimentação planejada)."
+    pii: nenhum
+    nulo: true
+  - nome: actual_goods_movement_date_wadat_ist
+    tipo: date
+    comentario: "Data real de movimentação de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: shipment_blocking_reason_trspg
+    tipo: string
+    comentario: "Motivo de bloqueio de remessa."
+    pii: nenhum
+    nulo: true
+  - nome: external_transport_system_id_tpsid
+    tipo: string
+    comentario: "Identificador do sistema de transporte externo."
+    pii: nenhum
+    nulo: true
+  - nome: external_delivery_note_id_lifex
+    tipo: string
+    comentario: "Identificação externa da nota de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: order_number_ternr
+    tipo: string
+    comentario: "Número de ordem associado à entrega — referência ao documento anterior."
+    pii: nenhum
+    nulo: true
+  - nome: batch_search_procedure_kalsm_ch
+    tipo: string
+    comentario: "Procedimento de busca para determinação de lote."
+    pii: nenhum
+    nulo: true
+  - nome: correction_delivery_klief
+    tipo: string
+    comentario: "Indicador de entrega de correção."
+    pii: nenhum
+    nulo: true
+  - nome: shipping_pricing_procedure_kalsp
+    tipo: string
+    comentario: "Procedimento de precificação de expedição."
+    pii: nenhum
+    nulo: true
+  - nome: pricing_condition_number_knump
+    tipo: string
+    comentario: "Número de condição de precificação para recálculo durante criação da entrega."
+    pii: nenhum
+    nulo: true
+  - nome: net_value_in_document_currency_netwr
+    tipo: decimal(23,2)
+    comentario: "Valor líquido do pedido relacionado na moeda do documento."
+    pii: nenhum
+    nulo: true
+  - nome: route_schedule_aulwe
+    tipo: string
+    comentario: "Programação de rota."
+    pii: nenhum
+    nulo: true
+  - nome: receiving_plant_werks
+    tipo: string
+    comentario: "Centro de recebimento para entregas de entrada."
+    pii: nenhum
+    nulo: true
+  - nome: internal_financial_document_number_lcnum
+    tipo: string
+    comentario: "Número interno do documento financeiro."
+    pii: nenhum
+    nulo: true
+  - nome: payment_guarantee_procedure_abssc
+    tipo: string
+    comentario: "Procedimento de garantia de pagamento."
+    pii: nenhum
+    nulo: true
+  - nome: picking_time_kouhr
+    tipo: string
+    comentario: "Hora de separação (picking), referente à planta."
+    pii: nenhum
+    nulo: true
+  - nome: transportation_planning_time_tduhr
+    tipo: string
+    comentario: "Hora de planejamento de transporte, referente ao ponto de expedição."
+    pii: nenhum
+    nulo: true
+  - nome: loading_time_lduhr
+    tipo: string
+    comentario: "Hora de carregamento, referente ao ponto de expedição."
+    pii: nenhum
+    nulo: true
+  - nome: goods_issue_time_wauhr
+    tipo: string
+    comentario: "Hora de saída de mercadorias, referente ao ponto de expedição."
+    pii: nenhum
+    nulo: true
+  - nome: warehouse_door_number_lgtor
+    tipo: string
+    comentario: "Porta do depósito."
+    pii: nenhum
+    nulo: true
+  - nome: warehouse_staging_area_lgbzo
+    tipo: string
+    comentario: "Área de preparação do complexo de depósito."
+    pii: nenhum
+    nulo: true
+  - nome: foreign_trade_currency_key_akwae
+    tipo: string
+    comentario: "Moeda para processamento de carta de crédito no comércio exterior."
+    pii: nenhum
+    nulo: true
+  - nome: foreign_trade_exchange_rate_akkur
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio para processamento de carta de crédito no comércio exterior."
+    pii: nenhum
+    nulo: true
+  - nome: depreciation_percentage_akprz
+    tipo: decimal(23,2)
+    comentario: "Percentual de depreciação para processamento de documento financeiro."
+    pii: nenhum
+    nulo: true
+  - nome: dangerous_goods_management_profile_proli
+    tipo: string
+    comentario: "Perfil de gestão de produtos perigosos para documentos de vendas."
+    pii: nenhum
+    nulo: true
+  - nome: reference_document_number_xblnr
+    tipo: string
+    comentario: "Número do documento de referência."
+    pii: nenhum
+    nulo: true
+  - nome: worldwide_unique_key_handle
+    tipo: string
+    comentario: "Chave mundialmente única do cabeçalho do documento de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: time_segment_exists_indicator_tsegfl
+    tipo: string
+    comentario: "Indicador de existência de segmento de tempo."
+    pii: nenhum
+    nulo: true
+  - nome: event_group_time_segment_delivery_header_tsegtp
+    tipo: string
+    comentario: "Grupo de eventos do segmento de tempo do cabeçalho de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_location_timezone_tzonis
+    tipo: string
+    comentario: "Fuso horário do local de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: recipient_location_timezone_tzonrc
+    tipo: string
+    comentario: "Fuso horário do local do destinatário."
+    pii: nenhum
+    nulo: true
+  - nome: dangerous_goods_indicator_cont_dg
+    tipo: string
+    comentario: "Indicador de que a entrega contém produtos perigosos."
+    pii: nenhum
+    nulo: true
+  - nome: distribution_delivery_original_system_verursys
+    tipo: string
+    comentario: "Sistema de origem da entrega de distribuição."
+    pii: nenhum
+    nulo: true
+  - nome: goods_movement_control_indicator_kzwab
+    tipo: string
+    comentario: "Indicador de controle de movimentação de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: distribution_status_vlstk
+    tipo: string
+    comentario: "Status de distribuição (processamento descentralizado de depósito)."
+    pii: nenhum
+    nulo: true
+  - nome: transaction_code_tcode
+    tipo: string
+    comentario: "Código de transação SAP."
+    pii: nenhum
+    nulo: true
+  - nome: shipping_type_vsart
+    tipo: string
+    comentario: "Tipo de expedição."
+    pii: nenhum
+    nulo: true
+  - nome: means_of_transport_trmtyp
+    tipo: string
+    comentario: "Tipo de meio de transporte."
+    pii: nenhum
+    nulo: true
+  - nome: special_processing_indicator_sdabw
+    tipo: string
+    comentario: "Indicador de processamento especial."
+    pii: nenhum
+    nulo: true
+  - nome: company_id_vbund
+    tipo: string
+    comentario: "Identificador de empresa (intercompany)."
+    pii: nenhum
+    nulo: true
+  - nome: calculation_of_value_open_indicator_xwoff
+    tipo: string
+    comentario: "Indicador de desativação do cálculo de valor em aberto ou de impostos."
+    pii: nenhum
+    nulo: true
+  - nome: automatic_transportation_order_creation_indicator_dirta
+    tipo: string
+    comentario: "Indicador de criação automática de ordens de transporte após geração de necessidade de transferência."
+    pii: nenhum
+    nulo: true
+  - nome: production_supply_area_prvbe
+    tipo: string
+    comentario: "Área de abastecimento de produção."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_type_folar
+    tipo: string
+    comentario: "Tipo de entrega (FOLAR)."
+    pii: nenhum
+    nulo: true
+  - nome: proof_of_delivery_date_podat
+    tipo: date
+    comentario: "Data do comprovante de entrega (POD)."
+    pii: nenhum
+    nulo: true
+  - nome: proof_of_delivery_confirmation_time_potim
+    tipo: string
+    comentario: "Hora de confirmação do comprovante de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: shipment_document_total_count_vganz
+    tipo: int
+    comentario: "Quantidade total de documentos de remessa vinculados ao cabeçalho de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: goods_movement_within_company_code_indicator_imwrk
+    tipo: string
+    comentario: "Indicador de movimentação de mercadorias dentro do mesmo código de empresa ou em transação intercompany."
+    pii: nenhum
+    nulo: true
+  - nome: document_deletion_indicator_spe_loekz
+    tipo: string
+    comentario: "Indicador de exclusão do documento de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: locations_sequenece_number_spe_loc_seq
+    tipo: string
+    comentario: "Número de sequência de localização (SPE_LOC_SEQ)."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_confirmation_status_spe_acc_app_sts
+    tipo: string
+    comentario: "Status de confirmação de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: shipment_information_status_spe_shp_inf_sts
+    tipo: string
+    comentario: "Status de informações de remessa."
+    pii: nenhum
+    nulo: true
+  - nome: return_document_cancellation_indicator_spe_ret_canc
+    tipo: string
+    comentario: "Indicador de cancelamento de documento de devolução."
+    pii: nenhum
+    nulo: true
+  - nome: goods_issue_time_spe_wauhr_ist
+    tipo: string
+    comentario: "Hora real de saída de mercadorias, referente à planta."
+    pii: nenhum
+    nulo: true
+  - nome: goods_issue_time_zone_spe_wazone_ist
+    tipo: string
+    comentario: "Fuso horário da saída real de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: revenue_recognition_status_spe_rev_vlstk
+    tipo: string
+    comentario: "Status de reconhecimento de receita."
+    pii: nenhum
+    nulo: true
+  - nome: logistics_execution_scenario_spe_le_scenario
+    tipo: string
+    comentario: "Cenário de execução logística."
+    pii: nenhum
+    nulo: true
+  - nome: original_system_type_spe_orig_sys
+    tipo: string
+    comentario: "Tipo de sistema de origem."
+    pii: nenhum
+    nulo: true
+  - nome: last_changer_system_type_spe_chng_sys
+    tipo: string
+    comentario: "Tipo de sistema do último modificador."
+    pii: nenhum
+    nulo: true
+  - nome: geographical_route_description_spe_georoute
+    tipo: string
+    comentario: "Descrição da rota geográfica."
+    pii: nenhum
+    nulo: true
+  - nome: route_change_indicator_spe_georouteind
+    tipo: string
+    comentario: "Indicador de alteração de rota."
+    pii: nenhum
+    nulo: true
+  - nome: carrier_change_indicator_spe_carrier_ind
+    tipo: string
+    comentario: "Indicador de alteração de transportadora."
+    pii: nenhum
+    nulo: true
+  - nome: goods_traffic_type_spe_gts_rel
+    tipo: string
+    comentario: "Tipo de tráfego de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: sap_global_trade_services_route_code_spe_gts_rt_cde
+    tipo: string
+    comentario: "Código de rota do SAP Global Trade Services."
+    pii: nenhum
+    nulo: true
+  - nome: release_time_stamp_spe_rel_tmstmp
+    tipo: timestamp
+    comentario: "Timestamp de liberação do documento."
+    pii: nenhum
+    nulo: true
+  - nome: measurement_unit_system_spe_unit_system
+    tipo: string
+    comentario: "Sistema de unidade de medida."
+    pii: nenhum
+    nulo: true
+  - nome: invoice_creation_before_goods_issue_spe_inv_bfr_gi
+    tipo: string
+    comentario: "Indicador de criação de fatura antes da saída de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: return_delivery_quality_inspection_status_spe_qi_status
+    tipo: string
+    comentario: "Status de inspeção de qualidade para entregas de devolução."
+    pii: nenhum
+    nulo: true
+  - nome: redirection_indicator_spe_red_ind
+    tipo: string
+    comentario: "Indicador de ocorrência de redirecionamento."
+    pii: nenhum
+    nulo: true
+  - nome: sap_global_trade_services_delivery_storage_status_sakes
+    tipo: string
+    comentario: "Status de armazenamento do SAP Global Trade Services para a entrega."
+    pii: nenhum
+    nulo: true
+  - nome: external_identification_type_spe_lifex_type
+    tipo: string
+    comentario: "Tipo de identificação externa."
+    pii: nenhum
+    nulo: true
+  - nome: means_of_transport_spe_ttype
+    tipo: string
+    comentario: "Meio de transporte."
+    pii: nenhum
+    nulo: true
+  - nome: progressive_identification_number_spe_pro_number
+    tipo: string
+    comentario: "Número de identificação progressiva do parceiro."
+    pii: nenhum
+    nulo: true
+  - nome: location_guid_loc_guid
+    tipo: string
+    comentario: "GUID de localização."
+    pii: nenhum
+    nulo: true
+  - nome: ewm_billing_indicator_spe_billing_ind
+    tipo: string
+    comentario: "Indicador de faturamento EWM."
+    pii: nenhum
+    nulo: true
+  - nome: print_profile_description_printer_profile
+    tipo: string
+    comentario: "Descrição do perfil de impressão."
+    pii: nenhum
+    nulo: true
+  - nome: advanced_returns_management_active_msr_active
+    tipo: string
+    comentario: "Indicador de gestão avançada de devoluções ativa."
+    pii: nenhum
+    nulo: true
+  - nome: confirmation_number_prtnr
+    tipo: string
+    comentario: "Número de confirmação."
+    pii: nenhum
+    nulo: true
+  - nome: storage_location_change_stge_loc_change
+    tipo: string
+    comentario: "Alteração temporária de localização de armazenamento na entrega."
+    pii: nenhum
+    nulo: true
+  - nome: document_transfer_control_key_tm_ctrl_key
+    tipo: string
+    comentario: "Chave de controle de transferência de documento para o Gerenciamento de Transporte."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_split_initiator_dlv_split_initia
+    tipo: string
+    comentario: "Iniciador de divisão de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_version_dlv_version
+    tipo: string
+    comentario: "Versão da entrega."
+    pii: nenhum
+    nulo: true
+  - nome: previous_document_type_gts_vorpa
+    tipo: string
+    comentario: "Tipo do documento anterior."
+    pii: nenhum
+    nulo: true
+  - nome: previous_document_number_gts_vornu
+    tipo: string
+    comentario: "Número do documento anterior."
+    pii: nenhum
+    nulo: true
+  - nome: intrastat_border_mode_of_transport_gts_expvz
+    tipo: string
+    comentario: "Modo de transporte na fronteira (Intrastat)."
+    pii: nenhum
+    nulo: true
+  - nome: port_airport_gts_porti
+    tipo: string
+    comentario: "Porto ou aeroporto."
+    pii: nenhum
+    nulo: true
+  - nome: border_means_of_transport_itm_expvz
+    tipo: string
+    comentario: "Meio de transporte na fronteira."
+    pii: nenhum
+    nulo: true
+  - nome: origin_border_means_of_transport_itm_stgbe
+    tipo: string
+    comentario: "Origem do meio de transporte na fronteira."
+    pii: nenhum
+    nulo: true
+  - nome: border_cross_means_of_transport_id_itm_kzgbe
+    tipo: string
+    comentario: "Identificação do meio de transporte de travessia de fronteira."
+    pii: nenhum
+    nulo: true
+  - nome: cross_border_conveyance_reference_id_itm_vygid
+    tipo: string
+    comentario: "Identificação de referência do transporte transfronteiriço."
+    pii: nenhum
+    nulo: true
+  - nome: inland_means_of_transport_itm_iever
+    tipo: string
+    comentario: "Meio de transporte interno."
+    pii: nenhum
+    nulo: true
+  - nome: country_of_origin_means_of_transport_itm_stabe
+    tipo: string
+    comentario: "País de origem do meio de transporte."
+    pii: nenhum
+    nulo: true
+  - nome: inland_means_of_transport_id_itm_kzabe
+    tipo: string
+    comentario: "Identificação do meio de transporte interno."
+    pii: nenhum
+    nulo: true
+  - nome: handover_location_handoverloc
+    tipo: string
+    comentario: "Local de transferência física de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: handover_date_handoverdate
+    tipo: date
+    comentario: "Data de transferência no local de handover."
+    pii: nenhum
+    nulo: true
+  - nome: handover_time_handovertime
+    tipo: string
+    comentario: "Hora de transferência no local de handover."
+    pii: nenhum
+    nulo: true
+  - nome: handover_time_zone_handovertzone
+    tipo: string
+    comentario: "Fuso horário da transferência."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_confirmation_status_bestk
+    tipo: string
+    comentario: "Status de confirmação de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: maximum_document_value_credit_check_status_cmpsc
+    tipo: string
+    comentario: "Status da verificação de crédito por valor máximo do documento."
+    pii: nenhum
+    nulo: true
+  - nome: terms_of_payment_credit_check_status_cmpsd
+    tipo: string
+    comentario: "Status da verificação de crédito por condições de pagamento."
+    pii: nenhum
+    nulo: true
+  - nome: financial_document_credit_check_status_cmpsi
+    tipo: string
+    comentario: "Status da verificação de crédito por documento financeiro."
+    pii: nenhum
+    nulo: true
+  - nome: export_credit_insurance_credit_check_status_cmpsj
+    tipo: string
+    comentario: "Status da verificação de crédito por seguro de crédito à exportação."
+    pii: nenhum
+    nulo: true
+  - nome: payment_card_authorization_credit_check_status_cmpsk
+    tipo: string
+    comentario: "Status da verificação de crédito por autorização de cartão de pagamento."
+    pii: nenhum
+    nulo: true
+  - nome: sap_credit_management_credit_check_status_cmps_cm
+    tipo: string
+    comentario: "Status da verificação de crédito do SAP Credit Management."
+    pii: nenhum
+    nulo: true
+  - nome: sap_credit_management_technical_error_status_cmps_te
+    tipo: string
+    comentario: "Status de erro técnico do SAP Credit Management."
+    pii: nenhum
+    nulo: true
+  - nome: credit_checks_overall_status_cmgst
+    tipo: string
+    comentario: "Status geral das verificações de crédito."
+    pii: nenhum
+    nulo: true
+  - nome: intercompany_billing_status_fkivk
+    tipo: string
+    comentario: "Status de faturamento intercompany."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_related_billing_status_fkstk
+    tipo: string
+    comentario: "Status de faturamento relacionado à entrega."
+    pii: nenhum
+    nulo: true
+  - nome: overall_processing_status_gbstk
+    tipo: string
+    comentario: "Status geral de processamento."
+    pii: nenhum
+    nulo: true
+  - nome: incomplete_inbound_delivery_header_indicator_hdall
+    tipo: string
+    comentario: "Indicador de incompletude do cabeçalho de entrega de entrada."
+    pii: nenhum
+    nulo: true
+  - nome: incomplete_inbound_delivery_item_indicator_hdals
+    tipo: string
+    comentario: "Indicador de incompletude do item de entrega de entrada."
+    pii: nenhum
+    nulo: true
+  - nome: pick_confirmation_status_koquk
+    tipo: string
+    comentario: "Status de confirmação de separação."
+    pii: nenhum
+    nulo: true
+  - nome: picking_status_kostk
+    tipo: string
+    comentario: "Status de separação (picking)."
+    pii: nenhum
+    nulo: true
+  - nome: warehouse_management_status_lvstk
+    tipo: string
+    comentario: "Status de gestão de depósito."
+    pii: nenhum
+    nulo: true
+  - nome: pod_header_status_pdstk
+    tipo: string
+    comentario: "Status do cabeçalho do comprovante de entrega (POD)."
+    pii: nenhum
+    nulo: true
+  - nome: packing_status_pkstk
+    tipo: string
+    comentario: "Status de embalagem."
+    pii: nenhum
+    nulo: true
+  - nome: temporary_inbound_delivery_indicator_spe_tmpid
+    tipo: string
+    comentario: "Indicador de entrega de entrada temporária."
+    pii: nenhum
+    nulo: true
+  - nome: overall_header_block_status_spstg
+    tipo: string
+    comentario: "Status geral de bloqueio do cabeçalho."
+    pii: nenhum
+    nulo: true
+  - nome: transportation_planning_status_trsta
+    tipo: string
+    comentario: "Status de planejamento de transporte."
+    pii: nenhum
+    nulo: true
+  - nome: header_incompletion_status_uvall
+    tipo: string
+    comentario: "Status de incompletude do cabeçalho."
+    pii: nenhum
+    nulo: true
+  - nome: items_incompletion_status_uvals
+    tipo: string
+    comentario: "Status de incompletude dos itens."
+    pii: nenhum
+    nulo: true
+  - nome: header_billing_incompletion_status_uvfak
+    tipo: string
+    comentario: "Status de incompletude de faturamento do cabeçalho."
+    pii: nenhum
+    nulo: true
+  - nome: items_billing_incompletion_status_uvfas
+    tipo: string
+    comentario: "Status de incompletude de faturamento dos itens."
+    pii: nenhum
+    nulo: true
+  - nome: header_packing_incompletion_status_uvpak
+    tipo: string
+    comentario: "Status de incompletude de embalagem do cabeçalho."
+    pii: nenhum
+    nulo: true
+  - nome: items_packing_incompletion_status_uvpas
+    tipo: string
+    comentario: "Status de incompletude de embalagem dos itens."
+    pii: nenhum
+    nulo: true
+  - nome: header_picking_incompletion_status_uvpik
+    tipo: string
+    comentario: "Status de incompletude de separação do cabeçalho."
+    pii: nenhum
+    nulo: true
+  - nome: items_picking_incompletion_status_uvpis
+    tipo: string
+    comentario: "Status de incompletude de separação dos itens."
+    pii: nenhum
+    nulo: true
+  - nome: header_delivery_incompletion_status_uvvlk
+    tipo: string
+    comentario: "Status de incompletude de entrega do cabeçalho."
+    pii: nenhum
+    nulo: true
+  - nome: items_delivery_incompletion_status_uvvls
+    tipo: string
+    comentario: "Status de incompletude de entrega dos itens."
+    pii: nenhum
+    nulo: true
+  - nome: header_goods_movement_incompletion_status_uvwak
+    tipo: string
+    comentario: "Status de incompletude de movimentação de mercadorias do cabeçalho."
+    pii: nenhum
+    nulo: true
+  - nome: items_goods_movement_incompletion_status_uvwas
+    tipo: string
+    comentario: "Status de incompletude de movimentação de mercadorias dos itens."
+    pii: nenhum
+    nulo: true
+  - nome: handling_unit_in_stock_indicator_vestk
+    tipo: string
+    comentario: "Indicador de unidade de manuseio em estoque."
+    pii: nenhum
+    nulo: true
+  - nome: goods_movement_status_wbstk
+    tipo: string
+    comentario: "Status de movimentação de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: header_customer_reserve_status1_suvk01
+    tipo: string
+    comentario: "Status reservado pelo cliente no cabeçalho 1."
+    pii: nenhum
+    nulo: true
+  - nome: header_customer_reserve_status2_suvk02
+    tipo: string
+    comentario: "Status reservado pelo cliente no cabeçalho 2."
+    pii: nenhum
+    nulo: true
+  - nome: header_customer_reserve_status3_suvk03
+    tipo: string
+    comentario: "Status reservado pelo cliente no cabeçalho 3."
+    pii: nenhum
+    nulo: true
+  - nome: header_customer_reserve_status4_suvk04
+    tipo: string
+    comentario: "Status reservado pelo cliente no cabeçalho 4."
+    pii: nenhum
+    nulo: true
+  - nome: header_customer_reserve_status5_suvk05
+    tipo: string
+    comentario: "Status reservado pelo cliente no cabeçalho 5."
+    pii: nenhum
+    nulo: true
+  - nome: item_customer_reserve_status1_suvs01
+    tipo: string
+    comentario: "Status reservado pelo cliente no item 1."
+    pii: nenhum
+    nulo: true
+  - nome: item_customer_reserve_status2_suvs02
+    tipo: string
+    comentario: "Status reservado pelo cliente no item 2."
+    pii: nenhum
+    nulo: true
+  - nome: item_customer_reserve_status3_suvs03
+    tipo: string
+    comentario: "Status reservado pelo cliente no item 3."
+    pii: nenhum
+    nulo: true
+  - nome: item_customer_reserve_status4_suvs04
+    tipo: string
+    comentario: "Status reservado pelo cliente no item 4."
+    pii: nenhum
+    nulo: true
+  - nome: item_customer_reserve_status5_suvs05
+    tipo: string
+    comentario: "Status reservado pelo cliente no item 5."
+    pii: nenhum
+    nulo: true
+  - nome: total_product_marketability_check_status_total_pcsta
+    tipo: string
+    comentario: "Status total da verificação de comerciabilidade do produto."
+    pii: nenhum
+    nulo: true
+  - nome: total_dangerous_goods_check_status_total_dgsta
+    tipo: string
+    comentario: "Status total da verificação de produtos perigosos."
+    pii: nenhum
+    nulo: true
+  - nome: total_safety_data_sheet_check_status_total_sdssta
+    tipo: string
+    comentario: "Status total da verificação da ficha de dados de segurança."
+    pii: nenhum
+    nulo: true
+  - nome: excise_tax_total_header_status_total_arc_status
+    tipo: string
+    comentario: "Status total do cabeçalho de imposto de consumo."
+    pii: nenhum
+    nulo: true
+  - nome: dtuc_status_sapmp_lbask
+    tipo: string
+    comentario: "Status DTUC."
+    pii: nenhum
+    nulo: true
+  - nome: incoterms_version_incov
+    tipo: string
+    comentario: "Versão dos Incoterms."
+    pii: nenhum
+    nulo: true
+  - nome: incoterms_location_1_inco2_l
+    tipo: string
+    comentario: "Localização 1 dos Incoterms."
+    pii: nenhum
+    nulo: true
+  - nome: incoterms_location_2_inco3_l
+    tipo: string
+    comentario: "Localização 2 dos Incoterms."
+    pii: nenhum
+    nulo: true
+  - nome: external_billing_of_lading_oid_extbol
+    tipo: string
+    comentario: "Conhecimento de embarque externo."
+    pii: nenhum
+    nulo: true
+  - nome: miscellaneous_delivery_number_oid_miscdl
+    tipo: string
+    comentario: "Número de entrega diverso."
+    pii: nenhum
+    nulo: true
+  - nome: external_business_system_id_ext_bus_syst_id
+    tipo: string
+    comentario: "Identificador do sistema de negócios externo."
+    pii: nenhum
+    nulo: true
+  - nome: valuated_stock_in_transit_issue_specification_sitkz_db
+    tipo: string
+    comentario: "Especificação de saída de estoque avaliado em trânsito."
+    pii: nenhum
+    nulo: true
+  - nome: advanced_shipping_receipt_relevance_indicator_tm_adv_ship_recv
+    tipo: string
+    comentario: "Indicador de relevância para recebimento antecipado de expedição."
+    pii: nenhum
+    nulo: true
+  - nome: warehouse_execution_status_tm_whse_exec
+    tipo: string
+    comentario: "Status de execução do depósito."
+    pii: nenhum
+    nulo: true
+  - nome: loading_units_bev1_luleinh
+    tipo: string
+    comentario: "Unidades de carregamento."
+    pii: nenhum
+    nulo: true
+  - nome: number_category_1_bev1_rpfaess
+    tipo: string
+    comentario: "Categoria de numeração 1."
+    pii: nenhum
+    nulo: true
+  - nome: number_category_2_bev1_rpkist
+    tipo: string
+    comentario: "Categoria de numeração 2."
+    pii: nenhum
+    nulo: true
+  - nome: number_category_3_bev1_rpcont
+    tipo: string
+    comentario: "Categoria de numeração 3."
+    pii: nenhum
+    nulo: true
+  - nome: number_category_4_bev1_rpsonst
+    tipo: string
+    comentario: "Categoria de numeração 4."
+    pii: nenhum
+    nulo: true
+  - nome: tour_loading_sequqnce_number_bev1_rpflgnr
+    tipo: string
+    comentario: "Número de sequência de carregamento do tour."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_last_notified_route_point_idt_cur_evtloc
+    tipo: string
+    comentario: "Último ponto de rota notificado no rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_arrival_departure_indicator_idt_cur_evtqua
+    tipo: string
+    comentario: "Indicador de chegada/partida no ponto atual de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_current_point_event_timestamp_idt_cur_evttst
+    tipo: timestamp
+    comentario: "Timestamp do evento no ponto atual de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_current_point_time_estimation_base_point_idt_cur_estloc
+    tipo: string
+    comentario: "Ponto base de estimativa de tempo no ponto atual de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_current_point_arrival_departure_time_estimation_idt_cur_estqua
+    tipo: string
+    comentario: "Estimativa de chegada/partida no ponto atual de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_current_point_delivery_date_estimation_base_date_idt_cur_esttst
+    tipo: timestamp
+    comentario: "Timestamp base de estimativa de data de entrega no ponto atual de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_current_point_entry_qualifiers_idt_cur_wrkqua
+    tipo: string
+    comentario: "Qualificadores de entrada no ponto atual de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_prior_point_idt_pre_evtloc
+    tipo: string
+    comentario: "Ponto anterior no rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_prior_point_arrival_departure_indicator_idt_pre_evtqua
+    tipo: string
+    comentario: "Indicador de chegada/partida no ponto anterior de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_prior_point_event_timestamp_idt_pre_evttst
+    tipo: timestamp
+    comentario: "Timestamp do evento no ponto anterior de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_prior_point_time_estimation_base_point_idt_pre_estloc
+    tipo: string
+    comentario: "Ponto base de estimativa de tempo no ponto anterior de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_prior_point_arrival_departure_time_estimation_idt_pre_estqua
+    tipo: string
+    comentario: "Estimativa de chegada/partida no ponto anterior de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_prior_point_delivery_date_estimation_base_date_idt_pre_esttst
+    tipo: timestamp
+    comentario: "Timestamp base de estimativa de data de entrega no ponto anterior de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_prior_point_entry_qualifiers_idt_pre_wrkqua
+    tipo: string
+    comentario: "Qualificadores de entrada no ponto anterior de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_reference_point_time_estimation_base_point_idt_ref_estloc
+    tipo: string
+    comentario: "Ponto base de estimativa de tempo no ponto de referência de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_reference_point_arrival_departure_time_estimation_idt_ref_estqua
+    tipo: string
+    comentario: "Estimativa de chegada/partida no ponto de referência de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: tracking_reference_point_delivery_date_estimation_base_date_idt_ref_esttst
+    tipo: timestamp
+    comentario: "Timestamp base de estimativa de data de entrega no ponto de referência de rastreamento."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_date_time_commitment_level_idt_firm_lfdat
+    tipo: string
+    comentario: "Nível de comprometimento de data/hora de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: document_number_idt_docnum
+    tipo: string
+    comentario: "Número do documento IDT."
+    pii: nenhum
+    nulo: true
+  - nome: multi_level_goods_receipt_automotive_borgr_grp
+    tipo: string
+    comentario: "Grupo de entrega de entrada multinível para setor automotivo."
+    pii: nenhum
+    nulo: true
+  - nome: kanban_indicator_kbnkz
+    tipo: string
+    comentario: "Indicador Kanban."
+    pii: nenhum
+    nulo: true
+  - nome: psst_group_rfm_psst_group
+    tipo: string
+    comentario: "Grupo PSST."
+    pii: nenhum
+    nulo: true
+  - nome: jit_relevant_indicator_jit_rlvnt
+    tipo: string
+    comentario: "Indicador de relevância JIT."
+    pii: nenhum
+    nulo: true
+  - nome: year_of_delivery_date_lfdat
+    tipo: int
+    comentario: "Ano da data de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: month_of_delivery_date_lfdat
+    tipo: int
+    comentario: "Mês da data de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_delivery_date_lfdat
+    tipo: int
+    comentario: "Trimestre da data de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: week_of_delivery_date_lfdat
+    tipo: int
+    comentario: "Semana da data de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: year_of_proof_of_delivery_date_podat
+    tipo: int
+    comentario: "Ano da data do comprovante de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: month_of_proof_of_delivery_date_podat
+    tipo: int
+    comentario: "Mês da data do comprovante de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_proof_of_delivery_date_podat
+    tipo: int
+    comentario: "Trimestre da data do comprovante de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: week_of_proof_of_delivery_date_podat
+    tipo: int
+    comentario: "Semana da data do comprovante de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: year_of_document_date_bldat
+    tipo: int
+    comentario: "Ano da data do documento."
+    pii: nenhum
+    nulo: true
+  - nome: month_of_document_date_bldat
+    tipo: int
+    comentario: "Mês da data do documento."
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_document_date_bldat
+    tipo: int
+    comentario: "Trimestre da data do documento."
+    pii: nenhum
+    nulo: true
+  - nome: week_of_document_date_bldat
+    tipo: int
+    comentario: "Semana da data do documento."
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da última atualização na fonte."
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_version_dlv_version
+    tipo: string
+    comentario: "Versão da entrega."
+    pii: nenhum
+    nulo: true

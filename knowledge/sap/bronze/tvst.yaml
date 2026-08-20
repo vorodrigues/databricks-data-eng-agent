@@ -1,0 +1,167 @@
+tabela: tvst
+camada: bronze
+comentario: "Unidade organizacional: pontos de expedição (SAP TVST)."
+ingestao: cdc
+fonte: sap.tvst
+chave_primaria: [mandt, vstel]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: vstel
+    tipo: string
+    comentario: "Ponto de expedição/recebimento (vstel)"
+    pii: nenhum
+    nulo: false
+  - nome: fabkl
+    tipo: string
+    comentario: "Calendário de fábrica"
+    pii: nenhum
+    nulo: true
+  - nome: vtrzt
+    tipo: string
+    comentario: "Período de arredondamento para cima"
+    pii: nenhum
+    nulo: true
+  - nome: adrnr
+    tipo: string
+    comentario: "Número do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: aland
+    tipo: string
+    comentario: "País"
+    pii: nenhum
+    nulo: true
+  - nome: azone
+    tipo: string
+    comentario: "Zona de saída (expedição)"
+    pii: nenhum
+    nulo: true
+  - nome: txnam_adr
+    tipo: string
+    comentario: "Nome do texto de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: txnam_kop
+    tipo: string
+    comentario: "Texto do cabeçalho da carta"
+    pii: nenhum
+    nulo: true
+  - nome: txnam_fus
+    tipo: string
+    comentario: "Texto do rodapé da carta"
+    pii: nenhum
+    nulo: true
+  - nome: txnam_gru
+    tipo: string
+    comentario: "Nome do texto de saudação"
+    pii: nenhum
+    nulo: true
+  - nome: kschl
+    tipo: string
+    comentario: "Tipo de saída (output type)"
+    pii: nenhum
+    nulo: true
+  - nome: spras
+    tipo: string
+    comentario: "Idioma da mensagem"
+    pii: nenhum
+    nulo: true
+  - nome: anzal
+    tipo: int
+    comentario: "Número de mensagens"
+    pii: nenhum
+    nulo: true
+  - nome: vsztp
+    tipo: string
+    comentario: "Hora de despacho"
+    pii: nenhum
+    nulo: true
+  - nome: nacha
+    tipo: string
+    comentario: "Meio de transmissão"
+    pii: nenhum
+    nulo: true
+  - nome: lazbs
+    tipo: string
+    comentario: "Determinação do tempo de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: rizbs
+    tipo: string
+    comentario: "Determinação do tempo de separação/embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: lazzt
+    tipo: string
+    comentario: "Tempo de carregamento padrão"
+    pii: nenhum
+    nulo: true
+  - nome: rizzt
+    tipo: string
+    comentario: "Tempo padrão de separação/embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: koqui
+    tipo: string
+    comentario: "Confirmação de separação"
+    pii: nenhum
+    nulo: true
+  - nome: komsu
+    tipo: string
+    comentario: "Subsistema de expedição"
+    pii: nenhum
+    nulo: true
+  - nome: imess
+    tipo: string
+    comentario: "Exibir informação"
+    pii: nenhum
+    nulo: true
+  - nome: txnam_sdb
+    tipo: string
+    comentario: "Texto do remetente de ficha de dados de segurança (SDS)"
+    pii: nenhum
+    nulo: true
+  - nome: alw_sw
+    tipo: string
+    comentario: "Agendamento de rota ativo"
+    pii: nenhum
+    nulo: true
+  - nome: loadtg
+    tipo: string
+    comentario: "Tempo de carregamento em dias úteis"
+    pii: nenhum
+    nulo: true
+  - nome: loadtn
+    tipo: string
+    comentario: "Tempo de carregamento em horas úteis"
+    pii: nenhum
+    nulo: true
+  - nome: pipatg
+    tipo: string
+    comentario: "Tempo de separação/embalagem em dias úteis"
+    pii: nenhum
+    nulo: true
+  - nome: pipatn
+    tipo: string
+    comentario: "Tempo de separação/embalagem em horas úteis"
+    pii: nenhum
+    nulo: true
+  - nome: tstrid
+    tipo: string
+    comentario: "Horários de funcionamento"
+    pii: nenhum
+    nulo: true
+  - nome: roundg
+    tipo: string
+    comentario: "Arredondamento em dias úteis"
+    pii: nenhum
+    nulo: true
+  - nome: roundn
+    tipo: string
+    comentario: "Arredondamento em horas úteis"
+    pii: nenhum
+    nulo: true

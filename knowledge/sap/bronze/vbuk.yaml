@@ -1,0 +1,427 @@
+tabela: vbuk
+camada: bronze
+comentario: "Documento de vendas: status do cabeçalho e dados administrativos"
+ingestao: cdc
+fonte: sap.vbuk
+chave_primaria: [mandt, vbeln]
+colunas:
+  - nome: abstk
+    tipo: string
+    comentario: "Status de rejeição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: bestk
+    tipo: string
+    comentario: "Status de confirmação geral"
+    pii: nenhum
+    nulo: true
+  - nome: block
+    tipo: string
+    comentario: "Indicador de bloqueio"
+    pii: nenhum
+    nulo: true
+  - nome: buchk
+    tipo: string
+    comentario: "Status de contabilização"
+    pii: nenhum
+    nulo: true
+  - nome: cmgst
+    tipo: string
+    comentario: "Status geral de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmps0
+    tipo: string
+    comentario: "Campo reserva de verificação de crédito 0"
+    pii: nenhum
+    nulo: true
+  - nome: cmps1
+    tipo: string
+    comentario: "Campo reserva de verificação de crédito 1"
+    pii: nenhum
+    nulo: true
+  - nome: cmps2
+    tipo: string
+    comentario: "Campo reserva de verificação de crédito 2"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsa
+    tipo: string
+    comentario: "Verificação estática de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsb
+    tipo: string
+    comentario: "Verificação dinâmica de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsc
+    tipo: string
+    comentario: "Limite máximo de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsd
+    tipo: string
+    comentario: "Condições de pagamento (crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: cmpse
+    tipo: string
+    comentario: "Data de revisão do cliente (crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsf
+    tipo: string
+    comentario: "Itens em aberto vencidos (crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsg
+    tipo: string
+    comentario: "Item em aberto mais antigo (crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsh
+    tipo: string
+    comentario: "Nível máximo de cobrança (crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsi
+    tipo: string
+    comentario: "Documento financeiro (crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsj
+    tipo: string
+    comentario: "Seguro de crédito de exportação"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsk
+    tipo: string
+    comentario: "Cartão de pagamento (crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsl
+    tipo: string
+    comentario: "Campo reserva de crédito L"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsm
+    tipo: string
+    comentario: "Dados de crédito obsoletos"
+    pii: nenhum
+    nulo: true
+  - nome: cmps_cm
+    tipo: string
+    comentario: "Status do gerenciamento de crédito SAP"
+    pii: nenhum
+    nulo: true
+  - nome: cmps_te
+    tipo: string
+    comentario: "Status de transação especial de gerenciamento de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: costa
+    tipo: string
+    comentario: "Status de confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: dcstk
+    tipo: string
+    comentario: "Status de atraso"
+    pii: nenhum
+    nulo: true
+  - nome: fkivk
+    tipo: string
+    comentario: "Status de totais de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: fksak
+    tipo: string
+    comentario: "Status de faturamento relativo a pedido"
+    pii: nenhum
+    nulo: true
+  - nome: fkstk
+    tipo: string
+    comentario: "Status geral de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: fmstk
+    tipo: string
+    comentario: "Status de gestão de fundos"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_ar_stat_hdr
+    tipo: string
+    comentario: "Status de execução de atribuição no cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: fsstk
+    tipo: string
+    comentario: "Status geral de bloqueio"
+    pii: nenhum
+    nulo: true
+  - nome: gbstk
+    tipo: string
+    comentario: "Status geral do documento"
+    pii: nenhum
+    nulo: true
+  - nome: hdall
+    tipo: string
+    comentario: "Indicador de documento em espera (cabeçalho)"
+    pii: nenhum
+    nulo: true
+  - nome: hdals
+    tipo: string
+    comentario: "Indicador de item em espera"
+    pii: nenhum
+    nulo: true
+  - nome: koquk
+    tipo: string
+    comentario: "Confirmação de separação"
+    pii: nenhum
+    nulo: true
+  - nome: kostk
+    tipo: string
+    comentario: "Status geral de separação"
+    pii: nenhum
+    nulo: true
+  - nome: lfgsk
+    tipo: string
+    comentario: "Status geral de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: lfstk
+    tipo: string
+    comentario: "Status de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: lsstk
+    tipo: string
+    comentario: "Status geral de bloqueio de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: lvstk
+    tipo: string
+    comentario: "Status geral de gerenciamento de armazém (WM)"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: manek
+    tipo: string
+    comentario: "Conclusão manual do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: pdstk
+    tipo: string
+    comentario: "Status de prova de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: pkstk
+    tipo: string
+    comentario: "Status de embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: relik
+    tipo: string
+    comentario: "Status de lista de faturas"
+    pii: nenhum
+    nulo: true
+  - nome: rfgsk
+    tipo: string
+    comentario: "Status total de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rfstk
+    tipo: string
+    comentario: "Status de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rrsta
+    tipo: string
+    comentario: "Status de determinação de receita"
+    pii: nenhum
+    nulo: true
+  - nome: saprl
+    tipo: string
+    comentario: "Release SAP"
+    pii: nenhum
+    nulo: true
+  - nome: spe_tmpid
+    tipo: string
+    comentario: "ID temporário de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: spstg
+    tipo: string
+    comentario: "Status geral de bloqueio de remessa"
+    pii: nenhum
+    nulo: true
+  - nome: trsta
+    tipo: string
+    comentario: "Status de planejamento de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: uvall
+    tipo: string
+    comentario: "Dados de cabeçalho incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvals
+    tipo: string
+    comentario: "Dados de item incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvfak
+    tipo: string
+    comentario: "Dados de faturamento do cabeçalho incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvfas
+    tipo: string
+    comentario: "Dados de faturamento do item incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvgek
+    tipo: string
+    comentario: "Dados de cabeçalho de mercadorias perigosas incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvk01
+    tipo: string
+    comentario: "Campo reserva de cabeçalho 1"
+    pii: nenhum
+    nulo: true
+  - nome: uvk02
+    tipo: string
+    comentario: "Campo reserva de cabeçalho 2"
+    pii: nenhum
+    nulo: true
+  - nome: uvk03
+    tipo: string
+    comentario: "Campo reserva de cabeçalho 3"
+    pii: nenhum
+    nulo: true
+  - nome: uvk04
+    tipo: string
+    comentario: "Campo reserva de cabeçalho 4"
+    pii: nenhum
+    nulo: true
+  - nome: uvk05
+    tipo: string
+    comentario: "Campo reserva de cabeçalho 5"
+    pii: nenhum
+    nulo: true
+  - nome: uvpak
+    tipo: string
+    comentario: "Dados de embalagem do cabeçalho incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvpas
+    tipo: string
+    comentario: "Dados de embalagem do item incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvpik
+    tipo: string
+    comentario: "Dados de separação/armazenamento do cabeçalho incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvpis
+    tipo: string
+    comentario: "Dados de separação/armazenamento do item incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvprs
+    tipo: string
+    comentario: "Dados de precificação incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvs01
+    tipo: string
+    comentario: "Campo reserva total 1"
+    pii: nenhum
+    nulo: true
+  - nome: uvs02
+    tipo: string
+    comentario: "Campo reserva total 2"
+    pii: nenhum
+    nulo: true
+  - nome: uvs03
+    tipo: string
+    comentario: "Campo reserva total 3"
+    pii: nenhum
+    nulo: true
+  - nome: uvs04
+    tipo: string
+    comentario: "Campo reserva total 4"
+    pii: nenhum
+    nulo: true
+  - nome: uvs05
+    tipo: string
+    comentario: "Campo reserva total 5"
+    pii: nenhum
+    nulo: true
+  - nome: uvvlk
+    tipo: string
+    comentario: "Dados de entrega do cabeçalho incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvvls
+    tipo: string
+    comentario: "Dados de entrega do item incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvwak
+    tipo: string
+    comentario: "Dados de movimentação de mercadorias do cabeçalho incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: uvwas
+    tipo: string
+    comentario: "Dados de movimentação de mercadorias do item incompletos"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln
+    tipo: string
+    comentario: "Número do documento de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: vbobj
+    tipo: string
+    comentario: "Objeto do documento"
+    pii: nenhum
+    nulo: true
+  - nome: vbtyp
+    tipo: string
+    comentario: "Categoria do documento SD"
+    pii: nenhum
+    nulo: true
+  - nome: vbtyp_ext
+    tipo: string
+    comentario: "Extensão da categoria do documento"
+    pii: nenhum
+    nulo: true
+  - nome: vestk
+    tipo: string
+    comentario: "Status de unidade de manuseio colocada em estoque"
+    pii: nenhum
+    nulo: true
+  - nome: vlstk
+    tipo: string
+    comentario: "Status de armazém descentralizado"
+    pii: nenhum
+    nulo: true
+  - nome: wbstk
+    tipo: string
+    comentario: "Status geral de movimentação de mercadorias"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,27 @@
+tabela: finsc_ledger_t
+camada: bronze
+comentario: "Textos de razao contabil do journal universal (dependente de idioma)"
+ingestao: cdc
+fonte: sap.finsc_ledger_t
+chave_primaria: [mandt, langu, rldnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: langu
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: rldnr
+    tipo: string
+    comentario: "Identificador do razao contabil"
+    pii: nenhum
+    nulo: false
+  - nome: name
+    tipo: string
+    comentario: "Nome do razao contabil"
+    pii: nenhum
+    nulo: true

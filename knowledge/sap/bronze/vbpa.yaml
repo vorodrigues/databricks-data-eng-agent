@@ -1,0 +1,127 @@
+tabela: vbpa
+camada: bronze
+comentario: "Parceiros do documento de vendas"
+ingestao: cdc
+fonte: sap.vbpa
+chave_primaria: [mandt, vbeln, posnr, parvw]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: vbeln
+    tipo: string
+    comentario: "Número do documento de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: posnr
+    tipo: string
+    comentario: "Item do documento SD"
+    pii: nenhum
+    nulo: false
+  - nome: parvw
+    tipo: string
+    comentario: "Função do parceiro"
+    pii: nenhum
+    nulo: false
+  - nome: kunnr
+    tipo: string
+    comentario: "Número do cliente"
+    pii: indireto
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Número do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: pernr
+    tipo: string
+    comentario: "Número de pessoal"
+    pii: indireto
+    nulo: true
+  - nome: parnr
+    tipo: string
+    comentario: "Número da pessoa de contato"
+    pii: nenhum
+    nulo: true
+  - nome: adrnr
+    tipo: string
+    comentario: "Número de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: ablad
+    tipo: string
+    comentario: "Ponto de descarga"
+    pii: nenhum
+    nulo: true
+  - nome: land1
+    tipo: string
+    comentario: "Chave de país"
+    pii: nenhum
+    nulo: true
+  - nome: adrda
+    tipo: string
+    comentario: "Indicador de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: xcpdk
+    tipo: string
+    comentario: "Conta eventual (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: hityp
+    tipo: string
+    comentario: "Tipo de hierarquia do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: prfre
+    tipo: string
+    comentario: "Determinação de preço (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: bokre
+    tipo: string
+    comentario: "Rebate (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: histunr
+    tipo: string
+    comentario: "Nível de hierarquia"
+    pii: nenhum
+    nulo: true
+  - nome: knref
+    tipo: string
+    comentario: "Descrição do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: lzone
+    tipo: string
+    comentario: "Zona de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: hzuor
+    tipo: string
+    comentario: "Atribuição de hierarquia"
+    pii: nenhum
+    nulo: true
+  - nome: stceg
+    tipo: string
+    comentario: "Número de registro de IVA"
+    pii: sensivel
+    nulo: true
+  - nome: parvw_ff
+    tipo: string
+    comentario: "Parceiros adicionais"
+    pii: nenhum
+    nulo: true
+  - nome: adrnp
+    tipo: string
+    comentario: "Número de pessoa"
+    pii: nenhum
+    nulo: true
+  - nome: kale
+    tipo: string
+    comentario: "Manter compromissos (flag)"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,72 @@
+tabela: but020
+camada: bronze
+comentario: "Endereços de parceiro de negócios (BP)"
+ingestao: cdc
+fonte: sap.but020
+chave_primaria: [client, partner, date_from, nation]
+colunas:
+  - nome: address_guid
+    tipo: string
+    comentario: "GUID do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: addrnumber
+    tipo: string
+    comentario: "Número do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: addr_move_date
+    tipo: date
+    comentario: "Data de mudança de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: addr_valid_from
+    tipo: date
+    comentario: "Endereço válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: addr_valid_to
+    tipo: date
+    comentario: "Endereço válido até"
+    pii: nenhum
+    nulo: true
+  - nome: adext
+    tipo: string
+    comentario: "Número de endereço externo"
+    pii: nenhum
+    nulo: true
+  - nome: client
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: date_from
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: false
+  - nome: guid
+    tipo: string
+    comentario: "GUID do parceiro de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: move_addr
+    tipo: string
+    comentario: "Endereço destino da mudança"
+    pii: nenhum
+    nulo: true
+  - nome: nation
+    tipo: string
+    comentario: "Versão do endereço"
+    pii: nenhum
+    nulo: false
+  - nome: partner
+    tipo: string
+    comentario: "Número do parceiro de negócios"
+    pii: indireto
+    nulo: false
+  - nome: xdfadr
+    tipo: string
+    comentario: "Endereço padrão (indicador)"
+    pii: nenhum
+    nulo: true

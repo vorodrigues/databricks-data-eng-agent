@@ -1,0 +1,1057 @@
+tabela: wbrk
+camada: bronze
+comentario: "Cabeçalho do documento de liquidação de agência"
+ingestao: cdc
+fonte: sap.wbrk
+chave_primaria: [mandt, wbeln]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: wbeln
+    tipo: string
+    comentario: "Número do documento de liquidação"
+    pii: nenhum
+    nulo: false
+  - nome: lfart
+    tipo: string
+    comentario: "Tipo do documento de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: lftyp
+    tipo: string
+    comentario: "Categoria do documento de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: wrart
+    tipo: string
+    comentario: "Tipo do processo de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: wbtyp
+    tipo: string
+    comentario: "Categoria do processo de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: wrtyp
+    tipo: string
+    comentario: "Categoria de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: abart
+    tipo: string
+    comentario: "Categoria de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm
+    tipo: string
+    comentario: "Procedimento de cálculo"
+    pii: nenhum
+    nulo: true
+  - nome: kalsmd
+    tipo: string
+    comentario: "Procedimento de cálculo (destino)"
+    pii: nenhum
+    nulo: true
+  - nome: wfdat
+    tipo: date
+    comentario: "Data de contabilização"
+    pii: nenhum
+    nulo: true
+  - nome: rfbsk
+    tipo: string
+    comentario: "Status de contabilização"
+    pii: nenhum
+    nulo: true
+  - nome: lifre
+    tipo: string
+    comentario: "Fornecedor faturante"
+    pii: indireto
+    nulo: true
+  - nome: lnrzb
+    tipo: string
+    comentario: "Beneficiário do pagamento"
+    pii: indireto
+    nulo: true
+  - nome: kunre
+    tipo: string
+    comentario: "Destinatário da fatura (cliente)"
+    pii: indireto
+    nulo: true
+  - nome: kunrg
+    tipo: string
+    comentario: "Pagador (cliente)"
+    pii: indireto
+    nulo: true
+  - nome: ekorg
+    tipo: string
+    comentario: "Organização de compras"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: erzet
+    tipo: string
+    comentario: "Hora de criação"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por (usuário)"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: bldat
+    tipo: date
+    comentario: "Data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: xblnr
+    tipo: string
+    comentario: "Referência externa"
+    pii: nenhum
+    nulo: true
+  - nome: zuonr
+    tipo: string
+    comentario: "Campo de atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: waerl
+    tipo: string
+    comentario: "Moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: wstwae
+    tipo: string
+    comentario: "Moeda de estatística"
+    pii: nenhum
+    nulo: true
+  - nome: wkurs
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: stcur
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio (estatística)"
+    pii: nenhum
+    nulo: true
+  - nome: kufix
+    tipo: string
+    comentario: "Taxa de câmbio fixada"
+    pii: nenhum
+    nulo: true
+  - nome: wkurs_dat
+    tipo: date
+    comentario: "Data da taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: brtwr
+    tipo: decimal(23,2)
+    comentario: "Valor bruto de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: zterm
+    tipo: string
+    comentario: "Condições de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zbd1t
+    tipo: int
+    comentario: "Prazo 1 para desconto (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd1p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto 1"
+    pii: nenhum
+    nulo: true
+  - nome: zbd2t
+    tipo: int
+    comentario: "Prazo 2 (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd2p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto 2"
+    pii: nenhum
+    nulo: true
+  - nome: zbd3t
+    tipo: int
+    comentario: "Prazo líquido (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zlsch
+    tipo: string
+    comentario: "Forma de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: netwr
+    tipo: decimal(23,2)
+    comentario: "Valor líquido de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: netwrd
+    tipo: decimal(23,2)
+    comentario: "Valor líquido de liquidação (destino)"
+    pii: nenhum
+    nulo: true
+  - nome: brtwrd
+    tipo: decimal(23,2)
+    comentario: "Valor bruto de liquidação (destino)"
+    pii: nenhum
+    nulo: true
+  - nome: ztermd
+    tipo: string
+    comentario: "Condições de pagamento do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: zbd1td
+    tipo: int
+    comentario: "Prazo 1 para desconto do cliente (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd1pd
+    tipo: decimal(23,2)
+    comentario: "Taxa de desconto em dinheiro 1 (cliente)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd2td
+    tipo: int
+    comentario: "Prazo 2 do cliente (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd2pd
+    tipo: decimal(23,2)
+    comentario: "Taxa de desconto em dinheiro 2 (cliente)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd3td
+    tipo: int
+    comentario: "Prazo líquido do cliente (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zlschd
+    tipo: string
+    comentario: "Forma de pagamento do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: gsktod
+    tipo: decimal(23,2)
+    comentario: "Base de desconto em dinheiro (destino)"
+    pii: nenhum
+    nulo: true
+  - nome: gskto
+    tipo: decimal(23,2)
+    comentario: "Base de desconto em dinheiro"
+    pii: nenhum
+    nulo: true
+  - nome: fksto
+    tipo: string
+    comentario: "Indicador: documento estornado"
+    pii: nenhum
+    nulo: true
+  - nome: kappl
+    tipo: string
+    comentario: "Aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: knumv
+    tipo: string
+    comentario: "Número do registro de condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: knumvd
+    tipo: string
+    comentario: "Número do registro de condição do documento (destino)"
+    pii: nenhum
+    nulo: true
+  - nome: stafo
+    tipo: string
+    comentario: "Grupo de atualização de estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: lfaks
+    tipo: string
+    comentario: "Documento estornado (referência)"
+    pii: nenhum
+    nulo: true
+  - nome: knuma
+    tipo: string
+    comentario: "Acordo (contrato)"
+    pii: nenhum
+    nulo: true
+  - nome: lfart_rl
+    tipo: string
+    comentario: "Tipo do documento SDL de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: wfdat_rl
+    tipo: date
+    comentario: "Data de contabilização SDL"
+    pii: nenhum
+    nulo: true
+  - nome: wbeln_rl
+    tipo: string
+    comentario: "Lista de documentos de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: ekgrp
+    tipo: string
+    comentario: "Grupo de compradores"
+    pii: nenhum
+    nulo: true
+  - nome: valtg
+    tipo: int
+    comentario: "Dias adicionais de valor"
+    pii: nenhum
+    nulo: true
+  - nome: valdt
+    tipo: date
+    comentario: "Data de valor fixada"
+    pii: nenhum
+    nulo: true
+  - nome: mwsbk
+    tipo: decimal(23,2)
+    comentario: "Valor do imposto"
+    pii: nenhum
+    nulo: true
+  - nome: mwsbkd
+    tipo: decimal(23,2)
+    comentario: "Valor do imposto (destino)"
+    pii: nenhum
+    nulo: true
+  - nome: navnk
+    tipo: decimal(23,2)
+    comentario: "Valor não dedutível"
+    pii: nenhum
+    nulo: true
+  - nome: logsys
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: diekz
+    tipo: string
+    comentario: "Indicador de serviço"
+    pii: nenhum
+    nulo: true
+  - nome: landl
+    tipo: string
+    comentario: "País fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: lzbkz
+    tipo: string
+    comentario: "Indicador SCB"
+    pii: nenhum
+    nulo: true
+  - nome: kkber
+    tipo: string
+    comentario: "Área de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: lfgru
+    tipo: string
+    comentario: "Motivo da atividade"
+    pii: nenhum
+    nulo: true
+  - nome: valtgd
+    tipo: int
+    comentario: "Dias adicionais de valor (destino)"
+    pii: nenhum
+    nulo: true
+  - nome: valdtd
+    tipo: date
+    comentario: "Data de valor fixada (destino)"
+    pii: nenhum
+    nulo: true
+  - nome: kidno
+    tipo: string
+    comentario: "Referência de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: wdtyp
+    tipo: string
+    comentario: "Categoria do documento"
+    pii: nenhum
+    nulo: true
+  - nome: wkurs_p1
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio (moeda de pagamento do fornecedor)"
+    pii: nenhum
+    nulo: true
+  - nome: wkurs_p2
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio (moeda de pagamento do cliente)"
+    pii: nenhum
+    nulo: true
+  - nome: wpycur_p1
+    tipo: string
+    comentario: "Moeda de pagamento do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: wpycur_p2
+    tipo: string
+    comentario: "Moeda de pagamento do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: estatus
+    tipo: string
+    comentario: "Status da aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: vkbur
+    tipo: string
+    comentario: "Escritório de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vkgrp
+    tipo: string
+    comentario: "Grupo de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: settle_doc
+    tipo: string
+    comentario: "Documento de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: fksto_part
+    tipo: string
+    comentario: "Indicador: estorno parcial"
+    pii: nenhum
+    nulo: true
+  - nome: post_party
+    tipo: string
+    comentario: "Parceiro de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: cpdk_addr
+    tipo: string
+    comentario: "Endereço OTC"
+    pii: nenhum
+    nulo: true
+  - nome: fksto_party
+    tipo: string
+    comentario: "Parceiro estornado"
+    pii: nenhum
+    nulo: true
+  - nome: contract
+    tipo: string
+    comentario: "Contrato"
+    pii: nenhum
+    nulo: true
+  - nome: contract_type
+    tipo: string
+    comentario: "Categoria do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: collection_type
+    tipo: string
+    comentario: "Categoria de sumarização"
+    pii: nenhum
+    nulo: true
+  - nome: cmwae
+    tipo: string
+    comentario: "Moeda"
+    pii: nenhum
+    nulo: true
+  - nome: ctlpc
+    tipo: string
+    comentario: "Categoria de risco"
+    pii: nenhum
+    nulo: true
+  - nome: cm_amount
+    tipo: decimal(23,2)
+    comentario: "Valor de crédito relevante"
+    pii: nenhum
+    nulo: true
+  - nome: settle_category
+    tipo: string
+    comentario: "Categoria de classificação de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: idobj_type_v
+    tipo: string
+    comentario: "Tipo de objeto de identificação (fornecedor)"
+    pii: nenhum
+    nulo: true
+  - nome: idobj_vendor
+    tipo: string
+    comentario: "Objeto de identificação (fornecedor)"
+    pii: nenhum
+    nulo: true
+  - nome: idobj_type_c
+    tipo: string
+    comentario: "Tipo de objeto de identificação (cliente)"
+    pii: nenhum
+    nulo: true
+  - nome: idobj_customer
+    tipo: string
+    comentario: "Objeto de identificação (cliente)"
+    pii: nenhum
+    nulo: true
+  - nome: posting_rule_k
+    tipo: string
+    comentario: "Regra de lançamento do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: posting_rule_d
+    tipo: string
+    comentario: "Regra de lançamento do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: posting_rule_a
+    tipo: string
+    comentario: "Regra de lançamento especial"
+    pii: nenhum
+    nulo: true
+  - nome: vkont
+    tipo: string
+    comentario: "Conta contrato"
+    pii: nenhum
+    nulo: true
+  - nome: wt_active
+    tipo: string
+    comentario: "Indicador: retenção na fonte estendida ativa"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs_deb
+    tipo: string
+    comentario: "Código da empresa (cliente)"
+    pii: nenhum
+    nulo: true
+  - nome: settl_party
+    tipo: string
+    comentario: "Categoria do parceiro de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: settl_status_v
+    tipo: string
+    comentario: "Status de liquidação do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: settl_status_c
+    tipo: string
+    comentario: "Status de liquidação do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: settl_doctype_v
+    tipo: string
+    comentario: "Tipo do documento de liquidação (fornecedor)"
+    pii: nenhum
+    nulo: true
+  - nome: settl_doctype_c
+    tipo: string
+    comentario: "Tipo do documento de liquidação (cliente)"
+    pii: nenhum
+    nulo: true
+  - nome: settl_method
+    tipo: string
+    comentario: "Procedimento de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: settl_block_v
+    tipo: string
+    comentario: "Motivo de bloqueio de liquidação do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: settl_block_c
+    tipo: string
+    comentario: "Motivo de bloqueio de liquidação do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: cpdl_addr
+    tipo: string
+    comentario: "Endereço OTS"
+    pii: nenhum
+    nulo: true
+  - nome: monat
+    tipo: string
+    comentario: "Período de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: output_control_is_active
+    tipo: string
+    comentario: "Indicador: controle de saída ativo"
+    pii: nenhum
+    nulo: true
+  - nome: _dataaging
+    tipo: string
+    comentario: "Valor de filtro para envelhecimento de dados"
+    pii: nenhum
+    nulo: true
+  - nome: pernr
+    tipo: string
+    comentario: "Número do funcionário"
+    pii: indireto
+    nulo: true
+  - nome: status_group
+    tipo: string
+    comentario: "Grupo de status"
+    pii: nenhum
+    nulo: true
+  - nome: jrnl_entr_crtn_dte_utc
+    tipo: date
+    comentario: "Data de criação da entrada contábil (UTC)"
+    pii: nenhum
+    nulo: true
+  - nome: jrnl_entr_crtn_tme_utc
+    tipo: string
+    comentario: "Hora de criação da entrada contábil (UTC)"
+    pii: nenhum
+    nulo: true
+  - nome: settlmt_compn_rsn
+    tipo: string
+    comentario: "Motivo de compensação"
+    pii: nenhum
+    nulo: true
+  - nome: entity_tag
+    tipo: string
+    comentario: "Tag de entidade"
+    pii: nenhum
+    nulo: true
+  - nome: pers_kostl
+    tipo: string
+    comentario: "Centro de custo pessoal"
+    pii: nenhum
+    nulo: true
+  - nome: txkrs
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio para imposto"
+    pii: nenhum
+    nulo: true
+  - nome: txkrs_ic
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio para imposto (lançamento intercompany)"
+    pii: nenhum
+    nulo: true
+  - nome: compn_variant
+    tipo: string
+    comentario: "Variante de compensação"
+    pii: nenhum
+    nulo: true
+  - nome: visibility_group
+    tipo: string
+    comentario: "Grupo de visibilidade de campos"
+    pii: nenhum
+    nulo: true
+  - nome: dummy_wbrk_incl_eew_ps
+    tipo: string
+    comentario: "Campo reserva (dummy)"
+    pii: nenhum
+    nulo: true
+  - nome: servconf_id
+    tipo: string
+    comentario: "ID de configuração CRM"
+    pii: nenhum
+    nulo: true
+  - nome: counter
+    tipo: decimal(23,2)
+    comentario: "Leitura do contador"
+    pii: nenhum
+    nulo: true
+  - nome: counter_unit
+    tipo: string
+    comentario: "Unidade de medida do contador"
+    pii: nenhum
+    nulo: true
+  - nome: exp_class
+    tipo: string
+    comentario: "Classe de despesa"
+    pii: nenhum
+    nulo: true
+  - nome: exp_calc_type
+    tipo: string
+    comentario: "Tipo de cálculo"
+    pii: nenhum
+    nulo: true
+  - nome: doc_settled
+    tipo: string
+    comentario: "Indicador: documento liquidado"
+    pii: nenhum
+    nulo: true
+  - nome: ref_value_ref
+    tipo: string
+    comentario: "Unidade de referência"
+    pii: nenhum
+    nulo: true
+  - nome: ref_value
+    tipo: decimal(23,2)
+    comentario: "Valor de referência"
+    pii: nenhum
+    nulo: true
+  - nome: post_type
+    tipo: string
+    comentario: "Categoria de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: tew_type
+    tipo: string
+    comentario: "Tipo TEW"
+    pii: nenhum
+    nulo: true
+  - nome: step
+    tipo: string
+    comentario: "Etapa do processo"
+    pii: nenhum
+    nulo: true
+  - nome: partner_exp
+    tipo: string
+    comentario: "Parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: step_from
+    tipo: string
+    comentario: "Etapa do processo (origem)"
+    pii: nenhum
+    nulo: true
+  - nome: step_tew
+    tipo: string
+    comentario: "Etapa do processo TEW"
+    pii: nenhum
+    nulo: true
+  - nome: mode
+    tipo: string
+    comentario: "Modo de execução"
+    pii: nenhum
+    nulo: true
+  - nome: partner_exp_type
+    tipo: string
+    comentario: "Tipo do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: iv_check_type_h
+    tipo: string
+    comentario: "Tipo de verificação (cabeçalho)"
+    pii: nenhum
+    nulo: true
+  - nome: iv_accr
+    tipo: string
+    comentario: "Competência"
+    pii: nenhum
+    nulo: true
+  - nome: rrlcg
+    tipo: string
+    comentario: "Tipo da lista de documentos de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: rrlpa
+    tipo: string
+    comentario: "Parceiro da lista de documentos de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: contr_type
+    tipo: string
+    comentario: "Tipo de contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: settl_date_type
+    tipo: string
+    comentario: "Tipo de data de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: act_settl_date
+    tipo: date
+    comentario: "Data efetiva de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: settl_date_seq_id
+    tipo: string
+    comentario: "ID sequencial da data de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: settl_start_date
+    tipo: date
+    comentario: "Data de início do período de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: total_menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade total do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: total_wfkme
+    tipo: string
+    comentario: "Unidade de medida da quantidade total"
+    pii: nenhum
+    nulo: true
+  - nome: total_ntgew
+    tipo: decimal(23,2)
+    comentario: "Peso líquido total do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: total_brgew
+    tipo: decimal(23,2)
+    comentario: "Peso bruto total do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: total_gewei
+    tipo: string
+    comentario: "Unidade de peso para o peso total"
+    pii: nenhum
+    nulo: true
+  - nome: total_volum
+    tipo: decimal(23,2)
+    comentario: "Volume total do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: total_voleh
+    tipo: string
+    comentario: "Unidade de volume para o volume total"
+    pii: nenhum
+    nulo: true
+  - nome: total_anzpu
+    tipo: decimal(23,2)
+    comentario: "Total de pontos do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: total_punei
+    tipo: string
+    comentario: "Unidade de pontos para total de pontos"
+    pii: nenhum
+    nulo: true
+  - nome: process_variant
+    tipo: string
+    comentario: "Variante de processo do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: process_category
+    tipo: string
+    comentario: "Categoria de processo do contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: deviating_settl_item
+    tipo: string
+    comentario: "Indicador: dados de liquidação diferentes no nível do item"
+    pii: nenhum
+    nulo: true
+  - nome: settl_variant
+    tipo: string
+    comentario: "Variante de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: corr_document
+    tipo: string
+    comentario: "Documento de ajuste"
+    pii: nenhum
+    nulo: true
+  - nome: incomp_reason
+    tipo: string
+    comentario: "Motivo de incompletude"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr_fi
+    tipo: string
+    comentario: "Fornecedor alternativo (FI)"
+    pii: indireto
+    nulo: true
+  - nome: distrib_incomp
+    tipo: string
+    comentario: "Distribuição incompleta"
+    pii: nenhum
+    nulo: true
+  - nome: rfbsk_comb_sett
+    tipo: string
+    comentario: "Status de contabilização da liquidação combinada"
+    pii: nenhum
+    nulo: true
+  - nome: no_text_h
+    tipo: string
+    comentario: "Indicador: sem textos disponíveis"
+    pii: nenhum
+    nulo: true
+  - nome: intrastat_rel
+    tipo: string
+    comentario: "Relevância para o Intrastat"
+    pii: nenhum
+    nulo: true
+  - nome: landtx
+    tipo: string
+    comentario: "País de dependência fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: land1tx
+    tipo: string
+    comentario: "País de destino fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: xegdr
+    tipo: string
+    comentario: "Indicador: operação triangular da UE"
+    pii: nenhum
+    nulo: true
+  - nome: stceg
+    tipo: string
+    comentario: "Número de registro de IVA do fornecedor"
+    pii: sensivel
+    nulo: true
+  - nome: stcegd
+    tipo: string
+    comentario: "Número de registro de IVA do cliente"
+    pii: sensivel
+    nulo: true
+  - nome: intrastat_flow_d
+    tipo: string
+    comentario: "Fluxo de mercadorias (Intrastat)"
+    pii: nenhum
+    nulo: true
+  - nome: service_indicator
+    tipo: string
+    comentario: "Indicador de serviço"
+    pii: nenhum
+    nulo: true
+  - nome: inco1
+    tipo: string
+    comentario: "Incoterms (parte 1)"
+    pii: nenhum
+    nulo: true
+  - nome: inco2
+    tipo: string
+    comentario: "Incoterms (parte 2)"
+    pii: nenhum
+    nulo: true
+  - nome: incov
+    tipo: string
+    comentario: "Versão dos Incoterms"
+    pii: nenhum
+    nulo: true
+  - nome: inco2_l
+    tipo: string
+    comentario: "Localidade Incoterms 1"
+    pii: nenhum
+    nulo: true
+  - nome: inco3_l
+    tipo: string
+    comentario: "Localidade Incoterms 2"
+    pii: nenhum
+    nulo: true
+  - nome: wkurs_deb
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio da empresa do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_date
+    tipo: date
+    comentario: "Data de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: process_type
+    tipo: string
+    comentario: "Categoria de processo"
+    pii: nenhum
+    nulo: true
+  - nome: bank_data
+    tipo: string
+    comentario: "Dados bancários"
+    pii: nenhum
+    nulo: true
+  - nome: coll_status
+    tipo: string
+    comentario: "Status de liquidação coletiva"
+    pii: nenhum
+    nulo: true
+  - nome: is_collection
+    tipo: string
+    comentario: "Indicador: documento coletivo"
+    pii: nenhum
+    nulo: true
+  - nome: coll_block
+    tipo: string
+    comentario: "Motivo de bloqueio de liquidação coletiva"
+    pii: nenhum
+    nulo: true
+  - nome: ref_settl_date
+    tipo: date
+    comentario: "Data de referência de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: landtx_bukrs
+    tipo: string
+    comentario: "País fiscal da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: landtx_bukrs_deb
+    tipo: string
+    comentario: "País fiscal da empresa (cliente)"
+    pii: nenhum
+    nulo: true
+  - nome: use_case
+    tipo: string
+    comentario: "Tipo de caso de uso"
+    pii: nenhum
+    nulo: true
+  - nome: use_case_guid
+    tipo: string
+    comentario: "GUID do caso de uso"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_id
+    tipo: string
+    comentario: "ID externo da fatura"
+    pii: nenhum
+    nulo: true
+  - nome: scheme_id
+    tipo: string
+    comentario: "Esquema"
+    pii: nenhum
+    nulo: true
+  - nome: scheme_a_id
+    tipo: string
+    comentario: "ID do esquema"
+    pii: nenhum
+    nulo: true
+  - nome: agency_id_code
+    tipo: string
+    comentario: "ID da agência"
+    pii: nenhum
+    nulo: true
+  - nome: itcup
+    tipo: string
+    comentario: "Código CUP"
+    pii: nenhum
+    nulo: true
+  - nome: itcig
+    tipo: string
+    comentario: "Código CIG"
+    pii: nenhum
+    nulo: true
+  - nome: mndid
+    tipo: string
+    comentario: "Referência de mandato"
+    pii: nenhum
+    nulo: true

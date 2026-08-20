@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(caffeinate *)",
+      "Bash(databricks *)",
+      "Bash(jq *)",
+      "Bash(rg *)",
+      "Bash(python3 *validate_state.py*)",
+      "Bash(python3 *kb.py*)",
+      "WebSearch",
+      "WebFetch(domain:docs.databricks.com)",
+      "Edit(./.data-eng/**)",
+      "Write(./.data-eng/**)",
+      "Edit(./schemas/**)",
+      "Write(./schemas/**)",
+      "Edit(./src/**)",
+      "Write(./src/**)",
+      "Edit(./resources/**)",
+      "Write(./resources/**)",
+      "Edit(./databricks.yml)",
+      "Write(./databricks.yml)",
+      "Agent(data-eng-agent:generator)",
+      "Agent(data-eng-agent:evaluator)"
+    ],
+    "ask": [],
+    "deny": [
+      "Edit(./.data-eng/guidelines/**)",
+      "Write(./.data-eng/guidelines/**)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}

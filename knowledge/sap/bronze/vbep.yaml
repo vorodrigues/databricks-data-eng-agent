@@ -1,0 +1,332 @@
+tabela: vbep
+camada: bronze
+comentario: "Dados de linha de programa de remessa do documento de vendas (VBEP)"
+ingestao: cdc
+fonte: sap.vbep
+chave_primaria: [mandt, vbeln, posnr, etenr]
+colunas:
+  - nome: abart
+    tipo: string
+    comentario: "Tipo de liberação de remessa"
+    pii: nenhum
+    nulo: true
+  - nome: abges
+    tipo: string
+    comentario: "Indicador: quantidade garantida de remessa"
+    pii: nenhum
+    nulo: true
+  - nome: abruf
+    tipo: string
+    comentario: "Indicador: previsão de programação de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: aeskd
+    tipo: string
+    comentario: "Número de alteração de engenharia do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: aufnr
+    tipo: string
+    comentario: "Número da ordem interna"
+    pii: nenhum
+    nulo: true
+  - nome: aulwe
+    tipo: string
+    comentario: "Programa de rota (route schedule)"
+    pii: nenhum
+    nulo: true
+  - nome: banfn
+    tipo: string
+    comentario: "Número da solicitação de compra"
+    pii: nenhum
+    nulo: true
+  - nome: bdart
+    tipo: string
+    comentario: "Tipo de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: bddat
+    tipo: date
+    comentario: "Data de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: bmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade confirmada"
+    pii: nenhum
+    nulo: true
+  - nome: bnfpo
+    tipo: string
+    comentario: "Item da solicitação de compra"
+    pii: nenhum
+    nulo: true
+  - nome: bsart
+    tipo: string
+    comentario: "Tipo de ordem/pedido"
+    pii: nenhum
+    nulo: true
+  - nome: bstyp
+    tipo: string
+    comentario: "Categoria do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: bwart
+    tipo: string
+    comentario: "Tipo de movimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: cmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade corrigida"
+    pii: nenhum
+    nulo: true
+  - nome: edatu
+    tipo: date
+    comentario: "Data de entrega (edatu)"
+    pii: nenhum
+    nulo: true
+  - nome: etart
+    tipo: string
+    comentario: "Tipo de linha de programa"
+    pii: nenhum
+    nulo: true
+  - nome: etene
+    tipo: string
+    comentario: "Indicador de linha de programa"
+    pii: nenhum
+    nulo: true
+  - nome: etenr
+    tipo: string
+    comentario: "Número da linha de programa de remessa (etenr)"
+    pii: nenhum
+    nulo: false
+  - nome: ettyp
+    tipo: string
+    comentario: "Categoria da linha de programa"
+    pii: nenhum
+    nulo: true
+  - nome: ezeit
+    tipo: string
+    comentario: "Hora de chegada da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_os_id
+    tipo: string
+    comentario: "ID do grupo de programação de ordem (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_pqr_rc
+    tipo: string
+    comentario: "Código de rejeição de quantidade (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_ralloc_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade alocada à necessidade (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: grstr
+    tipo: string
+    comentario: "Definição de grupo para dados estruturados"
+    pii: nenhum
+    nulo: true
+  - nome: handoverdate
+    tipo: date
+    comentario: "Data de handover (transferência)"
+    pii: nenhum
+    nulo: true
+  - nome: handovertime
+    tipo: string
+    comentario: "Hora de handover (transferência)"
+    pii: nenhum
+    nulo: true
+  - nome: idnnr
+    tipo: string
+    comentario: "Número de solicitação de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: lddat
+    tipo: date
+    comentario: "Data de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: lduhr
+    tipo: string
+    comentario: "Hora de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: lfrel
+    tipo: string
+    comentario: "Indicador: item relevante para entrega"
+    pii: nenhum
+    nulo: true
+  - nome: lifsp
+    tipo: string
+    comentario: "Bloqueio de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: lmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade necessária"
+    pii: nenhum
+    nulo: true
+  - nome: lrgdt
+    tipo: date
+    comentario: "Data de devolução de embalagem retornável"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mbdat
+    tipo: date
+    comentario: "Data de disponibilidade do material"
+    pii: nenhum
+    nulo: true
+  - nome: mbdat_drs
+    tipo: date
+    comentario: "Data de disponibilidade do material (TPP)"
+    pii: nenhum
+    nulo: true
+  - nome: mbuhr
+    tipo: string
+    comentario: "Hora de preparação do material"
+    pii: nenhum
+    nulo: true
+  - nome: meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: plart
+    tipo: string
+    comentario: "Tipo de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: plnum
+    tipo: string
+    comentario: "Número da ordem planejada"
+    pii: nenhum
+    nulo: true
+  - nome: posne
+    tipo: string
+    comentario: "Item de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: posnr
+    tipo: string
+    comentario: "Item do documento de vendas (posnr)"
+    pii: nenhum
+    nulo: false
+  - nome: prgrs
+    tipo: string
+    comentario: "Tipo de data de progresso"
+    pii: nenhum
+    nulo: true
+  - nome: repos
+    tipo: string
+    comentario: "Indicador: recebimento de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: rform
+    tipo: string
+    comentario: "Chave de fórmula"
+    pii: nenhum
+    nulo: true
+  - nome: romei
+    tipo: string
+    comentario: "Unidade de medida de tamanho"
+    pii: nenhum
+    nulo: true
+  - nome: roms1
+    tipo: decimal(23,2)
+    comentario: "Quantidade comprometida"
+    pii: nenhum
+    nulo: true
+  - nome: roms2
+    tipo: decimal(23,2)
+    comentario: "Tamanho 2"
+    pii: nenhum
+    nulo: true
+  - nome: roms3
+    tipo: decimal(23,2)
+    comentario: "Tamanho 3"
+    pii: nenhum
+    nulo: true
+  - nome: rsdat
+    tipo: date
+    comentario: "Data de reserva"
+    pii: nenhum
+    nulo: true
+  - nome: sernr
+    tipo: string
+    comentario: "Número de explosão da lista de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: tddat
+    tipo: date
+    comentario: "Data de planejamento de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: tduhr
+    tipo: string
+    comentario: "Hora de planejamento de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: umvkn
+    tipo: int
+    comentario: "Denominador da conversão de unidade de venda"
+    pii: nenhum
+    nulo: true
+  - nome: umvkz
+    tipo: int
+    comentario: "Numerador da conversão de unidade de venda"
+    pii: nenhum
+    nulo: true
+  - nome: vbele
+    tipo: string
+    comentario: "Documento de negócio referenciado"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln
+    tipo: string
+    comentario: "Número do documento de vendas (vbeln)"
+    pii: nenhum
+    nulo: false
+  - nome: verfp
+    tipo: string
+    comentario: "Indicador: disponibilidade confirmada"
+    pii: nenhum
+    nulo: true
+  - nome: vrkme
+    tipo: string
+    comentario: "Unidade de venda (vrkme)"
+    pii: nenhum
+    nulo: true
+  - nome: wadat
+    tipo: date
+    comentario: "Data de saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: wauhr
+    tipo: string
+    comentario: "Hora de saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: wepos
+    tipo: string
+    comentario: "Status de confirmação de recebimento"
+    pii: nenhum
+    nulo: true
+  - nome: wmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: _dataaging
+    tipo: string
+    comentario: "Campo interno de controle de aging de dados (uso SAP)"
+    pii: nenhum
+    nulo: true

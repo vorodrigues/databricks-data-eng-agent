@@ -1,0 +1,358 @@
+tabela: project_structure
+camada: gold
+comentario: "Combina definições de projeto, elementos WBS e dados de programação das tabelas SAP PROJ, PRPS, PRTE e PRHI para fornecer uma visão consolidada de estruturas de projeto, hierarquias e cronogramas."
+entidade: obt
+ingestao: custom
+fontes: [silver.proj, silver.prps, silver.prte, silver.prhi, silver.rpsco]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: project_internal_id_pspnr
+    tipo: string
+    comentario: "Número interno do projeto (pspnr)"
+    pii: nenhum
+    nulo: true
+  - nome: project_id_pspid
+    tipo: string
+    comentario: "Definição do projeto (pspid)"
+    pii: nenhum
+    nulo: true
+  - nome: project_description_post1
+    tipo: string
+    comentario: "Descrição do projeto"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Criado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_erdat
+    tipo: date
+    comentario: "Data de criação (erdat)"
+    pii: nenhum
+    nulo: true
+  - nome: changed_by_aenam
+    tipo: string
+    comentario: "Alterado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: changed_on_aedat
+    tipo: date
+    comentario: "Data da última alteração (aedat)"
+    pii: nenhum
+    nulo: true
+  - nome: responsible_person_number_vernr
+    tipo: string
+    comentario: "Número da pessoa responsável (vernr)"
+    pii: indireto
+    nulo: true
+  - nome: responsible_person_name_verna
+    tipo: string
+    comentario: "Nome da pessoa responsável (verna)"
+    pii: direto
+    nulo: true
+  - nome: applicant_number_astnr
+    tipo: string
+    comentario: "Número do requerente (astnr)"
+    pii: indireto
+    nulo: true
+  - nome: applicant_name_astna
+    tipo: string
+    comentario: "Nome do requerente (astna)"
+    pii: direto
+    nulo: true
+  - nome: company_code_vbukr
+    tipo: string
+    comentario: "Código da empresa (vbukr)"
+    pii: nenhum
+    nulo: true
+  - nome: business_area_vgsbr
+    tipo: string
+    comentario: "Área de negócio (vgsbr)"
+    pii: nenhum
+    nulo: true
+  - nome: controlling_area_vkokr
+    tipo: string
+    comentario: "Área de controladoria (vkokr)"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_prctr
+    tipo: string
+    comentario: "Centro de lucro (prctr)"
+    pii: nenhum
+    nulo: true
+  - nome: project_currency_pwhie
+    tipo: string
+    comentario: "Moeda do projeto (pwhie)"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro (werks)"
+    pii: nenhum
+    nulo: true
+  - nome: project_profile_profl
+    tipo: string
+    comentario: "Perfil de projeto (profl)"
+    pii: nenhum
+    nulo: true
+  - nome: budget_profile_bprof
+    tipo: string
+    comentario: "Perfil de orçamento (bprof)"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_kostl
+    tipo: string
+    comentario: "Centro de custo (kostl)"
+    pii: nenhum
+    nulo: true
+  - nome: deletion_indicator_loevm
+    tipo: string
+    comentario: "Indicador de exclusão (loevm)"
+    pii: nenhum
+    nulo: true
+  - nome: is_statistical_xstat
+    tipo: string
+    comentario: "Indicador: elemento estatístico"
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_func_area
+    tipo: string
+    comentario: "Área funcional (func_area)"
+    pii: nenhum
+    nulo: true
+  - nome: sales_organization_vkorg
+    tipo: string
+    comentario: "Organização de vendas (vkorg)"
+    pii: nenhum
+    nulo: true
+  - nome: distribution_channel_vtweg
+    tipo: string
+    comentario: "Canal de distribuição (vtweg)"
+    pii: nenhum
+    nulo: true
+  - nome: division_spart
+    tipo: string
+    comentario: "Divisão (spart)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_internal_id_pspnr
+    tipo: string
+    comentario: "Número interno do elemento WBS (pspnr)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_id_posid
+    tipo: string
+    comentario: "Elemento WBS (posid)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_description_post1
+    tipo: string
+    comentario: "Descrição do elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_created_by_ernam
+    tipo: string
+    comentario: "WBS criado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_created_on_erdat
+    tipo: date
+    comentario: "Data de criação do WBS"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_changed_by_aenam
+    tipo: string
+    comentario: "WBS alterado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_changed_on_aedat
+    tipo: date
+    comentario: "Data da última alteração do WBS"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_responsible_person_number_vernr
+    tipo: string
+    comentario: "Número da pessoa responsável pelo WBS"
+    pii: indireto
+    nulo: true
+  - nome: wbs_responsible_person_name_verna
+    tipo: string
+    comentario: "Nome da pessoa responsável pelo WBS"
+    pii: direto
+    nulo: true
+  - nome: wbs_applicant_number_astnr
+    tipo: string
+    comentario: "Número do requerente do WBS"
+    pii: indireto
+    nulo: true
+  - nome: wbs_applicant_name_astna
+    tipo: string
+    comentario: "Nome do requerente do WBS"
+    pii: direto
+    nulo: true
+  - nome: wbs_company_code_pbukr
+    tipo: string
+    comentario: "Código da empresa do WBS (pbukr)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_business_area_pgsbr
+    tipo: string
+    comentario: "Área de negócio do WBS (pgsbr)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_controlling_area_pkokr
+    tipo: string
+    comentario: "Área de controladoria do WBS (pkokr)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_profit_center_prctr
+    tipo: string
+    comentario: "Centro de lucro do WBS (prctr)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_project_type_prart
+    tipo: string
+    comentario: "Tipo de projeto do WBS (prart)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_level_stufe
+    tipo: string
+    comentario: "Nível hierárquico do WBS (stufe)"
+    pii: nenhum
+    nulo: true
+  - nome: is_planning_element_plakz
+    tipo: string
+    comentario: "Indicador: elemento de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: is_account_assignment_element_belkz
+    tipo: string
+    comentario: "Indicador: elemento de imputação contábil"
+    pii: nenhum
+    nulo: true
+  - nome: is_billing_element_fakkz
+    tipo: string
+    comentario: "Indicador: elemento de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_plant_werks
+    tipo: string
+    comentario: "Centro do WBS (werks)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_cost_center_kostl
+    tipo: string
+    comentario: "Centro de custo com lançamento real do WBS"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_deletion_indicator_loevm
+    tipo: string
+    comentario: "Indicador de exclusão do WBS"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_is_statistical_xstat
+    tipo: string
+    comentario: "Indicador: WBS estatístico"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_functional_area_func_area
+    tipo: string
+    comentario: "Área funcional do WBS"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_superior_element_internal_id_up
+    tipo: string
+    comentario: "Número interno do elemento WBS superior (up)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_subordinate_element_internal_id_down
+    tipo: string
+    comentario: "Número interno do elemento WBS subordinado (down)"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_left_element_internal_id_left
+    tipo: string
+    comentario: "Número interno do elemento WBS à esquerda"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_right_element_internal_id_right
+    tipo: string
+    comentario: "Número interno do elemento WBS à direita"
+    pii: nenhum
+    nulo: true
+  - nome: scheduled_start_date_pstrt
+    tipo: date
+    comentario: "Data de início planejada (pstrt)"
+    pii: nenhum
+    nulo: true
+  - nome: scheduled_finish_date_pende
+    tipo: date
+    comentario: "Data de término planejada (pende)"
+    pii: nenhum
+    nulo: true
+  - nome: forecast_start_date_estrt
+    tipo: date
+    comentario: "Data de início prevista (estrt)"
+    pii: nenhum
+    nulo: true
+  - nome: forecast_finish_date_eende
+    tipo: date
+    comentario: "Data de término prevista (eende)"
+    pii: nenhum
+    nulo: true
+  - nome: actual_start_date_istrt
+    tipo: date
+    comentario: "Data de início real (istrt)"
+    pii: nenhum
+    nulo: true
+  - nome: actual_finish_date_iende
+    tipo: date
+    comentario: "Data de término real (iende)"
+    pii: nenhum
+    nulo: true
+  - nome: basic_duration_pdaur
+    tipo: decimal(23,2)
+    comentario: "Duração planejada (pdaur)"
+    pii: nenhum
+    nulo: true
+  - nome: forecast_duration_edaur
+    tipo: decimal(23,2)
+    comentario: "Duração prevista (edaur)"
+    pii: nenhum
+    nulo: true
+  - nome: actual_duration_idaur
+    tipo: decimal(23,2)
+    comentario: "Duração real (idaur)"
+    pii: nenhum
+    nulo: true
+  - nome: basic_duration_unit_peinh
+    tipo: string
+    comentario: "Unidade de duração planejada (peinh)"
+    pii: nenhum
+    nulo: true
+  - nome: forecast_duration_unit_eeinh
+    tipo: string
+    comentario: "Unidade de duração prevista (eeinh)"
+    pii: nenhum
+    nulo: true
+  - nome: actual_duration_unit_ieinh
+    tipo: string
+    comentario: "Unidade de duração real (ieinh)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

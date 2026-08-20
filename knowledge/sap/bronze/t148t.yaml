@@ -1,0 +1,27 @@
+tabela: t148t
+camada: bronze
+comentario: "Descricoes de estoques especiais (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t148t
+chave_primaria: [mandt, spras, sobkz]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: sobkz
+    tipo: string
+    comentario: "Indicador de estoque especial"
+    pii: nenhum
+    nulo: false
+  - nome: sotxt
+    tipo: string
+    comentario: "Descricao do estoque especial"
+    pii: nenhum
+    nulo: true

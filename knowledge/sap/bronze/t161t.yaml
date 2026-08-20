@@ -1,0 +1,32 @@
+tabela: t161t
+camada: bronze
+comentario: "Textos dos tipos de documento de compras (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t161t
+chave_primaria: [mandt, spras, bsart]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: bsart
+    tipo: string
+    comentario: "Tipo de documento de compras"
+    pii: nenhum
+    nulo: false
+  - nome: bstyp
+    tipo: string
+    comentario: "Categoria do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: batxt
+    tipo: string
+    comentario: "Descricao do tipo de documento de compras"
+    pii: nenhum
+    nulo: true

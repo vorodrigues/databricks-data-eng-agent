@@ -1,0 +1,242 @@
+tabela: t156c
+camada: bronze
+comentario: "Tipos de estoque e seus valores (tabela de customizing independente de mandante)"
+ingestao: cdc
+fonte: sap.t156c
+chave_primaria: [lbbsa, sobkz] # PK inferida: tabela sem mandt; chave lbbsa+sobkz conforme dicionario SAP
+colunas:
+  - nome: lbbsa
+    tipo: string
+    comentario: "Tipo de estoque (lançamento principal)"
+    pii: nenhum
+    nulo: false
+  - nome: sobkz
+    tipo: string
+    comentario: "Estoque especial"
+    pii: nenhum
+    nulo: false
+  - nome: xlabst
+    tipo: string
+    comentario: "Estoque de livre utilização"
+    pii: nenhum
+    nulo: true
+  - nome: xinsme
+    tipo: string
+    comentario: "Em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: xklabs
+    tipo: string
+    comentario: "Estoque de consignação de livre utilização"
+    pii: nenhum
+    nulo: true
+  - nome: xkinsm
+    tipo: string
+    comentario: "Estoque de consignação em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: xretme
+    tipo: string
+    comentario: "Devolução"
+    pii: nenhum
+    nulo: true
+  - nome: xumlme
+    tipo: string
+    comentario: "Estoque em transferência (depósito)"
+    pii: nenhum
+    nulo: true
+  - nome: xumlmc
+    tipo: string
+    comentario: "Estoque em transferência (centro)"
+    pii: nenhum
+    nulo: true
+  - nome: xtrame
+    tipo: string
+    comentario: "Em trânsito"
+    pii: nenhum
+    nulo: true
+  - nome: xmklkk
+    tipo: string
+    comentario: "Consignação no cliente"
+    pii: nenhum
+    nulo: true
+  - nome: xmklkl
+    tipo: string
+    comentario: "Embalagens retornáveis no cliente"
+    pii: nenhum
+    nulo: true
+  - nome: xmkubl
+    tipo: string
+    comentario: "Material fornecido pelo cliente"
+    pii: nenhum
+    nulo: true
+  - nome: xmeikl
+    tipo: string
+    comentario: "Estoque por ordem de venda"
+    pii: nenhum
+    nulo: true
+  - nome: xmslbo
+    tipo: string
+    comentario: "Material fornecido ao fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: xmkqkk
+    tipo: string
+    comentario: "Consignação no cliente em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: xmkqkl
+    tipo: string
+    comentario: "Embalagens retornáveis no cliente em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: xspeme
+    tipo: string
+    comentario: "Estoque bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: xkspem
+    tipo: string
+    comentario: "Consignação bloqueada"
+    pii: nenhum
+    nulo: true
+  - nome: xmeikq
+    tipo: string
+    comentario: "Estoque por ordem de venda em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: xmeiks
+    tipo: string
+    comentario: "Estoque por ordem de venda bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: xmsqbo
+    tipo: string
+    comentario: "Material fornecido ao fornecedor em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: xmsprl
+    tipo: string
+    comentario: "Estoque de projeto"
+    pii: nenhum
+    nulo: true
+  - nome: xmsprq
+    tipo: string
+    comentario: "Estoque de projeto em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: xmsprs
+    tipo: string
+    comentario: "Estoque de projeto bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: xeinme
+    tipo: string
+    comentario: "Estoque de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: xmspre
+    tipo: string
+    comentario: "Estoque de projeto de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: xmeike
+    tipo: string
+    comentario: "Estoque por ordem de venda de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: xmkekk
+    tipo: string
+    comentario: "Consignação de uso restrito no cliente"
+    pii: nenhum
+    nulo: true
+  - nome: xmkekl
+    tipo: string
+    comentario: "Embalagens retornáveis de uso restrito no cliente"
+    pii: nenhum
+    nulo: true
+  - nome: xmsebo
+    tipo: string
+    comentario: "Material fornecido ao fornecedor de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: xkeinm
+    tipo: string
+    comentario: "Consignação de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: xmtvla
+    tipo: string
+    comentario: "Embalagem retornável (RTP) de livre utilização"
+    pii: nenhum
+    nulo: true
+  - nome: xmtvqu
+    tipo: string
+    comentario: "Embalagem retornável (RTP) em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: xmtvsp
+    tipo: string
+    comentario: "Embalagem retornável (RTP) bloqueada"
+    pii: nenhum
+    nulo: true
+  - nome: xmtvei
+    tipo: string
+    comentario: "Embalagem retornável (RTP) de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: xglgmg
+    tipo: string
+    comentario: "Estoque de vasilhames vinculados"
+    pii: nenhum
+    nulo: true
+  - nome: xsatra
+    tipo: string
+    comentario: "Em trânsito (estoque especial por ordem de venda)"
+    pii: nenhum
+    nulo: true
+  - nome: xsqtra
+    tipo: string
+    comentario: "Em trânsito (estoque de projeto)"
+    pii: nenhum
+    nulo: true
+  - nome: xbwesb
+    tipo: string
+    comentario: "Estoque bloqueado de recebimento de mercadorias avaliado"
+    pii: nenhum
+    nulo: true
+  - nome: xmslbu
+    tipo: string
+    comentario: "Estoque de subcontratação em transferência"
+    pii: nenhum
+    nulo: true
+  - nome: xmkukk
+    tipo: string
+    comentario: "Transferência de consignação do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: xsabwe
+    tipo: string
+    comentario: "GRBS avaliado por ordem de venda"
+    pii: nenhum
+    nulo: true
+  - nome: xsqbwe
+    tipo: string
+    comentario: "GRBS avaliado por projeto"
+    pii: nenhum
+    nulo: true
+  - nome: xcwesb
+    tipo: string
+    comentario: "Estoque bloqueado de EM avaliado com lotes"
+    pii: nenhum
+    nulo: true
+  - nome: xewesb
+    tipo: string
+    comentario: "Estoque bloqueado de EM SD avaliado com lote"
+    pii: nenhum
+    nulo: true
+  - nome: xqwesb
+    tipo: string
+    comentario: "GRBS avaliado por projeto com lote"
+    pii: nenhum
+    nulo: true

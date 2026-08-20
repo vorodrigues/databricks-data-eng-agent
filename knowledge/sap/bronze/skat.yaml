@@ -1,0 +1,42 @@
+tabela: skat
+camada: bronze
+comentario: "Registro mestre de conta contábil por plano de contas e idioma (G/L Account Master Record)"
+ingestao: cdc
+fonte: sap.skat
+chave_primaria: [mandt, spras, ktopl, saknr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: ktopl
+    tipo: string
+    comentario: "Plano de contas"
+    pii: nenhum
+    nulo: false
+  - nome: saknr
+    tipo: string
+    comentario: "Número da conta contábil (G/L)"
+    pii: nenhum
+    nulo: false
+  - nome: txt20
+    tipo: string
+    comentario: "Texto breve da conta"
+    pii: nenhum
+    nulo: true
+  - nome: txt50
+    tipo: string
+    comentario: "Texto longo da conta contábil (G/L)"
+    pii: nenhum
+    nulo: true
+  - nome: mcod1
+    tipo: string
+    comentario: "Texto de pesquisa da conta contábil"
+    pii: nenhum
+    nulo: true

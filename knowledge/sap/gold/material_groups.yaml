@@ -1,0 +1,108 @@
+tabela: material_groups
+camada: gold
+comentario: "Catálogo de classificações de grupos de materiais a partir de T023 e T023T, agrupando materiais para avaliação de estoque, controles de compras e análise estruturada de vendas."
+entidade: obt
+ingestao: custom
+fontes: [silver.mara, silver.marc, silver.mard, silver.t001l, silver.t001w, silver.makt, silver.t134, silver.t134t, silver.t023, silver.t023t]
+chave_primaria: [client_mandt, material_group_matkl, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: material_group_matkl
+    tipo: string
+    comentario: "Grupo de materiais"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: material_group_name_wgbez
+    tipo: string
+    comentario: "Descrição do grupo de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: material_group_name_long_wgbez60
+    tipo: string
+    comentario: "Descrição longa do grupo de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: division_spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: department_abtnr
+    tipo: string
+    comentario: "Número do departamento"
+    pii: nenhum
+    nulo: true
+  - nome: asset_class_anlkl
+    tipo: string
+    comentario: "Classe de ativo"
+    pii: nenhum
+    nulo: true
+  - nome: authorization_group_begru
+    tipo: string
+    comentario: "Grupo de autorização"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_class_bklas
+    tipo: string
+    comentario: "Classe de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_value_key_ekwsl
+    tipo: string
+    comentario: "Chave de valor de compra"
+    pii: nenhum
+    nulo: true
+  - nome: default_unit_of_weight_gewei
+    tipo: string
+    comentario: "Unidade de peso padrão"
+    pii: nenhum
+    nulo: true
+  - nome: price_level_group_price_group
+    tipo: string
+    comentario: "Grupo de nível de preço"
+    pii: nenhum
+    nulo: true
+  - nome: scenario_def_schdsc
+    tipo: string
+    comentario: "Cenário padrão"
+    pii: nenhum
+    nulo: true
+  - nome: ncm_code_j_1bnbm
+    tipo: string
+    comentario: "Código NCM (Nomenclatura Comum do Mercosul)"
+    pii: nenhum
+    nulo: true
+  - nome: logist_reference_lref3
+    tipo: string
+    comentario: "Referência logística"
+    pii: nenhum
+    nulo: true
+  - nome: reference_group_ref_material_wwgda
+    tipo: string
+    comentario: "Material de referência do grupo de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: group_material_wwgpa
+    tipo: string
+    comentario: "Material do grupo de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

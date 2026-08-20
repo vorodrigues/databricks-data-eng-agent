@@ -1,0 +1,32 @@
+tabela: t005u
+camada: bronze
+comentario: "Textos das chaves de regiao para impostos (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t005u
+chave_primaria: [mandt, spras, land1, bland]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: land1
+    tipo: string
+    comentario: "Chave do pais"
+    pii: nenhum
+    nulo: false
+  - nome: bland
+    tipo: string
+    comentario: "Regiao/estado"
+    pii: nenhum
+    nulo: false
+  - nome: bezei
+    tipo: string
+    comentario: "Descricao da regiao"
+    pii: nenhum
+    nulo: true

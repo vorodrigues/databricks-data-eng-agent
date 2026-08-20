@@ -1,0 +1,52 @@
+tabela: setnode
+camada: bronze
+comentario: "Subconjuntos em conjuntos (nós internos)"
+ingestao: cdc
+fonte: sap.setnode
+chave_primaria: [mandt, setclass, subclass, setname, lineid]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: setclass
+    tipo: string
+    comentario: "Classe do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: subclass
+    tipo: string
+    comentario: "Unidade organizacional (subclasse)"
+    pii: nenhum
+    nulo: false
+  - nome: setname
+    tipo: string
+    comentario: "Nome do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: lineid
+    tipo: string
+    comentario: "Linha do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: subsetcls
+    tipo: string
+    comentario: "Classe do subconjunto"
+    pii: nenhum
+    nulo: true
+  - nome: subsetscls
+    tipo: string
+    comentario: "Subclasse do subconjunto"
+    pii: nenhum
+    nulo: true
+  - nome: subsetname
+    tipo: string
+    comentario: "ID do subconjunto"
+    pii: nenhum
+    nulo: true
+  - nome: seqnr
+    tipo: string
+    comentario: "Número sequencial da linha do conjunto"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,188 @@
+tabela: material_types
+camada: gold
+comentario: "Mapeia códigos de tipo de material para descrições localizadas (SAP T134/T134T), definindo parâmetros de controle como controle de preço e tipos de suprimento."
+entidade: obt
+ingestao: custom
+fontes: [silver.mara, silver.marc, silver.mard, silver.t001l, silver.t001w, silver.makt, silver.t134, silver.t134t, silver.t023, silver.t023t]
+chave_primaria: [client_mandt, language_key_spras, material_type_mtart]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma (spras)"
+    pii: nenhum
+    nulo: false
+  - nome: material_type_mtart
+    tipo: string
+    comentario: "Tipo de material (mtart)"
+    pii: nenhum
+    nulo: false
+  - nome: reference_material_type_mtref
+    tipo: string
+    comentario: "Tipo de material de referência (mtref)"
+    pii: nenhum
+    nulo: true
+  - nome: screen_reference_mbref
+    tipo: string
+    comentario: "Referência de tela dependente do tipo de material"
+    pii: nenhum
+    nulo: true
+  - nome: description_mtbez
+    tipo: string
+    comentario: "Descrição do tipo de material"
+    pii: nenhum
+    nulo: true
+  - nome: display_material_aranz
+    tipo: string
+    comentario: "Exibir material no display do caixa"
+    pii: nenhum
+    nulo: true
+  - nome: time_till_deleted_ardel
+    tipo: string
+    comentario: "Tempo em dias até exclusão do material"
+    pii: nenhum
+    nulo: true
+  - nome: authorization_group_begru
+    tipo: string
+    comentario: "Grupo de autorização no mestre de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: external_purchase_orders_bsext
+    tipo: string
+    comentario: "Pedidos de compra externos permitidos"
+    pii: nenhum
+    nulo: true
+  - nome: internal_purchase_orders_bsint
+    tipo: string
+    comentario: "Pedidos de compra internos permitidos"
+    pii: nenhum
+    nulo: true
+  - nome: history_requirement_cchis
+    tipo: string
+    comentario: "Controle do requisito de histórico do material"
+    pii: nenhum
+    nulo: true
+  - nome: create_new_batch_chneu
+    tipo: string
+    comentario: "Criar novo lote"
+    pii: nenhum
+    nulo: true
+  - nome: class_class
+    tipo: string
+    comentario: "Número da classe"
+    pii: nenhum
+    nulo: true
+  - nome: class_type_ctype
+    tipo: string
+    comentario: "Tipo de classe"
+    pii: nenhum
+    nulo: true
+  - nome: with_quantity_structure_ekalr
+    tipo: string
+    comentario: "Material calculado com estrutura de quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: external_number_assignment_indicator_envop
+    tipo: string
+    comentario: "Indicador de atribuição de número externo sem validação"
+    pii: nenhum
+    nulo: true
+  - nome: field_reference_flref
+    tipo: string
+    comentario: "Referência de campo para mestre de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: initial_status_izust
+    tipo: string
+    comentario: "Status inicial de novo lote"
+    pii: nenhum
+    nulo: true
+  - nome: account_category_reference_kkref
+    tipo: string
+    comentario: "Referência de categoria de conta"
+    pii: nenhum
+    nulo: true
+  - nome: grouping_indicator_kzgrp
+    tipo: string
+    comentario: "Indicador de agrupamento"
+    pii: nenhum
+    nulo: true
+  - nome: configurable_material_kzkfg
+    tipo: string
+    comentario: "Indicador: material configurável"
+    pii: nenhum
+    nulo: true
+  - nome: manufacturer_part_kzmpn
+    tipo: string
+    comentario: "Peça de fabricante (MPN)"
+    pii: nenhum
+    nulo: true
+  - nome: pipeline_mandatory_indicator_kzpip
+    tipo: string
+    comentario: "Indicador: manuseio de pipeline obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: material_for_process_kzprc
+    tipo: string
+    comentario: "Registro mestre de material para processo"
+    pii: nenhum
+    nulo: true
+  - nome: returnable_packaging_logistics_mandatory_indicator_kzrac
+    tipo: string
+    comentario: "Indicador: logística de embalagem retornável obrigatória"
+    pii: nenhum
+    nulo: true
+  - nome: price_control_mandatory_indicator_kzvpr
+    tipo: string
+    comentario: "Indicador: controle de preço obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: cross_plant_status_mstae
+    tipo: string
+    comentario: "Status de material entre centros produtivos"
+    pii: nenhum
+    nulo: true
+  - nome: print_price_indicator_prdru
+    tipo: string
+    comentario: "Indicador: preço exibido no display e impresso no recibo"
+    pii: nenhum
+    nulo: true
+  - nome: maintenance_status_pstat
+    tipo: string
+    comentario: "Status de manutenção do mestre de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: item_category_group_vmtpo
+    tipo: string
+    comentario: "Valor padrão para grupo de categoria de item do material"
+    pii: nenhum
+    nulo: true
+  - nome: price_control_vprsv
+    tipo: string
+    comentario: "Controle de preço (S=preço padrão, V=preço médio)"
+    pii: nenhum
+    nulo: true
+  - nome: version_category_vtype
+    tipo: string
+    comentario: "Categoria de versão"
+    pii: nenhum
+    nulo: true
+  - nome: material_type_id_wmakg
+    tipo: string
+    comentario: "ID do tipo de material"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery"
+    pii: nenhum
+    nulo: true

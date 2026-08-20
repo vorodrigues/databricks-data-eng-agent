@@ -1,0 +1,83 @@
+tabela: material_plants
+camada: gold
+comentario: "Dados de material específicos por planta a partir de MARC, incluindo indicadores de exclusão, gestão de lotes, status específico da planta e níveis de estoque de segurança."
+entidade: obt
+ingestao: custom
+fontes: [silver.mara, silver.marc, silver.mard, silver.t001l, silver.t001w, silver.makt, silver.t134, silver.t134t, silver.t023, silver.t023t]
+chave_primaria: [client_mandt, material_number_matnr, language_key_spras, plant_werks]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: material_text_maktx
+    tipo: string
+    comentario: "Descrição do material"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Planta"
+    pii: nenhum
+    nulo: false
+  - nome: plant_name_name1
+    tipo: string
+    comentario: "Nome da planta"
+    pii: nenhum
+    nulo: true
+  - nome: maintenance_status_pstat
+    tipo: string
+    comentario: "Status de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: flag_material_for_deletion_at_plant_level_lvorm
+    tipo: string
+    comentario: "Indicador de exclusão do material no nível da planta"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_category_bwtty
+    tipo: string
+    comentario: "Categoria de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: batch_management_indicator_xchar
+    tipo: string
+    comentario: "Indicador de gestão de lotes"
+    pii: nenhum
+    nulo: true
+  - nome: plant_specific_material_status_mmsta
+    tipo: string
+    comentario: "Status do material específico da planta"
+    pii: nenhum
+    nulo: true
+  - nome: date_from_which_the_plant_specific_material_status_is_valid_mmstd
+    tipo: date
+    comentario: "Data de validade do status do material específico da planta"
+    pii: nenhum
+    nulo: true
+  - nome: safety_stock_eisbe
+    tipo: decimal(23,2)
+    comentario: "Estoque de segurança"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

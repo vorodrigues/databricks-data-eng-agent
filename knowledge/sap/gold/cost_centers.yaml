@@ -1,0 +1,453 @@
+tabela: cost_centers
+camada: gold
+comentario: "Definições mestre de centros de custo oriundas de CSKS e CSKT, incluindo intervalos de validade, códigos de empresa, departamentos, responsáveis, indicadores de bloqueio e descrições multilíngues para suporte ao controle de gastos corporativos."
+entidade: obt
+ingestao: custom
+fontes: [silver.cepc, silver.cepct, silver.csks, silver.cskt]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: controlling_area_kokrs
+    tipo: string
+    comentario: "Área de controle"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to_datbi
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: language_spras
+    tipo: string
+    comentario: "Chave de idioma da descrição"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_datab
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: lock_indicator_for_actual_primary_postings_bkzkp
+    tipo: string
+    comentario: "Indicador de bloqueio: lançamentos reais de custos primários"
+    pii: nenhum
+    nulo: true
+  - nome: lock_indicator_for_plan_primary_costs_pkzkp
+    tipo: string
+    comentario: "Indicador de bloqueio: planejamento de custos primários"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: business_area_gsber
+    tipo: string
+    comentario: "Área de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_category_kosar
+    tipo: string
+    comentario: "Categoria do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: person_responsible_verak
+    tipo: string
+    comentario: "Responsável pelo centro de custo"
+    pii: direto
+    nulo: true
+  - nome: user_responsible_verak_user
+    tipo: string
+    comentario: "Usuário responsável pelo centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: currency_key_waers
+    tipo: string
+    comentario: "Moeda do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: costing_sheet_kalsm
+    tipo: string
+    comentario: "Esquema de custeio"
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_txjcd
+    tipo: string
+    comentario: "Código de jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro (planta)"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_logsystem
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_ersda
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: entered_by_usnam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: lock_indicator_for_actual_secondary_costs_bkzks
+    tipo: string
+    comentario: "Indicador de bloqueio: custos secundários reais"
+    pii: nenhum
+    nulo: true
+  - nome: lock_indicator_for_actual_revenue_postings_bkzer
+    tipo: string
+    comentario: "Indicador de bloqueio: lançamentos reais de receitas"
+    pii: nenhum
+    nulo: true
+  - nome: lock_indicator_for_commitment_update_bkzob
+    tipo: string
+    comentario: "Indicador de bloqueio: atualização de comprometimentos"
+    pii: nenhum
+    nulo: true
+  - nome: lock_indicator_for_plan_secondary_costs_pkzks
+    tipo: string
+    comentario: "Indicador de bloqueio: planejamento de custos secundários"
+    pii: nenhum
+    nulo: true
+  - nome: lock_indicator_for_planning_revenues_pkzer
+    tipo: string
+    comentario: "Indicador de bloqueio: planejamento de receitas"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_for_allowed_allocation_methods_vmeth
+    tipo: string
+    comentario: "Métodos de alocação permitidos"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_for_recording_consumption_quantities_mgefl
+    tipo: string
+    comentario: "Indicador de registro de quantidades consumidas"
+    pii: nenhum
+    nulo: true
+  - nome: department_abtei
+    tipo: string
+    comentario: "Departamento"
+    pii: nenhum
+    nulo: true
+  - nome: subsequent_cost_center_nkost
+    tipo: string
+    comentario: "Centro de custo subsequente"
+    pii: nenhum
+    nulo: true
+  - nome: usage_of_the_condition_table_kvewe
+    tipo: string
+    comentario: "Uso da tabela de condição"
+    pii: nenhum
+    nulo: true
+  - nome: application_kappl
+    tipo: string
+    comentario: "Aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: co_cca_overhead_key_koszschl
+    tipo: string
+    comentario: "Chave de overhead do CO-CCA"
+    pii: nenhum
+    nulo: true
+  - nome: country_key_land1
+    tipo: string
+    comentario: "Chave de país/região"
+    pii: nenhum
+    nulo: true
+  - nome: title_anred
+    tipo: string
+    comentario: "Título"
+    pii: nenhum
+    nulo: true
+  - nome: name1_name1
+    tipo: string
+    comentario: "Nome"
+    pii: nenhum
+    nulo: true
+  - nome: name2_name2
+    tipo: string
+    comentario: "Nome 2"
+    pii: nenhum
+    nulo: true
+  - nome: name3_name3
+    tipo: string
+    comentario: "Nome 3"
+    pii: nenhum
+    nulo: true
+  - nome: name4_name4
+    tipo: string
+    comentario: "Nome 4"
+    pii: nenhum
+    nulo: true
+  - nome: city_ort01
+    tipo: string
+    comentario: "Cidade"
+    pii: nenhum
+    nulo: true
+  - nome: district_ort02
+    tipo: string
+    comentario: "Bairro/distrito"
+    pii: nenhum
+    nulo: true
+  - nome: street_and_house_number_stras
+    tipo: string
+    comentario: "Logradouro e número"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_pfach
+    tipo: string
+    comentario: "Caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: postal_code_pstlz
+    tipo: string
+    comentario: "CEP"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_postal_code_pstl2
+    tipo: string
+    comentario: "CEP da caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: region_regio
+    tipo: string
+    comentario: "Região/estado"
+    pii: nenhum
+    nulo: true
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: telebox_number_telbx
+    tipo: string
+    comentario: "Número de telecopiador"
+    pii: nenhum
+    nulo: true
+  - nome: first_telephone_number_telf1
+    tipo: string
+    comentario: "Telefone 1"
+    pii: nenhum
+    nulo: true
+  - nome: second_telephone_number_telf2
+    tipo: string
+    comentario: "Telefone 2"
+    pii: nenhum
+    nulo: true
+  - nome: fax_number_telfx
+    tipo: string
+    comentario: "Número de fax"
+    pii: nenhum
+    nulo: true
+  - nome: teletex_number_teltx
+    tipo: string
+    comentario: "Número teletex"
+    pii: nenhum
+    nulo: true
+  - nome: telex_number_telx1
+    tipo: string
+    comentario: "Número telex"
+    pii: nenhum
+    nulo: true
+  - nome: data_communication_line_no_datlt
+    tipo: string
+    comentario: "Número da linha de comunicação de dados"
+    pii: nenhum
+    nulo: true
+  - nome: printer_destination_for_cctr_report_drnam
+    tipo: string
+    comentario: "Destino de impressora para relatório do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: standard_hierarchy_area_khinr
+    tipo: string
+    comentario: "Área da hierarquia padrão"
+    pii: nenhum
+    nulo: true
+  - nome: cost_collector_key_cckey
+    tipo: string
+    comentario: "Chave do coletor de custos"
+    pii: nenhum
+    nulo: true
+  - nome: completion_flag_for_the_cost_center_master_record_kompl
+    tipo: string
+    comentario: "Indicador de completude do mestre do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_object_is_statistical_stakz
+    tipo: string
+    comentario: "Indicador de objeto estatístico"
+    pii: nenhum
+    nulo: true
+  - nome: object_number_objnr
+    tipo: string
+    comentario: "Número do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: function_of_cost_center_funkt
+    tipo: string
+    comentario: "Função do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: alternative_function_of_cost_center_afunk
+    tipo: string
+    comentario: "Função alternativa do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: template_for_activity_independent_formula_planning_cpi_templ
+    tipo: string
+    comentario: "Modelo de planejamento por fórmula independente de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: template_for_activity_dependent_formula_planning_cpd_templ
+    tipo: string
+    comentario: "Modelo de planejamento por fórmula dependente de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_func_area
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: template_activity_independent_allocation_to_cost_center_sci_templ
+    tipo: string
+    comentario: "Modelo de alocação independente de atividade ao centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: template_activity_dependent_allocation_to_cost_center_scd_templ
+    tipo: string
+    comentario: "Modelo de alocação dependente de atividade ao centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: template_actual_statistical_key_figure_on_cost_center_ski_templ
+    tipo: string
+    comentario: "Modelo: grandeza estatística real no centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: template_act_stat_key_figure_cost_centeractivity_type_skd_templ
+    tipo: string
+    comentario: "Modelo: grandeza estatística real no centro de custo/tipo de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: joint_venture_vname
+    tipo: string
+    comentario: "Joint venture"
+    pii: nenhum
+    nulo: true
+  - nome: recovery_indicator_recid
+    tipo: string
+    comentario: "Indicador de recuperação"
+    pii: nenhum
+    nulo: true
+  - nome: equity_type_etype
+    tipo: string
+    comentario: "Tipo de participação"
+    pii: nenhum
+    nulo: true
+  - nome: joint_venture_object_type_jv_otype
+    tipo: string
+    comentario: "Tipo de objeto da joint venture"
+    pii: nenhum
+    nulo: true
+  - nome: jibjibe_class_jv_jibcl
+    tipo: string
+    comentario: "Classe JIB/JIBE"
+    pii: nenhum
+    nulo: true
+  - nome: jibjibe_subclass_a_jv_jibsa
+    tipo: string
+    comentario: "Subclasse A JIB/JIBE"
+    pii: nenhum
+    nulo: true
+  - nome: budget_carrying_cost_center_budget_carrying_cost_ctr
+    tipo: string
+    comentario: "Centro de custo portador de orçamento"
+    pii: nenhum
+    nulo: true
+  - nome: budget_availability_ctrl_prfl_avc_profile
+    tipo: string
+    comentario: "Perfil de controle de disponibilidade orçamentária"
+    pii: nenhum
+    nulo: true
+  - nome: budget_availability_control_is_active_avc_active
+    tipo: string
+    comentario: "Indicador: controle de disponibilidade orçamentária ativo"
+    pii: nenhum
+    nulo: true
+  - nome: fund_fund
+    tipo: string
+    comentario: "Fundo"
+    pii: nenhum
+    nulo: true
+  - nome: grant_grant_id
+    tipo: string
+    comentario: "Subvenção (grant)"
+    pii: nenhum
+    nulo: true
+  - nome: fund_fixed_assignment_fund_fix_assigned
+    tipo: string
+    comentario: "Atribuição fixa de fundo"
+    pii: nenhum
+    nulo: true
+  - nome: grant_fixed_assignment_grant_fix_assigned
+    tipo: string
+    comentario: "Atribuição fixa de subvenção"
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_fixed_assignment_func_area_fix_assigned
+    tipo: string
+    comentario: "Atribuição fixa de área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: regulatory_indicator_ferc_ind
+    tipo: string
+    comentario: "Indicador regulatório"
+    pii: nenhum
+    nulo: true
+  - nome: general_name_ktext
+    tipo: string
+    comentario: "Nome geral do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: description_ltext
+    tipo: string
+    comentario: "Descrição longa do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: search_term_for_matchcode_use_mctxt
+    tipo: string
+    comentario: "Texto curto do centro de custo para uso em matchcode"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização no sistema de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

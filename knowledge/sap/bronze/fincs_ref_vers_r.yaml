@@ -1,0 +1,27 @@
+tabela: fincs_ref_vers_r
+camada: bronze
+comentario: "Relacao de versoes de referencia para consolidacao financeira (FIN-CS)"
+ingestao: cdc
+fonte: sap.fincs_ref_vers_r
+chave_primaria: [mandt, version, versionelement]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: version
+    tipo: string
+    comentario: "Versao de referencia da consolidacao"
+    pii: nenhum
+    nulo: false
+  - nome: versionelement
+    tipo: string
+    comentario: "Elemento da versao de consolidacao"
+    pii: nenhum
+    nulo: false
+  - nome: group_curr
+    tipo: string
+    comentario: "Moeda do grupo para a versao de consolidacao"
+    pii: nenhum
+    nulo: true

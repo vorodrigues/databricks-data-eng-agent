@@ -1,0 +1,27 @@
+tabela: tvlst
+camada: bronze
+comentario: "Textos dos motivos de bloqueio de entrega (dependente de idioma)"
+ingestao: cdc
+fonte: sap.tvlst
+chave_primaria: [mandt, spras, lifsp]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: lifsp
+    tipo: string
+    comentario: "Motivo de bloqueio de entrega"
+    pii: nenhum
+    nulo: false
+  - nome: vtext
+    tipo: string
+    comentario: "Descricao do bloqueio de entrega"
+    pii: nenhum
+    nulo: true

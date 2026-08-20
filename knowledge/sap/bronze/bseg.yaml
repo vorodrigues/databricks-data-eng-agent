@@ -1,0 +1,1772 @@
+tabela: bseg
+camada: bronze
+comentario: "Segmento de documento contábil (FI)"
+ingestao: cdc
+fonte: sap.bseg
+chave_primaria: [mandt, bukrs, belnr, gjahr, buzei]
+colunas:
+  - nome: abper
+    tipo: string
+    comentario: "Período de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: absbt
+    tipo: decimal(23,2)
+    comentario: "Valor coberto"
+    pii: nenhum
+    nulo: true
+  - nome: acritmtype
+    tipo: string
+    comentario: "Tipo do item do subobjeto de competência"
+    pii: nenhum
+    nulo: true
+  - nome: acrobjtype
+    tipo: string
+    comentario: "Tipo do objeto de competência"
+    pii: nenhum
+    nulo: true
+  - nome: acrobj_id
+    tipo: string
+    comentario: "Identificador do objeto de competência"
+    pii: nenhum
+    nulo: true
+  - nome: acrsobj_id
+    tipo: string
+    comentario: "Identificador do subobjeto de competência"
+    pii: nenhum
+    nulo: true
+  - nome: agzei
+    tipo: string
+    comentario: "Item de compensação"
+    pii: nenhum
+    nulo: true
+  - nome: altkt
+    tipo: string
+    comentario: "Número de conta do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: anbwa
+    tipo: string
+    comentario: "Tipo de movimento de imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: anfae
+    tipo: date
+    comentario: "Retornar antes de"
+    pii: nenhum
+    nulo: true
+  - nome: anfbj
+    tipo: string
+    comentario: "Ano fiscal do documento de requisição de pagamento BoE"
+    pii: nenhum
+    nulo: true
+  - nome: anfbn
+    tipo: string
+    comentario: "Requisição de pagamento por letra de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: anfbu
+    tipo: string
+    comentario: "Código de empresa (BoE)"
+    pii: nenhum
+    nulo: true
+  - nome: anln1
+    tipo: string
+    comentario: "Imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: anln2
+    tipo: string
+    comentario: "Subnúmero do imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: aplzl
+    tipo: int
+    comentario: "Contador de operações"
+    pii: nenhum
+    nulo: true
+  - nome: aufnr
+    tipo: string
+    comentario: "Número de ordem"
+    pii: nenhum
+    nulo: true
+  - nome: aufpl
+    tipo: string
+    comentario: "Número de lista de tarefas/operação"
+    pii: nenhum
+    nulo: true
+  - nome: augbl
+    tipo: string
+    comentario: "Documento de compensação"
+    pii: nenhum
+    nulo: true
+  - nome: augcp
+    tipo: date
+    comentario: "Data de lançamento da compensação"
+    pii: nenhum
+    nulo: true
+  - nome: augdt
+    tipo: date
+    comentario: "Data de compensação"
+    pii: nenhum
+    nulo: true
+  - nome: auggj
+    tipo: string
+    comentario: "Ano fiscal de compensação"
+    pii: nenhum
+    nulo: true
+  - nome: bdif2
+    tipo: decimal(23,2)
+    comentario: "Diferença de avaliação 2"
+    pii: nenhum
+    nulo: true
+  - nome: bdif3
+    tipo: decimal(23,2)
+    comentario: "Diferença de avaliação 3"
+    pii: nenhum
+    nulo: true
+  - nome: bdiff
+    tipo: decimal(23,2)
+    comentario: "Diferença de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: belnr
+    tipo: string
+    comentario: "Número do documento contábil"
+    pii: nenhum
+    nulo: false
+  - nome: bewar
+    tipo: string
+    comentario: "Tipo de transação"
+    pii: nenhum
+    nulo: true
+  - nome: blnbt
+    tipo: decimal(23,2)
+    comentario: "Valor de preferência"
+    pii: nenhum
+    nulo: true
+  - nome: blnkz
+    tipo: string
+    comentario: "Indicador de subsídio"
+    pii: nenhum
+    nulo: true
+  - nome: blnpz
+    tipo: decimal(23,2)
+    comentario: "Taxa percentual de preferência"
+    pii: nenhum
+    nulo: true
+  - nome: bonfb
+    tipo: decimal(23,2)
+    comentario: "Valor (bonfb)"
+    pii: nenhum
+    nulo: true
+  - nome: bpmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade na unidade de ordem de compra"
+    pii: nenhum
+    nulo: true
+  - nome: bprme
+    tipo: string
+    comentario: "Unidade de preço de ordem"
+    pii: nenhum
+    nulo: true
+  - nome: bschl
+    tipo: string
+    comentario: "Chave de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: btype
+    tipo: string
+    comentario: "Indicador de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: bualt
+    tipo: decimal(23,2)
+    comentario: "Valor alternativo"
+    pii: nenhum
+    nulo: true
+  - nome: budget_pd
+    tipo: string
+    comentario: "Período orçamentário"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Código de empresa"
+    pii: nenhum
+    nulo: false
+  - nome: bupla
+    tipo: string
+    comentario: "Estabelecimento"
+    pii: nenhum
+    nulo: true
+  - nome: bustw
+    tipo: string
+    comentario: "Cadeia de valor"
+    pii: nenhum
+    nulo: true
+  - nome: buzei
+    tipo: string
+    comentario: "Item da linha do documento"
+    pii: nenhum
+    nulo: false
+  - nome: buzid
+    tipo: string
+    comentario: "ID do item de linha"
+    pii: nenhum
+    nulo: true
+  - nome: bvtyp
+    tipo: string
+    comentario: "Tipo de banco do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: bwkey
+    tipo: string
+    comentario: "Área de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: bwtar
+    tipo: string
+    comentario: "Tipo de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: bzdat
+    tipo: date
+    comentario: "Data de valor do imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: ccbtc
+    tipo: string
+    comentario: "Rodada de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: cession_kz
+    tipo: string
+    comentario: "Indicador de penhor de contas a receber"
+    pii: nenhum
+    nulo: true
+  - nome: dabrz
+    tipo: date
+    comentario: "Data de referência"
+    pii: nenhum
+    nulo: true
+  - nome: depot
+    tipo: string
+    comentario: "Conta de títulos"
+    pii: nenhum
+    nulo: true
+  - nome: diekz
+    tipo: string
+    comentario: "Indicador de serviço"
+    pii: nenhum
+    nulo: true
+  - nome: disbj
+    tipo: string
+    comentario: "Ano do documento de uso"
+    pii: nenhum
+    nulo: true
+  - nome: disbn
+    tipo: string
+    comentario: "Documento de uso"
+    pii: nenhum
+    nulo: true
+  - nome: disbz
+    tipo: string
+    comentario: "Item de linha de desconto"
+    pii: nenhum
+    nulo: true
+  - nome: dmb21
+    tipo: decimal(23,2)
+    comentario: "Valor ML2 (breakdown 1)"
+    pii: nenhum
+    nulo: true
+  - nome: dmb22
+    tipo: decimal(23,2)
+    comentario: "Valor ML2 (breakdown 2)"
+    pii: nenhum
+    nulo: true
+  - nome: dmb23
+    tipo: decimal(23,2)
+    comentario: "Valor ML2 (breakdown 3)"
+    pii: nenhum
+    nulo: true
+  - nome: dmb31
+    tipo: decimal(23,2)
+    comentario: "Valor ML3 (breakdown 1)"
+    pii: nenhum
+    nulo: true
+  - nome: dmb32
+    tipo: decimal(23,2)
+    comentario: "Valor ML3 (breakdown 2)"
+    pii: nenhum
+    nulo: true
+  - nome: dmb33
+    tipo: decimal(23,2)
+    comentario: "Valor ML3 (breakdown 3)"
+    pii: nenhum
+    nulo: true
+  - nome: dmbe2
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda local 2"
+    pii: nenhum
+    nulo: true
+  - nome: dmbe3
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda local 3"
+    pii: nenhum
+    nulo: true
+  - nome: dmbt1
+    tipo: decimal(23,2)
+    comentario: "Valor (breakdown fiscal 1)"
+    pii: nenhum
+    nulo: true
+  - nome: dmbt2
+    tipo: decimal(23,2)
+    comentario: "Valor (breakdown fiscal 2)"
+    pii: nenhum
+    nulo: true
+  - nome: dmbt3
+    tipo: decimal(23,2)
+    comentario: "Valor (breakdown fiscal 3)"
+    pii: nenhum
+    nulo: true
+  - nome: dmbtr
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: docln
+    tipo: string
+    comentario: "Item de linha do documento"
+    pii: nenhum
+    nulo: true
+  - nome: dtws1
+    tipo: string
+    comentario: "Chave de instrução 1"
+    pii: nenhum
+    nulo: true
+  - nome: dtws2
+    tipo: string
+    comentario: "Chave de instrução 2"
+    pii: nenhum
+    nulo: true
+  - nome: dtws3
+    tipo: string
+    comentario: "Chave de instrução 3"
+    pii: nenhum
+    nulo: true
+  - nome: dtws4
+    tipo: string
+    comentario: "Chave de instrução 4"
+    pii: nenhum
+    nulo: true
+  - nome: ebeln
+    tipo: string
+    comentario: "Documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: ebelp
+    tipo: string
+    comentario: "Item do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: egbld
+    tipo: string
+    comentario: "País de destino"
+    pii: nenhum
+    nulo: true
+  - nome: eglld
+    tipo: string
+    comentario: "País fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: egrup
+    tipo: string
+    comentario: "Grupo de patrimônio"
+    pii: nenhum
+    nulo: true
+  - nome: elikz
+    tipo: string
+    comentario: "Indicador de entrega concluída"
+    pii: nenhum
+    nulo: true
+  - nome: empfb
+    tipo: string
+    comentario: "Beneficiário"
+    pii: nenhum
+    nulo: true
+  - nome: erfme
+    tipo: string
+    comentario: "Unidade de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: erfmg
+    tipo: decimal(23,2)
+    comentario: "Quantidade na unidade de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: esrnr
+    tipo: string
+    comentario: "Número PBC/ISR"
+    pii: nenhum
+    nulo: true
+  - nome: esrpz
+    tipo: string
+    comentario: "Dígito verificador"
+    pii: nenhum
+    nulo: true
+  - nome: esrre
+    tipo: string
+    comentario: "Número de referência ISR/QR"
+    pii: nenhum
+    nulo: true
+  - nome: eten2
+    tipo: string
+    comentario: "Número da divisão de remessa"
+    pii: nenhum
+    nulo: true
+  - nome: etype
+    tipo: string
+    comentario: "Tipo de patrimônio"
+    pii: nenhum
+    nulo: true
+  - nome: fastpay
+    tipo: string
+    comentario: "Indicador de pagamento rápido"
+    pii: nenhum
+    nulo: true
+  - nome: fdgrp
+    tipo: string
+    comentario: "Grupo de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: fdlev
+    tipo: string
+    comentario: "Nível de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: fdtag
+    tipo: date
+    comentario: "Data de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: fdwbt
+    tipo: decimal(23,2)
+    comentario: "Valor planejado"
+    pii: nenhum
+    nulo: true
+  - nome: filkd
+    tipo: string
+    comentario: "Conta filial"
+    pii: nenhum
+    nulo: true
+  - nome: fipos
+    tipo: string
+    comentario: "Item de comprometimento"
+    pii: nenhum
+    nulo: true
+  - nome: fistl
+    tipo: string
+    comentario: "Centro de fundos"
+    pii: nenhum
+    nulo: true
+  - nome: fkber
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: fkber_long
+    tipo: string
+    comentario: "Área funcional (descrição longa)"
+    pii: nenhum
+    nulo: true
+  - nome: fkont
+    tipo: string
+    comentario: "Orçamento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: fmfgus_key
+    tipo: string
+    comentario: "Campos do governo dos EUA"
+    pii: nenhum
+    nulo: true
+  - nome: fmxdocln
+    tipo: string
+    comentario: "Item de linha de referência FM"
+    pii: nenhum
+    nulo: true
+  - nome: fmxdocnr
+    tipo: string
+    comentario: "Número do documento de referência FM"
+    pii: nenhum
+    nulo: true
+  - nome: fmxyear
+    tipo: string
+    comentario: "Ano de referência FM"
+    pii: nenhum
+    nulo: true
+  - nome: fmxzekkn
+    tipo: string
+    comentario: "Sequência de imputação de referência FM"
+    pii: nenhum
+    nulo: true
+  - nome: fwbas
+    tipo: decimal(23,2)
+    comentario: "Valor base do imposto (moeda do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: fwzuz
+    tipo: decimal(23,2)
+    comentario: "Imposto adicional"
+    pii: nenhum
+    nulo: true
+  - nome: gbetr
+    tipo: decimal(23,2)
+    comentario: "Valor coberto"
+    pii: nenhum
+    nulo: true
+  - nome: geber
+    tipo: string
+    comentario: "Fundo"
+    pii: nenhum
+    nulo: true
+  - nome: gityp
+    tipo: string
+    comentario: "Tipo de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: gjahr
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: glupm
+    tipo: string
+    comentario: "Método de atualização"
+    pii: nenhum
+    nulo: true
+  - nome: gmvkz
+    tipo: string
+    comentario: "Transferência para execução"
+    pii: nenhum
+    nulo: true
+  - nome: grant_nbr
+    tipo: string
+    comentario: "Subvenção"
+    pii: nenhum
+    nulo: true
+  - nome: gricd
+    tipo: string
+    comentario: "Código de atividade de imposto GI"
+    pii: nenhum
+    nulo: true
+  - nome: grirg
+    tipo: string
+    comentario: "Região"
+    pii: nenhum
+    nulo: true
+  - nome: ground_dt
+    tipo: date
+    comentario: "Data de base de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: ground_no
+    tipo: string
+    comentario: "Número de base de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: ground_typ
+    tipo: string
+    comentario: "Tipo de base de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Área de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: gst_part
+    tipo: string
+    comentario: "Parceiro GST"
+    pii: nenhum
+    nulo: true
+  - nome: gvtyp
+    tipo: string
+    comentario: "Tipo de conta DRE"
+    pii: nenhum
+    nulo: true
+  - nome: hbkid
+    tipo: string
+    comentario: "Banco próprio"
+    pii: nenhum
+    nulo: true
+  - nome: hkont
+    tipo: string
+    comentario: "Conta do razão geral"
+    pii: nenhum
+    nulo: true
+  - nome: hktid
+    tipo: string
+    comentario: "ID da conta bancária"
+    pii: nenhum
+    nulo: true
+  - nome: hrkft
+    tipo: string
+    comentario: "Grupo de origem"
+    pii: nenhum
+    nulo: true
+  - nome: hsn_sac
+    tipo: string
+    comentario: "Código HSN/SAC"
+    pii: nenhum
+    nulo: true
+  - nome: hwbas
+    tipo: decimal(23,2)
+    comentario: "Base do imposto em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: hwmet
+    tipo: string
+    comentario: "Método de determinação do valor em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: hwzuz
+    tipo: decimal(23,2)
+    comentario: "Provisão em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: hzuon
+    tipo: string
+    comentario: "Atribuição de conta especial"
+    pii: nenhum
+    nulo: true
+  - nome: idxsp
+    tipo: string
+    comentario: "Índice de inflação"
+    pii: nenhum
+    nulo: true
+  - nome: ignr_ivref
+    tipo: string
+    comentario: "Ignorar referência de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: imkey
+    tipo: string
+    comentario: "Chave de imóvel"
+    pii: nenhum
+    nulo: true
+  - nome: intreno
+    tipo: string
+    comentario: "Código interno de imóvel"
+    pii: nenhum
+    nulo: true
+  - nome: inward_dt
+    tipo: date
+    comentario: "Data do documento de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: inward_no
+    tipo: string
+    comentario: "Número do documento de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: irn
+    tipo: string
+    comentario: "Número de referência da fatura"
+    pii: nenhum
+    nulo: true
+  - nome: j_1tpbupl
+    tipo: string
+    comentario: "Código de filial"
+    pii: nenhum
+    nulo: true
+  - nome: kblnr
+    tipo: string
+    comentario: "Fundos reservados"
+    pii: nenhum
+    nulo: true
+  - nome: kblpos
+    tipo: string
+    comentario: "Item do documento de fundos reservados"
+    pii: nenhum
+    nulo: true
+  - nome: kidno
+    tipo: string
+    comentario: "Referência de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: kkber
+    tipo: string
+    comentario: "Área de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: klibt
+    tipo: decimal(23,2)
+    comentario: "Valor de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: koart
+    tipo: string
+    comentario: "Tipo de conta"
+    pii: nenhum
+    nulo: true
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controle (Controlling)"
+    pii: nenhum
+    nulo: true
+  - nome: kontl
+    tipo: string
+    comentario: "Imputação contábil"
+    pii: nenhum
+    nulo: true
+  - nome: kontt
+    tipo: string
+    comentario: "Categoria de imputação contábil"
+    pii: nenhum
+    nulo: true
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: kstar
+    tipo: string
+    comentario: "Elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: kstrg
+    tipo: string
+    comentario: "Objeto de custo"
+    pii: nenhum
+    nulo: true
+  - nome: ktosl
+    tipo: string
+    comentario: "Chave de transação contábil"
+    pii: nenhum
+    nulo: true
+  - nome: kunnr
+    tipo: string
+    comentario: "Número do cliente"
+    pii: indireto
+    nulo: true
+  - nome: kursr
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio coberta"
+    pii: nenhum
+    nulo: true
+  - nome: kzbtr
+    tipo: decimal(23,2)
+    comentario: "Valor de redução original"
+    pii: nenhum
+    nulo: true
+  - nome: landl
+    tipo: string
+    comentario: "País de fornecimento"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Número do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: linfv
+    tipo: date
+    comentario: "Data do último ajuste"
+    pii: nenhum
+    nulo: true
+  - nome: lnran
+    tipo: string
+    comentario: "Número de sequência"
+    pii: nenhum
+    nulo: true
+  - nome: lokkt
+    tipo: string
+    comentario: "Número de conta alternativo"
+    pii: nenhum
+    nulo: true
+  - nome: lstar
+    tipo: string
+    comentario: "Tipo de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: lzbkz
+    tipo: string
+    comentario: "Indicador SCB"
+    pii: nenhum
+    nulo: true
+  - nome: maber
+    tipo: string
+    comentario: "Área de cobrança"
+    pii: nenhum
+    nulo: true
+  - nome: madat
+    tipo: date
+    comentario: "Data da última cobrança"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mansp
+    tipo: string
+    comentario: "Bloqueio de cobrança"
+    pii: nenhum
+    nulo: true
+  - nome: manst
+    tipo: string
+    comentario: "Nível de cobrança"
+    pii: nenhum
+    nulo: true
+  - nome: matnr
+    tipo: string
+    comentario: "Material"
+    pii: nenhum
+    nulo: true
+  - nome: measure
+    tipo: string
+    comentario: "Programa financiado"
+    pii: nenhum
+    nulo: true
+  - nome: meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: mndid
+    tipo: string
+    comentario: "Referência de mandato"
+    pii: nenhum
+    nulo: true
+  - nome: mschl
+    tipo: string
+    comentario: "Chave de cobrança"
+    pii: nenhum
+    nulo: true
+  - nome: mwart
+    tipo: string
+    comentario: "Tipo de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: mwsk1
+    tipo: string
+    comentario: "Código de imposto 1"
+    pii: nenhum
+    nulo: true
+  - nome: mwsk2
+    tipo: string
+    comentario: "Código de imposto 2"
+    pii: nenhum
+    nulo: true
+  - nome: mwsk3
+    tipo: string
+    comentario: "Código de imposto 3"
+    pii: nenhum
+    nulo: true
+  - nome: mwskz
+    tipo: string
+    comentario: "Código de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: mwst2
+    tipo: decimal(23,2)
+    comentario: "Valor de imposto em ML2"
+    pii: nenhum
+    nulo: true
+  - nome: mwst3
+    tipo: decimal(23,2)
+    comentario: "Valor de imposto em ML3"
+    pii: nenhum
+    nulo: true
+  - nome: mwsts
+    tipo: decimal(23,2)
+    comentario: "Valor de imposto em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: navfw
+    tipo: decimal(23,2)
+    comentario: "Não dedutível (moeda do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: navh2
+    tipo: decimal(23,2)
+    comentario: "Não dedutível em ML2"
+    pii: nenhum
+    nulo: true
+  - nome: navh3
+    tipo: decimal(23,2)
+    comentario: "Não dedutível em ML3"
+    pii: nenhum
+    nulo: true
+  - nome: navhw
+    tipo: decimal(23,2)
+    comentario: "Não dedutível (moeda local)"
+    pii: nenhum
+    nulo: true
+  - nome: nebtr
+    tipo: decimal(23,2)
+    comentario: "Valor de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: nplnr
+    tipo: string
+    comentario: "Rede (PS)"
+    pii: nenhum
+    nulo: true
+  - nome: nprei
+    tipo: decimal(23,2)
+    comentario: "Novo preço"
+    pii: nenhum
+    nulo: true
+  - nome: obzei
+    tipo: string
+    comentario: "Item original"
+    pii: nenhum
+    nulo: true
+  - nome: paobjnr
+    tipo: string
+    comentario: "Número do segmento de rentabilidade"
+    pii: nenhum
+    nulo: true
+  - nome: pargb
+    tipo: string
+    comentario: "Área de negócio do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: pasubnr
+    tipo: string
+    comentario: "Subnúmero PA"
+    pii: nenhum
+    nulo: true
+  - nome: pays_prov
+    tipo: string
+    comentario: "Provedor de serviço de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: pays_tran
+    tipo: string
+    comentario: "Referência de pagamento do provedor de serviço"
+    pii: nenhum
+    nulo: true
+  - nome: pbudget_pd
+    tipo: string
+    comentario: "Período orçamentário paralelo"
+    pii: nenhum
+    nulo: true
+  - nome: peinh
+    tipo: decimal(23,2)
+    comentario: "Unidade de preço"
+    pii: nenhum
+    nulo: true
+  - nome: pendays
+    tipo: int
+    comentario: "Dias em atraso"
+    pii: nenhum
+    nulo: true
+  - nome: penfc
+    tipo: decimal(23,2)
+    comentario: "Multa (moeda do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: penlc1
+    tipo: decimal(23,2)
+    comentario: "Multa em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: penlc2
+    tipo: decimal(23,2)
+    comentario: "Multa em ML2"
+    pii: nenhum
+    nulo: true
+  - nome: penlc3
+    tipo: decimal(23,2)
+    comentario: "Multa em ML3"
+    pii: nenhum
+    nulo: true
+  - nome: penrc
+    tipo: string
+    comentario: "Motivo do atraso no pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: pernr
+    tipo: string
+    comentario: "Número do funcionário"
+    pii: indireto
+    nulo: true
+  - nome: perop_beg
+    tipo: date
+    comentario: "Data de início do período de performance de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: perop_end
+    tipo: date
+    comentario: "Data de fim do período de performance de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: pfkber
+    tipo: string
+    comentario: "Área funcional do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: pgeber
+    tipo: string
+    comentario: "Fundo do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: pgrant_nbr
+    tipo: string
+    comentario: "Subvenção do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: plc_sup
+    tipo: string
+    comentario: "Local de fornecimento"
+    pii: nenhum
+    nulo: true
+  - nome: popts
+    tipo: decimal(23,2)
+    comentario: "Taxa de opção"
+    pii: nenhum
+    nulo: true
+  - nome: posn2
+    tipo: string
+    comentario: "Item do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: ppa_ex_ind
+    tipo: string
+    comentario: "Indicador de exclusão PPA"
+    pii: nenhum
+    nulo: true
+  - nome: ppdif2
+    tipo: decimal(23,2)
+    comentario: "Diferença realizada 2 (PP)"
+    pii: nenhum
+    nulo: true
+  - nome: ppdif3
+    tipo: decimal(23,2)
+    comentario: "Diferença realizada 3 (PP)"
+    pii: nenhum
+    nulo: true
+  - nome: ppdiff
+    tipo: decimal(23,2)
+    comentario: "Diferença realizada (PP)"
+    pii: nenhum
+    nulo: true
+  - nome: pprct
+    tipo: string
+    comentario: "Centro de lucro do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: prodper
+    tipo: string
+    comentario: "Mês de produção"
+    pii: nenhum
+    nulo: true
+  - nome: projk
+    tipo: string
+    comentario: "Elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: projn
+    tipo: string
+    comentario: "Não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: prznr
+    tipo: string
+    comentario: "Processo de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: psalt
+    tipo: string
+    comentario: "Controle de preço alternativo"
+    pii: nenhum
+    nulo: true
+  - nome: psegment
+    tipo: string
+    comentario: "Segmento do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: pswbt
+    tipo: decimal(23,2)
+    comentario: "Valor no razão geral"
+    pii: nenhum
+    nulo: true
+  - nome: pswsl
+    tipo: string
+    comentario: "Moeda do razão geral"
+    pii: nenhum
+    nulo: true
+  - nome: pyamt
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: pycur
+    tipo: string
+    comentario: "Moeda de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: pymtkey
+    tipo: string
+    comentario: "Chave de proposta de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: qbshb
+    tipo: decimal(23,2)
+    comentario: "Valor de imposto retido na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: qsfbt
+    tipo: decimal(23,2)
+    comentario: "Valor isento de retenção na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: qsshb
+    tipo: decimal(23,2)
+    comentario: "Base de retenção na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: qsskz
+    tipo: string
+    comentario: "Código de imposto retido na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: qsznr
+    tipo: string
+    comentario: "Número de isenção"
+    pii: nenhum
+    nulo: true
+  - nome: rdif2
+    tipo: decimal(23,2)
+    comentario: "Diferença realizada 2"
+    pii: nenhum
+    nulo: true
+  - nome: rdif3
+    tipo: decimal(23,2)
+    comentario: "Diferença realizada 3"
+    pii: nenhum
+    nulo: true
+  - nome: rdiff
+    tipo: decimal(23,2)
+    comentario: "Diferença realizada"
+    pii: nenhum
+    nulo: true
+  - nome: rebzg
+    tipo: string
+    comentario: "Referência da fatura"
+    pii: nenhum
+    nulo: true
+  - nome: rebzj
+    tipo: string
+    comentario: "Ano fiscal de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rebzt
+    tipo: string
+    comentario: "Tipo de documento subsequente"
+    pii: nenhum
+    nulo: true
+  - nome: rebzz
+    tipo: string
+    comentario: "Item de referência"
+    pii: nenhum
+    nulo: true
+  - nome: recid
+    tipo: string
+    comentario: "Indicador de recuperação"
+    pii: nenhum
+    nulo: true
+  - nome: recrf
+    tipo: string
+    comentario: "Flag de recredito ST"
+    pii: nenhum
+    nulo: true
+  - nome: rewrt
+    tipo: decimal(23,2)
+    comentario: "Valor da fatura"
+    pii: nenhum
+    nulo: true
+  - nome: rewwr
+    tipo: decimal(23,2)
+    comentario: "Valor da fatura em moeda estrangeira"
+    pii: nenhum
+    nulo: true
+  - nome: re_account
+    tipo: string
+    comentario: "Conta de despesa ou receita em CL"
+    pii: nenhum
+    nulo: true
+  - nome: re_bukrs
+    tipo: string
+    comentario: "Código de empresa (RE)"
+    pii: nenhum
+    nulo: true
+  - nome: rfzei
+    tipo: string
+    comentario: "Item de cartão de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: rpacq
+    tipo: string
+    comentario: "Período de aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: rstgr
+    tipo: string
+    comentario: "Código de motivo"
+    pii: nenhum
+    nulo: true
+  - nome: ryacq
+    tipo: string
+    comentario: "Ano de aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: saknr
+    tipo: string
+    comentario: "Conta do razão geral (saknr)"
+    pii: nenhum
+    nulo: true
+  - nome: samnr
+    tipo: string
+    comentario: "Fatura coletiva"
+    pii: nenhum
+    nulo: true
+  - nome: sctax
+    tipo: decimal(23,2)
+    comentario: "Parcela de imposto FI-CA em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: secco
+    tipo: string
+    comentario: "Código de seção"
+    pii: nenhum
+    nulo: true
+  - nome: segment
+    tipo: string
+    comentario: "Segmento"
+    pii: nenhum
+    nulo: true
+  - nome: sgtxt
+    tipo: string
+    comentario: "Texto do item"
+    pii: nenhum
+    nulo: true
+  - nome: shkzg
+    tipo: string
+    comentario: "Indicador débito/crédito"
+    pii: nenhum
+    nulo: true
+  - nome: shzuz
+    tipo: decimal(23,2)
+    comentario: "Desconto financeiro (+/-)"
+    pii: nenhum
+    nulo: true
+  - nome: skfbt
+    tipo: decimal(23,2)
+    comentario: "Base de desconto financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: sknt2
+    tipo: decimal(23,2)
+    comentario: "Valor de desconto financeiro em ML2"
+    pii: nenhum
+    nulo: true
+  - nome: sknt3
+    tipo: decimal(23,2)
+    comentario: "Valor de desconto financeiro em ML3"
+    pii: nenhum
+    nulo: true
+  - nome: sknto
+    tipo: decimal(23,2)
+    comentario: "Valor de desconto financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: spgrc
+    tipo: string
+    comentario: "Motivo de bloqueio: qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: spgrg
+    tipo: string
+    comentario: "Motivo de bloqueio: OPQ"
+    pii: nenhum
+    nulo: true
+  - nome: spgrm
+    tipo: string
+    comentario: "Motivo de bloqueio: quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: spgrp
+    tipo: string
+    comentario: "Motivo de bloqueio: preço"
+    pii: nenhum
+    nulo: true
+  - nome: spgrq
+    tipo: string
+    comentario: "Motivo de bloqueio manual"
+    pii: nenhum
+    nulo: true
+  - nome: spgrs
+    tipo: string
+    comentario: "Motivo de bloqueio: valor do item"
+    pii: nenhum
+    nulo: true
+  - nome: spgrt
+    tipo: string
+    comentario: "Motivo de bloqueio: data"
+    pii: nenhum
+    nulo: true
+  - nome: spgrv
+    tipo: string
+    comentario: "Motivo de bloqueio: projeto"
+    pii: nenhum
+    nulo: true
+  - nome: squan
+    tipo: string
+    comentario: "Sinal de quantidade (+/-)"
+    pii: nenhum
+    nulo: true
+  - nome: srtype
+    tipo: string
+    comentario: "Tipo de recebível adicional"
+    pii: nenhum
+    nulo: true
+  - nome: stbuk
+    tipo: string
+    comentario: "Código de empresa tributária"
+    pii: nenhum
+    nulo: true
+  - nome: stceg
+    tipo: string
+    comentario: "Número de registro de IVA"
+    pii: sensivel
+    nulo: true
+  - nome: stekz
+    tipo: string
+    comentario: "Componente do número de versão"
+    pii: nenhum
+    nulo: true
+  - nome: sttax
+    tipo: decimal(23,2)
+    comentario: "Valor de imposto estatístico na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: taxps
+    tipo: string
+    comentario: "Número do item de documento fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: tbtkz
+    tipo: string
+    comentario: "Débito/crédito subsequente"
+    pii: nenhum
+    nulo: true
+  - nome: txbfw
+    tipo: decimal(23,2)
+    comentario: "Valor base original de imposto (moeda do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: txbh2
+    tipo: decimal(23,2)
+    comentario: "Valor base de imposto em ML2"
+    pii: nenhum
+    nulo: true
+  - nome: txbh3
+    tipo: decimal(23,2)
+    comentario: "Valor base de imposto em ML3"
+    pii: nenhum
+    nulo: true
+  - nome: txbhw
+    tipo: decimal(23,2)
+    comentario: "Valor base original de imposto (moeda local)"
+    pii: nenhum
+    nulo: true
+  - nome: txdat
+    tipo: date
+    comentario: "Data do imposto"
+    pii: nenhum
+    nulo: true
+  - nome: txgrp
+    tipo: string
+    comentario: "Indicador de grupo fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: umsks
+    tipo: string
+    comentario: "Tipo de transação de conta especial"
+    pii: nenhum
+    nulo: true
+  - nome: umskz
+    tipo: string
+    comentario: "Indicador de partida em aberto especial"
+    pii: nenhum
+    nulo: true
+  - nome: uzawe
+    tipo: string
+    comentario: "Complemento do meio de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: valobjtype
+    tipo: string
+    comentario: "Tipo do objeto de avaliação financeira"
+    pii: nenhum
+    nulo: true
+  - nome: valobj_id
+    tipo: string
+    comentario: "Identificador do objeto de avaliação financeira"
+    pii: nenhum
+    nulo: true
+  - nome: valsobj_id
+    tipo: string
+    comentario: "Identificador do subobjeto de avaliação financeira"
+    pii: nenhum
+    nulo: true
+  - nome: valut
+    tipo: date
+    comentario: "Data-valor"
+    pii: nenhum
+    nulo: true
+  - nome: vbel2
+    tipo: string
+    comentario: "Documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln
+    tipo: string
+    comentario: "Documento de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: vbewa
+    tipo: string
+    comentario: "Tipo de fluxo"
+    pii: nenhum
+    nulo: true
+  - nome: vbund
+    tipo: string
+    comentario: "Parceiro comercial"
+    pii: nenhum
+    nulo: true
+  - nome: vertn
+    tipo: string
+    comentario: "Número do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: vertt
+    tipo: string
+    comentario: "Tipo de contrato"
+    pii: nenhum
+    nulo: true
+  - nome: vname
+    tipo: string
+    comentario: "Joint venture"
+    pii: nenhum
+    nulo: true
+  - nome: vorgn
+    tipo: string
+    comentario: "Tipo de transação do razão geral"
+    pii: nenhum
+    nulo: true
+  - nome: vprsv
+    tipo: string
+    comentario: "Controle de preço"
+    pii: nenhum
+    nulo: true
+  - nome: vptnr
+    tipo: string
+    comentario: "Parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: vrsdt
+    tipo: date
+    comentario: "Data de seguro"
+    pii: nenhum
+    nulo: true
+  - nome: vrskz
+    tipo: string
+    comentario: "Indicador de seguro"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: true
+  - nome: wmwst
+    tipo: decimal(23,2)
+    comentario: "Valor do imposto"
+    pii: nenhum
+    nulo: true
+  - nome: wrbt1
+    tipo: decimal(23,2)
+    comentario: "Valor (breakdown fiscal 1, moeda do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: wrbt2
+    tipo: decimal(23,2)
+    comentario: "Valor (breakdown fiscal 2, moeda do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: wrbt3
+    tipo: decimal(23,2)
+    comentario: "Valor (breakdown fiscal 3, moeda do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: wrbtr
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: wskto
+    tipo: decimal(23,2)
+    comentario: "Valor de desconto (moeda do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: wverw
+    tipo: string
+    comentario: "Uso de letra de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: xanet
+    tipo: string
+    comentario: "Indicador: adiantamento em procedimento líquido?"
+    pii: nenhum
+    nulo: true
+  - nome: xauto
+    tipo: string
+    comentario: "Item de linha criado automaticamente"
+    pii: nenhum
+    nulo: true
+  - nome: xbilk
+    tipo: string
+    comentario: "Conta patrimonial"
+    pii: nenhum
+    nulo: true
+  - nome: xcpdd
+    tipo: string
+    comentario: "Liquidação individual"
+    pii: nenhum
+    nulo: true
+  - nome: xegdr
+    tipo: string
+    comentario: "Operação triangular UE"
+    pii: nenhum
+    nulo: true
+  - nome: xfakt
+    tipo: string
+    comentario: "Indicador: atualização de faturamento bem-sucedida?"
+    pii: nenhum
+    nulo: true
+  - nome: xfrge_bseg
+    tipo: string
+    comentario: "Pagamento liberado"
+    pii: nenhum
+    nulo: true
+  - nome: xhkom
+    tipo: string
+    comentario: "Conta contábil manual"
+    pii: nenhum
+    nulo: true
+  - nome: xhres
+    tipo: string
+    comentario: "Indicador: conta contábil residente?"
+    pii: nenhum
+    nulo: true
+  - nome: xinve
+    tipo: string
+    comentario: "ID de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: xkres
+    tipo: string
+    comentario: "Exibição de item em aberto"
+    pii: nenhum
+    nulo: true
+  - nome: xlgclr
+    tipo: string
+    comentario: "Compensação específica de grupo de razão"
+    pii: nenhum
+    nulo: true
+  - nome: xncop
+    tipo: string
+    comentario: "Indicador: itens não podem ser copiados?"
+    pii: nenhum
+    nulo: true
+  - nome: xnegp
+    tipo: string
+    comentario: "Lançamento negativo"
+    pii: nenhum
+    nulo: true
+  - nome: xopvw
+    tipo: string
+    comentario: "Administração de partidas em aberto"
+    pii: nenhum
+    nulo: true
+  - nome: xpanz
+    tipo: string
+    comentario: "Exibir item"
+    pii: nenhum
+    nulo: true
+  - nome: xpypr
+    tipo: string
+    comentario: "Pagamento enviado"
+    pii: nenhum
+    nulo: true
+  - nome: xragl
+    tipo: string
+    comentario: "Compensação de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: xref1
+    tipo: string
+    comentario: "Chave de referência 1"
+    pii: nenhum
+    nulo: true
+  - nome: xref2
+    tipo: string
+    comentario: "Chave de referência 2"
+    pii: nenhum
+    nulo: true
+  - nome: xref3
+    tipo: string
+    comentario: "Chave de referência 3"
+    pii: nenhum
+    nulo: true
+  - nome: xsauf
+    tipo: string
+    comentario: "Lançamento estatístico em ordem"
+    pii: nenhum
+    nulo: true
+  - nome: xserg
+    tipo: string
+    comentario: "Lançamento estatístico em PA"
+    pii: nenhum
+    nulo: true
+  - nome: xskrl
+    tipo: string
+    comentario: "Sem desconto financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: xskst
+    tipo: string
+    comentario: "Lançamento estatístico no centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: xspro
+    tipo: string
+    comentario: "Lançamento estatístico em projeto"
+    pii: nenhum
+    nulo: true
+  - nome: xuman
+    tipo: string
+    comentario: "Indicador: reclassificação de entrada de adiantamento?"
+    pii: nenhum
+    nulo: true
+  - nome: xumsw
+    tipo: string
+    comentario: "Relacionado a vendas"
+    pii: nenhum
+    nulo: true
+  - nome: xzahl
+    tipo: string
+    comentario: "Transação de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zbd1p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto 1"
+    pii: nenhum
+    nulo: true
+  - nome: zbd1t
+    tipo: int
+    comentario: "Prazo 1 (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd2p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto 2"
+    pii: nenhum
+    nulo: true
+  - nome: zbd2t
+    tipo: int
+    comentario: "Prazo 2 (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd3t
+    tipo: int
+    comentario: "Prazo líquido (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zbfix
+    tipo: string
+    comentario: "Fixo"
+    pii: nenhum
+    nulo: true
+  - nome: zekkn
+    tipo: string
+    comentario: "Sequência de imputação contábil"
+    pii: nenhum
+    nulo: true
+  - nome: zfbdt
+    tipo: date
+    comentario: "Data base de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zinkz
+    tipo: string
+    comentario: "Bloqueio de juros"
+    pii: nenhum
+    nulo: true
+  - nome: zlsch
+    tipo: string
+    comentario: "Meio de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zlspr
+    tipo: string
+    comentario: "Bloqueio de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zolld
+    tipo: date
+    comentario: "Data alfandegária"
+    pii: nenhum
+    nulo: true
+  - nome: zollt
+    tipo: string
+    comentario: "Número de tarifa aduaneira"
+    pii: nenhum
+    nulo: true
+  - nome: zterm
+    tipo: string
+    comentario: "Condições de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zumsk
+    tipo: string
+    comentario: "Indicador destino de conta especial"
+    pii: nenhum
+    nulo: true
+  - nome: zuonr
+    tipo: string
+    comentario: "Número de atribuição"
+    pii: nenhum
+    nulo: true

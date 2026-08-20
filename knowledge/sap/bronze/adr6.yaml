@@ -1,0 +1,87 @@
+tabela: adr6
+camada: bronze
+comentario: "Enderecos de e-mail (Business Address Services) — comunicacao por e-mail de enderecos SAP."
+ingestao: cdc
+fonte: sap.adr6
+chave_primaria: [client, addrnumber, persnumber, consnumber]
+colunas:
+  - nome: addrnumber
+    tipo: string
+    comentario: "Numero do endereco."
+    pii: indireto
+    nulo: false
+  - nome: client
+    tipo: string
+    comentario: "Mandante (client)."
+    pii: nenhum
+    nulo: false
+  - nome: consnumber
+    tipo: string
+    comentario: "Numero sequencial."
+    pii: nenhum
+    nulo: false
+  - nome: date_from
+    tipo: date
+    comentario: "Valido a partir de."
+    pii: nenhum
+    nulo: true
+  - nome: dft_receiv
+    tipo: string
+    comentario: "Destinatario padrao."
+    pii: nenhum
+    nulo: true
+  - nome: encode
+    tipo: string
+    comentario: "Codificacao."
+    pii: nenhum
+    nulo: true
+  - nome: flgdefault
+    tipo: string
+    comentario: "Indicador de endereco padrao."
+    pii: nenhum
+    nulo: true
+  - nome: flg_nouse
+    tipo: string
+    comentario: "Indicador: nao usar este numero de comunicacao."
+    pii: nenhum
+    nulo: true
+  - nome: home_flag
+    tipo: string
+    comentario: "Indicador de endereco residencial."
+    pii: nenhum
+    nulo: true
+  - nome: persnumber
+    tipo: string
+    comentario: "Numero da pessoa."
+    pii: indireto
+    nulo: false
+  - nome: r3_user
+    tipo: string
+    comentario: "Indicador: conexao SAP."
+    pii: nenhum
+    nulo: true
+  - nome: smtp_addr
+    tipo: string
+    comentario: "Endereco de e-mail."
+    pii: direto
+    nulo: true
+  - nome: smtp_srch
+    tipo: string
+    comentario: "Endereco de e-mail (termo de busca)."
+    pii: direto
+    nulo: true
+  - nome: tnef
+    tipo: string
+    comentario: "TNEF (Transport Neutral Encapsulation Format)."
+    pii: nenhum
+    nulo: true
+  - nome: valid_from
+    tipo: date
+    comentario: "Valido a partir de."
+    pii: nenhum
+    nulo: true
+  - nome: valid_to
+    tipo: date
+    comentario: "Valido ate."
+    pii: nenhum
+    nulo: true

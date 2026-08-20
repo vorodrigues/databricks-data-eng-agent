@@ -1,0 +1,53 @@
+tabela: country_tax_regions
+camada: gold
+comentario: "Detalhes de estados, províncias e regiões a partir de T005S e T005U com descrições por idioma, para consulta de chaves de imposto regional."
+entidade: obt
+ingestao: custom
+fontes: [silver.t001, silver.t002, silver.t002t, silver.t005, silver.t005t, silver.t005k, silver.t005s, silver.t005u, silver.tj02t]
+chave_primaria: [client_mandt, country_key_land1, region_bland, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: country_key_land1
+    tipo: string
+    comentario: "Chave de país"
+    pii: nenhum
+    nulo: false
+  - nome: region_bland
+    tipo: string
+    comentario: "Chave de região (estado / província / condado)"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: region_name_bezei
+    tipo: string
+    comentario: "Descrição da região / estado / província"
+    pii: nenhum
+    nulo: true
+  - nome: provincial_tax_code_fprcd
+    tipo: string
+    comentario: "Código de imposto provincial"
+    pii: nenhum
+    nulo: true
+  - nome: state_of_manufacture_herbl
+    tipo: string
+    comentario: "Estado de fabricação"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

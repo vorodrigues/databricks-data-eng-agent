@@ -1,0 +1,32 @@
+tabela: tbdls
+camada: bronze
+comentario: "Sistema logico de distribuicao de dados (ALE/IDOC), independente de mandante"
+ingestao: cdc
+fonte: sap.tbdls
+chave_primaria: [logsys]
+colunas:
+  - nome: logsys
+    tipo: string
+    comentario: "Nome do sistema logico"
+    pii: nenhum
+    nulo: false
+  - nome: isprel
+    tipo: string
+    comentario: "Release do sistema"
+    pii: nenhum
+    nulo: true
+  - nome: isprfcdes
+    tipo: string
+    comentario: "Destino RFC do sistema logico"
+    pii: nenhum
+    nulo: true
+  - nome: isprfcdesf
+    tipo: string
+    comentario: "Destino RFC alternativo do sistema logico"
+    pii: nenhum
+    nulo: true
+  - nome: isprfctype
+    tipo: string
+    comentario: "Tipo de sistema (RFC)"
+    pii: nenhum
+    nulo: true

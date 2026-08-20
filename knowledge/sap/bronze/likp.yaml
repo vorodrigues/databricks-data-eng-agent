@@ -1,0 +1,932 @@
+tabela: likp
+camada: bronze
+comentario: "Cabeçalho da entrega (documento SD)"
+ingestao: cdc
+fonte: sap.likp
+chave_primaria: [mandt, vbeln]
+colunas:
+  - nome: /bev1/luleinh
+    tipo: string
+    comentario: "Unidades de carga"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpcont
+    tipo: string
+    comentario: "Categoria de número 3"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpfaess
+    tipo: string
+    comentario: "Categoria de número 1"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpflgnr
+    tipo: string
+    comentario: "Número de sequência"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpkist
+    tipo: string
+    comentario: "Categoria de número 2"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpsonst
+    tipo: string
+    comentario: "Categoria de número 4"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: vbeln
+    tipo: string
+    comentario: "Número da entrega"
+    pii: nenhum
+    nulo: false
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: erzet
+    tipo: string
+    comentario: "Hora de criação"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: bzirk
+    tipo: string
+    comentario: "Distrito de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vstel
+    tipo: string
+    comentario: "Ponto de expedição/recebimento"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: lfart
+    tipo: string
+    comentario: "Tipo de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: autlf
+    tipo: string
+    comentario: "Indicador de entrega completa"
+    pii: nenhum
+    nulo: true
+  - nome: kzazu
+    tipo: string
+    comentario: "Combinação de pedidos"
+    pii: nenhum
+    nulo: true
+  - nome: wadat
+    tipo: date
+    comentario: "Data de movimentação de mercadoria planejada"
+    pii: nenhum
+    nulo: true
+  - nome: lddat
+    tipo: date
+    comentario: "Data de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: tddat
+    tipo: date
+    comentario: "Data de planejamento de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: lfdat
+    tipo: date
+    comentario: "Data de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: kodat
+    tipo: date
+    comentario: "Data de separação"
+    pii: nenhum
+    nulo: true
+  - nome: ablad
+    tipo: string
+    comentario: "Ponto de descarga"
+    pii: nenhum
+    nulo: true
+  - nome: inco1
+    tipo: string
+    comentario: "Incoterms"
+    pii: nenhum
+    nulo: true
+  - nome: inco2
+    tipo: string
+    comentario: "Incoterms (parte 2)"
+    pii: nenhum
+    nulo: true
+  - nome: expkz
+    tipo: string
+    comentario: "Exportação"
+    pii: nenhum
+    nulo: true
+  - nome: route
+    tipo: string
+    comentario: "Rota"
+    pii: nenhum
+    nulo: true
+  - nome: faksk
+    tipo: string
+    comentario: "Bloqueio de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: lifsk
+    tipo: string
+    comentario: "Bloqueio de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: vbtyp
+    tipo: string
+    comentario: "Categoria do documento SD"
+    pii: nenhum
+    nulo: true
+  - nome: knfak
+    tipo: string
+    comentario: "Calendário de fábrica"
+    pii: nenhum
+    nulo: true
+  - nome: tpqua
+    tipo: string
+    comentario: "Qualificação do meio de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: tpgrp
+    tipo: string
+    comentario: "Grupo de meio de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: lprio
+    tipo: string
+    comentario: "Prioridade de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: vsbed
+    tipo: string
+    comentario: "Condições de expedição"
+    pii: nenhum
+    nulo: true
+  - nome: kunnr
+    tipo: string
+    comentario: "Cliente destinatário (ship-to party)"
+    pii: indireto
+    nulo: true
+  - nome: kunag
+    tipo: string
+    comentario: "Cliente solicitante (sold-to party)"
+    pii: indireto
+    nulo: true
+  - nome: kdgrp
+    tipo: string
+    comentario: "Grupo de cliente"
+    pii: nenhum
+    nulo: true
+  - nome: stzkl
+    tipo: string
+    comentario: "Classe de tempo de espera (fator, parcela variável)"
+    pii: nenhum
+    nulo: true
+  - nome: stzzu
+    tipo: string
+    comentario: "Sobretaxa de tempo de espera (parcela fixa)"
+    pii: nenhum
+    nulo: true
+  - nome: btgew
+    tipo: decimal(23,2)
+    comentario: "Peso total"
+    pii: nenhum
+    nulo: true
+  - nome: ntgew
+    tipo: decimal(23,2)
+    comentario: "Peso líquido"
+    pii: nenhum
+    nulo: true
+  - nome: gewei
+    tipo: string
+    comentario: "Unidade de peso"
+    pii: nenhum
+    nulo: true
+  - nome: volum
+    tipo: decimal(23,2)
+    comentario: "Volume"
+    pii: nenhum
+    nulo: true
+  - nome: voleh
+    tipo: string
+    comentario: "Unidade de volume"
+    pii: nenhum
+    nulo: true
+  - nome: anzpk
+    tipo: int
+    comentario: "Número de embalagens"
+    pii: nenhum
+    nulo: true
+  - nome: berot
+    tipo: string
+    comentario: "Localização dos itens separados"
+    pii: nenhum
+    nulo: true
+  - nome: lfuhr
+    tipo: string
+    comentario: "Hora de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: grulg
+    tipo: string
+    comentario: "Grupo de peso"
+    pii: nenhum
+    nulo: true
+  - nome: lstel
+    tipo: string
+    comentario: "Ponto de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: tragr
+    tipo: string
+    comentario: "Grupo de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: fkarv
+    tipo: string
+    comentario: "Tipo de faturamento vinculado à entrega"
+    pii: nenhum
+    nulo: true
+  - nome: fkdat
+    tipo: date
+    comentario: "Data de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: perfk
+    tipo: string
+    comentario: "Datas de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: routa
+    tipo: string
+    comentario: "Rota alternativa"
+    pii: nenhum
+    nulo: true
+  - nome: stafo
+    tipo: string
+    comentario: "Grupo de atualização (estatísticas)"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm
+    tipo: string
+    comentario: "Procedimento"
+    pii: nenhum
+    nulo: true
+  - nome: knumv
+    tipo: string
+    comentario: "Número de condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: waerk
+    tipo: string
+    comentario: "Moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: vkbur
+    tipo: string
+    comentario: "Escritório de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vbeak
+    tipo: decimal(23,2)
+    comentario: "Tempo total de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: zukrl
+    tipo: string
+    comentario: "Critério de combinação"
+    pii: nenhum
+    nulo: true
+  - nome: verur
+    tipo: string
+    comentario: "Documento original"
+    pii: nenhum
+    nulo: true
+  - nome: commn
+    tipo: string
+    comentario: "Número de comunicação"
+    pii: nenhum
+    nulo: true
+  - nome: stwae
+    tipo: string
+    comentario: "Moeda de estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: stcur
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: exnum
+    tipo: string
+    comentario: "Número de dados de comércio exterior"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: lgnum
+    tipo: string
+    comentario: "Número do depósito"
+    pii: nenhum
+    nulo: true
+  - nome: lispl
+    tipo: string
+    comentario: "Indicador: divisão de entrega, número do depósito"
+    pii: nenhum
+    nulo: true
+  - nome: vkoiv
+    tipo: string
+    comentario: "Organização de vendas (intercompany)"
+    pii: nenhum
+    nulo: true
+  - nome: vtwiv
+    tipo: string
+    comentario: "Canal de distribuição (intercompany)"
+    pii: nenhum
+    nulo: true
+  - nome: spaiv
+    tipo: string
+    comentario: "Divisão de faturamento intercompany"
+    pii: nenhum
+    nulo: true
+  - nome: fkaiv
+    tipo: string
+    comentario: "Tipo de faturamento intercompany"
+    pii: nenhum
+    nulo: true
+  - nome: pioiv
+    tipo: date
+    comentario: "Data de faturamento (intercompany)"
+    pii: nenhum
+    nulo: true
+  - nome: fkdiv
+    tipo: date
+    comentario: "Data de faturamento intercompany"
+    pii: nenhum
+    nulo: true
+  - nome: kuniv
+    tipo: string
+    comentario: "Cliente de faturamento intercompany"
+    pii: indireto
+    nulo: true
+  - nome: kkber
+    tipo: string
+    comentario: "Área de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: knkli
+    tipo: string
+    comentario: "Conta de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: grupp
+    tipo: string
+    comentario: "Grupo de crédito de cliente"
+    pii: nenhum
+    nulo: true
+  - nome: sbgrp
+    tipo: string
+    comentario: "Grupo de representante de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: ctlpc
+    tipo: string
+    comentario: "Categoria de risco de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmwae
+    tipo: string
+    comentario: "Moeda de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: amtbl
+    tipo: decimal(23,2)
+    comentario: "Valor de crédito relevante"
+    pii: nenhum
+    nulo: true
+  - nome: bolnr
+    tipo: string
+    comentario: "Conhecimento de embarque"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: traty
+    tipo: string
+    comentario: "Tipo de meio de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: traid
+    tipo: string
+    comentario: "Identificação do meio de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: cmfre
+    tipo: date
+    comentario: "Data de liberação de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmngv
+    tipo: date
+    comentario: "Próxima data de verificação de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: xabln
+    tipo: string
+    comentario: "Guia de recebimento/saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: bldat
+    tipo: date
+    comentario: "Data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: wadat_ist
+    tipo: date
+    comentario: "Data real de movimentação de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: trspg
+    tipo: string
+    comentario: "Motivo de bloqueio de remessa"
+    pii: nenhum
+    nulo: true
+  - nome: tpsid
+    tipo: string
+    comentario: "ID do sistema de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: lifex
+    tipo: string
+    comentario: "ID externa da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: ternr
+    tipo: string
+    comentario: "Ordem"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm_ch
+    tipo: string
+    comentario: "Procedimento de pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: klief
+    tipo: string
+    comentario: "Entrega de correção"
+    pii: nenhum
+    nulo: true
+  - nome: kalsp
+    tipo: string
+    comentario: "Procedimento"
+    pii: nenhum
+    nulo: true
+  - nome: knump
+    tipo: string
+    comentario: "Número de condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: netwr
+    tipo: decimal(23,2)
+    comentario: "Valor líquido"
+    pii: nenhum
+    nulo: true
+  - nome: aulwe
+    tipo: string
+    comentario: "Programação de rota"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro receptor"
+    pii: nenhum
+    nulo: true
+  - nome: lcnum
+    tipo: string
+    comentario: "Número do documento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: abssc
+    tipo: string
+    comentario: "Procedimento de garantia de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: kouhr
+    tipo: string
+    comentario: "Hora de separação"
+    pii: nenhum
+    nulo: true
+  - nome: tduhr
+    tipo: string
+    comentario: "Hora de planejamento de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: lduhr
+    tipo: string
+    comentario: "Hora de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: wauhr
+    tipo: string
+    comentario: "Hora de saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: lgtor
+    tipo: string
+    comentario: "Porta do depósito"
+    pii: nenhum
+    nulo: true
+  - nome: lgbzo
+    tipo: string
+    comentario: "Área de staging"
+    pii: nenhum
+    nulo: true
+  - nome: akwae
+    tipo: string
+    comentario: "Moeda da carta de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: akkur
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio da carta de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: akprz
+    tipo: decimal(23,2)
+    comentario: "Percentual de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: proli
+    tipo: string
+    comentario: "Perfil de gestão de mercadoria perigosa"
+    pii: nenhum
+    nulo: true
+  - nome: xblnr
+    tipo: string
+    comentario: "Referência"
+    pii: nenhum
+    nulo: true
+  - nome: handle
+    tipo: string
+    comentario: "Chave"
+    pii: nenhum
+    nulo: true
+  - nome: tsegfl
+    tipo: string
+    comentario: "Segmento de tempo existente"
+    pii: nenhum
+    nulo: true
+  - nome: tsegtp
+    tipo: string
+    comentario: "Template"
+    pii: nenhum
+    nulo: true
+  - nome: tzonis
+    tipo: string
+    comentario: "Fuso horário do local de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: tzonrc
+    tipo: string
+    comentario: "Fuso horário do local de recebimento"
+    pii: nenhum
+    nulo: true
+  - nome: cont_dg
+    tipo: string
+    comentario: "Contém mercadoria perigosa"
+    pii: nenhum
+    nulo: true
+  - nome: verursys
+    tipo: string
+    comentario: "Sistema original"
+    pii: nenhum
+    nulo: true
+  - nome: kzwab
+    tipo: string
+    comentario: "Indicador de movimentação de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: tcode
+    tipo: string
+    comentario: "Código de transação"
+    pii: nenhum
+    nulo: true
+  - nome: vsart
+    tipo: string
+    comentario: "Tipo de expedição"
+    pii: nenhum
+    nulo: true
+  - nome: trmtyp
+    tipo: string
+    comentario: "Meio de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: sdabw
+    tipo: string
+    comentario: "Indicador de processamento especial"
+    pii: nenhum
+    nulo: true
+  - nome: vbund
+    tipo: string
+    comentario: "ID da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: xwoff
+    tipo: string
+    comentario: "Cálculo do valor em aberto"
+    pii: nenhum
+    nulo: true
+  - nome: dirta
+    tipo: string
+    comentario: "Criação automática de transferência de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: prvbe
+    tipo: string
+    comentario: "Área de suprimento de produção"
+    pii: nenhum
+    nulo: true
+  - nome: folar
+    tipo: string
+    comentario: "Tipo de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: podat
+    tipo: date
+    comentario: "Data da prova de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: potim
+    tipo: string
+    comentario: "Hora de confirmação da prova de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: vganz
+    tipo: int
+    comentario: "Número de itens no sistema predecessor"
+    pii: nenhum
+    nulo: true
+  - nome: imwrk
+    tipo: string
+    comentario: "No centro"
+    pii: nenhum
+    nulo: true
+  - nome: spe_loekz
+    tipo: string
+    comentario: "ID de exclusão do documento"
+    pii: nenhum
+    nulo: true
+  - nome: spe_loc_seq
+    tipo: string
+    comentario: "Sequência de localização"
+    pii: nenhum
+    nulo: true
+  - nome: spe_acc_app_sts
+    tipo: string
+    comentario: "Status de confirmação de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: spe_shp_inf_sts
+    tipo: string
+    comentario: "Status de informação de remessa"
+    pii: nenhum
+    nulo: true
+  - nome: spe_ret_canc
+    tipo: string
+    comentario: "ASN de devoluções cancelado"
+    pii: nenhum
+    nulo: true
+  - nome: spe_wauhr_ist
+    tipo: string
+    comentario: "Hora real de saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: spe_wazone_ist
+    tipo: string
+    comentario: "Fuso horário da saída real de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: spe_rev_vlstk
+    tipo: string
+    comentario: "Status do depósito descentralizado"
+    pii: nenhum
+    nulo: true
+  - nome: spe_le_scenario
+    tipo: string
+    comentario: "Cenário de execução logística"
+    pii: nenhum
+    nulo: true
+  - nome: spe_orig_sys
+    tipo: string
+    comentario: "Tipo de sistema original"
+    pii: nenhum
+    nulo: true
+  - nome: spe_chng_sys
+    tipo: string
+    comentario: "Tipo de sistema do último alterador"
+    pii: nenhum
+    nulo: true
+  - nome: spe_georoute
+    tipo: string
+    comentario: "Rota geográfica"
+    pii: nenhum
+    nulo: true
+  - nome: spe_georouteind
+    tipo: string
+    comentario: "Indicador de alteração de rota"
+    pii: nenhum
+    nulo: true
+  - nome: spe_carrier_ind
+    tipo: string
+    comentario: "Indicador de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: spe_gts_rel
+    tipo: string
+    comentario: "Tipo de tráfego de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: spe_gts_rt_cde
+    tipo: string
+    comentario: "Código de rota GTS"
+    pii: nenhum
+    nulo: true
+  - nome: spe_rel_tmstmp
+    tipo: timestamp
+    comentario: "Timestamp de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: spe_unit_system
+    tipo: string
+    comentario: "Sistema de unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: spe_inv_bfr_gi
+    tipo: string
+    comentario: "Fatura antes da saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: spe_qi_status
+    tipo: string
+    comentario: "Status de inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: spe_red_ind
+    tipo: string
+    comentario: "Indicador de redirecionamento"
+    pii: nenhum
+    nulo: true
+  - nome: sakes
+    tipo: string
+    comentario: "Status de armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: spe_lifex_type
+    tipo: string
+    comentario: "Tipo de identificação externa"
+    pii: nenhum
+    nulo: true
+  - nome: spe_ttype
+    tipo: string
+    comentario: "Meio de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: spe_pro_number
+    tipo: string
+    comentario: "Número PRO"
+    pii: nenhum
+    nulo: true
+  - nome: loc_guid
+    tipo: string
+    comentario: "GUID da carta de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: spe_billing_ind
+    tipo: string
+    comentario: "Indicador de faturamento EWM"
+    pii: nenhum
+    nulo: true
+  - nome: printer_profile
+    tipo: string
+    comentario: "Perfil de impressão"
+    pii: nenhum
+    nulo: true
+  - nome: msr_active
+    tipo: string
+    comentario: "Devolução avançada ativa"
+    pii: nenhum
+    nulo: true
+  - nome: prtnr
+    tipo: string
+    comentario: "Log do documento"
+    pii: nenhum
+    nulo: true
+  - nome: stge_loc_change
+    tipo: string
+    comentario: "Alteração de local de armazenagem"
+    pii: nenhum
+    nulo: true
+  - nome: tm_ctrl_key
+    tipo: string
+    comentario: "Chave de controle"
+    pii: nenhum
+    nulo: true
+  - nome: dlv_split_initia
+    tipo: string
+    comentario: "Iniciador de divisão de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: dlv_version
+    tipo: string
+    comentario: "Versão da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: handoverloc
+    tipo: string
+    comentario: "Local de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: handoverdate
+    tipo: date
+    comentario: "Data de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: handovertime
+    tipo: string
+    comentario: "Hora de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: handovertzone
+    tipo: string
+    comentario: "Fuso horário do local de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: vlstk
+    tipo: string
+    comentario: "Status do depósito descentralizado"
+    pii: nenhum
+    nulo: true
+  - nome: incov
+    tipo: string
+    comentario: "Versão dos Incoterms"
+    pii: nenhum
+    nulo: true
+  - nome: inco2_l
+    tipo: string
+    comentario: "Local Incoterms 1"
+    pii: nenhum
+    nulo: true
+  - nome: inco3_l
+    tipo: string
+    comentario: "Local Incoterms 2"
+    pii: nenhum
+    nulo: true
+  - nome: borgr_grp
+    tipo: string
+    comentario: "Grupo de entrega de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_transaction
+    tipo: string
+    comentario: "Número de transação"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vas_last_item
+    tipo: string
+    comentario: "Último número de item VAS"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vas_cg
+    tipo: string
+    comentario: "Grupo de cliente VAS"
+    pii: nenhum
+    nulo: true

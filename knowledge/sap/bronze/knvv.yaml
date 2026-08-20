@@ -1,0 +1,482 @@
+tabela: knvv
+camada: bronze
+comentario: "Dados de vendas do mestre de clientes"
+ingestao: cdc
+fonte: sap.knvv
+chave_primaria: [mandt, kunnr, vkorg, vtweg, spart]
+colunas:
+  - nome: /bev1/emlgforts
+    tipo: string
+    comentario: "Indicador de desativação de atualização de vasilhames"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/emlgpfand
+    tipo: string
+    comentario: "Vasilhames com depósito a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kunnr
+    tipo: string
+    comentario: "Número do cliente"
+    pii: indireto
+    nulo: false
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: false
+  - nome: spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: false
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: begru
+    tipo: string
+    comentario: "Grupo de autorização"
+    pii: nenhum
+    nulo: true
+  - nome: loevm
+    tipo: string
+    comentario: "Indicador de exclusão para a área de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: versg
+    tipo: string
+    comentario: "Grupo de estatísticas do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: aufsd
+    tipo: string
+    comentario: "Bloqueio de pedido para a área de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: kalks
+    tipo: string
+    comentario: "Procedimento de precificação do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: kdgrp
+    tipo: string
+    comentario: "Grupo de clientes"
+    pii: indireto
+    nulo: true
+  - nome: bzirk
+    tipo: string
+    comentario: "Distrito de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: konda
+    tipo: string
+    comentario: "Grupo de preços"
+    pii: nenhum
+    nulo: true
+  - nome: pltyp
+    tipo: string
+    comentario: "Tipo de lista de preços"
+    pii: nenhum
+    nulo: true
+  - nome: awahr
+    tipo: string
+    comentario: "Probabilidade de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: inco1
+    tipo: string
+    comentario: "Incoterms (parte 1)"
+    pii: nenhum
+    nulo: true
+  - nome: inco2
+    tipo: string
+    comentario: "Incoterms (parte 2)"
+    pii: nenhum
+    nulo: true
+  - nome: lifsd
+    tipo: string
+    comentario: "Bloqueio de entrega para a área de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: autlf
+    tipo: string
+    comentario: "Indicador de entrega completa"
+    pii: nenhum
+    nulo: true
+  - nome: antlf
+    tipo: string
+    comentario: "Número máximo de entregas parciais"
+    pii: nenhum
+    nulo: true
+  - nome: kztlf
+    tipo: string
+    comentario: "Entrega parcial por item"
+    pii: nenhum
+    nulo: true
+  - nome: kzazu
+    tipo: string
+    comentario: "Combinação de pedidos"
+    pii: nenhum
+    nulo: true
+  - nome: chspl
+    tipo: string
+    comentario: "Indicador de divisão de lote permitida"
+    pii: nenhum
+    nulo: true
+  - nome: lprio
+    tipo: string
+    comentario: "Prioridade de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: eikto
+    tipo: string
+    comentario: "Conta do cliente no parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: vsbed
+    tipo: string
+    comentario: "Condições de expedição"
+    pii: nenhum
+    nulo: true
+  - nome: faksd
+    tipo: string
+    comentario: "Bloqueio de faturamento para a área de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: mrnkz
+    tipo: string
+    comentario: "Manutenção manual de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: perfk
+    tipo: string
+    comentario: "Calendário de datas de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: perrl
+    tipo: string
+    comentario: "Calendário de lista de faturas"
+    pii: nenhum
+    nulo: true
+  - nome: kvakz
+    tipo: string
+    comentario: "Indicador de estimativa de custo"
+    pii: nenhum
+    nulo: true
+  - nome: kvawt
+    tipo: string
+    comentario: "Estimativa de custo máxima"
+    pii: nenhum
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: klabc
+    tipo: string
+    comentario: "Classificação ABC do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: ktgrd
+    tipo: string
+    comentario: "Grupo de atribuição de conta do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: zterm
+    tipo: string
+    comentario: "Condições de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: vwerk
+    tipo: string
+    comentario: "Centro fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: vkgrp
+    tipo: string
+    comentario: "Grupo de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vkbur
+    tipo: string
+    comentario: "Escritório de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vsort
+    tipo: string
+    comentario: "Proposta de item"
+    pii: nenhum
+    nulo: true
+  - nome: kvgr1
+    tipo: string
+    comentario: "Grupo de clientes 1"
+    pii: indireto
+    nulo: true
+  - nome: kvgr2
+    tipo: string
+    comentario: "Grupo de clientes 2"
+    pii: indireto
+    nulo: true
+  - nome: kvgr3
+    tipo: string
+    comentario: "Grupo de clientes 3"
+    pii: indireto
+    nulo: true
+  - nome: kvgr4
+    tipo: string
+    comentario: "Grupo de clientes 4"
+    pii: indireto
+    nulo: true
+  - nome: kvgr5
+    tipo: string
+    comentario: "Grupo de clientes 5"
+    pii: indireto
+    nulo: true
+  - nome: bokre
+    tipo: string
+    comentario: "Indicador de rebate"
+    pii: nenhum
+    nulo: true
+  - nome: boidt
+    tipo: string
+    comentario: "Índice de rebate"
+    pii: nenhum
+    nulo: true
+  - nome: kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: prfre
+    tipo: string
+    comentario: "Determinação de preço"
+    pii: nenhum
+    nulo: true
+  - nome: prat1
+    tipo: string
+    comentario: "Atributo de produto 1"
+    pii: nenhum
+    nulo: true
+  - nome: prat2
+    tipo: string
+    comentario: "Atributo de produto 2"
+    pii: nenhum
+    nulo: true
+  - nome: prat3
+    tipo: string
+    comentario: "Atributo de produto 3"
+    pii: nenhum
+    nulo: true
+  - nome: prat4
+    tipo: string
+    comentario: "Atributo de produto 4"
+    pii: nenhum
+    nulo: true
+  - nome: prat5
+    tipo: string
+    comentario: "Atributo de produto 5"
+    pii: nenhum
+    nulo: true
+  - nome: prat6
+    tipo: string
+    comentario: "Atributo de produto 6"
+    pii: nenhum
+    nulo: true
+  - nome: prat7
+    tipo: string
+    comentario: "Atributo de produto 7"
+    pii: nenhum
+    nulo: true
+  - nome: prat8
+    tipo: string
+    comentario: "Atributo de produto 8"
+    pii: nenhum
+    nulo: true
+  - nome: prat9
+    tipo: string
+    comentario: "Atributo de produto 9"
+    pii: nenhum
+    nulo: true
+  - nome: prata
+    tipo: string
+    comentario: "Atributo de produto 10"
+    pii: nenhum
+    nulo: true
+  - nome: kabss
+    tipo: string
+    comentario: "Procedimento de garantia de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: kkber
+    tipo: string
+    comentario: "Área de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cassd
+    tipo: string
+    comentario: "Bloqueio de vendas para a área de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: rdoff
+    tipo: string
+    comentario: "Indicador de desativação de arredondamento"
+    pii: nenhum
+    nulo: true
+  - nome: agrel
+    tipo: string
+    comentario: "Indicador de negócio de agência"
+    pii: nenhum
+    nulo: true
+  - nome: megru
+    tipo: string
+    comentario: "Grupo de unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: uebto
+    tipo: string
+    comentario: "Tolerância de entrega a maior"
+    pii: nenhum
+    nulo: true
+  - nome: untto
+    tipo: string
+    comentario: "Tolerância de entrega a menor"
+    pii: nenhum
+    nulo: true
+  - nome: uebtk
+    tipo: string
+    comentario: "Indicador de tolerância ilimitada"
+    pii: nenhum
+    nulo: true
+  - nome: pvksm
+    tipo: string
+    comentario: "Procedimento do cliente para planejamento preventivo"
+    pii: nenhum
+    nulo: true
+  - nome: podkz
+    tipo: string
+    comentario: "Indicador de relevância para prova de entrega (POD)"
+    pii: nenhum
+    nulo: true
+  - nome: podtg
+    tipo: string
+    comentario: "Prazo para prova de entrega (POD)"
+    pii: nenhum
+    nulo: true
+  - nome: blind
+    tipo: string
+    comentario: "Indicador de índice de documentos ativo"
+    pii: nenhum
+    nulo: true
+  - nome: carrier_notif
+    tipo: string
+    comentario: "Indicador de notificação ao transportador"
+    pii: nenhum
+    nulo: true
+  - nome: cvp_xblck_v
+    tipo: string
+    comentario: "Indicador de finalidade comercial concluída"
+    pii: nenhum
+    nulo: true
+  - nome: incov
+    tipo: string
+    comentario: "Versão dos Incoterms"
+    pii: nenhum
+    nulo: true
+  - nome: inco2_l
+    tipo: string
+    comentario: "Local Incoterms 1"
+    pii: nenhum
+    nulo: true
+  - nome: inco3_l
+    tipo: string
+    comentario: "Local Incoterms 2"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_kvgr6
+    tipo: string
+    comentario: "Grupo de clientes 6"
+    pii: indireto
+    nulo: true
+  - nome: fsh_kvgr7
+    tipo: string
+    comentario: "Grupo de clientes 7"
+    pii: indireto
+    nulo: true
+  - nome: fsh_kvgr8
+    tipo: string
+    comentario: "Grupo de clientes 8"
+    pii: indireto
+    nulo: true
+  - nome: fsh_kvgr9
+    tipo: string
+    comentario: "Grupo de clientes 9"
+    pii: indireto
+    nulo: true
+  - nome: fsh_kvgr10
+    tipo: string
+    comentario: "Grupo de clientes 10"
+    pii: indireto
+    nulo: true
+  - nome: fsh_grreg
+    tipo: string
+    comentario: "Regra de agrupamento"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_resgy
+    tipo: string
+    comentario: "Estratégia de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_sc_cid
+    tipo: string
+    comentario: "ID do cliente/fornecedor na cadeia de suprimentos"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vas_detc
+    tipo: string
+    comentario: "Modo de determinação de serviço de valor agregado (VAS)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vas_cg
+    tipo: string
+    comentario: "Grupo de clientes VAS"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_grsgy
+    tipo: string
+    comentario: "Estratégia de agrupamento"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_ss
+    tipo: string
+    comentario: "Estratégia de programação de pedidos"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_msocdc
+    tipo: string
+    comentario: "Centro de distribuição do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_msopid
+    tipo: string
+    comentario: "ID do cliente no parceiro"
+    pii: nenhum
+    nulo: true

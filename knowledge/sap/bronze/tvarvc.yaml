@@ -1,0 +1,52 @@
+tabela: tvarvc
+camada: bronze
+comentario: "Tabela de variáveis de variante de seleção (dependente de mandante)"
+ingestao: cdc
+fonte: sap.tvarvc
+chave_primaria: [mandt, name, type, numb]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: name
+    tipo: string
+    comentario: "Nome da variável"
+    pii: nenhum
+    nulo: false
+  - nome: type
+    tipo: string
+    comentario: "Tipo de seleção"
+    pii: nenhum
+    nulo: false
+  - nome: numb
+    tipo: string
+    comentario: "Número sequencial"
+    pii: nenhum
+    nulo: false
+  - nome: sign
+    tipo: string
+    comentario: "Inclusão/exclusão (INCL/EXCL)"
+    pii: nenhum
+    nulo: true
+  - nome: opti
+    tipo: string
+    comentario: "Opção de seleção"
+    pii: nenhum
+    nulo: true
+  - nome: low
+    tipo: string
+    comentario: "Valor inferior do campo"
+    pii: nenhum
+    nulo: true
+  - nome: high
+    tipo: string
+    comentario: "Valor superior do campo"
+    pii: nenhum
+    nulo: true
+  - nome: clie_indep
+    tipo: string
+    comentario: "Independente de mandante (indicador)"
+    pii: nenhum
+    nulo: true

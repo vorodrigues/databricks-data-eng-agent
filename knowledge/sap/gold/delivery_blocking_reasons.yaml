@@ -1,0 +1,43 @@
+tabela: delivery_blocking_reasons
+camada: gold
+comentario: "Nomes descritivos (dependentes de idioma) para os motivos de bloqueio de entrega SAP (TVLST), para identificação das causas de bloqueios no processo de remessa."
+entidade: obt
+ingestao: custom
+fontes: [silver.likp, silver.lips, silver.tcurx, silver.tvlst]
+chave_primaria: [client_mandt, language_key_spras, default_delivery_block_lifsp]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: default_delivery_block_lifsp
+    tipo: string
+    comentario: "Motivo de bloqueio de entrega padrão"
+    pii: nenhum
+    nulo: false
+  - nome: delivery_blocking_reason_vtext
+    tipo: string
+    comentario: "Descrição do motivo de bloqueio de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: recordstamp
+    tipo: timestamp
+    comentario: "Timestamp de registro"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery"
+    pii: nenhum
+    nulo: true

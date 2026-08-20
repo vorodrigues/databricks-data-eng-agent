@@ -1,0 +1,53 @@
+tabela: financial_statement_structure_texts
+camada: gold
+comentario: "Descrições textuais dependentes de idioma para itens de demonstrações financeiras a partir de FAGL_011QT, para suporte a hierarquias de relatórios financeiros."
+entidade: obt
+ingestao: custom
+fontes: [silver.fagl_011pc, silver.fagl_011qt, silver.fagl_011zc]
+chave_primaria: [client_mandt, financial_statement_version_versn, language_key_spras, financial_statement_item_ergsl, text_type_txtyp, line_number_zeile]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: financial_statement_version_versn
+    tipo: string
+    comentario: "Versão de demonstrações financeiras"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: financial_statement_item_ergsl
+    tipo: string
+    comentario: "Item das demonstrações financeiras"
+    pii: nenhum
+    nulo: false
+  - nome: text_type_txtyp
+    tipo: string
+    comentario: "Tipo de texto"
+    pii: nenhum
+    nulo: false
+  - nome: line_number_zeile
+    tipo: string
+    comentario: "Número de linha"
+    pii: nenhum
+    nulo: false
+  - nome: financial_statement_item_text_txt45
+    tipo: string
+    comentario: "Texto do item de demonstração financeira"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

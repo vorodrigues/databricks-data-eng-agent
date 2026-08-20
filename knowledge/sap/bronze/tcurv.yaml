@@ -1,0 +1,52 @@
+tabela: tcurv
+camada: bronze
+comentario: "Tipos de taxa de câmbio para conversão de moeda"
+ingestao: cdc
+fonte: sap.tcurv
+chave_primaria: [mandt, kurst]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: false
+  - nome: xinvr
+    tipo: string
+    comentario: "Taxa inversa (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: bwaer
+    tipo: string
+    comentario: "Moeda de referência"
+    pii: nenhum
+    nulo: true
+  - nome: xbwrl
+    tipo: string
+    comentario: "Moeda base igual à moeda de origem (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: gkuzu
+    tipo: string
+    comentario: "Taxa de compra em relação a"
+    pii: nenhum
+    nulo: true
+  - nome: bkuzu
+    tipo: string
+    comentario: "Taxa de venda em relação a"
+    pii: nenhum
+    nulo: true
+  - nome: xfixd
+    tipo: string
+    comentario: "Taxas de câmbio fixas (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: xeuro
+    tipo: string
+    comentario: "Conversão conforme EMU (indicador)"
+    pii: nenhum
+    nulo: true

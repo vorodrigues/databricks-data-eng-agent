@@ -1,0 +1,122 @@
+tabela: but0bk
+camada: bronze
+comentario: "Detalhes bancários do parceiro de negócios (BP)"
+ingestao: cdc
+fonte: sap.but0bk
+chave_primaria: [client, partner, bkvid]
+colunas:
+  - nome: client
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: partner
+    tipo: string
+    comentario: "Número do parceiro de negócios"
+    pii: indireto
+    nulo: false
+  - nome: bkvid
+    tipo: string
+    comentario: "ID dos detalhes bancários"
+    pii: nenhum
+    nulo: false
+  - nome: banks
+    tipo: string
+    comentario: "País do banco"
+    pii: nenhum
+    nulo: true
+  - nome: bankl
+    tipo: string
+    comentario: "Chave do banco (código de roteamento)"
+    pii: nenhum
+    nulo: true
+  - nome: bankn
+    tipo: string
+    comentario: "Número da conta bancária"
+    pii: direto
+    nulo: true
+  - nome: bkont
+    tipo: string
+    comentario: "Chave de controle bancário"
+    pii: nenhum
+    nulo: true
+  - nome: bkref
+    tipo: string
+    comentario: "Detalhes de referência bancária"
+    pii: nenhum
+    nulo: true
+  - nome: koinh
+    tipo: string
+    comentario: "Nome do titular da conta bancária"
+    pii: direto
+    nulo: true
+  - nome: bkext
+    tipo: string
+    comentario: "ID externo dos detalhes bancários"
+    pii: nenhum
+    nulo: true
+  - nome: xezer
+    tipo: string
+    comentario: "Indicador de autorização de cobrança direta"
+    pii: nenhum
+    nulo: true
+  - nome: accname
+    tipo: string
+    comentario: "Nome da conta bancária"
+    pii: direto
+    nulo: true
+  - nome: move_bkvid
+    tipo: string
+    comentario: "ID dos detalhes bancários de destino (migração)"
+    pii: nenhum
+    nulo: true
+  - nome: protect
+    tipo: string
+    comentario: "Indicador de sensibilidade do registro"
+    pii: nenhum
+    nulo: true
+  - nome: bk_valid_from
+    tipo: date
+    comentario: "Data de início de validade dos dados bancários"
+    pii: nenhum
+    nulo: true
+  - nome: bk_valid_to
+    tipo: date
+    comentario: "Data de fim de validade dos dados bancários"
+    pii: nenhum
+    nulo: true
+  - nome: bk_move_date
+    tipo: date
+    comentario: "Data de alteração dos dados bancários"
+    pii: nenhum
+    nulo: true
+  - nome: iban
+    tipo: string
+    comentario: "IBAN (número de conta bancária internacional)"
+    pii: indireto
+    nulo: true
+  - nome: bank_guid
+    tipo: string
+    comentario: "GUID interno do banco"
+    pii: nenhum
+    nulo: true
+  - nome: account_id
+    tipo: string
+    comentario: "Número da conta bancária (identificador)"
+    pii: direto
+    nulo: true
+  - nome: check_digit
+    tipo: string
+    comentario: "Dígito verificador da conta bancária"
+    pii: nenhum
+    nulo: true
+  - nome: account_type
+    tipo: string
+    comentario: "Tipo de conta bancária"
+    pii: nenhum
+    nulo: true
+  - nome: bp_eew_but0bk
+    tipo: string
+    comentario: "Campo dummy de extensão (tamanho 1)"
+    pii: nenhum
+    nulo: true

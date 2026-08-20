@@ -1,0 +1,552 @@
+tabela: mbew
+camada: bronze
+comentario: "Valoração de material (saldos de estoque e preços por área/tipo de avaliação)"
+ingestao: cdc
+fonte: sap.mbew
+chave_primaria: [mandt, matnr, bwkey, bwtar]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número de material"
+    pii: nenhum
+    nulo: false
+  - nome: bwkey
+    tipo: string
+    comentario: "Área de avaliação"
+    pii: nenhum
+    nulo: false
+  - nome: bwtar
+    tipo: string
+    comentario: "Tipo de avaliação"
+    pii: nenhum
+    nulo: false
+  - nome: lvorm
+    tipo: string
+    comentario: "Indicador de exclusão do tipo de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: lbkum
+    tipo: decimal(23,2)
+    comentario: "Estoque total valorado"
+    pii: nenhum
+    nulo: true
+  - nome: salk3
+    tipo: decimal(23,2)
+    comentario: "Valor total do estoque"
+    pii: nenhum
+    nulo: true
+  - nome: vprsv
+    tipo: string
+    comentario: "Indicador de controle de preço (V=preço médio móvel, S=preço padrão)"
+    pii: nenhum
+    nulo: true
+  - nome: verpr
+    tipo: decimal(23,2)
+    comentario: "Preço médio móvel"
+    pii: nenhum
+    nulo: true
+  - nome: stprs
+    tipo: decimal(23,2)
+    comentario: "Preço padrão"
+    pii: nenhum
+    nulo: true
+  - nome: peinh
+    tipo: decimal(23,2)
+    comentario: "Unidade de preço (base de quantidade para o preço)"
+    pii: nenhum
+    nulo: true
+  - nome: bklas
+    tipo: string
+    comentario: "Classe de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: salkv
+    tipo: decimal(23,2)
+    comentario: "Valor total pelo preço médio móvel"
+    pii: nenhum
+    nulo: true
+  - nome: vmkum
+    tipo: decimal(23,2)
+    comentario: "Estoque total do período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vmsal
+    tipo: decimal(23,2)
+    comentario: "Valor total do período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vmvpr
+    tipo: string
+    comentario: "Controle de preço do período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vmver
+    tipo: decimal(23,2)
+    comentario: "Preço médio móvel do período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vmstp
+    tipo: decimal(23,2)
+    comentario: "Preço padrão do período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vmpei
+    tipo: decimal(23,2)
+    comentario: "Unidade de preço do período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vmbkl
+    tipo: string
+    comentario: "Classe de avaliação do período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vmsav
+    tipo: decimal(23,2)
+    comentario: "Valor total do penúltimo período"
+    pii: nenhum
+    nulo: true
+  - nome: vjkum
+    tipo: decimal(23,2)
+    comentario: "Estoque total do ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vjsal
+    tipo: decimal(23,2)
+    comentario: "Valor total do ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vjvpr
+    tipo: string
+    comentario: "Controle de preço do ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vjver
+    tipo: decimal(23,2)
+    comentario: "Preço médio móvel do ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vjstp
+    tipo: decimal(23,2)
+    comentario: "Preço padrão do ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vjpei
+    tipo: decimal(23,2)
+    comentario: "Unidade de preço do ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vjbkl
+    tipo: string
+    comentario: "Classe de avaliação do ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vjsav
+    tipo: decimal(23,2)
+    comentario: "Valor total do exercício anterior"
+    pii: nenhum
+    nulo: true
+  - nome: lfgja
+    tipo: int
+    comentario: "Exercício fiscal do período atual"
+    pii: nenhum
+    nulo: true
+  - nome: lfmon
+    tipo: int
+    comentario: "Período contábil atual (mês)"
+    pii: nenhum
+    nulo: true
+  - nome: bwtty
+    tipo: string
+    comentario: "Categoria de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: stprv
+    tipo: decimal(23,2)
+    comentario: "Preço anterior (antes da última alteração)"
+    pii: nenhum
+    nulo: true
+  - nome: laepr
+    tipo: date
+    comentario: "Data da última alteração de preço"
+    pii: nenhum
+    nulo: true
+  - nome: zkprs
+    tipo: decimal(23,2)
+    comentario: "Preço futuro planejado"
+    pii: nenhum
+    nulo: true
+  - nome: zkdat
+    tipo: date
+    comentario: "Data de validade do preço futuro"
+    pii: nenhum
+    nulo: true
+  - nome: timestamp
+    tipo: timestamp
+    comentario: "Timestamp de atualização do registro"
+    pii: nenhum
+    nulo: true
+  - nome: bwprs
+    tipo: decimal(23,2)
+    comentario: "Preço fiscal 1"
+    pii: nenhum
+    nulo: true
+  - nome: bwprh
+    tipo: decimal(23,2)
+    comentario: "Preço comercial 1"
+    pii: nenhum
+    nulo: true
+  - nome: vjbws
+    tipo: decimal(23,2)
+    comentario: "Preço fiscal 3 (ano anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: vjbwh
+    tipo: decimal(23,2)
+    comentario: "Preço comercial 3 (ano anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: vvjsl
+    tipo: decimal(23,2)
+    comentario: "Valor total (dois exercícios anteriores)"
+    pii: nenhum
+    nulo: true
+  - nome: vvjlb
+    tipo: decimal(23,2)
+    comentario: "Estoque total (dois exercícios anteriores)"
+    pii: nenhum
+    nulo: true
+  - nome: vvmlb
+    tipo: decimal(23,2)
+    comentario: "Estoque total (dois períodos anteriores)"
+    pii: nenhum
+    nulo: true
+  - nome: vvsal
+    tipo: decimal(23,2)
+    comentario: "Valor total do período anterior ao penúltimo"
+    pii: nenhum
+    nulo: true
+  - nome: zplpr
+    tipo: decimal(23,2)
+    comentario: "Preço planejado futuro"
+    pii: nenhum
+    nulo: true
+  - nome: zplp1
+    tipo: decimal(23,2)
+    comentario: "Preço planejado 1"
+    pii: nenhum
+    nulo: true
+  - nome: zplp2
+    tipo: decimal(23,2)
+    comentario: "Preço planejado 2"
+    pii: nenhum
+    nulo: true
+  - nome: zplp3
+    tipo: decimal(23,2)
+    comentario: "Preço planejado 3"
+    pii: nenhum
+    nulo: true
+  - nome: zpld1
+    tipo: date
+    comentario: "Data do preço planejado 1"
+    pii: nenhum
+    nulo: true
+  - nome: zpld2
+    tipo: date
+    comentario: "Data do preço planejado 2"
+    pii: nenhum
+    nulo: true
+  - nome: zpld3
+    tipo: date
+    comentario: "Data do preço planejado 3"
+    pii: nenhum
+    nulo: true
+  - nome: pperz
+    tipo: int
+    comentario: "Período do custo estimado futuro"
+    pii: nenhum
+    nulo: true
+  - nome: pperl
+    tipo: int
+    comentario: "Período do custo estimado atual"
+    pii: nenhum
+    nulo: true
+  - nome: pperv
+    tipo: int
+    comentario: "Período do custo estimado anterior"
+    pii: nenhum
+    nulo: true
+  - nome: kalkz
+    tipo: string
+    comentario: "Número do custo estimado futuro"
+    pii: nenhum
+    nulo: true
+  - nome: kalkl
+    tipo: string
+    comentario: "Número do custo estimado atual"
+    pii: nenhum
+    nulo: true
+  - nome: kalkv
+    tipo: string
+    comentario: "Número do custo estimado anterior"
+    pii: nenhum
+    nulo: true
+  - nome: kalsc
+    tipo: string
+    comentario: "Chave de overhead (base de custo indireto)"
+    pii: nenhum
+    nulo: true
+  - nome: xlifo
+    tipo: string
+    comentario: "Indicador: relevante para LIFO/FIFO"
+    pii: nenhum
+    nulo: true
+  - nome: mypol
+    tipo: string
+    comentario: "Pool LIFO do material"
+    pii: nenhum
+    nulo: true
+  - nome: bwph1
+    tipo: decimal(23,2)
+    comentario: "Preço comercial 2"
+    pii: nenhum
+    nulo: true
+  - nome: bwps1
+    tipo: decimal(23,2)
+    comentario: "Preço fiscal 2"
+    pii: nenhum
+    nulo: true
+  - nome: abwkz
+    tipo: string
+    comentario: "Indicador de desvalorização"
+    pii: nenhum
+    nulo: true
+  - nome: pstat
+    tipo: string
+    comentario: "Status de manutenção do registro de valoração"
+    pii: nenhum
+    nulo: true
+  - nome: kaln1
+    tipo: string
+    comentario: "Número do custo estimado de produção"
+    pii: nenhum
+    nulo: true
+  - nome: kalnr
+    tipo: string
+    comentario: "Número do custo estimado (referência)"
+    pii: nenhum
+    nulo: true
+  - nome: bwva1
+    tipo: string
+    comentario: "Variante de avaliação 1"
+    pii: nenhum
+    nulo: true
+  - nome: bwva2
+    tipo: string
+    comentario: "Variante de avaliação 2"
+    pii: nenhum
+    nulo: true
+  - nome: bwva3
+    tipo: string
+    comentario: "Variante de avaliação 3"
+    pii: nenhum
+    nulo: true
+  - nome: vers1
+    tipo: string
+    comentario: "Versão de custeio 1"
+    pii: nenhum
+    nulo: true
+  - nome: vers2
+    tipo: string
+    comentario: "Versão de custeio 2"
+    pii: nenhum
+    nulo: true
+  - nome: vers3
+    tipo: string
+    comentario: "Versão de custeio 3"
+    pii: nenhum
+    nulo: true
+  - nome: hrkft
+    tipo: string
+    comentario: "Grupo de origem do material"
+    pii: nenhum
+    nulo: true
+  - nome: kosgr
+    tipo: string
+    comentario: "Grupo de overhead"
+    pii: nenhum
+    nulo: true
+  - nome: pprdz
+    tipo: int
+    comentario: "Período contábil futuro"
+    pii: nenhum
+    nulo: true
+  - nome: pprdl
+    tipo: int
+    comentario: "Período contábil atual"
+    pii: nenhum
+    nulo: true
+  - nome: pprdv
+    tipo: int
+    comentario: "Período contábil anterior"
+    pii: nenhum
+    nulo: true
+  - nome: pdatz
+    tipo: int
+    comentario: "Exercício fiscal futuro"
+    pii: nenhum
+    nulo: true
+  - nome: pdatl
+    tipo: int
+    comentario: "Exercício fiscal atual"
+    pii: nenhum
+    nulo: true
+  - nome: pdatv
+    tipo: int
+    comentario: "Exercício fiscal anterior"
+    pii: nenhum
+    nulo: true
+  - nome: ekalr
+    tipo: string
+    comentario: "Indicador: custo estimado com estrutura de quantidades"
+    pii: nenhum
+    nulo: true
+  - nome: vplpr
+    tipo: decimal(23,2)
+    comentario: "Preço planejado anterior"
+    pii: nenhum
+    nulo: true
+  - nome: mlmaa
+    tipo: string
+    comentario: "Indicador: razão de materiais ativo"
+    pii: nenhum
+    nulo: true
+  - nome: mlast
+    tipo: string
+    comentario: "Controle de determinação de preço do material (ML)"
+    pii: nenhum
+    nulo: true
+  - nome: lplpr
+    tipo: decimal(23,2)
+    comentario: "Preço planejado atual"
+    pii: nenhum
+    nulo: true
+  - nome: vksal
+    tipo: decimal(23,2)
+    comentario: "Valor total ao preço padrão"
+    pii: nenhum
+    nulo: true
+  - nome: hkmat
+    tipo: string
+    comentario: "Origem do material"
+    pii: nenhum
+    nulo: true
+  - nome: sperw
+    tipo: string
+    comentario: "Bloqueio para inventário físico"
+    pii: nenhum
+    nulo: true
+  - nome: kziwl
+    tipo: string
+    comentario: "Indicador: material VO para inventário físico"
+    pii: nenhum
+    nulo: true
+  - nome: wlinl
+    tipo: date
+    comentario: "Data do último inventário físico"
+    pii: nenhum
+    nulo: true
+  - nome: abciw
+    tipo: string
+    comentario: "Indicador ABC para inventário cíclico"
+    pii: nenhum
+    nulo: true
+  - nome: bwspa
+    tipo: decimal(23,2)
+    comentario: "Margem de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: lplpx
+    tipo: decimal(23,2)
+    comentario: "Parcela fixa do preço planejado atual"
+    pii: nenhum
+    nulo: true
+  - nome: vplpx
+    tipo: decimal(23,2)
+    comentario: "Parcela fixa do preço planejado anterior"
+    pii: nenhum
+    nulo: true
+  - nome: fplpx
+    tipo: decimal(23,2)
+    comentario: "Parcela fixa do preço planejado futuro"
+    pii: nenhum
+    nulo: true
+  - nome: lbwst
+    tipo: string
+    comentario: "Estratégia de avaliação atual"
+    pii: nenhum
+    nulo: true
+  - nome: vbwst
+    tipo: string
+    comentario: "Estratégia de avaliação anterior"
+    pii: nenhum
+    nulo: true
+  - nome: fbwst
+    tipo: string
+    comentario: "Estratégia de avaliação futura"
+    pii: nenhum
+    nulo: true
+  - nome: eklas
+    tipo: string
+    comentario: "Classe de avaliação: estoque de pedido de venda"
+    pii: nenhum
+    nulo: true
+  - nome: qklas
+    tipo: string
+    comentario: "Classe de avaliação: estoque de projeto"
+    pii: nenhum
+    nulo: true
+  - nome: mtuse
+    tipo: string
+    comentario: "Utilização do material"
+    pii: nenhum
+    nulo: true
+  - nome: mtorg
+    tipo: string
+    comentario: "Origem do material (ML)"
+    pii: nenhum
+    nulo: true
+  - nome: ownpr
+    tipo: string
+    comentario: "Indicador: produzido internamente"
+    pii: nenhum
+    nulo: true
+  - nome: xbewm
+    tipo: string
+    comentario: "Indicador: unidade de medida valorada"
+    pii: nenhum
+    nulo: true
+  - nome: bwpei
+    tipo: decimal(23,2)
+    comentario: "Unidade de preço para preços fiscais e comerciais"
+    pii: nenhum
+    nulo: true
+  - nome: mbrue
+    tipo: string
+    comentario: "Campo sem descrição disponível na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: oklas
+    tipo: string
+    comentario: "Classe de avaliação: estoque especial em fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: oippinv
+    tipo: decimal(23,2)
+    comentario: "Estoque de inventário pré-pago"
+    pii: nenhum
+    nulo: true

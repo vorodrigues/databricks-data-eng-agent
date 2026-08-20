@@ -1,0 +1,27 @@
+tabela: t001t
+camada: bronze
+comentario: "Textos dependentes de empresa (company code)"
+ingestao: cdc
+fonte: sap.t001t
+chave_primaria: [mandt, bukrs, txtna]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Codigo da empresa (BUKRS)"
+    pii: nenhum
+    nulo: false
+  - nome: txtna
+    tipo: string
+    comentario: "Nome do texto"
+    pii: nenhum
+    nulo: false
+  - nome: ltext
+    tipo: string
+    comentario: "Utilizacao/descricao do texto"
+    pii: nenhum
+    nulo: true

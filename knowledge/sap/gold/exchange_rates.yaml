@@ -1,0 +1,58 @@
+tabela: exchange_rates
+camada: gold
+comentario: "Taxas de câmbio diárias expandidas entre pares de moedas a partir de TCURR e TCURF, para conversões financeiras em transações internacionais e auditoria consolidada."
+entidade: obt
+ingestao: custom
+fontes: [silver.tcurc, silver.tcurt, silver.tcurf, silver.tcurr, silver.tcurx]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_type_kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: from_currency_fcurr
+    tipo: string
+    comentario: "Moeda de origem"
+    pii: nenhum
+    nulo: true
+  - nome: to_currency_tcurr
+    tipo: string
+    comentario: "Moeda de destino"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_ukurs
+    tipo: decimal(38,9)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true
+  - nome: conv_date
+    tipo: date
+    comentario: "Data de conversão (expandida)"
+    pii: nenhum
+    nulo: true
+  - nome: start_date
+    tipo: date
+    comentario: "Data inicial de validade"
+    pii: nenhum
+    nulo: true
+  - nome: end_date
+    tipo: date
+    comentario: "Data final de validade"
+    pii: nenhum
+    nulo: true

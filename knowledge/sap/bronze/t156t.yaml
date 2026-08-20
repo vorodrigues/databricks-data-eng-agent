@@ -1,0 +1,47 @@
+tabela: t156t
+camada: bronze
+comentario: "Texto do tipo de movimento de mercadoria"
+ingestao: cdc
+fonte: sap.t156t
+chave_primaria: [mandt, spras, bwart, sobkz, kzbew, kzzug, kzvbr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: bwart
+    tipo: string
+    comentario: "Tipo de movimento de mercadoria"
+    pii: nenhum
+    nulo: false
+  - nome: sobkz
+    tipo: string
+    comentario: "Tipo de estoque especial"
+    pii: nenhum
+    nulo: false
+  - nome: kzbew
+    tipo: string
+    comentario: "Indicador de movimento"
+    pii: nenhum
+    nulo: false
+  - nome: kzzug
+    tipo: string
+    comentario: "Indicador de recebimento"
+    pii: nenhum
+    nulo: false
+  - nome: kzvbr
+    tipo: string
+    comentario: "Indicador de consumo"
+    pii: nenhum
+    nulo: false
+  - nome: btext
+    tipo: string
+    comentario: "Texto do tipo de movimento"
+    pii: nenhum
+    nulo: true

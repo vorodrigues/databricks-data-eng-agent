@@ -1,0 +1,42 @@
+tabela: fagl_011qt
+camada: bronze
+comentario: "Estrutura de demonstracao financeira: textos dos itens de demonstracao financeira"
+ingestao: cdc
+fonte: sap.fagl_011qt
+chave_primaria: [mandt, versn, spras, ergsl, txtyp, zeile]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: versn
+    tipo: string
+    comentario: "Versao da estrutura de demonstracao financeira (FS Version)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: ergsl
+    tipo: string
+    comentario: "Item da demonstracao financeira"
+    pii: nenhum
+    nulo: false
+  - nome: txtyp
+    tipo: string
+    comentario: "Tipo de texto"
+    pii: nenhum
+    nulo: false
+  - nome: zeile
+    tipo: int
+    comentario: "Linha"
+    pii: nenhum
+    nulo: false
+  - nome: txt45
+    tipo: string
+    comentario: "Texto do item"
+    pii: nenhum
+    nulo: true

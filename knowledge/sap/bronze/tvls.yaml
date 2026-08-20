@@ -1,0 +1,67 @@
+tabela: tvls
+camada: bronze
+comentario: "Motivos e critérios de bloqueio de entrega"
+ingestao: cdc
+fonte: sap.tvls
+chave_primaria: [mandt, lifsp]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: lifsp
+    tipo: string
+    comentario: "Código de bloqueio de entrega"
+    pii: nenhum
+    nulo: false
+  - nome: spelf
+    tipo: string
+    comentario: "Bloqueio de lista de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: speko
+    tipo: string
+    comentario: "Bloqueio de separação"
+    pii: nenhum
+    nulo: true
+  - nome: spewa
+    tipo: string
+    comentario: "Bloqueio de saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: speft
+    tipo: string
+    comentario: "Bloqueio de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: spebe
+    tipo: string
+    comentario: "Bloqueio de confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: speau
+    tipo: string
+    comentario: "Bloqueio de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: spedr
+    tipo: string
+    comentario: "Bloqueio de impressão"
+    pii: nenhum
+    nulo: true
+  - nome: spevi
+    tipo: string
+    comentario: "Bloqueio de lista de vencimento de entregas"
+    pii: nenhum
+    nulo: true
+  - nome: mbdif
+    tipo: string
+    comentario: "Atraso de aprovisionamento"
+    pii: nenhum
+    nulo: true
+  - nome: preq_block
+    tipo: string
+    comentario: "Bloqueio de requisição de compra"
+    pii: nenhum
+    nulo: true

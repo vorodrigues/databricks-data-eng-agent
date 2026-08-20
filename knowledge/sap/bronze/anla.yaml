@@ -1,0 +1,732 @@
+tabela: anla
+camada: bronze
+comentario: "Segmento do cadastro de ativo imobilizado"
+ingestao: cdc
+fonte: sap.anla
+chave_primaria: [mandt, bukrs, anln1, anln2]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Codigo da empresa"
+    pii: nenhum
+    nulo: false
+  - nome: anln1
+    tipo: string
+    comentario: "Numero do ativo imobilizado"
+    pii: nenhum
+    nulo: false
+  - nome: anln2
+    tipo: string
+    comentario: "Subnumero do ativo imobilizado"
+    pii: nenhum
+    nulo: false
+  - nome: anlkl
+    tipo: string
+    comentario: "Classe do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: gegst
+    tipo: string
+    comentario: "Ativo tecnico"
+    pii: nenhum
+    nulo: true
+  - nome: anlar
+    tipo: string
+    comentario: "Tipo de ativo"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por (nome do usuario)"
+    pii: direto
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por (nome do usuario)"
+    pii: direto
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: xloev
+    tipo: string
+    comentario: "Marcado para exclusao"
+    pii: nenhum
+    nulo: true
+  - nome: xspeb
+    tipo: string
+    comentario: "Bloqueado para aquisicoes"
+    pii: nenhum
+    nulo: true
+  - nome: felei
+    tipo: string
+    comentario: "Regra de layout de tela"
+    pii: nenhum
+    nulo: true
+  - nome: ktogr
+    tipo: string
+    comentario: "Determinacao de conta"
+    pii: nenhum
+    nulo: true
+  - nome: xopvw
+    tipo: string
+    comentario: "Liquidacao por item"
+    pii: nenhum
+    nulo: true
+  - nome: anltp
+    tipo: string
+    comentario: "Categoria de ativo"
+    pii: nenhum
+    nulo: true
+  - nome: zujhr
+    tipo: string
+    comentario: "Ano de aquisicao"
+    pii: nenhum
+    nulo: true
+  - nome: zuper
+    tipo: string
+    comentario: "Periodo da primeira aquisicao"
+    pii: nenhum
+    nulo: true
+  - nome: zugdt
+    tipo: date
+    comentario: "Data da primeira aquisicao"
+    pii: nenhum
+    nulo: true
+  - nome: aktiv
+    tipo: date
+    comentario: "Data de ativacao (capitalizacao)"
+    pii: nenhum
+    nulo: true
+  - nome: abgdt
+    tipo: date
+    comentario: "Data do ultimo baixo"
+    pii: nenhum
+    nulo: true
+  - nome: deakt
+    tipo: date
+    comentario: "Data de desativacao"
+    pii: nenhum
+    nulo: true
+  - nome: gplab
+    tipo: date
+    comentario: "Data planejada para baixo"
+    pii: nenhum
+    nulo: true
+  - nome: bstdt
+    tipo: date
+    comentario: "Data do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: ord41
+    tipo: string
+    comentario: "Grupo de avaliacao 1"
+    pii: nenhum
+    nulo: true
+  - nome: ord42
+    tipo: string
+    comentario: "Grupo de avaliacao 2"
+    pii: nenhum
+    nulo: true
+  - nome: ord43
+    tipo: string
+    comentario: "Grupo de avaliacao 3"
+    pii: nenhum
+    nulo: true
+  - nome: ord44
+    tipo: string
+    comentario: "Grupo de avaliacao 4"
+    pii: nenhum
+    nulo: true
+  - nome: anlue
+    tipo: string
+    comentario: "Numero do ativo superior"
+    pii: nenhum
+    nulo: true
+  - nome: zuawa
+    tipo: string
+    comentario: "Chave de classificacao"
+    pii: nenhum
+    nulo: true
+  - nome: aneqk
+    tipo: string
+    comentario: "Gerenciar historicamente"
+    pii: nenhum
+    nulo: true
+  - nome: aneqs
+    tipo: string
+    comentario: "Indicador de conclusao"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Codigo do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: land1
+    tipo: string
+    comentario: "Pais de origem"
+    pii: nenhum
+    nulo: true
+  - nome: liefe
+    tipo: string
+    comentario: "Nome do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: herst
+    tipo: string
+    comentario: "Fabricante"
+    pii: nenhum
+    nulo: true
+  - nome: eigkz
+    tipo: string
+    comentario: "Indicador de propriedade"
+    pii: nenhum
+    nulo: true
+  - nome: aibn1
+    tipo: string
+    comentario: "Ativo original"
+    pii: nenhum
+    nulo: true
+  - nome: aibn2
+    tipo: string
+    comentario: "Subnumero do ativo AuC"
+    pii: nenhum
+    nulo: true
+  - nome: aibdt
+    tipo: date
+    comentario: "Data de aquisicao do ativo original"
+    pii: nenhum
+    nulo: true
+  - nome: urjhr
+    tipo: string
+    comentario: "Ano original de aquisicao"
+    pii: nenhum
+    nulo: true
+  - nome: urwrt
+    tipo: decimal(23,2)
+    comentario: "Valor original"
+    pii: nenhum
+    nulo: true
+  - nome: antei
+    tipo: decimal(23,2)
+    comentario: "Percentual de producao propria"
+    pii: nenhum
+    nulo: true
+  - nome: projn
+    tipo: string
+    comentario: "Nao utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: eaufn
+    tipo: string
+    comentario: "Ordem de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: typbz
+    tipo: string
+    comentario: "Nome do tipo"
+    pii: nenhum
+    nulo: true
+  - nome: izwek
+    tipo: string
+    comentario: "Motivo do investimento"
+    pii: nenhum
+    nulo: true
+  - nome: inken
+    tipo: string
+    comentario: "Incluir ativo"
+    pii: nenhum
+    nulo: true
+  - nome: ivdat
+    tipo: date
+    comentario: "Data do ultimo inventario"
+    pii: nenhum
+    nulo: true
+  - nome: invzu
+    tipo: string
+    comentario: "Nota de inventario"
+    pii: nenhum
+    nulo: true
+  - nome: vmgli
+    tipo: string
+    comentario: "Chave de classificacao"
+    pii: nenhum
+    nulo: true
+  - nome: xvrmw
+    tipo: string
+    comentario: "Valor patrimonial liquido manual"
+    pii: nenhum
+    nulo: true
+  - nome: wrtma
+    tipo: decimal(23,2)
+    comentario: "Valor patrimonial liquido manual"
+    pii: nenhum
+    nulo: true
+  - nome: ehwrt
+    tipo: decimal(23,2)
+    comentario: "Valor avaliado (assessment)"
+    pii: nenhum
+    nulo: true
+  - nome: aufla
+    tipo: string
+    comentario: "Transferido de"
+    pii: nenhum
+    nulo: true
+  - nome: ehwzu
+    tipo: date
+    comentario: "Data do aviso de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: ehwnr
+    tipo: string
+    comentario: "Numero do aviso de avaliacao fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: gruvo
+    tipo: string
+    comentario: "Registro de imoveis de"
+    pii: nenhum
+    nulo: true
+  - nome: grein
+    tipo: string
+    comentario: "Entrada por"
+    pii: nenhum
+    nulo: true
+  - nome: grbnd
+    tipo: string
+    comentario: "Volume/Pagina/Numero de serie"
+    pii: nenhum
+    nulo: true
+  - nome: grblt
+    tipo: string
+    comentario: "Pagina do registro de imoveis"
+    pii: nenhum
+    nulo: true
+  - nome: grlfd
+    tipo: string
+    comentario: "Numero sequencial do registro de imoveis"
+    pii: nenhum
+    nulo: true
+  - nome: flurk
+    tipo: string
+    comentario: "Mapa/parcela do registro de imoveis"
+    pii: nenhum
+    nulo: true
+  - nome: flurn
+    tipo: string
+    comentario: "Numero da parcela"
+    pii: nenhum
+    nulo: true
+  - nome: fiamt
+    tipo: string
+    comentario: "Reparticao de impostos"
+    pii: nenhum
+    nulo: true
+  - nome: stadt
+    tipo: string
+    comentario: "Municipio"
+    pii: nenhum
+    nulo: true
+  - nome: grund
+    tipo: string
+    comentario: "Motivo da avaliacao manual"
+    pii: nenhum
+    nulo: true
+  - nome: feins
+    tipo: string
+    comentario: "Unidade de area"
+    pii: nenhum
+    nulo: true
+  - nome: grufl
+    tipo: decimal(23,2)
+    comentario: "Area"
+    pii: nenhum
+    nulo: true
+  - nome: invnr
+    tipo: string
+    comentario: "Numero de inventario"
+    pii: nenhum
+    nulo: true
+  - nome: vbund
+    tipo: string
+    comentario: "Numero do parceiro comercial"
+    pii: nenhum
+    nulo: true
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: txt50
+    tipo: string
+    comentario: "Descricao"
+    pii: nenhum
+    nulo: true
+  - nome: txa50
+    tipo: string
+    comentario: "Descricao adicional"
+    pii: nenhum
+    nulo: true
+  - nome: xltxid
+    tipo: string
+    comentario: "Texto longo existe"
+    pii: nenhum
+    nulo: true
+  - nome: xverid
+    tipo: string
+    comentario: "Texto longo existe (versao)"
+    pii: nenhum
+    nulo: true
+  - nome: xtchid
+    tipo: string
+    comentario: "Texto longo da visao tecnica existe"
+    pii: nenhum
+    nulo: true
+  - nome: xkalid
+    tipo: string
+    comentario: "Texto longo da visao de calculo de custos existe"
+    pii: nenhum
+    nulo: true
+  - nome: xherid
+    tipo: string
+    comentario: "Texto longo existe (fabricante)"
+    pii: nenhum
+    nulo: true
+  - nome: xleaid
+    tipo: string
+    comentario: "Texto longo existe (leasing)"
+    pii: nenhum
+    nulo: true
+  - nome: leafi
+    tipo: string
+    comentario: "Empresa de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: lvdat
+    tipo: date
+    comentario: "Data do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: lkdat
+    tipo: date
+    comentario: "Data de aviso"
+    pii: nenhum
+    nulo: true
+  - nome: leabg
+    tipo: date
+    comentario: "Data de inicio do leasing"
+    pii: nenhum
+    nulo: true
+  - nome: lejar
+    tipo: int
+    comentario: "Prazo do leasing (anos)"
+    pii: nenhum
+    nulo: true
+  - nome: leper
+    tipo: int
+    comentario: "Leasing em periodos"
+    pii: nenhum
+    nulo: true
+  - nome: lryth
+    tipo: string
+    comentario: "Ciclo de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: legeb
+    tipo: decimal(23,2)
+    comentario: "Pagamento de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: lbasw
+    tipo: decimal(23,2)
+    comentario: "Valor base como novo"
+    pii: nenhum
+    nulo: true
+  - nome: lkauf
+    tipo: decimal(23,2)
+    comentario: "Preco de compra"
+    pii: nenhum
+    nulo: true
+  - nome: lmzin
+    tipo: decimal(23,2)
+    comentario: "Taxa de juros mensal"
+    pii: nenhum
+    nulo: true
+  - nome: lzins
+    tipo: decimal(23,2)
+    comentario: "Taxa de juros anual"
+    pii: nenhum
+    nulo: true
+  - nome: ltzbw
+    tipo: date
+    comentario: "Data do ultimo lancamento"
+    pii: nenhum
+    nulo: true
+  - nome: lkuza
+    tipo: decimal(23,2)
+    comentario: "Pagamentos lancados"
+    pii: nenhum
+    nulo: true
+  - nome: lkuzi
+    tipo: decimal(23,2)
+    comentario: "Juros lancados"
+    pii: nenhum
+    nulo: true
+  - nome: llavb
+    tipo: decimal(23,2)
+    comentario: "Passivo de longo prazo"
+    pii: nenhum
+    nulo: true
+  - nome: leanz
+    tipo: int
+    comentario: "Numero de parcelas de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: lvtnr
+    tipo: string
+    comentario: "Numero do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: letxt
+    tipo: string
+    comentario: "Texto complementar"
+    pii: nenhum
+    nulo: true
+  - nome: xaktiv
+    tipo: string
+    comentario: "Capitalizar ativo imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: anupd
+    tipo: string
+    comentario: "Tipo de alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: lblnr
+    tipo: string
+    comentario: "Ultimo numero de documento"
+    pii: nenhum
+    nulo: true
+  - nome: xv0dt
+    tipo: date
+    comentario: "Data de manutencao da visao 0"
+    pii: nenhum
+    nulo: true
+  - nome: xv0nm
+    tipo: string
+    comentario: "Alterado por (visao 0)"
+    pii: nenhum
+    nulo: true
+  - nome: xv1dt
+    tipo: date
+    comentario: "Data de manutencao da visao 1"
+    pii: nenhum
+    nulo: true
+  - nome: xv1nm
+    tipo: string
+    comentario: "Alterado por (visao 1)"
+    pii: nenhum
+    nulo: true
+  - nome: xv2dt
+    tipo: date
+    comentario: "Data de manutencao da visao 2"
+    pii: nenhum
+    nulo: true
+  - nome: xv2nm
+    tipo: string
+    comentario: "Alterado por (visao 2)"
+    pii: nenhum
+    nulo: true
+  - nome: xv3dt
+    tipo: date
+    comentario: "Data de manutencao da visao 3"
+    pii: nenhum
+    nulo: true
+  - nome: xv3nm
+    tipo: string
+    comentario: "Alterado por (visao 3)"
+    pii: nenhum
+    nulo: true
+  - nome: xv4dt
+    tipo: date
+    comentario: "Data de manutencao da visao 4"
+    pii: nenhum
+    nulo: true
+  - nome: xv4nm
+    tipo: string
+    comentario: "Alterado por (visao 4)"
+    pii: nenhum
+    nulo: true
+  - nome: xv5dt
+    tipo: date
+    comentario: "Data de manutencao da visao 5"
+    pii: nenhum
+    nulo: true
+  - nome: xv5nm
+    tipo: string
+    comentario: "Alterado por (visao 5)"
+    pii: nenhum
+    nulo: true
+  - nome: xv6dt
+    tipo: date
+    comentario: "Data de manutencao da visao 6"
+    pii: nenhum
+    nulo: true
+  - nome: xv6nm
+    tipo: string
+    comentario: "Alterado por (visao 6)"
+    pii: nenhum
+    nulo: true
+  - nome: aimmo
+    tipo: string
+    comentario: "Conexao com o SAP Real Estate Management"
+    pii: nenhum
+    nulo: true
+  - nome: objnr
+    tipo: string
+    comentario: "Numero do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: leart
+    tipo: string
+    comentario: "Tipo de leasing"
+    pii: nenhum
+    nulo: true
+  - nome: lvors
+    tipo: string
+    comentario: "Pagamentos antecipados"
+    pii: nenhum
+    nulo: true
+  - nome: gdlgrp
+    tipo: string
+    comentario: "Grupo de avaliacao 5"
+    pii: nenhum
+    nulo: true
+  - nome: posnr
+    tipo: string
+    comentario: "Elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: xerwrt
+    tipo: string
+    comentario: "Nao considerar valor de memorando"
+    pii: nenhum
+    nulo: true
+  - nome: xafabch
+    tipo: string
+    comentario: "Adquirido usado"
+    pii: nenhum
+    nulo: true
+  - nome: xanlgr
+    tipo: string
+    comentario: "Ativo de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: mcoa1
+    tipo: string
+    comentario: "Descricao"
+    pii: nenhum
+    nulo: true
+  - nome: xinvm
+    tipo: string
+    comentario: "Medida de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: sernr
+    tipo: string
+    comentario: "Numero de serie"
+    pii: nenhum
+    nulo: true
+  - nome: umwkz
+    tipo: string
+    comentario: "Investimento ambiental"
+    pii: nenhum
+    nulo: true
+  - nome: lrvdat
+    tipo: date
+    comentario: "Data da ultima reavaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: act_change_pm
+    tipo: string
+    comentario: "Alterar cadastro de ativo a partir de equipamento"
+    pii: nenhum
+    nulo: true
+  - nome: has_tddp
+    tipo: string
+    comentario: "Parametros dependentes de tempo existem"
+    pii: nenhum
+    nulo: true
+  - nome: last_reorg_date
+    tipo: date
+    comentario: "Data da ultima reorganizacao"
+    pii: nenhum
+    nulo: true
+  - nome: ldt_date
+    tipo: date
+    comentario: "Data de transferencia de dados legados"
+    pii: nenhum
+    nulo: true
+  - nome: ldt_seqno
+    tipo: bigint
+    comentario: "Numero sequencial de transferencia de dados legados"
+    pii: nenhum
+    nulo: true
+  - nome: sdm_status
+    tipo: string
+    comentario: "Status de migracao silenciosa de dados"
+    pii: nenhum
+    nulo: true
+  - nome: dummy_faa_asset_incl_eew_ps
+    tipo: string
+    comentario: "Elemento de dados para include de extensao: lista de trabalho de ativos"
+    pii: nenhum
+    nulo: true
+  - nome: internal_code
+    tipo: string
+    comentario: "Codigo interno"
+    pii: nenhum
+    nulo: true
+  - nome: approval_number
+    tipo: string
+    comentario: "Numero do documento de aprovacao"
+    pii: nenhum
+    nulo: true
+  - nome: approval_version
+    tipo: string
+    comentario: "Versao de aprovacao"
+    pii: nenhum
+    nulo: true
+  - nome: bogus_anln1
+    tipo: string
+    comentario: "Numero do ativo de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: asset_version
+    tipo: string
+    comentario: "Versao do ativo"
+    pii: nenhum
+    nulo: true

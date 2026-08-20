@@ -1,0 +1,162 @@
+tabela: ekes
+camada: bronze
+comentario: "Confirmações do fornecedor (SAP EKES)."
+ingestao: cdc
+fonte: sap.ekes
+chave_primaria: [mandt, ebeln, ebelp, etens, ebtyp]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: ebeln
+    tipo: string
+    comentario: "Número do documento de compra (ebeln)"
+    pii: nenhum
+    nulo: false
+  - nome: ebelp
+    tipo: string
+    comentario: "Item do documento de compra"
+    pii: nenhum
+    nulo: false
+  - nome: etens
+    tipo: string
+    comentario: "Número sequencial da confirmação"
+    pii: nenhum
+    nulo: false
+  - nome: ebtyp
+    tipo: string
+    comentario: "Categoria de confirmação"
+    pii: nenhum
+    nulo: false
+  - nome: eindt
+    tipo: date
+    comentario: "Data de entrega confirmada"
+    pii: nenhum
+    nulo: true
+  - nome: lpein
+    tipo: string
+    comentario: "Categoria da data de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: uzeit
+    tipo: string
+    comentario: "Hora da confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação da confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: ezeit
+    tipo: string
+    comentario: "Hora de criação da confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade confirmada"
+    pii: nenhum
+    nulo: true
+  - nome: dabmg
+    tipo: decimal(23,2)
+    comentario: "Quantidade reduzida pelo MRP"
+    pii: nenhum
+    nulo: true
+  - nome: estkz
+    tipo: string
+    comentario: "Indicador de criação da confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: loekz
+    tipo: string
+    comentario: "Indicador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: kzdis
+    tipo: string
+    comentario: "Relevante para MRP"
+    pii: nenhum
+    nulo: true
+  - nome: xblnr
+    tipo: string
+    comentario: "Número de referência externa"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln
+    tipo: string
+    comentario: "Número da remessa (entrega)"
+    pii: nenhum
+    nulo: true
+  - nome: vbelp
+    tipo: string
+    comentario: "Item da remessa"
+    pii: nenhum
+    nulo: true
+  - nome: mprof
+    tipo: string
+    comentario: "Perfil de peça de fabricante"
+    pii: nenhum
+    nulo: true
+  - nome: ematn
+    tipo: string
+    comentario: "Material do fabricante (MPN)"
+    pii: nenhum
+    nulo: true
+  - nome: mahnz
+    tipo: int
+    comentario: "Número de lembretes/acompanhamentos enviados"
+    pii: nenhum
+    nulo: true
+  - nome: charg
+    tipo: string
+    comentario: "Número do lote"
+    pii: nenhum
+    nulo: true
+  - nome: uecha
+    tipo: string
+    comentario: "Lote do item de nível superior"
+    pii: nenhum
+    nulo: true
+  - nome: ref_etens
+    tipo: string
+    comentario: "Número sequencial de referência"
+    pii: nenhum
+    nulo: true
+  - nome: imwrk
+    tipo: string
+    comentario: "No centro produtivo"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln_st
+    tipo: string
+    comentario: "Remessa de retorno (entrega)"
+    pii: nenhum
+    nulo: true
+  - nome: vbelp_st
+    tipo: string
+    comentario: "Item da remessa de retorno"
+    pii: nenhum
+    nulo: true
+  - nome: handoverdate
+    tipo: date
+    comentario: "Data de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: handovertime
+    tipo: string
+    comentario: "Hora de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_scat
+    tipo: string
+    comentario: "Segmento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_salloc_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade de estoque alocado"
+    pii: nenhum
+    nulo: true

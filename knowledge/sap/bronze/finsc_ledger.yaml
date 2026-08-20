@@ -1,0 +1,82 @@
+tabela: finsc_ledger
+camada: bronze
+comentario: "Razão para lançamentos do diário universal (S/4HANA)"
+ingestao: cdc
+fonte: sap.finsc_ledger
+chave_primaria: [mandt, rldnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: rldnr
+    tipo: string
+    comentario: "ID do razão (ledger)"
+    pii: nenhum
+    nulo: false
+  - nome: ledger_type
+    tipo: string
+    comentario: "Tipo de razão"
+    pii: nenhum
+    nulo: true
+  - nome: ext_ledger_type
+    tipo: string
+    comentario: "Tipo de razão de extensão"
+    pii: nenhum
+    nulo: true
+  - nome: appl
+    tipo: string
+    comentario: "Aplicação proprietária"
+    pii: nenhum
+    nulo: true
+  - nome: subappl
+    tipo: string
+    comentario: "Sub-aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: xleading
+    tipo: string
+    comentario: "Indicador de razão líder"
+    pii: nenhum
+    nulo: true
+  - nome: core
+    tipo: string
+    comentario: "Razão subjacente"
+    pii: nenhum
+    nulo: true
+  - nome: valutyp
+    tipo: string
+    comentario: "Tipo de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: valusubtyp
+    tipo: string
+    comentario: "Subtipo de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: man_post_not_allwd
+    tipo: string
+    comentario: "Lançamentos manuais não permitidos (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: acc_principle
+    tipo: string
+    comentario: "Princípio contábil"
+    pii: nenhum
+    nulo: true
+  - nome: fallback_ledger
+    tipo: string
+    comentario: "Razão de reserva (fallback)"
+    pii: nenhum
+    nulo: true
+  - nome: tech_ledger
+    tipo: string
+    comentario: "Razão técnico (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: xcash_ledger
+    tipo: string
+    comentario: "Indicador de razão de caixa"
+    pii: nenhum
+    nulo: true

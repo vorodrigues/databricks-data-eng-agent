@@ -1,0 +1,842 @@
+tabela: afko
+camada: bronze
+comentario: "Dados do cabeçalho de ordens de produção PP (AFKO)"
+ingestao: cdc
+fonte: sap.afko
+chave_primaria: [mandt, aufnr]
+colunas:
+  - nome: abarb
+    tipo: string
+    comentario: "Grau de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: adpsp
+    tipo: string
+    comentario: "Elemento de referência PM/PS"
+    pii: nenhum
+    nulo: true
+  - nome: aennr
+    tipo: string
+    comentario: "Número de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: aplzt
+    tipo: int
+    comentario: "Contador de lista de tarefas"
+    pii: nenhum
+    nulo: true
+  - nome: aprio
+    tipo: string
+    comentario: "Prioridade"
+    pii: nenhum
+    nulo: true
+  - nome: arsnr
+    tipo: string
+    comentario: "Número de reserva"
+    pii: nenhum
+    nulo: true
+  - nome: arsps
+    tipo: string
+    comentario: "Número do item da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: atrkz
+    tipo: string
+    comentario: "Indicador de solicitação"
+    pii: nenhum
+    nulo: true
+  - nome: aufld
+    tipo: date
+    comentario: "Data de explosão de BOM"
+    pii: nenhum
+    nulo: true
+  - nome: aufnr
+    tipo: string
+    comentario: "Número da ordem de produção"
+    pii: nenhum
+    nulo: false
+  - nome: aufnt
+    tipo: string
+    comentario: "Sub-rede da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: aufpl
+    tipo: string
+    comentario: "Número da lista de tarefas de operação"
+    pii: nenhum
+    nulo: true
+  - nome: aufpt
+    tipo: string
+    comentario: "Número da lista de tarefas de operação (prev.)"
+    pii: nenhum
+    nulo: true
+  - nome: bedid
+    tipo: string
+    comentario: "ID de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: bmeins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: bmenge
+    tipo: decimal(23,2)
+    comentario: "Quantidade base"
+    pii: nenhum
+    nulo: true
+  - nome: breaks
+    tipo: string
+    comentario: "Indicador de tempos exatos de intervalo"
+    pii: nenhum
+    nulo: true
+  - nome: cfb_adtdays
+    tipo: int
+    comentario: "Dias adicionais"
+    pii: nenhum
+    nulo: true
+  - nome: cfb_bbdpi
+    tipo: date
+    comentario: "Data de validade/SLED (best before date)"
+    pii: nenhum
+    nulo: true
+  - nome: cfb_datofm
+    tipo: date
+    comentario: "Data de fabricação"
+    pii: nenhum
+    nulo: true
+  - nome: cfb_lzeih
+    tipo: string
+    comentario: "Unidade de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: cfb_maxlz
+    tipo: int
+    comentario: "Período máximo de armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: chsch
+    tipo: string
+    comentario: "Procedimento de busca"
+    pii: nenhum
+    nulo: true
+  - nome: ch_proc
+    tipo: string
+    comentario: "Tipo de processo de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: colordproc
+    tipo: string
+    comentario: "Processamento CO"
+    pii: nenhum
+    nulo: true
+  - nome: conf_key
+    tipo: string
+    comentario: "Chave de objeto idêntico"
+    pii: nenhum
+    nulo: true
+  - nome: costupd
+    tipo: string
+    comentario: "Indicador de atualização de custos"
+    pii: nenhum
+    nulo: true
+  - nome: csplit
+    tipo: string
+    comentario: "Estrutura de rateio"
+    pii: nenhum
+    nulo: true
+  - nome: cuobj
+    tipo: string
+    comentario: "Número interno do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: cy_seqnr
+    tipo: int
+    comentario: "Número de sequência"
+    pii: nenhum
+    nulo: true
+  - nome: dispo
+    tipo: string
+    comentario: "Controlador de MRP"
+    pii: nenhum
+    nulo: true
+  - nome: fevor
+    tipo: string
+    comentario: "Supervisor de produção"
+    pii: nenhum
+    nulo: true
+  - nome: fhori
+    tipo: string
+    comentario: "Chave de folga de programação"
+    pii: nenhum
+    nulo: true
+  - nome: flg_aob
+    tipo: string
+    comentario: "Indicador: relacionamentos existentes"
+    pii: nenhum
+    nulo: true
+  - nome: flg_arbei
+    tipo: string
+    comentario: "Indicador de trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: flg_bundle
+    tipo: string
+    comentario: "Indicador de agrupamento"
+    pii: nenhum
+    nulo: true
+  - nome: freiz
+    tipo: int
+    comentario: "Período de liberação (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_mprod_ord
+    tipo: string
+    comentario: "Ordem mestre de produção"
+    pii: nenhum
+    nulo: true
+  - nome: ftrmi
+    tipo: date
+    comentario: "Data real de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: ftrmp
+    tipo: date
+    comentario: "Data planejada de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: ftrms
+    tipo: date
+    comentario: "Data de liberação agendada"
+    pii: nenhum
+    nulo: true
+  - nome: ftrps
+    tipo: date
+    comentario: "Data de liberação agendada (previsão)"
+    pii: nenhum
+    nulo: true
+  - nome: gamng
+    tipo: decimal(23,2)
+    comentario: "Quantidade alvo"
+    pii: nenhum
+    nulo: true
+  - nome: gasmg
+    tipo: decimal(23,2)
+    comentario: "Refugo total"
+    pii: nenhum
+    nulo: true
+  - nome: getri
+    tipo: date
+    comentario: "Data real de conclusão"
+    pii: nenhum
+    nulo: true
+  - nome: geuzi
+    tipo: string
+    comentario: "Hora real de conclusão"
+    pii: nenhum
+    nulo: true
+  - nome: gltpp
+    tipo: date
+    comentario: "Data de término (planejada)"
+    pii: nenhum
+    nulo: true
+  - nome: gltps
+    tipo: date
+    comentario: "Término agendado"
+    pii: nenhum
+    nulo: true
+  - nome: gltri
+    tipo: date
+    comentario: "Data real de término"
+    pii: nenhum
+    nulo: true
+  - nome: gltrp
+    tipo: date
+    comentario: "Data de término básica"
+    pii: nenhum
+    nulo: true
+  - nome: gltrs
+    tipo: date
+    comentario: "Término programado"
+    pii: nenhum
+    nulo: true
+  - nome: glupp
+    tipo: string
+    comentario: "Hora de término (planejada)"
+    pii: nenhum
+    nulo: true
+  - nome: glups
+    tipo: string
+    comentario: "Hora de término agendada"
+    pii: nenhum
+    nulo: true
+  - nome: gluzp
+    tipo: string
+    comentario: "Hora de término básica"
+    pii: nenhum
+    nulo: true
+  - nome: gluzs
+    tipo: string
+    comentario: "Hora de término programada"
+    pii: nenhum
+    nulo: true
+  - nome: gmein
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: groid
+    tipo: string
+    comentario: "ID de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: gsbtr
+    tipo: decimal(23,2)
+    comentario: "Comprometimento total"
+    pii: nenhum
+    nulo: true
+  - nome: gstpp
+    tipo: date
+    comentario: "Data de início (planejada)"
+    pii: nenhum
+    nulo: true
+  - nome: gstps
+    tipo: date
+    comentario: "Início agendado"
+    pii: nenhum
+    nulo: true
+  - nome: gstri
+    tipo: date
+    comentario: "Data real de início"
+    pii: nenhum
+    nulo: true
+  - nome: gstrp
+    tipo: date
+    comentario: "Data de início básica"
+    pii: nenhum
+    nulo: true
+  - nome: gstrs
+    tipo: date
+    comentario: "Início programado"
+    pii: nenhum
+    nulo: true
+  - nome: gsupp
+    tipo: string
+    comentario: "Hora de início (planejada)"
+    pii: nenhum
+    nulo: true
+  - nome: gsups
+    tipo: string
+    comentario: "Hora de início agendada"
+    pii: nenhum
+    nulo: true
+  - nome: gsuzi
+    tipo: string
+    comentario: "Hora real de início"
+    pii: nenhum
+    nulo: true
+  - nome: gsuzp
+    tipo: string
+    comentario: "Hora de início básica"
+    pii: nenhum
+    nulo: true
+  - nome: gsuzs
+    tipo: string
+    comentario: "Hora de início programada"
+    pii: nenhum
+    nulo: true
+  - nome: iasmg
+    tipo: decimal(23,2)
+    comentario: "Refugo confirmado"
+    pii: nenhum
+    nulo: true
+  - nome: igmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade confirmada"
+    pii: nenhum
+    nulo: true
+  - nome: kapt_sichz
+    tipo: int
+    comentario: "Folga restante (após produção)"
+    pii: nenhum
+    nulo: true
+  - nome: kapt_vorgz
+    tipo: int
+    comentario: "Folga pré-produção restante"
+    pii: nenhum
+    nulo: true
+  - nome: kapversa
+    tipo: string
+    comentario: "Versão"
+    pii: nenhum
+    nulo: true
+  - nome: kbed
+    tipo: int
+    comentario: "Número de requisitos de capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: kkalkr
+    tipo: string
+    comentario: "Indicador de componente de custeio"
+    pii: nenhum
+    nulo: true
+  - nome: klvari
+    tipo: string
+    comentario: "Variante de custeio real"
+    pii: nenhum
+    nulo: true
+  - nome: klvarp
+    tipo: string
+    comentario: "Variante de custeio planejada"
+    pii: nenhum
+    nulo: true
+  - nome: kzerb
+    tipo: string
+    comentario: "Dados mestre de resumo de projeto"
+    pii: nenhum
+    nulo: true
+  - nome: lead_aufnr
+    tipo: string
+    comentario: "Ordem líder"
+    pii: nenhum
+    nulo: true
+  - nome: lknot
+    tipo: string
+    comentario: "Nó esquerdo"
+    pii: nenhum
+    nulo: true
+  - nome: lodiv
+    tipo: decimal(23,2)
+    comentario: "Divisor do tamanho do lote"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: maufnr
+    tipo: string
+    comentario: "Ordem superior"
+    pii: nenhum
+    nulo: true
+  - nome: max_gamng
+    tipo: decimal(23,2)
+    comentario: "Quantidade máxima"
+    pii: nenhum
+    nulo: true
+  - nome: mes_routingid
+    tipo: string
+    comentario: "Roteiro MES"
+    pii: nenhum
+    nulo: true
+  - nome: mill_oc_zuskz
+    tipo: string
+    comentario: "Indicador de combinação"
+    pii: nenhum
+    nulo: true
+  - nome: mill_ratio
+    tipo: decimal(23,2)
+    comentario: "Fator de ajuste para regras de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: mzaehl
+    tipo: int
+    comentario: "Contador"
+    pii: nenhum
+    nulo: true
+  - nome: naucost
+    tipo: string
+    comentario: "Sem custeio automático"
+    pii: nenhum
+    nulo: true
+  - nome: nauterm
+    tipo: string
+    comentario: "Sem programação automática"
+    pii: nenhum
+    nulo: true
+  - nome: netzkont
+    tipo: string
+    comentario: "Atribuição de conta"
+    pii: nenhum
+    nulo: true
+  - nome: nopcost
+    tipo: string
+    comentario: "Sem custos planejados"
+    pii: nenhum
+    nulo: true
+  - nome: no_disp
+    tipo: string
+    comentario: "Indicador de planejamento efetivo de material"
+    pii: nenhum
+    nulo: true
+  - nome: ntzue
+    tipo: string
+    comentario: "Número da rede"
+    pii: nenhum
+    nulo: true
+  - nome: objtype
+    tipo: string
+    comentario: "Indicador de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: oihantyp
+    tipo: string
+    comentario: "Tipo de manuseio"
+    pii: nenhum
+    nulo: true
+  - nome: paenr
+    tipo: string
+    comentario: "Número de alteração (paenr)"
+    pii: nenhum
+    nulo: true
+  - nome: pdatv
+    tipo: date
+    comentario: "Válido a partir de (pdatv)"
+    pii: nenhum
+    nulo: true
+  - nome: plart
+    tipo: string
+    comentario: "Base de programação"
+    pii: nenhum
+    nulo: true
+  - nome: plauf
+    tipo: date
+    comentario: "Data de explosão de BOM (plauf)"
+    pii: nenhum
+    nulo: true
+  - nome: plgrp
+    tipo: string
+    comentario: "Grupo de planejador"
+    pii: nenhum
+    nulo: true
+  - nome: plnal
+    tipo: string
+    comentario: "Contador de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: plnaw
+    tipo: string
+    comentario: "Aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: plnbez
+    tipo: string
+    comentario: "Material"
+    pii: nenhum
+    nulo: true
+  - nome: plnme
+    tipo: string
+    comentario: "Unidade da lista de tarefas"
+    pii: nenhum
+    nulo: true
+  - nome: plnnr
+    tipo: string
+    comentario: "Grupo de roteiro"
+    pii: nenhum
+    nulo: true
+  - nome: plnty
+    tipo: string
+    comentario: "Tipo da lista de tarefas"
+    pii: nenhum
+    nulo: true
+  - nome: plsvb
+    tipo: decimal(23,2)
+    comentario: "Tamanho de lote máximo"
+    pii: nenhum
+    nulo: true
+  - nome: plsvn
+    tipo: decimal(23,2)
+    comentario: "Tamanho de lote mínimo"
+    pii: nenhum
+    nulo: true
+  - nome: pnetendd
+    tipo: date
+    comentario: "Data de término da rede programada"
+    pii: nenhum
+    nulo: true
+  - nome: pnetendt
+    tipo: string
+    comentario: "Hora de término da rede programada"
+    pii: nenhum
+    nulo: true
+  - nome: pnetstartd
+    tipo: date
+    comentario: "Data de início da rede programada"
+    pii: nenhum
+    nulo: true
+  - nome: pnetstartt
+    tipo: string
+    comentario: "Hora de início da rede programada"
+    pii: nenhum
+    nulo: true
+  - nome: posnr_rma
+    tipo: string
+    comentario: "Item SD (retorno)"
+    pii: nenhum
+    nulo: true
+  - nome: posnv_rma
+    tipo: string
+    comentario: "Item SD (origem do retorno)"
+    pii: nenhum
+    nulo: true
+  - nome: prodnet
+    tipo: string
+    comentario: "Ordem coletiva"
+    pii: nenhum
+    nulo: true
+  - nome: profid
+    tipo: string
+    comentario: "Perfil de rede"
+    pii: nenhum
+    nulo: true
+  - nome: pronr
+    tipo: string
+    comentario: "Definição de projeto"
+    pii: nenhum
+    nulo: true
+  - nome: prueflos
+    tipo: string
+    comentario: "Lote de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: pverw
+    tipo: string
+    comentario: "Uso"
+    pii: nenhum
+    nulo: true
+  - nome: ratid
+    tipo: string
+    comentario: "ID de taxa"
+    pii: nenhum
+    nulo: true
+  - nome: rdkzp
+    tipo: string
+    comentario: "Indicador de redução (previsão)"
+    pii: nenhum
+    nulo: true
+  - nome: redkz
+    tipo: string
+    comentario: "Indicador de redução"
+    pii: nenhum
+    nulo: true
+  - nome: revlv
+    tipo: string
+    comentario: "Nível de revisão"
+    pii: nenhum
+    nulo: true
+  - nome: rgekz
+    tipo: string
+    comentario: "Indicador de backflushing"
+    pii: nenhum
+    nulo: true
+  - nome: rknot
+    tipo: string
+    comentario: "Nó direito"
+    pii: nenhum
+    nulo: true
+  - nome: rmanr
+    tipo: string
+    comentario: "Documento de vendas (RMA)"
+    pii: nenhum
+    nulo: true
+  - nome: rmnga
+    tipo: decimal(23,2)
+    comentario: "Quantidade de retrabalho"
+    pii: nenhum
+    nulo: true
+  - nome: rmzhl
+    tipo: int
+    comentario: "Contador"
+    pii: nenhum
+    nulo: true
+  - nome: rshid
+    tipo: string
+    comentario: "ID do objeto (rsh)"
+    pii: nenhum
+    nulo: true
+  - nome: rshty
+    tipo: string
+    comentario: "Tipo do objeto (rsh)"
+    pii: nenhum
+    nulo: true
+  - nome: rsnid
+    tipo: string
+    comentario: "ID do objeto (rsn)"
+    pii: nenhum
+    nulo: true
+  - nome: rsnty
+    tipo: string
+    comentario: "Tipo do objeto (rsn)"
+    pii: nenhum
+    nulo: true
+  - nome: rsnum
+    tipo: string
+    comentario: "Número de reserva"
+    pii: nenhum
+    nulo: true
+  - nome: rueck
+    tipo: string
+    comentario: "Confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: saenr
+    tipo: string
+    comentario: "Número de alteração (saenr)"
+    pii: nenhum
+    nulo: true
+  - nome: sbmeh
+    tipo: string
+    comentario: "Unidade de medida base (sbmeh)"
+    pii: nenhum
+    nulo: true
+  - nome: sbmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade base (sbmng)"
+    pii: nenhum
+    nulo: true
+  - nome: sdatv
+    tipo: date
+    comentario: "Válido a partir de (sdatv)"
+    pii: nenhum
+    nulo: true
+  - nome: sfcpf
+    tipo: string
+    comentario: "Perfil de programação de produção"
+    pii: nenhum
+    nulo: true
+  - nome: sichz
+    tipo: int
+    comentario: "Folga após a produção (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: sichz_trm
+    tipo: int
+    comentario: "Folga programada após a produção (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: slsbs
+    tipo: decimal(23,2)
+    comentario: "Tamanho de lote máximo (slsbs)"
+    pii: nenhum
+    nulo: true
+  - nome: slsvn
+    tipo: decimal(23,2)
+    comentario: "Tamanho de lote mínimo (slsvn)"
+    pii: nenhum
+    nulo: true
+  - nome: splstat
+    tipo: string
+    comentario: "Status de divisão"
+    pii: nenhum
+    nulo: true
+  - nome: stlal
+    tipo: string
+    comentario: "Lista de materiais alternativa"
+    pii: nenhum
+    nulo: true
+  - nome: stlan
+    tipo: string
+    comentario: "Uso da lista de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: stlbez
+    tipo: string
+    comentario: "Material da lista de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: stlnr
+    tipo: string
+    comentario: "Número da lista de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: stlst
+    tipo: string
+    comentario: "Status da lista de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: stlty
+    tipo: string
+    comentario: "Categoria da lista de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: stufe
+    tipo: int
+    comentario: "Nível de explosão"
+    pii: nenhum
+    nulo: true
+  - nome: st_arbid
+    tipo: string
+    comentario: "ID do centro de trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: terhw
+    tipo: string
+    comentario: "Observação de programação"
+    pii: nenhum
+    nulo: true
+  - nome: terkz
+    tipo: string
+    comentario: "Tipo de programação"
+    pii: nenhum
+    nulo: true
+  - nome: trkzp
+    tipo: string
+    comentario: "Tipo de programação (previsão)"
+    pii: nenhum
+    nulo: true
+  - nome: trmdt
+    tipo: date
+    comentario: "Data de programação"
+    pii: nenhum
+    nulo: true
+  - nome: upter
+    tipo: string
+    comentario: "Indicador: datas alteradas manualmente"
+    pii: nenhum
+    nulo: true
+  - nome: vfmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade comprometida"
+    pii: nenhum
+    nulo: true
+  - nome: vorgz
+    tipo: int
+    comentario: "Folga antes da produção (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: vorgz_trm
+    tipo: int
+    comentario: "Folga programada antes da produção (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: vorue
+    tipo: string
+    comentario: "Atividade superior"
+    pii: nenhum
+    nulo: true
+  - nome: vsnmr_v
+    tipo: string
+    comentario: "Versão (vsnmr)"
+    pii: nenhum
+    nulo: true
+  - nome: vwegx
+    tipo: string
+    comentario: "Caminho (vwegx)"
+    pii: nenhum
+    nulo: true
+  - nome: wegxx
+    tipo: string
+    comentario: "Caminho"
+    pii: nenhum
+    nulo: true
+  - nome: zaehl
+    tipo: int
+    comentario: "Contador"
+    pii: nenhum
+    nulo: true
+  - nome: zkriz
+    tipo: int
+    comentario: "Contador crítico adicional"
+    pii: nenhum
+    nulo: true

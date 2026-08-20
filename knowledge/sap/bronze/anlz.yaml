@@ -1,0 +1,212 @@
+tabela: anlz
+camada: bronze
+comentario: "Alocacoes de ativo com dependencia temporal (ANLZ)"
+ingestao: cdc
+fonte: sap.anlz
+chave_primaria: [mandt, bukrs, anln1, anln2, bdatu]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Codigo da empresa"
+    pii: nenhum
+    nulo: false
+  - nome: anln1
+    tipo: string
+    comentario: "Numero principal do ativo"
+    pii: nenhum
+    nulo: false
+  - nome: anln2
+    tipo: string
+    comentario: "Sub-numero do ativo"
+    pii: nenhum
+    nulo: false
+  - nome: bdatu
+    tipo: date
+    comentario: "Valido ate (data final de vigencia)"
+    pii: nenhum
+    nulo: false
+  - nome: adatu
+    tipo: date
+    comentario: "Valido a partir de (data inicial de vigencia)"
+    pii: nenhum
+    nulo: true
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Planta"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Area de negocio"
+    pii: nenhum
+    nulo: true
+  - nome: lstar
+    tipo: string
+    comentario: "Tipo de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: msfak
+    tipo: string
+    comentario: "Fator de turno (depreciacao)"
+    pii: nenhum
+    nulo: true
+  - nome: xstil
+    tipo: string
+    comentario: "Indicador de paralisacao do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: stort
+    tipo: string
+    comentario: "Localizacao do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: caufn
+    tipo: string
+    comentario: "Ordem interna"
+    pii: nenhum
+    nulo: true
+  - nome: plan1
+    tipo: string
+    comentario: "Campo nao mais utilizado 1"
+    pii: nenhum
+    nulo: true
+  - nome: plan2
+    tipo: string
+    comentario: "Campo nao mais utilizado 2"
+    pii: nenhum
+    nulo: true
+  - nome: raumn
+    tipo: string
+    comentario: "Sala (localizacao fisica)"
+    pii: nenhum
+    nulo: true
+  - nome: iaufn
+    tipo: string
+    comentario: "Ordem de manutencao"
+    pii: nenhum
+    nulo: true
+  - nome: iproj
+    tipo: string
+    comentario: "Campo nao utilizado (projeto)"
+    pii: nenhum
+    nulo: true
+  - nome: tplkz
+    tipo: string
+    comentario: "Campo reservado de comprimento 3 (nao utilizado)"
+    pii: nenhum
+    nulo: true
+  - nome: tplnr
+    tipo: string
+    comentario: "Local de instalacao funcional (PM)"
+    pii: nenhum
+    nulo: true
+  - nome: anupd
+    tipo: string
+    comentario: "Tipo de alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Jurisdicao fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: ipsnr
+    tipo: string
+    comentario: "Elemento WBS para manutencao"
+    pii: nenhum
+    nulo: true
+  - nome: kfzkz
+    tipo: string
+    comentario: "Placa do veiculo"
+    pii: indireto
+    nulo: true
+  - nome: pernr
+    tipo: string
+    comentario: "Numero de pessoal do responsavel"
+    pii: indireto
+    nulo: true
+  - nome: kostlv
+    tipo: string
+    comentario: "Centro de custo responsavel"
+    pii: nenhum
+    nulo: true
+  - nome: fistl
+    tipo: string
+    comentario: "Centro de fundo (funds center)"
+    pii: nenhum
+    nulo: true
+  - nome: geber
+    tipo: string
+    comentario: "Fundo"
+    pii: nenhum
+    nulo: true
+  - nome: fkber
+    tipo: string
+    comentario: "Area funcional"
+    pii: nenhum
+    nulo: true
+  - nome: grant_nbr
+    tipo: string
+    comentario: "Subvencao (grant)"
+    pii: nenhum
+    nulo: true
+  - nome: geber2
+    tipo: string
+    comentario: "Fundo 2"
+    pii: nenhum
+    nulo: true
+  - nome: fkber2
+    tipo: string
+    comentario: "Area funcional 2"
+    pii: nenhum
+    nulo: true
+  - nome: grant_nbr2
+    tipo: string
+    comentario: "Subvencao 2 (grant)"
+    pii: nenhum
+    nulo: true
+  - nome: fistl2
+    tipo: string
+    comentario: "Centro de fundo 2 (funds center)"
+    pii: nenhum
+    nulo: true
+  - nome: imkey
+    tipo: string
+    comentario: "Chave de imovel (real estate)"
+    pii: nenhum
+    nulo: true
+  - nome: ps_psp_pnr2
+    tipo: string
+    comentario: "Elemento WBS (custos)"
+    pii: nenhum
+    nulo: true
+  - nome: budget_pd
+    tipo: string
+    comentario: "Periodo de orcamento"
+    pii: nenhum
+    nulo: true
+  - nome: budget_pd2
+    tipo: string
+    comentario: "Periodo de orcamento 2"
+    pii: nenhum
+    nulo: true
+  - nome: segment
+    tipo: string
+    comentario: "Segmento contabil"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true

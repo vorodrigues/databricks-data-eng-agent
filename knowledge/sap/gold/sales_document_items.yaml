@@ -1,0 +1,1123 @@
+tabela: sales_document_items
+camada: gold
+comentario: "Itens de documentos de vendas SAP (VBAP): materiais, quantidades pedidas, precos liquidos e locais de producao."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.vbak, silver.vbap, silver.vbep, silver.vbpa, silver.tcurx, silver.vbfa, silver.vbuk, silver.vbup, silver.lips]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: document_number_vbeln
+    tipo: string
+    comentario: "Numero do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: item_number_posnr
+    tipo: string
+    comentario: "Item do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Numero do material"
+    pii: nenhum
+    nulo: true
+  - nome: material_entered_matwa
+    tipo: string
+    comentario: "Material informado pelo usuario"
+    pii: nenhum
+    nulo: true
+  - nome: pricing_reference_material_pmatn
+    tipo: string
+    comentario: "Material de referencia de precificacao"
+    pii: nenhum
+    nulo: true
+  - nome: batch_number_charg
+    tipo: string
+    comentario: "Numero do lote"
+    pii: nenhum
+    nulo: true
+  - nome: material_group_matkl
+    tipo: string
+    comentario: "Grupo de material"
+    pii: nenhum
+    nulo: true
+  - nome: short_text_arktx
+    tipo: string
+    comentario: "Texto curto do item do pedido de venda"
+    pii: nenhum
+    nulo: true
+  - nome: item_category_pstyv
+    tipo: string
+    comentario: "Categoria do item do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: item_type_posar
+    tipo: string
+    comentario: "Tipo do item"
+    pii: nenhum
+    nulo: true
+  - nome: relevant_for_delivery_lfrel
+    tipo: string
+    comentario: "Item relevante para entrega"
+    pii: nenhum
+    nulo: true
+  - nome: relevant_for_billing_fkrel
+    tipo: string
+    comentario: "Item relevante para faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: bom_item_level_uepos
+    tipo: string
+    comentario: "Item superior na estrutura de lista tecnica"
+    pii: nenhum
+    nulo: true
+  - nome: alternative_for_item_grpos
+    tipo: string
+    comentario: "Item para o qual este e uma alternativa"
+    pii: nenhum
+    nulo: true
+  - nome: rejection_reason_abgru
+    tipo: string
+    comentario: "Motivo de rejeicao do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: product_hierarchy_prodh
+    tipo: string
+    comentario: "Hierarquia de produto"
+    pii: nenhum
+    nulo: true
+  - nome: target_value_zwert
+    tipo: decimal(23,2)
+    comentario: "Valor alvo do acordo basico na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: target_quantity_uo_m_zmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade alvo na unidade de venda"
+    pii: nenhum
+    nulo: true
+  - nome: target_quantity_uo_m_zieme
+    tipo: string
+    comentario: "Unidade de medida da quantidade alvo"
+    pii: nenhum
+    nulo: true
+  - nome: base_target_conversion_factor_umziz
+    tipo: decimal(23,2)
+    comentario: "Fator de conversao da unidade de venda para unidade base (quantidade alvo)"
+    pii: nenhum
+    nulo: true
+  - nome: conversion_factor_umzin
+    tipo: decimal(23,2)
+    comentario: "Fator de conversao (quantidade alvo - denominador)"
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_of_measure_meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: scale_quantity_smeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade de escala na unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: rounding_quantity_for_delivery_ablfz
+    tipo: decimal(23,2)
+    comentario: "Quantidade de arredondamento para entrega"
+    pii: nenhum
+    nulo: true
+  - nome: reconciliation_date_abdat
+    tipo: date
+    comentario: "Data de reconciliacao da quantidade cumulativa acordada"
+    pii: nenhum
+    nulo: true
+  - nome: allowed_deviation_absfz
+    tipo: decimal(23,2)
+    comentario: "Desvio permitido de quantidade (absoluto)"
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_the_underlying_purchase_order_posex
+    tipo: string
+    comentario: "Numero do item do pedido de compra vinculado"
+    pii: nenhum
+    nulo: true
+  - nome: customer_material_number_kdmat
+    tipo: string
+    comentario: "Numero do material utilizado pelo cliente"
+    pii: nenhum
+    nulo: true
+  - nome: allowed_deviation_percent_kbver
+    tipo: decimal(23,2)
+    comentario: "Desvio permitido de quantidade (em percentual)"
+    pii: nenhum
+    nulo: true
+  - nome: days_by_which_the_quantity_can_be_shifted_kever
+    tipo: int
+    comentario: "Dias para os quais a quantidade pode ser deslocada"
+    pii: nenhum
+    nulo: true
+  - nome: repair_processing_vkgru
+    tipo: string
+    comentario: "Processamento de reparo: classificacao de itens"
+    pii: nenhum
+    nulo: true
+  - nome: usage_indicator_vkaus
+    tipo: string
+    comentario: "Indicador de utilizacao"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_group_grkor
+    tipo: string
+    comentario: "Grupo de entrega (itens entregues juntos)"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_is_fixed_fmeng
+    tipo: string
+    comentario: "Quantidade fixa"
+    pii: nenhum
+    nulo: true
+  - nome: unlimited_over_delivery_allowed_uebtk
+    tipo: string
+    comentario: "Entrega acima do pedido ilimitada permitida"
+    pii: nenhum
+    nulo: true
+  - nome: over_delivery_tolerance_limit_uebto
+    tipo: decimal(23,2)
+    comentario: "Tolerancia de entrega acima do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: under_delivery_tolerance_limit_untto
+    tipo: decimal(23,2)
+    comentario: "Tolerancia de entrega abaixo do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: billing_block_for_item_faksp
+    tipo: string
+    comentario: "Bloqueio de faturamento para o item"
+    pii: nenhum
+    nulo: true
+  - nome: replacement_part_atpkz
+    tipo: string
+    comentario: "Peca de reposicao"
+    pii: nenhum
+    nulo: true
+  - nome: form_of_billing_for_co_rkfkf
+    tipo: string
+    comentario: "Forma de faturamento para ordens CO/PPC"
+    pii: nenhum
+    nulo: true
+  - nome: division_spart
+    tipo: string
+    comentario: "Divisao"
+    pii: nenhum
+    nulo: true
+  - nome: business_area_gsber
+    tipo: string
+    comentario: "Area de negocio"
+    pii: nenhum
+    nulo: true
+  - nome: net_value_of_the_sales_document_item_in_document_currency_netwr
+    tipo: decimal(23,2)
+    comentario: "Valor liquido do item na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: document_currency_waerk
+    tipo: string
+    comentario: "Moeda do documento de vendas/entrega"
+    pii: nenhum
+    nulo: true
+  - nome: maximum_partial_deliveries_antlf
+    tipo: int
+    comentario: "Numero maximo de entregas parciais permitidas por item"
+    pii: nenhum
+    nulo: true
+  - nome: partial_delivery_at_item_level_kztlf
+    tipo: string
+    comentario: "Entrega parcial no nivel do item"
+    pii: nenhum
+    nulo: true
+  - nome: batch_split_allowed_chspl
+    tipo: string
+    comentario: "Divisao de lote permitida"
+    pii: nenhum
+    nulo: true
+  - nome: cumulative_order_quantity_kwmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade cumulativa do pedido na unidade de venda"
+    pii: nenhum
+    nulo: true
+  - nome: cumulative_target_delivery_qty_lsmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade de entrega requerida cumulativa (todas as linhas de programacao relevantes)"
+    pii: nenhum
+    nulo: true
+  - nome: cumulative_confirmed_quantity_kbmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade confirmada cumulativa na unidade de venda"
+    pii: nenhum
+    nulo: true
+  - nome: cumulative_confirmed_quantity_in_ba_se_uo_m_klmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade confirmada cumulativa na unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: sales_unit_vrkme
+    tipo: string
+    comentario: "Unidade de venda"
+    pii: nenhum
+    nulo: true
+  - nome: numerator_qty_umvkz
+    tipo: decimal(23,2)
+    comentario: "Numerador da conversao de quantidade de venda para SKU"
+    pii: nenhum
+    nulo: true
+  - nome: denominator_qty_umvkn
+    tipo: decimal(23,2)
+    comentario: "Denominador da conversao de quantidade de venda para SKU"
+    pii: nenhum
+    nulo: true
+  - nome: gross_weight_of_item_brgew
+    tipo: decimal(23,2)
+    comentario: "Peso bruto do item"
+    pii: nenhum
+    nulo: true
+  - nome: net_weight_of_item_ntgew
+    tipo: decimal(23,2)
+    comentario: "Peso liquido do item"
+    pii: nenhum
+    nulo: true
+  - nome: weight_unit_gewei
+    tipo: string
+    comentario: "Unidade de peso"
+    pii: nenhum
+    nulo: true
+  - nome: volume_of_the_item_volum
+    tipo: decimal(23,2)
+    comentario: "Volume do item"
+    pii: nenhum
+    nulo: true
+  - nome: volume_unit_voleh
+    tipo: string
+    comentario: "Unidade de volume"
+    pii: nenhum
+    nulo: true
+  - nome: originating_document_vbelv
+    tipo: string
+    comentario: "Documento de origem"
+    pii: nenhum
+    nulo: true
+  - nome: originating_item_posnv
+    tipo: string
+    comentario: "Item do documento de origem"
+    pii: nenhum
+    nulo: true
+  - nome: reference_document_vgbel
+    tipo: string
+    comentario: "Numero do documento de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: reference_item_vgpos
+    tipo: string
+    comentario: "Numero do item do documento de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: reference_indicator_voref
+    tipo: string
+    comentario: "Indicador de referencia completa"
+    pii: nenhum
+    nulo: true
+  - nome: update_indicator_upflu
+    tipo: string
+    comentario: "Indicador de atualizacao do fluxo de documentos"
+    pii: nenhum
+    nulo: true
+  - nome: completion_rule_for_quotation_erlre
+    tipo: string
+    comentario: "Regra de conclusao de cotacao/contrato"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_priority_lprio
+    tipo: string
+    comentario: "Prioridade de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro (proprio ou externo)"
+    pii: nenhum
+    nulo: true
+  - nome: storage_location_lgort
+    tipo: string
+    comentario: "Deposito"
+    pii: nenhum
+    nulo: true
+  - nome: shipping_receiving_point_vstel
+    tipo: string
+    comentario: "Ponto de expedicao/recebimento"
+    pii: nenhum
+    nulo: true
+  - nome: route_route
+    tipo: string
+    comentario: "Rota"
+    pii: nenhum
+    nulo: true
+  - nome: bom_origin_stkey
+    tipo: string
+    comentario: "Origem da lista tecnica"
+    pii: nenhum
+    nulo: true
+  - nome: bom_date_stdat
+    tipo: date
+    comentario: "Data-chave da lista tecnica"
+    pii: nenhum
+    nulo: true
+  - nome: bom_stlnr
+    tipo: string
+    comentario: "Numero da lista tecnica"
+    pii: nenhum
+    nulo: true
+  - nome: order_probability_of_the_item_awahr
+    tipo: decimal(23,2)
+    comentario: "Probabilidade de pedido do item"
+    pii: nenhum
+    nulo: true
+  - nome: creation_date_erdat
+    tipo: date
+    comentario: "Data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Criado por (nome do usuario)"
+    pii: direto
+    nulo: true
+  - nome: creation_time_erzet
+    tipo: string
+    comentario: "Hora de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification1_taxm1
+    tipo: string
+    comentario: "Classificacao fiscal do material 1"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification2_taxm2
+    tipo: string
+    comentario: "Classificacao fiscal do material 2"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification3_taxm3
+    tipo: string
+    comentario: "Classificacao fiscal do material 3"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification4_taxm4
+    tipo: string
+    comentario: "Classificacao fiscal do material 4"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification5_taxm5
+    tipo: string
+    comentario: "Classificacao fiscal do material 5"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification6_taxm6
+    tipo: string
+    comentario: "Classificacao fiscal do material 6"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification7_taxm7
+    tipo: string
+    comentario: "Classificacao fiscal do material 7"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification8_taxm8
+    tipo: string
+    comentario: "Classificacao fiscal do material 8"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification9_taxm9
+    tipo: string
+    comentario: "Classificacao fiscal do material 9"
+    pii: nenhum
+    nulo: true
+  - nome: fixed_shipping_processing_time_in_days_vbeaf
+    tipo: decimal(23,2)
+    comentario: "Tempo fixo de processamento de expedicao em dias (tempo de setup)"
+    pii: nenhum
+    nulo: true
+  - nome: variable_shipping_processing_time_in_days_vbeav
+    tipo: decimal(23,2)
+    comentario: "Tempo variavel de processamento de expedicao em dias"
+    pii: nenhum
+    nulo: true
+  - nome: preceding_document_has_resulted_from_reference_vgref
+    tipo: string
+    comentario: "Documento precedente originado por referencia"
+    pii: nenhum
+    nulo: true
+  - nome: net_price_netpr
+    tipo: decimal(23,2)
+    comentario: "Preco liquido"
+    pii: nenhum
+    nulo: true
+  - nome: condition_pricing_unit_kpein
+    tipo: decimal(23,2)
+    comentario: "Unidade de precificacao da condicao"
+    pii: nenhum
+    nulo: true
+  - nome: condition_unit_kmein
+    tipo: string
+    comentario: "Unidade da condicao"
+    pii: nenhum
+    nulo: true
+  - nome: returns_item_shkzg
+    tipo: string
+    comentario: "Item de devolucao"
+    pii: nenhum
+    nulo: true
+  - nome: cash_discount_indicator_sktof
+    tipo: string
+    comentario: "Indicador de desconto de caixa"
+    pii: nenhum
+    nulo: true
+  - nome: checking_group_for_availability_check_mtvfp
+    tipo: string
+    comentario: "Grupo de verificacao de disponibilidade"
+    pii: nenhum
+    nulo: true
+  - nome: summing_up_of_requirements_sumbd
+    tipo: string
+    comentario: "Consolidacao de necessidades"
+    pii: nenhum
+    nulo: true
+  - nome: material_pricing_group_kondm
+    tipo: string
+    comentario: "Grupo de preco do material"
+    pii: nenhum
+    nulo: true
+  - nome: account_assignment_group_for_this_material_ktgrm
+    tipo: string
+    comentario: "Grupo de atribuicao de conta do material"
+    pii: nenhum
+    nulo: true
+  - nome: volume_rebate_group_bonus
+    tipo: string
+    comentario: "Grupo de rebate por volume"
+    pii: nenhum
+    nulo: true
+  - nome: commission_group_provg
+    tipo: string
+    comentario: "Grupo de comissao"
+    pii: nenhum
+    nulo: true
+  - nome: pricing_is_ok_prsok
+    tipo: string
+    comentario: "Precificacao concluida com sucesso"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_type_bwtar
+    tipo: string
+    comentario: "Tipo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: separate_valuation_bwtex
+    tipo: string
+    comentario: "Indicador de avaliacao separada"
+    pii: nenhum
+    nulo: true
+  - nome: batch_management_requirement_indicator_xchpf
+    tipo: string
+    comentario: "Indicador de obrigatoriedade de gestao de lote"
+    pii: nenhum
+    nulo: true
+  - nome: batch_management_indicator_xchar
+    tipo: string
+    comentario: "Indicador de gestao de lote (interno)"
+    pii: nenhum
+    nulo: true
+  - nome: minimum_delivery_quantity_in_delivery_note_processing_lfmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade minima de entrega no processamento da nota de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: update_group_for_statistics_update_stafo
+    tipo: string
+    comentario: "Grupo de atualizacao para estatisticas"
+    pii: nenhum
+    nulo: true
+  - nome: cost_in_document_currency_wavwr
+    tipo: decimal(23,2)
+    comentario: "Custo na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: sub_total1_from_pricing_procedure_for_condition_kzwi1
+    tipo: decimal(23,2)
+    comentario: "Subtotal 1 do procedimento de precificacao"
+    pii: nenhum
+    nulo: true
+  - nome: sub_total2_from_pricing_procedure_for_condition_kzwi2
+    tipo: decimal(23,2)
+    comentario: "Subtotal 2 do procedimento de precificacao"
+    pii: nenhum
+    nulo: true
+  - nome: sub_total3_from_pricing_procedure_for_condition_kzwi3
+    tipo: decimal(23,2)
+    comentario: "Subtotal 3 do procedimento de precificacao"
+    pii: nenhum
+    nulo: true
+  - nome: sub_total4_from_pricing_procedure_for_condition_kzwi4
+    tipo: decimal(23,2)
+    comentario: "Subtotal 4 do procedimento de precificacao"
+    pii: nenhum
+    nulo: true
+  - nome: sub_total5_from_pricing_procedure_for_condition_kzwi5
+    tipo: decimal(23,2)
+    comentario: "Subtotal 5 do procedimento de precificacao"
+    pii: nenhum
+    nulo: true
+  - nome: sub_total6_from_pricing_procedure_for_condition_kzwi6
+    tipo: decimal(23,2)
+    comentario: "Subtotal 6 do procedimento de precificacao"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_for_statistics_stcur
+    tipo: decimal(23,2)
+    comentario: "Taxa de cambio para estatisticas (na criacao)"
+    pii: nenhum
+    nulo: true
+  - nome: last_changed_on_aedat
+    tipo: date
+    comentario: "Data da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: international_article_number_ean11
+    tipo: string
+    comentario: "Numero de artigo internacional (EAN/UPC)"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_date_and_quantity_fixed_fixmg
+    tipo: string
+    comentario: "Data de entrega e quantidade fixas"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: material_group1_mvgr1
+    tipo: string
+    comentario: "Grupo de material 1"
+    pii: nenhum
+    nulo: true
+  - nome: material_group2_mvgr2
+    tipo: string
+    comentario: "Grupo de material 2"
+    pii: nenhum
+    nulo: true
+  - nome: material_group3_mvgr3
+    tipo: string
+    comentario: "Grupo de material 3"
+    pii: nenhum
+    nulo: true
+  - nome: material_group4_mvgr4
+    tipo: string
+    comentario: "Grupo de material 4"
+    pii: nenhum
+    nulo: true
+  - nome: material_group5_mvgr5
+    tipo: string
+    comentario: "Grupo de material 5"
+    pii: nenhum
+    nulo: true
+  - nome: component_quantity_kmpmg
+    tipo: decimal(23,2)
+    comentario: "Quantidade do componente"
+    pii: nenhum
+    nulo: true
+  - nome: reason_for_material_substitution_sugrd
+    tipo: string
+    comentario: "Motivo da substituicao de material"
+    pii: nenhum
+    nulo: true
+  - nome: special_stock_indicator_sobkz
+    tipo: string
+    comentario: "Indicador de estoque especial"
+    pii: nenhum
+    nulo: true
+  - nome: allocation_indicator_vpzuo
+    tipo: string
+    comentario: "Indicador de alocacao"
+    pii: nenhum
+    nulo: true
+  - nome: profitability_segment_number_paobjnr
+    tipo: string
+    comentario: "Numero do segmento de rentabilidade"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_ps_psp_pnr
+    tipo: string
+    comentario: "Elemento WBS (estrutura analitica do projeto)"
+    pii: nenhum
+    nulo: true
+  - nome: order_number_aufnr
+    tipo: string
+    comentario: "Numero da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: planning_material_vpmat
+    tipo: string
+    comentario: "Material de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: planning_plant_vpwrk
+    tipo: string
+    comentario: "Centro de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_of_measure_for_product_group_prbme
+    tipo: string
+    comentario: "Unidade de medida base para grupo de produtos"
+    pii: nenhum
+    nulo: true
+  - nome: conversion_factor_quantities_umref
+    tipo: decimal(23,2)
+    comentario: "Fator de conversao de quantidades"
+    pii: nenhum
+    nulo: true
+  - nome: account_assignment_category_knttp
+    tipo: string
+    comentario: "Categoria de atribuicao de conta"
+    pii: nenhum
+    nulo: true
+  - nome: consumption_posting_kzvbr
+    tipo: string
+    comentario: "Lancamento de consumo"
+    pii: nenhum
+    nulo: true
+  - nome: bom_explosion_number_sernr
+    tipo: string
+    comentario: "Numero de explosao da lista tecnica"
+    pii: nenhum
+    nulo: true
+  - nome: object_number_at_item_level_objnr
+    tipo: string
+    comentario: "Numero do objeto no nivel do item"
+    pii: nenhum
+    nulo: true
+  - nome: results_analysis_key_abgrs
+    tipo: string
+    comentario: "Chave de analise de resultados"
+    pii: nenhum
+    nulo: true
+  - nome: requirements_type_bedae
+    tipo: string
+    comentario: "Tipo de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: item_credit_price_cmpre
+    tipo: decimal(23,2)
+    comentario: "Preco de credito do item"
+    pii: nenhum
+    nulo: true
+  - nome: credit_block_cmtfg
+    tipo: string
+    comentario: "Liberacao parcial do item de ordem com bloqueio de credito"
+    pii: nenhum
+    nulo: true
+  - nome: relevant_for_credit_cmpnt
+    tipo: string
+    comentario: "Item com funcao de credito ativa / relevante para credito"
+    pii: nenhum
+    nulo: true
+  - nome: configuration_cuobj
+    tipo: string
+    comentario: "Configuracao"
+    pii: nenhum
+    nulo: true
+  - nome: internal_object_number_of_the_batch_classification_cuobj_ch
+    tipo: string
+    comentario: "Numero interno do objeto da classificacao de lote"
+    pii: nenhum
+    nulo: true
+  - nome: status_expected_price_cepok
+    tipo: string
+    comentario: "Status do preco esperado"
+    pii: nenhum
+    nulo: true
+  - nome: condition_update_koupd
+    tipo: string
+    comentario: "Atualizacao de condicao"
+    pii: nenhum
+    nulo: true
+  - nome: serial_number_profile_serail
+    tipo: string
+    comentario: "Perfil de numero de serie"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_serial_numbers_anzsn
+    tipo: int
+    comentario: "Numero de numeros de serie"
+    pii: nenhum
+    nulo: true
+  - nome: customer_has_not_posted_goods_receipt_nachl
+    tipo: string
+    comentario: "Cliente nao lancou recebimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: packaging_materials_magrv
+    tipo: string
+    comentario: "Grupo de material: materiais de embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: status_manual_price_change_mprok
+    tipo: string
+    comentario: "Status de alteracao manual de preco"
+    pii: nenhum
+    nulo: true
+  - nome: preceding_doc_category_vgtyp
+    tipo: string
+    comentario: "Categoria do documento anterior de vendas/entrega"
+    pii: nenhum
+    nulo: true
+  - nome: id_for_material_determination_prosa
+    tipo: string
+    comentario: "ID para determinacao de material"
+    pii: nenhum
+    nulo: true
+  - nome: id_for_higher_level_item_usage_uepvw
+    tipo: string
+    comentario: "ID para uso do item de nivel superior"
+    pii: nenhum
+    nulo: true
+  - nome: cost_estimate_number_kalnr
+    tipo: string
+    comentario: "Numero da estimativa de custo (sem quantidade)"
+    pii: nenhum
+    nulo: true
+  - nome: costing_variant_klvar
+    tipo: string
+    comentario: "Variante de custeio"
+    pii: nenhum
+    nulo: true
+  - nome: bom_item_number_sposn
+    tipo: string
+    comentario: "Numero do item da lista tecnica"
+    pii: nenhum
+    nulo: true
+  - nome: statistical_values_kowrr
+    tipo: string
+    comentario: "Valores estatisticos"
+    pii: nenhum
+    nulo: true
+  - nome: statistics_date_stadat
+    tipo: date
+    comentario: "Data das estatisticas"
+    pii: nenhum
+    nulo: true
+  - nome: business_transaction_type_for_foreign_trade_exart
+    tipo: string
+    comentario: "Tipo de transacao comercial (comercio exterior)"
+    pii: nenhum
+    nulo: true
+  - nome: import_export_flag_prefe
+    tipo: string
+    comentario: "Preferencia aduaneira"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_condition_record_knumh
+    tipo: string
+    comentario: "Numero do registro de condicao da determinacao de lote"
+    pii: nenhum
+    nulo: true
+  - nome: internal_class_number_clint
+    tipo: string
+    comentario: "Numero interno da classe"
+    pii: nenhum
+    nulo: true
+  - nome: bom_category_stlty
+    tipo: string
+    comentario: "Categoria da lista tecnica"
+    pii: nenhum
+    nulo: true
+  - nome: bom_item_node_number_stlkn
+    tipo: bigint
+    comentario: "Numero do no do item da lista tecnica"
+    pii: nenhum
+    nulo: true
+  - nome: internal_counter_stpoz
+    tipo: bigint
+    comentario: "Contador interno"
+    pii: nenhum
+    nulo: true
+  - nome: inconsistent_configuration_stman
+    tipo: string
+    comentario: "Configuracao inconsistente"
+    pii: nenhum
+    nulo: true
+  - nome: over_head_key_zschl_k
+    tipo: string
+    comentario: "Chave de overhead"
+    pii: nenhum
+    nulo: true
+  - nome: costing_sheet_kalsm_k
+    tipo: string
+    comentario: "Folha de custeio"
+    pii: nenhum
+    nulo: true
+  - nome: costing_variant_kalvar
+    tipo: string
+    comentario: "Variante de custeio (alternativa)"
+    pii: nenhum
+    nulo: true
+  - nome: product_allocation_kosch
+    tipo: string
+    comentario: "Procedimento de determinacao de alocacao de produto"
+    pii: nenhum
+    nulo: true
+  - nome: pricing_reference_material_upmat
+    tipo: string
+    comentario: "Material de referencia de precificacao do item principal"
+    pii: nenhum
+    nulo: true
+  - nome: material_pricing_group_ukonm
+    tipo: string
+    comentario: "Grupo de preco do material do item principal"
+    pii: nenhum
+    nulo: true
+  - nome: material_freight_group_mfrgr
+    tipo: string
+    comentario: "Grupo de frete do material"
+    pii: nenhum
+    nulo: true
+  - nome: planning_release_regulation_plavo
+    tipo: string
+    comentario: "Instrucao para programacao de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: kanban_kannr
+    tipo: string
+    comentario: "Numero de KANBAN/sequencia"
+    pii: nenhum
+    nulo: true
+  - nome: item_credit_price_cmpre_flt
+    tipo: decimal(23,2)
+    comentario: "Preco de credito do item (campo flutuante)"
+    pii: nenhum
+    nulo: true
+  - nome: form_of_payment_guarantee_abfor
+    tipo: string
+    comentario: "Forma de garantia de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: guaranteed_factor_abges
+    tipo: decimal(23,2)
+    comentario: "Fator garantido (entre 0 e 1)"
+    pii: nenhum
+    nulo: true
+  - nome: value_contract_no_wktnr
+    tipo: string
+    comentario: "Numero do contrato de valor"
+    pii: nenhum
+    nulo: true
+  - nome: value_contract_item_wktps
+    tipo: string
+    comentario: "Item do contrato de valor"
+    pii: nenhum
+    nulo: true
+  - nome: assortment_module_skopf
+    tipo: string
+    comentario: "Modulo de sortimento"
+    pii: nenhum
+    nulo: true
+  - nome: valuationof_special_stock_kzbws
+    tipo: string
+    comentario: "Avaliacao de estoque especial"
+    pii: nenhum
+    nulo: true
+  - nome: material_group_hierarchy1_wgru1
+    tipo: string
+    comentario: "Hierarquia de grupo de material 1"
+    pii: nenhum
+    nulo: true
+  - nome: material_group_hierarchy2_wgru2
+    tipo: string
+    comentario: "Hierarquia de grupo de material 2"
+    pii: nenhum
+    nulo: true
+  - nome: promotion_knuma_pi
+    tipo: string
+    comentario: "Promocao"
+    pii: nenhum
+    nulo: true
+  - nome: sales_deal_knuma_ag
+    tipo: string
+    comentario: "Acordo de venda"
+    pii: nenhum
+    nulo: true
+  - nome: leading_uo_m_kzfme
+    tipo: string
+    comentario: "ID: unidade de medida principal para conclusao de transacao"
+    pii: nenhum
+    nulo: true
+  - nome: free_goods_delivery_control_lstanr
+    tipo: string
+    comentario: "Controle de entrega de brindes"
+    pii: nenhum
+    nulo: true
+  - nome: parameter_variant_techs
+    tipo: string
+    comentario: "Variante de parametro / variante padrao"
+    pii: nenhum
+    nulo: true
+  - nome: tax_amount_in_document_currency_mwsbp
+    tipo: decimal(23,2)
+    comentario: "Valor do imposto na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: mrp_area_berid
+    tipo: string
+    comentario: "Area de MRP"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_for_billing_pctrf
+    tipo: string
+    comentario: "Centro de lucro para faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: managing_location_stockloc
+    tipo: string
+    comentario: "Primeiro local gerenciador de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: type_of_first_inventory_sloctype
+    tipo: string
+    comentario: "Tipo do primeiro local gerenciador de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: return_reason_msr_ret_reason
+    tipo: string
+    comentario: "Motivo da devolucao"
+    pii: nenhum
+    nulo: true
+  - nome: returns_refund_code_msr_refund_code
+    tipo: string
+    comentario: "Codigo de reembolso de devolucao"
+    pii: nenhum
+    nulo: true
+  - nome: approval_block_msr_approv_block
+    tipo: string
+    comentario: "Bloqueio de aprovacao"
+    pii: nenhum
+    nulo: true
+  - nome: condition_record_number_nrab_knumh
+    tipo: string
+    comentario: "Numero do registro de condicao"
+    pii: nenhum
+    nulo: true
+  - nome: risk_relevancy_in_sales_trmrisk_relevant
+    tipo: string
+    comentario: "Relevancia de risco em vendas"
+    pii: nenhum
+    nulo: true
+  - nome: location_for_a_physical_hand_over_of_goods_handoverloc
+    tipo: string
+    comentario: "Local de entrega fisica das mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: hand_over_date_at_the_hand_over_location_handoverdate
+    tipo: date
+    comentario: "Data de entrega no local de transferencia"
+    pii: nenhum
+    nulo: true
+  - nome: hand_over_time_at_the_hand_over_location_handovertime
+    tipo: string
+    comentario: "Hora de entrega no local de transferencia"
+    pii: nenhum
+    nulo: true
+  - nome: tax_code_automatically_determined_tc_aut_det
+    tipo: string
+    comentario: "Codigo de imposto determinado automaticamente"
+    pii: nenhum
+    nulo: true
+  - nome: manual_tax_code_re_a_son_manual_tc_reason
+    tipo: string
+    comentario: "Motivo do codigo de imposto manual"
+    pii: nenhum
+    nulo: true
+  - nome: tax_incentive_type_fiscal_incentive
+    tipo: string
+    comentario: "Tipo de incentivo fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: incentive_id_fiscal_incentive_id
+    tipo: string
+    comentario: "ID do incentivo fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: not_a_fiscal_special_case_for_cfop_determination_spcsto
+    tipo: string
+    comentario: "Caso especial de nota fiscal para determinacao do CFOP"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: fund_fonds
+    tipo: string
+    comentario: "Fundo"
+    pii: nenhum
+    nulo: true
+  - nome: funds_center_fistl
+    tipo: string
+    comentario: "Centro de fundos"
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_fkber
+    tipo: string
+    comentario: "Area funcional"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_creation_date_erdat
+    tipo: int
+    comentario: "Ano da data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_creation_date_erdat
+    tipo: int
+    comentario: "Mes da data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_creation_date_erdat
+    tipo: int
+    comentario: "Semana da data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: day_of_month_of_creation_date_erdat
+    tipo: int
+    comentario: "Dia do mes da data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_creation_date_erdat
+    tipo: int
+    comentario: "Trimestre da data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da ultima atualizacao na origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

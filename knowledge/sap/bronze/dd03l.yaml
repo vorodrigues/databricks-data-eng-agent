@@ -1,0 +1,157 @@
+tabela: dd03l
+camada: bronze
+comentario: "Campos de tabelas do dicionário ABAP (SAP DD03L). Tabela independente de mandante."
+ingestao: cdc
+fonte: sap.dd03l
+chave_primaria: [tabname, fieldname, as4local, as4vers]
+colunas:
+  - nome: tabname
+    tipo: string
+    comentario: "Nome da tabela"
+    pii: nenhum
+    nulo: false
+  - nome: fieldname
+    tipo: string
+    comentario: "Nome do campo"
+    pii: nenhum
+    nulo: false
+  - nome: as4local
+    tipo: string
+    comentario: "Status de ativação"
+    pii: nenhum
+    nulo: false
+  - nome: as4vers
+    tipo: string
+    comentario: "Versão do objeto ABAP"
+    pii: nenhum
+    nulo: false
+  - nome: position
+    tipo: int
+    comentario: "Posição do campo na tabela"
+    pii: nenhum
+    nulo: true
+  - nome: keyflag
+    tipo: string
+    comentario: "Indicador de campo chave"
+    pii: nenhum
+    nulo: true
+  - nome: mandatory
+    tipo: string
+    comentario: "Campo obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: rollname
+    tipo: string
+    comentario: "Nome do elemento de dados"
+    pii: nenhum
+    nulo: true
+  - nome: checktable
+    tipo: string
+    comentario: "Tabela de verificação (check table)"
+    pii: nenhum
+    nulo: true
+  - nome: adminfield
+    tipo: string
+    comentario: "Campo administrativo"
+    pii: nenhum
+    nulo: true
+  - nome: inttype
+    tipo: string
+    comentario: "Tipo interno ABAP"
+    pii: nenhum
+    nulo: true
+  - nome: intlen
+    tipo: int
+    comentario: "Comprimento interno do campo"
+    pii: nenhum
+    nulo: true
+  - nome: reftable
+    tipo: string
+    comentario: "Tabela de referência"
+    pii: nenhum
+    nulo: true
+  - nome: precfield
+    tipo: string
+    comentario: "Nome do include"
+    pii: nenhum
+    nulo: true
+  - nome: reffield
+    tipo: string
+    comentario: "Campo de referência"
+    pii: nenhum
+    nulo: true
+  - nome: conrout
+    tipo: string
+    comentario: "Módulo de verificação"
+    pii: nenhum
+    nulo: true
+  - nome: notnull
+    tipo: string
+    comentario: "NOT NULL forçado"
+    pii: nenhum
+    nulo: true
+  - nome: datatype
+    tipo: string
+    comentario: "Tipo de dado SAP"
+    pii: nenhum
+    nulo: true
+  - nome: leng
+    tipo: int
+    comentario: "Número de caracteres"
+    pii: nenhum
+    nulo: true
+  - nome: decimals
+    tipo: int
+    comentario: "Casas decimais"
+    pii: nenhum
+    nulo: true
+  - nome: domname
+    tipo: string
+    comentario: "Nome do domínio"
+    pii: nenhum
+    nulo: true
+  - nome: shlporigin
+    tipo: string
+    comentario: "Origem da ajuda de pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: tabletype
+    tipo: string
+    comentario: "Tipo de tabela"
+    pii: nenhum
+    nulo: true
+  - nome: depth
+    tipo: int
+    comentario: "Profundidade de aninhamento"
+    pii: nenhum
+    nulo: true
+  - nome: comptype
+    tipo: string
+    comentario: "Tipo de componente"
+    pii: nenhum
+    nulo: true
+  - nome: reftype
+    tipo: string
+    comentario: "Tipo do objeto referenciado"
+    pii: nenhum
+    nulo: true
+  - nome: languflag
+    tipo: string
+    comentario: "Idioma do texto"
+    pii: nenhum
+    nulo: true
+  - nome: dbposition
+    tipo: int
+    comentario: "Posição do campo no banco de dados"
+    pii: nenhum
+    nulo: true
+  - nome: anonymous
+    tipo: string
+    comentario: "Indicador de campo anonimo (DDIC)."
+    pii: nenhum
+    nulo: true
+  - nome: outputstyle
+    tipo: string
+    comentario: "Estilo de saída"
+    pii: nenhum
+    nulo: true

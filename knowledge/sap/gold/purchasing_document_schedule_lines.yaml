@@ -1,0 +1,278 @@
+tabela: purchasing_document_schedule_lines
+camada: gold
+comentario: "Captura cronogramas logísticos de entrega do SAP EKET, especificando datas de entrega, quantidades programadas e quantidades recebidas/emitidas por linha de item."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.ekko, silver.ekpo, silver.eket, silver.tcurx]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, purchasing_document_number_ebeln, item_number_of_purchasing_document_ebelp, delivery_schedule_line_counter_etenr]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: purchasing_document_number_ebeln
+    tipo: string
+    comentario: "Número do documento de compra"
+    pii: nenhum
+    nulo: false
+  - nome: item_number_of_purchasing_document_ebelp
+    tipo: string
+    comentario: "Número do item do documento de compra"
+    pii: nenhum
+    nulo: false
+  - nome: delivery_schedule_line_counter_etenr
+    tipo: string
+    comentario: "Contador da linha do cronograma de entrega"
+    pii: nenhum
+    nulo: false
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: true
+  - nome: uo_m_meins
+    tipo: string
+    comentario: "Unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: true
+  - nome: storage_location_lgort
+    tipo: string
+    comentario: "Depósito"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Empresa"
+    pii: nenhum
+    nulo: true
+  - nome: item_delivery_date_eindt
+    tipo: date
+    comentario: "Data de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_item_delivery_date_eindt
+    tipo: string
+    comentario: "Ano da data de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_item_delivery_date_eindt
+    tipo: string
+    comentario: "Mês da data de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_item_delivery_date_eindt
+    tipo: string
+    comentario: "Trimestre da data de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_item_delivery_date_eindt
+    tipo: string
+    comentario: "Semana da data de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: statistics_relevant_delivery_date_slfdt
+    tipo: date
+    comentario: "Data de entrega relevante para estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_statistics_relevant_delivery_date_slfdt
+    tipo: string
+    comentario: "Ano da data de entrega relevante para estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_statistics_relevant_delivery_date_slfdt
+    tipo: string
+    comentario: "Mês da data de entrega relevante para estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_statistics_relevant_delivery_date_slfdt
+    tipo: string
+    comentario: "Trimestre da data de entrega relevante para estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_statistics_relevant_delivery_date_slfdt
+    tipo: string
+    comentario: "Semana da data de entrega relevante para estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: category_of_delivery_date_lpein
+    tipo: string
+    comentario: "Categoria da data de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: scheduled_quantity_menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade programada"
+    pii: nenhum
+    nulo: true
+  - nome: previous_quantity_ameng
+    tipo: decimal(23,2)
+    comentario: "Quantidade anterior (linhas do cronograma de entrega)"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_of_goods_received_wemng
+    tipo: decimal(23,2)
+    comentario: "Quantidade de mercadorias recebidas"
+    pii: nenhum
+    nulo: true
+  - nome: issued_quantity_wamng
+    tipo: decimal(23,2)
+    comentario: "Quantidade emitida"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_reminders_for_schedule_line_mahnz
+    tipo: int
+    comentario: "Número de lembretes/cobradores para a linha do cronograma"
+    pii: nenhum
+    nulo: true
+  - nome: committed_quantity_mng02
+    tipo: decimal(23,2)
+    comentario: "Quantidade comprometida"
+    pii: nenhum
+    nulo: true
+  - nome: committed_date_dat01
+    tipo: date
+    comentario: "Data comprometida"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_document_type_bsart
+    tipo: string
+    comentario: "Tipo do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: date_on_which_record_was_created_aedat
+    tipo: date
+    comentario: "Data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_date_on_which_record_was_created_aedat
+    tipo: string
+    comentario: "Ano da data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_date_on_which_record_was_created_aedat
+    tipo: string
+    comentario: "Mês da data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_date_on_which_record_was_created_aedat
+    tipo: string
+    comentario: "Trimestre da data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_date_on_which_record_was_created_aedat
+    tipo: string
+    comentario: "Semana da data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: vendor_account_number_lifnr
+    tipo: string
+    comentario: "Número da conta do fornecedor/credor"
+    pii: indireto
+    nulo: true
+  - nome: purchasing_organization_ekorg
+    tipo: string
+    comentario: "Organização de compras"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_group_ekgrp
+    tipo: string
+    comentario: "Grupo de compras"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_document_date_bedat
+    tipo: date
+    comentario: "Data do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_purchasing_document_date_bedat
+    tipo: string
+    comentario: "Ano da data do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_purchasing_document_date_bedat
+    tipo: string
+    comentario: "Mês da data do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_purchasing_document_date_bedat
+    tipo: string
+    comentario: "Trimestre da data do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_purchasing_document_date_bedat
+    tipo: string
+    comentario: "Semana da data do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: supplying_plant_in_case_of_stock_transport_order_reswk
+    tipo: string
+    comentario: "Centro fornecedor para ordem de transferência de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: deletion_indicator_in_purchasing_document_loekz
+    tipo: string
+    comentario: "Indicador de exclusão no documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_completed_indicator_elikz
+    tipo: string
+    comentario: "Indicador de entrega concluída"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_document_category_bstyp
+    tipo: string
+    comentario: "Categoria do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: purchase_requisition_number_banfn
+    tipo: string
+    comentario: "Número da requisição de compra"
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_purchase_requisition_bnfpo
+    tipo: string
+    comentario: "Número do item da requisição de compra"
+    pii: nenhum
+    nulo: true
+  - nome: returns_item_retpo
+    tipo: string
+    comentario: "Item de devolução"
+    pii: nenhum
+    nulo: true
+  - nome: issuing_storage_location_for_stock_transport_order_reslo
+    tipo: string
+    comentario: "Depósito emissor para ordem de transferência de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: open_quantity
+    tipo: decimal(23,2)
+    comentario: "Quantidade em aberto (diferença entre quantidade programada e quantidade emitida quando o pedido não está concluído)"
+    pii: nenhum
+    nulo: true
+  - nome: open_quantity_amount
+    tipo: decimal(23,2)
+    comentario: "Valor da quantidade em aberto multiplicado pelo preço unitário na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: in_transit_quantity
+    tipo: decimal(23,2)
+    comentario: "Quantidade em trânsito (diferença entre quantidade emitida e quantidade de mercadorias recebidas)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora da última atualização no sistema de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora do carregamento no BigQuery"
+    pii: nenhum
+    nulo: true

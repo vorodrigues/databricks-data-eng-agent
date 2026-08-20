@@ -1,0 +1,32 @@
+tabela: makt
+camada: bronze
+comentario: "Descrições de material (textos curtos por idioma)"
+ingestao: cdc
+fonte: sap.makt
+chave_primaria: [mandt, matnr, spras]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número de material"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: maktx
+    tipo: string
+    comentario: "Descrição breve do material"
+    pii: nenhum
+    nulo: true
+  - nome: maktg
+    tipo: string
+    comentario: "Descrição do material em maiúsculas (para pesquisa)"
+    pii: nenhum
+    nulo: true

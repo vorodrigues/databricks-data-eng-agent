@@ -1,0 +1,37 @@
+tabela: tcurc
+camada: bronze
+comentario: "Codigos de moeda do SAP"
+ingestao: cdc
+fonte: sap.tcurc
+chave_primaria: [mandt, waers]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: waers
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: false
+  - nome: isocd
+    tipo: string
+    comentario: "Codigo ISO da moeda"
+    pii: nenhum
+    nulo: true
+  - nome: altwr
+    tipo: string
+    comentario: "Chave alternativa da moeda"
+    pii: nenhum
+    nulo: true
+  - nome: gdatu
+    tipo: date
+    comentario: "Data de validade ate"
+    pii: nenhum
+    nulo: true
+  - nome: xprimary
+    tipo: string
+    comentario: "Indicador de codigo SAP primario para o codigo ISO"
+    pii: nenhum
+    nulo: true

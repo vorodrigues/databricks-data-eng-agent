@@ -1,0 +1,217 @@
+tabela: mkol
+camada: bronze
+comentario: "Estoques especiais de fornecedor (consignacao)"
+ingestao: cdc
+fonte: sap.mkol
+chave_primaria: [mandt, matnr, werks, lgort, charg, sobkz, lifnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Numero do material"
+    pii: nenhum
+    nulo: false
+  - nome: werks
+    tipo: string
+    comentario: "Planta"
+    pii: nenhum
+    nulo: false
+  - nome: lgort
+    tipo: string
+    comentario: "Deposito (almoxarifado)"
+    pii: nenhum
+    nulo: false
+  - nome: charg
+    tipo: string
+    comentario: "Numero do lote"
+    pii: nenhum
+    nulo: false
+  - nome: sobkz
+    tipo: string
+    comentario: "Indicador de estoque especial"
+    pii: nenhum
+    nulo: false
+  - nome: lifnr
+    tipo: string
+    comentario: "Codigo do fornecedor (lifnr)"
+    pii: indireto
+    nulo: false
+  - nome: lvorm
+    tipo: string
+    comentario: "Indicador de exclusao de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: ersda
+    tipo: date
+    comentario: "Data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: laeda
+    tipo: date
+    comentario: "Data da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: lfgja
+    tipo: string
+    comentario: "Ano do periodo atual"
+    pii: nenhum
+    nulo: true
+  - nome: lfmon
+    tipo: string
+    comentario: "Periodo atual"
+    pii: nenhum
+    nulo: true
+  - nome: spers
+    tipo: string
+    comentario: "Indicador de bloqueio de inventario fisico"
+    pii: nenhum
+    nulo: true
+  - nome: slabs
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignacao de livre utilizacao"
+    pii: nenhum
+    nulo: true
+  - nome: sinsm
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignacao em inspecao de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: seinm
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignacao com uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: sspem
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignacao bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: svmla
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignacao livre no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: svmin
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignacao em inspecao no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: svmei
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignacao restrito no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: svmsp
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignacao bloqueado no periodo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: kzisl
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque livre (periodo atual)"
+    pii: nenhum
+    nulo: true
+  - nome: kzisq
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque em inspecao (periodo atual)"
+    pii: nenhum
+    nulo: true
+  - nome: kzise
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque restrito (periodo atual)"
+    pii: nenhum
+    nulo: true
+  - nome: kziss
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque bloqueado (periodo atual)"
+    pii: nenhum
+    nulo: true
+  - nome: kzvsl
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque livre (periodo anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: kzvsq
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque em inspecao (periodo anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: kzvse
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque restrito (periodo anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: kzvss
+    tipo: string
+    comentario: "Indicador de inventario fisico - estoque bloqueado (periodo anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: mmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade minima de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: ameng
+    tipo: decimal(23,2)
+    comentario: "Quantidade de reabastecimento"
+    pii: nenhum
+    nulo: true
+  - nome: kodll
+    tipo: date
+    comentario: "Data da ultima contagem de inventario"
+    pii: nenhum
+    nulo: true
+  - nome: kojin
+    tipo: string
+    comentario: "Ano de inventario fisico do periodo atual (consignacao)"
+    pii: nenhum
+    nulo: true
+  - nome: korue
+    tipo: string
+    comentario: "Indicador de relancamento/sincronizacao (consignacao)"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_scat
+    tipo: string
+    comentario: "Segmento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_salloc_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade de estoque alocada (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_collection
+    tipo: string
+    comentario: "Colecao (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_season
+    tipo: string
+    comentario: "Temporada (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_season_year
+    tipo: string
+    comentario: "Ano da temporada (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_theme
+    tipo: string
+    comentario: "Tema (moda)"
+    pii: nenhum
+    nulo: true

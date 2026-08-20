@@ -1,0 +1,337 @@
+tabela: t005
+camada: bronze
+comentario: "Tabela de configuração de países (T005)"
+ingestao: cdc
+fonte: sap.t005
+chave_primaria: [mandt, land1]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: land1
+    tipo: string
+    comentario: "Chave do país (land1)"
+    pii: nenhum
+    nulo: false
+  - nome: landk
+    tipo: string
+    comentario: "Chave de país para veículos"
+    pii: nenhum
+    nulo: true
+  - nome: lnplz
+    tipo: string
+    comentario: "Comprimento do CEP"
+    pii: nenhum
+    nulo: true
+  - nome: prplz
+    tipo: string
+    comentario: "Regra de verificação do CEP"
+    pii: nenhum
+    nulo: true
+  - nome: addrs
+    tipo: string
+    comentario: "Chave de layout de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: xplzs
+    tipo: string
+    comentario: "Indicador: CEP de rua obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: xplpf
+    tipo: string
+    comentario: "Indicador: CEP de caixa postal obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma (spras)"
+    pii: nenhum
+    nulo: true
+  - nome: xland
+    tipo: string
+    comentario: "Indicador: versão do país ativa"
+    pii: nenhum
+    nulo: true
+  - nome: xaddr
+    tipo: string
+    comentario: "Indicador: imprimir nome do país no endereço"
+    pii: nenhum
+    nulo: true
+  - nome: nmfmt
+    tipo: string
+    comentario: "Formato de nome padrão"
+    pii: nenhum
+    nulo: true
+  - nome: xregs
+    tipo: string
+    comentario: "Indicador: arquivo de cidades ativo"
+    pii: nenhum
+    nulo: true
+  - nome: xplst
+    tipo: string
+    comentario: "Indicador: CEP específico por rua"
+    pii: nenhum
+    nulo: true
+  - nome: intca
+    tipo: string
+    comentario: "Código ISO do país (2 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: intca3
+    tipo: string
+    comentario: "Código ISO do país (3 caracteres alfabéticos)"
+    pii: nenhum
+    nulo: true
+  - nome: intcn3
+    tipo: string
+    comentario: "Código ISO numérico do país (3 dígitos)"
+    pii: nenhum
+    nulo: true
+  - nome: xegld
+    tipo: string
+    comentario: "Indicador: membro da União Europeia"
+    pii: nenhum
+    nulo: true
+  - nome: xskfn
+    tipo: string
+    comentario: "Indicador: base de desconto é o valor líquido"
+    pii: nenhum
+    nulo: true
+  - nome: xmwsn
+    tipo: string
+    comentario: "Indicador: base de imposto é o valor líquido"
+    pii: nenhum
+    nulo: true
+  - nome: lnbkn
+    tipo: string
+    comentario: "Comprimento do número de conta bancária"
+    pii: nenhum
+    nulo: true
+  - nome: prbkn
+    tipo: string
+    comentario: "Regra de verificação do número de conta bancária"
+    pii: nenhum
+    nulo: true
+  - nome: lnblz
+    tipo: string
+    comentario: "Comprimento do número do banco"
+    pii: nenhum
+    nulo: true
+  - nome: prblz
+    tipo: string
+    comentario: "Regra de verificação do número do banco"
+    pii: nenhum
+    nulo: true
+  - nome: lnpsk
+    tipo: string
+    comentario: "Comprimento do número de conta de cheque postal"
+    pii: nenhum
+    nulo: true
+  - nome: prpsk
+    tipo: string
+    comentario: "Regra de verificação de cheque postal"
+    pii: nenhum
+    nulo: true
+  - nome: xprbk
+    tipo: string
+    comentario: "Indicador: usar módulo de verificação bancária"
+    pii: nenhum
+    nulo: true
+  - nome: bnkey
+    tipo: string
+    comentario: "Tipo de chave bancária (bnkey)"
+    pii: nenhum
+    nulo: true
+  - nome: lnbks
+    tipo: string
+    comentario: "Comprimento da chave bancária"
+    pii: nenhum
+    nulo: true
+  - nome: prbks
+    tipo: string
+    comentario: "Regra de verificação da chave bancária"
+    pii: nenhum
+    nulo: true
+  - nome: xprso
+    tipo: string
+    comentario: "Indicador: usar módulo de verificação fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: pruin
+    tipo: string
+    comentario: "Regra de verificação do número de registro IVA"
+    pii: nenhum
+    nulo: true
+  - nome: uinln
+    tipo: string
+    comentario: "Comprimento do número de registro IVA"
+    pii: nenhum
+    nulo: true
+  - nome: lnst1
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 1"
+    pii: nenhum
+    nulo: true
+  - nome: prst1
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 1"
+    pii: nenhum
+    nulo: true
+  - nome: lnst2
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 2"
+    pii: nenhum
+    nulo: true
+  - nome: prst2
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 2"
+    pii: nenhum
+    nulo: true
+  - nome: lnst3
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 3"
+    pii: nenhum
+    nulo: true
+  - nome: prst3
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 3"
+    pii: nenhum
+    nulo: true
+  - nome: lnst4
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 4"
+    pii: nenhum
+    nulo: true
+  - nome: prst4
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 4"
+    pii: nenhum
+    nulo: true
+  - nome: lnst5
+    tipo: string
+    comentario: "Comprimento permitido para número fiscal 5"
+    pii: nenhum
+    nulo: true
+  - nome: prst5
+    tipo: string
+    comentario: "Regra de verificação do número fiscal 5"
+    pii: nenhum
+    nulo: true
+  - nome: landd
+    tipo: string
+    comentario: "Nacionalidade (DUEVO)"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm
+    tipo: string
+    comentario: "Procedimento de precificação"
+    pii: nenhum
+    nulo: true
+  - nome: landa
+    tipo: string
+    comentario: "Chave alternativa do país"
+    pii: nenhum
+    nulo: true
+  - nome: wechf
+    tipo: string
+    comentario: "Prazo de pagamento de letra de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: lkvrz
+    tipo: string
+    comentario: "Abreviação do país para comércio exterior"
+    pii: nenhum
+    nulo: true
+  - nome: intcn
+    tipo: string
+    comentario: "Código Intrastat"
+    pii: nenhum
+    nulo: true
+  - nome: xdezp
+    tipo: string
+    comentario: "Indicador: formato de ponto decimal"
+    pii: nenhum
+    nulo: true
+  - nome: datfm
+    tipo: string
+    comentario: "Formato de data"
+    pii: nenhum
+    nulo: true
+  - nome: curin
+    tipo: string
+    comentario: "Moeda baseada em índice"
+    pii: nenhum
+    nulo: true
+  - nome: curha
+    tipo: string
+    comentario: "Moeda forte"
+    pii: nenhum
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda do país"
+    pii: nenhum
+    nulo: true
+  - nome: kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: afapl
+    tipo: string
+    comentario: "Plano de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: gwgwrt
+    tipo: decimal(23,2)
+    comentario: "Valor máximo de bem de baixo valor para lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: umrwrt
+    tipo: decimal(23,2)
+    comentario: "Valor contábil líquido para conversão de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: kzrbwb
+    tipo: string
+    comentario: "Indicador: lançar valor contábil líquido"
+    pii: nenhum
+    nulo: true
+  - nome: xanzum
+    tipo: string
+    comentario: "Indicador: capitalizar AuC sem adiantamento"
+    pii: nenhum
+    nulo: true
+  - nome: ctnconcept
+    tipo: string
+    comentario: "Conceito de numeração de certificados de retenção na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: kzsrv
+    tipo: string
+    comentario: "Indicador: impostos no nível de serviço individual"
+    pii: nenhum
+    nulo: true
+  - nome: xxinve
+    tipo: string
+    comentario: "Indicador: bens de capital"
+    pii: nenhum
+    nulo: true
+  - nome: xgccv
+    tipo: string
+    comentario: "Indicador: membro do CCG (Gulf Cooperation Council)"
+    pii: nenhum
+    nulo: true
+  - nome: sureg
+    tipo: string
+    comentario: "Super-região"
+    pii: nenhum
+    nulo: true
+  - nome: landgrp_vp
+    tipo: string
+    comentario: "Agrupamento de países para programação de entrega"
+    pii: nenhum
+    nulo: true

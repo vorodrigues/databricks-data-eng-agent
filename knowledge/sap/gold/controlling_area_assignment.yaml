@@ -1,0 +1,38 @@
+tabela: controlling_area_assignment
+camada: gold
+comentario: "Mapeia empresas e areas de negocio para seus respectivos areas de controlling (TKA02), suportando consolidacao fiscal entre empresas."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.tka01, silver.tka02, silver.cskb, silver.csku]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, company_code_bukrs, business_area_gsber]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Codigo da empresa (BUKRS)"
+    pii: nenhum
+    nulo: false
+  - nome: business_area_gsber
+    tipo: string
+    comentario: "Area de negocio (GSBER)"
+    pii: nenhum
+    nulo: false
+  - nome: controlling_area_kokrs
+    tipo: string
+    comentario: "Area de controlling (KOKRS)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

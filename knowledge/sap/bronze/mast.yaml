@@ -1,0 +1,72 @@
+tabela: mast
+camada: bronze
+comentario: "Vínculo de material com lista de materiais (LM)"
+ingestao: cdc
+fonte: sap.mast
+chave_primaria: [mandt, matnr, werks, stlan]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: werks
+    tipo: string
+    comentario: "Planta"
+    pii: nenhum
+    nulo: false
+  - nome: stlan
+    tipo: string
+    comentario: "Uso da LM"
+    pii: nenhum
+    nulo: false
+  - nome: stlnr
+    tipo: string
+    comentario: "Número da lista de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: stlal
+    tipo: string
+    comentario: "LM alternativa"
+    pii: nenhum
+    nulo: true
+  - nome: losvn
+    tipo: decimal(23,2)
+    comentario: "Tamanho de lote mínimo"
+    pii: nenhum
+    nulo: true
+  - nome: losbs
+    tipo: decimal(23,2)
+    comentario: "Tamanho de lote máximo"
+    pii: nenhum
+    nulo: true
+  - nome: andat
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: annam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Alterado em"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: cslty
+    tipo: string
+    comentario: "Material configurável (indicador)"
+    pii: nenhum
+    nulo: true

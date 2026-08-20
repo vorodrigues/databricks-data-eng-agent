@@ -1,0 +1,262 @@
+tabela: mard
+camada: bronze
+comentario: "Dados de estoque por depósito para o material"
+ingestao: cdc
+fonte: sap.mard
+chave_primaria: [mandt, matnr, werks, lgort]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: false
+  - nome: lgort
+    tipo: string
+    comentario: "Depósito"
+    pii: nenhum
+    nulo: false
+  - nome: pstat
+    tipo: string
+    comentario: "Status de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: lvorm
+    tipo: string
+    comentario: "Marcador de exclusão no nível do depósito"
+    pii: nenhum
+    nulo: true
+  - nome: lfgja
+    tipo: string
+    comentario: "Ano do período atual"
+    pii: nenhum
+    nulo: true
+  - nome: lfmon
+    tipo: string
+    comentario: "Período atual"
+    pii: nenhum
+    nulo: true
+  - nome: sperr
+    tipo: string
+    comentario: "Bloqueio de inventário físico"
+    pii: nenhum
+    nulo: true
+  - nome: labst
+    tipo: decimal(23,2)
+    comentario: "Estoque de livre utilização"
+    pii: nenhum
+    nulo: true
+  - nome: umlme
+    tipo: decimal(23,2)
+    comentario: "Estoque em transferência"
+    pii: nenhum
+    nulo: true
+  - nome: insme
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: einme
+    tipo: decimal(23,2)
+    comentario: "Estoque de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: speme
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: retme
+    tipo: decimal(23,2)
+    comentario: "Devoluções"
+    pii: nenhum
+    nulo: true
+  - nome: vmlab
+    tipo: decimal(23,2)
+    comentario: "Estoque de livre utilização (período anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: vmuml
+    tipo: decimal(23,2)
+    comentario: "Estoque em transferência (período anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: vmins
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade (período anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: vmein
+    tipo: decimal(23,2)
+    comentario: "Estoque de uso restrito (período anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: vmspe
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado (período anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: vmret
+    tipo: decimal(23,2)
+    comentario: "Devoluções (período anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: kzill
+    tipo: string
+    comentario: "Estoque no depósito - ano corrente"
+    pii: nenhum
+    nulo: true
+  - nome: kzilq
+    tipo: string
+    comentario: "Estoque em inspeção de qualidade - ano corrente"
+    pii: nenhum
+    nulo: true
+  - nome: kzile
+    tipo: string
+    comentario: "Estoque de uso restrito - ano corrente"
+    pii: nenhum
+    nulo: true
+  - nome: kzils
+    tipo: string
+    comentario: "Estoque bloqueado - ano corrente"
+    pii: nenhum
+    nulo: true
+  - nome: kzvll
+    tipo: string
+    comentario: "Estoque no depósito - ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: kzvlq
+    tipo: string
+    comentario: "Estoque em inspeção de qualidade - ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: kzvle
+    tipo: string
+    comentario: "Estoque de uso restrito - ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: kzvls
+    tipo: string
+    comentario: "Estoque bloqueado - ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: diskz
+    tipo: string
+    comentario: "Indicador de MRP por depósito"
+    pii: nenhum
+    nulo: true
+  - nome: lsobs
+    tipo: string
+    comentario: "Tipo de processamento especial no depósito"
+    pii: nenhum
+    nulo: true
+  - nome: lminb
+    tipo: decimal(23,2)
+    comentario: "Ponto de reabastecimento"
+    pii: nenhum
+    nulo: true
+  - nome: lbstf
+    tipo: decimal(23,2)
+    comentario: "Quantidade de reabastecimento"
+    pii: nenhum
+    nulo: true
+  - nome: herkl
+    tipo: string
+    comentario: "País de origem"
+    pii: nenhum
+    nulo: true
+  - nome: exppg
+    tipo: string
+    comentario: "Indicador de preferência"
+    pii: nenhum
+    nulo: true
+  - nome: exver
+    tipo: string
+    comentario: "Indicador de exportação"
+    pii: nenhum
+    nulo: true
+  - nome: lgpbe
+    tipo: string
+    comentario: "Posição de armazenagem"
+    pii: nenhum
+    nulo: true
+  - nome: klabs
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignação de livre utilização"
+    pii: nenhum
+    nulo: true
+  - nome: kinsm
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignação em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: keinm
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignação de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: kspem
+    tipo: decimal(23,2)
+    comentario: "Estoque de consignação bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: dlinl
+    tipo: date
+    comentario: "Data do último inventário"
+    pii: nenhum
+    nulo: true
+  - nome: prctl
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: ersda
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: vklab
+    tipo: decimal(23,2)
+    comentario: "Valor do estoque especial de livre utilização"
+    pii: nenhum
+    nulo: true
+  - nome: vkuml
+    tipo: decimal(23,2)
+    comentario: "Transferência de estoque especial (depósito)"
+    pii: nenhum
+    nulo: true
+  - nome: lwmkb
+    tipo: string
+    comentario: "Área de separação (WM)"
+    pii: nenhum
+    nulo: true
+  - nome: bskrf
+    tipo: decimal(23,2)
+    comentario: "Fator de correção de inventário"
+    pii: nenhum
+    nulo: true
+  - nome: mdrue
+    tipo: string
+    comentario: "Campo reservado"
+    pii: nenhum
+    nulo: true
+  - nome: mdjin
+    tipo: string
+    comentario: "Campo reservado"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_salloc_qty_s
+    tipo: decimal(23,2)
+    comentario: "Quantidade de estoque alocado (Fashion)"
+    pii: nenhum
+    nulo: true

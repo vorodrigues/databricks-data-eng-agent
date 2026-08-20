@@ -1,0 +1,37 @@
+tabela: jest
+camada: bronze
+comentario: "Status individual de objeto (status de sistema e usuario por objeto)"
+ingestao: cdc
+fonte: sap.jest
+chave_primaria: [mandt, objnr, stat]
+colunas:
+  - nome: chgnr
+    tipo: string
+    comentario: "Numero de modificacao"
+    pii: nenhum
+    nulo: true
+  - nome: inact
+    tipo: string
+    comentario: "Indicador de status inativo (CHAR 1)"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: objnr
+    tipo: string
+    comentario: "Numero do objeto"
+    pii: nenhum
+    nulo: false
+  - nome: stat
+    tipo: string
+    comentario: "Codigo do status"
+    pii: nenhum
+    nulo: false
+  - nome: _dataaging
+    tipo: string
+    comentario: "Campo tecnico de envelhecimento de dados"
+    pii: nenhum
+    nulo: true

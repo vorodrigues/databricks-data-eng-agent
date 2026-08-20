@@ -1,0 +1,247 @@
+tabela: cepc
+camada: bronze
+comentario: "Dados mestre do centro de lucro"
+ingestao: cdc
+fonte: sap.cepc
+chave_primaria: [mandt, prctr, datbi, kokrs]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: false
+  - nome: datbi
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: false
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controladoria"
+    pii: nenhum
+    nulo: false
+  - nome: datab
+    tipo: date
+    comentario: "Válido de"
+    pii: nenhum
+    nulo: true
+  - nome: ersda
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: merkmal
+    tipo: string
+    comentario: "Característica CO-PA"
+    pii: nenhum
+    nulo: true
+  - nome: abtei
+    tipo: string
+    comentario: "Departamento"
+    pii: nenhum
+    nulo: true
+  - nome: verak
+    tipo: string
+    comentario: "Responsável pelo centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: verak_user
+    tipo: string
+    comentario: "Usuário responsável"
+    pii: nenhum
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda"
+    pii: nenhum
+    nulo: true
+  - nome: nprctr
+    tipo: string
+    comentario: "Centro de lucro sucessor"
+    pii: nenhum
+    nulo: true
+  - nome: land1
+    tipo: string
+    comentario: "Chave do país"
+    pii: nenhum
+    nulo: true
+  - nome: anred
+    tipo: string
+    comentario: "Título"
+    pii: nenhum
+    nulo: true
+  - nome: name1
+    tipo: string
+    comentario: "Nome 1"
+    pii: nenhum
+    nulo: true
+  - nome: name2
+    tipo: string
+    comentario: "Nome 2"
+    pii: nenhum
+    nulo: true
+  - nome: name3
+    tipo: string
+    comentario: "Nome 3"
+    pii: nenhum
+    nulo: true
+  - nome: name4
+    tipo: string
+    comentario: "Nome 4"
+    pii: nenhum
+    nulo: true
+  - nome: ort01
+    tipo: string
+    comentario: "Cidade"
+    pii: nenhum
+    nulo: true
+  - nome: ort02
+    tipo: string
+    comentario: "Distrito"
+    pii: nenhum
+    nulo: true
+  - nome: stras
+    tipo: string
+    comentario: "Rua e número"
+    pii: nenhum
+    nulo: true
+  - nome: pfach
+    tipo: string
+    comentario: "Caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: pstlz
+    tipo: string
+    comentario: "CEP"
+    pii: nenhum
+    nulo: true
+  - nome: pstl2
+    tipo: string
+    comentario: "CEP da caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: telbx
+    tipo: string
+    comentario: "Número de telebox"
+    pii: nenhum
+    nulo: true
+  - nome: telf1
+    tipo: string
+    comentario: "Telefone 1"
+    pii: nenhum
+    nulo: true
+  - nome: telf2
+    tipo: string
+    comentario: "Telefone 2"
+    pii: nenhum
+    nulo: true
+  - nome: telfx
+    tipo: string
+    comentario: "Número de fax"
+    pii: nenhum
+    nulo: true
+  - nome: teltx
+    tipo: string
+    comentario: "Número de teletex"
+    pii: nenhum
+    nulo: true
+  - nome: telx1
+    tipo: string
+    comentario: "Número de telex"
+    pii: nenhum
+    nulo: true
+  - nome: datlt
+    tipo: string
+    comentario: "Linha de dados"
+    pii: nenhum
+    nulo: true
+  - nome: drnam
+    tipo: string
+    comentario: "Nome da impressora do centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: khinr
+    tipo: string
+    comentario: "Área de hierarquia"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Empresa"
+    pii: nenhum
+    nulo: true
+  - nome: vname
+    tipo: string
+    comentario: "Joint venture"
+    pii: nenhum
+    nulo: true
+  - nome: recid
+    tipo: string
+    comentario: "Indicador de recuperação"
+    pii: nenhum
+    nulo: true
+  - nome: etype
+    tipo: string
+    comentario: "Tipo de participação acionária"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: regio
+    tipo: string
+    comentario: "Região"
+    pii: nenhum
+    nulo: true
+  - nome: kvewe
+    tipo: string
+    comentario: "Uso da tabela de condição"
+    pii: nenhum
+    nulo: true
+  - nome: kappl
+    tipo: string
+    comentario: "Aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm
+    tipo: string
+    comentario: "Procedimento (precificação)"
+    pii: nenhum
+    nulo: true
+  - nome: logsystem
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: lock_ind
+    tipo: string
+    comentario: "Indicador de bloqueio"
+    pii: nenhum
+    nulo: true
+  - nome: pca_template
+    tipo: string
+    comentario: "Modelo de planejamento de fórmula do centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: segment
+    tipo: string
+    comentario: "Segmento para relatório por segmento"
+    pii: nenhum
+    nulo: true

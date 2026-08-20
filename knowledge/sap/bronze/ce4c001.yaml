@@ -1,0 +1,197 @@
+tabela: ce4c001
+camada: bronze
+comentario: "Concern operacional CO-PA (ce4c001) - dados periodicos de lucratividade"
+ingestao: cdc
+fonte: sap.ce4c001
+chave_primaria: [mandt, paobjnr] # baixa confianca: PK padrao de tabelas CE4 e mandt + paobjnr; pode necessitar de gjahr/versn dependendo do concern
+colunas:
+  - nome: absmg_me
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: aktbo
+    tipo: string
+    comentario: "Segmento de lucratividade atual"
+    pii: nenhum
+    nulo: true
+  - nome: artnr
+    tipo: string
+    comentario: "Produto"
+    pii: nenhum
+    nulo: true
+  - nome: aufnr
+    tipo: string
+    comentario: "Ordem de fabricacao/custo"
+    pii: nenhum
+    nulo: true
+  - nome: beskz
+    tipo: string
+    comentario: "Tipo de obtencao"
+    pii: nenhum
+    nulo: true
+  - nome: bisdat
+    tipo: date
+    comentario: "Valido ate"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Codigo da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: fkart
+    tipo: string
+    comentario: "Tipo de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Area de negocio"
+    pii: nenhum
+    nulo: true
+  - nome: kaufn
+    tipo: string
+    comentario: "Pedido de venda"
+    pii: nenhum
+    nulo: true
+  - nome: kdgrp
+    tipo: string
+    comentario: "Grupo de clientes"
+    pii: nenhum
+    nulo: true
+  - nome: kdpos
+    tipo: string
+    comentario: "Item do pedido de venda"
+    pii: nenhum
+    nulo: true
+  - nome: kmvtnr
+    tipo: string
+    comentario: "Funcionario de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: kndnr
+    tipo: string
+    comentario: "Codigo do cliente"
+    pii: indireto
+    nulo: true
+  - nome: knt_frm_kz
+    tipo: string
+    comentario: "Indicador de PA baseada em conta"
+    pii: nenhum
+    nulo: true
+  - nome: kokrs
+    tipo: string
+    comentario: "Area de controlling"
+    pii: nenhum
+    nulo: true
+  - nome: kstrg
+    tipo: string
+    comentario: "Objeto de custo"
+    pii: nenhum
+    nulo: true
+  - nome: kunre
+    tipo: string
+    comentario: "Codigo do tomador (bill-to party)"
+    pii: indireto
+    nulo: true
+  - nome: kunwe
+    tipo: string
+    comentario: "Codigo do destinatario (ship-to party)"
+    pii: indireto
+    nulo: true
+  - nome: land1
+    tipo: string
+    comentario: "Pais"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: meinh
+    tipo: string
+    comentario: "Unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: paobjnr
+    tipo: string
+    comentario: "Numero do segmento de lucratividade (CO-PA)"
+    pii: nenhum
+    nulo: false
+  - nome: paph1
+    tipo: string
+    comentario: "Hierarquia de produtos nivel 1"
+    pii: nenhum
+    nulo: true
+  - nome: paph2
+    tipo: string
+    comentario: "Hierarquia de produtos nivel 2"
+    pii: nenhum
+    nulo: true
+  - nome: paph3
+    tipo: string
+    comentario: "Hierarquia de produtos nivel 3"
+    pii: nenhum
+    nulo: true
+  - nome: pasubnr
+    tipo: string
+    comentario: "Sub-numero do segmento CO-PA"
+    pii: nenhum
+    nulo: true
+  - nome: pprctr
+    tipo: string
+    comentario: "Centro de lucro parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: pspnr
+    tipo: string
+    comentario: "Elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: pstyv
+    tipo: string
+    comentario: "Categoria do item de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Divisao"
+    pii: nenhum
+    nulo: true
+  - nome: unused_ce3
+    tipo: string
+    comentario: "Nao lancado em CE3 (campo nao utilizado)"
+    pii: nenhum
+    nulo: true
+  - nome: vkbur
+    tipo: string
+    comentario: "Escritorio de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organizacao de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuicao"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Planta"
+    pii: nenhum
+    nulo: true
+  - nome: wwcst
+    tipo: string
+    comentario: "Pais do destinatario (ship-to)"
+    pii: nenhum
+    nulo: true

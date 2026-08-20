@@ -1,0 +1,122 @@
+tabela: t006
+camada: bronze
+comentario: "Unidades de medida"
+ingestao: cdc
+fonte: sap.t006
+chave_primaria: [mandt, msehi]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: msehi
+    tipo: string
+    comentario: "Unidade de medida interna"
+    pii: nenhum
+    nulo: false
+  - nome: kzex3
+    tipo: string
+    comentario: "Unidade externa com 3 caracteres"
+    pii: nenhum
+    nulo: true
+  - nome: kzex6
+    tipo: string
+    comentario: "Unidade externa com 6 caracteres"
+    pii: nenhum
+    nulo: true
+  - nome: andec
+    tipo: string
+    comentario: "Arredondamento de decimais"
+    pii: nenhum
+    nulo: true
+  - nome: kzkeh
+    tipo: string
+    comentario: "Unidade de medida comercial (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: kzwob
+    tipo: string
+    comentario: "Comprometimento baseado em valor (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: kz1eh
+    tipo: string
+    comentario: "Unidade (1)"
+    pii: nenhum
+    nulo: true
+  - nome: kz2eh
+    tipo: string
+    comentario: "Unidade (2)"
+    pii: nenhum
+    nulo: true
+  - nome: dimid
+    tipo: string
+    comentario: "Dimensão"
+    pii: nenhum
+    nulo: true
+  - nome: zaehl
+    tipo: string
+    comentario: "Numerador do fator de conversão"
+    pii: nenhum
+    nulo: true
+  - nome: nennr
+    tipo: string
+    comentario: "Denominador do fator de conversão"
+    pii: nenhum
+    nulo: true
+  - nome: exp10
+    tipo: string
+    comentario: "Expoente de base 10"
+    pii: nenhum
+    nulo: true
+  - nome: addko
+    tipo: string
+    comentario: "Constante aditiva"
+    pii: nenhum
+    nulo: true
+  - nome: expon
+    tipo: string
+    comentario: "Expoente 10 para ponto flutuante"
+    pii: nenhum
+    nulo: true
+  - nome: decan
+    tipo: string
+    comentario: "Casas decimais"
+    pii: nenhum
+    nulo: true
+  - nome: isocode
+    tipo: string
+    comentario: "Código ISO da unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: primary
+    tipo: string
+    comentario: "Código primário"
+    pii: nenhum
+    nulo: true
+  - nome: temp_value
+    tipo: decimal(23,2)
+    comentario: "Valor de temperatura"
+    pii: nenhum
+    nulo: true
+  - nome: temp_unit
+    tipo: string
+    comentario: "Unidade de temperatura"
+    pii: nenhum
+    nulo: true
+  - nome: famunit
+    tipo: string
+    comentario: "Família de unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: press_val
+    tipo: decimal(23,2)
+    comentario: "Valor de pressão"
+    pii: nenhum
+    nulo: true
+  - nome: press_unit
+    tipo: string
+    comentario: "Unidade de pressão"
+    pii: nenhum
+    nulo: true

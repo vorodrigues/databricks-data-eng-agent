@@ -1,0 +1,352 @@
+tabela: ekkn
+camada: bronze
+comentario: "Imputação contábil em documentos de compras (EKKN)"
+ingestao: cdc
+fonte: sap.ekkn
+chave_primaria: [mandt, ebeln, ebelp, zekkn]
+colunas:
+  - nome: aa_final_ind
+    tipo: string
+    comentario: "Indicador de imputação final (AA final)"
+    pii: nenhum
+    nulo: true
+  - nome: aa_final_qty
+    tipo: decimal(23,2)
+    comentario: "Quantidade de imputação final"
+    pii: nenhum
+    nulo: true
+  - nome: aa_final_qty_f
+    tipo: decimal(23,2)
+    comentario: "Quantidade de imputação final (número de ponto flutuante)"
+    pii: nenhum
+    nulo: true
+  - nome: aa_final_reason
+    tipo: string
+    comentario: "Motivo da imputação final"
+    pii: nenhum
+    nulo: true
+  - nome: ablad
+    tipo: string
+    comentario: "Ponto de descarregamento"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data de criação/alteração (aedat)"
+    pii: nenhum
+    nulo: true
+  - nome: anln1
+    tipo: string
+    comentario: "Número do ativo imobilizado principal"
+    pii: nenhum
+    nulo: true
+  - nome: anln2
+    tipo: string
+    comentario: "Subnúmero do ativo imobilizado"
+    pii: nenhum
+    nulo: true
+  - nome: aplzl
+    tipo: string
+    comentario: "Número da lista de tarefas de operação"
+    pii: nenhum
+    nulo: true
+  - nome: aplzl_ord
+    tipo: string
+    comentario: "Número da lista de tarefas de operação (ordem)"
+    pii: nenhum
+    nulo: true
+  - nome: aufnr
+    tipo: string
+    comentario: "Número da ordem interna"
+    pii: nenhum
+    nulo: true
+  - nome: aufpl
+    tipo: string
+    comentario: "Número da lista de roteiro da operação"
+    pii: nenhum
+    nulo: true
+  - nome: aufpl_ord
+    tipo: string
+    comentario: "Número da lista de roteiro da operação (ordem)"
+    pii: nenhum
+    nulo: true
+  - nome: budget_pd
+    tipo: string
+    comentario: "Período orçamentário"
+    pii: nenhum
+    nulo: true
+  - nome: dabrz
+    tipo: date
+    comentario: "Data de referência para liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: dateofservice
+    tipo: date
+    comentario: "Data de prestação do serviço"
+    pii: nenhum
+    nulo: true
+  - nome: diffoptrate
+    tipo: decimal(23,2)
+    comentario: "Taxa de opção diferente"
+    pii: nenhum
+    nulo: true
+  - nome: ebeln
+    tipo: string
+    comentario: "Número do documento de compras (ebeln)"
+    pii: nenhum
+    nulo: false
+  - nome: ebelp
+    tipo: string
+    comentario: "Item do documento de compras (ebelp)"
+    pii: nenhum
+    nulo: false
+  - nome: egrup
+    tipo: string
+    comentario: "Grupo de capital próprio (equity group)"
+    pii: nenhum
+    nulo: true
+  - nome: erekz
+    tipo: string
+    comentario: "Indicador: fatura final recebida"
+    pii: nenhum
+    nulo: true
+  - nome: fipos
+    tipo: string
+    comentario: "Posição de compromisso"
+    pii: nenhum
+    nulo: true
+  - nome: fistl
+    tipo: string
+    comentario: "Centro de fundos (funds center)"
+    pii: nenhum
+    nulo: true
+  - nome: fkber
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: fmfgus_key
+    tipo: string
+    comentario: "Campos específicos do governo dos EUA"
+    pii: nenhum
+    nulo: true
+  - nome: fm_split_batch
+    tipo: string
+    comentario: "Número do lote de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: fm_split_begru
+    tipo: string
+    comentario: "Grupo de autorização para distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: geber
+    tipo: string
+    comentario: "Fundo (fund)"
+    pii: nenhum
+    nulo: true
+  - nome: grant_nbr
+    tipo: string
+    comentario: "Número de grant (financiamento externo)"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Área de negócio (gsber)"
+    pii: nenhum
+    nulo: true
+  - nome: hasdiffoptrate
+    tipo: string
+    comentario: "Indicador: usar taxa de opção diferente"
+    pii: nenhum
+    nulo: true
+  - nome: imkey
+    tipo: string
+    comentario: "Chave de imóvel (real estate)"
+    pii: nenhum
+    nulo: true
+  - nome: kblnr
+    tipo: string
+    comentario: "Número de documento de fundos reservados"
+    pii: nenhum
+    nulo: true
+  - nome: kblpos
+    tipo: string
+    comentario: "Item do documento de fundos reservados"
+    pii: nenhum
+    nulo: true
+  - nome: kflag
+    tipo: string
+    comentario: "Indicador de controle interno"
+    pii: nenhum
+    nulo: true
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controladoria (kokrs)"
+    pii: nenhum
+    nulo: true
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo (kostl)"
+    pii: nenhum
+    nulo: true
+  - nome: kstrg
+    tipo: string
+    comentario: "Objeto de custo (kstrg)"
+    pii: nenhum
+    nulo: true
+  - nome: kzbrb
+    tipo: string
+    comentario: "Indicador de necessidade bruta"
+    pii: nenhum
+    nulo: true
+  - nome: loekz
+    tipo: string
+    comentario: "Indicador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: lstar
+    tipo: string
+    comentario: "Tipo de atividade (lstar)"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade imputada"
+    pii: nenhum
+    nulo: true
+  - nome: menge_f
+    tipo: decimal(23,2)
+    comentario: "Quantidade imputada (número de ponto flutuante interno)"
+    pii: nenhum
+    nulo: true
+  - nome: mwskz
+    tipo: string
+    comentario: "Código de imposto (mwskz)"
+    pii: nenhum
+    nulo: true
+  - nome: navnw
+    tipo: decimal(23,2)
+    comentario: "Valor não dedutível de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: netwr
+    tipo: decimal(23,2)
+    comentario: "Valor líquido do pedido (netwr)"
+    pii: nenhum
+    nulo: true
+  - nome: notaxcorr
+    tipo: string
+    comentario: "Indicador: não corrigir imposto"
+    pii: nenhum
+    nulo: true
+  - nome: nplnr
+    tipo: string
+    comentario: "Número de rede (network)"
+    pii: nenhum
+    nulo: true
+  - nome: paobjnr
+    tipo: string
+    comentario: "Número do segmento de rentabilidade (CO-PA)"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro (prctr)"
+    pii: nenhum
+    nulo: true
+  - nome: projn
+    tipo: string
+    comentario: "Número do projeto (campo não utilizado)"
+    pii: nenhum
+    nulo: true
+  - nome: prznr
+    tipo: string
+    comentario: "Número do processo de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: ps_psp_pnr
+    tipo: string
+    comentario: "Elemento WBS (ps_psp_pnr)"
+    pii: nenhum
+    nulo: true
+  - nome: recid
+    tipo: string
+    comentario: "Indicador de recuperação"
+    pii: nenhum
+    nulo: true
+  - nome: sakto
+    tipo: string
+    comentario: "Conta contábil (G/L account)"
+    pii: nenhum
+    nulo: true
+  - nome: tcobjnr
+    tipo: string
+    comentario: "Número do objeto de custos de transação"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln
+    tipo: string
+    comentario: "Documento SD referenciado (vbeln)"
+    pii: nenhum
+    nulo: true
+  - nome: vbelp
+    tipo: string
+    comentario: "Item do documento SD referenciado"
+    pii: nenhum
+    nulo: true
+  - nome: veten
+    tipo: string
+    comentario: "Número da linha de programa de remessa"
+    pii: nenhum
+    nulo: true
+  - nome: vname
+    tipo: string
+    comentario: "Nome do consórcio (joint venture)"
+    pii: nenhum
+    nulo: true
+  - nome: vproz
+    tipo: decimal(23,2)
+    comentario: "Percentual de distribuição de imputação"
+    pii: nenhum
+    nulo: true
+  - nome: vptnr
+    tipo: string
+    comentario: "Código do parceiro de consórcio"
+    pii: nenhum
+    nulo: true
+  - nome: wempf
+    tipo: string
+    comentario: "Destinatário da mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: xbauf
+    tipo: string
+    comentario: "Indicador: lançar em ordem interna"
+    pii: nenhum
+    nulo: true
+  - nome: xbkst
+    tipo: string
+    comentario: "Indicador de controle interno (xbkst)"
+    pii: nenhum
+    nulo: true
+  - nome: xbpro
+    tipo: string
+    comentario: "Indicador: lançar em projeto"
+    pii: nenhum
+    nulo: true
+  - nome: zekkn
+    tipo: string
+    comentario: "Número sequencial da imputação contábil (zekkn)"
+    pii: nenhum
+    nulo: false

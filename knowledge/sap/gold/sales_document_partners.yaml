@@ -1,0 +1,138 @@
+tabela: sales_document_partners
+camada: gold
+comentario: "Dados de parceiros de documentos de vendas (cabeçalho e itens) do SAP VBPA, incluindo funções como Parceiro Pagador e Parceiro Destinatário da Mercadoria."
+entidade: obt
+ingestao: custom
+fontes: [silver.vbak, silver.vbap, silver.vbep, silver.vbpa, silver.tcurx, silver.vbfa, silver.vbuk, silver.vbup, silver.lips]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client), chave primária."
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_vbeln
+    tipo: string
+    comentario: "Número do documento de vendas, chave primária."
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_item_posnr
+    tipo: string
+    comentario: "Número do item do documento de vendas, chave primária."
+    pii: nenhum
+    nulo: true
+  - nome: partner_function_parvw
+    tipo: string
+    comentario: "Função do parceiro (ex.: pagador, destinatário), chave primária."
+    pii: nenhum
+    nulo: true
+  - nome: customer_number_kunnr
+    tipo: string
+    comentario: "Número do cliente."
+    pii: indireto
+    nulo: true
+  - nome: vendor_number_lifnr
+    tipo: string
+    comentario: "Número do fornecedor."
+    pii: indireto
+    nulo: true
+  - nome: personnel_number_pernr
+    tipo: string
+    comentario: "Número de matrícula do colaborador."
+    pii: direto
+    nulo: true
+  - nome: contact_person_number_parnr
+    tipo: string
+    comentario: "Número da pessoa de contato."
+    pii: indireto
+    nulo: true
+  - nome: address_number_adrnr
+    tipo: string
+    comentario: "Número do endereço."
+    pii: nenhum
+    nulo: true
+  - nome: unloading_point_ablad
+    tipo: string
+    comentario: "Ponto de descarga."
+    pii: nenhum
+    nulo: true
+  - nome: country_key_land1
+    tipo: string
+    comentario: "Chave do país."
+    pii: nenhum
+    nulo: true
+  - nome: address_indicator_adrda
+    tipo: string
+    comentario: "Indicador de endereço."
+    pii: nenhum
+    nulo: true
+  - nome: one_time_account_indicator_xcpdk
+    tipo: string
+    comentario: "Indicador de conta esporádica (CPD)."
+    pii: nenhum
+    nulo: true
+  - nome: customer_hierarchy_type_hityp
+    tipo: string
+    comentario: "Tipo de hierarquia de cliente."
+    pii: nenhum
+    nulo: true
+  - nome: price_determination_indicator_prfre
+    tipo: string
+    comentario: "Indicador de determinação de preço."
+    pii: nenhum
+    nulo: true
+  - nome: rebate_indicator_bokre
+    tipo: string
+    comentario: "Indicador de bonificação."
+    pii: nenhum
+    nulo: true
+  - nome: hierarchy_level_histunr
+    tipo: string
+    comentario: "Nível hierárquico."
+    pii: nenhum
+    nulo: true
+  - nome: partner_description_knref
+    tipo: string
+    comentario: "Descrição/referência do parceiro."
+    pii: nenhum
+    nulo: true
+  - nome: transportation_zone_lzone
+    tipo: string
+    comentario: "Zona de transporte."
+    pii: nenhum
+    nulo: true
+  - nome: hierarchy_assignment_hzuor
+    tipo: string
+    comentario: "Atribuição hierárquica."
+    pii: nenhum
+    nulo: true
+  - nome: vat_registration_number_stceg
+    tipo: string
+    comentario: "Número de registro de IVA/IE."
+    pii: sensivel
+    nulo: true
+  - nome: further_partners_parvw_ff
+    tipo: string
+    comentario: "Indicador de parceiros adicionais."
+    pii: nenhum
+    nulo: true
+  - nome: person_number_adrnp
+    tipo: string
+    comentario: "Número de pessoa física."
+    pii: indireto
+    nulo: true
+  - nome: maintain_appointments_indicator_kale
+    tipo: string
+    comentario: "Indicador: manter compromissos."
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte."
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery."
+    pii: nenhum
+    nulo: true

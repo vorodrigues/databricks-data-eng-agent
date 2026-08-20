@@ -1,0 +1,38 @@
+tabela: system_status_texts
+camada: gold
+comentario: "Textos de status de sistema dependentes de idioma do SAP TJ02T, permitindo mapeamento localizado de status."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.t001, silver.t002, silver.t002t, silver.t005, silver.t005t, silver.t005k, silver.t005s, silver.t005u, silver.tj02t]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [status_key_istat, language_key_spras]
+colunas:
+  - nome: status_key_istat
+    tipo: string
+    comentario: "Chave do status de sistema (ISTAT)"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma (SPRAS)"
+    pii: nenhum
+    nulo: false
+  - nome: status_code_txt04
+    tipo: string
+    comentario: "Abreviacao do status individual (4 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: status_name_txt30
+    tipo: string
+    comentario: "Texto longo do status (30 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

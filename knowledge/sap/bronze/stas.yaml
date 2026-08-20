@@ -1,0 +1,112 @@
+tabela: stas
+camada: bronze
+comentario: "Seleção de itens de lista de materiais (LM)"
+ingestao: cdc
+fonte: sap.stas
+chave_primaria: [mandt, stlty, stlnr, stlal, stlkn]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: stlty
+    tipo: string
+    comentario: "Categoria da LM"
+    pii: nenhum
+    nulo: false
+  - nome: stlnr
+    tipo: string
+    comentario: "Número da lista de materiais"
+    pii: nenhum
+    nulo: false
+  - nome: stlal
+    tipo: string
+    comentario: "LM alternativa"
+    pii: nenhum
+    nulo: false
+  - nome: stlkn
+    tipo: string
+    comentario: "Nó de item da LM"
+    pii: nenhum
+    nulo: false
+  - nome: stasz
+    tipo: string
+    comentario: "Contador de seleção de item"
+    pii: nenhum
+    nulo: true
+  - nome: datuv
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: techv
+    tipo: string
+    comentario: "Status técnico a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: aennr
+    tipo: string
+    comentario: "Número de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: lkenz
+    tipo: string
+    comentario: "Indicador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: andat
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: annam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Alterado em"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: dvdat
+    tipo: date
+    comentario: "Data de programação"
+    pii: nenhum
+    nulo: true
+  - nome: dvnam
+    tipo: string
+    comentario: "Data deslocada por"
+    pii: nenhum
+    nulo: true
+  - nome: aehlp
+    tipo: string
+    comentario: "Campo de trabalho auxiliar"
+    pii: nenhum
+    nulo: true
+  - nome: stvkn
+    tipo: string
+    comentario: "Nó de item (anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: idpos
+    tipo: string
+    comentario: "Grupo de itens"
+    pii: nenhum
+    nulo: true
+  - nome: idvar
+    tipo: string
+    comentario: "Variante de componente"
+    pii: nenhum
+    nulo: true
+  - nome: lpsrt
+    tipo: string
+    comentario: "Sequência de ordenação de itens"
+    pii: nenhum
+    nulo: true

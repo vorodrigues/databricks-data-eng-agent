@@ -1,0 +1,172 @@
+tabela: mkpf
+camada: bronze
+comentario: "Cabeçalho do documento de material (SAP MKPF)."
+ingestao: cdc
+fonte: sap.mkpf
+chave_primaria: [mandt, mblnr, mjahr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mblnr
+    tipo: string
+    comentario: "Número do documento de material"
+    pii: nenhum
+    nulo: false
+  - nome: mjahr
+    tipo: string
+    comentario: "Ano do documento de material"
+    pii: nenhum
+    nulo: false
+  - nome: vgart
+    tipo: string
+    comentario: "Tipo de transação/evento"
+    pii: nenhum
+    nulo: true
+  - nome: blart
+    tipo: string
+    comentario: "Tipo de documento"
+    pii: nenhum
+    nulo: true
+  - nome: blaum
+    tipo: string
+    comentario: "Tipo de documento para reavaliação"
+    pii: nenhum
+    nulo: true
+  - nome: bldat
+    tipo: date
+    comentario: "Data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: budat
+    tipo: date
+    comentario: "Data de lançamento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: cpudt
+    tipo: date
+    comentario: "Data de entrada do documento"
+    pii: nenhum
+    nulo: true
+  - nome: cputm
+    tipo: string
+    comentario: "Hora de entrada do documento"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Nome do usuário SAP"
+    pii: nenhum
+    nulo: true
+  - nome: tcode
+    tipo: string
+    comentario: "Código de transação SAP"
+    pii: nenhum
+    nulo: true
+  - nome: xblnr
+    tipo: string
+    comentario: "Número de referência externa"
+    pii: nenhum
+    nulo: true
+  - nome: bktxt
+    tipo: string
+    comentario: "Texto do cabeçalho do documento"
+    pii: nenhum
+    nulo: true
+  - nome: frath
+    tipo: string
+    comentario: "Custos de entrega não planejados"
+    pii: nenhum
+    nulo: true
+  - nome: frbnr
+    tipo: string
+    comentario: "Conhecimento de embarque (Bill of Lading)"
+    pii: nenhum
+    nulo: true
+  - nome: wever
+    tipo: string
+    comentario: "Versão de impressão"
+    pii: nenhum
+    nulo: true
+  - nome: xabln
+    tipo: string
+    comentario: "Número do comprovante de entrada/saída de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: awsys
+    tipo: string
+    comentario: "Sistema lógico de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bla2d
+    tipo: string
+    comentario: "Tipo de documento adicional"
+    pii: nenhum
+    nulo: true
+  - nome: tcode2
+    tipo: string
+    comentario: "Código de transação SAP (complementar)"
+    pii: nenhum
+    nulo: true
+  - nome: bfwms
+    tipo: string
+    comentario: "Controle de WMS externo"
+    pii: nenhum
+    nulo: true
+  - nome: exnum
+    tipo: string
+    comentario: "Número dos dados de comércio exterior"
+    pii: nenhum
+    nulo: true
+  - nome: spe_budat_uhr
+    tipo: string
+    comentario: "Hora de saída de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: spe_budat_zone
+    tipo: string
+    comentario: "Fuso horário"
+    pii: nenhum
+    nulo: true
+  - nome: le_vbeln
+    tipo: string
+    comentario: "Número da remessa (entrega)"
+    pii: nenhum
+    nulo: true
+  - nome: spe_logsys
+    tipo: string
+    comentario: "Sistema lógico do documento de material EWM"
+    pii: nenhum
+    nulo: true
+  - nome: spe_mdnum_ewm
+    tipo: string
+    comentario: "Número do documento de material no EWM"
+    pii: nenhum
+    nulo: true
+  - nome: gts_cusref_no
+    tipo: string
+    comentario: "Número de referência alfandegária (GTS)"
+    pii: nenhum
+    nulo: true
+  - nome: fls_rsto
+    tipo: string
+    comentario: "Devolução aprimorada para loja"
+    pii: nenhum
+    nulo: true
+  - nome: msr_active
+    tipo: string
+    comentario: "Devoluções avançadas ativas"
+    pii: nenhum
+    nulo: true
+  - nome: knumv
+    tipo: string
+    comentario: "Número de condição do documento"
+    pii: nenhum
+    nulo: true

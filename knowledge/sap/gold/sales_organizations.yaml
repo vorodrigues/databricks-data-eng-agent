@@ -1,0 +1,158 @@
+tabela: sales_organizations
+camada: gold
+comentario: "Detalhes e configurações das organizações de vendas SAP (TVKO), enriquecidos com textos descritivos multilíngues de TVKOT para análise da estrutura territorial de vendas."
+entidade: obt
+ingestao: custom
+fontes: [silver.tvko, silver.tvkot, silver.tvtw, silver.tvtwt, silver.tspa, silver.tspat]
+chave_primaria: [client_mandt, sales_organization_vkorg, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: sales_organization_vkorg
+    tipo: string
+    comentario: "Organização de vendas (vkorg)"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: name_vtext
+    tipo: string
+    comentario: "Nome da organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: statistics_currency_waers
+    tipo: string
+    comentario: "Moeda estatística"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: address_adrnr
+    tipo: string
+    comentario: "Número do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: address_text_name_txnam_adr
+    tipo: string
+    comentario: "Nome do texto de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: letter_header_text_txnam_kop
+    tipo: string
+    comentario: "Texto do cabeçalho da carta"
+    pii: nenhum
+    nulo: true
+  - nome: footer_lines_text_txnam_fus
+    tipo: string
+    comentario: "Texto do rodapé da carta"
+    pii: nenhum
+    nulo: true
+  - nome: greeting_text_name_txnam_gru
+    tipo: string
+    comentario: "Nome do texto de saudação"
+    pii: nenhum
+    nulo: true
+  - nome: refsorg_salesdoctype_vkoau
+    tipo: string
+    comentario: "Tipo de documento de vendas da org. de referência"
+    pii: nenhum
+    nulo: true
+  - nome: cust_inter_co_bill_kunnr
+    tipo: string
+    comentario: "Cliente para faturamento intercompany"
+    pii: indireto
+    nulo: true
+  - nome: rebate_proc_active_boavo
+    tipo: string
+    comentario: "Processamento de bonificações ativo"
+    pii: nenhum
+    nulo: true
+  - nome: sales_org_calendar_vkokl
+    tipo: string
+    comentario: "Calendário da organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: purch_organization_ekorg
+    tipo: string
+    comentario: "Organização de compras (ekorg)"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_group_ekgrp
+    tipo: string
+    comentario: "Grupo de compradores"
+    pii: nenhum
+    nulo: true
+  - nome: vendor_lifnr
+    tipo: string
+    comentario: "Número do fornecedor (lifnr)"
+    pii: indireto
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro produtivo (plant)"
+    pii: nenhum
+    nulo: true
+  - nome: order_type_bsart
+    tipo: string
+    comentario: "Tipo de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: purch_doc_category_bstyp
+    tipo: string
+    comentario: "Categoria do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: movement_type_bwart
+    tipo: string
+    comentario: "Tipo de movimento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: storage_location_lgort
+    tipo: string
+    comentario: "Depósito (local de armazenamento)"
+    pii: nenhum
+    nulo: true
+  - nome: text_sds_sender_txnam_sdb
+    tipo: string
+    comentario: "Texto do remetente de ficha de dados de segurança"
+    pii: nenhum
+    nulo: true
+  - nome: tax_code_for_sd_doc_mwskz
+    tipo: string
+    comentario: "Código de imposto para documentos SD"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_xstceg
+    tipo: string
+    comentario: "Número de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: numbering_time_j_1anutime
+    tipo: string
+    comentario: "Momento de numeração"
+    pii: nenhum
+    nulo: true
+  - nome: max_no_bill_items_maxbi
+    tipo: string
+    comentario: "Número máximo de itens de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery"
+    pii: nenhum
+    nulo: true

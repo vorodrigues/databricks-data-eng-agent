@@ -1,0 +1,37 @@
+tabela: setheadert
+camada: bronze
+comentario: "Descricao resumida de conjuntos (sets) do SAP"
+ingestao: cdc
+fonte: sap.setheadert
+chave_primaria: [mandt, setclass, subclass, setname, langu]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: setclass
+    tipo: string
+    comentario: "Classe do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: subclass
+    tipo: string
+    comentario: "Unidade organizacional (subclasse do conjunto)"
+    pii: nenhum
+    nulo: false
+  - nome: setname
+    tipo: string
+    comentario: "Nome do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: langu
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: descript
+    tipo: string
+    comentario: "Descricao do conjunto"
+    pii: nenhum
+    nulo: true

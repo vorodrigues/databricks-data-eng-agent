@@ -1,0 +1,198 @@
+tabela: material_movement_types
+camada: gold
+comentario: "Dicionario de tipos de movimento de materiais SAP (T156) enriquecido com textos de descricao multilinguais da T156T."
+entidade: obt
+ingestao: custom
+fontes: [silver.matdoc, silver.mseg, silver.tcurx, silver.t156, silver.t156t]
+chave_primaria: [client_mandt, language_key_spras, movement_type_bwart, special_stock_sobkz, movement_indicator_kzbew, receipt_indicator_kzzug, consumption_related_movement_type_kzvbr]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: movement_type_bwart
+    tipo: string
+    comentario: "Tipo de movimento (gestao de estoques)"
+    pii: nenhum
+    nulo: false
+  - nome: special_stock_sobkz
+    tipo: string
+    comentario: "Indicador de estoque especial"
+    pii: nenhum
+    nulo: false
+  - nome: movement_indicator_kzbew
+    tipo: string
+    comentario: "Indicador de movimento"
+    pii: nenhum
+    nulo: false
+  - nome: receipt_indicator_kzzug
+    tipo: string
+    comentario: "Indicador de entrada de mercadoria"
+    pii: nenhum
+    nulo: false
+  - nome: consumption_related_movement_type_kzvbr
+    tipo: string
+    comentario: "Tipo de movimento relacionado a consumo (determina se o movimento e registrado nas estatisticas de consumo)"
+    pii: nenhum
+    nulo: false
+  - nome: movement_type_text_btext
+    tipo: string
+    comentario: "Texto descritivo do tipo de movimento"
+    pii: nenhum
+    nulo: true
+  - nome: posting_string_ref_bustr
+    tipo: string
+    comentario: "Referencia de string de lancamento contabil"
+    pii: nenhum
+    nulo: true
+  - nome: create_new_batch_chneu
+    tipo: string
+    comentario: "Indicador de criacao de novo lote"
+    pii: nenhum
+    nulo: true
+  - nome: movement_type_category_kzbwa
+    tipo: string
+    comentario: "Categoria do tipo de movimento"
+    pii: nenhum
+    nulo: true
+  - nome: batch_classification_kzcla
+    tipo: string
+    comentario: "Classificacao de lote para movimentos de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: direction_indicator_kzdir
+    tipo: string
+    comentario: "Direcao do movimento (entrada/saida)"
+    pii: nenhum
+    nulo: true
+  - nome: print_item_kzdru
+    tipo: string
+    comentario: "Indicador de impressao de item"
+    pii: nenhum
+    nulo: true
+  - nome: control_reason_kzgru
+    tipo: string
+    comentario: "Motivo de controle para movimentos de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: account_control_kzkon
+    tipo: string
+    comentario: "Controle de conta para movimentos de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: check_shelf_life_expiry_date_kzmhd
+    tipo: string
+    comentario: "Verificar data de validade (shelf life)"
+    pii: nenhum
+    nulo: true
+  - nome: statistically_relev_kzstr
+    tipo: string
+    comentario: "Movimento estatisticamente relevante"
+    pii: nenhum
+    nulo: true
+  - nome: consumption_posting_type_kzvbu
+    tipo: string
+    comentario: "Tipo de lancamento de consumo (planejado, nao planejado, total)"
+    pii: nenhum
+    nulo: true
+  - nome: goods_receipt_blocked_stock_kzwes
+    tipo: string
+    comentario: "Estoque bloqueado de entrada de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: maintain_batch_status_data_kzzde
+    tipo: string
+    comentario: "Manter dados de status do lote"
+    pii: nenhum
+    nulo: true
+  - nome: qa_inspection_test_qssbw
+    tipo: string
+    comentario: "Mecanismo de inspecao/teste QA"
+    pii: nenhum
+    nulo: true
+  - nome: account_assignment_of_reservation_rstyp
+    tipo: string
+    comentario: "Tipo de atribuicao de conta da reserva"
+    pii: nenhum
+    nulo: true
+  - nome: stock_determination_rule_rules
+    tipo: string
+    comentario: "Regra de determinacao de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: selection_parameter_selpa
+    tipo: string
+    comentario: "Parametro de selecao para exibicao de lista"
+    pii: nenhum
+    nulo: true
+  - nome: debit_credit_indicator_shkzg
+    tipo: string
+    comentario: "Indicador de debito/credito"
+    pii: nenhum
+    nulo: true
+  - nome: generate_physical_inventory_document_xinvb
+    tipo: string
+    comentario: "Gerar documento de inventario fisico"
+    pii: nenhum
+    nulo: true
+  - nome: extended_classification_xkcfc
+    tipo: string
+    comentario: "Classificacao estendida do lote"
+    pii: nenhum
+    nulo: true
+  - nome: cost_element_account_xkoko
+    tipo: string
+    comentario: "Indicador de conta de elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: storage_location_creation_automatic_xlaut
+    tipo: string
+    comentario: "Criar deposito automaticamente"
+    pii: nenhum
+    nulo: true
+  - nome: automatic_purchase_order_xnebe
+    tipo: string
+    comentario: "Geracao automatica de ordem de compra"
+    pii: nenhum
+    nulo: true
+  - nome: storage_upon_goods_movement_active_indicator_xoarc
+    tipo: string
+    comentario: "Indicador de armazenamento ativo no movimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: independent_requirements_reduction_xpbed
+    tipo: string
+    comentario: "Reducao de necessidades independentes"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_movement_type_indicator_xstbw
+    tipo: string
+    comentario: "Indicador de tipo de movimento de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: movement_type_allows_wip_batches_xwipb
+    tipo: string
+    comentario: "Tipo de movimento permite lotes WIP"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_goods_receipt_despite_invoice_receipt_xwsbr
+    tipo: string
+    comentario: "Indicador de estorno de entrada apesar de fatura ja lancada"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

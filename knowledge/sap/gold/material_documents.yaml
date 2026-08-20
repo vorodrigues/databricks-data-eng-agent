@@ -1,0 +1,273 @@
+tabela: material_documents
+camada: gold
+comentario: "Captura movimentações operacionais de mercadorias do SAP, rastreando recebimentos, saídas, transferências entre centros e ajustes de inventário dos logs transacionais MSEG e MATDOC."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.matdoc, silver.mseg, silver.tcurx, silver.t156, silver.t156t]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, document_number_mblnr, document_year_mjahr, document_item_zeile]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: document_number_mblnr
+    tipo: string
+    comentario: "Número do documento de material"
+    pii: nenhum
+    nulo: false
+  - nome: document_year_mjahr
+    tipo: string
+    comentario: "Ano do documento de material"
+    pii: nenhum
+    nulo: false
+  - nome: document_item_zeile
+    tipo: string
+    comentario: "Item do documento de material"
+    pii: nenhum
+    nulo: false
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: true
+  - nome: batch_number_charg
+    tipo: string
+    comentario: "Número do lote"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: true
+  - nome: storage_location_lgort
+    tipo: string
+    comentario: "Depósito"
+    pii: nenhum
+    nulo: true
+  - nome: movement_type_bwart
+    tipo: string
+    comentario: "Tipo de movimento"
+    pii: nenhum
+    nulo: true
+  - nome: stock_type_insmk
+    tipo: string
+    comentario: "Tipo de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: debit_credit_indicator_shkzg
+    tipo: string
+    comentario: "Indicador débito/crédito"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_of_measure_meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: currency_key_waers
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: amount_in_local_currency_dmbtr
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: purchase_order_number_ebeln
+    tipo: string
+    comentario: "Número do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: vendors_account_number_lifnr
+    tipo: string
+    comentario: "Número da conta do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: sales_order_number_kdauf
+    tipo: string
+    comentario: "Número da ordem de venda"
+    pii: nenhum
+    nulo: true
+  - nome: account_number_of_customer_kunnr
+    tipo: string
+    comentario: "Número da conta do cliente"
+    pii: indireto
+    nulo: true
+  - nome: receiving_issuing_material_ummat
+    tipo: string
+    comentario: "Material receptor/emissor"
+    pii: nenhum
+    nulo: true
+  - nome: receiving_issuing_batch_umcha
+    tipo: string
+    comentario: "Lote receptor/emissor"
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_purchasing_document_ebelp
+    tipo: string
+    comentario: "Número do item do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: document_number_of_a_reference_document_lfbnr
+    tipo: string
+    comentario: "Número do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: item_of_a_reference_document_lfpos
+    tipo: string
+    comentario: "Item do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: order_number_aufnr
+    tipo: string
+    comentario: "Número da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Empresa"
+    pii: nenhum
+    nulo: true
+  - nome: receiving_plant_umwrk
+    tipo: string
+    comentario: "Centro receptor"
+    pii: nenhum
+    nulo: true
+  - nome: receiving_issuing_storage_location_umlgo
+    tipo: string
+    comentario: "Depósito receptor/emissor"
+    pii: nenhum
+    nulo: true
+  - nome: warehouse_number_lgnum
+    tipo: string
+    comentario: "Número do armazém"
+    pii: nenhum
+    nulo: true
+  - nome: movement_type_for_warehouse_management_bwlvs
+    tipo: string
+    comentario: "Tipo de movimento para gerenciamento de armazém (WM)"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_posting_in_warehouse_management_system_xblvs
+    tipo: string
+    comentario: "Indicador de lançamento no sistema de gerenciamento de armazém"
+    pii: nenhum
+    nulo: true
+  - nome: stock_category_in_the_warehouse_management_system_bestq
+    tipo: string
+    comentario: "Categoria de estoque no sistema de gerenciamento de armazém"
+    pii: nenhum
+    nulo: true
+  - nome: special_stock_indicator_sobkz
+    tipo: string
+    comentario: "Indicador de estoque especial"
+    pii: nenhum
+    nulo: true
+  - nome: movement_indicator_kzbew
+    tipo: string
+    comentario: "Indicador de movimento"
+    pii: nenhum
+    nulo: true
+  - nome: reason_for_movement_grund
+    tipo: string
+    comentario: "Motivo do movimento"
+    pii: nenhum
+    nulo: true
+  - nome: goods_receipt_non_valuated_weunb
+    tipo: string
+    comentario: "Recebimento de mercadorias não avaliado"
+    pii: nenhum
+    nulo: true
+  - nome: storage_type_lgtyp
+    tipo: string
+    comentario: "Tipo de armazenagem"
+    pii: nenhum
+    nulo: true
+  - nome: equipment_number_equnr
+    tipo: string
+    comentario: "Número do equipamento"
+    pii: nenhum
+    nulo: true
+  - nome: business_area_gsber
+    tipo: string
+    comentario: "Área de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: work_breakdown_structure_element_ps_psp_pnr
+    tipo: string
+    comentario: "Elemento da estrutura analítica de projeto (EAP)"
+    pii: nenhum
+    nulo: true
+  - nome: gl_account_number_sakto
+    tipo: string
+    comentario: "Número da conta contábil"
+    pii: nenhum
+    nulo: true
+  - nome: debit_credit_indicator_in_revaluation_shkum
+    tipo: string
+    comentario: "Indicador débito/crédito na reavaliação"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_type_bwtar
+    tipo: string
+    comentario: "Tipo de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: receipt_indicator_kzzug
+    tipo: string
+    comentario: "Indicador de recebimento"
+    pii: nenhum
+    nulo: true
+  - nome: posting_date_budat
+    tipo: date
+    comentario: "Data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_posting_date_budat
+    tipo: string
+    comentario: "Ano da data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_posting_date_budat
+    tipo: string
+    comentario: "Mês da data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_posting_date_budat
+    tipo: string
+    comentario: "Trimestre da data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_posting_date_budat
+    tipo: string
+    comentario: "Semana da data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora da última atualização no sistema de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Carimbo de data/hora do carregamento no BigQuery"
+    pii: nenhum
+    nulo: true

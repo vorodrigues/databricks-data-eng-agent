@@ -1,0 +1,142 @@
+tabela: msfd
+camada: bronze
+comentario: "Estoque especial de pedido de cliente com fornecedor (SAP MSFD)."
+ingestao: cdc
+fonte: sap.msfd
+chave_primaria: [mandt, matnr, werks, charg, sobkz, lifnr, vbeln, posnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: werks
+    tipo: string
+    comentario: "Centro produtivo (plant)"
+    pii: nenhum
+    nulo: false
+  - nome: charg
+    tipo: string
+    comentario: "Número do lote"
+    pii: nenhum
+    nulo: false
+  - nome: sobkz
+    tipo: string
+    comentario: "Indicador de estoque especial"
+    pii: nenhum
+    nulo: false
+  - nome: lifnr
+    tipo: string
+    comentario: "Número do fornecedor (lifnr)"
+    pii: indireto
+    nulo: false
+  - nome: vbeln
+    tipo: string
+    comentario: "Número do documento de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: posnr
+    tipo: string
+    comentario: "Item do documento de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: lfgja
+    tipo: string
+    comentario: "Ano do exercício do período atual"
+    pii: nenhum
+    nulo: true
+  - nome: lfmon
+    tipo: string
+    comentario: "Período corrente (mês)"
+    pii: nenhum
+    nulo: true
+  - nome: fdspr
+    tipo: string
+    comentario: "Bloqueio de inventário físico"
+    pii: nenhum
+    nulo: true
+  - nome: fdlab
+    tipo: decimal(23,2)
+    comentario: "Estoque de livre utilização"
+    pii: nenhum
+    nulo: true
+  - nome: fdins
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: fdvla
+    tipo: decimal(23,2)
+    comentario: "Estoque de livre utilização (avaliado)"
+    pii: nenhum
+    nulo: true
+  - nome: fdvin
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade (avaliado)"
+    pii: nenhum
+    nulo: true
+  - nome: fdill
+    tipo: decimal(23,2)
+    comentario: "Estoque de depósito no exercício corrente"
+    pii: nenhum
+    nulo: true
+  - nome: fdilq
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade no exercício corrente"
+    pii: nenhum
+    nulo: true
+  - nome: fdvll
+    tipo: decimal(23,2)
+    comentario: "Estoque de depósito no exercício anterior"
+    pii: nenhum
+    nulo: true
+  - nome: fdvlq
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade no período anterior"
+    pii: nenhum
+    nulo: true
+  - nome: fdfll
+    tipo: decimal(23,2)
+    comentario: "Estoque de depósito no exercício futuro"
+    pii: nenhum
+    nulo: true
+  - nome: fdflq
+    tipo: decimal(23,2)
+    comentario: "Estoque em inspeção de qualidade no exercício futuro"
+    pii: nenhum
+    nulo: true
+  - nome: fddll
+    tipo: date
+    comentario: "Data da última contagem de inventário"
+    pii: nenhum
+    nulo: true
+  - nome: fdein
+    tipo: decimal(23,2)
+    comentario: "Estoque de uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: fdvei
+    tipo: decimal(23,2)
+    comentario: "Estoque de uso restrito (avaliado)"
+    pii: nenhum
+    nulo: true
+  - nome: ersda
+    tipo: date
+    comentario: "Data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: fdjin
+    tipo: string
+    comentario: "Campo sem descricao na fonte (fdjin)."
+    pii: nenhum
+    nulo: true
+  - nome: fdrue
+    tipo: string
+    comentario: "Campo sem descricao na fonte (fdrue)."
+    pii: nenhum
+    nulo: true

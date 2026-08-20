@@ -1,0 +1,82 @@
+tabela: mbewh
+camada: bronze
+comentario: "Histórico de valoração de material (saldos e preços por período)"
+ingestao: cdc
+fonte: sap.mbewh
+chave_primaria: [mandt, matnr, bwkey, bwtar, lfgja, lfmon]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número de material"
+    pii: nenhum
+    nulo: false
+  - nome: bwkey
+    tipo: string
+    comentario: "Área de avaliação"
+    pii: nenhum
+    nulo: false
+  - nome: bwtar
+    tipo: string
+    comentario: "Tipo de avaliação"
+    pii: nenhum
+    nulo: false
+  - nome: lfgja
+    tipo: int
+    comentario: "Exercício fiscal do período"
+    pii: nenhum
+    nulo: false
+  - nome: lfmon
+    tipo: int
+    comentario: "Período contábil (mês)"
+    pii: nenhum
+    nulo: false
+  - nome: lbkum
+    tipo: decimal(23,2)
+    comentario: "Estoque total valorado"
+    pii: nenhum
+    nulo: true
+  - nome: salk3
+    tipo: decimal(23,2)
+    comentario: "Valor total do estoque"
+    pii: nenhum
+    nulo: true
+  - nome: vprsv
+    tipo: string
+    comentario: "Indicador de controle de preço (V=preço médio móvel, S=preço padrão)"
+    pii: nenhum
+    nulo: true
+  - nome: verpr
+    tipo: decimal(23,2)
+    comentario: "Preço médio móvel"
+    pii: nenhum
+    nulo: true
+  - nome: stprs
+    tipo: decimal(23,2)
+    comentario: "Preço padrão"
+    pii: nenhum
+    nulo: true
+  - nome: peinh
+    tipo: decimal(23,2)
+    comentario: "Unidade de preço (base de quantidade para o preço)"
+    pii: nenhum
+    nulo: true
+  - nome: bklas
+    tipo: string
+    comentario: "Classe de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: salkv
+    tipo: decimal(23,2)
+    comentario: "Valor total pelo preço médio móvel"
+    pii: nenhum
+    nulo: true
+  - nome: vksal
+    tipo: decimal(23,2)
+    comentario: "Valor total ao preço padrão"
+    pii: nenhum
+    nulo: true

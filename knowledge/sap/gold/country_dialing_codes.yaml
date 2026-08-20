@@ -1,0 +1,58 @@
+tabela: country_dialing_codes
+camada: gold
+comentario: "Códigos de discagem internacional e nacional para telefone e fax a partir de T005K, permitindo consultas de metadados de telecomunicação."
+entidade: obt
+ingestao: custom
+fontes: [silver.t001, silver.t002, silver.t002t, silver.t005, silver.t005t, silver.t005k, silver.t005s, silver.t005u, silver.tj02t]
+chave_primaria: [client_mandt, country_key_land1]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: country_key_land1
+    tipo: string
+    comentario: "Chave de país"
+    pii: nenhum
+    nulo: false
+  - nome: international_dialing_code_for_telephonefax_teleffrom
+    tipo: string
+    comentario: "Código de discagem internacional para telefone/fax (saída)"
+    pii: nenhum
+    nulo: true
+  - nome: country_telephonefax_dialling_code_telefto
+    tipo: string
+    comentario: "Código de discagem de telefone/fax do país"
+    pii: nenhum
+    nulo: true
+  - nome: digit_to_be_deleted_for_calls_from_abroad_telefrm
+    tipo: string
+    comentario: "Dígito a remover em chamadas do exterior"
+    pii: nenhum
+    nulo: true
+  - nome: foreign_dialling_code_for_telex_telexfrom
+    tipo: string
+    comentario: "Código de discagem estrangeiro para telex (saída)"
+    pii: nenhum
+    nulo: true
+  - nome: foreign_dialling_code_for_telex_telexto
+    tipo: string
+    comentario: "Código de discagem estrangeiro para telex (entrada)"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_mobile_telephones_are_sms_enabled_by_default_mobile_sms
+    tipo: string
+    comentario: "Indicador: celulares habilitados para SMS por padrão"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

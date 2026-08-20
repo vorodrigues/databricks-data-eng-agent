@@ -1,0 +1,137 @@
+tabela: ausp
+camada: bronze
+comentario: "Valores de características de classificação (SAP AUSP)."
+ingestao: cdc
+fonte: sap.ausp
+chave_primaria: [mandt, objek, atinn, atzhl, mafid, klart]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: objek
+    tipo: string
+    comentario: "Objeto classificado"
+    pii: nenhum
+    nulo: false
+  - nome: atinn
+    tipo: string
+    comentario: "Número interno da característica"
+    pii: nenhum
+    nulo: false
+  - nome: atzhl
+    tipo: int
+    comentario: "Contador de valores da característica"
+    pii: nenhum
+    nulo: false
+  - nome: mafid
+    tipo: string
+    comentario: "Indicador: objeto/classe"
+    pii: nenhum
+    nulo: false
+  - nome: klart
+    tipo: string
+    comentario: "Tipo de classe"
+    pii: nenhum
+    nulo: false
+  - nome: adzhl
+    tipo: int
+    comentario: "Contador interno"
+    pii: nenhum
+    nulo: true
+  - nome: atwrt
+    tipo: string
+    comentario: "Valor da característica"
+    pii: nenhum
+    nulo: true
+  - nome: atflv
+    tipo: decimal(23,2)
+    comentario: "Valor numérico de (limite inferior)"
+    pii: nenhum
+    nulo: true
+  - nome: atawe
+    tipo: string
+    comentario: "Unidade de medida interna do valor"
+    pii: nenhum
+    nulo: true
+  - nome: atflb
+    tipo: decimal(23,2)
+    comentario: "Valor numérico até (limite superior)"
+    pii: nenhum
+    nulo: true
+  - nome: ataw1
+    tipo: string
+    comentario: "Unidade de medida interna (limite superior)"
+    pii: nenhum
+    nulo: true
+  - nome: atcod
+    tipo: string
+    comentario: "Código do valor"
+    pii: nenhum
+    nulo: true
+  - nome: attlv
+    tipo: decimal(23,2)
+    comentario: "Tolerância inferior"
+    pii: nenhum
+    nulo: true
+  - nome: attlb
+    tipo: decimal(23,2)
+    comentario: "Tolerância superior"
+    pii: nenhum
+    nulo: true
+  - nome: atprz
+    tipo: decimal(23,2)
+    comentario: "Percentual"
+    pii: nenhum
+    nulo: true
+  - nome: atinc
+    tipo: string
+    comentario: "Incremento"
+    pii: nenhum
+    nulo: true
+  - nome: ataut
+    tipo: string
+    comentario: "Autor"
+    pii: nenhum
+    nulo: true
+  - nome: aennr
+    tipo: string
+    comentario: "Número de alteração (ECN)"
+    pii: nenhum
+    nulo: true
+  - nome: datuv
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: lkenz
+    tipo: string
+    comentario: "Indicador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: atimb
+    tipo: string
+    comentario: "Número interno da característica de referência"
+    pii: nenhum
+    nulo: true
+  - nome: atzis
+    tipo: int
+    comentario: "Contador de instâncias"
+    pii: nenhum
+    nulo: true
+  - nome: atsrt
+    tipo: int
+    comentario: "Posição de classificação"
+    pii: nenhum
+    nulo: true
+  - nome: atvglart
+    tipo: string
+    comentario: "Tipo de comparação"
+    pii: nenhum
+    nulo: true
+  - nome: datub
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true

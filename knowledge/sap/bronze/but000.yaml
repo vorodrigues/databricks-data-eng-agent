@@ -1,0 +1,467 @@
+tabela: but000
+camada: bronze
+comentario: "Parceiro de negócio: dados gerais I"
+ingestao: cdc
+fonte: sap.but000
+chave_primaria: [client, partner]
+colunas:
+  - nome: addrcomm
+    tipo: string
+    comentario: "Número do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: augrp
+    tipo: string
+    comentario: "Grupo de autorização"
+    pii: nenhum
+    nulo: true
+  - nome: birthdt
+    tipo: date
+    comentario: "Data de nascimento"
+    pii: sensivel
+    nulo: true
+  - nome: birthdt_status
+    tipo: string
+    comentario: "Status da data de nascimento"
+    pii: sensivel
+    nulo: true
+  - nome: birthpl
+    tipo: string
+    comentario: "Local de nascimento"
+    pii: sensivel
+    nulo: true
+  - nome: bpext
+    tipo: string
+    comentario: "Número externo do parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: bpkind
+    tipo: string
+    comentario: "Tipo do parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: bp_eew_dummy
+    tipo: string
+    comentario: "Campo fictício de extensão do parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: bp_sort
+    tipo: string
+    comentario: "Campo fonético de classificação"
+    pii: nenhum
+    nulo: true
+  - nome: bu_group
+    tipo: string
+    comentario: "Agrupamento do parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: bu_langu
+    tipo: string
+    comentario: "Idioma do parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: bu_logsys
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: bu_sort1
+    tipo: string
+    comentario: "Termo de pesquisa 1"
+    pii: nenhum
+    nulo: true
+  - nome: bu_sort2
+    tipo: string
+    comentario: "Termo de pesquisa 2"
+    pii: nenhum
+    nulo: true
+  - nome: chdat
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: children
+    tipo: string
+    comentario: "Número de filhos"
+    pii: sensivel
+    nulo: true
+  - nome: chtim
+    tipo: string
+    comentario: "Hora da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: chusr
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: client
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: cndsc
+    tipo: string
+    comentario: "País de origem"
+    pii: nenhum
+    nulo: true
+  - nome: cntax
+    tipo: string
+    comentario: "Divisão de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: contact
+    tipo: string
+    comentario: "Permissão de contato"
+    pii: nenhum
+    nulo: true
+  - nome: crdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: crtim
+    tipo: string
+    comentario: "Hora de criação"
+    pii: nenhum
+    nulo: true
+  - nome: crusr
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: db_key
+    tipo: string
+    comentario: "UUID no formato X"
+    pii: nenhum
+    nulo: true
+  - nome: deathdt
+    tipo: date
+    comentario: "Data de falecimento"
+    pii: sensivel
+    nulo: true
+  - nome: emplo
+    tipo: string
+    comentario: "Empregador"
+    pii: direto
+    nulo: true
+  - nome: found_dat
+    tipo: date
+    comentario: "Data de fundação da organização"
+    pii: nenhum
+    nulo: true
+  - nome: gender
+    tipo: string
+    comentario: "Sexo"
+    pii: sensivel
+    nulo: true
+  - nome: ind_sector
+    tipo: string
+    comentario: "Setor industrial"
+    pii: nenhum
+    nulo: true
+  - nome: initials
+    tipo: string
+    comentario: "Iniciais do nome"
+    pii: direto
+    nulo: true
+  - nome: is_org_centre
+    tipo: string
+    comentario: "Indicador: é centro organizacional"
+    pii: nenhum
+    nulo: true
+  - nome: jobgr
+    tipo: string
+    comentario: "Ocupação/cargo"
+    pii: nenhum
+    nulo: true
+  - nome: kbankl
+    tipo: string
+    comentario: "Chave bancária"
+    pii: nenhum
+    nulo: true
+  - nome: kbanks
+    tipo: string
+    comentario: "País do banco"
+    pii: nenhum
+    nulo: true
+  - nome: langu_corr
+    tipo: string
+    comentario: "Idioma de correspondência"
+    pii: nenhum
+    nulo: true
+  - nome: legal_enty
+    tipo: string
+    comentario: "Forma jurídica"
+    pii: nenhum
+    nulo: true
+  - nome: legal_org
+    tipo: string
+    comentario: "Entidade jurídica da organização"
+    pii: nenhum
+    nulo: true
+  - nome: liquid_dat
+    tipo: date
+    comentario: "Data de liquidação da organização"
+    pii: nenhum
+    nulo: true
+  - nome: location_1
+    tipo: string
+    comentario: "Número de localização internacional 1"
+    pii: nenhum
+    nulo: true
+  - nome: location_2
+    tipo: string
+    comentario: "Número de localização internacional 2"
+    pii: nenhum
+    nulo: true
+  - nome: location_3
+    tipo: string
+    comentario: "Dígito verificador do número de localização internacional"
+    pii: nenhum
+    nulo: true
+  - nome: marst
+    tipo: string
+    comentario: "Estado civil"
+    pii: sensivel
+    nulo: true
+  - nome: mc_name1
+    tipo: string
+    comentario: "Campo de pesquisa 1: nome 1/sobrenome em maiúsculas"
+    pii: direto
+    nulo: true
+  - nome: mc_name2
+    tipo: string
+    comentario: "Campo de pesquisa 2: nome 2/primeiro nome em maiúsculas"
+    pii: direto
+    nulo: true
+  - nome: mem_house
+    tipo: string
+    comentario: "Membro da residência"
+    pii: sensivel
+    nulo: true
+  - nome: namcountry
+    tipo: string
+    comentario: "País para formatação do nome"
+    pii: nenhum
+    nulo: true
+  - nome: name1_text
+    tipo: string
+    comentario: "Nome completo"
+    pii: direto
+    nulo: true
+  - nome: nameformat
+    tipo: string
+    comentario: "Formato do nome"
+    pii: nenhum
+    nulo: true
+  - nome: namemiddle
+    tipo: string
+    comentario: "Nome do meio"
+    pii: direto
+    nulo: true
+  - nome: name_first
+    tipo: string
+    comentario: "Primeiro nome"
+    pii: direto
+    nulo: true
+  - nome: name_grp1
+    tipo: string
+    comentario: "Nome 1 do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: name_grp2
+    tipo: string
+    comentario: "Nome 2 do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: name_last
+    tipo: string
+    comentario: "Sobrenome"
+    pii: direto
+    nulo: true
+  - nome: name_last2
+    tipo: string
+    comentario: "Nome de nascimento"
+    pii: direto
+    nulo: true
+  - nome: name_lst2
+    tipo: string
+    comentario: "Outro sobrenome"
+    pii: direto
+    nulo: true
+  - nome: name_org1
+    tipo: string
+    comentario: "Nome 1 da organização"
+    pii: nenhum
+    nulo: true
+  - nome: name_org2
+    tipo: string
+    comentario: "Nome 2 da organização"
+    pii: nenhum
+    nulo: true
+  - nome: name_org3
+    tipo: string
+    comentario: "Nome 3 da organização"
+    pii: nenhum
+    nulo: true
+  - nome: name_org4
+    tipo: string
+    comentario: "Nome 4 da organização"
+    pii: nenhum
+    nulo: true
+  - nome: natio
+    tipo: string
+    comentario: "Nacionalidade"
+    pii: sensivel
+    nulo: true
+  - nome: natpers
+    tipo: string
+    comentario: "Indicador de pessoa física"
+    pii: nenhum
+    nulo: true
+  - nome: nickname
+    tipo: string
+    comentario: "Conhecido como (apelido)"
+    pii: direto
+    nulo: true
+  - nome: not_lg_competent
+    tipo: string
+    comentario: "Indicador: legalmente incapaz"
+    pii: sensivel
+    nulo: true
+  - nome: not_released
+    tipo: string
+    comentario: "Indicador: não liberado"
+    pii: nenhum
+    nulo: true
+  - nome: partgrptyp
+    tipo: string
+    comentario: "Tipo do grupo de parceiros"
+    pii: nenhum
+    nulo: true
+  - nome: partner
+    tipo: string
+    comentario: "Número do parceiro de negócio"
+    pii: indireto
+    nulo: false
+  - nome: partner_guid
+    tipo: string
+    comentario: "GUID do parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: par_rel
+    tipo: string
+    comentario: "Indicador de liberação necessária"
+    pii: nenhum
+    nulo: true
+  - nome: perno
+    tipo: string
+    comentario: "Número do funcionário"
+    pii: indireto
+    nulo: true
+  - nome: persnumber
+    tipo: string
+    comentario: "Número de pessoa"
+    pii: indireto
+    nulo: true
+  - nome: prefix1
+    tipo: string
+    comentario: "Prefixo do nome 1"
+    pii: nenhum
+    nulo: true
+  - nome: prefix2
+    tipo: string
+    comentario: "Segundo prefixo do nome"
+    pii: nenhum
+    nulo: true
+  - nome: print_mode
+    tipo: string
+    comentario: "Formato de impressão"
+    pii: nenhum
+    nulo: true
+  - nome: source
+    tipo: string
+    comentario: "Origem dos dados"
+    pii: nenhum
+    nulo: true
+  - nome: td_switch
+    tipo: string
+    comentario: "Indicador de parceiro convertido"
+    pii: nenhum
+    nulo: true
+  - nome: title
+    tipo: string
+    comentario: "Título / forma de tratamento"
+    pii: nenhum
+    nulo: true
+  - nome: title_aca1
+    tipo: string
+    comentario: "Título acadêmico 1"
+    pii: nenhum
+    nulo: true
+  - nome: title_aca2
+    tipo: string
+    comentario: "Segundo título acadêmico"
+    pii: nenhum
+    nulo: true
+  - nome: title_let
+    tipo: string
+    comentario: "Saudação"
+    pii: nenhum
+    nulo: true
+  - nome: title_royl
+    tipo: string
+    comentario: "Complemento do nome"
+    pii: nenhum
+    nulo: true
+  - nome: type
+    tipo: string
+    comentario: "Categoria do parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: xblck
+    tipo: string
+    comentario: "Bloqueio central do parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: xdele
+    tipo: string
+    comentario: "Indicador de arquivamento"
+    pii: nenhum
+    nulo: true
+  - nome: xpcpt
+    tipo: string
+    comentario: "Indicador de finalidade concluída"
+    pii: nenhum
+    nulo: true
+  - nome: xsexf
+    tipo: string
+    comentario: "Indicador: sexo feminino"
+    pii: sensivel
+    nulo: true
+  - nome: xsexm
+    tipo: string
+    comentario: "Indicador: sexo masculino"
+    pii: sensivel
+    nulo: true
+  - nome: xsexu
+    tipo: string
+    comentario: "Indicador: sexo desconhecido"
+    pii: sensivel
+    nulo: true
+  - nome: xubname
+    tipo: string
+    comentario: "Nome de usuário internet"
+    pii: direto
+    nulo: true

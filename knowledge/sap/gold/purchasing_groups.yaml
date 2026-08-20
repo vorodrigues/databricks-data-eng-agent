@@ -1,0 +1,43 @@
+tabela: purchasing_groups
+camada: gold
+comentario: "Dados mestre de grupos de compras do SAP T024, mapeando cada grupo ao seu nome, telefone e e-mail."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.t024e, silver.t024]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, purchasing_group_ekgrp]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: purchasing_group_ekgrp
+    tipo: string
+    comentario: "Grupo de compras (EKGRP)"
+    pii: nenhum
+    nulo: false
+  - nome: purchasing_group_name_eknam
+    tipo: string
+    comentario: "Descricao do grupo de compras"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_group_telephone_ektel
+    tipo: string
+    comentario: "Telefone do grupo de compras"
+    pii: direto
+    nulo: true
+  - nome: email_address_smtp_addr
+    tipo: string
+    comentario: "Endereco de e-mail"
+    pii: direto
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

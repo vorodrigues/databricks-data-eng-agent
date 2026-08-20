@@ -1,0 +1,122 @@
+tabela: ckmi1
+camada: bronze
+comentario: "Índice de documentos contábeis por material"
+ingestao: cdc
+fonte: sap.ckmi1
+chave_primaria: [mandt, kalnr, bdatj, poper, awtyp, awref, aworg]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kalnr
+    tipo: string
+    comentario: "Número da estimativa de custo"
+    pii: nenhum
+    nulo: false
+  - nome: bdatj
+    tipo: string
+    comentario: "Ano"
+    pii: nenhum
+    nulo: false
+  - nome: poper
+    tipo: string
+    comentario: "Período de lançamento"
+    pii: nenhum
+    nulo: false
+  - nome: awtyp
+    tipo: string
+    comentario: "Procedimento de referência"
+    pii: nenhum
+    nulo: false
+  - nome: awref
+    tipo: string
+    comentario: "Documento de referência"
+    pii: nenhum
+    nulo: false
+  - nome: aworg
+    tipo: string
+    comentario: "Unidade organizacional de referência"
+    pii: nenhum
+    nulo: false
+  - nome: glvor
+    tipo: string
+    comentario: "Transação de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: lbkum
+    tipo: decimal(23,2)
+    comentario: "Estoque total"
+    pii: nenhum
+    nulo: true
+  - nome: salk3
+    tipo: decimal(23,2)
+    comentario: "Valor total"
+    pii: nenhum
+    nulo: true
+  - nome: verpr
+    tipo: decimal(23,2)
+    comentario: "Preço médio móvel"
+    pii: nenhum
+    nulo: true
+  - nome: stprs
+    tipo: decimal(23,2)
+    comentario: "Preço padrão"
+    pii: nenhum
+    nulo: true
+  - nome: bwkey
+    tipo: string
+    comentario: "Área de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: datum
+    tipo: date
+    comentario: "Data de registro"
+    pii: nenhum
+    nulo: true
+  - nome: uzeit
+    tipo: string
+    comentario: "Hora de registro"
+    pii: nenhum
+    nulo: true
+  - nome: vbdatum
+    tipo: date
+    comentario: "Data de registro anterior"
+    pii: nenhum
+    nulo: true
+  - nome: vbuzeit
+    tipo: string
+    comentario: "Hora de registro anterior"
+    pii: nenhum
+    nulo: true
+  - nome: menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: wrbtr
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: sobkz
+    tipo: string
+    comentario: "Estoque especial"
+    pii: nenhum
+    nulo: true
+  - nome: kzbws
+    tipo: string
+    comentario: "Avaliação de estoque especial"
+    pii: nenhum
+    nulo: true
+  - nome: vksal
+    tipo: decimal(23,2)
+    comentario: "Valor total a preço de venda"
+    pii: nenhum
+    nulo: true
+  - nome: vkwrt
+    tipo: decimal(23,2)
+    comentario: "Valor de venda com IVA"
+    pii: nenhum
+    nulo: true

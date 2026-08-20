@@ -1,0 +1,387 @@
+tabela: wcocoh
+camada: bronze
+comentario: "Cabeçalho do contrato de condição"
+ingestao: cdc
+fonte: sap.wcocoh
+chave_primaria: [client, num]
+colunas:
+  - nome: client
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: num
+    tipo: string
+    comentario: "Número do contrato de condição"
+    pii: nenhum
+    nulo: false
+  - nome: contract_type
+    tipo: string
+    comentario: "Tipo do contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: vend_owner
+    tipo: string
+    comentario: "Fornecedor titular"
+    pii: indireto
+    nulo: true
+  - nome: cust_owner
+    tipo: string
+    comentario: "Cliente titular"
+    pii: indireto
+    nulo: true
+  - nome: reference
+    tipo: string
+    comentario: "Referência"
+    pii: nenhum
+    nulo: true
+  - nome: assignment
+    tipo: string
+    comentario: "Atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: ext_partner
+    tipo: string
+    comentario: "Parceiro externo"
+    pii: nenhum
+    nulo: true
+  - nome: created_by
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: created_on
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: rec_time
+    tipo: string
+    comentario: "Hora de criação"
+    pii: nenhum
+    nulo: true
+  - nome: ekorg
+    tipo: string
+    comentario: "Organização de compras"
+    pii: nenhum
+    nulo: true
+  - nome: ekgrp
+    tipo: string
+    comentario: "Grupo de compras"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: zterm
+    tipo: string
+    comentario: "Condições de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zbd1t
+    tipo: int
+    comentario: "Prazo de pagamento 1 (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd1p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto 1"
+    pii: nenhum
+    nulo: true
+  - nome: zbd2t
+    tipo: int
+    comentario: "Prazo de pagamento 2 (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zbd2p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto 2"
+    pii: nenhum
+    nulo: true
+  - nome: zbd3t
+    tipo: int
+    comentario: "Prazo de pagamento líquido (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: zlsch
+    tipo: string
+    comentario: "Método de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: guid
+    tipo: string
+    comentario: "GUID do contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: deact
+    tipo: string
+    comentario: "Contrato/parceiro inativo (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: date_from
+    tipo: date
+    comentario: "Válido de"
+    pii: nenhum
+    nulo: true
+  - nome: date_to
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: zonlo
+    tipo: string
+    comentario: "Fuso horário"
+    pii: nenhum
+    nulo: true
+  - nome: ext_num
+    tipo: string
+    comentario: "Identificador externo"
+    pii: nenhum
+    nulo: true
+  - nome: cc_curr
+    tipo: string
+    comentario: "Moeda do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: rate
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: rate_date
+    tipo: date
+    comentario: "Data de conversão de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: rate_type
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: vkgrp
+    tipo: string
+    comentario: "Grupo de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vkbur
+    tipo: string
+    comentario: "Escritório de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: access_type
+    tipo: string
+    comentario: "Tipo de acesso"
+    pii: nenhum
+    nulo: true
+  - nome: settl_matnr
+    tipo: string
+    comentario: "Material de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: settl_type_vend
+    tipo: string
+    comentario: "Tipo de liquidação para fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: settl_cal_final
+    tipo: string
+    comentario: "Calendário de liquidação final"
+    pii: nenhum
+    nulo: true
+  - nome: settl_cal_part
+    tipo: string
+    comentario: "Calendário de liquidação parcial"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa (bukrs)"
+    pii: nenhum
+    nulo: true
+  - nome: settl_type_cust
+    tipo: string
+    comentario: "Tipo de liquidação para cliente"
+    pii: nenhum
+    nulo: true
+  - nome: ch_name
+    tipo: string
+    comentario: "Alterado pela última vez por"
+    pii: nenhum
+    nulo: true
+  - nome: ch_date
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: ch_time
+    tipo: string
+    comentario: "Hora da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: extension_cal
+    tipo: string
+    comentario: "Calendário de extensão do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: pred_cc
+    tipo: string
+    comentario: "Contrato predecessor"
+    pii: nenhum
+    nulo: true
+  - nome: category
+    tipo: string
+    comentario: "Categoria do contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: cc_purpose
+    tipo: string
+    comentario: "Finalidade do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: ext_ref_cat
+    tipo: string
+    comentario: "Categoria de referência externa"
+    pii: nenhum
+    nulo: true
+  - nome: ext_ref
+    tipo: string
+    comentario: "Referência externa"
+    pii: nenhum
+    nulo: true
+  - nome: kolif
+    tipo: string
+    comentario: "Fornecedor anterior"
+    pii: nenhum
+    nulo: true
+  - nome: settl_cal_delta
+    tipo: string
+    comentario: "Calendário de liquidação delta"
+    pii: nenhum
+    nulo: true
+  - nome: bvtab_group
+    tipo: string
+    comentario: "Grupo de tabela de volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: settl_cal_accr
+    tipo: string
+    comentario: "Calendário de accruals delta"
+    pii: nenhum
+    nulo: true
+  - nome: af_group
+    tipo: string
+    comentario: "Grupo de campos de valor"
+    pii: nenhum
+    nulo: true
+  - nome: settl_meins
+    tipo: string
+    comentario: "Unidade de medida de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: settl_gewei
+    tipo: string
+    comentario: "Unidade de peso de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: settl_voleh
+    tipo: string
+    comentario: "Unidade de volume de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: settl_punei
+    tipo: string
+    comentario: "Unidade de pontos de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: accruals_upd_req
+    tipo: string
+    comentario: "Atualização de accruals necessária (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: settl_cal_accr_rollo
+    tipo: string
+    comentario: "Calendário de diferimento de accruals"
+    pii: nenhum
+    nulo: true
+  - nome: dataaging
+    tipo: string
+    comentario: "Valor de filtro para envelhecimento de dados"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_tstmp
+    tipo: timestamp
+    comentario: "Timestamp de criação"
+    pii: nenhum
+    nulo: true
+  - nome: ch_tstmp
+    tipo: timestamp
+    comentario: "Timestamp da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: stceg
+    tipo: string
+    comentario: "Número de registro de IVA do parceiro"
+    pii: sensivel
+    nulo: true
+  - nome: person_owner
+    tipo: string
+    comentario: "Número de pessoal titular"
+    pii: indireto
+    nulo: true
+  - nome: afsc_group
+    tipo: string
+    comentario: "Grupo de critérios de divisão de campos de valor"
+    pii: nenhum
+    nulo: true
+  - nome: tax_country
+    tipo: string
+    comentario: "País fiscal do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: process_variant
+    tipo: string
+    comentario: "Variante de processo do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: ext_ref_item
+    tipo: string
+    comentario: "Item de referência externa"
+    pii: nenhum
+    nulo: true
+  - nome: coco_det_rel_contr
+    tipo: string
+    comentario: "Relevante para determinação de contrato (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: tax_reporting_country
+    tipo: string
+    comentario: "País fiscal para reporte"
+    pii: nenhum
+    nulo: true
+  - nome: settl_variant
+    tipo: string
+    comentario: "Variante de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: dummy_wcocoh_incl_eew_ps
+    tipo: string
+    comentario: "Campo dummy (reservado)"
+    pii: nenhum
+    nulo: true
+  - nome: ext_guid
+    tipo: string
+    comentario: "GUID externo do contrato de condição"
+    pii: nenhum
+    nulo: true

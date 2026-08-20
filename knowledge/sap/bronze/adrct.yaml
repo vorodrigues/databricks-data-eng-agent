@@ -1,0 +1,37 @@
+tabela: adrct
+camada: bronze
+comentario: "Textos de endereco do servico de endereco corporativo (Business Address Services)"
+ingestao: cdc
+fonte: sap.adrct
+chave_primaria: [client, addrnumber, date_from, nation, langu]
+colunas:
+  - nome: client
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: addrnumber
+    tipo: string
+    comentario: "Numero do endereco"
+    pii: indireto
+    nulo: false
+  - nome: date_from
+    tipo: date
+    comentario: "Data de inicio de validade"
+    pii: nenhum
+    nulo: false
+  - nome: nation
+    tipo: string
+    comentario: "Versao do endereco (variante nacional)"
+    pii: nenhum
+    nulo: false
+  - nome: langu
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: remark
+    tipo: string
+    comentario: "Observacoes do endereco"
+    pii: direto
+    nulo: true

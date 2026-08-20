@@ -1,0 +1,27 @@
+tabela: tspat
+camada: bronze
+comentario: "Textos das divisoes organizacionais de vendas (dependente de idioma)"
+ingestao: cdc
+fonte: sap.tspat
+chave_primaria: [mandt, spras, spart]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: spart
+    tipo: string
+    comentario: "Divisao"
+    pii: nenhum
+    nulo: false
+  - nome: vtext
+    tipo: string
+    comentario: "Nome da divisao"
+    pii: nenhum
+    nulo: true

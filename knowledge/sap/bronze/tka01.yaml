@@ -1,0 +1,272 @@
+tabela: tka01
+camada: bronze
+comentario: "Áreas de controladoria"
+ingestao: cdc
+fonte: sap.tka01
+chave_primaria: [mandt, kokrs]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controladoria"
+    pii: nenhum
+    nulo: false
+  - nome: bezei
+    tipo: string
+    comentario: "Nome da área de controladoria"
+    pii: nenhum
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda da área de controladoria"
+    pii: nenhum
+    nulo: true
+  - nome: ktopl
+    tipo: string
+    comentario: "Plano de contas"
+    pii: nenhum
+    nulo: true
+  - nome: lmona
+    tipo: string
+    comentario: "Variante do exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: kokfi
+    tipo: string
+    comentario: "Código de alocação (área de CO igual à empresa ou contabilidade de custos interempresas)"
+    pii: nenhum
+    nulo: true
+  - nome: logsystem
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: alemt
+    tipo: string
+    comentario: "Método de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: md_logsystem
+    tipo: string
+    comentario: "Sistema lógico para manutenção de dados mestre"
+    pii: nenhum
+    nulo: true
+  - nome: khinr
+    tipo: string
+    comentario: "Hierarquia padrão de centros de custo"
+    pii: nenhum
+    nulo: true
+  - nome: komp1
+    tipo: string
+    comentario: "Indicador: receita deve ser convertida"
+    pii: nenhum
+    nulo: true
+  - nome: komp0
+    tipo: string
+    comentario: "Indicador de produção"
+    pii: nenhum
+    nulo: true
+  - nome: komp2
+    tipo: string
+    comentario: "Indicador: reserva (não utilizado)"
+    pii: nenhum
+    nulo: true
+  - nome: erkrs
+    tipo: string
+    comentario: "Unidade operacional (operating concern)"
+    pii: nenhum
+    nulo: true
+  - nome: dprct
+    tipo: string
+    comentario: "Centro de lucro fictício"
+    pii: nenhum
+    nulo: true
+  - nome: phinr
+    tipo: string
+    comentario: "Área de hierarquia do centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: pcldg
+    tipo: string
+    comentario: "Razão do centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: pcbel
+    tipo: string
+    comentario: "Eliminação do volume de negócios interno para contabilidade de centros de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: xwbuk
+    tipo: string
+    comentario: "Indicador: moeda diferente da empresa é permitida"
+    pii: nenhum
+    nulo: true
+  - nome: bphinr
+    tipo: string
+    comentario: "Área de hierarquia padrão"
+    pii: nenhum
+    nulo: true
+  - nome: xbpale
+    tipo: string
+    comentario: "Indicador: ALE para processo de negócio ativo (custos de processo)"
+    pii: nenhum
+    nulo: true
+  - nome: kstar_fin
+    tipo: string
+    comentario: "Elemento de custo para adiantamentos a fornecedores sem referência a ordem de compra"
+    pii: nenhum
+    nulo: true
+  - nome: kstar_fid
+    tipo: string
+    comentario: "Tipo de receita para adiantamentos a devedores sem referência a ordem de venda"
+    pii: nenhum
+    nulo: true
+  - nome: pcacur
+    tipo: string
+    comentario: "Moeda local para contabilidade de centros de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: pcacurtp
+    tipo: string
+    comentario: "Tipo de moeda do relatório de centros de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: pcatrcur
+    tipo: string
+    comentario: "Armazenar moeda da transação em EC-PCA"
+    pii: nenhum
+    nulo: true
+  - nome: ctyp
+    tipo: string
+    comentario: "Tipo de moeda para a área de controladoria"
+    pii: nenhum
+    nulo: true
+  - nome: rclac
+    tipo: string
+    comentario: "Razão de reconciliação ativo"
+    pii: nenhum
+    nulo: true
+  - nome: blart
+    tipo: string
+    comentario: "Tipo de documento para lançamentos de reconciliação do razão de reconciliação"
+    pii: nenhum
+    nulo: true
+  - nome: fikrs
+    tipo: string
+    comentario: "Área de gestão financeira (FM)"
+    pii: nenhum
+    nulo: true
+  - nome: rcl_primac
+    tipo: string
+    comentario: "Razão de reconciliação: determinação de conta para elementos de custo primários"
+    pii: nenhum
+    nulo: true
+  - nome: pca_alemt
+    tipo: string
+    comentario: "Método de distribuição de centros de lucro via ALE"
+    pii: nenhum
+    nulo: true
+  - nome: pca_valu
+    tipo: string
+    comentario: "Visão de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: cvprof
+    tipo: string
+    comentario: "Perfil de moeda e avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: cvact
+    tipo: string
+    comentario: "Indicador: perfil de moeda e avaliação ativo"
+    pii: nenhum
+    nulo: true
+  - nome: vname
+    tipo: string
+    comentario: "Responsável"
+    pii: nenhum
+    nulo: true
+  - nome: pca_acc_diff
+    tipo: string
+    comentario: "Controle de conta para transferência de diferenças de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: tp_valohb
+    tipo: string
+    comentario: "Visão de avaliação para base de cálculo"
+    pii: nenhum
+    nulo: true
+  - nome: defprctr
+    tipo: string
+    comentario: "Centro de lucro padrão para processos não atribuídos"
+    pii: nenhum
+    nulo: true
+  - nome: f_obsolete
+    tipo: string
+    comentario: "Ocultar entrada na ajuda de pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: leading_fsv
+    tipo: string
+    comentario: "Versão líder da estrutura financeira"
+    pii: nenhum
+    nulo: true
+  - nome: auth_use_no_std
+    tipo: string
+    comentario: "Não usar hierarquia padrão para autorizações (centros de custo)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_use_add1
+    tipo: string
+    comentario: "Usar primeira hierarquia alternativa para autorizações (centros de custo)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_use_add2
+    tipo: string
+    comentario: "Usar segunda hierarquia alternativa para autorizações (centros de custo)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_ke_no_std
+    tipo: string
+    comentario: "Não usar hierarquia padrão para autorizações (centros de lucro)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_ke_use_add1
+    tipo: string
+    comentario: "Usar primeira hierarquia alternativa para autorizações (centros de lucro)"
+    pii: nenhum
+    nulo: true
+  - nome: auth_ke_use_add2
+    tipo: string
+    comentario: "Usar segunda hierarquia alternativa para autorizações (centros de lucro)"
+    pii: nenhum
+    nulo: true
+  - nome: objcur_use
+    tipo: string
+    comentario: "Uso alternativo de moeda do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: objcur_kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: objcur_curdt
+    tipo: string
+    comentario: "Tipo de data de conversão de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: objcur_srcct
+    tipo: string
+    comentario: "Tipo de moeda de origem"
+    pii: nenhum
+    nulo: true
+  - nome: objcur_srcal
+    tipo: string
+    comentario: "Moeda equivalente preferida"
+    pii: nenhum
+    nulo: true

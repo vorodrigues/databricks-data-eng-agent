@@ -1,0 +1,197 @@
+tabela: dd04l
+camada: bronze
+comentario: "Elementos de dados ABAP (DD04L)"
+ingestao: cdc
+fonte: sap.dd04l
+chave_primaria: [rollname, as4local, as4vers]
+colunas:
+  - nome: rollname
+    tipo: string
+    comentario: "Nome do elemento de dados"
+    pii: nenhum
+    nulo: false
+  - nome: as4local
+    tipo: string
+    comentario: "Status de ativacao"
+    pii: nenhum
+    nulo: false
+  - nome: as4vers
+    tipo: string
+    comentario: "Versao do objeto ABAP"
+    pii: nenhum
+    nulo: false
+  - nome: domname
+    tipo: string
+    comentario: "Nome do dominio"
+    pii: nenhum
+    nulo: true
+  - nome: routputlen
+    tipo: string
+    comentario: "Comprimento de saida do elemento"
+    pii: nenhum
+    nulo: true
+  - nome: memoryid
+    tipo: string
+    comentario: "ID de parametro SET/GET"
+    pii: nenhum
+    nulo: true
+  - nome: logflag
+    tipo: string
+    comentario: "Indicador de documento de alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: headlen
+    tipo: string
+    comentario: "Comprimento do cabecalho"
+    pii: nenhum
+    nulo: true
+  - nome: scrlen1
+    tipo: string
+    comentario: "Comprimento do rotulo curto de campo"
+    pii: nenhum
+    nulo: true
+  - nome: scrlen2
+    tipo: string
+    comentario: "Comprimento do rotulo medio de campo"
+    pii: nenhum
+    nulo: true
+  - nome: scrlen3
+    tipo: string
+    comentario: "Comprimento do rotulo longo de campo"
+    pii: nenhum
+    nulo: true
+  - nome: actflag
+    tipo: string
+    comentario: "Indicador de ativacao"
+    pii: nenhum
+    nulo: true
+  - nome: applclass
+    tipo: string
+    comentario: "Classe de aplicacao"
+    pii: nenhum
+    nulo: true
+  - nome: authclass
+    tipo: string
+    comentario: "Tipo de ativacao"
+    pii: nenhum
+    nulo: true
+  - nome: as4user
+    tipo: string
+    comentario: "Ultima alteracao por"
+    pii: nenhum
+    nulo: true
+  - nome: as4date
+    tipo: date
+    comentario: "Data da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: as4time
+    tipo: string
+    comentario: "Hora da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: dtelmaster
+    tipo: string
+    comentario: "Idioma original do elemento de dados"
+    pii: nenhum
+    nulo: true
+  - nome: reservedte
+    tipo: string
+    comentario: "Indicador de reserva"
+    pii: nenhum
+    nulo: true
+  - nome: dtelglobal
+    tipo: string
+    comentario: "Objeto nao global"
+    pii: nenhum
+    nulo: true
+  - nome: shlpname
+    tipo: string
+    comentario: "Nome do help de pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: shlpfield
+    tipo: string
+    comentario: "Parametro do help de pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: deffdname
+    tipo: string
+    comentario: "Nome padrao do componente"
+    pii: nenhum
+    nulo: true
+  - nome: datatype
+    tipo: string
+    comentario: "Tipo de dados ABAP"
+    pii: nenhum
+    nulo: true
+  - nome: leng
+    tipo: string
+    comentario: "Numero de caracteres"
+    pii: nenhum
+    nulo: true
+  - nome: decimals
+    tipo: string
+    comentario: "Casas decimais"
+    pii: nenhum
+    nulo: true
+  - nome: outputlen
+    tipo: string
+    comentario: "Comprimento de saida"
+    pii: nenhum
+    nulo: true
+  - nome: lowercase
+    tipo: string
+    comentario: "Letras minusculas permitidas"
+    pii: nenhum
+    nulo: true
+  - nome: signflag
+    tipo: string
+    comentario: "Indicador de sinal"
+    pii: nenhum
+    nulo: true
+  - nome: convexit
+    tipo: string
+    comentario: "Rotina de conversao"
+    pii: nenhum
+    nulo: true
+  - nome: valexi
+    tipo: string
+    comentario: "Valores fixos existentes"
+    pii: nenhum
+    nulo: true
+  - nome: entitytab
+    tipo: string
+    comentario: "Tabela de valores"
+    pii: nenhum
+    nulo: true
+  - nome: refkind
+    tipo: string
+    comentario: "Categoria de tipo (codificada)"
+    pii: nenhum
+    nulo: true
+  - nome: reftype
+    tipo: string
+    comentario: "Tipo do objeto referenciado"
+    pii: nenhum
+    nulo: true
+  - nome: proxytype
+    tipo: string
+    comentario: "Uso de proxy"
+    pii: nenhum
+    nulo: true
+  - nome: ltrflddis
+    tipo: string
+    comentario: "Direcao basica definida como LTR (esquerda para direita)"
+    pii: nenhum
+    nulo: true
+  - nome: bidictrlc
+    tipo: string
+    comentario: "Sem filtragem bidirecional (BIDI)"
+    pii: nenhum
+    nulo: true
+  - nome: nohistory
+    tipo: string
+    comentario: "Sem historico de entrada"
+    pii: nenhum
+    nulo: true

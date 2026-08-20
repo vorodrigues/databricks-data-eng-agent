@@ -1,0 +1,648 @@
+tabela: purchasing_document_headers
+camada: gold
+comentario: "Termos administrativos e comerciais de ordens de compra, contratos e programações de entrega SAP (EKKO), com datas de transação, fornecedores, moedas e condições de pagamento."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.ekko, silver.ekpo, silver.eket, silver.tcurx]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, purchasing_document_number_ebeln]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: purchasing_document_number_ebeln
+    tipo: string
+    comentario: "Número do documento de compras"
+    pii: nenhum
+    nulo: false
+  - nome: deletion_flag_loekz
+    tipo: string
+    comentario: "Indicador de exclusão no documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: document_category_bstyp
+    tipo: string
+    comentario: "Categoria do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: document_type_bsart
+    tipo: string
+    comentario: "Tipo do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: control_flag_bsakz
+    tipo: string
+    comentario: "Indicador de controle do tipo de documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: deletion_flag_hdr_loekz
+    tipo: string
+    comentario: "Indicador de exclusão no cabeçalho do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: status_statu
+    tipo: string
+    comentario: "Status do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_aedat
+    tipo: date
+    comentario: "Data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Usuário criador do documento"
+    pii: indireto
+    nulo: true
+  - nome: item_number_interval_pincr
+    tipo: string
+    comentario: "Intervalo de numeração de itens"
+    pii: nenhum
+    nulo: true
+  - nome: last_item_number_lponr
+    tipo: string
+    comentario: "Último número de item"
+    pii: nenhum
+    nulo: true
+  - nome: vendor_account_number_lifnr
+    tipo: string
+    comentario: "Número de conta do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: language_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: terms_payment_key_zterm
+    tipo: string
+    comentario: "Chave de condições de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: discount_days1_zbd1_t
+    tipo: int
+    comentario: "Prazo de desconto para pagamento antecipado 1"
+    pii: nenhum
+    nulo: true
+  - nome: discount_days2_zbd2_t
+    tipo: int
+    comentario: "Prazo de desconto para pagamento antecipado 2"
+    pii: nenhum
+    nulo: true
+  - nome: discount_days3_zbd3_t
+    tipo: int
+    comentario: "Prazo de vencimento líquido"
+    pii: nenhum
+    nulo: true
+  - nome: cash_discount_percentage1_zbd1_p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto financeiro 1"
+    pii: nenhum
+    nulo: true
+  - nome: cash_discount_percentage2_zbd2_p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto financeiro 2"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_organization_ekorg
+    tipo: string
+    comentario: "Organização de compras"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_group_ekgrp
+    tipo: string
+    comentario: "Grupo de compradores"
+    pii: nenhum
+    nulo: true
+  - nome: currency_key_waers
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_wkurs
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: flag_fixing_exchange_rate_kufix
+    tipo: string
+    comentario: "Indicador de fixação da taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_document_date_bedat
+    tipo: date
+    comentario: "Data do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: start_validity_period_kdatb
+    tipo: date
+    comentario: "Início do período de validade"
+    pii: nenhum
+    nulo: true
+  - nome: end_validity_period_kdate
+    tipo: date
+    comentario: "Fim do período de validade"
+    pii: nenhum
+    nulo: true
+  - nome: closing_datefor_applications_bwbdt
+    tipo: date
+    comentario: "Data de encerramento para aplicações"
+    pii: nenhum
+    nulo: true
+  - nome: deadline_angdt
+    tipo: date
+    comentario: "Prazo para submissão de proposta/cotação"
+    pii: nenhum
+    nulo: true
+  - nome: binding_periodfor_quotation_bnddt
+    tipo: date
+    comentario: "Período de vinculação da cotação"
+    pii: nenhum
+    nulo: true
+  - nome: warranty_date_gwldt
+    tipo: date
+    comentario: "Data de garantia"
+    pii: nenhum
+    nulo: true
+  - nome: bid_invitation_number_ausnr
+    tipo: string
+    comentario: "Número do convite de proposta"
+    pii: nenhum
+    nulo: true
+  - nome: quotation_number_angnr
+    tipo: string
+    comentario: "Número da cotação"
+    pii: nenhum
+    nulo: true
+  - nome: quotation_submission_date_ihran
+    tipo: date
+    comentario: "Data de submissão da cotação"
+    pii: nenhum
+    nulo: true
+  - nome: your_reference_ihrez
+    tipo: string
+    comentario: "Referência do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: vendor_salesperson_verkf
+    tipo: string
+    comentario: "Responsável de vendas no fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: vendor_telephone_telf1
+    tipo: string
+    comentario: "Telefone do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: supplying_vendor_llief
+    tipo: string
+    comentario: "Código do fornecedor fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: customer_kunnr
+    tipo: string
+    comentario: "Código do cliente"
+    pii: indireto
+    nulo: true
+  - nome: principal_purchase_agreement_konnr
+    tipo: string
+    comentario: "Número do contrato de compras principal"
+    pii: nenhum
+    nulo: true
+  - nome: complete_delivery_stipulated_autlf
+    tipo: string
+    comentario: "Indicador de entrega completa obrigatória por pedido"
+    pii: nenhum
+    nulo: true
+  - nome: goods_receipt_msg_flag_weakt
+    tipo: string
+    comentario: "Indicador de mensagem de recebimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: supply_transport_orders_reswk
+    tipo: string
+    comentario: "Centro de fornecimento em ordens de transporte de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: area_per_distribution_value_ktwrt
+    tipo: decimal(23,2)
+    comentario: "Valor alvo por área de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: collective_number_submi
+    tipo: string
+    comentario: "Número coletivo"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_the_document_condition_knumv
+    tipo: string
+    comentario: "Número de condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: procedure_kalsm
+    tipo: string
+    comentario: "Esquema de precificação/determinação de conta"
+    pii: nenhum
+    nulo: true
+  - nome: update_group_statistics_stafo
+    tipo: string
+    comentario: "Grupo de atualização estatística"
+    pii: nenhum
+    nulo: true
+  - nome: different_invoicing_party_lifre
+    tipo: string
+    comentario: "Código de parte faturante alternativa"
+    pii: indireto
+    nulo: true
+  - nome: foreign_trade_document_exnum
+    tipo: string
+    comentario: "Número de dados de comércio exterior"
+    pii: nenhum
+    nulo: true
+  - nome: our_reference_unsez
+    tipo: string
+    comentario: "Referência interna do documento"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_logsy
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: item_number_interval_upinc
+    tipo: string
+    comentario: "Intervalo de numeração de subitens"
+    pii: nenhum
+    nulo: true
+  - nome: time_dependent_conditions_stako
+    tipo: string
+    comentario: "Indicador de condições dependentes de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: release_group_frggr
+    tipo: string
+    comentario: "Grupo de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: release_strategy_frgsx
+    tipo: string
+    comentario: "Estratégia de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_document_release_frgke
+    tipo: string
+    comentario: "Indicador de liberação do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: release_status_frgzu
+    tipo: string
+    comentario: "Estado de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: release_incomplete_frgrl
+    tipo: string
+    comentario: "Indicador de liberação não concluída"
+    pii: nenhum
+    nulo: true
+  - nome: country_for_tax_return_lands
+    tipo: string
+    comentario: "País para declaração de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: scheduling_agreement_lphis
+    tipo: string
+    comentario: "Indicador de documentação de liberação de programação"
+    pii: nenhum
+    nulo: true
+  - nome: address_adrnr
+    tipo: string
+    comentario: "Número do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: country_sales_tax_id_number_stceg_l
+    tipo: string
+    comentario: "País do número de identificação de imposto sobre vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vat_registration_number_stceg
+    tipo: string
+    comentario: "Número de registro de IVA"
+    pii: sensivel
+    nulo: true
+  - nome: reason_for_cancellation_absgr
+    tipo: string
+    comentario: "Motivo do cancelamento"
+    pii: nenhum
+    nulo: true
+  - nome: additional_document_addnr
+    tipo: string
+    comentario: "Número do documento adicional"
+    pii: nenhum
+    nulo: true
+  - nome: correction_misc_provisions_kornr
+    tipo: string
+    comentario: "Correção de provisões diversas"
+    pii: nenhum
+    nulo: true
+  - nome: incomplete_flag_memory
+    tipo: string
+    comentario: "Indicador de pedido de compra incompleto"
+    pii: nenhum
+    nulo: true
+  - nome: processing_state_procstat
+    tipo: string
+    comentario: "Estado de processamento do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: value_at_release_rlwrt
+    tipo: decimal(23,2)
+    comentario: "Valor total no momento da liberação"
+    pii: nenhum
+    nulo: true
+  - nome: version_number_in_purchasing_revno
+    tipo: string
+    comentario: "Número de versão do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: scm_process_scmproc
+    tipo: string
+    comentario: "Processo SCM que originou o pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: goods_receipt_reason_reason_code
+    tipo: string
+    comentario: "Código de motivo de recebimento de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: category_incompleteness_memorytype
+    tipo: string
+    comentario: "Categoria de incompletude"
+    pii: nenhum
+    nulo: true
+  - nome: retention_flag_rettp
+    tipo: string
+    comentario: "Indicador de retenção"
+    pii: nenhum
+    nulo: true
+  - nome: process_identification_number_msr_id
+    tipo: string
+    comentario: "Número de identificação do processo"
+    pii: nenhum
+    nulo: true
+  - nome: parta_contract_hierarchy_hierarchy_exists
+    tipo: string
+    comentario: "Indicador de hierarquia de contrato"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_threshold_value_threshold_exists
+    tipo: string
+    comentario: "Valor limite para variação de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: legal_contract_number_legal_contract
+    tipo: string
+    comentario: "Número do contrato legal"
+    pii: nenhum
+    nulo: true
+  - nome: contract_name_description
+    tipo: string
+    comentario: "Nome do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: release_date_contract_release_date
+    tipo: date
+    comentario: "Data de liberação do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: physical_handover_handoverloc
+    tipo: string
+    comentario: "Local de entrega física de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: internal_key_for_force_element_force_id
+    tipo: string
+    comentario: "Chave interna do elemento forçado"
+    pii: nenhum
+    nulo: true
+  - nome: internal_counter_force_cnt
+    tipo: string
+    comentario: "Contador interno de versão"
+    pii: nenhum
+    nulo: true
+  - nome: relocation_id_reloc_id
+    tipo: string
+    comentario: "Identificador de relocação"
+    pii: nenhum
+    nulo: true
+  - nome: relocation_step_id_reloc_seq_id
+    tipo: string
+    comentario: "Identificador de etapa de relocação"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_source_logsys
+    tipo: string
+    comentario: "Sistema lógico de origem"
+    pii: nenhum
+    nulo: true
+  - nome: interest_calculation_flag_vzskz
+    tipo: string
+    comentario: "Indicador de cálculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: seasonal_procesing_document_pohf_type
+    tipo: string
+    comentario: "Tipo de documento de processamento de compras sazonais"
+    pii: nenhum
+    nulo: true
+  - nome: same_delivery_date_eq_eindt
+    tipo: date
+    comentario: "Data de entrega única para todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: same_receiving_plant_eq_werks
+    tipo: string
+    comentario: "Centro receptor único para todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: firm_deal_flag_fixpo
+    tipo: string
+    comentario: "Indicador de negócio firme (fixed deal)"
+    pii: nenhum
+    nulo: true
+  - nome: take_account_purch_group_ekgrp_allow
+    tipo: string
+    comentario: "Considerar grupo de compradores"
+    pii: nenhum
+    nulo: true
+  - nome: take_account_plants_werks_allow
+    tipo: string
+    comentario: "Considerar centros produtivos"
+    pii: nenhum
+    nulo: true
+  - nome: take_account_contracts_contract_allow
+    tipo: string
+    comentario: "Considerar contratos"
+    pii: nenhum
+    nulo: true
+  - nome: take_account_item_categories_pstyp_allow
+    tipo: string
+    comentario: "Considerar categorias de item"
+    pii: nenhum
+    nulo: true
+  - nome: take_account_fixed_date_fixpo_allow
+    tipo: string
+    comentario: "Considerar indicador de compra com data fixa"
+    pii: nenhum
+    nulo: true
+  - nome: consider_budget_key_id_allow
+    tipo: string
+    comentario: "Considerar orçamento"
+    pii: nenhum
+    nulo: true
+  - nome: take_account_alloc_table_relevance_aurel_allow
+    tipo: string
+    comentario: "Considerar relevância de tabela de alocação"
+    pii: nenhum
+    nulo: true
+  - nome: take_account_dlvy_period_delper_allow
+    tipo: string
+    comentario: "Considerar período de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: take_account_delivery_date_eindt_allow
+    tipo: string
+    comentario: "Considerar data de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: include_vendor_subrange_ltsnr_allow
+    tipo: string
+    comentario: "Incluir sub-segmento do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: otb_check_level_otb_level
+    tipo: string
+    comentario: "Nível de verificação OTB (open-to-buy)"
+    pii: nenhum
+    nulo: true
+  - nome: otb_condition_type_otb_cond_type
+    tipo: string
+    comentario: "Tipo de condição OTB"
+    pii: nenhum
+    nulo: true
+  - nome: unique_number_budget_key_id
+    tipo: string
+    comentario: "Número único de orçamento"
+    pii: nenhum
+    nulo: true
+  - nome: required_budget_otb_value
+    tipo: decimal(23,2)
+    comentario: "Orçamento requerido OTB"
+    pii: nenhum
+    nulo: true
+  - nome: otb_currency_otb_curr
+    tipo: string
+    comentario: "Moeda OTB"
+    pii: nenhum
+    nulo: true
+  - nome: reserved_budget_for_otb_otb_res_value
+    tipo: decimal(23,2)
+    comentario: "Orçamento reservado para documento de compras relevante a OTB"
+    pii: nenhum
+    nulo: true
+  - nome: special_release_budget_otb_spec_value
+    tipo: decimal(23,2)
+    comentario: "Orçamento de liberação especial OTB"
+    pii: nenhum
+    nulo: true
+  - nome: budget_type_budg_type
+    tipo: string
+    comentario: "Tipo de orçamento"
+    pii: nenhum
+    nulo: true
+  - nome: otb_check_status_otb_status
+    tipo: string
+    comentario: "Status de verificação OTB"
+    pii: nenhum
+    nulo: true
+  - nome: reason_flag_for_otb_check_status_otb_reason
+    tipo: string
+    comentario: "Indicador de motivo para status de verificação OTB"
+    pii: nenhum
+    nulo: true
+  - nome: type_otb_check_check_type
+    tipo: string
+    comentario: "Tipo de verificação OTB"
+    pii: nenhum
+    nulo: true
+  - nome: otb_relevant_contract_con_otb_req
+    tipo: string
+    comentario: "Contrato relevante para OTB"
+    pii: nenhum
+    nulo: true
+  - nome: otb_flag_level_for_contracts_con_prebook_lev
+    tipo: string
+    comentario: "Nível de indicador OTB para contratos"
+    pii: nenhum
+    nulo: true
+  - nome: distribution_using_target_value_or_item_data_con_distr_lev
+    tipo: string
+    comentario: "Distribuição por valor alvo ou dados de item"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_change_date_aedat
+    tipo: int
+    comentario: "Ano da data de alteração do item"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_change_date_aedat
+    tipo: int
+    comentario: "Mês da data de alteração do item"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_change_date_aedat
+    tipo: int
+    comentario: "Trimestre da data de alteração do item"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_change_date_aedat
+    tipo: int
+    comentario: "Semana da data de alteração do item"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_purchasing_document_date_bedat
+    tipo: int
+    comentario: "Ano da data do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_purchasing_document_date_bedat
+    tipo: int
+    comentario: "Mês da data do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_purchasing_document_date_bedat
+    tipo: int
+    comentario: "Trimestre da data do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_purchasing_document_date_bedat
+    tipo: int
+    comentario: "Semana da data do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

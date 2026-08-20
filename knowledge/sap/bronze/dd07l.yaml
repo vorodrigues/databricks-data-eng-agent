@@ -1,0 +1,42 @@
+tabela: dd07l
+camada: bronze
+comentario: "Valores de dominio do dicionario ABAP"
+ingestao: cdc
+fonte: sap.dd07l
+chave_primaria: [domname, as4local, valpos]
+colunas:
+  - nome: domname
+    tipo: string
+    comentario: "Nome do dominio"
+    pii: nenhum
+    nulo: false
+  - nome: as4local
+    tipo: string
+    comentario: "Status de ativacao do objeto de repositorio"
+    pii: nenhum
+    nulo: false
+  - nome: valpos
+    tipo: string
+    comentario: "Posicao do valor do dominio"
+    pii: nenhum
+    nulo: false
+  - nome: as4vers
+    tipo: string
+    comentario: "Versao da entrada"
+    pii: nenhum
+    nulo: true
+  - nome: domvalue_l
+    tipo: string
+    comentario: "Valor do dominio: valor unico ou limite inferior"
+    pii: nenhum
+    nulo: true
+  - nome: domvalue_h
+    tipo: string
+    comentario: "Valor do dominio: limite superior"
+    pii: nenhum
+    nulo: true
+  - nome: appval
+    tipo: string
+    comentario: "Indica se o valor pertence a um appender"
+    pii: nenhum
+    nulo: true

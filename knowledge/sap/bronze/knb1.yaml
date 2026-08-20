@@ -1,0 +1,402 @@
+tabela: knb1
+camada: bronze
+comentario: "Mestre de clientes por empresa (dados contábeis)"
+ingestao: cdc
+fonte: sap.knb1
+chave_primaria: [mandt, kunnr, bukrs]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kunnr
+    tipo: string
+    comentario: "Número do cliente"
+    pii: indireto
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa (bukrs)"
+    pii: nenhum
+    nulo: false
+  - nome: pernr
+    tipo: string
+    comentario: "Número de pessoal"
+    pii: indireto
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: sperr
+    tipo: string
+    comentario: "Bloqueio de lançamento por empresa"
+    pii: nenhum
+    nulo: true
+  - nome: loevm
+    tipo: string
+    comentario: "Indicador de exclusão por empresa"
+    pii: nenhum
+    nulo: true
+  - nome: zuawa
+    tipo: string
+    comentario: "Chave de classificação"
+    pii: nenhum
+    nulo: true
+  - nome: busab
+    tipo: string
+    comentario: "Abreviação do atendente contábil"
+    pii: nenhum
+    nulo: true
+  - nome: akont
+    tipo: string
+    comentario: "Conta razão de reconciliação"
+    pii: nenhum
+    nulo: true
+  - nome: begru
+    tipo: string
+    comentario: "Grupo de autorização"
+    pii: nenhum
+    nulo: true
+  - nome: knrze
+    tipo: string
+    comentario: "Escritório central"
+    pii: nenhum
+    nulo: true
+  - nome: knrzb
+    tipo: string
+    comentario: "Pagador alternativo"
+    pii: nenhum
+    nulo: true
+  - nome: zamim
+    tipo: string
+    comentario: "Indicador: cliente com CI"
+    pii: nenhum
+    nulo: true
+  - nome: zamiv
+    tipo: string
+    comentario: "Indicador: vendas"
+    pii: nenhum
+    nulo: true
+  - nome: zamir
+    tipo: string
+    comentario: "Indicador: departamento jurídico"
+    pii: nenhum
+    nulo: true
+  - nome: zamib
+    tipo: string
+    comentario: "Indicador: contabilidade"
+    pii: nenhum
+    nulo: true
+  - nome: zamio
+    tipo: string
+    comentario: "Indicador: cliente sem CI"
+    pii: nenhum
+    nulo: true
+  - nome: zwels
+    tipo: string
+    comentario: "Métodos de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: xverr
+    tipo: string
+    comentario: "Compensação com fornecedor (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: zahls
+    tipo: string
+    comentario: "Bloqueio de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: zterm
+    tipo: string
+    comentario: "Condições de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: wakon
+    tipo: string
+    comentario: "Condições para letra de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: vzskz
+    tipo: string
+    comentario: "Indicador de juros"
+    pii: nenhum
+    nulo: true
+  - nome: zindt
+    tipo: date
+    comentario: "Data-chave do último cálculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: zinrt
+    tipo: string
+    comentario: "Frequência de cálculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: eikto
+    tipo: string
+    comentario: "Conta do cliente no sistema do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: zsabe
+    tipo: string
+    comentario: "Responsável no cliente"
+    pii: nenhum
+    nulo: true
+  - nome: kverm
+    tipo: string
+    comentario: "Nota da conta"
+    pii: nenhum
+    nulo: true
+  - nome: fdgrv
+    tipo: string
+    comentario: "Grupo de planejamento de liquidez"
+    pii: nenhum
+    nulo: true
+  - nome: vrbkz
+    tipo: string
+    comentario: "Número de instituição"
+    pii: nenhum
+    nulo: true
+  - nome: vlibb
+    tipo: decimal(23,2)
+    comentario: "Valor segurado"
+    pii: nenhum
+    nulo: true
+  - nome: vrszl
+    tipo: string
+    comentario: "Meses de antecedência"
+    pii: nenhum
+    nulo: true
+  - nome: vrspr
+    tipo: string
+    comentario: "Franquia"
+    pii: nenhum
+    nulo: true
+  - nome: vrsnr
+    tipo: string
+    comentario: "Número da apólice"
+    pii: nenhum
+    nulo: true
+  - nome: verdt
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: perkz
+    tipo: string
+    comentario: "Variante de fatura coletiva"
+    pii: nenhum
+    nulo: true
+  - nome: xdezv
+    tipo: string
+    comentario: "Processamento local (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: xausz
+    tipo: string
+    comentario: "Extrato de conta"
+    pii: nenhum
+    nulo: true
+  - nome: webtr
+    tipo: decimal(23,2)
+    comentario: "Limite de letra de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: remit
+    tipo: string
+    comentario: "Próximo beneficiário"
+    pii: nenhum
+    nulo: true
+  - nome: datlz
+    tipo: date
+    comentario: "Data da última execução de juros"
+    pii: nenhum
+    nulo: true
+  - nome: xzver
+    tipo: string
+    comentario: "Registrar histórico de pagamento (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: togru
+    tipo: string
+    comentario: "Grupo de tolerância"
+    pii: nenhum
+    nulo: true
+  - nome: kultg
+    tipo: string
+    comentario: "Prazo para desconto de cheque"
+    pii: nenhum
+    nulo: true
+  - nome: hbkid
+    tipo: string
+    comentario: "Banco próprio"
+    pii: nenhum
+    nulo: true
+  - nome: xpore
+    tipo: string
+    comentario: "Pagamento individual (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: blnkz
+    tipo: string
+    comentario: "Indicador de subsídio"
+    pii: nenhum
+    nulo: true
+  - nome: altkn
+    tipo: string
+    comentario: "Número de conta anterior"
+    pii: nenhum
+    nulo: true
+  - nome: zgrup
+    tipo: string
+    comentario: "Chave de agrupamento"
+    pii: nenhum
+    nulo: true
+  - nome: urlid
+    tipo: string
+    comentario: "Licença negociada/conhecida"
+    pii: nenhum
+    nulo: true
+  - nome: mgrup
+    tipo: string
+    comentario: "Chave de agrupamento (mandante)"
+    pii: nenhum
+    nulo: true
+  - nome: lockb
+    tipo: string
+    comentario: "Lockbox"
+    pii: nenhum
+    nulo: true
+  - nome: uzawe
+    tipo: string
+    comentario: "Complemento do método de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: ekvbd
+    tipo: string
+    comentario: "Grupo de compras"
+    pii: nenhum
+    nulo: true
+  - nome: sregl
+    tipo: string
+    comentario: "Regra de seleção"
+    pii: nenhum
+    nulo: true
+  - nome: xedip
+    tipo: string
+    comentario: "Aviso de pagamento por EDI (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: frgrp
+    tipo: string
+    comentario: "Grupo de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: vrsdg
+    tipo: string
+    comentario: "Conversão de código de motivo"
+    pii: nenhum
+    nulo: true
+  - nome: tlfxs
+    tipo: string
+    comentario: "Fax do atendente contábil"
+    pii: direto
+    nulo: true
+  - nome: intad
+    tipo: string
+    comentario: "E-mail do atendente contábil"
+    pii: direto
+    nulo: true
+  - nome: xknzb
+    tipo: string
+    comentario: "Contas para pagador alternativo (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: guzte
+    tipo: string
+    comentario: "Condição de pagamento para nota de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: gricd
+    tipo: string
+    comentario: "Código de atividade para imposto GI"
+    pii: nenhum
+    nulo: true
+  - nome: gridt
+    tipo: string
+    comentario: "Tipo de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: wbrsl
+    tipo: string
+    comentario: "Chave de ajuste de valor"
+    pii: nenhum
+    nulo: true
+  - nome: confs
+    tipo: string
+    comentario: "Status de confirmação por empresa"
+    pii: nenhum
+    nulo: true
+  - nome: updat
+    tipo: date
+    comentario: "Data de confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: uptim
+    tipo: string
+    comentario: "Hora de confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: nodel
+    tipo: string
+    comentario: "Bloqueio de exclusão por empresa (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: tlfns
+    tipo: string
+    comentario: "Telefone do atendente contábil"
+    pii: direto
+    nulo: true
+  - nome: cession_kz
+    tipo: string
+    comentario: "Indicador de penhor de contas a receber"
+    pii: nenhum
+    nulo: true
+  - nome: avsnd
+    tipo: string
+    comentario: "Aviso de pagamento por XML (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: ad_hash
+    tipo: string
+    comentario: "E-mail para aviso de pagamento"
+    pii: direto
+    nulo: true
+  - nome: qland
+    tipo: string
+    comentario: "País para retenção na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: cvp_xblck_b
+    tipo: string
+    comentario: "Indicador de finalidade de negócio concluída (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: ciiucode
+    tipo: string
+    comentario: "Atividade econômica principal (código CIIU)"
+    pii: nenhum
+    nulo: true
+  - nome: gmvkzd
+    tipo: string
+    comentario: "Cliente em execução judicial"
+    pii: nenhum
+    nulo: true

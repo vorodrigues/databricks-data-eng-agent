@@ -1,0 +1,242 @@
+tabela: faglflexa
+camada: bronze
+comentario: "Razão geral novo (New GL): itens reais de linha"
+ingestao: cdc
+fonte: sap.faglflexa
+chave_primaria: [rclnt, rldnr, rbukrs, ryear, docnr, docln]
+colunas:
+  - nome: rclnt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: ryear
+    tipo: string
+    comentario: "Exercício fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: docnr
+    tipo: string
+    comentario: "Número do documento"
+    pii: nenhum
+    nulo: false
+  - nome: rldnr
+    tipo: string
+    comentario: "Razão contábil"
+    pii: nenhum
+    nulo: false
+  - nome: rbukrs
+    tipo: string
+    comentario: "Empresa"
+    pii: nenhum
+    nulo: false
+  - nome: docln
+    tipo: string
+    comentario: "Número do item de linha do documento"
+    pii: nenhum
+    nulo: false
+  - nome: activ
+    tipo: string
+    comentario: "Transação"
+    pii: nenhum
+    nulo: true
+  - nome: rmvct
+    tipo: string
+    comentario: "Tipo de transação"
+    pii: nenhum
+    nulo: true
+  - nome: rtcur
+    tipo: string
+    comentario: "Moeda da transação"
+    pii: nenhum
+    nulo: true
+  - nome: runit
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: awtyp
+    tipo: string
+    comentario: "Procedimento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rrcty
+    tipo: string
+    comentario: "Tipo de registro"
+    pii: nenhum
+    nulo: true
+  - nome: rvers
+    tipo: string
+    comentario: "Versão"
+    pii: nenhum
+    nulo: true
+  - nome: logsys
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: racct
+    tipo: string
+    comentario: "Número da conta contábil"
+    pii: nenhum
+    nulo: true
+  - nome: cost_elem
+    tipo: string
+    comentario: "Elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: rcntr
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: rfarea
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: rbusa
+    tipo: string
+    comentario: "Área de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controladoria"
+    pii: nenhum
+    nulo: true
+  - nome: segment
+    tipo: string
+    comentario: "Segmento"
+    pii: nenhum
+    nulo: true
+  - nome: scntr
+    tipo: string
+    comentario: "Centro de custo emissor"
+    pii: nenhum
+    nulo: true
+  - nome: pprctr
+    tipo: string
+    comentario: "Centro de lucro parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: sfarea
+    tipo: string
+    comentario: "Área funcional do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: sbusa
+    tipo: string
+    comentario: "Área de negócios do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: rassc
+    tipo: string
+    comentario: "Empresa parceira (intercompany)"
+    pii: nenhum
+    nulo: true
+  - nome: psegment
+    tipo: string
+    comentario: "Segmento do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: tsl
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda da transação"
+    pii: nenhum
+    nulo: true
+  - nome: hsl
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: ksl
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: osl
+    tipo: decimal(23,2)
+    comentario: "Valor em outra moeda"
+    pii: nenhum
+    nulo: true
+  - nome: msl
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: wsl
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda original da transação"
+    pii: nenhum
+    nulo: true
+  - nome: drcrk
+    tipo: string
+    comentario: "Indicador débito/crédito"
+    pii: nenhum
+    nulo: true
+  - nome: poper
+    tipo: string
+    comentario: "Período de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: rwcur
+    tipo: string
+    comentario: "Moeda original da transação"
+    pii: nenhum
+    nulo: true
+  - nome: gjahr
+    tipo: string
+    comentario: "Exercício fiscal (FI)"
+    pii: nenhum
+    nulo: true
+  - nome: budat
+    tipo: date
+    comentario: "Data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: belnr
+    tipo: string
+    comentario: "Número do documento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: buzei
+    tipo: string
+    comentario: "Item da linha contábil"
+    pii: nenhum
+    nulo: true
+  - nome: bschl
+    tipo: string
+    comentario: "Chave de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: bstat
+    tipo: string
+    comentario: "Status do documento"
+    pii: nenhum
+    nulo: true
+  - nome: linetype
+    tipo: string
+    comentario: "Categoria do item"
+    pii: nenhum
+    nulo: true
+  - nome: xsplitmod
+    tipo: string
+    comentario: "Alterado pelo desdobramento do documento"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Nome do usuário"
+    pii: nenhum
+    nulo: true
+  - nome: timestamp
+    tipo: timestamp
+    comentario: "Carimbo de data/hora"
+    pii: nenhum
+    nulo: true

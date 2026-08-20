@@ -1,0 +1,42 @@
+tabela: csku
+camada: bronze
+comentario: "Textos de elementos de custo por idioma e plano de contas (CSKU)."
+ingestao: cdc
+fonte: sap.csku
+chave_primaria: [mandt, spras, ktopl, kstar]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)."
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma."
+    pii: nenhum
+    nulo: false
+  - nome: ktopl
+    tipo: string
+    comentario: "Plano de contas."
+    pii: nenhum
+    nulo: false
+  - nome: kstar
+    tipo: string
+    comentario: "Elemento de custo."
+    pii: nenhum
+    nulo: false
+  - nome: ktext
+    tipo: string
+    comentario: "Nome curto do elemento de custo."
+    pii: nenhum
+    nulo: true
+  - nome: ltext
+    tipo: string
+    comentario: "Descrição longa do elemento de custo."
+    pii: nenhum
+    nulo: true
+  - nome: mctxt
+    tipo: string
+    comentario: "Texto curto do elemento de custo para relatórios."
+    pii: nenhum
+    nulo: true

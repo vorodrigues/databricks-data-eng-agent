@@ -1,0 +1,583 @@
+tabela: addresses
+camada: gold
+comentario: "Visão consolidada e globalmente consistente de endereços geográficos e de comunicação de parceiros de negócio, clientes, fornecedores e unidades organizacionais (ADRC, ADR6, ADRCT), para suporte a análises geoespaciais e roteamento de cadeia de suprimentos."
+entidade: obt
+ingestao: custom
+fontes: [silver.adrc, silver.adr6, silver.adrct]
+chave_primaria: []
+colunas:
+  - nome: client_client
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: address_number_addrnumber
+    tipo: string
+    comentario: "Número do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_date_date_from
+    tipo: date
+    comentario: "Data de início de validade do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: version_id_for_international_addresses_nation
+    tipo: string
+    comentario: "Versão do endereço para formato internacional"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to_date_date_to
+    tipo: date
+    comentario: "Data de fim de validade do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: form_of_address_key_title
+    tipo: string
+    comentario: "Chave de forma de tratamento"
+    pii: indireto
+    nulo: true
+  - nome: name1_name1
+    tipo: string
+    comentario: "Nome 1"
+    pii: direto
+    nulo: true
+  - nome: name2_name2
+    tipo: string
+    comentario: "Nome 2"
+    pii: direto
+    nulo: true
+  - nome: name3_name3
+    tipo: string
+    comentario: "Nome 3"
+    pii: direto
+    nulo: true
+  - nome: name4_name4
+    tipo: string
+    comentario: "Nome 4"
+    pii: direto
+    nulo: true
+  - nome: converted_name_name_text
+    tipo: string
+    comentario: "Nome convertido com forma de tratamento"
+    pii: direto
+    nulo: true
+  - nome: co_name_name_co
+    tipo: string
+    comentario: "Nome c/o (aos cuidados de)"
+    pii: direto
+    nulo: true
+  - nome: city_city1
+    tipo: string
+    comentario: "Cidade"
+    pii: indireto
+    nulo: true
+  - nome: district_city2
+    tipo: string
+    comentario: "Bairro/Distrito"
+    pii: indireto
+    nulo: true
+  - nome: city_code_for_citystreet_file_city_code
+    tipo: string
+    comentario: "Código da cidade no arquivo cidade/rua"
+    pii: nenhum
+    nulo: true
+  - nome: district_code_for_city_and_street_file_cityp_code
+    tipo: string
+    comentario: "Código do bairro/distrito no arquivo cidade/rua"
+    pii: nenhum
+    nulo: true
+  - nome: city_home_city
+    tipo: string
+    comentario: "Cidade (diferente da cidade postal)"
+    pii: indireto
+    nulo: true
+  - nome: different_city_for_citystreet_file_cityh_code
+    tipo: string
+    comentario: "Código de cidade alternativa no arquivo cidade/rua"
+    pii: nenhum
+    nulo: true
+  - nome: city_file_test_status_chckstatus
+    tipo: string
+    comentario: "Status de validação no arquivo de cidades"
+    pii: nenhum
+    nulo: true
+  - nome: regional_structure_grouping_regiogroup
+    tipo: string
+    comentario: "Agrupamento regional de estrutura"
+    pii: nenhum
+    nulo: true
+  - nome: city_postal_code_post_code1
+    tipo: string
+    comentario: "CEP da cidade"
+    pii: indireto
+    nulo: true
+  - nome: po_box_postal_code_post_code2
+    tipo: string
+    comentario: "CEP da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: company_postal_code_post_code3
+    tipo: string
+    comentario: "CEP corporativo (grandes clientes)"
+    pii: indireto
+    nulo: true
+  - nome: postl_code_extension_pcode1_ext
+    tipo: string
+    comentario: "Extensão do CEP da cidade"
+    pii: indireto
+    nulo: true
+  - nome: postl_code_extension_pcode2_ext
+    tipo: string
+    comentario: "Extensão do CEP da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: postl_code_extension_pcode3_ext
+    tipo: string
+    comentario: "Extensão do CEP corporativo"
+    pii: indireto
+    nulo: true
+  - nome: po_box_po_box
+    tipo: string
+    comentario: "Número da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: po_box_address_undeliverable_flag_dont_use_p
+    tipo: string
+    comentario: "Indicador: endereço de caixa postal inválido para entrega"
+    pii: nenhum
+    nulo: true
+  - nome: flag_po_box_without_number_po_box_num
+    tipo: string
+    comentario: "Indicador: caixa postal sem número"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_city_po_box_loc
+    tipo: string
+    comentario: "Cidade da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: city_po_box_code_city_file_city_code2
+    tipo: string
+    comentario: "Código da cidade da caixa postal (arquivo cidade)"
+    pii: nenhum
+    nulo: true
+  - nome: region_for_po_box_po_box_reg
+    tipo: string
+    comentario: "Região da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: po_box_country_po_box_cty
+    tipo: string
+    comentario: "País da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: delivery_district_postalarea
+    tipo: string
+    comentario: "Distrito de entrega"
+    pii: indireto
+    nulo: true
+  - nome: transportation_zone_to_or_from_which_the_goods_are_delivered_transpzone
+    tipo: string
+    comentario: "Zona de transporte para entrega de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: street_street
+    tipo: string
+    comentario: "Logradouro"
+    pii: indireto
+    nulo: true
+  - nome: street_address_undeliverable_flag_dont_use_s
+    tipo: string
+    comentario: "Indicador: endereço de rua inválido para entrega"
+    pii: nenhum
+    nulo: true
+  - nome: street_number_for_citystreet_file_streetcode
+    tipo: string
+    comentario: "Código do logradouro no arquivo cidade/rua"
+    pii: nenhum
+    nulo: true
+  - nome: street_abbreviation_streetabbr
+    tipo: string
+    comentario: "Abreviatura do logradouro"
+    pii: indireto
+    nulo: true
+  - nome: house_number_house_num1
+    tipo: string
+    comentario: "Número do imóvel"
+    pii: indireto
+    nulo: true
+  - nome: house_number_supplement_house_num2
+    tipo: string
+    comentario: "Complemento do número do imóvel"
+    pii: indireto
+    nulo: true
+  - nome: house_number_range_house_num3
+    tipo: string
+    comentario: "Faixa de numeração do imóvel"
+    pii: indireto
+    nulo: true
+  - nome: street2_str_suppl1
+    tipo: string
+    comentario: "Complemento de endereço 1"
+    pii: indireto
+    nulo: true
+  - nome: street3_str_suppl2
+    tipo: string
+    comentario: "Complemento de endereço 2"
+    pii: indireto
+    nulo: true
+  - nome: street4_str_suppl3
+    tipo: string
+    comentario: "Complemento de endereço 3"
+    pii: indireto
+    nulo: true
+  - nome: street5_location
+    tipo: string
+    comentario: "Localização adicional"
+    pii: indireto
+    nulo: true
+  - nome: building_number_or_code_building
+    tipo: string
+    comentario: "Número ou código do edifício"
+    pii: indireto
+    nulo: true
+  - nome: floor_in_building_floor
+    tipo: string
+    comentario: "Andar do edifício"
+    pii: indireto
+    nulo: true
+  - nome: room_or_appartment_number_roomnumber
+    tipo: string
+    comentario: "Número do apto/sala"
+    pii: indireto
+    nulo: true
+  - nome: country_key_country
+    tipo: string
+    comentario: "Chave do país/região"
+    pii: nenhum
+    nulo: true
+  - nome: language_langu
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: region_region
+    tipo: string
+    comentario: "Estado/Região"
+    pii: indireto
+    nulo: true
+  - nome: address_group_key_business_address_services_addr_group
+    tipo: string
+    comentario: "Chave do grupo de endereços (BAS)"
+    pii: nenhum
+    nulo: true
+  - nome: flag_there_are_more_address_group_assignments_flaggroups
+    tipo: string
+    comentario: "Indicador: existem mais atribuições de grupo de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: flag_this_is_a_personal_address_pers_addr
+    tipo: string
+    comentario: "Indicador: endereço pessoal"
+    pii: nenhum
+    nulo: true
+  - nome: search_term1_sort1
+    tipo: string
+    comentario: "Termo de pesquisa 1"
+    pii: indireto
+    nulo: true
+  - nome: search_term2_sort2
+    tipo: string
+    comentario: "Termo de pesquisa 2"
+    pii: indireto
+    nulo: true
+  - nome: sort_phonetically_sort_phn
+    tipo: string
+    comentario: "Ordenação fonética"
+    pii: nenhum
+    nulo: true
+  - nome: communication_method_key_business_address_services_deflt_comm
+    tipo: string
+    comentario: "Chave do meio de comunicação padrão (BAS)"
+    pii: nenhum
+    nulo: true
+  - nome: first_telephone_no_dialling_codenumber_tel_number
+    tipo: string
+    comentario: "Primeiro número de telefone (com código de discagem)"
+    pii: direto
+    nulo: true
+  - nome: extension_tel_extens
+    tipo: string
+    comentario: "Ramal do primeiro telefone"
+    pii: direto
+    nulo: true
+  - nome: fax_fax_number
+    tipo: string
+    comentario: "Primeiro número de fax"
+    pii: direto
+    nulo: true
+  - nome: extension_fax_extens
+    tipo: string
+    comentario: "Ramal do primeiro fax"
+    pii: direto
+    nulo: true
+  - nome: flag_telephonenumber_s_defined_flagcomm2
+    tipo: string
+    comentario: "Indicador: número(s) de telefone definido(s)"
+    pii: nenhum
+    nulo: true
+  - nome: flag_faxnumber_s_defined_flagcomm3
+    tipo: string
+    comentario: "Indicador: número(s) de fax definido(s)"
+    pii: nenhum
+    nulo: true
+  - nome: flag_teletexnumber_s_defined_flagcomm4
+    tipo: string
+    comentario: "Indicador: número(s) de teletex definido(s)"
+    pii: nenhum
+    nulo: true
+  - nome: flag_telexnumber_s_defined_flagcomm5
+    tipo: string
+    comentario: "Indicador: número(s) de telex definido(s)"
+    pii: nenhum
+    nulo: true
+  - nome: e_mail_address_x_flagcomm6
+    tipo: string
+    comentario: "Indicador: endereço de e-mail definido"
+    pii: nenhum
+    nulo: true
+  - nome: flag_rml_remote_mail_addresse_s_defined_flagcomm7
+    tipo: string
+    comentario: "Indicador: endereço de correio remoto definido"
+    pii: nenhum
+    nulo: true
+  - nome: flag_x400flagcomm8
+    tipo: string
+    comentario: "Indicador: endereço X.400 definido"
+    pii: nenhum
+    nulo: true
+  - nome: flag_rfc_destination_s_defined_flagcomm9
+    tipo: string
+    comentario: "Indicador: destino RFC definido"
+    pii: nenhum
+    nulo: true
+  - nome: flag_printer_defined_flagcomm10
+    tipo: string
+    comentario: "Indicador: endereço de impressora definido"
+    pii: nenhum
+    nulo: true
+  - nome: flag_ssf_defined_flagcomm11
+    tipo: string
+    comentario: "Indicador: endereço SSF definido"
+    pii: nenhum
+    nulo: true
+  - nome: flag_uriftp_address_defined_flagcomm12
+    tipo: string
+    comentario: "Indicador: endereço URI/FTP definido"
+    pii: nenhum
+    nulo: true
+  - nome: flag_pager_address_defined_flagcomm13
+    tipo: string
+    comentario: "Indicador: endereço de pager definido"
+    pii: nenhum
+    nulo: true
+  - nome: address_source_addrorigin
+    tipo: string
+    comentario: "Origem do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: company_name_mc_name1
+    tipo: string
+    comentario: "Nome da empresa em maiúsculas para pesquisa"
+    pii: direto
+    nulo: true
+  - nome: city_mc_city1
+    tipo: string
+    comentario: "Cidade em maiúsculas para pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: street_mc_street
+    tipo: string
+    comentario: "Logradouro em maiúsculas para pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: data_line_extension1
+    tipo: string
+    comentario: "Linha de dados (ramal 1)"
+    pii: nenhum
+    nulo: true
+  - nome: telebox_extension2
+    tipo: string
+    comentario: "Telebox (ramal 2)"
+    pii: nenhum
+    nulo: true
+  - nome: time_zone_time_zone
+    tipo: string
+    comentario: "Fuso horário"
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_taxjurcode
+    tipo: string
+    comentario: "Código de jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: address_id_address_id
+    tipo: string
+    comentario: "ID do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: creation_language_langu_crea
+    tipo: string
+    comentario: "Idioma original de criação do registro de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: address_uuid_adrc_uuid
+    tipo: string
+    comentario: "UUID do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: uuid_generated_later_uuid_belated
+    tipo: string
+    comentario: "Indicador: UUID criado posteriormente"
+    pii: nenhum
+    nulo: true
+  - nome: address_id_category_id_category
+    tipo: string
+    comentario: "Categoria do ID do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: error_status_adrc_err_status
+    tipo: string
+    comentario: "Status de erro do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_lobby_po_box_lobby
+    tipo: string
+    comentario: "Saguão da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: type_of_delivery_service_deli_serv_type
+    tipo: string
+    comentario: "Tipo de serviço de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_delivery_service_deli_serv_number
+    tipo: string
+    comentario: "Número do serviço de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: county_code_county_code
+    tipo: string
+    comentario: "Código do município"
+    pii: nenhum
+    nulo: true
+  - nome: county_county
+    tipo: string
+    comentario: "Município"
+    pii: indireto
+    nulo: true
+  - nome: township_code_township_code
+    tipo: string
+    comentario: "Código do subdistrito"
+    pii: nenhum
+    nulo: true
+  - nome: township_township
+    tipo: string
+    comentario: "Subdistrito"
+    pii: indireto
+    nulo: true
+  - nome: county_name_in_upper_case_for_search_help_mc_county
+    tipo: string
+    comentario: "Nome do município em maiúsculas para pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: township_name_in_upper_case_for_search_help_mc_township
+    tipo: string
+    comentario: "Nome do subdistrito em maiúsculas para pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: business_purpose_completed_flag_xpcpt
+    tipo: string
+    comentario: "Indicador: finalidade comercial concluída"
+    pii: nenhum
+    nulo: true
+  - nome: address_notes_remark
+    tipo: string
+    comentario: "Observações do endereço"
+    pii: indireto
+    nulo: true
+  - nome: person_number_persnumber
+    tipo: string
+    comentario: "Número da pessoa"
+    pii: indireto
+    nulo: true
+  - nome: sequence_number_consnumber
+    tipo: string
+    comentario: "Número sequencial do registro de comunicação"
+    pii: nenhum
+    nulo: true
+  - nome: default_address_flgdefault
+    tipo: string
+    comentario: "Indicador: endereço padrão"
+    pii: nenhum
+    nulo: true
+  - nome: do_not_use_communication_number_flg_nouse
+    tipo: string
+    comentario: "Indicador: número de comunicação não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: home_address_home_flag
+    tipo: string
+    comentario: "Indicador: endereço residencial do destinatário neste tipo de comunicação"
+    pii: nenhum
+    nulo: true
+  - nome: e_mail_address_smtp_addr
+    tipo: string
+    comentario: "Endereço de e-mail"
+    pii: direto
+    nulo: true
+  - nome: e_mail_address_search_smtp_srch
+    tipo: string
+    comentario: "Campo de pesquisa do endereço de e-mail"
+    pii: direto
+    nulo: true
+  - nome: standard_recipient_dft_receiv
+    tipo: string
+    comentario: "Indicador: destinatário padrão"
+    pii: nenhum
+    nulo: true
+  - nome: sap_connection_flag_r3_user
+    tipo: string
+    comentario: "Indicador: conectado ao SAP"
+    pii: nenhum
+    nulo: true
+  - nome: email_encoding_encode
+    tipo: string
+    comentario: "Codificação de dados do e-mail"
+    pii: nenhum
+    nulo: true
+  - nome: tnef_flag_tnef
+    tipo: string
+    comentario: "Indicador: receptor aceita TNEF"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_valid_from
+    tipo: timestamp
+    comentario: "Início da validade dos dados de comunicação (AAAAMMDDHHMMSS)"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to_valid_to
+    tipo: timestamp
+    comentario: "Fim da validade dos dados de comunicação (AAAAMMDDHHMMSS)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última modificação nas tabelas de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

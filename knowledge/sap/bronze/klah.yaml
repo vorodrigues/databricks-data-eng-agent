@@ -1,0 +1,282 @@
+tabela: klah
+camada: bronze
+comentario: "Dados do cabeçalho de classe (classificação de objetos)"
+ingestao: cdc
+fonte: sap.klah
+chave_primaria: [mandt, clint]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: clint
+    tipo: string
+    comentario: "Número interno da classe"
+    pii: nenhum
+    nulo: false
+  - nome: klart
+    tipo: string
+    comentario: "Tipo de classe"
+    pii: nenhum
+    nulo: true
+  - nome: class
+    tipo: string
+    comentario: "Classe"
+    pii: nenhum
+    nulo: true
+  - nome: statu
+    tipo: string
+    comentario: "Status da classe"
+    pii: nenhum
+    nulo: true
+  - nome: klagr
+    tipo: string
+    comentario: "Grupo de classes"
+    pii: nenhum
+    nulo: true
+  - nome: bgrse
+    tipo: string
+    comentario: "Autorização: localizar objetos"
+    pii: nenhum
+    nulo: true
+  - nome: bgrkl
+    tipo: string
+    comentario: "Autorização: classificação"
+    pii: nenhum
+    nulo: true
+  - nome: bgrkp
+    tipo: string
+    comentario: "Autorização: manutenção de classe"
+    pii: nenhum
+    nulo: true
+  - nome: aname
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: adatu
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: vname
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: vdatu
+    tipo: date
+    comentario: "Alterado em"
+    pii: nenhum
+    nulo: true
+  - nome: vondt
+    tipo: date
+    comentario: "Válido de"
+    pii: nenhum
+    nulo: true
+  - nome: bisdt
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: anzuo
+    tipo: int
+    comentario: "Número de atribuições"
+    pii: nenhum
+    nulo: true
+  - nome: praus
+    tipo: string
+    comentario: "Mesma classificação"
+    pii: nenhum
+    nulo: true
+  - nome: sicht
+    tipo: string
+    comentario: "Área organizacional"
+    pii: nenhum
+    nulo: true
+  - nome: doknr
+    tipo: string
+    comentario: "Documento"
+    pii: nenhum
+    nulo: true
+  - nome: dokar
+    tipo: string
+    comentario: "Tipo de documento"
+    pii: nenhum
+    nulo: true
+  - nome: doktl
+    tipo: string
+    comentario: "Parte do documento"
+    pii: nenhum
+    nulo: true
+  - nome: dokvr
+    tipo: string
+    comentario: "Versão do documento"
+    pii: nenhum
+    nulo: true
+  - nome: dinkz
+    tipo: string
+    comentario: "Classe DIN"
+    pii: nenhum
+    nulo: true
+  - nome: nnorm
+    tipo: string
+    comentario: "Padrão"
+    pii: nenhum
+    nulo: true
+  - nome: normn
+    tipo: string
+    comentario: "Número do padrão"
+    pii: nenhum
+    nulo: true
+  - nome: normb
+    tipo: string
+    comentario: "Descrição do padrão industrial"
+    pii: nenhum
+    nulo: true
+  - nome: nrmt1
+    tipo: string
+    comentario: "Título 1"
+    pii: nenhum
+    nulo: true
+  - nome: nrmt2
+    tipo: string
+    comentario: "Título 2"
+    pii: nenhum
+    nulo: true
+  - nome: ausgd
+    tipo: date
+    comentario: "Data de emissão"
+    pii: nenhum
+    nulo: true
+  - nome: versd
+    tipo: date
+    comentario: "Data de versão"
+    pii: nenhum
+    nulo: true
+  - nome: versi
+    tipo: string
+    comentario: "Número de versão"
+    pii: nenhum
+    nulo: true
+  - nome: leist
+    tipo: string
+    comentario: "Tabela de características"
+    pii: nenhum
+    nulo: true
+  - nome: verwe
+    tipo: string
+    comentario: "Onde é usado"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: lref3
+    tipo: string
+    comentario: "Objeto de lista"
+    pii: nenhum
+    nulo: true
+  - nome: wwskz
+    tipo: string
+    comentario: "Tipo de classe MMS"
+    pii: nenhum
+    nulo: true
+  - nome: wwssi
+    tipo: string
+    comentario: "Visão MMS"
+    pii: nenhum
+    nulo: true
+  - nome: potpr
+    tipo: string
+    comentario: "Categoria de item de resultado"
+    pii: nenhum
+    nulo: true
+  - nome: clobk
+    tipo: string
+    comentario: "Componente obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: clmul
+    tipo: string
+    comentario: "Seleção múltipla"
+    pii: nenhum
+    nulo: true
+  - nome: cview
+    tipo: string
+    comentario: "Área organizacional (visão de classificação)"
+    pii: nenhum
+    nulo: true
+  - nome: disst
+    tipo: string
+    comentario: "Código de baixo nível"
+    pii: nenhum
+    nulo: true
+  - nome: meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: clmod
+    tipo: string
+    comentario: "Padrão substituível"
+    pii: nenhum
+    nulo: true
+  - nome: vwstl
+    tipo: string
+    comentario: "Permitido em listas de materiais (BOM)"
+    pii: nenhum
+    nulo: true
+  - nome: vwpla
+    tipo: string
+    comentario: "Permitido em roteiros de fabricação"
+    pii: nenhum
+    nulo: true
+  - nome: clalt
+    tipo: string
+    comentario: "Exibição alternativa"
+    pii: nenhum
+    nulo: true
+  - nome: lbrei
+    tipo: string
+    comentario: "Largura da lista"
+    pii: nenhum
+    nulo: true
+  - nome: bname
+    tipo: string
+    comentario: "Nome do bloco"
+    pii: nenhum
+    nulo: true
+  - nome: maxbl
+    tipo: string
+    comentario: "Máximo de blocos exibidos"
+    pii: nenhum
+    nulo: true
+  - nome: knobj
+    tipo: string
+    comentario: "Número de atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: locla
+    tipo: string
+    comentario: "Classe local"
+    pii: nenhum
+    nulo: true
+  - nome: katalog
+    tipo: string
+    comentario: "Catálogo"
+    pii: nenhum
+    nulo: true
+  - nome: kdokaz
+    tipo: string
+    comentario: "Exibir documento sempre"
+    pii: nenhum
+    nulo: true
+  - nome: genrkz
+    tipo: string
+    comentario: "A ser gerado"
+    pii: nenhum
+    nulo: true

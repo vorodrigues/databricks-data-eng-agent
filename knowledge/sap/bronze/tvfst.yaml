@@ -1,0 +1,27 @@
+tabela: tvfst
+camada: bronze
+comentario: "Textos dos motivos de bloqueio de faturamento (dependente de idioma)"
+ingestao: cdc
+fonte: sap.tvfst
+chave_primaria: [mandt, spras, faksp]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: faksp
+    tipo: string
+    comentario: "Motivo de bloqueio de faturamento"
+    pii: nenhum
+    nulo: false
+  - nome: vtext
+    tipo: string
+    comentario: "Descricao do bloqueio de faturamento"
+    pii: nenhum
+    nulo: true

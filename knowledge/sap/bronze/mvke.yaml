@@ -1,0 +1,347 @@
+tabela: mvke
+camada: bronze
+comentario: "Dados de vendas por material (MVKE)"
+ingestao: cdc
+fonte: sap.mvke
+chave_primaria: [mandt, matnr, vkorg, vtweg]
+colunas:
+  - nome: /bev1/emdrckspl
+    tipo: string
+    comentario: "Indicador: bloquear recolhimento de vasilhames (bebidas)"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/emlgrp
+    tipo: string
+    comentario: "Grupo de vasilhames (bebidas)"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpbezme
+    tipo: string
+    comentario: "Unidade de medida base de referência (bebidas)"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpsco
+    tipo: string
+    comentario: "Total categoria 3 (bebidas)"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpsfa
+    tipo: string
+    comentario: "Total categoria 1 (bebidas)"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpski
+    tipo: string
+    comentario: "Total categoria 2 (bebidas)"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpsns
+    tipo: string
+    comentario: "Indicador: não totalizar (bebidas)"
+    pii: nenhum
+    nulo: true
+  - nome: /bev1/rpsso
+    tipo: string
+    comentario: "Total categoria 4 (bebidas)"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número do material (matnr)"
+    pii: nenhum
+    nulo: false
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas (vkorg)"
+    pii: nenhum
+    nulo: false
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição (vtweg)"
+    pii: nenhum
+    nulo: false
+  - nome: lvorm
+    tipo: string
+    comentario: "Indicador de exclusão no nível de canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: versg
+    tipo: string
+    comentario: "Grupo de estatísticas do material"
+    pii: nenhum
+    nulo: true
+  - nome: bonus
+    tipo: string
+    comentario: "Grupo de bonificação por volume"
+    pii: nenhum
+    nulo: true
+  - nome: provg
+    tipo: string
+    comentario: "Grupo de comissão"
+    pii: nenhum
+    nulo: true
+  - nome: sktof
+    tipo: string
+    comentario: "Indicador: desconto de caixa"
+    pii: nenhum
+    nulo: true
+  - nome: vmsta
+    tipo: string
+    comentario: "Status do material no canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: vmstd
+    tipo: date
+    comentario: "Válido a partir de (data de status do material)"
+    pii: nenhum
+    nulo: true
+  - nome: aumng
+    tipo: decimal(23,2)
+    comentario: "Quantidade mínima de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: lfmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade mínima de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: efmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade mínima make-to-order"
+    pii: nenhum
+    nulo: true
+  - nome: scmng
+    tipo: decimal(23,2)
+    comentario: "Unidade de entrega (delivery unit)"
+    pii: nenhum
+    nulo: true
+  - nome: schme
+    tipo: string
+    comentario: "Unidade de medida da unidade de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: vrkme
+    tipo: string
+    comentario: "Unidade de venda (vrkme)"
+    pii: nenhum
+    nulo: true
+  - nome: mtpos
+    tipo: string
+    comentario: "Grupo de categoria de item (mtpos)"
+    pii: nenhum
+    nulo: true
+  - nome: dwerk
+    tipo: string
+    comentario: "Centro fornecedor (dwerk)"
+    pii: nenhum
+    nulo: true
+  - nome: prodh
+    tipo: string
+    comentario: "Hierarquia de produto (prodh)"
+    pii: nenhum
+    nulo: true
+  - nome: pmatn
+    tipo: string
+    comentario: "Material de referência para precificação"
+    pii: nenhum
+    nulo: true
+  - nome: kondm
+    tipo: string
+    comentario: "Grupo de precificação do material"
+    pii: nenhum
+    nulo: true
+  - nome: ktgrm
+    tipo: string
+    comentario: "Grupo de imputação contábil do material"
+    pii: nenhum
+    nulo: true
+  - nome: mvgr1
+    tipo: string
+    comentario: "Grupo de materiais 1"
+    pii: nenhum
+    nulo: true
+  - nome: mvgr2
+    tipo: string
+    comentario: "Grupo de materiais 2"
+    pii: nenhum
+    nulo: true
+  - nome: mvgr3
+    tipo: string
+    comentario: "Grupo de materiais 3"
+    pii: nenhum
+    nulo: true
+  - nome: mvgr4
+    tipo: string
+    comentario: "Grupo de materiais 4"
+    pii: nenhum
+    nulo: true
+  - nome: mvgr5
+    tipo: string
+    comentario: "Grupo de materiais 5"
+    pii: nenhum
+    nulo: true
+  - nome: sstuf
+    tipo: string
+    comentario: "Grau de sortimento"
+    pii: nenhum
+    nulo: true
+  - nome: pflks
+    tipo: string
+    comentario: "Prioridade externa de sortimento"
+    pii: nenhum
+    nulo: true
+  - nome: lstfl
+    tipo: string
+    comentario: "Procedimento de listagem em lojas"
+    pii: nenhum
+    nulo: true
+  - nome: lstvz
+    tipo: string
+    comentario: "Procedimento de listagem em centros de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: lstak
+    tipo: string
+    comentario: "Indicador: listagem ativa"
+    pii: nenhum
+    nulo: true
+  - nome: ldvfl
+    tipo: date
+    comentario: "Listado a partir de (lojas)"
+    pii: nenhum
+    nulo: true
+  - nome: ldbfl
+    tipo: date
+    comentario: "Listado até (lojas)"
+    pii: nenhum
+    nulo: true
+  - nome: ldvzl
+    tipo: date
+    comentario: "Listado a partir de (centros de distribuição)"
+    pii: nenhum
+    nulo: true
+  - nome: ldbzl
+    tipo: date
+    comentario: "Listado até (centros de distribuição)"
+    pii: nenhum
+    nulo: true
+  - nome: vdvfl
+    tipo: date
+    comentario: "À venda a partir de (lojas)"
+    pii: nenhum
+    nulo: true
+  - nome: vdbfl
+    tipo: date
+    comentario: "À venda até (lojas)"
+    pii: nenhum
+    nulo: true
+  - nome: vdvzl
+    tipo: date
+    comentario: "À venda a partir de (centros de distribuição)"
+    pii: nenhum
+    nulo: true
+  - nome: vdbzl
+    tipo: date
+    comentario: "À venda até (centros de distribuição)"
+    pii: nenhum
+    nulo: true
+  - nome: prat1
+    tipo: string
+    comentario: "Atributo de produto 1"
+    pii: nenhum
+    nulo: true
+  - nome: prat2
+    tipo: string
+    comentario: "Atributo de produto 2"
+    pii: nenhum
+    nulo: true
+  - nome: prat3
+    tipo: string
+    comentario: "Atributo de produto 3"
+    pii: nenhum
+    nulo: true
+  - nome: prat4
+    tipo: string
+    comentario: "Atributo de produto 4"
+    pii: nenhum
+    nulo: true
+  - nome: prat5
+    tipo: string
+    comentario: "Atributo de produto 5"
+    pii: nenhum
+    nulo: true
+  - nome: prat6
+    tipo: string
+    comentario: "Atributo de produto 6"
+    pii: nenhum
+    nulo: true
+  - nome: prat7
+    tipo: string
+    comentario: "Atributo de produto 7"
+    pii: nenhum
+    nulo: true
+  - nome: prat8
+    tipo: string
+    comentario: "Atributo de produto 8"
+    pii: nenhum
+    nulo: true
+  - nome: prat9
+    tipo: string
+    comentario: "Atributo de produto 9"
+    pii: nenhum
+    nulo: true
+  - nome: prata
+    tipo: string
+    comentario: "Atributo de produto 10"
+    pii: nenhum
+    nulo: true
+  - nome: rdprf
+    tipo: string
+    comentario: "Perfil de arredondamento"
+    pii: nenhum
+    nulo: true
+  - nome: megru
+    tipo: string
+    comentario: "Grupo de unidades de medida"
+    pii: nenhum
+    nulo: true
+  - nome: lfmax
+    tipo: decimal(23,2)
+    comentario: "Quantidade máxima de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: rjart
+    tipo: string
+    comentario: "Indicador de fornecimento consignado (rackjobber)"
+    pii: nenhum
+    nulo: true
+  - nome: pbind
+    tipo: string
+    comentario: "Indicador de preço fixo"
+    pii: nenhum
+    nulo: true
+  - nome: vavme
+    tipo: string
+    comentario: "Indicador: unidade de venda não variável"
+    pii: nenhum
+    nulo: true
+  - nome: matkc
+    tipo: string
+    comentario: "Característica de concorrência do material"
+    pii: nenhum
+    nulo: true
+  - nome: pvmso
+    tipo: string
+    comentario: "Classificação de proposta de produto"
+    pii: nenhum
+    nulo: true
+  - nome: plgtp
+    tipo: string
+    comentario: "Categoria de faixa de preço"
+    pii: nenhum
+    nulo: true

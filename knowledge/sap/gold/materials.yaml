@@ -1,0 +1,848 @@
+tabela: materials
+camada: gold
+comentario: "Dados mestre gerais de materiais do SAP (MARA) combinados com descrições multilíngues (MAKT), incluindo códigos, descrições e especificações físicas e dimensionais do produto."
+entidade: obt
+ingestao: custom
+fontes: [silver.mara, silver.marc, silver.mard, silver.t001l, silver.t001w, silver.makt, silver.t134, silver.t134t, silver.t023, silver.t023t]
+chave_primaria: [client_mandt, material_number_matnr, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: material_text_maktx
+    tipo: string
+    comentario: "Descrição do material"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_ersda
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Usuário que criou o registro"
+    pii: indireto
+    nulo: true
+  - nome: last_changed_on_laeda
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: changed_by_aenam
+    tipo: string
+    comentario: "Usuário que realizou a última alteração"
+    pii: indireto
+    nulo: true
+  - nome: maintenance_status_of_complete_material_vpsta
+    tipo: string
+    comentario: "Status de manutenção do material completo"
+    pii: nenhum
+    nulo: true
+  - nome: maintenance_status_pstat
+    tipo: string
+    comentario: "Status de manutenção do material"
+    pii: nenhum
+    nulo: true
+  - nome: flag_material_for_deletion_at_client_level_lvorm
+    tipo: string
+    comentario: "Indicador de exclusão no nível do mandante"
+    pii: nenhum
+    nulo: true
+  - nome: material_type_mtart
+    tipo: string
+    comentario: "Tipo de material"
+    pii: nenhum
+    nulo: true
+  - nome: industry_sector_mbrsh
+    tipo: string
+    comentario: "Setor industrial"
+    pii: nenhum
+    nulo: true
+  - nome: material_group_matkl
+    tipo: string
+    comentario: "Grupo de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: old_material_number_bismt
+    tipo: string
+    comentario: "Número antigo do material"
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_of_measure_meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: order_unit_bstme
+    tipo: string
+    comentario: "Unidade de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: document_number_without_document_management_system_zeinr
+    tipo: string
+    comentario: "Número do documento (sem DMS)"
+    pii: nenhum
+    nulo: true
+  - nome: document_type_without_document_management_system_zeiar
+    tipo: string
+    comentario: "Tipo do documento (sem DMS)"
+    pii: nenhum
+    nulo: true
+  - nome: document_version_without_document_management_system_zeivr
+    tipo: string
+    comentario: "Versão do documento (sem DMS)"
+    pii: nenhum
+    nulo: true
+  - nome: page_format_of_document_without_document_management_system_zeifo
+    tipo: string
+    comentario: "Formato de página do documento (sem DMS)"
+    pii: nenhum
+    nulo: true
+  - nome: document_change_number_without_document_management_system_aeszn
+    tipo: string
+    comentario: "Número de alteração do documento (sem DMS)"
+    pii: nenhum
+    nulo: true
+  - nome: page_number_of_document_without_document_management_system_blatt
+    tipo: string
+    comentario: "Número de página do documento (sem DMS)"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_sheets_without_document_management_system_blanz
+    tipo: int
+    comentario: "Número de folhas (sem DMS)"
+    pii: nenhum
+    nulo: true
+  - nome: production_inspection_memo_ferth
+    tipo: string
+    comentario: "Memo de produção/inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: page_format_of_production_memo_formt
+    tipo: string
+    comentario: "Formato de página do memo de produção"
+    pii: nenhum
+    nulo: true
+  - nome: size_dimensions_groes
+    tipo: string
+    comentario: "Tamanho/dimensões"
+    pii: nenhum
+    nulo: true
+  - nome: basic_material_wrkst
+    tipo: string
+    comentario: "Material básico"
+    pii: nenhum
+    nulo: true
+  - nome: industry_standard_description_such_as_ansi_or_iso_normt
+    tipo: string
+    comentario: "Descrição de norma industrial (ex.: ANSI, ISO)"
+    pii: nenhum
+    nulo: true
+  - nome: laboratory_design_office_labor
+    tipo: string
+    comentario: "Laboratório / escritório de design"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_value_key_ekwsl
+    tipo: string
+    comentario: "Chave de valor de compras"
+    pii: nenhum
+    nulo: true
+  - nome: gross_weight_brgew
+    tipo: decimal(23,2)
+    comentario: "Peso bruto"
+    pii: nenhum
+    nulo: true
+  - nome: net_weight_ntgew
+    tipo: decimal(23,2)
+    comentario: "Peso líquido"
+    pii: nenhum
+    nulo: true
+  - nome: weight_unit_gewei
+    tipo: string
+    comentario: "Unidade de peso"
+    pii: nenhum
+    nulo: true
+  - nome: volume_volum
+    tipo: decimal(23,2)
+    comentario: "Volume"
+    pii: nenhum
+    nulo: true
+  - nome: volume_unit_voleh
+    tipo: string
+    comentario: "Unidade de volume"
+    pii: nenhum
+    nulo: true
+  - nome: container_requirements_behvo
+    tipo: string
+    comentario: "Requisitos de contêiner"
+    pii: nenhum
+    nulo: true
+  - nome: storage_conditions_raube
+    tipo: string
+    comentario: "Condições de armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: temperature_conditions_indicator_tempb
+    tipo: string
+    comentario: "Indicador de condições de temperatura"
+    pii: nenhum
+    nulo: true
+  - nome: low_level_code_disst
+    tipo: int
+    comentario: "Código de nível mais baixo (MRP)"
+    pii: nenhum
+    nulo: true
+  - nome: transportation_group_tragr
+    tipo: string
+    comentario: "Grupo de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: hazardous_material_number_stoff
+    tipo: string
+    comentario: "Número de produto perigoso"
+    pii: nenhum
+    nulo: true
+  - nome: division_spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: competitor_kunnr
+    tipo: string
+    comentario: "Concorrente"
+    pii: nenhum
+    nulo: true
+  - nome: european_article_number_eannr
+    tipo: string
+    comentario: "Número EAN"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_number_of_gr_gis_lips_to_be_printed_wesch
+    tipo: int
+    comentario: "Número de impressões de etiquetas de entrada de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: procurement_rule_bwvor
+    tipo: string
+    comentario: "Regra de suprimento"
+    pii: nenhum
+    nulo: true
+  - nome: source_of_supply_bwscl
+    tipo: string
+    comentario: "Fonte de suprimento"
+    pii: nenhum
+    nulo: true
+  - nome: season_category_saiso
+    tipo: string
+    comentario: "Categoria de estação"
+    pii: nenhum
+    nulo: true
+  - nome: label_type_etiar
+    tipo: string
+    comentario: "Tipo de etiqueta"
+    pii: nenhum
+    nulo: true
+  - nome: label_form_etifo
+    tipo: string
+    comentario: "Formulário de etiqueta"
+    pii: nenhum
+    nulo: true
+  - nome: deactivated_entar
+    tipo: string
+    comentario: "Campo desativado"
+    pii: nenhum
+    nulo: true
+  - nome: international_article_number_ean_upc_ean11
+    tipo: string
+    comentario: "EAN/UPC"
+    pii: nenhum
+    nulo: true
+  - nome: category_of_international_article_number_ean_numtp
+    tipo: string
+    comentario: "Categoria EAN"
+    pii: nenhum
+    nulo: true
+  - nome: length_laeng
+    tipo: decimal(23,2)
+    comentario: "Comprimento"
+    pii: nenhum
+    nulo: true
+  - nome: width_breit
+    tipo: decimal(23,2)
+    comentario: "Largura"
+    pii: nenhum
+    nulo: true
+  - nome: height_hoehe
+    tipo: decimal(23,2)
+    comentario: "Altura"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_dimension_for_length_width_height_meabm
+    tipo: string
+    comentario: "Unidade de dimensão (comprimento/largura/altura)"
+    pii: nenhum
+    nulo: true
+  - nome: product_hierarchy_prdha
+    tipo: string
+    comentario: "Hierarquia de produto"
+    pii: nenhum
+    nulo: true
+  - nome: stock_transfer_net_change_costing_aeklk
+    tipo: string
+    comentario: "Custeio de variação líquida em transferência de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: cad_indicator_cadkz
+    tipo: string
+    comentario: "Indicador CAD"
+    pii: nenhum
+    nulo: true
+  - nome: qm_in_procurement_is_active_qmpur
+    tipo: string
+    comentario: "Gestão de qualidade em compras ativa"
+    pii: nenhum
+    nulo: true
+  - nome: allowed_packaging_weight_ergew
+    tipo: decimal(23,2)
+    comentario: "Peso de embalagem permitido"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_weight_allowed_packaging_weight_ergei
+    tipo: string
+    comentario: "Unidade de peso da embalagem permitida"
+    pii: nenhum
+    nulo: true
+  - nome: allowed_packaging_volume_ervol
+    tipo: decimal(23,2)
+    comentario: "Volume de embalagem permitido"
+    pii: nenhum
+    nulo: true
+  - nome: volume_unit_allowed_packaging_volume_ervoe
+    tipo: string
+    comentario: "Unidade de volume da embalagem permitida"
+    pii: nenhum
+    nulo: true
+  - nome: excess_weight_tolerance_for_handling_unit_gewto
+    tipo: decimal(23,2)
+    comentario: "Tolerância de excesso de peso da unidade de manuseio"
+    pii: nenhum
+    nulo: true
+  - nome: excess_volume_tolerance_of_the_handling_unit_volto
+    tipo: decimal(23,2)
+    comentario: "Tolerância de excesso de volume da unidade de manuseio"
+    pii: nenhum
+    nulo: true
+  - nome: variable_purchase_order_unit_active_vabme
+    tipo: string
+    comentario: "Unidade de ordem de compra variável ativa"
+    pii: nenhum
+    nulo: true
+  - nome: revision_level_has_been_assigned_to_the_material_kzrev
+    tipo: string
+    comentario: "Indicador: nível de revisão atribuído ao material"
+    pii: nenhum
+    nulo: true
+  - nome: configurable_material_kzkfg
+    tipo: string
+    comentario: "Material configurável"
+    pii: nenhum
+    nulo: true
+  - nome: batch_management_requirement_indicator_xchpf
+    tipo: string
+    comentario: "Indicador: gestão por lotes obrigatória"
+    pii: nenhum
+    nulo: true
+  - nome: packaging_material_type_vhart
+    tipo: string
+    comentario: "Tipo de material de embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: maximum_level_by_volume_fuelg
+    tipo: decimal(23,2)
+    comentario: "Nível máximo por volume"
+    pii: nenhum
+    nulo: true
+  - nome: stacking_factor_stfak
+    tipo: int
+    comentario: "Fator de empilhamento"
+    pii: nenhum
+    nulo: true
+  - nome: material_group_packaging_materials_magrv
+    tipo: string
+    comentario: "Grupo de materiais de embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: authorization_group_begru
+    tipo: string
+    comentario: "Grupo de autorização"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_date_datab
+    tipo: date
+    comentario: "Válido a partir de (data)"
+    pii: nenhum
+    nulo: true
+  - nome: deletion_date_liqdt
+    tipo: date
+    comentario: "Data de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: season_year_saisj
+    tipo: string
+    comentario: "Ano da estação"
+    pii: nenhum
+    nulo: true
+  - nome: price_band_category_plgtp
+    tipo: string
+    comentario: "Categoria de faixa de preço"
+    pii: nenhum
+    nulo: true
+  - nome: empties_bill_of_material_mlgut
+    tipo: string
+    comentario: "Com lista de materiais de embalagens retornáveis"
+    pii: nenhum
+    nulo: true
+  - nome: external_material_group_extwg
+    tipo: string
+    comentario: "Grupo de materiais externo"
+    pii: nenhum
+    nulo: true
+  - nome: cross_plant_configurable_material_satnr
+    tipo: string
+    comentario: "Material configurável entre plantas"
+    pii: nenhum
+    nulo: true
+  - nome: material_category_attyp
+    tipo: string
+    comentario: "Categoria de material"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_material_can_be_coproduct_kzkup
+    tipo: string
+    comentario: "Indicador: material pode ser coproduto"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_the_material_has_a_follow_up_material_kznfm
+    tipo: string
+    comentario: "Indicador: material possui material sucessor"
+    pii: nenhum
+    nulo: true
+  - nome: pricing_reference_material_pmata
+    tipo: string
+    comentario: "Material de referência para precificação"
+    pii: nenhum
+    nulo: true
+  - nome: cross_plant_material_status_mstae
+    tipo: string
+    comentario: "Status do material entre plantas"
+    pii: nenhum
+    nulo: true
+  - nome: cross_distribution_chain_material_status_mstav
+    tipo: string
+    comentario: "Status do material entre canais de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: date_from_which_the_cross_plant_material_status_is_valid_mstde
+    tipo: date
+    comentario: "Data de validade do status do material entre plantas"
+    pii: nenhum
+    nulo: true
+  - nome: date_from_which_the_x_distr_chain_material_status_is_valid_mstdv
+    tipo: date
+    comentario: "Data de validade do status do material entre canais de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification_of_the_material_taklv
+    tipo: string
+    comentario: "Classificação fiscal do material"
+    pii: nenhum
+    nulo: true
+  - nome: catalog_profile_rbnrm
+    tipo: string
+    comentario: "Perfil de catálogo"
+    pii: nenhum
+    nulo: true
+  - nome: minimum_remaining_shelf_life_mhdrz
+    tipo: int
+    comentario: "Vida útil mínima restante (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: total_shelf_life_mhdhb
+    tipo: int
+    comentario: "Vida útil total (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: storage_percentage_mhdlp
+    tipo: int
+    comentario: "Percentual de armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: content_unit_inhme
+    tipo: string
+    comentario: "Unidade de conteúdo"
+    pii: nenhum
+    nulo: true
+  - nome: net_contents_inhal
+    tipo: decimal(23,2)
+    comentario: "Conteúdo líquido"
+    pii: nenhum
+    nulo: true
+  - nome: comparison_price_unit_vpreh
+    tipo: decimal(23,2)
+    comentario: "Unidade de preço comparativo"
+    pii: nenhum
+    nulo: true
+  - nome: gross_contents_inhbr
+    tipo: decimal(23,2)
+    comentario: "Conteúdo bruto"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_conversion_method_cmeth
+    tipo: string
+    comentario: "Método de conversão de quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: internal_object_number_cuobf
+    tipo: string
+    comentario: "Número interno do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: environmentally_relevant_kzumw
+    tipo: string
+    comentario: "Relevante para o meio ambiente"
+    pii: nenhum
+    nulo: true
+  - nome: product_allocation_determination_procedure_kosch
+    tipo: string
+    comentario: "Procedimento de alocação de produto"
+    pii: nenhum
+    nulo: true
+  - nome: pricing_profile_for_variants_sprof
+    tipo: string
+    comentario: "Perfil de precificação para variantes"
+    pii: nenhum
+    nulo: true
+  - nome: material_qualifies_for_discount_in_kind_nrfhg
+    tipo: string
+    comentario: "Material qualificado para desconto em espécie"
+    pii: nenhum
+    nulo: true
+  - nome: manufacturer_part_number_mfrpn
+    tipo: string
+    comentario: "Número de peça do fabricante"
+    pii: nenhum
+    nulo: true
+  - nome: manufacturer_number_mfrnr
+    tipo: string
+    comentario: "Número do fabricante"
+    pii: nenhum
+    nulo: true
+  - nome: number_inventory_managed_material_bmatn
+    tipo: string
+    comentario: "Número interno do material gerenciado por estoque"
+    pii: nenhum
+    nulo: true
+  - nome: mfr_part_profile_mprof
+    tipo: string
+    comentario: "Perfil de peça do fabricante"
+    pii: nenhum
+    nulo: true
+  - nome: units_of_measure_usage_kzwsm
+    tipo: string
+    comentario: "Uso das unidades de medida"
+    pii: nenhum
+    nulo: true
+  - nome: rollout_in_a_season_saity
+    tipo: string
+    comentario: "Rollout na estação"
+    pii: nenhum
+    nulo: true
+  - nome: dangerous_goods_indicator_profile_profl
+    tipo: string
+    comentario: "Perfil indicador de produtos perigosos"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_highly_viscous_ihivi
+    tipo: string
+    comentario: "Indicador: altamente viscoso"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_in_bulk_liquid_iloos
+    tipo: string
+    comentario: "Indicador: a granel/líquido"
+    pii: nenhum
+    nulo: true
+  - nome: level_of_explicitness_for_serial_number_serlv
+    tipo: string
+    comentario: "Nível de explicitação para número de série"
+    pii: nenhum
+    nulo: true
+  - nome: packaging_material_is_closed_packaging_kzgvh
+    tipo: string
+    comentario: "Material de embalagem fechada"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_approved_batch_record_required_xgchp
+    tipo: string
+    comentario: "Indicador: registro de lote aprovado obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: assign_effectivity_parameter_values_override_change_numbers_kzeff
+    tipo: string
+    comentario: "Atribuir valores de parâmetro de efetividade"
+    pii: nenhum
+    nulo: true
+  - nome: material_completion_level_compl
+    tipo: string
+    comentario: "Nível de completude do material"
+    pii: nenhum
+    nulo: true
+  - nome: period_indicator_for_shelf_life_expiration_date_iprkz
+    tipo: string
+    comentario: "Indicador de período para data de vencimento"
+    pii: nenhum
+    nulo: true
+  - nome: rounding_rule_for_calculation_of_sled_rdmhd
+    tipo: string
+    comentario: "Regra de arredondamento para cálculo da data de vencimento"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_product_composition_printed_on_packaging_przus
+    tipo: string
+    comentario: "Indicador: composição do produto impressa na embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: general_item_category_group_mtpos_mara
+    tipo: string
+    comentario: "Grupo de categoria do item geral"
+    pii: nenhum
+    nulo: true
+  - nome: generic_material_with_logistical_variants_bflme
+    tipo: string
+    comentario: "Material genérico com variantes logísticas"
+    pii: nenhum
+    nulo: true
+  - nome: material_is_locked_matfi
+    tipo: string
+    comentario: "Material bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: relevant_for_configuration_management_cmrel
+    tipo: string
+    comentario: "Relevante para gestão de configuração"
+    pii: nenhum
+    nulo: true
+  - nome: assortment_list_type_bbtyp
+    tipo: string
+    comentario: "Tipo de lista de sortimento"
+    pii: nenhum
+    nulo: true
+  - nome: expiration_date_sled_bbd
+    tipo: date
+    comentario: "Data de vencimento (SLED/BBD)"
+    pii: nenhum
+    nulo: true
+  - nome: global_trade_item_number_variant_gtin_variant
+    tipo: string
+    comentario: "Variante EAN/GTIN"
+    pii: nenhum
+    nulo: true
+  - nome: material_number_of_the_generic_material_in_prepack_materials_gennr
+    tipo: string
+    comentario: "Número do material genérico em pré-embalagens"
+    pii: nenhum
+    nulo: true
+  - nome: reference_material_for_materials_packed_in_same_way_rmatp
+    tipo: string
+    comentario: "Material de referência para materiais com mesma embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_global_data_synchronization_relevant_gds_relevant
+    tipo: string
+    comentario: "Indicador: relevante para sincronização global de dados (GDS)"
+    pii: nenhum
+    nulo: true
+  - nome: acceptance_at_origin_weora
+    tipo: string
+    comentario: "Aceite na origem"
+    pii: nenhum
+    nulo: true
+  - nome: standard_hu_type_hutyp_dflt
+    tipo: string
+    comentario: "Tipo de unidade de manuseio padrão"
+    pii: nenhum
+    nulo: true
+  - nome: pilferable_pilferable
+    tipo: string
+    comentario: "Suscetível a furto"
+    pii: nenhum
+    nulo: true
+  - nome: warehouse_storage_condition_whstc
+    tipo: string
+    comentario: "Condição de armazenamento no depósito"
+    pii: nenhum
+    nulo: true
+  - nome: warehouse_material_group_whmatgr
+    tipo: string
+    comentario: "Grupo de materiais do depósito"
+    pii: nenhum
+    nulo: true
+  - nome: handling_indicator_hndlcode
+    tipo: string
+    comentario: "Indicador de manuseio"
+    pii: nenhum
+    nulo: true
+  - nome: relevant_for_hazardous_substances_hazmat
+    tipo: string
+    comentario: "Relevante para substâncias perigosas"
+    pii: nenhum
+    nulo: true
+  - nome: handling_unit_type_hutyp
+    tipo: string
+    comentario: "Tipo de unidade de manuseio"
+    pii: nenhum
+    nulo: true
+  - nome: variable_tare_weight_tare_var
+    tipo: string
+    comentario: "Peso de tara variável"
+    pii: nenhum
+    nulo: true
+  - nome: maximum_allowed_capacity_of_packaging_material_maxc
+    tipo: decimal(23,2)
+    comentario: "Capacidade máxima da embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: over_capacity_tolerance_of_the_handling_unit_maxc_tol
+    tipo: decimal(23,2)
+    comentario: "Tolerância de sobrecapacidade da unidade de manuseio"
+    pii: nenhum
+    nulo: true
+  - nome: maximum_packing_length_of_packaging_material_maxl
+    tipo: decimal(23,2)
+    comentario: "Comprimento máximo de embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: maximum_packing_width_of_packaging_material_maxb
+    tipo: decimal(23,2)
+    comentario: "Largura máxima de embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: maximum_packing_height_of_packaging_material_maxh
+    tipo: decimal(23,2)
+    comentario: "Altura máxima de embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_measure_for_maximum_packing_length_width_height_maxdim_uom
+    tipo: string
+    comentario: "Unidade de medida para dimensões máximas de embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: country_of_origin_of_material_herkl
+    tipo: string
+    comentario: "País de origem do material"
+    pii: nenhum
+    nulo: true
+  - nome: material_freight_group_mfrgr
+    tipo: string
+    comentario: "Grupo de frete do material"
+    pii: nenhum
+    nulo: true
+  - nome: quarantine_period_qqtime
+    tipo: int
+    comentario: "Período de quarentena"
+    pii: nenhum
+    nulo: true
+  - nome: time_unit_for_quarantine_period_qqtimeuom
+    tipo: string
+    comentario: "Unidade de tempo do período de quarentena"
+    pii: nenhum
+    nulo: true
+  - nome: quality_inspection_group_qgrp
+    tipo: string
+    comentario: "Grupo de inspeção de qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: serial_number_profile_serial
+    tipo: string
+    comentario: "Perfil de número de série"
+    pii: nenhum
+    nulo: true
+  - nome: form_name_ps_smartform
+    tipo: string
+    comentario: "Nome do formulário"
+    pii: nenhum
+    nulo: true
+  - nome: ewm_cw_logistics_unit_of_measure_logunit
+    tipo: string
+    comentario: "Unidade de medida logística EWM (catch-weight)"
+    pii: nenhum
+    nulo: true
+  - nome: ewm_cw_material_is_a_catch_weight_material_cwqrel
+    tipo: string
+    comentario: "Material com peso variável EWM (catch-weight)"
+    pii: nenhum
+    nulo: true
+  - nome: ewm_cw_catch_weight_profile_for_entering_cw_quantity_cwqproc
+    tipo: string
+    comentario: "Perfil de peso variável EWM para entrada de quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: ewm_catch_weight_tolerance_group_for_ewm_cwqtolgr
+    tipo: string
+    comentario: "Grupo de tolerância de peso variável EWM"
+    pii: nenhum
+    nulo: true
+  - nome: adjustment_profile_adprof
+    tipo: string
+    comentario: "Perfil de ajuste"
+    pii: nenhum
+    nulo: true
+  - nome: id_for_an_intellectual_property_crm_product_ipmipproduct
+    tipo: string
+    comentario: "ID de propriedade intelectual do produto CRM"
+    pii: nenhum
+    nulo: true
+  - nome: variant_price_allowed_for_material_master_allow_pmat_igno
+    tipo: string
+    comentario: "Preço de variante permitido no mestre de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: medium_medium
+    tipo: string
+    comentario: "Meio"
+    pii: nenhum
+    nulo: true
+  - nome: physical_commodity_commodity
+    tipo: string
+    comentario: "Commodity física"
+    pii: nenhum
+    nulo: true
+  - nome: brand_brand_id
+    tipo: string
+    comentario: "Marca"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,138 @@
+tabela: business_partner_bank_details
+camada: gold
+comentario: "Dados bancários de parceiros de negócios SAP (BUT0BK), incluindo IBAN, contas bancárias e períodos de validade, para suporte a roteamento de pagamentos e validação de segurança financeira."
+entidade: obt
+ingestao: custom
+fontes: [silver.adrc, silver.adr6, silver.adrct, silver.but000, silver.but020, silver.but0bk]
+chave_primaria: [client_client, business_partner_partner, bank_details_id_bkvid, valid_from]
+colunas:
+  - nome: client_client
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: business_partner_partner
+    tipo: string
+    comentario: "Número do parceiro de negócios"
+    pii: indireto
+    nulo: false
+  - nome: bank_details_id_bkvid
+    tipo: string
+    comentario: "ID dos dados bancários"
+    pii: nenhum
+    nulo: false
+  - nome: valid_from
+    tipo: timestamp
+    comentario: "Válido a partir de (timestamp)"
+    pii: nenhum
+    nulo: false
+  - nome: valid_to
+    tipo: timestamp
+    comentario: "Válido até (timestamp)"
+    pii: nenhum
+    nulo: true
+  - nome: bank_country_banks
+    tipo: string
+    comentario: "Chave do país do banco"
+    pii: nenhum
+    nulo: true
+  - nome: bank_key_bankl
+    tipo: string
+    comentario: "Chave do banco"
+    pii: nenhum
+    nulo: true
+  - nome: bank_acct_bankn
+    tipo: string
+    comentario: "Número da conta bancária"
+    pii: sensivel
+    nulo: true
+  - nome: bank_control_key_bkont
+    tipo: string
+    comentario: "Chave de controle bancário"
+    pii: nenhum
+    nulo: true
+  - nome: reference_details_bkref
+    tipo: string
+    comentario: "Referência dos dados bancários"
+    pii: nenhum
+    nulo: true
+  - nome: account_holder_koinh
+    tipo: string
+    comentario: "Nome do titular da conta bancária"
+    pii: direto
+    nulo: true
+  - nome: extern_bank_dtls_id_bkext
+    tipo: string
+    comentario: "ID externo dos dados bancários"
+    pii: nenhum
+    nulo: true
+  - nome: collection_authorization_xezer
+    tipo: string
+    comentario: "Indicador: autorização de débito automático"
+    pii: nenhum
+    nulo: true
+  - nome: account_name_accname
+    tipo: string
+    comentario: "Nome da conta bancária"
+    pii: direto
+    nulo: true
+  - nome: target_bank_details_move_bkvid
+    tipo: string
+    comentario: "ID dos dados bancários de destino (transferência)"
+    pii: nenhum
+    nulo: true
+  - nome: sensitivity_protect
+    tipo: string
+    comentario: "Sensibilidade dos dados bancários"
+    pii: nenhum
+    nulo: true
+  - nome: date_of_change_bk_move_date
+    tipo: date
+    comentario: "Data de alteração/transferência dos dados bancários"
+    pii: nenhum
+    nulo: true
+  - nome: iban_iban
+    tipo: string
+    comentario: "IBAN (Número Internacional de Conta Bancária)"
+    pii: sensivel
+    nulo: true
+  - nome: bank_guid_bank_guid
+    tipo: string
+    comentario: "GUID do banco"
+    pii: nenhum
+    nulo: true
+  - nome: bank_account_number_account_id
+    tipo: string
+    comentario: "Número da conta bancária (ID da conta)"
+    pii: sensivel
+    nulo: true
+  - nome: bank_account_check_digit_check_digit
+    tipo: string
+    comentario: "Dígito verificador da conta bancária"
+    pii: nenhum
+    nulo: true
+  - nome: bank_account_type_account_type
+    tipo: string
+    comentario: "Tipo de conta bancária"
+    pii: nenhum
+    nulo: true
+  - nome: dummy_function_in_length_1_bp_eew_but0bk
+    tipo: string
+    comentario: "Campo fictício de comprimento 1"
+    pii: nenhum
+    nulo: true
+  - nome: but0bk_recordstamp
+    tipo: string
+    comentario: "Recordstamp da tabela raw BUT0BK"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery"
+    pii: nenhum
+    nulo: true

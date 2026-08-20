@@ -1,0 +1,143 @@
+tabela: cost_elements
+camada: gold
+comentario: "Definições mestre de elementos de custo (CSKB/CSKU) com intervalos de validade, categorias, indicadores de planejamento e descrições multilíngues para suporte ao controle de custos e análise de lucratividade."
+entidade: obt
+ingestao: custom
+fontes: [silver.tka01, silver.tka02, silver.cskb, silver.csku]
+chave_primaria: [client_mandt, controlling_area_kokrs, cost_element_kstar, valid_to_datbi, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: controlling_area_kokrs
+    tipo: string
+    comentario: "Área de controlling (kokrs)"
+    pii: nenhum
+    nulo: false
+  - nome: cost_element_kstar
+    tipo: string
+    comentario: "Número do elemento de custo"
+    pii: nenhum
+    nulo: false
+  - nome: valid_to_datbi
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: chart_of_accounts_ktopl
+    tipo: string
+    comentario: "Plano de contas"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_datab
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: celem_category_katyp
+    tipo: string
+    comentario: "Categoria do elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: entered_on_ersda
+    tipo: date
+    comentario: "Data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_usnam
+    tipo: string
+    comentario: "Criado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: attribute_mix_eigen
+    tipo: string
+    comentario: "Combinação de atributos"
+    pii: nenhum
+    nulo: true
+  - nome: planning_access_plazu
+    tipo: string
+    comentario: "Acesso de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: planning_location_plaor
+    tipo: string
+    comentario: "Local de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: planning_user_plaus
+    tipo: string
+    comentario: "Usuário de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: cost_center_kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: order_aufnr
+    tipo: string
+    comentario: "Número da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: record_quantity_mgefl
+    tipo: string
+    comentario: "Registrar quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: internal_uom_msehi
+    tipo: string
+    comentario: "Unidade de medida interna"
+    pii: nenhum
+    nulo: true
+  - nome: deakt_deakt
+    tipo: string
+    comentario: "Indicador de desativação"
+    pii: nenhum
+    nulo: true
+  - nome: deletion_flag_loevm
+    tipo: string
+    comentario: "Flag de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: timestamp_last_changed_ts
+    tipo: timestamp
+    comentario: "Timestamp da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: recovery_indicator_recid
+    tipo: string
+    comentario: "Indicador de recuperação"
+    pii: nenhum
+    nulo: true
+  - nome: name_ktext
+    tipo: string
+    comentario: "Nome do elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: description_ltext
+    tipo: string
+    comentario: "Descrição longa do elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: cost_element_short_text_mctxt
+    tipo: string
+    comentario: "Texto resumido do elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,302 @@
+tabela: knc1
+camada: bronze
+comentario: "Dados mestre de cliente - movimentos por periodo (transaction figures)"
+ingestao: cdc
+fonte: sap.knc1
+chave_primaria: [mandt, kunnr, bukrs, gjahr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kunnr
+    tipo: string
+    comentario: "Codigo do cliente"
+    pii: indireto
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Empresa (company code)"
+    pii: nenhum
+    nulo: false
+  - nome: gjahr
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criacao do registro"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Nome do usuario que criou o registro (SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: umsav
+    tipo: decimal(23,2)
+    comentario: "Saldo transportado do periodo anterior"
+    pii: nenhum
+    nulo: true
+  - nome: um01s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 01"
+    pii: nenhum
+    nulo: true
+  - nome: um01h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 01"
+    pii: nenhum
+    nulo: true
+  - nome: um01u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 01"
+    pii: nenhum
+    nulo: true
+  - nome: um02s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 02"
+    pii: nenhum
+    nulo: true
+  - nome: um02h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 02"
+    pii: nenhum
+    nulo: true
+  - nome: um02u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 02"
+    pii: nenhum
+    nulo: true
+  - nome: um03s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 03"
+    pii: nenhum
+    nulo: true
+  - nome: um03h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 03"
+    pii: nenhum
+    nulo: true
+  - nome: um03u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 03"
+    pii: nenhum
+    nulo: true
+  - nome: um04s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 04"
+    pii: nenhum
+    nulo: true
+  - nome: um04h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 04"
+    pii: nenhum
+    nulo: true
+  - nome: um04u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 04"
+    pii: nenhum
+    nulo: true
+  - nome: um05s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 05"
+    pii: nenhum
+    nulo: true
+  - nome: um05h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 05"
+    pii: nenhum
+    nulo: true
+  - nome: um05u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 05"
+    pii: nenhum
+    nulo: true
+  - nome: um06s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 06"
+    pii: nenhum
+    nulo: true
+  - nome: um06h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 06"
+    pii: nenhum
+    nulo: true
+  - nome: um06u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 06"
+    pii: nenhum
+    nulo: true
+  - nome: um07s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 07"
+    pii: nenhum
+    nulo: true
+  - nome: um07h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 07"
+    pii: nenhum
+    nulo: true
+  - nome: um07u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 07"
+    pii: nenhum
+    nulo: true
+  - nome: um08s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 08"
+    pii: nenhum
+    nulo: true
+  - nome: um08h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 08"
+    pii: nenhum
+    nulo: true
+  - nome: um08u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 08"
+    pii: nenhum
+    nulo: true
+  - nome: um09s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 09"
+    pii: nenhum
+    nulo: true
+  - nome: um09h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 09"
+    pii: nenhum
+    nulo: true
+  - nome: um09u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 09"
+    pii: nenhum
+    nulo: true
+  - nome: um10s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 10"
+    pii: nenhum
+    nulo: true
+  - nome: um10h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 10"
+    pii: nenhum
+    nulo: true
+  - nome: um10u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 10"
+    pii: nenhum
+    nulo: true
+  - nome: um11s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 11"
+    pii: nenhum
+    nulo: true
+  - nome: um11h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 11"
+    pii: nenhum
+    nulo: true
+  - nome: um11u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 11"
+    pii: nenhum
+    nulo: true
+  - nome: um12s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 12"
+    pii: nenhum
+    nulo: true
+  - nome: um12h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 12"
+    pii: nenhum
+    nulo: true
+  - nome: um12u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 12"
+    pii: nenhum
+    nulo: true
+  - nome: um13s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 13 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um13h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 13 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um13u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 13 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um14s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 14 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um14h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 14 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um14u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 14 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um15s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 15 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um15h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 15 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um15u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 15 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um16s
+    tipo: decimal(23,2)
+    comentario: "Debito do periodo 16 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um16h
+    tipo: decimal(23,2)
+    comentario: "Credito do periodo 16 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: um16u
+    tipo: decimal(23,2)
+    comentario: "Faturamento do periodo 16 (periodo especial)"
+    pii: nenhum
+    nulo: true
+  - nome: babzg
+    tipo: decimal(23,2)
+    comentario: "Deducoes autorizadas"
+    pii: nenhum
+    nulo: true
+  - nome: uabzg
+    tipo: decimal(23,2)
+    comentario: "Deducoes nao autorizadas"
+    pii: nenhum
+    nulo: true
+  - nome: kzins
+    tipo: decimal(23,2)
+    comentario: "Numerador acumulado de calculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: kumag
+    tipo: decimal(23,2)
+    comentario: "Valor de compensacao"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,27 @@
+tabela: tka02
+camada: bronze
+comentario: "Atribuicao de empresas e areas de negocio a areas de controlling"
+ingestao: cdc
+fonte: sap.tka02
+chave_primaria: [mandt, bukrs, gsber]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Codigo da empresa (BUKRS)"
+    pii: nenhum
+    nulo: false
+  - nome: gsber
+    tipo: string
+    comentario: "Area de negocio (GSBER)"
+    pii: nenhum
+    nulo: false
+  - nome: kokrs
+    tipo: string
+    comentario: "Area de controlling (KOKRS)"
+    pii: nenhum
+    nulo: true

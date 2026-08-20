@@ -1,0 +1,107 @@
+tabela: cskb
+camada: bronze
+comentario: "Elementos de custo (dados dependentes da área de controle)"
+ingestao: cdc
+fonte: sap.cskb
+chave_primaria: [mandt, kokrs, kstar, datbi]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controle"
+    pii: nenhum
+    nulo: false
+  - nome: kstar
+    tipo: string
+    comentario: "Elemento de custo"
+    pii: nenhum
+    nulo: false
+  - nome: datbi
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: false
+  - nome: datab
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: katyp
+    tipo: string
+    comentario: "Categoria do elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: ersda
+    tipo: date
+    comentario: "Inserido em"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: eigen
+    tipo: string
+    comentario: "Combinação de atributos"
+    pii: nenhum
+    nulo: true
+  - nome: plazu
+    tipo: string
+    comentario: "Acesso de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: plaor
+    tipo: string
+    comentario: "Local de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: plaus
+    tipo: string
+    comentario: "Usuário de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: aufnr
+    tipo: string
+    comentario: "Ordem interna"
+    pii: nenhum
+    nulo: true
+  - nome: mgefl
+    tipo: string
+    comentario: "Registrar quantidade (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: msehi
+    tipo: string
+    comentario: "Unidade de medida interna"
+    pii: nenhum
+    nulo: true
+  - nome: deakt
+    tipo: string
+    comentario: "Indicador de desativação"
+    pii: nenhum
+    nulo: true
+  - nome: loevm
+    tipo: string
+    comentario: "Indicador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: last_changed_ts
+    tipo: timestamp
+    comentario: "Timestamp da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: recid
+    tipo: string
+    comentario: "Indicador de recuperação"
+    pii: nenhum
+    nulo: true

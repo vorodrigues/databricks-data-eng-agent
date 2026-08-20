@@ -1,0 +1,52 @@
+tabela: tcurf
+camada: bronze
+comentario: "Fatores de conversão de moeda"
+ingestao: cdc
+fonte: sap.tcurf
+chave_primaria: [mandt, kurst, fcurr, tcurr, gdatu]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: false
+  - nome: fcurr
+    tipo: string
+    comentario: "Moeda de origem"
+    pii: nenhum
+    nulo: false
+  - nome: tcurr
+    tipo: string
+    comentario: "Moeda de destino"
+    pii: nenhum
+    nulo: false
+  - nome: gdatu
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: false
+  - nome: ffact
+    tipo: decimal(23,2)
+    comentario: "Fator (origem)"
+    pii: nenhum
+    nulo: true
+  - nome: tfact
+    tipo: decimal(23,2)
+    comentario: "Fator (destino)"
+    pii: nenhum
+    nulo: true
+  - nome: abwct
+    tipo: string
+    comentario: "Tipo de taxa de câmbio alternativa"
+    pii: nenhum
+    nulo: true
+  - nome: abwga
+    tipo: date
+    comentario: "Válido a partir de para o tipo alternativo"
+    pii: nenhum
+    nulo: true

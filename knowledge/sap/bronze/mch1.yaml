@@ -1,0 +1,222 @@
+tabela: mch1
+camada: bronze
+comentario: "Lotes (gestao de lotes entre plantas)"
+ingestao: cdc
+fonte: sap.mch1
+chave_primaria: [mandt, matnr, charg]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Numero do material"
+    pii: nenhum
+    nulo: false
+  - nome: charg
+    tipo: string
+    comentario: "Numero do lote"
+    pii: nenhum
+    nulo: false
+  - nome: lvorm
+    tipo: string
+    comentario: "Indicador de exclusao do lote"
+    pii: nenhum
+    nulo: true
+  - nome: ersda
+    tipo: date
+    comentario: "Data de criacao do lote"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: laeda
+    tipo: date
+    comentario: "Data da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: verab
+    tipo: date
+    comentario: "Disponivel a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: vfdat
+    tipo: date
+    comentario: "Data de validade / melhor antes de (SLED/BBD)"
+    pii: nenhum
+    nulo: true
+  - nome: zusch
+    tipo: string
+    comentario: "Chave de status do lote"
+    pii: nenhum
+    nulo: true
+  - nome: zustd
+    tipo: string
+    comentario: "Lote com uso restrito"
+    pii: nenhum
+    nulo: true
+  - nome: zaedt
+    tipo: date
+    comentario: "Data da ultima alteracao de status"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Codigo do fornecedor (lifnr)"
+    pii: indireto
+    nulo: true
+  - nome: licha
+    tipo: string
+    comentario: "Lote do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: vlcha
+    tipo: string
+    comentario: "Lote de origem"
+    pii: nenhum
+    nulo: true
+  - nome: vlwrk
+    tipo: string
+    comentario: "Planta de origem"
+    pii: nenhum
+    nulo: true
+  - nome: vlmat
+    tipo: string
+    comentario: "Material de origem"
+    pii: nenhum
+    nulo: true
+  - nome: chame
+    tipo: string
+    comentario: "Unidade de emissao do lote"
+    pii: nenhum
+    nulo: true
+  - nome: lwedt
+    tipo: date
+    comentario: "Data da ultima entrada de mercadoria do lote"
+    pii: nenhum
+    nulo: true
+  - nome: fvdt1
+    tipo: date
+    comentario: "Data de validade adicional 1"
+    pii: nenhum
+    nulo: true
+  - nome: fvdt2
+    tipo: date
+    comentario: "Data de validade adicional 2"
+    pii: nenhum
+    nulo: true
+  - nome: fvdt3
+    tipo: date
+    comentario: "Data de validade adicional 3"
+    pii: nenhum
+    nulo: true
+  - nome: fvdt4
+    tipo: date
+    comentario: "Data de validade adicional 4"
+    pii: nenhum
+    nulo: true
+  - nome: fvdt5
+    tipo: date
+    comentario: "Data de validade adicional 5"
+    pii: nenhum
+    nulo: true
+  - nome: fvdt6
+    tipo: date
+    comentario: "Data de validade adicional 6"
+    pii: nenhum
+    nulo: true
+  - nome: herkl
+    tipo: string
+    comentario: "Pais de origem do lote"
+    pii: nenhum
+    nulo: true
+  - nome: herkr
+    tipo: string
+    comentario: "Regiao de origem do lote"
+    pii: nenhum
+    nulo: true
+  - nome: mtver
+    tipo: string
+    comentario: "Grupo de exportacao/importacao"
+    pii: nenhum
+    nulo: true
+  - nome: qndat
+    tipo: date
+    comentario: "Data da proxima inspecao"
+    pii: nenhum
+    nulo: true
+  - nome: hsdat
+    tipo: date
+    comentario: "Data de fabricacao"
+    pii: nenhum
+    nulo: true
+  - nome: cuobj_bm
+    tipo: string
+    comentario: "Numero interno do objeto de classificacao do lote"
+    pii: nenhum
+    nulo: true
+  - nome: deact_bm
+    tipo: string
+    comentario: "Lote nao mais ativo"
+    pii: nenhum
+    nulo: true
+  - nome: batch_type
+    tipo: string
+    comentario: "Tipo do lote"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_scat
+    tipo: string
+    comentario: "Segmento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: ersda_tmstp
+    tipo: timestamp
+    comentario: "Timestamp de criacao do lote"
+    pii: nenhum
+    nulo: true
+  - nome: ersda_tz_sys
+    tipo: string
+    comentario: "Fuso horario do sistema na criacao"
+    pii: nenhum
+    nulo: true
+  - nome: ersda_tz_usr
+    tipo: string
+    comentario: "Fuso horario do usuario na criacao"
+    pii: nenhum
+    nulo: true
+  - nome: zfdat
+    tipo: date
+    comentario: "Data de certificacao do lote"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_season_year
+    tipo: string
+    comentario: "Ano da temporada (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_season
+    tipo: string
+    comentario: "Temporada (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_collection
+    tipo: string
+    comentario: "Colecao (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_theme
+    tipo: string
+    comentario: "Tema (moda)"
+    pii: nenhum
+    nulo: true

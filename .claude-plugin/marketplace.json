@@ -1,0 +1,26 @@
+{
+  "name": "databricks-data-eng-agent",
+  "owner": {
+    "name": "Victor Rodrigues"
+  },
+  "metadata": {
+    "description": "Marketplace do plugin data-eng-agent: spec-driven development de pipelines de engenharia de dados no Databricks."
+  },
+  "plugins": [
+    {
+      "name": "data-eng-agent",
+      "source": "./",
+      "description": "Spec-driven development para pipelines de engenharia de dados no Databricks: estado local declarativo (YAML) validado deterministicamente contra o Unity Catalog, ciclo SPEC -> PLAN -> RUN com subagentes GENERATOR/EVALUATOR, KB de tabelas SAP/data products e templates deterministicos (CDC, SCD Tipo 1, Metric View, Genie, Data Classification, Quality Monitor).",
+      "keywords": [
+        "databricks",
+        "data-engineering",
+        "spec-driven",
+        "medallion",
+        "unity-catalog",
+        "orchestration",
+        "cdc",
+        "scd"
+      ]
+    }
+  ]
+}

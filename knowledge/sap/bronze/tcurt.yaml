@@ -1,0 +1,32 @@
+tabela: tcurt
+camada: bronze
+comentario: "Nomes de codigos de moeda do SAP (dependente de idioma)"
+ingestao: cdc
+fonte: sap.tcurt
+chave_primaria: [mandt, spras, waers]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: waers
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: false
+  - nome: ltext
+    tipo: string
+    comentario: "Descricao longa da moeda"
+    pii: nenhum
+    nulo: true
+  - nome: ktext
+    tipo: string
+    comentario: "Descricao abreviada da moeda"
+    pii: nenhum
+    nulo: true

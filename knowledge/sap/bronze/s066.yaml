@@ -1,0 +1,77 @@
+tabela: s066
+camada: bronze
+comentario: "Pedidos abertos: gestão de crédito"
+ingestao: cdc
+fonte: sap.s066
+chave_primaria: [mandt, ssour, vrsio, kkber, knkli]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: ssour
+    tipo: string
+    comentario: "Origem da estatística"
+    pii: nenhum
+    nulo: false
+  - nome: vrsio
+    tipo: string
+    comentario: "Versão"
+    pii: nenhum
+    nulo: false
+  - nome: kkber
+    tipo: string
+    comentario: "Área de controle de crédito"
+    pii: nenhum
+    nulo: false
+  - nome: knkli
+    tipo: string
+    comentario: "Conta de crédito"
+    pii: indireto
+    nulo: false
+  - nome: spmon
+    tipo: string
+    comentario: "Mês de referência estatística"
+    pii: nenhum
+    nulo: true
+  - nome: sptag
+    tipo: string
+    comentario: "Data de referência estatística"
+    pii: nenhum
+    nulo: true
+  - nome: spwoc
+    tipo: string
+    comentario: "Semana de referência estatística"
+    pii: nenhum
+    nulo: true
+  - nome: spbup
+    tipo: string
+    comentario: "Período de referência estatística"
+    pii: nenhum
+    nulo: true
+  - nome: periv
+    tipo: string
+    comentario: "Variante de exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: vwdat
+    tipo: string
+    comentario: "Ponteiro para dados administrativos"
+    pii: nenhum
+    nulo: true
+  - nome: cmwae
+    tipo: string
+    comentario: "Moeda de gestão de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: oeikw
+    tipo: decimal(23,2)
+    comentario: "Valor de crédito dos pedidos abertos"
+    pii: nenhum
+    nulo: true
+  - nome: aoeiw
+    tipo: decimal(23,2)
+    comentario: "Garantia de pedidos abertos"
+    pii: nenhum
+    nulo: true

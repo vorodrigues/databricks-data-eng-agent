@@ -1,0 +1,717 @@
+tabela: lfa1
+camada: bronze
+comentario: "Mestre de fornecedores (secao geral)"
+ingestao: cdc
+fonte: sap.lfa1
+chave_primaria: [mandt, lifnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: lifnr
+    tipo: string
+    comentario: "Codigo do fornecedor"
+    pii: indireto
+    nulo: false
+  - nome: land1
+    tipo: string
+    comentario: "Pais"
+    pii: nenhum
+    nulo: true
+  - nome: name1
+    tipo: string
+    comentario: "Nome 1 do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: name2
+    tipo: string
+    comentario: "Nome 2"
+    pii: direto
+    nulo: true
+  - nome: name3
+    tipo: string
+    comentario: "Nome 3"
+    pii: direto
+    nulo: true
+  - nome: name4
+    tipo: string
+    comentario: "Nome 4"
+    pii: direto
+    nulo: true
+  - nome: ort01
+    tipo: string
+    comentario: "Cidade"
+    pii: indireto
+    nulo: true
+  - nome: ort02
+    tipo: string
+    comentario: "Bairro/distrito"
+    pii: indireto
+    nulo: true
+  - nome: pfach
+    tipo: string
+    comentario: "Caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: pstl2
+    tipo: string
+    comentario: "CEP da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: pstlz
+    tipo: string
+    comentario: "CEP"
+    pii: indireto
+    nulo: true
+  - nome: regio
+    tipo: string
+    comentario: "Regiao (estado/provincia)"
+    pii: indireto
+    nulo: true
+  - nome: sortl
+    tipo: string
+    comentario: "Criterio de pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: stras
+    tipo: string
+    comentario: "Rua e numero"
+    pii: direto
+    nulo: true
+  - nome: adrnr
+    tipo: string
+    comentario: "Numero do endereco"
+    pii: nenhum
+    nulo: true
+  - nome: mcod1
+    tipo: string
+    comentario: "Nome (campo de busca 1)"
+    pii: direto
+    nulo: true
+  - nome: mcod2
+    tipo: string
+    comentario: "Nome 2 (campo de busca 2)"
+    pii: direto
+    nulo: true
+  - nome: mcod3
+    tipo: string
+    comentario: "Cidade (campo de busca 3)"
+    pii: indireto
+    nulo: true
+  - nome: anred
+    tipo: string
+    comentario: "Titulo/tratamento"
+    pii: nenhum
+    nulo: true
+  - nome: bahns
+    tipo: string
+    comentario: "Estacao ferroviaria"
+    pii: nenhum
+    nulo: true
+  - nome: bbbnr
+    tipo: string
+    comentario: "Numero de localizacao internacional 1"
+    pii: nenhum
+    nulo: true
+  - nome: bbsnr
+    tipo: string
+    comentario: "Numero de localizacao internacional 2"
+    pii: nenhum
+    nulo: true
+  - nome: begru
+    tipo: string
+    comentario: "Grupo de autorizacao"
+    pii: nenhum
+    nulo: true
+  - nome: brsch
+    tipo: string
+    comentario: "Setor/ramo de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: bubkz
+    tipo: string
+    comentario: "Digito verificador"
+    pii: nenhum
+    nulo: true
+  - nome: datlt
+    tipo: string
+    comentario: "Linha de dados"
+    pii: nenhum
+    nulo: true
+  - nome: dtams
+    tipo: string
+    comentario: "Indicador DME"
+    pii: nenhum
+    nulo: true
+  - nome: dtaws
+    tipo: string
+    comentario: "Chave de instrucao"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criacao do registro"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por (usuario SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: esrnr
+    tipo: string
+    comentario: "Numero PBC/ISR"
+    pii: nenhum
+    nulo: true
+  - nome: konzs
+    tipo: string
+    comentario: "Chave do grupo corporativo"
+    pii: nenhum
+    nulo: true
+  - nome: ktokk
+    tipo: string
+    comentario: "Grupo de contas do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: kunnr
+    tipo: string
+    comentario: "Codigo do cliente correspondente"
+    pii: indireto
+    nulo: true
+  - nome: lnrza
+    tipo: string
+    comentario: "Beneficiario alternativo"
+    pii: nenhum
+    nulo: true
+  - nome: loevm
+    tipo: string
+    comentario: "Indicador de exclusao central"
+    pii: nenhum
+    nulo: true
+  - nome: sperr
+    tipo: string
+    comentario: "Bloqueio de lancamento central"
+    pii: nenhum
+    nulo: true
+  - nome: sperm
+    tipo: string
+    comentario: "Bloqueio central de compras"
+    pii: nenhum
+    nulo: true
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: stcd1
+    tipo: string
+    comentario: "Numero fiscal 1 (ex.: CNPJ/CPF)"
+    pii: sensivel
+    nulo: true
+  - nome: stcd2
+    tipo: string
+    comentario: "Numero fiscal 2"
+    pii: sensivel
+    nulo: true
+  - nome: stkza
+    tipo: string
+    comentario: "Indicador de imposto de nivelamento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: stkzu
+    tipo: string
+    comentario: "Sujeito a IVA"
+    pii: nenhum
+    nulo: true
+  - nome: telbx
+    tipo: string
+    comentario: "Numero de telebox"
+    pii: direto
+    nulo: true
+  - nome: telf1
+    tipo: string
+    comentario: "Telefone 1"
+    pii: direto
+    nulo: true
+  - nome: telf2
+    tipo: string
+    comentario: "Telefone 2"
+    pii: direto
+    nulo: true
+  - nome: telfx
+    tipo: string
+    comentario: "Numero de fax"
+    pii: direto
+    nulo: true
+  - nome: teltx
+    tipo: string
+    comentario: "Numero de teletex"
+    pii: direto
+    nulo: true
+  - nome: telx1
+    tipo: string
+    comentario: "Numero de telex"
+    pii: direto
+    nulo: true
+  - nome: xcpdk
+    tipo: string
+    comentario: "Conta de pagamento unico"
+    pii: nenhum
+    nulo: true
+  - nome: xzemp
+    tipo: string
+    comentario: "Beneficiario no documento"
+    pii: nenhum
+    nulo: true
+  - nome: vbund
+    tipo: string
+    comentario: "Parceiro comercial intercompany"
+    pii: nenhum
+    nulo: true
+  - nome: fiskn
+    tipo: string
+    comentario: "Endereco fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: stceg
+    tipo: string
+    comentario: "Numero de registro de IVA"
+    pii: sensivel
+    nulo: true
+  - nome: stkzn
+    tipo: string
+    comentario: "Indicador de pessoa fisica"
+    pii: nenhum
+    nulo: true
+  - nome: sperq
+    tipo: string
+    comentario: "Funcao de bloqueio"
+    pii: nenhum
+    nulo: true
+  - nome: gbort
+    tipo: string
+    comentario: "Local de nascimento"
+    pii: sensivel
+    nulo: true
+  - nome: gbdat
+    tipo: date
+    comentario: "Data de nascimento"
+    pii: sensivel
+    nulo: true
+  - nome: sexkz
+    tipo: string
+    comentario: "Sexo"
+    pii: sensivel
+    nulo: true
+  - nome: kraus
+    tipo: string
+    comentario: "Numero de informacao de credito"
+    pii: nenhum
+    nulo: true
+  - nome: revdb
+    tipo: date
+    comentario: "Data da ultima auditoria externa"
+    pii: nenhum
+    nulo: true
+  - nome: qssys
+    tipo: string
+    comentario: "Sistema de GQ atual"
+    pii: nenhum
+    nulo: true
+  - nome: ktock
+    tipo: string
+    comentario: "Grupo de contas de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: pfort
+    tipo: string
+    comentario: "Cidade da caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: true
+  - nome: ltsna
+    tipo: string
+    comentario: "Sub-segmento de fornecedor relevante"
+    pii: nenhum
+    nulo: true
+  - nome: werkr
+    tipo: string
+    comentario: "Nivel de centro relevante"
+    pii: nenhum
+    nulo: true
+  - nome: plkal
+    tipo: string
+    comentario: "Calendario de fabrica"
+    pii: nenhum
+    nulo: true
+  - nome: duefl
+    tipo: string
+    comentario: "Status de transferencia de dados para proxima versao"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Jurisdicao fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: sperz
+    tipo: string
+    comentario: "Bloqueio de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: scacd
+    tipo: string
+    comentario: "Codigo SCAC"
+    pii: nenhum
+    nulo: true
+  - nome: sfrgr
+    tipo: string
+    comentario: "Grupo de frete da transportadora"
+    pii: nenhum
+    nulo: true
+  - nome: lzone
+    tipo: string
+    comentario: "Zona de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: xlfza
+    tipo: string
+    comentario: "Contas para beneficiario alternativo"
+    pii: nenhum
+    nulo: true
+  - nome: dlgrp
+    tipo: string
+    comentario: "Grupo de processamento do agente de servico"
+    pii: nenhum
+    nulo: true
+  - nome: fityp
+    tipo: string
+    comentario: "Tipo de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: stcdt
+    tipo: string
+    comentario: "Tipo do numero fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: regss
+    tipo: string
+    comentario: "Previdencia social"
+    pii: sensivel
+    nulo: true
+  - nome: actss
+    tipo: string
+    comentario: "Codigo de previdencia social"
+    pii: sensivel
+    nulo: true
+  - nome: stcd3
+    tipo: string
+    comentario: "Numero fiscal 3"
+    pii: sensivel
+    nulo: true
+  - nome: stcd4
+    tipo: string
+    comentario: "Numero fiscal 4"
+    pii: sensivel
+    nulo: true
+  - nome: stcd5
+    tipo: string
+    comentario: "Numero fiscal 5"
+    pii: sensivel
+    nulo: true
+  - nome: stcd6
+    tipo: string
+    comentario: "Numero fiscal 6"
+    pii: sensivel
+    nulo: true
+  - nome: ipisp
+    tipo: string
+    comentario: "Divisao do imposto"
+    pii: nenhum
+    nulo: true
+  - nome: taxbs
+    tipo: string
+    comentario: "Base de calculo do imposto"
+    pii: nenhum
+    nulo: true
+  - nome: profs
+    tipo: string
+    comentario: "Profissao"
+    pii: nenhum
+    nulo: true
+  - nome: stgdl
+    tipo: string
+    comentario: "Grupo estatistico do agente de servico"
+    pii: nenhum
+    nulo: true
+  - nome: emnfr
+    tipo: string
+    comentario: "Fabricante externo"
+    pii: nenhum
+    nulo: true
+  - nome: lfurl
+    tipo: string
+    comentario: "URL do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: j_1kfrepre
+    tipo: string
+    comentario: "Nome do representante legal"
+    pii: direto
+    nulo: true
+  - nome: j_1kftbus
+    tipo: string
+    comentario: "Tipo de negocio"
+    pii: nenhum
+    nulo: true
+  - nome: j_1kftind
+    tipo: string
+    comentario: "Tipo de industria"
+    pii: nenhum
+    nulo: true
+  - nome: confs
+    tipo: string
+    comentario: "Status de confirmacao"
+    pii: nenhum
+    nulo: true
+  - nome: updat
+    tipo: date
+    comentario: "Data de confirmacao"
+    pii: nenhum
+    nulo: true
+  - nome: uptim
+    tipo: string
+    comentario: "Hora de confirmacao"
+    pii: nenhum
+    nulo: true
+  - nome: nodel
+    tipo: string
+    comentario: "Bloqueio de exclusao central"
+    pii: nenhum
+    nulo: true
+  - nome: qssysdat
+    tipo: date
+    comentario: "Validade do sistema de GQ"
+    pii: nenhum
+    nulo: true
+  - nome: podkzb
+    tipo: string
+    comentario: "Relevante para POD"
+    pii: nenhum
+    nulo: true
+  - nome: fisku
+    tipo: string
+    comentario: "Reparticao fiscal responsavel"
+    pii: nenhum
+    nulo: true
+  - nome: stenr
+    tipo: string
+    comentario: "Numero fiscal na reparticao responsavel"
+    pii: sensivel
+    nulo: true
+  - nome: carrier_conf
+    tipo: string
+    comentario: "Confirmacao da transportadora esperada"
+    pii: nenhum
+    nulo: true
+  - nome: min_comp
+    tipo: string
+    comentario: "Microempresa"
+    pii: nenhum
+    nulo: true
+  - nome: term_li
+    tipo: string
+    comentario: "Termos de responsabilidade"
+    pii: nenhum
+    nulo: true
+  - nome: crc_num
+    tipo: string
+    comentario: "Numero CRC"
+    pii: sensivel
+    nulo: true
+  - nome: cvp_xblck
+    tipo: string
+    comentario: "Indicador de finalidade comercial concluida"
+    pii: nenhum
+    nulo: true
+  - nome: rg
+    tipo: string
+    comentario: "Numero do RG"
+    pii: sensivel
+    nulo: true
+  - nome: exp
+    tipo: string
+    comentario: "Orgao emissor do documento"
+    pii: nenhum
+    nulo: true
+  - nome: uf
+    tipo: string
+    comentario: "Unidade federativa"
+    pii: nenhum
+    nulo: true
+  - nome: rgdate
+    tipo: date
+    comentario: "Data de emissao do RG"
+    pii: sensivel
+    nulo: true
+  - nome: ric
+    tipo: string
+    comentario: "Numero do RIC"
+    pii: sensivel
+    nulo: true
+  - nome: rne
+    tipo: string
+    comentario: "Registro nacional de estrangeiro"
+    pii: sensivel
+    nulo: true
+  - nome: rnedate
+    tipo: date
+    comentario: "Data de emissao do RNE"
+    pii: sensivel
+    nulo: true
+  - nome: cnae
+    tipo: string
+    comentario: "Codigo CNAE"
+    pii: sensivel
+    nulo: true
+  - nome: legalnat
+    tipo: string
+    comentario: "Natureza juridica"
+    pii: nenhum
+    nulo: true
+  - nome: crtn
+    tipo: string
+    comentario: "Numero CRT"
+    pii: sensivel
+    nulo: true
+  - nome: icmstaxpay
+    tipo: string
+    comentario: "Contribuinte do ICMS"
+    pii: nenhum
+    nulo: true
+  - nome: indtyp
+    tipo: string
+    comentario: "Tipo principal de industria"
+    pii: nenhum
+    nulo: true
+  - nome: tdt
+    tipo: string
+    comentario: "Tipo de declaracao fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: comsize
+    tipo: string
+    comentario: "Porte da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: decregpc
+    tipo: string
+    comentario: "Regime de apuracao PIS/COFINS"
+    pii: nenhum
+    nulo: true
+  - nome: j_sc_capital
+    tipo: decimal(23,2)
+    comentario: "Capital social"
+    pii: nenhum
+    nulo: true
+  - nome: j_sc_currency
+    tipo: string
+    comentario: "Moeda do capital social"
+    pii: nenhum
+    nulo: true
+  - nome: alc
+    tipo: string
+    comentario: "Codigo de localizacao da agencia"
+    pii: nenhum
+    nulo: true
+  - nome: pmt_office
+    tipo: string
+    comentario: "Escritorio de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: ppa_relevant
+    tipo: string
+    comentario: "Relevante para PPA"
+    pii: nenhum
+    nulo: true
+  - nome: sam_ue_id
+    tipo: string
+    comentario: "Identificador unico da entidade SAM"
+    pii: nenhum
+    nulo: true
+  - nome: sam_eft_ind
+    tipo: string
+    comentario: "Indicador de transferencia eletronica SAM"
+    pii: nenhum
+    nulo: true
+  - nome: psofg
+    tipo: string
+    comentario: "Grupo de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: psois
+    tipo: string
+    comentario: "Procedimento de preparacao SLA"
+    pii: nenhum
+    nulo: true
+  - nome: pson1
+    tipo: string
+    comentario: "Nome do contato 1"
+    pii: direto
+    nulo: true
+  - nome: pson2
+    tipo: string
+    comentario: "Nome do contato 2"
+    pii: direto
+    nulo: true
+  - nome: pson3
+    tipo: string
+    comentario: "Nome do contato 3"
+    pii: direto
+    nulo: true
+  - nome: psovn
+    tipo: string
+    comentario: "Primeiro nome do contato"
+    pii: direto
+    nulo: true
+  - nome: psotl
+    tipo: string
+    comentario: "Titulo do contato"
+    pii: nenhum
+    nulo: true
+  - nome: psohs
+    tipo: string
+    comentario: "Numero do immovel do contato"
+    pii: direto
+    nulo: true
+  - nome: psost
+    tipo: string
+    comentario: "Rua do contato"
+    pii: direto
+    nulo: true
+  - nome: transport_chain
+    tipo: string
+    comentario: "Cadeia de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: staging_time
+    tipo: string
+    comentario: "Tempo de preparacao"
+    pii: nenhum
+    nulo: true
+  - nome: scheduling_type
+    tipo: string
+    comentario: "Procedimento de programacao"
+    pii: nenhum
+    nulo: true
+  - nome: submi_relevant
+    tipo: string
+    comentario: "Relevante para numeracao coletiva (CD)"
+    pii: nenhum
+    nulo: true

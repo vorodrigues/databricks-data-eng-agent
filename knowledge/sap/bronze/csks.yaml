@@ -1,0 +1,382 @@
+tabela: csks
+camada: bronze
+comentario: "Registro mestre de centro de custo"
+ingestao: cdc
+fonte: sap.csks
+chave_primaria: [mandt, kokrs, kostl, datbi]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controle (controlling area)"
+    pii: nenhum
+    nulo: false
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: false
+  - nome: datbi
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: false
+  - nome: datab
+    tipo: date
+    comentario: "Válido de"
+    pii: nenhum
+    nulo: true
+  - nome: bkzkp
+    tipo: string
+    comentario: "Custos primários reais (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: pkzkp
+    tipo: string
+    comentario: "Custos primários planejados (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa (bukrs)"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Área de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: kosar
+    tipo: string
+    comentario: "Categoria do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: verak
+    tipo: string
+    comentario: "Responsável pelo centro de custo"
+    pii: direto
+    nulo: true
+  - nome: verak_user
+    tipo: string
+    comentario: "Usuário responsável pelo centro de custo"
+    pii: indireto
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm
+    tipo: string
+    comentario: "Esquema de custeio"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro (planta)"
+    pii: nenhum
+    nulo: true
+  - nome: logsystem
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: ersda
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: bkzks
+    tipo: string
+    comentario: "Custos secundários reais (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: bkzer
+    tipo: string
+    comentario: "Receitas reais (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: bkzob
+    tipo: string
+    comentario: "Atualização de compromisso (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: pkzks
+    tipo: string
+    comentario: "Custos secundários planejados (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: pkzer
+    tipo: string
+    comentario: "Receitas planejadas (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: vmeth
+    tipo: string
+    comentario: "Métodos de alocação"
+    pii: nenhum
+    nulo: true
+  - nome: mgefl
+    tipo: string
+    comentario: "Registrar quantidade (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: abtei
+    tipo: string
+    comentario: "Departamento"
+    pii: nenhum
+    nulo: true
+  - nome: nkost
+    tipo: string
+    comentario: "Centro de custo subsequente"
+    pii: nenhum
+    nulo: true
+  - nome: kvewe
+    tipo: string
+    comentario: "Uso"
+    pii: nenhum
+    nulo: true
+  - nome: kappl
+    tipo: string
+    comentario: "Aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: koszschl
+    tipo: string
+    comentario: "Chave de overhead"
+    pii: nenhum
+    nulo: true
+  - nome: land1
+    tipo: string
+    comentario: "Chave de país"
+    pii: nenhum
+    nulo: true
+  - nome: anred
+    tipo: string
+    comentario: "Tratamento"
+    pii: nenhum
+    nulo: true
+  - nome: name1
+    tipo: string
+    comentario: "Nome 1"
+    pii: nenhum
+    nulo: true
+  - nome: name2
+    tipo: string
+    comentario: "Nome 2"
+    pii: nenhum
+    nulo: true
+  - nome: name3
+    tipo: string
+    comentario: "Nome 3"
+    pii: nenhum
+    nulo: true
+  - nome: name4
+    tipo: string
+    comentario: "Nome 4"
+    pii: nenhum
+    nulo: true
+  - nome: ort01
+    tipo: string
+    comentario: "Cidade"
+    pii: nenhum
+    nulo: true
+  - nome: ort02
+    tipo: string
+    comentario: "Distrito"
+    pii: nenhum
+    nulo: true
+  - nome: stras
+    tipo: string
+    comentario: "Rua"
+    pii: nenhum
+    nulo: true
+  - nome: pfach
+    tipo: string
+    comentario: "Caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: pstlz
+    tipo: string
+    comentario: "CEP"
+    pii: nenhum
+    nulo: true
+  - nome: pstl2
+    tipo: string
+    comentario: "CEP da caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: regio
+    tipo: string
+    comentario: "Região"
+    pii: nenhum
+    nulo: true
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: telbx
+    tipo: string
+    comentario: "Número de telex-box"
+    pii: nenhum
+    nulo: true
+  - nome: telf1
+    tipo: string
+    comentario: "Telefone 1"
+    pii: direto
+    nulo: true
+  - nome: telf2
+    tipo: string
+    comentario: "Telefone 2"
+    pii: direto
+    nulo: true
+  - nome: telfx
+    tipo: string
+    comentario: "Número de fax"
+    pii: nenhum
+    nulo: true
+  - nome: teltx
+    tipo: string
+    comentario: "Número de teletex"
+    pii: nenhum
+    nulo: true
+  - nome: telx1
+    tipo: string
+    comentario: "Número de telex"
+    pii: nenhum
+    nulo: true
+  - nome: datlt
+    tipo: string
+    comentario: "Linha de dados"
+    pii: nenhum
+    nulo: true
+  - nome: drnam
+    tipo: string
+    comentario: "Destino de impressão"
+    pii: nenhum
+    nulo: true
+  - nome: khinr
+    tipo: string
+    comentario: "Área de hierarquia"
+    pii: nenhum
+    nulo: true
+  - nome: cckey
+    tipo: string
+    comentario: "Chave do coletor de custos"
+    pii: nenhum
+    nulo: true
+  - nome: kompl
+    tipo: string
+    comentario: "Completo (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: stakz
+    tipo: string
+    comentario: "Indicador estatístico"
+    pii: nenhum
+    nulo: true
+  - nome: objnr
+    tipo: string
+    comentario: "Número do objeto CO"
+    pii: nenhum
+    nulo: true
+  - nome: funkt
+    tipo: string
+    comentario: "Função"
+    pii: nenhum
+    nulo: true
+  - nome: afunk
+    tipo: string
+    comentario: "Função alternativa"
+    pii: nenhum
+    nulo: true
+  - nome: cpi_templ
+    tipo: string
+    comentario: "Template de planejamento independente de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: cpd_templ
+    tipo: string
+    comentario: "Template de planejamento dependente de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: func_area
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: sci_templ
+    tipo: string
+    comentario: "Template de alocação independente de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: scd_templ
+    tipo: string
+    comentario: "Template de alocação dependente de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: ski_templ
+    tipo: string
+    comentario: "Template: figura-chave estatística real independente de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: skd_templ
+    tipo: string
+    comentario: "Template: figura-chave estatística real dependente de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: vname
+    tipo: string
+    comentario: "Joint venture"
+    pii: nenhum
+    nulo: true
+  - nome: recid
+    tipo: string
+    comentario: "Indicador de recuperação"
+    pii: nenhum
+    nulo: true
+  - nome: etype
+    tipo: string
+    comentario: "Tipo de participação"
+    pii: nenhum
+    nulo: true
+  - nome: jv_otype
+    tipo: string
+    comentario: "Tipo de objeto de joint venture"
+    pii: nenhum
+    nulo: true
+  - nome: jv_jibcl
+    tipo: string
+    comentario: "Classe JIB/JIBE"
+    pii: nenhum
+    nulo: true
+  - nome: jv_jibsa
+    tipo: string
+    comentario: "Subclasse A JIB/JIBE"
+    pii: nenhum
+    nulo: true
+  - nome: ferc_ind
+    tipo: string
+    comentario: "Indicador regulatório"
+    pii: nenhum
+    nulo: true

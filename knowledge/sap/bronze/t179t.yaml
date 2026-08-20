@@ -1,0 +1,27 @@
+tabela: t179t
+camada: bronze
+comentario: "Textos das hierarquias de produtos de materiais (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t179t
+chave_primaria: [mandt, spras, prodh]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: prodh
+    tipo: string
+    comentario: "Hierarquia de produto"
+    pii: nenhum
+    nulo: false
+  - nome: vtext
+    tipo: string
+    comentario: "Descricao da hierarquia de produto"
+    pii: nenhum
+    nulo: true

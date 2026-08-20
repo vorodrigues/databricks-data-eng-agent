@@ -1,0 +1,443 @@
+tabela: sales_document_schedule_lines
+camada: gold
+comentario: "Dados de linhas de programação de itens de documentos de vendas SAP (VBEP), detalhando quantidades confirmadas, solicitadas e entregues."
+entidade: obt
+ingestao: custom
+fontes: [silver.vbak, silver.vbap, silver.vbep, silver.vbpa, silver.tcurx, silver.vbfa, silver.vbuk, silver.vbup, silver.lips]
+chave_primaria: [client_mandt, sales_document_vbeln, sales_document_item_posnr, schedule_line_number_etenr]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: sales_document_vbeln
+    tipo: string
+    comentario: "Número do documento de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: sales_document_item_posnr
+    tipo: string
+    comentario: "Item do documento de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: schedule_line_number_etenr
+    tipo: string
+    comentario: "Número da linha de programação"
+    pii: nenhum
+    nulo: false
+  - nome: schedule_line_category_ettyp
+    tipo: string
+    comentario: "Categoria da linha de programação"
+    pii: nenhum
+    nulo: true
+  - nome: item_relevantfor_delivery_lfrel
+    tipo: string
+    comentario: "Indicador: item relevante para entrega"
+    pii: nenhum
+    nulo: true
+  - nome: schedule_line_date_edatu
+    tipo: date
+    comentario: "Data da linha de programação"
+    pii: nenhum
+    nulo: true
+  - nome: arrival_time_ezeit
+    tipo: string
+    comentario: "Hora de chegada"
+    pii: nenhum
+    nulo: true
+  - nome: order_quantity_in_sales_units_wmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade pedida nas unidades de venda"
+    pii: nenhum
+    nulo: true
+  - nome: confirmed_quantity_bmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade confirmada"
+    pii: nenhum
+    nulo: true
+  - nome: sales_unit_vrkme
+    tipo: string
+    comentario: "Unidade de venda"
+    pii: nenhum
+    nulo: true
+  - nome: required_quantity_for_mat_management_in_stockkeeping_units_lmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade necessária para gestão de materiais nas unidades de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_of_measure_meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: requirement_date_bddat
+    tipo: date
+    comentario: "Data de necessidade (prazo para suprimento)"
+    pii: nenhum
+    nulo: true
+  - nome: requirement_type_bdart
+    tipo: string
+    comentario: "Tipo de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: planning_type_plart
+    tipo: string
+    comentario: "Tipo de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: business_document_number_vbele
+    tipo: string
+    comentario: "Número do documento de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: business_item_number_posne
+    tipo: string
+    comentario: "Item do documento de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: schedule_line_etene
+    tipo: string
+    comentario: "Linha de programação do documento de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: earliest_possible_reservation_date_rsdat
+    tipo: date
+    comentario: "Data mais cedo possível para reserva"
+    pii: nenhum
+    nulo: true
+  - nome: maintenance_request_idnnr
+    tipo: string
+    comentario: "Solicitação de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: purchase_requisition_number_banfn
+    tipo: string
+    comentario: "Número da solicitação de compra"
+    pii: nenhum
+    nulo: true
+  - nome: order_type_bsart
+    tipo: string
+    comentario: "Tipo de pedido (compras)"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_document_category_bstyp
+    tipo: string
+    comentario: "Categoria do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: confirmation_status_of_schedule_line_wepos
+    tipo: string
+    comentario: "Status de confirmação da linha de programação"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_receipt_indicator_repos
+    tipo: string
+    comentario: "Indicador de recebimento de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: return_date_for_returnable_packaging_lrgdt
+    tipo: date
+    comentario: "Data de devolução de embalagem retornável"
+    pii: nenhum
+    nulo: true
+  - nome: date_type_prgrs
+    tipo: string
+    comentario: "Tipo de data (dia, semana, mês ou intervalo)"
+    pii: nenhum
+    nulo: true
+  - nome: transportation_planning_date_tddat
+    tipo: date
+    comentario: "Data de planejamento de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: material_availability_date_mbdat
+    tipo: date
+    comentario: "Data de disponibilidade/preparação do material"
+    pii: nenhum
+    nulo: true
+  - nome: loading_date_lddat
+    tipo: date
+    comentario: "Data de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: goods_issue_date_wadat
+    tipo: date
+    comentario: "Data de saída de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: corrected_quantity_in_sales_unit_cmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade corrigida na unidade de venda"
+    pii: nenhum
+    nulo: true
+  - nome: schedule_line_blocked_for_delivery_lifsp
+    tipo: string
+    comentario: "Linha de programação bloqueada para entrega"
+    pii: nenhum
+    nulo: true
+  - nome: group_definition_of_structure_data_grstr
+    tipo: string
+    comentario: "Definição de grupo dos dados de estrutura"
+    pii: nenhum
+    nulo: true
+  - nome: release_type_abart
+    tipo: string
+    comentario: "Tipo de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: forecast_delivery_schedule_number_abruf
+    tipo: string
+    comentario: "Número do programa de entrega de previsão"
+    pii: nenhum
+    nulo: true
+  - nome: committed_quantity_roms1
+    tipo: decimal(23,2)
+    comentario: "Quantidade comprometida"
+    pii: nenhum
+    nulo: true
+  - nome: size2_roms2
+    tipo: decimal(23,2)
+    comentario: "Tamanho 2"
+    pii: nenhum
+    nulo: true
+  - nome: size3_roms3
+    tipo: decimal(23,2)
+    comentario: "Tamanho 3"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_measure_for_sizes1to3_romei
+    tipo: string
+    comentario: "Unidade de medida para tamanhos 1 a 3"
+    pii: nenhum
+    nulo: true
+  - nome: formula_key_rform
+    tipo: string
+    comentario: "Chave de fórmula para itens de tamanho variável"
+    pii: nenhum
+    nulo: true
+  - nome: numerator_for_conversion_of_sales_quantity_into_sku_umvkz
+    tipo: decimal(23,2)
+    comentario: "Numerador para conversão de quantidade de vendas em unidade de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: denominator_for_conversion_of_sales_qty_into_sku_umvkn
+    tipo: decimal(23,2)
+    comentario: "Denominador para conversão de quantidade de vendas em unidade de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: availability_confirmed_automatically_verfp
+    tipo: string
+    comentario: "Disponibilidade confirmada automaticamente"
+    pii: nenhum
+    nulo: true
+  - nome: movement_type_bwart
+    tipo: string
+    comentario: "Tipo de movimento (gestão de estoque)"
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_purchase_requisition_bnfpo
+    tipo: string
+    comentario: "Item da solicitação de compra"
+    pii: nenhum
+    nulo: true
+  - nome: schedule_line_type_edi_etart
+    tipo: string
+    comentario: "Tipo de linha de programação EDI"
+    pii: nenhum
+    nulo: true
+  - nome: order_number_aufnr
+    tipo: string
+    comentario: "Número da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: planned_order_number_plnum
+    tipo: string
+    comentario: "Número da ordem planejada"
+    pii: nenhum
+    nulo: true
+  - nome: bom_explosion_number_sernr
+    tipo: string
+    comentario: "Número de explosão de lista de materiais (BOM)"
+    pii: nenhum
+    nulo: true
+  - nome: customer_engineering_change_status_aeskd
+    tipo: string
+    comentario: "Status de alteração de engenharia do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: guaranteed_abges
+    tipo: decimal(23,2)
+    comentario: "Garantido (fator entre 0 e 1)"
+    pii: nenhum
+    nulo: true
+  - nome: material_staging_time_mbuhr
+    tipo: string
+    comentario: "Horário de preparação do material (local, relativo ao centro)"
+    pii: nenhum
+    nulo: true
+  - nome: transp_planning_time_tduhr
+    tipo: string
+    comentario: "Horário de planejamento de transporte (local, relativo ao ponto de expedição)"
+    pii: nenhum
+    nulo: true
+  - nome: loading_time_lduhr
+    tipo: string
+    comentario: "Horário de carregamento (local, relativo ao ponto de expedição)"
+    pii: nenhum
+    nulo: true
+  - nome: time_of_goods_issue_wauhr
+    tipo: string
+    comentario: "Horário de saída de mercadorias (local, relativo ao centro)"
+    pii: nenhum
+    nulo: true
+  - nome: route_schedule_aulwe
+    tipo: string
+    comentario: "Programa de rota"
+    pii: nenhum
+    nulo: true
+  - nome: handover_date_at_the_handover_location_handoverdate
+    tipo: date
+    comentario: "Data de transferência no local de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: handover_time_at_the_handover_location_handovertime
+    tipo: string
+    comentario: "Hora de transferência no local de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_date_rule_delivery_date_type_rule
+    tipo: string
+    comentario: "Regra de tipo de data de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: delivered_quantity_dlvqty_bu
+    tipo: decimal(23,2)
+    comentario: "Quantidade entregue (unidade base)"
+    pii: nenhum
+    nulo: true
+  - nome: delivered_quantity_dlvqty_su
+    tipo: decimal(23,2)
+    comentario: "Quantidade entregue (unidade de venda)"
+    pii: nenhum
+    nulo: true
+  - nome: open_confirmed_delivery_quantity_ocdqty_bu
+    tipo: decimal(23,2)
+    comentario: "Quantidade em aberto confirmada para entrega (unidade base)"
+    pii: nenhum
+    nulo: true
+  - nome: open_confirmed_delivery_quantity_ocdqty_su
+    tipo: decimal(23,2)
+    comentario: "Quantidade em aberto confirmada para entrega (unidade de venda)"
+    pii: nenhum
+    nulo: true
+  - nome: open_requested_delivery_quantity_ordqty_bu
+    tipo: decimal(23,2)
+    comentario: "Quantidade solicitada em aberto para entrega (unidade base)"
+    pii: nenhum
+    nulo: true
+  - nome: open_requested_delivery_quantity_ordqty_su
+    tipo: decimal(23,2)
+    comentario: "Quantidade solicitada em aberto para entrega (unidade de venda)"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_creation_date_crea_dlvdate
+    tipo: date
+    comentario: "Data de criação da entrega"
+    pii: nenhum
+    nulo: true
+  - nome: schedule_line_date_req_dlvdate
+    tipo: date
+    comentario: "Data da linha de programação solicitada"
+    pii: nenhum
+    nulo: true
+  - nome: requirements_class_bedar
+    tipo: string
+    comentario: "Classe de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: sales_document_currency_waerk
+    tipo: string
+    comentario: "Moeda do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: open_delivery_net_amount_odn_amount
+    tipo: decimal(23,2)
+    comentario: "Valor líquido em aberto de entrega (na moeda do documento de vendas)"
+    pii: nenhum
+    nulo: true
+  - nome: guid_in_raw_format_handle
+    tipo: string
+    comentario: "GUID no formato RAW"
+    pii: nenhum
+    nulo: true
+  - nome: legal_control_check_status_lccst
+    tipo: string
+    comentario: "Status de verificação de controle legal"
+    pii: nenhum
+    nulo: true
+  - nome: requested_requirement_quantity_in_base_unit_rrqqty_bu
+    tipo: decimal(23,2)
+    comentario: "Quantidade de necessidade solicitada na unidade base"
+    pii: nenhum
+    nulo: true
+  - nome: confirmed_requirement_quantity_in_base_unit_crqqty_bu
+    tipo: decimal(23,2)
+    comentario: "Quantidade de necessidade confirmada na unidade base"
+    pii: nenhum
+    nulo: true
+  - nome: material_availability_date_third_party_order_planning_mbdat_drs
+    tipo: date
+    comentario: "Data de disponibilidade do material para planejamento de pedido de terceiros"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_schedule_line_date_edatu
+    tipo: string
+    comentario: "Ano da data da linha de programação"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_schedule_line_date_edatu
+    tipo: string
+    comentario: "Mês da data da linha de programação"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_schedule_line_date_edatu
+    tipo: string
+    comentario: "Trimestre da data da linha de programação"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_schedule_line_date_edatu
+    tipo: string
+    comentario: "Semana da data da linha de programação"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_requirement_date_bddat
+    tipo: string
+    comentario: "Ano da data de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_requirement_date_bddat
+    tipo: string
+    comentario: "Mês da data de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_requirement_date_bddat
+    tipo: string
+    comentario: "Trimestre da data de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_requirement_date_bddat
+    tipo: string
+    comentario: "Semana da data de necessidade"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização no sistema de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

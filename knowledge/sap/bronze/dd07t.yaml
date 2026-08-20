@@ -1,0 +1,52 @@
+tabela: dd07t
+camada: bronze
+comentario: "Textos dos valores fixos de domínio ABAP (dependente de idioma)"
+ingestao: cdc
+fonte: sap.dd07t
+chave_primaria: [domname, domvalue_l, ddlanguage, as4local, as4vers] # client-independent; sem mandt
+colunas:
+  - nome: as4local
+    tipo: string
+    comentario: "Status de ativação do objeto"
+    pii: nenhum
+    nulo: false
+  - nome: as4vers
+    tipo: string
+    comentario: "Versão da entrada"
+    pii: nenhum
+    nulo: false
+  - nome: ddlanguage
+    tipo: string
+    comentario: "Idioma"
+    pii: nenhum
+    nulo: false
+  - nome: ddtext
+    tipo: string
+    comentario: "Descrição curta do valor fixo"
+    pii: nenhum
+    nulo: true
+  - nome: domname
+    tipo: string
+    comentario: "Nome do domínio"
+    pii: nenhum
+    nulo: false
+  - nome: domvalue_l
+    tipo: string
+    comentario: "Valor inferior do domínio"
+    pii: nenhum
+    nulo: false
+  - nome: domval_hd
+    tipo: string
+    comentario: "Limite superior do valor do domínio"
+    pii: nenhum
+    nulo: true
+  - nome: domval_ld
+    tipo: string
+    comentario: "Limite inferior do valor do domínio"
+    pii: nenhum
+    nulo: true
+  - nome: valpos
+    tipo: string
+    comentario: "Chave de posição do valor"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,117 @@
+tabela: t001l
+camada: bronze
+comentario: "Depósitos (locais de armazenamento por centro)"
+ingestao: cdc
+fonte: sap.t001l
+chave_primaria: [mandt, werks, lgort]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: werks
+    tipo: string
+    comentario: "Centro (plant)"
+    pii: nenhum
+    nulo: false
+  - nome: lgort
+    tipo: string
+    comentario: "Depósito (storage location)"
+    pii: nenhum
+    nulo: false
+  - nome: lgobe
+    tipo: string
+    comentario: "Descrição do depósito"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: xlong
+    tipo: string
+    comentario: "Indicador: estoques negativos permitidos no depósito"
+    pii: nenhum
+    nulo: true
+  - nome: xbufx
+    tipo: string
+    comentario: "Indicador: congelar inventário contábil do depósito"
+    pii: nenhum
+    nulo: true
+  - nome: diskz
+    tipo: string
+    comentario: "Indicador MRP do depósito"
+    pii: nenhum
+    nulo: true
+  - nome: xblgo
+    tipo: string
+    comentario: "Indicador: verificação de autorização para o depósito"
+    pii: nenhum
+    nulo: true
+  - nome: xress
+    tipo: string
+    comentario: "Indicador: depósito é recurso de armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: xhupf
+    tipo: string
+    comentario: "Indicador: unidade de manuseio (HU) obrigatória"
+    pii: nenhum
+    nulo: true
+  - nome: parlg
+    tipo: string
+    comentario: "Depósito parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: vstel
+    tipo: string
+    comentario: "Ponto de expedição/recebimento"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Código do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: kunnr
+    tipo: string
+    comentario: "Código do cliente"
+    pii: indireto
+    nulo: true
+  - nome: mesbs
+    tipo: string
+    comentario: "Sistema de negócios (integração de mensagens)"
+    pii: nenhum
+    nulo: true
+  - nome: messt
+    tipo: string
+    comentario: "Tipo de gerenciamento de inventário via mensagem"
+    pii: nenhum
+    nulo: true
+  - nome: oih_licno
+    tipo: string
+    comentario: "Número de licença (Oil & Gas)"
+    pii: nenhum
+    nulo: true
+  - nome: oig_itrfl
+    tipo: string
+    comentario: "Indicador: atribuição em trânsito (Oil & Gas)"
+    pii: nenhum
+    nulo: true
+  - nome: oib_tnkassign
+    tipo: string
+    comentario: "Atribuição de tanque (Oil & Gas)"
+    pii: nenhum
+    nulo: true

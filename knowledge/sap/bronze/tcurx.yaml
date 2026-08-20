@@ -1,0 +1,17 @@
+tabela: tcurx
+camada: bronze
+comentario: "Casas decimais das moedas no SAP (independente de mandante)"
+ingestao: cdc
+fonte: sap.tcurx
+chave_primaria: [currkey]
+colunas:
+  - nome: currkey
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: false
+  - nome: currdec
+    tipo: int
+    comentario: "Numero de casas decimais da moeda"
+    pii: nenhum
+    nulo: true

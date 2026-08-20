@@ -1,0 +1,27 @@
+tabela: t098t
+camada: bronze
+comentario: "Descricao dos motivos de avaliacao manual do ativo imobilizado (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t098t
+chave_primaria: [mandt, spras, grund]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: grund
+    tipo: string
+    comentario: "Codigo do motivo de avaliacao manual"
+    pii: nenhum
+    nulo: false
+  - nome: grdtx
+    tipo: string
+    comentario: "Descricao do motivo de avaliacao manual"
+    pii: nenhum
+    nulo: true

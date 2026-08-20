@@ -1,0 +1,25 @@
+# Exemplo — GENIE SPACE (agente de linguagem natural sobre a gold/metric views).
+# Estado declarativo de UM Genie space. Lido por create_genie_space.py, que chama
+# w.genie.create_space(...) deterministicamente. Baseie-se nas metric views criadas.
+# SDK: https://databricks-sdk-py.readthedocs.io/en/latest/workspace/dashboards/genie.html
+# Local no projeto: schemas/genie/<nome>.yaml
+nome: genie_vendas
+tipo: genie_space
+titulo: "Genie — Vendas"
+descricao: "Agente de perguntas e respostas sobre vendas, baseado nas metric views da gold."
+
+# Tabelas/metric views expostas ao Genie (preferir metric views para consistencia semantica).
+tabelas:
+  - gold.mv_vendas
+  - gold.dim_cliente
+
+# Instrucoes de negocio que guiam o agente (em PT-BR).
+instrucoes:
+  - "Responda sempre em portugues do Brasil."
+  - "Para metricas de receita e volume, use a metric view mv_vendas."
+  - "Nunca exponha colunas classificadas como PII sensivel."
+
+# Perguntas de exemplo que aparecem no space.
+perguntas_exemplo:
+  - "Qual a receita total por cliente no ultimo mes?"
+  - "Quais os 10 produtos com maior volume de vendas?"

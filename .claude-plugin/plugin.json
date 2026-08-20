@@ -1,0 +1,19 @@
+{
+  "name": "data-eng-agent",
+  "version": "0.1.0",
+  "description": "Spec-driven development para pipelines de engenharia de dados no Databricks: estado local declarativo (YAML) validado deterministicamente contra o Unity Catalog, ciclo SPEC -> PLAN -> RUN com subagentes GENERATOR/EVALUATOR, e templates determinicos (CDC bronze->silver, SCD Tipo 1 gold) para arquitetura medallion.",
+  "author": {
+    "name": "Victor Rodrigues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "databricks",
+    "data-engineering",
+    "spec-driven",
+    "medallion",
+    "unity-catalog",
+    "orchestration",
+    "cdc",
+    "scd"
+  ]
+}

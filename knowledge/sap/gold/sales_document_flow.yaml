@@ -1,0 +1,83 @@
+tabela: sales_document_flow
+camada: gold
+comentario: "Fluxo de documentos de venda a partir de VBFA, mapeando pedidos de venda para entregas e faturas subsequentes."
+entidade: obt
+ingestao: custom
+fontes: [silver.vbak, silver.vbap, silver.vbep, silver.vbpa, silver.tcurx, silver.vbfa, silver.vbuk, silver.vbup, silver.lips]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client), PK."
+    pii: nenhum
+    nulo: true
+  - nome: sales_order_vbelv
+    tipo: string
+    comentario: "Número do documento de venda antecedente, PK."
+    pii: nenhum
+    nulo: true
+  - nome: sales_order_item_posnv
+    tipo: string
+    comentario: "Número do item do pedido de venda antecedente, PK."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_vbelv
+    tipo: string
+    comentario: "Número do documento de entrega, PK."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_item_posnv
+    tipo: string
+    comentario: "Número do item do documento de entrega, PK."
+    pii: nenhum
+    nulo: true
+  - nome: billing_vbeln
+    tipo: string
+    comentario: "Número do documento de faturamento subsequente, PK."
+    pii: nenhum
+    nulo: true
+  - nome: billing_item_posnn
+    tipo: string
+    comentario: "Número do item do documento de faturamento subsequente, PK."
+    pii: nenhum
+    nulo: true
+  - nome: delivered_qty_rfmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade entregue em unidades de venda."
+    pii: nenhum
+    nulo: true
+  - nome: delivered_uom_meins
+    tipo: string
+    comentario: "Unidade de medida da quantidade entregue."
+    pii: nenhum
+    nulo: true
+  - nome: billed_qty_rfmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade faturada em unidades de venda."
+    pii: nenhum
+    nulo: true
+  - nome: billed_uom_meins
+    tipo: string
+    comentario: "Unidade de medida da quantidade faturada."
+    pii: nenhum
+    nulo: true
+  - nome: billed_value_rfwrt
+    tipo: decimal(23,2)
+    comentario: "Valor faturado na moeda de estatística."
+    pii: nenhum
+    nulo: true
+  - nome: billing_currency_waers
+    tipo: string
+    comentario: "Moeda de estatística para o valor faturado."
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte."
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery."
+    pii: nenhum
+    nulo: true

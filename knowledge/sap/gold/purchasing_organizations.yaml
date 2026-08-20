@@ -1,0 +1,38 @@
+tabela: purchasing_organizations
+camada: gold
+comentario: "Dados mestre da hierarquia de organizacoes de compras do SAP T024E, mapeando cada unidade organizacional a sua descricao e empresa associada (BUKRS)."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.t024e, silver.t024]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, purchasing_organization_ekorg]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: purchasing_organization_ekorg
+    tipo: string
+    comentario: "Organizacao de compras (EKORG)"
+    pii: nenhum
+    nulo: false
+  - nome: purchasing_organization_text_ekotx
+    tipo: string
+    comentario: "Descricao da organizacao de compras"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Codigo da empresa (BUKRS)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

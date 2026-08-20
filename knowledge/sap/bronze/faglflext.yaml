@@ -1,0 +1,622 @@
+tabela: faglflext
+camada: bronze
+comentario: "Razão geral: totais por período e dimensão contábil (General Ledger Totals)"
+ingestao: cdc
+fonte: sap.faglflext
+chave_primaria: [rclnt, rldnr, rbukrs, ryear, rrcty, rvers, logsys, racct, rcntr, prctr, rfarea, rbusa, kokrs, segment, scntr, pprctr, sfarea, sbusa, rassc, psegment, drcrk, rpmax, activ, rmvct, rtcur, runit, awtyp] # inferido pelo dicionário SAP — PK composta; baixa confiança — revisar
+colunas:
+  - nome: rclnt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: ryear
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: objnr00
+    tipo: string
+    comentario: "Número de objeto de controlling 00"
+    pii: nenhum
+    nulo: true
+  - nome: objnr01
+    tipo: string
+    comentario: "Número de objeto de controlling 01"
+    pii: nenhum
+    nulo: true
+  - nome: objnr02
+    tipo: string
+    comentario: "Número de objeto de controlling 02"
+    pii: nenhum
+    nulo: true
+  - nome: objnr03
+    tipo: string
+    comentario: "Número de objeto de controlling 03"
+    pii: nenhum
+    nulo: true
+  - nome: objnr04
+    tipo: string
+    comentario: "Número de objeto de controlling 04"
+    pii: nenhum
+    nulo: true
+  - nome: objnr05
+    tipo: string
+    comentario: "Número de objeto de controlling 05"
+    pii: nenhum
+    nulo: true
+  - nome: objnr06
+    tipo: string
+    comentario: "Número de objeto de controlling 06"
+    pii: nenhum
+    nulo: true
+  - nome: objnr07
+    tipo: string
+    comentario: "Número de objeto de controlling 07"
+    pii: nenhum
+    nulo: true
+  - nome: objnr08
+    tipo: string
+    comentario: "Número de objeto de controlling 08"
+    pii: nenhum
+    nulo: true
+  - nome: drcrk
+    tipo: string
+    comentario: "Indicador de débito/crédito"
+    pii: nenhum
+    nulo: false
+  - nome: rpmax
+    tipo: string
+    comentario: "Período máximo de lançamento"
+    pii: nenhum
+    nulo: false
+  - nome: activ
+    tipo: string
+    comentario: "Tipo de transação contábil"
+    pii: nenhum
+    nulo: false
+  - nome: rmvct
+    tipo: string
+    comentario: "Tipo de movimento"
+    pii: nenhum
+    nulo: false
+  - nome: rtcur
+    tipo: string
+    comentario: "Chave de moeda da transação"
+    pii: nenhum
+    nulo: false
+  - nome: runit
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: false
+  - nome: awtyp
+    tipo: string
+    comentario: "Procedimento de referência (objeto de origem)"
+    pii: nenhum
+    nulo: false
+  - nome: rldnr
+    tipo: string
+    comentario: "Razão contábil (ledger)"
+    pii: nenhum
+    nulo: false
+  - nome: rrcty
+    tipo: string
+    comentario: "Tipo de registro"
+    pii: nenhum
+    nulo: false
+  - nome: rvers
+    tipo: string
+    comentario: "Versão de planejamento"
+    pii: nenhum
+    nulo: false
+  - nome: logsys
+    tipo: string
+    comentario: "Sistema lógico de origem"
+    pii: nenhum
+    nulo: false
+  - nome: racct
+    tipo: string
+    comentario: "Número da conta contábil"
+    pii: nenhum
+    nulo: false
+  - nome: cost_elem
+    tipo: string
+    comentario: "Elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: rbukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: false
+  - nome: rcntr
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: false
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: false
+  - nome: rfarea
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: false
+  - nome: rbusa
+    tipo: string
+    comentario: "Área de negócios"
+    pii: nenhum
+    nulo: false
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controlling"
+    pii: nenhum
+    nulo: false
+  - nome: segment
+    tipo: string
+    comentario: "Segmento de negócios"
+    pii: nenhum
+    nulo: false
+  - nome: scntr
+    tipo: string
+    comentario: "Centro de custo remetente"
+    pii: nenhum
+    nulo: false
+  - nome: pprctr
+    tipo: string
+    comentario: "Centro de lucro parceiro"
+    pii: nenhum
+    nulo: false
+  - nome: sfarea
+    tipo: string
+    comentario: "Área funcional parceira"
+    pii: nenhum
+    nulo: false
+  - nome: sbusa
+    tipo: string
+    comentario: "Área de negócios parceira (intercompanhia)"
+    pii: nenhum
+    nulo: false
+  - nome: rassc
+    tipo: string
+    comentario: "Empresa parceira comercial"
+    pii: nenhum
+    nulo: false
+  - nome: psegment
+    tipo: string
+    comentario: "Segmento parceiro"
+    pii: nenhum
+    nulo: false
+  - nome: tslvt
+    tipo: decimal(23,2)
+    comentario: "Saldo transportado em moeda de transação"
+    pii: nenhum
+    nulo: true
+  - nome: tsl01
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 01"
+    pii: nenhum
+    nulo: true
+  - nome: tsl02
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 02"
+    pii: nenhum
+    nulo: true
+  - nome: tsl03
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 03"
+    pii: nenhum
+    nulo: true
+  - nome: tsl04
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 04"
+    pii: nenhum
+    nulo: true
+  - nome: tsl05
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 05"
+    pii: nenhum
+    nulo: true
+  - nome: tsl06
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 06"
+    pii: nenhum
+    nulo: true
+  - nome: tsl07
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 07"
+    pii: nenhum
+    nulo: true
+  - nome: tsl08
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 08"
+    pii: nenhum
+    nulo: true
+  - nome: tsl09
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 09"
+    pii: nenhum
+    nulo: true
+  - nome: tsl10
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: tsl11
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: tsl12
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: tsl13
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: tsl14
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: tsl15
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: tsl16
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda de transação — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: hslvt
+    tipo: decimal(23,2)
+    comentario: "Saldo transportado em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: hsl01
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 01"
+    pii: nenhum
+    nulo: true
+  - nome: hsl02
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 02"
+    pii: nenhum
+    nulo: true
+  - nome: hsl03
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 03"
+    pii: nenhum
+    nulo: true
+  - nome: hsl04
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 04"
+    pii: nenhum
+    nulo: true
+  - nome: hsl05
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 05"
+    pii: nenhum
+    nulo: true
+  - nome: hsl06
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 06"
+    pii: nenhum
+    nulo: true
+  - nome: hsl07
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 07"
+    pii: nenhum
+    nulo: true
+  - nome: hsl08
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 08"
+    pii: nenhum
+    nulo: true
+  - nome: hsl09
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 09"
+    pii: nenhum
+    nulo: true
+  - nome: hsl10
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: hsl11
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: hsl12
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: hsl13
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: hsl14
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: hsl15
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: hsl16
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda local — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: kslvt
+    tipo: decimal(23,2)
+    comentario: "Saldo transportado em moeda do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: ksl01
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 01"
+    pii: nenhum
+    nulo: true
+  - nome: ksl02
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 02"
+    pii: nenhum
+    nulo: true
+  - nome: ksl03
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 03"
+    pii: nenhum
+    nulo: true
+  - nome: ksl04
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 04"
+    pii: nenhum
+    nulo: true
+  - nome: ksl05
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 05"
+    pii: nenhum
+    nulo: true
+  - nome: ksl06
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 06"
+    pii: nenhum
+    nulo: true
+  - nome: ksl07
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 07"
+    pii: nenhum
+    nulo: true
+  - nome: ksl08
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 08"
+    pii: nenhum
+    nulo: true
+  - nome: ksl09
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 09"
+    pii: nenhum
+    nulo: true
+  - nome: ksl10
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: ksl11
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: ksl12
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: ksl13
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: ksl14
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: ksl15
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: ksl16
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda do grupo — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: oslvt
+    tipo: decimal(23,2)
+    comentario: "Saldo transportado em moeda adicional"
+    pii: nenhum
+    nulo: true
+  - nome: osl01
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 01"
+    pii: nenhum
+    nulo: true
+  - nome: osl02
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 02"
+    pii: nenhum
+    nulo: true
+  - nome: osl03
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 03"
+    pii: nenhum
+    nulo: true
+  - nome: osl04
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 04"
+    pii: nenhum
+    nulo: true
+  - nome: osl05
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 05"
+    pii: nenhum
+    nulo: true
+  - nome: osl06
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 06"
+    pii: nenhum
+    nulo: true
+  - nome: osl07
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 07"
+    pii: nenhum
+    nulo: true
+  - nome: osl08
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 08"
+    pii: nenhum
+    nulo: true
+  - nome: osl09
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 09"
+    pii: nenhum
+    nulo: true
+  - nome: osl10
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: osl11
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: osl12
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: osl13
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: osl14
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: osl15
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: osl16
+    tipo: decimal(23,2)
+    comentario: "Total de transações em moeda adicional — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: mslvt
+    tipo: decimal(23,2)
+    comentario: "Saldo transportado de quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: msl01
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 01"
+    pii: nenhum
+    nulo: true
+  - nome: msl02
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 02"
+    pii: nenhum
+    nulo: true
+  - nome: msl03
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 03"
+    pii: nenhum
+    nulo: true
+  - nome: msl04
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 04"
+    pii: nenhum
+    nulo: true
+  - nome: msl05
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 05"
+    pii: nenhum
+    nulo: true
+  - nome: msl06
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 06"
+    pii: nenhum
+    nulo: true
+  - nome: msl07
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 07"
+    pii: nenhum
+    nulo: true
+  - nome: msl08
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 08"
+    pii: nenhum
+    nulo: true
+  - nome: msl09
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 09"
+    pii: nenhum
+    nulo: true
+  - nome: msl10
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: msl11
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: msl12
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: msl13
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: msl14
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: msl15
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: msl16
+    tipo: decimal(23,2)
+    comentario: "Total de quantidades — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: timestamp
+    tipo: timestamp
+    comentario: "Timestamp do registro"
+    pii: nenhum
+    nulo: true

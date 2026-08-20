@@ -1,0 +1,41 @@
+# Exemplo — METRIC VIEW (camada semantica sobre a gold).
+# Estado declarativo de UMA metric view. E a fonte de verdade lida por create_metric_view.py,
+# que gera o `CREATE OR REPLACE VIEW ... WITH METRICS LANGUAGE YAML` deterministicamente.
+# Referencia da spec YAML: https://docs.databricks.com/aws/en/uc-semantics/metric-views/yaml-reference
+# Local no projeto: schemas/metric_views/<nome>.yaml
+tabela: mv_vendas
+camada: gold
+tipo: metric_view
+comentario: "Metrica de vendas — receita e volume por cliente, produto e tempo."
+
+fonte: gold.fato_vendas            # source da metric view (tabela/base gold)
+versao_spec: "0.1"                 # versao da spec de metric view (ajuste conforme o workspace)
+
+# Joins opcionais para dimensoes do star schema (dimensoes SCD Tipo 1 da gold).
+joins:
+  - nome: cliente
+    fonte: gold.dim_cliente
+    on: "source.sk_cliente = cliente.sk_cliente"
+    cardinalidade: many_to_one     # many_to_one | one_to_many
+
+# Dimensoes: toda dimensao tem comentario e classificacao de PII.
+dimensoes:
+  - nome: cod_cliente
+    expr: "cliente.cod_cliente"
+    comentario: "Chave natural do cliente."
+    pii: indireto
+  - nome: data_venda
+    expr: "source.data_venda"
+    comentario: "Data da venda."
+    pii: nenhum
+
+# Medidas: toda medida tem comentario e classificacao de PII.
+medidas:
+  - nome: receita_total
+    expr: "SUM(source.valor)"
+    comentario: "Receita bruta total das vendas."
+    pii: nenhum
+  - nome: qtd_pedidos
+    expr: "COUNT(DISTINCT source.id_pedido)"
+    comentario: "Numero de pedidos distintos."
+    pii: nenhum

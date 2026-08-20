@@ -1,0 +1,768 @@
+tabela: vendor_invoice_headers
+camada: gold
+comentario: "Visão unificada em nível de cabeçalho das faturas de fornecedores a partir do SAP RBKP, permitindo auditoria de valores brutos, detalhes de impostos e descontos de caixa."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.rbco, silver.rbkp, silver.rseg]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, fiscal_year_gjahr, invoice_document_number_belnr]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: fiscal_year_gjahr
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: invoice_document_number_belnr
+    tipo: string
+    comentario: "Número do documento de fatura"
+    pii: nenhum
+    nulo: false
+  - nome: document_type_blart
+    tipo: string
+    comentario: "Tipo de documento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: document_date_bldat
+    tipo: date
+    comentario: "Data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: posting_date_budat
+    tipo: date
+    comentario: "Data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: user_name_usnam
+    tipo: string
+    comentario: "Usuário que lançou o documento"
+    pii: nenhum
+    nulo: true
+  - nome: transaction_code_tcode
+    tipo: string
+    comentario: "Código de transação SAP"
+    pii: nenhum
+    nulo: true
+  - nome: entry_date_cpudt
+    tipo: date
+    comentario: "Data de entrada do documento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: entry_time_cputm
+    tipo: string
+    comentario: "Hora de entrada do documento"
+    pii: nenhum
+    nulo: true
+  - nome: transaction_type_vgart
+    tipo: string
+    comentario: "Tipo de transação"
+    pii: nenhum
+    nulo: true
+  - nome: reference_xblnr
+    tipo: string
+    comentario: "Número de referência do documento"
+    pii: nenhum
+    nulo: true
+  - nome: invoicing_party_lifnr
+    tipo: string
+    comentario: "Código do fornecedor emissor da fatura"
+    pii: indireto
+    nulo: true
+  - nome: currency_key_waers
+    tipo: string
+    comentario: "Moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_kursf
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: gross_invoice_amount_rmwwr
+    tipo: decimal(23,2)
+    comentario: "Valor bruto da fatura na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: unplanned_delivery_costs_beznk
+    tipo: decimal(23,2)
+    comentario: "Custos de entrega não planejados"
+    pii: nenhum
+    nulo: true
+  - nome: value_added_tax_wmwst1
+    tipo: decimal(23,2)
+    comentario: "Valor do imposto sobre valor agregado (IVA)"
+    pii: nenhum
+    nulo: true
+  - nome: tax_code_mwskz1
+    tipo: string
+    comentario: "Código de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: notinuse_mwskz2
+    tipo: string
+    comentario: "Não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: terms_payment_key_zterm
+    tipo: string
+    comentario: "Chave da condição de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: discount_days1_zbd1t
+    tipo: int
+    comentario: "Prazo para desconto de caixa 1 (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: cash_discount_percentage1_zbd1p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto de caixa 1"
+    pii: nenhum
+    nulo: true
+  - nome: discount_days2_zbd2t
+    tipo: int
+    comentario: "Prazo para desconto de caixa 2 (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: cash_discount_percentage2_zbd2p
+    tipo: decimal(23,2)
+    comentario: "Percentual de desconto de caixa 2"
+    pii: nenhum
+    nulo: true
+  - nome: discount_days_net_zbd3t
+    tipo: int
+    comentario: "Prazo líquido de pagamento (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: discount_amount_wskto
+    tipo: decimal(23,2)
+    comentario: "Valor do desconto de caixa"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_indicator_xrech
+    tipo: string
+    comentario: "Indicador de fatura (vs. nota de crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: document_header_text_bktxt
+    tipo: string
+    comentario: "Texto do cabeçalho do documento"
+    pii: nenhum
+    nulo: true
+  - nome: sap_release_saprl
+    tipo: string
+    comentario: "Versão do SAP"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_logsy
+    tipo: string
+    comentario: "Sistema lógico de origem"
+    pii: nenhum
+    nulo: true
+  - nome: calculate_tax_indicator_xmwst
+    tipo: string
+    comentario: "Indicador de cálculo automático de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: reversed_by_document_stblg
+    tipo: string
+    comentario: "Número do documento de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_fiscal_year_stjah
+    tipo: string
+    comentario: "Ano fiscal do documento de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: tax_code_mwskz_bnk
+    tipo: string
+    comentario: "Código de imposto para custos de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_txjcd_bnk
+    tipo: string
+    comentario: "Código de jurisdição fiscal para custos de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_verification_category_ivtyp
+    tipo: string
+    comentario: "Categoria de verificação de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: several_tax_codes_indicator_xrbtx
+    tipo: string
+    comentario: "Indicador de múltiplos códigos de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_verification_type_repart
+    tipo: string
+    comentario: "Tipo de verificação de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_status_rbstat
+    tipo: string
+    comentario: "Status do documento de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: document_condition_number_knumve
+    tipo: string
+    comentario: "Número da condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: supplier_condition_number_knumvl
+    tipo: string
+    comentario: "Número da condição do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_reduction_amount_arkuen
+    tipo: decimal(23,2)
+    comentario: "Valor da redução automática de fatura (líquido)"
+    pii: nenhum
+    nulo: true
+  - nome: tax_amount_invoice_reduction_arkuemw
+    tipo: decimal(23,2)
+    comentario: "Imposto na redução automática de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: manually_accepted_net_amount_makzn
+    tipo: decimal(23,2)
+    comentario: "Valor líquido aceito manualmente"
+    pii: nenhum
+    nulo: true
+  - nome: manually_accepted_tax_amount_makzmw
+    tipo: decimal(23,2)
+    comentario: "Valor de imposto aceito manualmente"
+    pii: nenhum
+    nulo: true
+  - nome: supplier_error_net_amount_lieffn
+    tipo: decimal(23,2)
+    comentario: "Valor líquido do erro do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: supplier_error_tax_amount_lieffmw
+    tipo: decimal(23,2)
+    comentario: "Imposto no erro do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: automatically_accepted_indicator_xautakz
+    tipo: string
+    comentario: "Indicador de fatura aceita automaticamente"
+    pii: nenhum
+    nulo: true
+  - nome: isr_number_esrnr
+    tipo: string
+    comentario: "Número ISR/PBC"
+    pii: nenhum
+    nulo: true
+  - nome: check_digit_esrpz
+    tipo: string
+    comentario: "Dígito verificador ISR"
+    pii: nenhum
+    nulo: true
+  - nome: isr_qr_reference_esrre
+    tipo: string
+    comentario: "Número de referência ISR/QR"
+    pii: nenhum
+    nulo: true
+  - nome: withholding_tax_base_amount_qsshb
+    tipo: decimal(23,2)
+    comentario: "Base de cálculo da retenção na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: withholding_tax_exempt_amount_qsfbt
+    tipo: decimal(23,2)
+    comentario: "Valor isento de retenção na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: withholding_tax_code_qsskz
+    tipo: string
+    comentario: "Código de retenção na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: service_indicator_diekz
+    tipo: string
+    comentario: "Indicador de serviço (UE)"
+    pii: nenhum
+    nulo: true
+  - nome: supplying_country_landl
+    tipo: string
+    comentario: "País de fornecimento"
+    pii: nenhum
+    nulo: true
+  - nome: scb_indicator_lzbkz
+    tipo: string
+    comentario: "Indicador do banco central (SCB)"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_for_taxes_txkrs
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio para cálculo de impostos"
+    pii: nenhum
+    nulo: true
+  - nome: tax_rate_local_currency_ctxkrs
+    tipo: decimal(23,2)
+    comentario: "Taxa de imposto em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: payer_empfb
+    tipo: string
+    comentario: "Código do pagador"
+    pii: nenhum
+    nulo: true
+  - nome: partner_bank_type_bvtyp
+    tipo: string
+    comentario: "Tipo de banco do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: house_bank_hbkid
+    tipo: string
+    comentario: "Chave do banco principal"
+    pii: nenhum
+    nulo: true
+  - nome: assignment_number_zuonr
+    tipo: string
+    comentario: "Campo de atribuição contábil"
+    pii: nenhum
+    nulo: true
+  - nome: payment_block_key_zlspr
+    tipo: string
+    comentario: "Chave de bloqueio de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: payment_method_zlsch
+    tipo: string
+    comentario: "Método de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: baseline_payment_date_zfbdt
+    tipo: date
+    comentario: "Data base para cálculo do vencimento"
+    pii: nenhum
+    nulo: true
+  - nome: payment_reference_kidno
+    tipo: string
+    comentario: "Referência de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_reference_rebzg
+    tipo: string
+    comentario: "Número do documento de fatura de referência"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_reference_fiscal_year_rebzj
+    tipo: string
+    comentario: "Ano fiscal da fatura de referência"
+    pii: nenhum
+    nulo: true
+  - nome: investment_id_xinve
+    tipo: string
+    comentario: "ID de investimento"
+    pii: nenhum
+    nulo: true
+  - nome: reporting_country_egmld
+    tipo: string
+    comentario: "País de declaração (comércio exterior)"
+    pii: nenhum
+    nulo: true
+  - nome: eu_triangular_deal_indicator_xegdr
+    tipo: string
+    comentario: "Indicador de negócio triangular UE"
+    pii: nenhum
+    nulo: true
+  - nome: tax_reporting_date_vatdate
+    tipo: date
+    comentario: "Data de declaração fiscal (IVA)"
+    pii: nenhum
+    nulo: true
+  - nome: general_ledger_account_hkont
+    tipo: string
+    comentario: "Número da conta contábil (razão geral)"
+    pii: nenhum
+    nulo: true
+  - nome: nota_fiscal_type_j_1bnftype
+    tipo: string
+    comentario: "Tipo de nota fiscal (Brasil)"
+    pii: nenhum
+    nulo: true
+  - nome: branch_number_brnch
+    tipo: string
+    comentario: "Número da filial"
+    pii: nenhum
+    nulo: true
+  - nome: entry_profile_erfpr
+    tipo: string
+    comentario: "Perfil de entrada do documento"
+    pii: nenhum
+    nulo: true
+  - nome: section_code_secco
+    tipo: string
+    comentario: "Código de seção fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: vendor_name1_name1
+    tipo: string
+    comentario: "Nome 1 do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: vendor_name2_name2
+    tipo: string
+    comentario: "Nome 2 do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: vendor_name3_name3
+    tipo: string
+    comentario: "Nome 3 do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: vendor_name4_name4
+    tipo: string
+    comentario: "Nome 4 do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: postal_code_pstlz
+    tipo: string
+    comentario: "CEP do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: city_ort01
+    tipo: string
+    comentario: "Cidade do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: country_land1
+    tipo: string
+    comentario: "País do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: street_stras
+    tipo: string
+    comentario: "Endereço (rua e número) do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: po_box_pfach
+    tipo: string
+    comentario: "Caixa postal do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: po_box_postal_code_pstl2
+    tipo: string
+    comentario: "CEP da caixa postal do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: post_office_bank_account_number_pskto
+    tipo: string
+    comentario: "Número de conta bancária postal do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: bank_account_number_bankn
+    tipo: string
+    comentario: "Número da conta bancária do fornecedor"
+    pii: direto
+    nulo: true
+  - nome: bank_routing_number_bankl
+    tipo: string
+    comentario: "Número de roteamento bancário"
+    pii: nenhum
+    nulo: true
+  - nome: bank_country_banks
+    tipo: string
+    comentario: "País do banco"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number1_stcd1
+    tipo: string
+    comentario: "Número de inscrição fiscal 1 (CNPJ/CPF)"
+    pii: sensivel
+    nulo: true
+  - nome: tax_number2_stcd2
+    tipo: string
+    comentario: "Número de inscrição fiscal 2"
+    pii: sensivel
+    nulo: true
+  - nome: liable_for_vat_indicator_stkzu
+    tipo: string
+    comentario: "Indicador de sujeição ao IVA"
+    pii: nenhum
+    nulo: true
+  - nome: sales_equalization_tax_indicator_stkza
+    tipo: string
+    comentario: "Indicador de imposto de equiparação"
+    pii: nenhum
+    nulo: true
+  - nome: region_regio
+    tipo: string
+    comentario: "Região (estado/província) do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: bank_control_key_bkont
+    tipo: string
+    comentario: "Chave de controle bancário"
+    pii: nenhum
+    nulo: true
+  - nome: instruction_key_dtaws
+    tipo: string
+    comentario: "Chave de instrução de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: dme_indicator_dtams
+    tipo: string
+    comentario: "Indicador DME (meios de pagamento eletrônico)"
+    pii: nenhum
+    nulo: true
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: one_time_account_indicator_xcpdk
+    tipo: string
+    comentario: "Indicador de conta de contrapartida única"
+    pii: nenhum
+    nulo: true
+  - nome: payment_recipient_empfg
+    tipo: string
+    comentario: "Código do beneficiário alternativo do pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: tax_type_fityp
+    tipo: string
+    comentario: "Tipo de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_type_stcdt
+    tipo: string
+    comentario: "Tipo de número de inscrição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: natural_person_indicator_stkzn
+    tipo: string
+    comentario: "Indicador de pessoa física"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number3_stcd3
+    tipo: string
+    comentario: "Número de inscrição fiscal 3"
+    pii: sensivel
+    nulo: true
+  - nome: tax_number4_stcd4
+    tipo: string
+    comentario: "Número de inscrição fiscal 4"
+    pii: sensivel
+    nulo: true
+  - nome: reference_details_bkref
+    tipo: string
+    comentario: "Detalhes de referência bancária para pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: representative_name_j_1kfrepre
+    tipo: string
+    comentario: "Nome do representante (Coreia)"
+    pii: direto
+    nulo: true
+  - nome: business_type_j_1kftbus
+    tipo: string
+    comentario: "Tipo de negócio (Coreia)"
+    pii: nenhum
+    nulo: true
+  - nome: industry_type_j_1kftind
+    tipo: string
+    comentario: "Tipo de setor industrial (Coreia)"
+    pii: nenhum
+    nulo: true
+  - nome: title_anred
+    tipo: string
+    comentario: "Tratamento / forma de endereçamento"
+    pii: nenhum
+    nulo: true
+  - nome: vat_registration_number_stceg
+    tipo: string
+    comentario: "Número de registro do IVA (UE)"
+    pii: sensivel
+    nulo: true
+  - nome: created_by_user_ername
+    tipo: string
+    comentario: "Usuário que criou o documento"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_receipt_date_reindat
+    tipo: date
+    comentario: "Data de recebimento da fatura"
+    pii: nenhum
+    nulo: true
+  - nome: payment_method_supplement_uzawe
+    tipo: string
+    comentario: "Complemento do método de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: planning_level_fdlev
+    tipo: string
+    comentario: "Nível de planejamento de liquidez"
+    pii: nenhum
+    nulo: true
+  - nome: planning_date_fdtag
+    tipo: date
+    comentario: "Data de planejamento de liquidez"
+    pii: nenhum
+    nulo: true
+  - nome: payment_terms_fixed_indicator_zbfix
+    tipo: string
+    comentario: "Indicador de data base fixa de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: release_indicator_frgkz
+    tipo: string
+    comentario: "Indicador de liberação de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: entered_by_user_erfnam
+    tipo: string
+    comentario: "Usuário que digitou o documento"
+    pii: nenhum
+    nulo: true
+  - nome: business_place_bupla
+    tipo: string
+    comentario: "Local de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: branch_account_filkd
+    tipo: string
+    comentario: "Conta da filial"
+    pii: nenhum
+    nulo: true
+  - nome: lot_number_lotkz
+    tipo: string
+    comentario: "Número do lote de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: document_text_sgtxt
+    tipo: string
+    comentario: "Texto do item do documento"
+    pii: nenhum
+    nulo: true
+  - nome: transaction_inv_tran
+    tipo: string
+    comentario: "Tipo de transação de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: prepayment_status_prepay_status
+    tipo: string
+    comentario: "Status de pré-pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: prepayment_invoice_number_prepay_awkey
+    tipo: string
+    comentario: "Número da fatura de pré-pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: assignment_test_status_assign_status
+    tipo: string
+    comentario: "Status do processo de teste de atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: next_assignment_test_date_assign_next_date
+    tipo: date
+    comentario: "Próxima data do teste de atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: assignment_test_end_date_assign_end_date
+    tipo: date
+    comentario: "Data de encerramento do teste de atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: original_invoice_number_copy_by_belnr
+    tipo: string
+    comentario: "Número da fatura original (origem da cópia)"
+    pii: nenhum
+    nulo: true
+  - nome: original_invoice_fiscal_year_copy_by_year
+    tipo: string
+    comentario: "Ano fiscal da fatura original"
+    pii: nenhum
+    nulo: true
+  - nome: copied_invoice_number_copy_to_belnr
+    tipo: string
+    comentario: "Número do documento da fatura copiada"
+    pii: nenhum
+    nulo: true
+  - nome: copied_invoice_fiscal_year_copy_to_year
+    tipo: string
+    comentario: "Ano fiscal da fatura copiada"
+    pii: nenhum
+    nulo: true
+  - nome: user_who_copied_invoice_copy_user
+    tipo: string
+    comentario: "Usuário que copiou a fatura"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_kursx
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio de mercado"
+    pii: nenhum
+    nulo: true
+  - nome: translation_date_wwert
+    tipo: date
+    comentario: "Data de conversão cambial"
+    pii: nenhum
+    nulo: true
+  - nome: reference_key3_xref3
+    tipo: string
+    comentario: "Chave de referência 3"
+    pii: nenhum
+    nulo: true
+  - nome: branch_code_j_1tpbupl
+    tipo: string
+    comentario: "Código da filial (Turquia)"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_posting_date_budat
+    tipo: int
+    comentario: "Ano da data de lançamento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_posting_date_budat
+    tipo: int
+    comentario: "Mês da data de lançamento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_posting_date_budat
+    tipo: int
+    comentario: "Trimestre da data de lançamento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_posting_date_budat
+    tipo: int
+    comentario: "Semana da data de lançamento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_document_date_bldat
+    tipo: int
+    comentario: "Ano da data do documento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_document_date_bldat
+    tipo: int
+    comentario: "Mês da data do documento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_document_date_bldat
+    tipo: int
+    comentario: "Trimestre da data do documento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_document_date_bldat
+    tipo: int
+    comentario: "Semana da data do documento (derivado)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da última atualização na fonte de origem"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

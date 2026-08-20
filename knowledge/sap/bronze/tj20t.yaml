@@ -1,0 +1,27 @@
+tabela: tj20t
+camada: bronze
+comentario: "Textos dos perfis de status de usuario (dependente de idioma)"
+ingestao: cdc
+fonte: sap.tj20t
+chave_primaria: [mandt, stsma, spras]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: stsma
+    tipo: string
+    comentario: "Perfil de status"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: txt
+    tipo: string
+    comentario: "Texto do perfil de status"
+    pii: nenhum
+    nulo: true

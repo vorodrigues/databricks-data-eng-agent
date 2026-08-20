@@ -1,0 +1,147 @@
+tabela: proj
+camada: bronze
+comentario: "Definição de projeto (SAP PROJ)."
+ingestao: cdc
+fonte: sap.proj
+chave_primaria: [mandt, pspnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: pspnr
+    tipo: string
+    comentario: "Número interno do projeto"
+    pii: nenhum
+    nulo: false
+  - nome: pspid
+    tipo: string
+    comentario: "Definição do projeto (ID externo)"
+    pii: nenhum
+    nulo: true
+  - nome: post1
+    tipo: string
+    comentario: "Descrição resumida do projeto"
+    pii: nenhum
+    nulo: true
+  - nome: vbukr
+    tipo: string
+    comentario: "Código da empresa do projeto"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro produtivo (plant)"
+    pii: nenhum
+    nulo: true
+  - nome: objnr
+    tipo: string
+    comentario: "Número do objeto (CO)"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: vernr
+    tipo: string
+    comentario: "Número do responsável pelo projeto"
+    pii: indireto
+    nulo: true
+  - nome: verna
+    tipo: string
+    comentario: "Nome do responsável pelo projeto"
+    pii: direto
+    nulo: true
+  - nome: astnr
+    tipo: string
+    comentario: "Número do solicitante"
+    pii: indireto
+    nulo: true
+  - nome: astna
+    tipo: string
+    comentario: "Nome do solicitante"
+    pii: direto
+    nulo: true
+  - nome: vgsbr
+    tipo: string
+    comentario: "Área de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: vkokr
+    tipo: string
+    comentario: "Área de controlling"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro (profit center)"
+    pii: nenhum
+    nulo: true
+  - nome: pwhie
+    tipo: string
+    comentario: "Moeda do projeto"
+    pii: nenhum
+    nulo: true
+  - nome: profl
+    tipo: string
+    comentario: "Perfil do projeto"
+    pii: nenhum
+    nulo: true
+  - nome: bprof
+    tipo: string
+    comentario: "Perfil de orçamento"
+    pii: nenhum
+    nulo: true
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: loevm
+    tipo: string
+    comentario: "Indicador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: xstat
+    tipo: string
+    comentario: "Indicador: projeto estatístico"
+    pii: nenhum
+    nulo: true
+  - nome: func_area
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Setor"
+    pii: nenhum
+    nulo: true

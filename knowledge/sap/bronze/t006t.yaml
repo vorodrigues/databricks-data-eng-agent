@@ -1,0 +1,27 @@
+tabela: t006t
+camada: bronze
+comentario: "Textos de dimensoes de unidades de medida (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t006t
+chave_primaria: [mandt, spras, dimid]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: dimid
+    tipo: string
+    comentario: "Identificador da dimensao"
+    pii: nenhum
+    nulo: false
+  - nome: txdim
+    tipo: string
+    comentario: "Texto descritivo da dimensao"
+    pii: nenhum
+    nulo: true

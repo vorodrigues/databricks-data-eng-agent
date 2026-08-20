@@ -1,0 +1,167 @@
+tabela: t093c
+camada: bronze
+comentario: "Configurações de código de empresa para contabilidade de ativos (SAP T093C)."
+ingestao: cdc
+fonte: sap.t093c
+chave_primaria: [mandt, bukrs]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa (bukrs)"
+    pii: nenhum
+    nulo: false
+  - nome: bukrsn
+    tipo: string
+    comentario: "Número de atribuição do código de empresa"
+    pii: nenhum
+    nulo: true
+  - nome: periv
+    tipo: string
+    comentario: "Variante do exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: monmit
+    tipo: int
+    comentario: "Dia de início da segunda metade do mês"
+    pii: nenhum
+    nulo: true
+  - nome: xrumpf
+    tipo: string
+    comentario: "Indicador: exercício fiscal encurtado"
+    pii: nenhum
+    nulo: true
+  - nome: datum
+    tipo: date
+    comentario: "Data de transferência de dados de ativos"
+    pii: nenhum
+    nulo: true
+  - nome: afapl
+    tipo: string
+    comentario: "Plano de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: vrmafb
+    tipo: string
+    comentario: "Imposto sobre patrimônio líquido"
+    pii: nenhum
+    nulo: true
+  - nome: bkrakt
+    tipo: string
+    comentario: "Ativo entre empresas"
+    pii: nenhum
+    nulo: true
+  - nome: xrebuw
+    tipo: string
+    comentario: "Informar valor líquido contábil"
+    pii: nenhum
+    nulo: true
+  - nome: xanueb
+    tipo: string
+    comentario: "Status do código de empresa para contabilidade de ativos"
+    pii: nenhum
+    nulo: true
+  - nome: lgjahr
+    tipo: string
+    comentario: "Exercício fiscal mais recente aberto"
+    pii: nenhum
+    nulo: true
+  - nome: afblrt
+    tipo: string
+    comentario: "Tipo de documento para lançamento de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: vxrsku
+    tipo: string
+    comentario: "Calcular valor acumulado de seguro"
+    pii: nenhum
+    nulo: true
+  - nome: mwskzva
+    tipo: string
+    comentario: "Código de imposto de entrada (isento de imposto)"
+    pii: nenhum
+    nulo: true
+  - nome: mwskzaa
+    tipo: string
+    comentario: "Código de imposto de saída (isento de imposto)"
+    pii: nenhum
+    nulo: true
+  - nome: kzrbwb
+    tipo: string
+    comentario: "Lançar valor líquido contábil"
+    pii: nenhum
+    nulo: true
+  - nome: aprof
+    tipo: string
+    comentario: "Perfil de liquidação de ativos"
+    pii: nenhum
+    nulo: true
+  - nome: ttech
+    tipo: string
+    comentario: "Período de retenção (técnico)"
+    pii: nenhum
+    nulo: true
+  - nome: tkund
+    tipo: string
+    comentario: "Período de retenção (específico do cliente)"
+    pii: nenhum
+    nulo: true
+  - nome: xanle
+    tipo: string
+    comentario: "Prova de origem com lista de itens original"
+    pii: nenhum
+    nulo: true
+  - nome: varbzd
+    tipo: string
+    comentario: "Variante para determinação da data de valor"
+    pii: nenhum
+    nulo: true
+  - nome: j_1aaoffcl
+    tipo: string
+    comentario: "Classe de documento oficial"
+    pii: nenhum
+    nulo: true
+  - nome: xzorg
+    tipo: string
+    comentario: "Unidades organizacionais independentes de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: aperblrt
+    tipo: string
+    comentario: "Tipo de documento para lançamento de APC"
+    pii: nenhum
+    nulo: true
+  - nome: xnoskonto
+    tipo: string
+    comentario: "Sem desconto de caixa"
+    pii: nenhum
+    nulo: true
+  - nome: xdfyv
+    tipo: string
+    comentario: "Variantes de exercício fiscal distintas"
+    pii: nenhum
+    nulo: true
+  - nome: revdmeth
+    tipo: string
+    comentario: "Método de distribuição de receita"
+    pii: nenhum
+    nulo: true
+  - nome: ldtblrt
+    tipo: string
+    comentario: "Tipo de documento (transferência de data de último dia)"
+    pii: nenhum
+    nulo: true
+  - nome: ldt_wo_afa
+    tipo: string
+    comentario: "Suprimir cálculo de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: xlocked
+    tipo: string
+    comentario: "Código de empresa bloqueado para contabilidade de ativos"
+    pii: nenhum
+    nulo: true

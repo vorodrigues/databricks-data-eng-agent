@@ -1,0 +1,538 @@
+tabela: vendor_invoice_items
+camada: gold
+comentario: "Itens de faturas de fornecedores recebidas, com quantidades faturadas, materiais e referencias ao pedido de compra (origem: SAP RSEG)"
+entidade: obt
+ingestao: custom
+fontes: [silver.rbco, silver.rbkp, silver.rseg]
+chave_primaria: [client_mandt, invoice_document_number_belnr, fiscal_year_gjahr, invoice_item_buzei]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: invoice_document_number_belnr
+    tipo: string
+    comentario: "Numero do documento de fatura"
+    pii: nenhum
+    nulo: false
+  - nome: fiscal_year_gjahr
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: invoice_item_buzei
+    tipo: int
+    comentario: "Item da fatura"
+    pii: nenhum
+    nulo: false
+  - nome: purchasing_document_number_ebeln
+    tipo: string
+    comentario: "Numero do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_document_item_ebelp
+    tipo: string
+    comentario: "Item do documento de compra"
+    pii: nenhum
+    nulo: true
+  - nome: sequential_number_account_assignment_zekkn
+    tipo: string
+    comentario: "Numero sequencial da imputacao contabil"
+    pii: nenhum
+    nulo: true
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Numero do material"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_area_bwkey
+    tipo: string
+    comentario: "Area de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_type_bwtar
+    tipo: string
+    comentario: "Tipo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: purchase_order_unit_measure_bstme
+    tipo: string
+    comentario: "Unidade de medida do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: order_price_unit_bprme
+    tipo: string
+    comentario: "Unidade de preco do pedido (compras)"
+    pii: nenhum
+    nulo: true
+  - nome: total_valuated_stock_lbkum
+    tipo: decimal(23,2)
+    comentario: "Estoque total avaliado"
+    pii: nenhum
+    nulo: true
+  - nome: total_valuated_stock_previous_period_vrkum
+    tipo: decimal(23,2)
+    comentario: "Estoque total avaliado no periodo anterior"
+    pii: nenhum
+    nulo: true
+  - nome: purchase_order_item_category_pstyp
+    tipo: string
+    comentario: "Categoria do item do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: account_assignment_category_knttp
+    tipo: string
+    comentario: "Categoria de imputacao contabil"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_class_bklas
+    tipo: string
+    comentario: "Classe de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: final_invoice_indicator_erekz
+    tipo: string
+    comentario: "Indicador de fatura final"
+    pii: nenhum
+    nulo: true
+  - nome: update_purchase_order_history_indicator_exkbe
+    tipo: string
+    comentario: "Indicador: atualizar historico do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: update_purchase_order_delivery_costs_indicator_xekbz
+    tipo: string
+    comentario: "Indicador: atualizar custos de entrega do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: subsequent_debit_credit_indicator_tbtkz
+    tipo: string
+    comentario: "Indicador de debito/credito subsequente"
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_price_spgrp
+    tipo: string
+    comentario: "Motivo de bloqueio: preco"
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_quantity_spgrm
+    tipo: string
+    comentario: "Motivo de bloqueio: quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_date_spgrt
+    tipo: string
+    comentario: "Motivo de bloqueio: data"
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_order_price_quantity_spgrg
+    tipo: string
+    comentario: "Motivo de bloqueio: quantidade ao preco do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_project_budget_spgrv
+    tipo: string
+    comentario: "Motivo de bloqueio: orcamento de projeto"
+    pii: nenhum
+    nulo: true
+  - nome: manual_blocking_reason_spgrq
+    tipo: string
+    comentario: "Motivo de bloqueio manual"
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_quality_spgrc
+    tipo: string
+    comentario: "Motivo de bloqueio: qualidade"
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_enhancement_fields_spgrext
+    tipo: string
+    comentario: "Motivo de bloqueio: campos de extensao"
+    pii: nenhum
+    nulo: true
+  - nome: posting_string_values_bustw
+    tipo: string
+    comentario: "String de lancamento para valores"
+    pii: nenhum
+    nulo: true
+  - nome: reference_xblnr
+    tipo: string
+    comentario: "Numero do documento de referencia externo"
+    pii: nenhum
+    nulo: true
+  - nome: document_posted_previous_period_indicator_xrueb
+    tipo: string
+    comentario: "Indicador: documento lancado em periodo anterior"
+    pii: nenhum
+    nulo: true
+  - nome: condition_type_kschl
+    tipo: string
+    comentario: "Tipo de condicao de preco"
+    pii: nenhum
+    nulo: true
+  - nome: total_valuated_stock_value_salk3
+    tipo: decimal(23,2)
+    comentario: "Valor total do estoque avaliado"
+    pii: nenhum
+    nulo: true
+  - nome: total_valuated_stock_previous_period_value_vmsal
+    tipo: decimal(23,2)
+    comentario: "Valor total do estoque no periodo anterior"
+    pii: nenhum
+    nulo: true
+  - nome: lifo_fifo_indicator_xlifo
+    tipo: string
+    comentario: "Indicador de relevancia LIFO/FIFO"
+    pii: nenhum
+    nulo: true
+  - nome: reference_document_number_lfbnr
+    tipo: string
+    comentario: "Numero do documento de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_year_current_period_lfgja
+    tipo: string
+    comentario: "Ano fiscal do periodo corrente"
+    pii: nenhum
+    nulo: true
+  - nome: reference_document_item_lfpos
+    tipo: string
+    comentario: "Item do documento de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: stock_material_number_matbf
+    tipo: string
+    comentario: "Numero do material para gestao de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_invoiced_po_order_units_rbmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade faturada em unidades do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_invoiced_po_price_units_bprbm
+    tipo: decimal(23,2)
+    comentario: "Quantidade faturada em unidades de preco do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: supplier_error_type_lfehl
+    tipo: string
+    comentario: "Tipo de erro do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: gross_income_tax_activity_code_gricd
+    tipo: string
+    comentario: "Codigo de atividade para imposto de renda bruto"
+    pii: nenhum
+    nulo: true
+  - nome: region_grirg
+    tipo: string
+    comentario: "Regiao"
+    pii: nenhum
+    nulo: true
+  - nome: distribution_type_gityp
+    tipo: string
+    comentario: "Tipo de distribuicao para imposto de emprego"
+    pii: nenhum
+    nulo: true
+  - nome: package_number_service_packno
+    tipo: string
+    comentario: "Numero do pacote de servico"
+    pii: nenhum
+    nulo: true
+  - nome: line_number_service_introw
+    tipo: int
+    comentario: "Numero da linha de servico"
+    pii: nenhum
+    nulo: true
+  - nome: correction_indicator_kzmek
+    tipo: string
+    comentario: "Indicador de correcao"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_item_processed_indicator_mrmok
+    tipo: string
+    comentario: "Indicador: item de fatura processado"
+    pii: nenhum
+    nulo: true
+  - nome: step_number_stunr
+    tipo: int
+    comentario: "Numero do passo"
+    pii: nenhum
+    nulo: true
+  - nome: condition_counter_zaehk
+    tipo: int
+    comentario: "Contador de condicao"
+    pii: nenhum
+    nulo: true
+  - nome: stock_posting_incoming_invoice_stock_posting
+    tipo: string
+    comentario: "Lancamento de estoque da fatura de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: stock_posting_previous_period_stock_posting_pp
+    tipo: string
+    comentario: "Lancamento de estoque do periodo anterior"
+    pii: nenhum
+    nulo: true
+  - nome: stock_posting_previous_year_stock_posting_py
+    tipo: string
+    comentario: "Lancamento de estoque do ano anterior"
+    pii: nenhum
+    nulo: true
+  - nome: clearing_indicator_grir_posting_werec
+    tipo: string
+    comentario: "Indicador de compensacao: lancamento EM/RF"
+    pii: nenhum
+    nulo: true
+  - nome: supplier_lifnr
+    tipo: string
+    comentario: "Codigo do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: bill_of_lading_frbnr
+    tipo: string
+    comentario: "Numero do conhecimento de embarque"
+    pii: nenhum
+    nulo: true
+  - nome: update_multiple_account_assignment_xhistma
+    tipo: string
+    comentario: "Indicador: atualizar imputacao multipla"
+    pii: nenhum
+    nulo: true
+  - nome: complaint_reason_complaint_reason
+    tipo: string
+    comentario: "Motivo da reclamacao"
+    pii: nenhum
+    nulo: true
+  - nome: retention_percentage_retpc
+    tipo: decimal(23,2)
+    comentario: "Percentual de retencao"
+    pii: nenhum
+    nulo: true
+  - nome: retention_due_date_retduedt
+    tipo: date
+    comentario: "Data de vencimento da retencao"
+    pii: nenhum
+    nulo: true
+  - nome: retention_tax_reduction_indicator_xrettaxnet
+    tipo: string
+    comentario: "Indicador de reducao tributaria sobre retencao"
+    pii: nenhum
+    nulo: true
+  - nome: cash_ledger_account_re_account
+    tipo: string
+    comentario: "Conta do razao de caixa"
+    pii: nenhum
+    nulo: true
+  - nome: principal_purchase_agreement_number_erp_contract_id
+    tipo: string
+    comentario: "Numero do contrato guarda-chuva (ERP)"
+    pii: nenhum
+    nulo: true
+  - nome: principal_purchase_agreement_item_number_erp_contract_itm
+    tipo: string
+    comentario: "Item do contrato guarda-chuva (ERP)"
+    pii: nenhum
+    nulo: true
+  - nome: central_contract_number_srm_contract_id
+    tipo: string
+    comentario: "Numero do contrato central (SRM)"
+    pii: nenhum
+    nulo: true
+  - nome: central_contract_item_number_srm_contract_itm
+    tipo: string
+    comentario: "Item do contrato central (SRM)"
+    pii: nenhum
+    nulo: true
+  - nome: purchase_order_item_category2_cont_pstyp
+    tipo: string
+    comentario: "Categoria do item do pedido de compra (contrato)"
+    pii: nenhum
+    nulo: true
+  - nome: esoa_key_srvmapkey
+    tipo: string
+    comentario: "Chave ESOA"
+    pii: nenhum
+    nulo: true
+  - nome: batch_number_charg
+    tipo: string
+    comentario: "Numero do lote"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_item_origin_inv_itm_origin
+    tipo: string
+    comentario: "Origem do item de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: grouping_characteristic_invrel
+    tipo: string
+    comentario: "Caracteristica de agrupamento para verificacao de fatura"
+    pii: nenhum
+    nulo: true
+  - nome: invoicing_differential_indicator_xdinv
+    tipo: string
+    comentario: "Indicador de faturamento diferencial"
+    pii: nenhum
+    nulo: true
+  - nome: commodity_repricing_indicator_xcprf
+    tipo: string
+    comentario: "Indicador de repreicificacao de commodity"
+    pii: nenhum
+    nulo: true
+  - nome: season_year_fsh_season_year
+    tipo: string
+    comentario: "Ano da estacao (fashion)"
+    pii: nenhum
+    nulo: true
+  - nome: season_fsh_season
+    tipo: string
+    comentario: "Estacao (fashion)"
+    pii: nenhum
+    nulo: true
+  - nome: fashion_collection_fsh_collection
+    tipo: string
+    comentario: "Colecao fashion"
+    pii: nenhum
+    nulo: true
+  - nome: fashion_theme_fsh_theme
+    tipo: string
+    comentario: "Tema fashion"
+    pii: nenhum
+    nulo: true
+  - nome: internal_license_number_licno
+    tipo: string
+    comentario: "Numero interno de licenca"
+    pii: nenhum
+    nulo: true
+  - nome: item_number_zeile
+    tipo: int
+    comentario: "Numero do item"
+    pii: nenhum
+    nulo: true
+  - nome: stock_segment_sgt_scat
+    tipo: string
+    comentario: "Segmento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: characteristic_value1_wrf_charstc1
+    tipo: string
+    comentario: "Valor de caracteristica 1"
+    pii: nenhum
+    nulo: true
+  - nome: characteristic_value2_wrf_charstc2
+    tipo: string
+    comentario: "Valor de caracteristica 2"
+    pii: nenhum
+    nulo: true
+  - nome: characteristic_value3_wrf_charstc3
+    tipo: string
+    comentario: "Valor de caracteristica 3"
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro (plant)"
+    pii: nenhum
+    nulo: true
+  - nome: debit_credit_indicator_shkzg
+    tipo: string
+    comentario: "Indicador debito/credito"
+    pii: nenhum
+    nulo: true
+  - nome: tax_code_mwskz
+    tipo: string
+    comentario: "Codigo de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_txjcd
+    tipo: string
+    comentario: "Jurisdicao fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_po_price_unit_bpmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade em unidades de preco do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_measure_meins
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_item_amount_spgrs
+    tipo: string
+    comentario: "Motivo de bloqueio: valor do item"
+    pii: nenhum
+    nulo: true
+  - nome: item_text_sgtxt
+    tipo: string
+    comentario: "Texto do item"
+    pii: nenhum
+    nulo: true
+  - nome: line_item_cash_discount_not_liable_indicator_xskrl
+    tipo: string
+    comentario: "Indicador: item nao sujeito a desconto financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: amount_wrbtr
+    tipo: decimal(23,2)
+    comentario: "Valor na moeda do documento (sinal invertido para notas de credito)"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_costs_item_split_bnkan
+    tipo: decimal(23,2)
+    comentario: "Parcela de custos de entrega do item (sinal invertido para notas de credito)"
+    pii: nenhum
+    nulo: true
+  - nome: retention_amount_retamt_fc
+    tipo: decimal(23,2)
+    comentario: "Valor de retencao na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: difference_amount_diff_amount
+    tipo: decimal(23,2)
+    comentario: "Valor de diferenca"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_amount_rbwwr
+    tipo: decimal(23,2)
+    comentario: "Valor da fatura na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_retention_due_date_retduedt
+    tipo: int
+    comentario: "Ano da data de vencimento da retencao"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_retention_due_date_retduedt
+    tipo: int
+    comentario: "Mes da data de vencimento da retencao"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_retention_due_date_retduedt
+    tipo: int
+    comentario: "Trimestre da data de vencimento da retencao"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_retention_due_date_retduedt
+    tipo: int
+    comentario: "Semana da data de vencimento da retencao"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da ultima atualizacao na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,107 @@
+tabela: tfacd
+camada: bronze
+comentario: "Definição de calendário de fábrica"
+ingestao: cdc
+fonte: sap.tfacd
+chave_primaria: [ident] # client-independent; sem mandt
+colunas:
+  - nome: ident
+    tipo: string
+    comentario: "ID do calendário de fábrica"
+    pii: nenhum
+    nulo: false
+  - nome: vjahr
+    tipo: string
+    comentario: "Ano inicial"
+    pii: nenhum
+    nulo: true
+  - nome: bjahr
+    tipo: string
+    comentario: "Ano final"
+    pii: nenhum
+    nulo: true
+  - nome: motag
+    tipo: string
+    comentario: "Bit de dia útil (segunda-feira)"
+    pii: nenhum
+    nulo: true
+  - nome: ditag
+    tipo: string
+    comentario: "Bit de dia útil (terça-feira)"
+    pii: nenhum
+    nulo: true
+  - nome: miwch
+    tipo: string
+    comentario: "Bit de dia útil (quarta-feira)"
+    pii: nenhum
+    nulo: true
+  - nome: dotag
+    tipo: string
+    comentario: "Bit de dia útil (quinta-feira)"
+    pii: nenhum
+    nulo: true
+  - nome: frtag
+    tipo: string
+    comentario: "Bit de dia útil (sexta-feira)"
+    pii: nenhum
+    nulo: true
+  - nome: satag
+    tipo: string
+    comentario: "Bit de dia útil (sábado)"
+    pii: nenhum
+    nulo: true
+  - nome: sotag
+    tipo: string
+    comentario: "Bit de dia útil (domingo)"
+    pii: nenhum
+    nulo: true
+  - nome: fetag
+    tipo: string
+    comentario: "Bit de dia útil (feriado)"
+    pii: nenhum
+    nulo: true
+  - nome: hocid
+    tipo: string
+    comentario: "ID do calendário de feriados"
+    pii: nenhum
+    nulo: true
+  - nome: basis
+    tipo: string
+    comentario: "Número do primeiro dia útil"
+    pii: nenhum
+    nulo: true
+  - nome: abbr
+    tipo: string
+    comentario: "Indicador de encerramento"
+    pii: nenhum
+    nulo: true
+  - nome: crusr
+    tipo: string
+    comentario: "Usuário criador"
+    pii: nenhum
+    nulo: true
+  - nome: crdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: crtime
+    tipo: string
+    comentario: "Hora da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: interv
+    tipo: string
+    comentario: "Indicador de intervalo"
+    pii: nenhum
+    nulo: true
+  - nome: aktvjahr
+    tipo: string
+    comentario: "Ano inicial atual"
+    pii: nenhum
+    nulo: true
+  - nome: aktbjahr
+    tipo: string
+    comentario: "Ano final atual"
+    pii: nenhum
+    nulo: true

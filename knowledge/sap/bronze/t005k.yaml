@@ -1,0 +1,47 @@
+tabela: t005k
+camada: bronze
+comentario: "Código de discagem internacional por país (tabela de comunicação SAP T005K)."
+ingestao: cdc
+fonte: sap.t005k
+chave_primaria: [mandt, land1]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)."
+    pii: nenhum
+    nulo: false
+  - nome: land1
+    tipo: string
+    comentario: "Chave de país."
+    pii: nenhum
+    nulo: false
+  - nome: teleffrom
+    tipo: string
+    comentario: "Início do intervalo de numeração de telefone/fax."
+    pii: nenhum
+    nulo: true
+  - nome: telefto
+    tipo: string
+    comentario: "Fim do intervalo de numeração de telefone/fax."
+    pii: nenhum
+    nulo: true
+  - nome: telefrm
+    tipo: string
+    comentario: "Dígito a remover na formatação do número."
+    pii: nenhum
+    nulo: true
+  - nome: telexfrom
+    tipo: string
+    comentario: "Início do intervalo de numeração de telex."
+    pii: nenhum
+    nulo: true
+  - nome: telexto
+    tipo: string
+    comentario: "Fim do intervalo de numeração de telex."
+    pii: nenhum
+    nulo: true
+  - nome: mobile_sms
+    tipo: string
+    comentario: "Indicador de habilitação para SMS."
+    pii: nenhum
+    nulo: true

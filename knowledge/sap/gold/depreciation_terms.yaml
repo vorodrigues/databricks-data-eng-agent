@@ -1,0 +1,388 @@
+tabela: depreciation_terms
+camada: gold
+comentario: "Captura parâmetros de depreciação e configurações de vida útil de ANLB, T093B e tabelas SAP relacionadas para modelar tendências de avaliação de ativos fixos."
+entidade: obt
+ingestao: custom
+fontes: [silver.anla, silver.anlh, silver.ankt, silver.anlb, silver.t093b, silver.t093t, silver.t090nat, silver.t093c, silver.anlz, silver.t095t, silver.t098t]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Código da empresa (bukrs)"
+    pii: nenhum
+    nulo: true
+  - nome: asset_number_anln1
+    tipo: string
+    comentario: "Número do ativo fixo"
+    pii: nenhum
+    nulo: true
+  - nome: asset_subnumber_anln2
+    tipo: string
+    comentario: "Sub-número do ativo"
+    pii: nenhum
+    nulo: true
+  - nome: depreciation_area_afabe
+    tipo: string
+    comentario: "Área de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to_bdatu
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_adatu
+    tipo: date
+    comentario: "Válido de"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_erdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: changed_by_aenam
+    tipo: string
+    comentario: "Alterado por"
+    pii: nenhum
+    nulo: true
+  - nome: changed_on_aedat
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: mark_for_deletion_xloev
+    tipo: string
+    comentario: "Marcado para exclusão (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_for_posting_xspeb
+    tipo: string
+    comentario: "Bloqueado para lançamento (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: screen_layout_rule_felei
+    tipo: string
+    comentario: "Regra de layout de tela"
+    pii: nenhum
+    nulo: true
+  - nome: negative_values_allowed_xnega
+    tipo: string
+    comentario: "Valores negativos permitidos (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: low_val_asset_check_xgwgk
+    tipo: string
+    comentario: "Verificação de ativo de baixo valor (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: dep_on_main_asset_number_xunta
+    tipo: string
+    comentario: "Depreciação no número do ativo principal (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: depreciation_calculation_start_date_afabg
+    tipo: date
+    comentario: "Data de início do cálculo de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: interest_calculation_zinbg
+    tipo: date
+    comentario: "Data de início do cálculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: spec_depreciation_safbg
+    tipo: date
+    comentario: "Data de início da depreciação especial"
+    pii: nenhum
+    nulo: true
+  - nome: investment_support_invsl
+    tipo: string
+    comentario: "Chave de suporte a investimento"
+    pii: nenhum
+    nulo: true
+  - nome: depreciation_key_afasl
+    tipo: string
+    comentario: "Chave de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: useful_life_ndjar
+    tipo: int
+    comentario: "Vida útil (anos)"
+    pii: nenhum
+    nulo: true
+  - nome: usef_life_in_periods_ndper
+    tipo: int
+    comentario: "Vida útil (períodos)"
+    pii: nenhum
+    nulo: true
+  - nome: ord_dep_percent_rate_naprz
+    tipo: decimal(23,2)
+    comentario: "Taxa percentual de depreciação ordinária"
+    pii: nenhum
+    nulo: true
+  - nome: spec_dep_perc_rate_saprz
+    tipo: decimal(23,2)
+    comentario: "Taxa percentual de depreciação especial"
+    pii: nenhum
+    nulo: true
+  - nome: index_series_wbind
+    tipo: string
+    comentario: "Série de índice para reavaliação"
+    pii: nenhum
+    nulo: true
+  - nome: age_dependent_index_alind
+    tipo: string
+    comentario: "Série de índice dependente da idade"
+    pii: nenhum
+    nulo: true
+  - nome: variable_dep_portion_aprop
+    tipo: decimal(23,2)
+    comentario: "Parcela variável de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: changeover_year_umjar
+    tipo: int
+    comentario: "Ano de mudança de método de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: original_useful_life_ndurj
+    tipo: int
+    comentario: "Vida útil original (anos)"
+    pii: nenhum
+    nulo: true
+  - nome: orig_life_in_periods_ndurp
+    tipo: int
+    comentario: "Vida útil original (períodos)"
+    pii: nenhum
+    nulo: true
+  - nome: scrap_value_schrw
+    tipo: decimal(23,2)
+    comentario: "Valor residual"
+    pii: nenhum
+    nulo: true
+  - nome: last_fiscal_year_lgjan
+    tipo: int
+    comentario: "Último exercício fiscal para vida útil"
+    pii: nenhum
+    nulo: true
+  - nome: period_scaling_perfy
+    tipo: decimal(23,2)
+    comentario: "Fator de escala de período"
+    pii: nenhum
+    nulo: true
+  - nome: change_type_anupd
+    tipo: string
+    comentario: "Tipo de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: revaluation_aufwtg
+    tipo: string
+    comentario: "Chave de reavaliação"
+    pii: nenhum
+    nulo: true
+  - nome: dep_area_deactivated_xafbe
+    tipo: string
+    comentario: "Área de depreciação desativada (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: group_asset_anlgr
+    tipo: string
+    comentario: "Número do ativo do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: subnumber_anlgr2
+    tipo: string
+    comentario: "Sub-número do ativo do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: acquis_year_vyear
+    tipo: int
+    comentario: "Ano de aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: acquis_month_vmnth
+    tipo: int
+    comentario: "Mês de aquisição"
+    pii: nenhum
+    nulo: true
+  - nome: operating_readiness_inbda
+    tipo: date
+    comentario: "Data de prontidão operacional"
+    pii: nenhum
+    nulo: true
+  - nome: last_retmt_on_abgdat_b
+    tipo: date
+    comentario: "Data da última baixa"
+    pii: nenhum
+    nulo: true
+  - nome: deactivation_on_deakt_b
+    tipo: date
+    comentario: "Data de desativação"
+    pii: nenhum
+    nulo: true
+  - nome: revaluation_key_j_1aarvkey
+    tipo: string
+    comentario: "Chave de reavaliação inflacionária"
+    pii: nenhum
+    nulo: true
+  - nome: last_revaluation_date_j_1aaltdat
+    tipo: date
+    comentario: "Data da última reavaliação inflacionária"
+    pii: nenhum
+    nulo: true
+  - nome: last_index_used_j_1aaltidx
+    tipo: string
+    comentario: "Último índice inflacionário utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: scrap_value_percent_schrw_proz
+    tipo: decimal(23,2)
+    comentario: "Percentual do valor residual"
+    pii: nenhum
+    nulo: true
+  - nome: changeover_period_umper
+    tipo: int
+    comentario: "Período de mudança de método de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: currency_waers
+    tipo: string
+    comentario: "Código de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: rounding_nbv_runden
+    tipo: int
+    comentario: "Casas decimais para arredondamento do valor líquido contábil"
+    pii: nenhum
+    nulo: true
+  - nome: memo_value_erwert
+    tipo: decimal(23,2)
+    comentario: "Valor de memória (valor simbólico)"
+    pii: nenhum
+    nulo: true
+  - nome: max_lva_amount_posting_gwgwrt
+    tipo: decimal(23,2)
+    comentario: "Valor máximo de BVA para lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: net_book_value_dep_change_umrwrt
+    tipo: decimal(23,2)
+    comentario: "Valor líquido contábil para mudança de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: max_lva_amount_purch_ord_gwgbst
+    tipo: decimal(23,2)
+    comentario: "Valor máximo de BVA para pedidos de compra"
+    pii: nenhum
+    nulo: true
+  - nome: calc_dep_half_periods_filler
+    tipo: string
+    comentario: "Calcular depreciação em meios períodos (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: rounding_rv_rndahk
+    tipo: int
+    comentario: "Casas decimais para arredondamento do valor de reposição"
+    pii: nenhum
+    nulo: true
+  - nome: closed_fiscal_year_abgja
+    tipo: int
+    comentario: "Exercício fiscal encerrado"
+    pii: nenhum
+    nulo: true
+  - nome: dep_posting_cycle_afrhy
+    tipo: int
+    comentario: "Ciclo de lançamento de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: capitalize_auc_flag_xanzum
+    tipo: string
+    comentario: "Capitalizar ativos em construção sem adiantamentos (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: fs_version_versn_011
+    tipo: string
+    comentario: "Versão das demonstrações financeiras"
+    pii: nenhum
+    nulo: true
+  - nome: dist_depreciation_weeks_x445r
+    tipo: string
+    comentario: "Distribuir depreciação por semanas (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: manage_group_assets_xakpl
+    tipo: string
+    comentario: "Gerenciar ativos de grupo (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: rounding_basis_basrnd
+    tipo: string
+    comentario: "Base de arredondamento"
+    pii: nenhum
+    nulo: true
+  - nome: rounding_method_metrnd
+    tipo: string
+    comentario: "Método de arredondamento"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_year_variant_periv
+    tipo: string
+    comentario: "Variante do exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: tolerance_amount_toleranz
+    tipo: decimal(23,2)
+    comentario: "Valor de tolerância para depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: post_nbv_retirement_flag_kzrbwb_afabe
+    tipo: string
+    comentario: "Lançar valor líquido contábil na baixa do ativo (flag)"
+    pii: nenhum
+    nulo: true
+  - nome: short_name_dep_area_afbktx
+    tipo: string
+    comentario: "Nome abreviado da área de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: dep_area_name_afbtxt
+    tipo: string
+    comentario: "Descrição da área de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: depreciation_key_description_afatxt
+    tipo: string
+    comentario: "Descrição da chave de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: chart_of_dep_afapl
+    tipo: string
+    comentario: "Plano de depreciação"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

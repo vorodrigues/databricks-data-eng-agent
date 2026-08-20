@@ -1,0 +1,152 @@
+tabela: dd01l
+camada: bronze
+comentario: "Domínios do dicionário ABAP (SAP DD01L). Tabela independente de mandante."
+ingestao: cdc
+fonte: sap.dd01l
+chave_primaria: [domname, as4local, as4vers]  # tabela independente de mandante; PK sem mandt
+colunas:
+  - nome: domname
+    tipo: string
+    comentario: "Nome do domínio"
+    pii: nenhum
+    nulo: false
+  - nome: as4local
+    tipo: string
+    comentario: "Status de ativação"
+    pii: nenhum
+    nulo: false
+  - nome: as4vers
+    tipo: string
+    comentario: "Versão do objeto ABAP"
+    pii: nenhum
+    nulo: false
+  - nome: datatype
+    tipo: string
+    comentario: "Tipo de dado SAP"
+    pii: nenhum
+    nulo: true
+  - nome: leng
+    tipo: int
+    comentario: "Número de caracteres"
+    pii: nenhum
+    nulo: true
+  - nome: outputlen
+    tipo: int
+    comentario: "Comprimento de saída"
+    pii: nenhum
+    nulo: true
+  - nome: decimals
+    tipo: int
+    comentario: "Casas decimais"
+    pii: nenhum
+    nulo: true
+  - nome: lowercase
+    tipo: string
+    comentario: "Letras minúsculas permitidas"
+    pii: nenhum
+    nulo: true
+  - nome: signflag
+    tipo: string
+    comentario: "Indicador de sinal"
+    pii: nenhum
+    nulo: true
+  - nome: langflag
+    tipo: string
+    comentario: "Valores dependentes de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: valexi
+    tipo: string
+    comentario: "Valores fixos existem"
+    pii: nenhum
+    nulo: true
+  - nome: entitytab
+    tipo: string
+    comentario: "Tabela de valores"
+    pii: nenhum
+    nulo: true
+  - nome: convexit
+    tipo: string
+    comentario: "Rotina de conversão"
+    pii: nenhum
+    nulo: true
+  - nome: mask
+    tipo: string
+    comentario: "Template de máscara"
+    pii: nenhum
+    nulo: true
+  - nome: masklen
+    tipo: int
+    comentario: "Comprimento do template de máscara"
+    pii: nenhum
+    nulo: true
+  - nome: actflag
+    tipo: string
+    comentario: "Flag de ativação"
+    pii: nenhum
+    nulo: true
+  - nome: applclass
+    tipo: string
+    comentario: "Classe da aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: authclass
+    tipo: string
+    comentario: "Tipo de ativação"
+    pii: nenhum
+    nulo: true
+  - nome: as4user
+    tipo: string
+    comentario: "Último usuário que alterou"
+    pii: nenhum
+    nulo: true
+  - nome: as4date
+    tipo: string
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: as4time
+    tipo: string
+    comentario: "Hora da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: dommaster
+    tipo: string
+    comentario: "Idioma original"
+    pii: nenhum
+    nulo: true
+  - nome: reservedom
+    tipo: string
+    comentario: "Flag de reserva"
+    pii: nenhum
+    nulo: true
+  - nome: domglobal
+    tipo: string
+    comentario: "Objeto não global"
+    pii: nenhum
+    nulo: true
+  - nome: appendname
+    tipo: string
+    comentario: "Nome do domínio de extensão (append)"
+    pii: nenhum
+    nulo: true
+  - nome: appexist
+    tipo: string
+    comentario: "Append existe"
+    pii: nenhum
+    nulo: true
+  - nome: proxytype
+    tipo: string
+    comentario: "Uso de proxy"
+    pii: nenhum
+    nulo: true
+  - nome: outputstyle
+    tipo: string
+    comentario: "Estilo de saída"
+    pii: nenhum
+    nulo: true
+  - nome: ampmformat
+    tipo: string
+    comentario: "Formato de hora AM/PM suportado"
+    pii: nenhum
+    nulo: true

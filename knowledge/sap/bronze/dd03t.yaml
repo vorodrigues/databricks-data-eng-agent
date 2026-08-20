@@ -1,0 +1,32 @@
+tabela: dd03t
+camada: bronze
+comentario: "Textos descritivos de campos do dicionario de dados SAP (DD), dependentes de idioma, independente de mandante"
+ingestao: cdc
+fonte: sap.dd03t
+chave_primaria: [tabname, ddlanguage, as4local, fieldname]
+colunas:
+  - nome: tabname
+    tipo: string
+    comentario: "Nome da tabela no dicionario SAP"
+    pii: nenhum
+    nulo: false
+  - nome: ddlanguage
+    tipo: string
+    comentario: "Chave de idioma do dicionario"
+    pii: nenhum
+    nulo: false
+  - nome: as4local
+    tipo: string
+    comentario: "Status de ativacao do objeto"
+    pii: nenhum
+    nulo: false
+  - nome: fieldname
+    tipo: string
+    comentario: "Nome do campo"
+    pii: nenhum
+    nulo: false
+  - nome: ddtext
+    tipo: string
+    comentario: "Descricao resumida do campo"
+    pii: nenhum
+    nulo: true

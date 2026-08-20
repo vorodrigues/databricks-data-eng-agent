@@ -1,0 +1,1168 @@
+tabela: customers
+camada: gold
+comentario: "Visão unificada e consolidada dos registros mestre de clientes, integrando dados cadastrais centrais (KNA1) com dados de endereço padronizados (ADRC). Suporta CRM, auditoria de dados mestre, execução de vendas e geoanalytics."
+entidade: obt
+ingestao: custom
+fontes: [silver.kna1, silver.adrc]
+chave_primaria: [client_mandt, customer_number_kunnr, valid_from_date_date_from, version_id_for_international_addresses_nation]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: customer_number_kunnr
+    tipo: string
+    comentario: "Número do cliente"
+    pii: indireto
+    nulo: false
+  - nome: country_key_land1
+    tipo: string
+    comentario: "Chave do país"
+    pii: nenhum
+    nulo: true
+  - nome: name1_name1
+    tipo: string
+    comentario: "Nome 1"
+    pii: direto
+    nulo: true
+  - nome: name2_name2
+    tipo: string
+    comentario: "Nome 2"
+    pii: direto
+    nulo: true
+  - nome: city_ort01
+    tipo: string
+    comentario: "Cidade"
+    pii: indireto
+    nulo: true
+  - nome: postal_code_pstlz
+    tipo: string
+    comentario: "CEP"
+    pii: indireto
+    nulo: true
+  - nome: customer_region_regio
+    tipo: string
+    comentario: "Região (estado/província/país)"
+    pii: indireto
+    nulo: true
+  - nome: sort_field_sortl
+    tipo: string
+    comentario: "Campo de classificação"
+    pii: nenhum
+    nulo: true
+  - nome: street_and_number_stras
+    tipo: string
+    comentario: "Logradouro e número"
+    pii: direto
+    nulo: true
+  - nome: first_telephone_number_telf1
+    tipo: string
+    comentario: "Primeiro número de telefone"
+    pii: direto
+    nulo: true
+  - nome: fax_number_telfx
+    tipo: string
+    comentario: "Número de fax"
+    pii: direto
+    nulo: true
+  - nome: one_time_account_xcpdk
+    tipo: string
+    comentario: "Indicador: conta de cliente eventual"
+    pii: nenhum
+    nulo: true
+  - nome: address_adrnr
+    tipo: string
+    comentario: "Número do endereço"
+    pii: nenhum
+    nulo: true
+  - nome: matchcode_search_mcod1
+    tipo: string
+    comentario: "Termo de busca 1 (matchcode)"
+    pii: direto
+    nulo: true
+  - nome: matchcode_search_mcod2
+    tipo: string
+    comentario: "Termo de busca 2 (matchcode)"
+    pii: direto
+    nulo: true
+  - nome: matchcode_search_mcod3
+    tipo: string
+    comentario: "Termo de busca 3 (matchcode)"
+    pii: direto
+    nulo: true
+  - nome: title_anred
+    tipo: string
+    comentario: "Tratamento"
+    pii: direto
+    nulo: true
+  - nome: central_order_block_for_customer_aufsd
+    tipo: string
+    comentario: "Bloqueio central de pedidos para o cliente"
+    pii: nenhum
+    nulo: true
+  - nome: express_train_station_bahne
+    tipo: string
+    comentario: "Estação de trem expresso"
+    pii: nenhum
+    nulo: true
+  - nome: train_station_bahns
+    tipo: string
+    comentario: "Estação de trem"
+    pii: nenhum
+    nulo: true
+  - nome: international_location_number_bbbnr
+    tipo: string
+    comentario: "Número de localização internacional (parte 1)"
+    pii: nenhum
+    nulo: true
+  - nome: international_location_number_bbsnr
+    tipo: string
+    comentario: "Número de localização internacional (parte 2)"
+    pii: nenhum
+    nulo: true
+  - nome: authorization_group_begru
+    tipo: string
+    comentario: "Grupo de autorização"
+    pii: nenhum
+    nulo: true
+  - nome: industry_key_brsch
+    tipo: string
+    comentario: "Chave do setor"
+    pii: nenhum
+    nulo: true
+  - nome: check_digit_for_the_international_location_number_bubkz
+    tipo: string
+    comentario: "Dígito de verificação do número de localização internacional"
+    pii: nenhum
+    nulo: true
+  - nome: data_communication_line_no_datlt
+    tipo: string
+    comentario: "Número da linha de comunicação de dados"
+    pii: direto
+    nulo: true
+  - nome: date_created_erdat
+    tipo: date
+    comentario: "Data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Criado por (usuário)"
+    pii: indireto
+    nulo: true
+  - nome: unloading_points_exist_exabl
+    tipo: string
+    comentario: "Indicador: pontos de descarga existentes"
+    pii: nenhum
+    nulo: true
+  - nome: central_billing_block_faksd
+    tipo: string
+    comentario: "Bloqueio central de faturamento para o cliente"
+    pii: nenhum
+    nulo: true
+  - nome: account_number_fiscal_address_fiskn
+    tipo: string
+    comentario: "Número de conta do registro mestre com endereço fiscal"
+    pii: indireto
+    nulo: true
+  - nome: working_time_calendar_knazk
+    tipo: string
+    comentario: "Calendário de horas de trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: alternative_payer_knrza
+    tipo: string
+    comentario: "Número de conta do pagador alternativo"
+    pii: indireto
+    nulo: true
+  - nome: group_key_konzs
+    tipo: string
+    comentario: "Chave de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: customer_account_group_ktokd
+    tipo: string
+    comentario: "Grupo de contas do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: customer_classification_kukla
+    tipo: string
+    comentario: "Classificação do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: account_number_of_vendor_or_creditor_lifnr
+    tipo: string
+    comentario: "Número de conta do fornecedor ou credor vinculado"
+    pii: indireto
+    nulo: true
+  - nome: central_delivery_block_for_the_customer_lifsd
+    tipo: string
+    comentario: "Bloqueio central de entrega para o cliente"
+    pii: nenhum
+    nulo: true
+  - nome: city_coordinates_locco
+    tipo: string
+    comentario: "Coordenadas da cidade"
+    pii: indireto
+    nulo: true
+  - nome: central_deletion_flag_for_master_record_loevm
+    tipo: string
+    comentario: "Indicador central de exclusão do registro mestre"
+    pii: nenhum
+    nulo: true
+  - nome: name3_name3
+    tipo: string
+    comentario: "Nome 3"
+    pii: direto
+    nulo: true
+  - nome: name4_name4
+    tipo: string
+    comentario: "Nome 4"
+    pii: direto
+    nulo: true
+  - nome: nielsen_id_niels
+    tipo: string
+    comentario: "ID Nielsen"
+    pii: nenhum
+    nulo: true
+  - nome: district_ort02
+    tipo: string
+    comentario: "Bairro/distrito"
+    pii: indireto
+    nulo: true
+  - nome: po_box_pfach
+    tipo: string
+    comentario: "Caixa postal"
+    pii: direto
+    nulo: true
+  - nome: po_box_postal_code_pstl2
+    tipo: string
+    comentario: "CEP da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: county_code_counc
+    tipo: string
+    comentario: "Código do condado"
+    pii: nenhum
+    nulo: true
+  - nome: city_code_cityc
+    tipo: string
+    comentario: "Código da cidade"
+    pii: nenhum
+    nulo: true
+  - nome: regional_market_rpmkr
+    tipo: string
+    comentario: "Mercado regional"
+    pii: nenhum
+    nulo: true
+  - nome: central_posting_block_sperr
+    tipo: string
+    comentario: "Bloqueio central de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number1_stcd1
+    tipo: string
+    comentario: "Número fiscal 1 (CNPJ/CPF)"
+    pii: sensivel
+    nulo: true
+  - nome: tax_number2_stcd2
+    tipo: string
+    comentario: "Número fiscal 2"
+    pii: sensivel
+    nulo: true
+  - nome: subject_to_equalization_tax_stkza
+    tipo: string
+    comentario: "Indicador: sujeito ao imposto de equiparação"
+    pii: nenhum
+    nulo: true
+  - nome: liable_for_vat_stkzu
+    tipo: string
+    comentario: "Sujeito ao IVA"
+    pii: nenhum
+    nulo: true
+  - nome: telebox_number_telbx
+    tipo: string
+    comentario: "Número de telebox"
+    pii: direto
+    nulo: true
+  - nome: second_telephone_number_telf2
+    tipo: string
+    comentario: "Segundo número de telefone"
+    pii: direto
+    nulo: true
+  - nome: teletex_number_teltx
+    tipo: string
+    comentario: "Número de teletex"
+    pii: direto
+    nulo: true
+  - nome: telex_number_telx1
+    tipo: string
+    comentario: "Número de telex"
+    pii: direto
+    nulo: true
+  - nome: transportation_zone_lzone
+    tipo: string
+    comentario: "Zona de transporte de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: alternative_payer_allowed_xzemp
+    tipo: string
+    comentario: "Indicador: pagador alternativo permitido no documento"
+    pii: nenhum
+    nulo: true
+  - nome: company_id_of_trading_partner_vbund
+    tipo: string
+    comentario: "ID da empresa do parceiro comercial"
+    pii: nenhum
+    nulo: true
+  - nome: vat_registration_number_stceg
+    tipo: string
+    comentario: "Número de registro de IVA"
+    pii: sensivel
+    nulo: true
+  - nome: competitor_dear1
+    tipo: string
+    comentario: "Indicador: concorrente"
+    pii: nenhum
+    nulo: true
+  - nome: sales_partner_dear2
+    tipo: string
+    comentario: "Indicador: parceiro de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: sales_prospect_dear3
+    tipo: string
+    comentario: "Indicador: cliente prospecto"
+    pii: nenhum
+    nulo: true
+  - nome: customer_type4_dear4
+    tipo: string
+    comentario: "Indicador de tipo de cliente 4"
+    pii: nenhum
+    nulo: true
+  - nome: id_for_default_sold_to_party_dear5
+    tipo: string
+    comentario: "ID de cliente pagador padrão"
+    pii: nenhum
+    nulo: true
+  - nome: legal_status_gform
+    tipo: string
+    comentario: "Situação jurídica"
+    pii: nenhum
+    nulo: true
+  - nome: industry_code1_bran1
+    tipo: string
+    comentario: "Código de setor 1"
+    pii: nenhum
+    nulo: true
+  - nome: industry_code2_bran2
+    tipo: string
+    comentario: "Código de setor 2"
+    pii: nenhum
+    nulo: true
+  - nome: industry_code3_bran3
+    tipo: string
+    comentario: "Código de setor 3"
+    pii: nenhum
+    nulo: true
+  - nome: industry_code4_bran4
+    tipo: string
+    comentario: "Código de setor 4"
+    pii: nenhum
+    nulo: true
+  - nome: industry_code5_bran5
+    tipo: string
+    comentario: "Código de setor 5"
+    pii: nenhum
+    nulo: true
+  - nome: initial_contact_ekont
+    tipo: string
+    comentario: "Primeiro contato"
+    pii: nenhum
+    nulo: true
+  - nome: annual_sales_umsat
+    tipo: decimal(23,2)
+    comentario: "Faturamento anual"
+    pii: nenhum
+    nulo: true
+  - nome: year_for_which_sales_are_given_umjah
+    tipo: string
+    comentario: "Ano de referência do faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: currency_of_sales_figure_uwaer
+    tipo: string
+    comentario: "Moeda do faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: yearly_number_of_employees_jmzah
+    tipo: int
+    comentario: "Número de funcionários no ano"
+    pii: nenhum
+    nulo: true
+  - nome: year_for_which_the_number_of_employees_is_given_jmjah
+    tipo: string
+    comentario: "Ano de referência do número de funcionários"
+    pii: nenhum
+    nulo: true
+  - nome: attribute1_katr1
+    tipo: string
+    comentario: "Atributo 1"
+    pii: nenhum
+    nulo: true
+  - nome: attribute2_katr2
+    tipo: string
+    comentario: "Atributo 2"
+    pii: nenhum
+    nulo: true
+  - nome: attribute3_katr3
+    tipo: string
+    comentario: "Atributo 3"
+    pii: nenhum
+    nulo: true
+  - nome: attribute4_katr4
+    tipo: string
+    comentario: "Atributo 4"
+    pii: nenhum
+    nulo: true
+  - nome: attribute5_katr5
+    tipo: string
+    comentario: "Atributo 5"
+    pii: nenhum
+    nulo: true
+  - nome: attribute6_katr6
+    tipo: string
+    comentario: "Atributo 6"
+    pii: nenhum
+    nulo: true
+  - nome: attribute7_katr7
+    tipo: string
+    comentario: "Atributo 7"
+    pii: nenhum
+    nulo: true
+  - nome: attribute8_katr8
+    tipo: string
+    comentario: "Atributo 8"
+    pii: nenhum
+    nulo: true
+  - nome: attribute9_katr9
+    tipo: string
+    comentario: "Atributo 9"
+    pii: nenhum
+    nulo: true
+  - nome: attribute10_katr10
+    tipo: string
+    comentario: "Atributo 10"
+    pii: nenhum
+    nulo: true
+  - nome: natural_person_stkzn
+    tipo: string
+    comentario: "Pessoa física"
+    pii: nenhum
+    nulo: true
+  - nome: annual_sales_umsa1
+    tipo: decimal(23,2)
+    comentario: "Faturamento anual (alternativo)"
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_year_variant_periv
+    tipo: string
+    comentario: "Variante do exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: usage_indicator_abrvw
+    tipo: string
+    comentario: "Indicador de uso"
+    pii: nenhum
+    nulo: true
+  - nome: inspection_carried_out_by_customer_inspbydebi
+    tipo: string
+    comentario: "Inspeção realizada pelo cliente (sem lote de inspeção)"
+    pii: nenhum
+    nulo: true
+  - nome: inspection_for_a_delivery_note_inspatdebi
+    tipo: string
+    comentario: "Inspeção após entrega de saída"
+    pii: nenhum
+    nulo: true
+  - nome: reference_account_group_ktocd
+    tipo: string
+    comentario: "Grupo de contas de referência para cliente eventual"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_city_pfort
+    tipo: string
+    comentario: "Cidade da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: true
+  - nome: report_key_for_data_medium_exchange_dtams
+    tipo: string
+    comentario: "Chave do relatório para intercâmbio de dados"
+    pii: nenhum
+    nulo: true
+  - nome: instruction_key_for_data_medium_exchange_dtaws
+    tipo: string
+    comentario: "Chave de instrução para intercâmbio de dados"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_data_transfer_into_subsequent_release_duefl
+    tipo: string
+    comentario: "Status de transferência de dados para a próxima versão"
+    pii: nenhum
+    nulo: true
+  - nome: assignment_to_hierarchy_hzuor
+    tipo: string
+    comentario: "Atribuição à hierarquia"
+    pii: nenhum
+    nulo: true
+  - nome: payment_block_sperz
+    tipo: string
+    comentario: "Bloqueio de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: r_labeling_customerplant_group_etikg
+    tipo: string
+    comentario: "IS-R: grupo de etiquetagem cliente/centro"
+    pii: nenhum
+    nulo: true
+  - nome: id_non_military_use_civve
+    tipo: string
+    comentario: "ID de uso predominantemente civil"
+    pii: nenhum
+    nulo: true
+  - nome: id_for_military_use_milve
+    tipo: string
+    comentario: "ID de uso predominantemente militar"
+    pii: nenhum
+    nulo: true
+  - nome: condition_group1_kdkg1
+    tipo: string
+    comentario: "Grupo de condição do cliente 1"
+    pii: nenhum
+    nulo: true
+  - nome: condition_group2_kdkg2
+    tipo: string
+    comentario: "Grupo de condição do cliente 2"
+    pii: nenhum
+    nulo: true
+  - nome: condition_group3_kdkg3
+    tipo: string
+    comentario: "Grupo de condição do cliente 3"
+    pii: nenhum
+    nulo: true
+  - nome: condition_group4_kdkg4
+    tipo: string
+    comentario: "Grupo de condição do cliente 4"
+    pii: nenhum
+    nulo: true
+  - nome: condition_group5_kdkg5
+    tipo: string
+    comentario: "Grupo de condição do cliente 5"
+    pii: nenhum
+    nulo: true
+  - nome: alternative_payer_using_account_number_xknza
+    tipo: string
+    comentario: "Indicador: pagador alternativo usa número de conta"
+    pii: nenhum
+    nulo: true
+  - nome: tax_type_fityp
+    tipo: string
+    comentario: "Tipo de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number_type_stcdt
+    tipo: string
+    comentario: "Tipo de número fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: tax_number3_stcd3
+    tipo: string
+    comentario: "Número fiscal 3"
+    pii: sensivel
+    nulo: true
+  - nome: tax_number4_stcd4
+    tipo: string
+    comentario: "Número fiscal 4"
+    pii: sensivel
+    nulo: true
+  - nome: tax_number5_stcd5
+    tipo: string
+    comentario: "Número fiscal 5"
+    pii: sensivel
+    nulo: true
+  - nome: customer_is_icms_exempt_xicms
+    tipo: string
+    comentario: "Cliente isento de ICMS"
+    pii: nenhum
+    nulo: true
+  - nome: customer_is_ipi_exempt_xxipi
+    tipo: string
+    comentario: "Cliente isento de IPI"
+    pii: nenhum
+    nulo: true
+  - nome: customer_group_for_substituicao_tributaria_calculation_xsubt
+    tipo: string
+    comentario: "Grupo do cliente para cálculo de substituição tributária"
+    pii: nenhum
+    nulo: true
+  - nome: customer_cfop_category_cfopc
+    tipo: string
+    comentario: "Categoria CFOP do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: tax_law_icms_txlw1
+    tipo: string
+    comentario: "Lei fiscal: ICMS"
+    pii: nenhum
+    nulo: true
+  - nome: tax_law_ipi_txlw2
+    tipo: string
+    comentario: "Lei fiscal: IPI"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_for_biochemical_warfare_ccc01
+    tipo: string
+    comentario: "Indicador para controle legal de guerra bioquímica"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_for_nuclear_nonproliferation_ccc02
+    tipo: string
+    comentario: "Indicador para controle legal de não proliferação nuclear"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_for_national_security_ccc03
+    tipo: string
+    comentario: "Indicador para controle legal de segurança nacional"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_for_missile_technology_ccc04
+    tipo: string
+    comentario: "Indicador para controle legal de tecnologia de mísseis"
+    pii: nenhum
+    nulo: true
+  - nome: central_sales_block_cassd
+    tipo: string
+    comentario: "Bloqueio central de vendas para o cliente"
+    pii: nenhum
+    nulo: true
+  - nome: uniform_resource_locator_knurl
+    tipo: string
+    comentario: "URL do cliente"
+    pii: indireto
+    nulo: true
+  - nome: name_of_representative_j_1_kfrepre
+    tipo: string
+    comentario: "Nome do representante"
+    pii: direto
+    nulo: true
+  - nome: type_of_business_j_1_kftbus
+    tipo: string
+    comentario: "Tipo de atividade empresarial"
+    pii: nenhum
+    nulo: true
+  - nome: type_of_industry_j_1_kftind
+    tipo: string
+    comentario: "Tipo de setor industrial"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_change_authorization_confs
+    tipo: string
+    comentario: "Status da autorização de alteração (central)"
+    pii: nenhum
+    nulo: true
+  - nome: date_on_which_the_changes_were_confirmed_updat
+    tipo: date
+    comentario: "Data de confirmação das alterações"
+    pii: nenhum
+    nulo: true
+  - nome: time_of_last_change_confirmation_uptim
+    tipo: string
+    comentario: "Hora da última confirmação de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: central_deletion_block_for_master_record_nodel
+    tipo: string
+    comentario: "Bloqueio central de exclusão do registro mestre"
+    pii: nenhum
+    nulo: true
+  - nome: indicator_consumer_dear6
+    tipo: string
+    comentario: "Indicador: consumidor final"
+    pii: nenhum
+    nulo: true
+  - nome: business_purpose_completed_flag_cvp_xblck
+    tipo: string
+    comentario: "Indicador de finalidade comercial concluída"
+    pii: nenhum
+    nulo: true
+  - nome: suframa_code_suframa
+    tipo: string
+    comentario: "Código SUFRAMA"
+    pii: sensivel
+    nulo: true
+  - nome: rg_number_rg
+    tipo: string
+    comentario: "Número do RG"
+    pii: sensivel
+    nulo: true
+  - nome: issued_by_exp
+    tipo: string
+    comentario: "Órgão emissor"
+    pii: indireto
+    nulo: true
+  - nome: state_uf
+    tipo: string
+    comentario: "UF (estado)"
+    pii: indireto
+    nulo: true
+  - nome: rg_issuing_date_rgdate
+    tipo: date
+    comentario: "Data de emissão do RG"
+    pii: sensivel
+    nulo: true
+  - nome: ric_number_ric
+    tipo: string
+    comentario: "Número do RIC"
+    pii: sensivel
+    nulo: true
+  - nome: foreign_national_registration_rne
+    tipo: string
+    comentario: "Registro nacional de estrangeiro (RNE)"
+    pii: sensivel
+    nulo: true
+  - nome: rne_issuing_date_rnedate
+    tipo: date
+    comentario: "Data de emissão do RNE"
+    pii: sensivel
+    nulo: true
+  - nome: cnae_cnae
+    tipo: string
+    comentario: "Código CNAE"
+    pii: sensivel
+    nulo: true
+  - nome: legal_nature_legalnat
+    tipo: string
+    comentario: "Natureza jurídica"
+    pii: nenhum
+    nulo: true
+  - nome: crt_number_crtn
+    tipo: string
+    comentario: "Número CRT (código de regime tributário)"
+    pii: sensivel
+    nulo: true
+  - nome: icms_taxpayer_icmstaxpay
+    tipo: string
+    comentario: "Contribuinte do ICMS"
+    pii: nenhum
+    nulo: true
+  - nome: industry_main_type_indtyp
+    tipo: string
+    comentario: "Tipo principal de setor"
+    pii: nenhum
+    nulo: true
+  - nome: tax_declaration_type_tdt
+    tipo: string
+    comentario: "Tipo de declaração fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: company_size_comsize
+    tipo: string
+    comentario: "Porte da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: declaration_regimen_for_piscofins_decregpc
+    tipo: string
+    comentario: "Regime de declaração para PIS/COFINS"
+    pii: nenhum
+    nulo: true
+  - nome: agency_location_code_alc
+    tipo: string
+    comentario: "Código de localização da agência"
+    pii: nenhum
+    nulo: true
+  - nome: payment_office_pmt_office
+    tipo: string
+    comentario: "Escritório de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: fee_schedule_fee_schedule
+    tipo: string
+    comentario: "Tabela de tarifas"
+    pii: nenhum
+    nulo: true
+  - nome: duns_number_duns
+    tipo: string
+    comentario: "Número DUNS"
+    pii: indireto
+    nulo: true
+  - nome: duns4_duns4
+    tipo: string
+    comentario: "Número DUNS+4"
+    pii: indireto
+    nulo: true
+  - nome: processor_group_psofg
+    tipo: string
+    comentario: "Grupo de processador"
+    pii: nenhum
+    nulo: true
+  - nome: subledger_acct_preprocessing_procedure_psois
+    tipo: string
+    comentario: "Procedimento de pré-processamento da conta auxiliar"
+    pii: nenhum
+    nulo: true
+  - nome: name1_pson1
+    tipo: string
+    comentario: "Nome 1 (pessoa)"
+    pii: direto
+    nulo: true
+  - nome: name2_pson2
+    tipo: string
+    comentario: "Nome 2 (pessoa)"
+    pii: direto
+    nulo: true
+  - nome: name3_pson3
+    tipo: string
+    comentario: "Nome 3 (pessoa)"
+    pii: direto
+    nulo: true
+  - nome: first_name_psovn
+    tipo: string
+    comentario: "Primeiro nome"
+    pii: direto
+    nulo: true
+  - nome: title_psotl
+    tipo: string
+    comentario: "Título (pessoa)"
+    pii: direto
+    nulo: true
+  - nome: description_psoo1
+    tipo: string
+    comentario: "Descrição do objeto 1"
+    pii: nenhum
+    nulo: true
+  - nome: description_psoo2
+    tipo: string
+    comentario: "Descrição do objeto 2"
+    pii: nenhum
+    nulo: true
+  - nome: description_psoo3
+    tipo: string
+    comentario: "Descrição do objeto 3"
+    pii: nenhum
+    nulo: true
+  - nome: description_psoo4
+    tipo: string
+    comentario: "Descrição do objeto 4"
+    pii: nenhum
+    nulo: true
+  - nome: description_psoo5
+    tipo: string
+    comentario: "Descrição do objeto 5"
+    pii: nenhum
+    nulo: true
+  - nome: address_number_addrnumber
+    tipo: string
+    comentario: "Número do endereço (ADRC)"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_date_date_from
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: false
+  - nome: version_id_for_international_addresses_nation
+    tipo: string
+    comentario: "ID de versão para endereços internacionais"
+    pii: nenhum
+    nulo: false
+  - nome: valid_to_date_date_to
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: form_of_address_key_title
+    tipo: string
+    comentario: "Chave de forma de tratamento"
+    pii: direto
+    nulo: true
+  - nome: addr_name1
+    tipo: string
+    comentario: "Nome 1 (endereço)"
+    pii: direto
+    nulo: true
+  - nome: addr_name2
+    tipo: string
+    comentario: "Nome 2 (endereço)"
+    pii: direto
+    nulo: true
+  - nome: addr_name3
+    tipo: string
+    comentario: "Nome 3 (endereço)"
+    pii: direto
+    nulo: true
+  - nome: addr_name4
+    tipo: string
+    comentario: "Nome 4 (endereço)"
+    pii: direto
+    nulo: true
+  - nome: city_city1
+    tipo: string
+    comentario: "Cidade"
+    pii: indireto
+    nulo: true
+  - nome: district_city2
+    tipo: string
+    comentario: "Bairro/distrito"
+    pii: indireto
+    nulo: true
+  - nome: city_code_for_citystreet_file_city_code
+    tipo: string
+    comentario: "Código de cidade para arquivo de rua/cidade"
+    pii: nenhum
+    nulo: true
+  - nome: district_code_for_city_and_street_file_cityp_code
+    tipo: string
+    comentario: "Código de distrito para arquivo de cidade/rua"
+    pii: nenhum
+    nulo: true
+  - nome: city_home_city
+    tipo: string
+    comentario: "Cidade (diferente da cidade postal)"
+    pii: indireto
+    nulo: true
+  - nome: different_city_for_citystreet_file_cityh_code
+    tipo: string
+    comentario: "Código de cidade diferente para arquivo de cidade/rua"
+    pii: nenhum
+    nulo: true
+  - nome: regional_structure_grouping_regiogroup
+    tipo: string
+    comentario: "Agrupamento de estrutura regional"
+    pii: nenhum
+    nulo: true
+  - nome: city_postal_code_post_code1
+    tipo: string
+    comentario: "CEP da cidade"
+    pii: indireto
+    nulo: true
+  - nome: po_box_postal_code_post_code2
+    tipo: string
+    comentario: "CEP da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: company_postal_code_post_code3
+    tipo: string
+    comentario: "CEP da empresa (grandes clientes)"
+    pii: indireto
+    nulo: true
+  - nome: po_box_po_box
+    tipo: string
+    comentario: "Caixa postal"
+    pii: direto
+    nulo: true
+  - nome: po_box_address_undeliverable_flag_dont_use_p
+    tipo: string
+    comentario: "Indicador de endereço de caixa postal não entregável"
+    pii: nenhum
+    nulo: true
+  - nome: flag_po_box_without_number_po_box_num
+    tipo: string
+    comentario: "Indicador: caixa postal sem número"
+    pii: nenhum
+    nulo: true
+  - nome: po_box_city_po_box_loc
+    tipo: string
+    comentario: "Cidade da caixa postal"
+    pii: indireto
+    nulo: true
+  - nome: city_po_box_code_city_file_city_code2
+    tipo: string
+    comentario: "Código de cidade da caixa postal (arquivo de cidades)"
+    pii: nenhum
+    nulo: true
+  - nome: region_for_po_box_po_box_reg
+    tipo: string
+    comentario: "Região da caixa postal (estado/província)"
+    pii: indireto
+    nulo: true
+  - nome: po_box_country_po_box_cty
+    tipo: string
+    comentario: "País da caixa postal"
+    pii: nenhum
+    nulo: true
+  - nome: transportation_zone_to_or_from_which_the_goods_are_delivered_transpzone
+    tipo: string
+    comentario: "Zona de transporte para entrega das mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: street_street
+    tipo: string
+    comentario: "Logradouro"
+    pii: direto
+    nulo: true
+  - nome: street_address_undeliverable_flag_dont_use_s
+    tipo: string
+    comentario: "Indicador de endereço de rua não entregável"
+    pii: nenhum
+    nulo: true
+  - nome: street_number_for_citystreet_file_streetcode
+    tipo: string
+    comentario: "Número da rua para arquivo de cidade/rua"
+    pii: nenhum
+    nulo: true
+  - nome: house_number_house_num1
+    tipo: string
+    comentario: "Número do imóvel"
+    pii: direto
+    nulo: true
+  - nome: house_number_supplement_house_num2
+    tipo: string
+    comentario: "Complemento do número do imóvel"
+    pii: direto
+    nulo: true
+  - nome: street2_str_suppl1
+    tipo: string
+    comentario: "Endereço linha 2"
+    pii: direto
+    nulo: true
+  - nome: street3_str_suppl2
+    tipo: string
+    comentario: "Endereço linha 3"
+    pii: direto
+    nulo: true
+  - nome: street4_str_suppl3
+    tipo: string
+    comentario: "Endereço linha 4"
+    pii: direto
+    nulo: true
+  - nome: street5_location
+    tipo: string
+    comentario: "Endereço linha 5"
+    pii: direto
+    nulo: true
+  - nome: building_number_or_code_building
+    tipo: string
+    comentario: "Número ou código do edifício"
+    pii: direto
+    nulo: true
+  - nome: floor_in_building_floor
+    tipo: string
+    comentario: "Andar no edifício"
+    pii: direto
+    nulo: true
+  - nome: room_or_appartment_number_roomnumber
+    tipo: string
+    comentario: "Número da sala ou apartamento"
+    pii: direto
+    nulo: true
+  - nome: country_key_country
+    tipo: string
+    comentario: "Chave do país (endereço)"
+    pii: nenhum
+    nulo: true
+  - nome: language_langu
+    tipo: string
+    comentario: "Idioma"
+    pii: nenhum
+    nulo: true
+  - nome: region_region
+    tipo: string
+    comentario: "Região (estado/província/condado)"
+    pii: indireto
+    nulo: true
+  - nome: address_group_key_business_address_services_addr_group
+    tipo: string
+    comentario: "Chave do grupo de endereços (BAS)"
+    pii: nenhum
+    nulo: true
+  - nome: flag_there_are_more_address_group_assignments_flaggroups
+    tipo: string
+    comentario: "Indicador: existem mais atribuições de grupo de endereços"
+    pii: nenhum
+    nulo: true
+  - nome: flag_this_is_a_personal_address_pers_addr
+    tipo: string
+    comentario: "Indicador: este é um endereço pessoal"
+    pii: nenhum
+    nulo: true
+  - nome: search_term1_sort1
+    tipo: string
+    comentario: "Termo de pesquisa 1"
+    pii: direto
+    nulo: true
+  - nome: search_term2_sort2
+    tipo: string
+    comentario: "Termo de pesquisa 2"
+    pii: direto
+    nulo: true
+  - nome: first_telephone_no_dialling_codenumber_tel_number
+    tipo: string
+    comentario: "Primeiro telefone: código de discagem + número"
+    pii: direto
+    nulo: true
+  - nome: first_telephone_no_extension_tel_extens
+    tipo: string
+    comentario: "Primeiro telefone: ramal"
+    pii: direto
+    nulo: true
+  - nome: county_code_for_county_county_code
+    tipo: string
+    comentario: "Código do condado"
+    pii: nenhum
+    nulo: true
+  - nome: county_county
+    tipo: string
+    comentario: "Condado"
+    pii: indireto
+    nulo: true
+  - nome: township_code_for_township_township_code
+    tipo: string
+    comentario: "Código do município"
+    pii: nenhum
+    nulo: true
+  - nome: township_township
+    tipo: string
+    comentario: "Município"
+    pii: indireto
+    nulo: true
+  - nome: county_name_in_upper_case_for_search_help_mc_county
+    tipo: string
+    comentario: "Nome do condado em maiúsculas (busca)"
+    pii: nenhum
+    nulo: true
+  - nome: township_name_in_upper_case_for_search_help_mc_township
+    tipo: string
+    comentario: "Nome do município em maiúsculas (busca)"
+    pii: nenhum
+    nulo: true
+  - nome: business_purpose_completed_flag_xpcpt
+    tipo: string
+    comentario: "Indicador de finalidade comercial concluída (ADRC)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização do registro na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga do registro no BigQuery"
+    pii: nenhum
+    nulo: true

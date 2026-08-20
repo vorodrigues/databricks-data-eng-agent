@@ -1,0 +1,422 @@
+tabela: nast
+camada: bronze
+comentario: "Status de mensagens de saída (Message Status)"
+ingestao: cdc
+fonte: sap.nast
+chave_primaria: [mandt, kappl, objky, kschl, spras, parvw, parnr]
+colunas:
+  - nome: acall
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: adrnr
+    tipo: string
+    comentario: "Número de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: aende
+    tipo: string
+    comentario: "Mensagem de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: aktiv
+    tipo: string
+    comentario: "Indicador de atividade"
+    pii: nenhum
+    nulo: true
+  - nome: anzal
+    tipo: int
+    comentario: "Número de mensagens"
+    pii: nenhum
+    nulo: true
+  - nome: cmfpnr
+    tipo: string
+    comentario: "Número (uso interno)"
+    pii: nenhum
+    nulo: true
+  - nome: datre
+    tipo: date
+    comentario: "Data de resposta"
+    pii: nenhum
+    nulo: true
+  - nome: datvr
+    tipo: date
+    comentario: "Data de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: delet
+    tipo: string
+    comentario: "Liberar após emissão"
+    pii: nenhum
+    nulo: true
+  - nome: dimme
+    tipo: string
+    comentario: "Imprimir imediatamente"
+    pii: nenhum
+    nulo: true
+  - nome: dsnam
+    tipo: string
+    comentario: "Nome da solicitação de spool"
+    pii: nenhum
+    nulo: true
+  - nome: dsuf1
+    tipo: string
+    comentario: "Sufixo 1"
+    pii: nenhum
+    nulo: true
+  - nome: dsuf2
+    tipo: string
+    comentario: "Sufixo 2"
+    pii: nenhum
+    nulo: true
+  - nome: edikey
+    tipo: string
+    comentario: "Data de cobrança (dunning)"
+    pii: nenhum
+    nulo: true
+  - nome: editrans
+    tipo: string
+    comentario: "Hora de cobrança (dunning)"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: eruhr
+    tipo: string
+    comentario: "Criado às (hora)"
+    pii: nenhum
+    nulo: true
+  - nome: event
+    tipo: string
+    comentario: "Evento"
+    pii: nenhum
+    nulo: true
+  - nome: forfb
+    tipo: string
+    comentario: "Campo de controle (uso interno)"
+    pii: nenhum
+    nulo: true
+  - nome: kappl
+    tipo: string
+    comentario: "Aplicação"
+    pii: nenhum
+    nulo: false
+  - nome: kschl
+    tipo: string
+    comentario: "Tipo de mensagem"
+    pii: nenhum
+    nulo: false
+  - nome: ldest
+    tipo: string
+    comentario: "Dispositivo de saída"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: manue
+    tipo: string
+    comentario: "Mensagem inserida manualmente"
+    pii: nenhum
+    nulo: true
+  - nome: nacha
+    tipo: string
+    comentario: "Meio de transmissão"
+    pii: nenhum
+    nulo: true
+  - nome: nauto
+    tipo: string
+    comentario: "Processamento automático"
+    pii: nenhum
+    nulo: true
+  - nome: objac
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: objcp
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: objky
+    tipo: string
+    comentario: "Chave do objeto"
+    pii: nenhum
+    nulo: false
+  - nome: objpri
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: objrn
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: objrr
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: objsns
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: objtype
+    tipo: string
+    comentario: "Tipo de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: optarcnr
+    tipo: string
+    comentario: "Número de arquivo"
+    pii: nenhum
+    nulo: true
+  - nome: outfl
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: parnr
+    tipo: string
+    comentario: "Parceiro da mensagem"
+    pii: indireto
+    nulo: false
+  - nome: parvw
+    tipo: string
+    comentario: "Função do parceiro"
+    pii: nenhum
+    nulo: false
+  - nome: pfld1
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: pfld2
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: pfld3
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: pfld4
+    tipo: string
+    comentario: "Formulário SAPscript"
+    pii: nenhum
+    nulo: true
+  - nome: pfld5
+    tipo: string
+    comentario: "Módulo de layout para formatação de impressão"
+    pii: nenhum
+    nulo: true
+  - nome: pmid1
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: pmid2
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: pmid3
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: pmid4
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: pmid5
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: prifb
+    tipo: string
+    comentario: "Status do relatório por e-mail"
+    pii: nenhum
+    nulo: true
+  - nome: repet
+    tipo: string
+    comentario: "Repetibilidade"
+    pii: nenhum
+    nulo: true
+  - nome: repid
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: sndbc
+    tipo: string
+    comentario: "Tipo de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: sndcp
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: snddr
+    tipo: string
+    comentario: "Enviar desconsiderando"
+    pii: nenhum
+    nulo: true
+  - nome: sndex
+    tipo: string
+    comentario: "Campo não utilizado"
+    pii: nenhum
+    nulo: true
+  - nome: sort1
+    tipo: string
+    comentario: "Critério de ordenação 1"
+    pii: nenhum
+    nulo: true
+  - nome: sort2
+    tipo: string
+    comentario: "Critério de ordenação 2"
+    pii: nenhum
+    nulo: true
+  - nome: sort3
+    tipo: string
+    comentario: "Critério de ordenação 3"
+    pii: nenhum
+    nulo: true
+  - nome: spras
+    tipo: string
+    comentario: "Idioma da mensagem"
+    pii: nenhum
+    nulo: false
+  - nome: tcode
+    tipo: string
+    comentario: "Estratégia de comunicação"
+    pii: nenhum
+    nulo: true
+  - nome: tdarmod
+    tipo: string
+    comentario: "Modo de armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: tdautority
+    tipo: string
+    comentario: "Autorização"
+    pii: nenhum
+    nulo: true
+  - nome: tdcovtitle
+    tipo: string
+    comentario: "Texto da página de capa"
+    pii: nenhum
+    nulo: true
+  - nome: tddivision
+    tipo: string
+    comentario: "Departamento na página de capa"
+    pii: nenhum
+    nulo: true
+  - nome: tdid
+    tipo: string
+    comentario: "ID do texto"
+    pii: nenhum
+    nulo: true
+  - nome: tdname
+    tipo: string
+    comentario: "Chave do objeto (texto)"
+    pii: nenhum
+    nulo: true
+  - nome: tdocover
+    tipo: string
+    comentario: "Página de capa SAP"
+    pii: nenhum
+    nulo: true
+  - nome: tdreceiver
+    tipo: string
+    comentario: "Destinatário"
+    pii: direto
+    nulo: true
+  - nome: tdschedule
+    tipo: string
+    comentario: "Horário de envio"
+    pii: nenhum
+    nulo: true
+  - nome: tdspras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: telfx
+    tipo: string
+    comentario: "Número de fax"
+    pii: direto
+    nulo: true
+  - nome: teltx
+    tipo: string
+    comentario: "Número de teletex"
+    pii: direto
+    nulo: true
+  - nome: telx1
+    tipo: string
+    comentario: "Número de telex"
+    pii: direto
+    nulo: true
+  - nome: tland
+    tipo: string
+    comentario: "Chave de país"
+    pii: nenhum
+    nulo: true
+  - nome: uhrvr
+    tipo: string
+    comentario: "Hora de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Nome do usuário"
+    pii: indireto
+    nulo: true
+  - nome: usrnam
+    tipo: string
+    comentario: "Endereço da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: vsdat
+    tipo: date
+    comentario: "Data de envio"
+    pii: nenhum
+    nulo: true
+  - nome: vstat
+    tipo: string
+    comentario: "Status de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: vsura
+    tipo: string
+    comentario: "Hora de início do envio"
+    pii: nenhum
+    nulo: true
+  - nome: vsurb
+    tipo: string
+    comentario: "Hora de fim do envio"
+    pii: nenhum
+    nulo: true
+  - nome: vsztp
+    tipo: string
+    comentario: "Horário de expedição"
+    pii: nenhum
+    nulo: true
+  - nome: _dataaging
+    tipo: string
+    comentario: "Campo de controle de envelhecimento de dados"
+    pii: nenhum
+    nulo: true

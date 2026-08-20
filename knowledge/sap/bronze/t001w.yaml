@@ -1,0 +1,337 @@
+tabela: t001w
+camada: bronze
+comentario: "Centros e filiais (T001W)"
+ingestao: cdc
+fonte: sap.t001w
+chave_primaria: [mandt, werks]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: werks
+    tipo: string
+    comentario: "Código do centro (werks)"
+    pii: nenhum
+    nulo: false
+  - nome: name1
+    tipo: string
+    comentario: "Nome 1 do centro"
+    pii: nenhum
+    nulo: true
+  - nome: bwkey
+    tipo: string
+    comentario: "Área de avaliação (bwkey)"
+    pii: nenhum
+    nulo: true
+  - nome: kunnr
+    tipo: string
+    comentario: "Número de cliente vinculado ao centro (kunnr)"
+    pii: indireto
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Número de fornecedor vinculado ao centro (lifnr)"
+    pii: indireto
+    nulo: true
+  - nome: fabkl
+    tipo: string
+    comentario: "Calendário de fábrica"
+    pii: nenhum
+    nulo: true
+  - nome: name2
+    tipo: string
+    comentario: "Nome 2 do centro"
+    pii: nenhum
+    nulo: true
+  - nome: stras
+    tipo: string
+    comentario: "Rua e número do centro"
+    pii: nenhum
+    nulo: true
+  - nome: pfach
+    tipo: string
+    comentario: "Caixa postal do centro"
+    pii: nenhum
+    nulo: true
+  - nome: pstlz
+    tipo: string
+    comentario: "CEP do centro"
+    pii: nenhum
+    nulo: true
+  - nome: ort01
+    tipo: string
+    comentario: "Cidade do centro"
+    pii: nenhum
+    nulo: true
+  - nome: ekorg
+    tipo: string
+    comentario: "Organização de compras (ekorg)"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas (vkorg)"
+    pii: nenhum
+    nulo: true
+  - nome: chazv
+    tipo: string
+    comentario: "Indicador: gerenciamento de status de lote"
+    pii: nenhum
+    nulo: true
+  - nome: kkowk
+    tipo: string
+    comentario: "Indicador: condições no nível de centro"
+    pii: nenhum
+    nulo: true
+  - nome: kordb
+    tipo: string
+    comentario: "Indicador: lista de fontes de abastecimento"
+    pii: nenhum
+    nulo: true
+  - nome: bedpl
+    tipo: string
+    comentario: "Indicador: planejamento de necessidades MRP"
+    pii: nenhum
+    nulo: true
+  - nome: land1
+    tipo: string
+    comentario: "Chave do país do centro (land1)"
+    pii: nenhum
+    nulo: true
+  - nome: regio
+    tipo: string
+    comentario: "Região/estado do centro (regio)"
+    pii: nenhum
+    nulo: true
+  - nome: counc
+    tipo: string
+    comentario: "Código do município"
+    pii: nenhum
+    nulo: true
+  - nome: cityc
+    tipo: string
+    comentario: "Código da cidade"
+    pii: nenhum
+    nulo: true
+  - nome: adrnr
+    tipo: string
+    comentario: "Número de endereço (adrnr)"
+    pii: nenhum
+    nulo: true
+  - nome: iwerk
+    tipo: string
+    comentario: "Centro de planejamento de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição (vtweg)"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Divisão de faturamento intercompanhia (spart)"
+    pii: nenhum
+    nulo: true
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma (spras)"
+    pii: nenhum
+    nulo: true
+  - nome: wksop
+    tipo: string
+    comentario: "Indicador: centro SOP"
+    pii: nenhum
+    nulo: true
+  - nome: awsls
+    tipo: string
+    comentario: "Chave de variância (awsls)"
+    pii: nenhum
+    nulo: true
+  - nome: chazv_old
+    tipo: string
+    comentario: "Gerenciamento de status de lote (valor anterior)"
+    pii: nenhum
+    nulo: true
+  - nome: vlfkz
+    tipo: string
+    comentario: "Categoria do centro (vlfkz)"
+    pii: nenhum
+    nulo: true
+  - nome: bzirk
+    tipo: string
+    comentario: "Distrito de vendas (bzirk)"
+    pii: nenhum
+    nulo: true
+  - nome: zone1
+    tipo: string
+    comentario: "Região de abastecimento"
+    pii: nenhum
+    nulo: true
+  - nome: taxiw
+    tipo: string
+    comentario: "Indicador fiscal do centro"
+    pii: nenhum
+    nulo: true
+  - nome: bzqhl
+    tipo: string
+    comentario: "Indicador: fornecedor regular"
+    pii: nenhum
+    nulo: true
+  - nome: let01
+    tipo: string
+    comentario: "1ª notificação de expedição/lembrete"
+    pii: nenhum
+    nulo: true
+  - nome: let02
+    tipo: string
+    comentario: "2ª notificação de expedição/lembrete"
+    pii: nenhum
+    nulo: true
+  - nome: let03
+    tipo: string
+    comentario: "3ª notificação de expedição/lembrete"
+    pii: nenhum
+    nulo: true
+  - nome: txnam_ma1
+    tipo: string
+    comentario: "Texto da 1ª notificação de cobrança"
+    pii: nenhum
+    nulo: true
+  - nome: txnam_ma2
+    tipo: string
+    comentario: "Texto da 2ª notificação de cobrança"
+    pii: nenhum
+    nulo: true
+  - nome: txnam_ma3
+    tipo: string
+    comentario: "Texto da 3ª notificação de cobrança"
+    pii: nenhum
+    nulo: true
+  - nome: betol
+    tipo: string
+    comentario: "Tolerância de pedido de compras"
+    pii: nenhum
+    nulo: true
+  - nome: j_1bbranch
+    tipo: string
+    comentario: "Estabelecimento fiscal (business place Brasil)"
+    pii: nenhum
+    nulo: true
+  - nome: vtbfi
+    tipo: string
+    comentario: "Indicador: determinação de área de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: fprfw
+    tipo: string
+    comentario: "Perfil de distribuição do centro"
+    pii: nenhum
+    nulo: true
+  - nome: achvm
+    tipo: string
+    comentario: "Marcador de arquivamento"
+    pii: nenhum
+    nulo: true
+  - nome: dvsart
+    tipo: string
+    comentario: "Tipo DMS para registro de lote"
+    pii: nenhum
+    nulo: true
+  - nome: nodetype
+    tipo: string
+    comentario: "Tipo de nó na cadeia de suprimentos"
+    pii: nenhum
+    nulo: true
+  - nome: nschema
+    tipo: string
+    comentario: "Estrutura de nomenclatura"
+    pii: nenhum
+    nulo: true
+  - nome: pkosa
+    tipo: string
+    comentario: "Indicador: controladoria por objeto de custo"
+    pii: nenhum
+    nulo: true
+  - nome: misch
+    tipo: string
+    comentario: "Indicador: custeio misto"
+    pii: nenhum
+    nulo: true
+  - nome: mgvupd
+    tipo: string
+    comentario: "Indicador: custeio real ativo"
+    pii: nenhum
+    nulo: true
+  - nome: vstel
+    tipo: string
+    comentario: "Ponto de expedição/recebimento (vstel)"
+    pii: nenhum
+    nulo: true
+  - nome: mgvlaupd
+    tipo: string
+    comentario: "Indicador: atividades reais atualizadas"
+    pii: nenhum
+    nulo: true
+  - nome: mgvlareval
+    tipo: string
+    comentario: "Controle de crédito de centros de custo"
+    pii: nenhum
+    nulo: true
+  - nome: sourcing
+    tipo: string
+    comentario: "Indicador: determinação de fonte via ATP"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_mg_arun_req
+    tipo: string
+    comentario: "Indicador: execução de alocação de pedidos (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_seaim
+    tipo: string
+    comentario: "Indicador: coleção ativa no gerenciamento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_bom_maintenance
+    tipo: string
+    comentario: "Dados de controle para lista de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: oilival
+    tipo: string
+    comentario: "Indicador: avaliação de câmbio (petróleo e gás)"
+    pii: nenhum
+    nulo: true
+  - nome: oihvtype
+    tipo: string
+    comentario: "Tipo de fornecedor (petróleo e gás)"
+    pii: nenhum
+    nulo: true
+  - nome: oihcredipi
+    tipo: string
+    comentario: "Indicador: crédito de IPI"
+    pii: nenhum
+    nulo: true
+  - nome: storetype
+    tipo: string
+    comentario: "Categoria da loja (varejo)"
+    pii: nenhum
+    nulo: true
+  - nome: dep_store
+    tipo: string
+    comentario: "Loja de departamentos superior"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_stat
+    tipo: string
+    comentario: "Status de segmentação MRP"
+    pii: nenhum
+    nulo: true

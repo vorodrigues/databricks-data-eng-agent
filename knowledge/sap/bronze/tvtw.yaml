@@ -1,0 +1,22 @@
+tabela: tvtw
+camada: bronze
+comentario: "Canais de distribuicao (unidade organizacional de vendas)"
+ingestao: cdc
+fonte: sap.tvtw
+chave_primaria: [mandt, vtweg]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuicao"
+    pii: nenhum
+    nulo: false
+  - nome: hide
+    tipo: string
+    comentario: "Indicador para ocultar valor na ajuda de entrada"
+    pii: nenhum
+    nulo: true

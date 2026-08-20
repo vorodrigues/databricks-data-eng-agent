@@ -1,0 +1,92 @@
+tabela: t000
+camada: bronze
+comentario: "Mandantes"
+ingestao: cdc
+fonte: sap.t000
+chave_primaria: [mandt]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mtext
+    tipo: string
+    comentario: "Nome do mandante"
+    pii: nenhum
+    nulo: true
+  - nome: ort01
+    tipo: string
+    comentario: "Cidade"
+    pii: nenhum
+    nulo: true
+  - nome: mwaer
+    tipo: string
+    comentario: "Moeda padrão"
+    pii: nenhum
+    nulo: true
+  - nome: adrnr
+    tipo: string
+    comentario: "Número de endereço"
+    pii: nenhum
+    nulo: true
+  - nome: cccategory
+    tipo: string
+    comentario: "Papel do mandante"
+    pii: nenhum
+    nulo: true
+  - nome: cccoractiv
+    tipo: string
+    comentario: "Alterações e transportes"
+    pii: nenhum
+    nulo: true
+  - nome: ccnocliind
+    tipo: string
+    comentario: "Sem manutenção cross-client (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: cccopylock
+    tipo: string
+    comentario: "Proteção contra cópia/comparação de mandante (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: ccnocascad
+    tipo: string
+    comentario: "Proteção contra upgrade SAP (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: ccsoftlock
+    tipo: string
+    comentario: "Método de bloqueio"
+    pii: nenhum
+    nulo: true
+  - nome: ccorigcont
+    tipo: string
+    comentario: "Criar BC Sets de switch (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: ccimaildis
+    tipo: string
+    comentario: "Autorização CATT"
+    pii: nenhum
+    nulo: true
+  - nome: cctemplock
+    tipo: string
+    comentario: "Bloqueado por cópia de mandante (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: changeuser
+    tipo: string
+    comentario: "Última alteração por"
+    pii: nenhum
+    nulo: true
+  - nome: changedate
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: logsys
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true

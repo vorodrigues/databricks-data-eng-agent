@@ -1,0 +1,17 @@
+tabela: tvfs
+camada: bronze
+comentario: "Motivos de bloqueio de faturamento"
+ingestao: cdc
+fonte: sap.tvfs
+chave_primaria: [mandt, faksp]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: faksp
+    tipo: string
+    comentario: "Codigo do motivo de bloqueio de faturamento"
+    pii: nenhum
+    nulo: false

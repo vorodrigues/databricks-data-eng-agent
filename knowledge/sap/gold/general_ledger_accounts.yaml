@@ -1,0 +1,128 @@
+tabela: general_ledger_accounts
+camada: gold
+comentario: "Visão unificada de contas contábeis (G/L) ao nível do plano de contas SAP (SKA1/SKAT), com categorias, grupos, indicadores de exclusão/bloqueio e descrições multilíngues para suporte a relatórios financeiros e auditoria de conformidade."
+entidade: obt
+ingestao: custom
+fontes: [silver.ska1, silver.skat]
+chave_primaria: [client_mandt, chart_of_accounts_ktopl, gl_account_number_saknr, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: chart_of_accounts_ktopl
+    tipo: string
+    comentario: "Plano de contas"
+    pii: nenhum
+    nulo: false
+  - nome: gl_account_number_saknr
+    tipo: string
+    comentario: "Número da conta contábil G/L"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: balance_sheet_account_xbilk
+    tipo: string
+    comentario: "Indicador: conta é de balanço patrimonial"
+    pii: nenhum
+    nulo: true
+  - nome: gl_account_sakan
+    tipo: string
+    comentario: "Número da conta G/L (alternativo)"
+    pii: nenhum
+    nulo: true
+  - nome: group_account_number_bilkt
+    tipo: string
+    comentario: "Número de conta do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: created_on_erdat
+    tipo: date
+    comentario: "Data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Criado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: pl_statement_account_type_gvtyp
+    tipo: string
+    comentario: "Tipo de conta na demonstração de resultado"
+    pii: nenhum
+    nulo: true
+  - nome: account_group_ktoks
+    tipo: string
+    comentario: "Grupo de contas G/L"
+    pii: nenhum
+    nulo: true
+  - nome: sample_account_mustr
+    tipo: string
+    comentario: "Número da conta modelo"
+    pii: nenhum
+    nulo: true
+  - nome: trading_partner_vbund
+    tipo: string
+    comentario: "ID da empresa parceira comercial"
+    pii: nenhum
+    nulo: true
+  - nome: marked_for_deletion_xloev
+    tipo: string
+    comentario: "Indicador: conta marcada para exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_for_creation_xspea
+    tipo: string
+    comentario: "Indicador: conta bloqueada para criação"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_for_posting_xspeb
+    tipo: string
+    comentario: "Indicador: conta bloqueada para lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: blocked_for_planning_xspep
+    tipo: string
+    comentario: "Indicador: conta bloqueada para planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: search_term_mcod1
+    tipo: string
+    comentario: "Termo de pesquisa para matchcode"
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_func_area
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: short_text_txt20
+    tipo: string
+    comentario: "Texto resumido da conta G/L"
+    pii: nenhum
+    nulo: true
+  - nome: gl_account_long_text_txt50
+    tipo: string
+    comentario: "Texto longo da conta G/L"
+    pii: nenhum
+    nulo: true
+  - nome: gl_long_text_mcod1
+    tipo: string
+    comentario: "Termo de pesquisa para matchcode (texto longo)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery"
+    pii: nenhum
+    nulo: true

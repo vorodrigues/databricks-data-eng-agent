@@ -1,0 +1,27 @@
+tabela: tj02t
+camada: bronze
+comentario: "Textos de status de sistema SAP (independente de mandante, dependente de idioma)"
+ingestao: cdc
+fonte: sap.tj02t
+chave_primaria: [istat, spras]
+colunas:
+  - nome: istat
+    tipo: string
+    comentario: "Chave do status de sistema"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: txt04
+    tipo: string
+    comentario: "Abreviacao do status (4 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: txt30
+    tipo: string
+    comentario: "Descricao do status (30 caracteres)"
+    pii: nenhum
+    nulo: true

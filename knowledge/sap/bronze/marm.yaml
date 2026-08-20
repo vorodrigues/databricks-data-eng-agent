@@ -1,0 +1,152 @@
+tabela: marm
+camada: bronze
+comentario: "Unidades de medida alternativas do material (SAP MARM)."
+ingestao: cdc
+fonte: sap.marm
+chave_primaria: [mandt, matnr, meinh]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: meinh
+    tipo: string
+    comentario: "Unidade de medida alternativa"
+    pii: nenhum
+    nulo: false
+  - nome: umrez
+    tipo: decimal(23,2)
+    comentario: "Numerador da conversão de unidade"
+    pii: nenhum
+    nulo: true
+  - nome: umren
+    tipo: decimal(23,2)
+    comentario: "Denominador da conversão de unidade"
+    pii: nenhum
+    nulo: true
+  - nome: eannr
+    tipo: string
+    comentario: "Número EAN/GTIN"
+    pii: nenhum
+    nulo: true
+  - nome: ean11
+    tipo: string
+    comentario: "EAN/UPC"
+    pii: nenhum
+    nulo: true
+  - nome: numtp
+    tipo: string
+    comentario: "Categoria EAN"
+    pii: nenhum
+    nulo: true
+  - nome: laeng
+    tipo: decimal(23,2)
+    comentario: "Comprimento"
+    pii: nenhum
+    nulo: true
+  - nome: breit
+    tipo: decimal(23,2)
+    comentario: "Largura"
+    pii: nenhum
+    nulo: true
+  - nome: hoehe
+    tipo: decimal(23,2)
+    comentario: "Altura"
+    pii: nenhum
+    nulo: true
+  - nome: meabm
+    tipo: string
+    comentario: "Unidade de dimensão"
+    pii: nenhum
+    nulo: true
+  - nome: volum
+    tipo: decimal(23,2)
+    comentario: "Volume"
+    pii: nenhum
+    nulo: true
+  - nome: voleh
+    tipo: string
+    comentario: "Unidade de volume"
+    pii: nenhum
+    nulo: true
+  - nome: brgew
+    tipo: decimal(23,2)
+    comentario: "Peso bruto"
+    pii: nenhum
+    nulo: true
+  - nome: gewei
+    tipo: string
+    comentario: "Unidade de peso"
+    pii: nenhum
+    nulo: true
+  - nome: mesub
+    tipo: string
+    comentario: "Unidade de nível inferior"
+    pii: nenhum
+    nulo: true
+  - nome: atinn
+    tipo: string
+    comentario: "Número interno da característica"
+    pii: nenhum
+    nulo: true
+  - nome: mesrt
+    tipo: int
+    comentario: "Número de sequência da unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: xfhdw
+    tipo: string
+    comentario: "Unidade líder"
+    pii: nenhum
+    nulo: true
+  - nome: xbeww
+    tipo: string
+    comentario: "Unidade avaliada"
+    pii: nenhum
+    nulo: true
+  - nome: kzwso
+    tipo: string
+    comentario: "Uso da unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: msehi
+    tipo: string
+    comentario: "Unidade de medida da característica"
+    pii: nenhum
+    nulo: true
+  - nome: bflme_marm
+    tipo: string
+    comentario: "Variantes logísticas"
+    pii: nenhum
+    nulo: true
+  - nome: gtin_variant
+    tipo: string
+    comentario: "Variante EAN/GTIN"
+    pii: nenhum
+    nulo: true
+  - nome: nest_ftr
+    tipo: string
+    comentario: "Volume residual após empilhamento"
+    pii: nenhum
+    nulo: true
+  - nome: max_stack
+    tipo: int
+    comentario: "Fator máximo de empilhamento"
+    pii: nenhum
+    nulo: true
+  - nome: capause
+    tipo: string
+    comentario: "Uso de capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: ty2tq
+    tipo: string
+    comentario: "Categoria da unidade de medida"
+    pii: nenhum
+    nulo: true

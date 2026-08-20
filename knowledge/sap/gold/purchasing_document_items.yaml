@@ -1,0 +1,1353 @@
+tabela: purchasing_document_items
+camada: gold
+comentario: "Itens de documentos de compras SAP (EKPO): materiais, quantidades, componentes de preço, centros e atribuições de conta, para análise de compras."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.ekko, silver.ekpo, silver.eket, silver.tcurx]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, purchasing_document_number_ebeln, item_number_of_purchasing_document_ebelp]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)."
+    pii: nenhum
+    nulo: false
+  - nome: purchasing_document_number_ebeln
+    tipo: string
+    comentario: "Número do documento de compras (EBELN)."
+    pii: nenhum
+    nulo: false
+  - nome: item_number_of_purchasing_document_ebelp
+    tipo: string
+    comentario: "Número do item do documento de compras (EBELP)."
+    pii: nenhum
+    nulo: false
+  - nome: deletion_flag_loekz
+    tipo: string
+    comentario: "Indicador de exclusão no documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: rfq_status_statu
+    tipo: string
+    comentario: "Status da solicitação de cotação (RFQ)."
+    pii: nenhum
+    nulo: true
+  - nome: change_date_aedat
+    tipo: date
+    comentario: "Data de alteração do item do documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: short_text_txz01
+    tipo: string
+    comentario: "Texto breve do item."
+    pii: nenhum
+    nulo: true
+  - nome: material_number_matnr
+    tipo: string
+    comentario: "Número do material (MATNR)."
+    pii: nenhum
+    nulo: true
+  - nome: material_number_ematn
+    tipo: string
+    comentario: "Número do material (EMATN)."
+    pii: nenhum
+    nulo: true
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Código da empresa (BUKRS)."
+    pii: nenhum
+    nulo: true
+  - nome: plant_werks
+    tipo: string
+    comentario: "Centro (planta)."
+    pii: nenhum
+    nulo: true
+  - nome: storage_location_lgort
+    tipo: string
+    comentario: "Depósito (localização de armazenamento)."
+    pii: nenhum
+    nulo: true
+  - nome: requirement_tracking_number_bednr
+    tipo: string
+    comentario: "Número de rastreamento de necessidade."
+    pii: nenhum
+    nulo: true
+  - nome: material_group_matkl
+    tipo: string
+    comentario: "Grupo de materiais."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_purchasing_info_record_infnr
+    tipo: string
+    comentario: "Número do registro info de compras."
+    pii: nenhum
+    nulo: true
+  - nome: material_number_vendor_idnlf
+    tipo: string
+    comentario: "Número do material utilizado pelo fornecedor."
+    pii: nenhum
+    nulo: true
+  - nome: target_quantity_ktmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade alvo."
+    pii: nenhum
+    nulo: true
+  - nome: po_quantity_menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade do pedido de compra."
+    pii: nenhum
+    nulo: true
+  - nome: uo_m_meins
+    tipo: string
+    comentario: "Unidade de medida do pedido de compra."
+    pii: nenhum
+    nulo: true
+  - nome: order_price_unit_bprme
+    tipo: string
+    comentario: "Unidade de preço do pedido (compras)."
+    pii: nenhum
+    nulo: true
+  - nome: order_unit_numerator_bpumz
+    tipo: int
+    comentario: "Numerador para conversão da unidade de preço do pedido em unidade do pedido."
+    pii: nenhum
+    nulo: true
+  - nome: order_unit_denominator_bpumn
+    tipo: int
+    comentario: "Denominador para conversão da unidade de preço do pedido em unidade do pedido."
+    pii: nenhum
+    nulo: true
+  - nome: numerator_for_conversion_of_order_unit_to_base_unit_umrez
+    tipo: int
+    comentario: "Numerador para conversão da unidade do pedido em unidade base."
+    pii: nenhum
+    nulo: true
+  - nome: denominator_for_conversion_of_order_unit_to_base_unit_umren
+    tipo: int
+    comentario: "Denominador para conversão da unidade do pedido em unidade base."
+    pii: nenhum
+    nulo: true
+  - nome: price_unit_peinh
+    tipo: int
+    comentario: "Unidade de preço (ex.: preço por 1, 10 ou 100 unidades)."
+    pii: nenhum
+    nulo: true
+  - nome: deadline_for_submission_of_bid_agdat
+    tipo: date
+    comentario: "Prazo para submissão de proposta/cotação."
+    pii: nenhum
+    nulo: true
+  - nome: goods_receipt_processing_time_in_days_webaz
+    tipo: decimal(23,2)
+    comentario: "Tempo de processamento de recebimento de mercadorias em dias."
+    pii: nenhum
+    nulo: true
+  - nome: taxcode_mwskz
+    tipo: string
+    comentario: "Código de imposto sobre vendas/compras."
+    pii: nenhum
+    nulo: true
+  - nome: settlement_group1_bonus
+    tipo: string
+    comentario: "Grupo de liquidação 1 (compras)."
+    pii: nenhum
+    nulo: true
+  - nome: stock_type_insmk
+    tipo: string
+    comentario: "Tipo de estoque."
+    pii: nenhum
+    nulo: true
+  - nome: update_info_record_flag_spinf
+    tipo: string
+    comentario: "Indicador de atualização do registro info."
+    pii: nenhum
+    nulo: true
+  - nome: price_printout_prsdr
+    tipo: string
+    comentario: "Impressão de preço."
+    pii: nenhum
+    nulo: true
+  - nome: estimated_price_flag_schpr
+    tipo: string
+    comentario: "Indicador de preço estimado."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_reminders_mahnz
+    tipo: int
+    comentario: "Número de lembretes/cobranças."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_days_for_first_reminder_mahn1
+    tipo: int
+    comentario: "Número de dias para o primeiro lembrete."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_days_for_second_reminder_mahn2
+    tipo: int
+    comentario: "Número de dias para o segundo lembrete."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_days_for_third_reminder_mahn3
+    tipo: int
+    comentario: "Número de dias para o terceiro lembrete."
+    pii: nenhum
+    nulo: true
+  - nome: overdelivery_tolerance_limit_uebto
+    tipo: decimal(23,2)
+    comentario: "Limite de tolerância de entrega a maior."
+    pii: nenhum
+    nulo: true
+  - nome: unlimited_overdelivery_allowed_uebtk
+    tipo: string
+    comentario: "Indicador de entrega a maior ilimitada permitida."
+    pii: nenhum
+    nulo: true
+  - nome: underdelivery_tolerance_limit_untto
+    tipo: decimal(23,2)
+    comentario: "Limite de tolerância de entrega a menor."
+    pii: nenhum
+    nulo: true
+  - nome: valuation_type_bwtar
+    tipo: string
+    comentario: "Tipo de avaliação."
+    pii: nenhum
+    nulo: true
+  - nome: valuation_category_bwtty
+    tipo: string
+    comentario: "Categoria de avaliação."
+    pii: nenhum
+    nulo: true
+  - nome: rejection_flag_abskz
+    tipo: string
+    comentario: "Indicador de rejeição."
+    pii: nenhum
+    nulo: true
+  - nome: internal_comment_on_quotation_agmem
+    tipo: string
+    comentario: "Comentário interno sobre a cotação."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_completed_flag_elikz
+    tipo: string
+    comentario: "Indicador de entrega concluída."
+    pii: nenhum
+    nulo: true
+  - nome: final_invoice_flag_erekz
+    tipo: string
+    comentario: "Indicador de fatura final."
+    pii: nenhum
+    nulo: true
+  - nome: item_categoryin_purchasing_document_pstyp
+    tipo: string
+    comentario: "Categoria do item no documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: account_assignment_category_knttp
+    tipo: string
+    comentario: "Categoria de atribuição de conta."
+    pii: nenhum
+    nulo: true
+  - nome: consumption_posting_kzvbr
+    tipo: string
+    comentario: "Lançamento de consumo."
+    pii: nenhum
+    nulo: true
+  - nome: distribution_flag_for_multiple_account_assignment_vrtkz
+    tipo: string
+    comentario: "Indicador de distribuição para múltipla atribuição de conta."
+    pii: nenhum
+    nulo: true
+  - nome: partial_invoice_flag_twrkz
+    tipo: string
+    comentario: "Indicador de fatura parcial."
+    pii: nenhum
+    nulo: true
+  - nome: goods_receipt_flag_wepos
+    tipo: string
+    comentario: "Indicador de recebimento de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: goods_receipt_non_valuated_weunb
+    tipo: string
+    comentario: "Recebimento de mercadorias não avaliado."
+    pii: nenhum
+    nulo: true
+  - nome: invoice_receipt_flag_repos
+    tipo: string
+    comentario: "Indicador de recebimento de fatura."
+    pii: nenhum
+    nulo: true
+  - nome: flag_gr_based_invoice_verification_webre
+    tipo: string
+    comentario: "Indicador de verificação de fatura baseada em recebimento de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: order_acknowledgment_requirement_kzabs
+    tipo: string
+    comentario: "Requisito de confirmação de pedido."
+    pii: nenhum
+    nulo: true
+  - nome: order_acknowledgment_number_labnr
+    tipo: string
+    comentario: "Número de confirmação do pedido."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_principal_purchase_agreement_konnr
+    tipo: string
+    comentario: "Número do contrato principal de compras."
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_principal_purchase_agreement_ktpnr
+    tipo: string
+    comentario: "Número do item do contrato principal de compras."
+    pii: nenhum
+    nulo: true
+  - nome: reconciliation_date_for_agreed_cumulative_quantity_abdat
+    tipo: date
+    comentario: "Data de reconciliação da quantidade acumulada acordada."
+    pii: nenhum
+    nulo: true
+  - nome: agreed_cumulative_quantity_abftz
+    tipo: decimal(23,2)
+    comentario: "Quantidade acumulada acordada."
+    pii: nenhum
+    nulo: true
+  - nome: firm_zone_etfz1
+    tipo: int
+    comentario: "Zona firme (autorização para produção)."
+    pii: nenhum
+    nulo: true
+  - nome: trade_off_zone_etfz2
+    tipo: int
+    comentario: "Zona de negociação (autorização para compra de materiais)."
+    pii: nenhum
+    nulo: true
+  - nome: firm_trade_off_zones_kzstu
+    tipo: string
+    comentario: "Indicador de zonas firme/negociação vinculantes para o planejamento de materiais."
+    pii: nenhum
+    nulo: true
+  - nome: exclusion_in_outline_agreement_item_with_material_class_notkz
+    tipo: string
+    comentario: "Exclusão em item de contrato de fornecimento com classe de material."
+    pii: nenhum
+    nulo: true
+  - nome: base_unit_of_measure_lmein
+    tipo: string
+    comentario: "Unidade de medida base."
+    pii: nenhum
+    nulo: true
+  - nome: shipping_instructions_evers
+    tipo: string
+    comentario: "Instruções de expedição."
+    pii: nenhum
+    nulo: true
+  - nome: non_deductible_input_tax_navnw
+    tipo: decimal(23,2)
+    comentario: "Imposto de entrada não dedutível."
+    pii: nenhum
+    nulo: true
+  - nome: standard_release_order_quantity_abmng
+    tipo: decimal(23,2)
+    comentario: "Quantidade padrão do pedido de liberação."
+    pii: nenhum
+    nulo: true
+  - nome: date_of_price_determination_prdat
+    tipo: date
+    comentario: "Data de determinação de preço."
+    pii: nenhum
+    nulo: true
+  - nome: purchasing_document_category_bstyp
+    tipo: string
+    comentario: "Categoria do documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: item_affects_commitments_xoblr
+    tipo: string
+    comentario: "Indicador de que o item afeta compromissos orçamentários."
+    pii: nenhum
+    nulo: true
+  - nome: manual_address_number_in_purchasing_document_item_adrnr
+    tipo: string
+    comentario: "Número de endereço manual no item do documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: condition_group_with_vendor_ekkol
+    tipo: string
+    comentario: "Grupo de condição com o fornecedor."
+    pii: nenhum
+    nulo: true
+  - nome: item_does_not_qualify_for_cash_discount_sktof
+    tipo: string
+    comentario: "Indicador de que o item não é elegível para desconto de caixa."
+    pii: nenhum
+    nulo: true
+  - nome: update_group_for_statistics_update_stafo
+    tipo: string
+    comentario: "Grupo de atualização para atualização de estatísticas."
+    pii: nenhum
+    nulo: true
+  - nome: planned_delivery_time_in_days_plifz
+    tipo: decimal(23,2)
+    comentario: "Prazo de entrega planejado em dias."
+    pii: nenhum
+    nulo: true
+  - nome: net_weight_ntgew
+    tipo: decimal(23,2)
+    comentario: "Peso líquido."
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_weight_gewei
+    tipo: string
+    comentario: "Unidade de peso."
+    pii: nenhum
+    nulo: true
+  - nome: tax_jurisdiction_txjcd
+    tipo: string
+    comentario: "Jurisdição fiscal."
+    pii: nenhum
+    nulo: true
+  - nome: flag_print_relevant_schedule_lines_exist_etdrk
+    tipo: string
+    comentario: "Indicador de existência de linhas de programação relevantes para impressão."
+    pii: nenhum
+    nulo: true
+  - nome: special_stock_flag_sobkz
+    tipo: string
+    comentario: "Indicador de estoque especial."
+    pii: nenhum
+    nulo: true
+  - nome: settlement_reservation_number_arsnr
+    tipo: string
+    comentario: "Número da reserva de liquidação."
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_the_settlement_reservation_arsps
+    tipo: string
+    comentario: "Número do item da reserva de liquidação."
+    pii: nenhum
+    nulo: true
+  - nome: quality_inspection_flag_cannot_be_changed_insnc
+    tipo: string
+    comentario: "Indicador de inspeção de qualidade (não pode ser alterado)."
+    pii: nenhum
+    nulo: true
+  - nome: control_key_for_quality_management_in_procurement_ssqss
+    tipo: string
+    comentario: "Chave de controle para gestão da qualidade em compras."
+    pii: nenhum
+    nulo: true
+  - nome: certificate_type_zgtyp
+    tipo: string
+    comentario: "Tipo de certificado."
+    pii: nenhum
+    nulo: true
+  - nome: international_article_number_ean11
+    tipo: string
+    comentario: "Número internacional do artigo (EAN/UPC)."
+    pii: nenhum
+    nulo: true
+  - nome: confirmation_control_key_bstae
+    tipo: string
+    comentario: "Chave de controle de confirmação."
+    pii: nenhum
+    nulo: true
+  - nome: revision_level_revlv
+    tipo: string
+    comentario: "Nível de revisão."
+    pii: nenhum
+    nulo: true
+  - nome: fund_geber
+    tipo: string
+    comentario: "Fundo (gestão orçamentária)."
+    pii: nenhum
+    nulo: true
+  - nome: funds_center_fistl
+    tipo: string
+    comentario: "Centro de fundos (gestão orçamentária)."
+    pii: nenhum
+    nulo: true
+  - nome: commitment_item_fipos
+    tipo: string
+    comentario: "Item de compromisso orçamentário."
+    pii: nenhum
+    nulo: true
+  - nome: business_area_reported_to_the_partner_ko_gsber
+    tipo: string
+    comentario: "Área de negócio reportada ao parceiro."
+    pii: nenhum
+    nulo: true
+  - nome: assumed_business_area_of_the_business_partner_ko_pargb
+    tipo: string
+    comentario: "Área de negócio assumida do parceiro de negócios."
+    pii: nenhum
+    nulo: true
+  - nome: profit_center_ko_prctr
+    tipo: string
+    comentario: "Centro de lucro."
+    pii: nenhum
+    nulo: true
+  - nome: partner_profit_center_ko_pprctr
+    tipo: string
+    comentario: "Centro de lucro do parceiro."
+    pii: nenhum
+    nulo: true
+  - nome: pricing_date_control_meprf
+    tipo: string
+    comentario: "Controle da data de determinação de preço."
+    pii: nenhum
+    nulo: true
+  - nome: gross_weight_brgew
+    tipo: decimal(23,2)
+    comentario: "Peso bruto."
+    pii: nenhum
+    nulo: true
+  - nome: volume_volum
+    tipo: decimal(23,2)
+    comentario: "Volume."
+    pii: nenhum
+    nulo: true
+  - nome: volume_unit_voleh
+    tipo: string
+    comentario: "Unidade de volume."
+    pii: nenhum
+    nulo: true
+  - nome: incoterms1_inco1
+    tipo: string
+    comentario: "Incoterms (Parte 1)."
+    pii: nenhum
+    nulo: true
+  - nome: incoterms2_inco2
+    tipo: string
+    comentario: "Incoterms (Parte 2)."
+    pii: nenhum
+    nulo: true
+  - nome: advance_procurement_vorab
+    tipo: string
+    comentario: "Compra antecipada para estoque de projeto."
+    pii: nenhum
+    nulo: true
+  - nome: prior_vendor_kolif
+    tipo: string
+    comentario: "Fornecedor anterior (LIFNR)."
+    pii: indireto
+    nulo: true
+  - nome: vendor_subrange_ltsnr
+    tipo: string
+    comentario: "Subfaixa do fornecedor."
+    pii: nenhum
+    nulo: true
+  - nome: package_number_packno
+    tipo: string
+    comentario: "Número do pacote."
+    pii: nenhum
+    nulo: true
+  - nome: invoicing_plan_number_fplnr
+    tipo: string
+    comentario: "Número do plano de faturamento."
+    pii: nenhum
+    nulo: true
+  - nome: item_is_statistical_stapo
+    tipo: string
+    comentario: "Indicador de item estatístico."
+    pii: nenhum
+    nulo: true
+  - nome: higher_level_item_in_purchasing_documents_uebpo
+    tipo: string
+    comentario: "Item de nível superior no documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: latest_possible_goods_receipt_lewed
+    tipo: date
+    comentario: "Data mais tarde possível para recebimento de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: vendor_to_be_supplied_emlif
+    tipo: string
+    comentario: "Fornecedor a ser abastecido/que receberá a entrega (LIFNR)."
+    pii: indireto
+    nulo: true
+  - nome: subcontracting_vendor_lblkz
+    tipo: string
+    comentario: "Indicador de fornecedor de subcontratação."
+    pii: nenhum
+    nulo: true
+  - nome: cross_plant_configurable_material_satnr
+    tipo: string
+    comentario: "Material configurável entre centros."
+    pii: nenhum
+    nulo: true
+  - nome: material_category_attyp
+    tipo: string
+    comentario: "Categoria de material."
+    pii: nenhum
+    nulo: true
+  - nome: shipping_type_vsart
+    tipo: string
+    comentario: "Tipo de expedição."
+    pii: nenhum
+    nulo: true
+  - nome: location_for_a_physical_handover_of_goods_handoverloc
+    tipo: string
+    comentario: "Local de transferência física de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: kanban_flag_kanba
+    tipo: string
+    comentario: "Indicador Kanban."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_delivery_address_adrn2
+    tipo: string
+    comentario: "Número do endereço de entrega."
+    pii: nenhum
+    nulo: true
+  - nome: internal_object_number_cuobj
+    tipo: string
+    comentario: "Número interno do objeto de configuração."
+    pii: nenhum
+    nulo: true
+  - nome: evaluated_receipt_settlement_xersy
+    tipo: string
+    comentario: "Liquidação por recebimento avaliado (ERS)."
+    pii: nenhum
+    nulo: true
+  - nome: start_date_for_gr_based_settlement_eildt
+    tipo: date
+    comentario: "Data de início para liquidação baseada em recebimento de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: last_transmission_drdat
+    tipo: date
+    comentario: "Data da última transmissão de alteração."
+    pii: nenhum
+    nulo: true
+  - nome: time_druhr
+    tipo: string
+    comentario: "Hora da transmissão."
+    pii: nenhum
+    nulo: true
+  - nome: sequential_number_drunr
+    tipo: string
+    comentario: "Número sequencial da próxima transmissão."
+    pii: nenhum
+    nulo: true
+  - nome: promotion_aktnr
+    tipo: string
+    comentario: "Número da promoção."
+    pii: nenhum
+    nulo: true
+  - nome: allocation_table_number_abeln
+    tipo: string
+    comentario: "Número da tabela de alocação."
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_allocation_table_abelp
+    tipo: string
+    comentario: "Número do item da tabela de alocação."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_points_anzpu
+    tipo: int
+    comentario: "Número de pontos."
+    pii: nenhum
+    nulo: true
+  - nome: points_unit_punei
+    tipo: string
+    comentario: "Unidade de pontos."
+    pii: nenhum
+    nulo: true
+  - nome: season_category_saiso
+    tipo: string
+    comentario: "Estação."
+    pii: nenhum
+    nulo: true
+  - nome: season_year_saisj
+    tipo: string
+    comentario: "Ano da estação."
+    pii: nenhum
+    nulo: true
+  - nome: settlement_group2_ebon2
+    tipo: string
+    comentario: "Grupo de liquidação 2 (bonificação em compras)."
+    pii: nenhum
+    nulo: true
+  - nome: settlement_group3_ebon3
+    tipo: string
+    comentario: "Grupo de liquidação 3 (bonificação em compras)."
+    pii: nenhum
+    nulo: true
+  - nome: item_relevant_to_subsequent_settlement_ebonf
+    tipo: string
+    comentario: "Indicador de item relevante para liquidação de bonificação periódica."
+    pii: nenhum
+    nulo: true
+  - nome: material_ledger_activated_at_material_level_mlmaa
+    tipo: string
+    comentario: "Indicador de razão de material ativado no nível de material."
+    pii: nenhum
+    nulo: true
+  - nome: minimum_remaining_shelf_life_mhdrz
+    tipo: int
+    comentario: "Prazo mínimo de validade restante (em dias)."
+    pii: nenhum
+    nulo: true
+  - nome: rfq_number_anfnr
+    tipo: string
+    comentario: "Número da solicitação de cotação (RFQ)."
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_rfq_anfps
+    tipo: string
+    comentario: "Número do item da solicitação de cotação."
+    pii: nenhum
+    nulo: true
+  - nome: origin_of_configuration_kzkfg
+    tipo: string
+    comentario: "Origem da configuração."
+    pii: nenhum
+    nulo: true
+  - nome: quota_arrangement_usage_usequ
+    tipo: string
+    comentario: "Utilização do arranjo de quotas."
+    pii: nenhum
+    nulo: true
+  - nome: special_stock_flag_for_physical_stock_transfer_umsok
+    tipo: string
+    comentario: "Indicador de estoque especial para transferência física de estoque."
+    pii: nenhum
+    nulo: true
+  - nome: purchase_requisition_number_banfn
+    tipo: string
+    comentario: "Número da requisição de compra."
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_purchase_requisition_bnfpo
+    tipo: string
+    comentario: "Número do item da requisição de compra."
+    pii: nenhum
+    nulo: true
+  - nome: material_type_mtart
+    tipo: string
+    comentario: "Tipo de material."
+    pii: nenhum
+    nulo: true
+  - nome: subitem_category_uptyp
+    tipo: string
+    comentario: "Categoria de subitem no documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: subitems_exist_upvor
+    tipo: string
+    comentario: "Indicador de existência de subitens."
+    pii: nenhum
+    nulo: true
+  - nome: subtotal1_from_pricing_procedure_for_condition_kzwi1
+    tipo: decimal(23,2)
+    comentario: "Subtotal 1 do procedimento de precificação."
+    pii: nenhum
+    nulo: true
+  - nome: subtotal2_from_pricing_procedure_for_condition_kzwi2
+    tipo: decimal(23,2)
+    comentario: "Subtotal 2 do procedimento de precificação."
+    pii: nenhum
+    nulo: true
+  - nome: subtotal3_from_pricing_procedure_for_condition_kzwi3
+    tipo: decimal(23,2)
+    comentario: "Subtotal 3 do procedimento de precificação."
+    pii: nenhum
+    nulo: true
+  - nome: subtotal4_from_pricing_procedure_for_condition_kzwi4
+    tipo: decimal(23,2)
+    comentario: "Subtotal 4 do procedimento de precificação."
+    pii: nenhum
+    nulo: true
+  - nome: subtotal5_from_pricing_procedure_for_condition_kzwi5
+    tipo: decimal(23,2)
+    comentario: "Subtotal 5 do procedimento de precificação."
+    pii: nenhum
+    nulo: true
+  - nome: subtotal6_from_pricing_procedure_for_condition_kzwi6
+    tipo: decimal(23,2)
+    comentario: "Subtotal 6 do procedimento de precificação."
+    pii: nenhum
+    nulo: true
+  - nome: processing_key_for_subitems_sikgr
+    tipo: string
+    comentario: "Chave de processamento para subitens."
+    pii: nenhum
+    nulo: true
+  - nome: maximum_cumulative_material_go_ahead_quantity_mfzhi
+    tipo: decimal(23,2)
+    comentario: "Quantidade máxima acumulada autorizada para material."
+    pii: nenhum
+    nulo: true
+  - nome: maximum_cumulative_production_go_ahead_quantity_ffzhi
+    tipo: decimal(23,2)
+    comentario: "Quantidade máxima acumulada autorizada para produção."
+    pii: nenhum
+    nulo: true
+  - nome: returns_item_retpo
+    tipo: string
+    comentario: "Item de devolução."
+    pii: nenhum
+    nulo: true
+  - nome: relevant_to_allocation_table_aurel
+    tipo: string
+    comentario: "Relevante para tabela de alocação."
+    pii: nenhum
+    nulo: true
+  - nome: reason_for_ordering_bsgru
+    tipo: string
+    comentario: "Motivo do pedido."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_type_for_returns_to_vendors_lfret
+    tipo: string
+    comentario: "Tipo de entrega para devoluções a fornecedores."
+    pii: nenhum
+    nulo: true
+  - nome: material_freight_group_mfrgr
+    tipo: string
+    comentario: "Grupo de frete do material."
+    pii: nenhum
+    nulo: true
+  - nome: material_qualifies_for_discount_in_kind_nrfhg
+    tipo: string
+    comentario: "Indicador de elegibilidade do material para desconto em espécie."
+    pii: nenhum
+    nulo: true
+  - nome: release_creation_profile_abueb
+    tipo: string
+    comentario: "Perfil de criação de liberação."
+    pii: nenhum
+    nulo: true
+  - nome: next_forecast_delivery_schedule_transmission_nlabd
+    tipo: date
+    comentario: "Data da próxima transmissão do programa de entrega de previsão."
+    pii: nenhum
+    nulo: true
+  - nome: next_jit_delivery_schedule_transmission_nfabd
+    tipo: date
+    comentario: "Data da próxima transmissão do programa de entrega JIT."
+    pii: nenhum
+    nulo: true
+  - nome: valuation_of_special_stock_kzbws
+    tipo: string
+    comentario: "Avaliação de estoque especial."
+    pii: nenhum
+    nulo: true
+  - nome: flag_item_relevant_to_jit_delivery_schedules_fabkz
+    tipo: string
+    comentario: "Indicador de item relevante para programas de entrega JIT."
+    pii: nenhum
+    nulo: true
+  - nome: inflation_index_j_1_aindxp
+    tipo: string
+    comentario: "Índice de inflação (campo fiscal regional)."
+    pii: nenhum
+    nulo: true
+  - nome: inflation_index_date_j_1_aidatep
+    tipo: date
+    comentario: "Data do índice de inflação (campo fiscal regional)."
+    pii: nenhum
+    nulo: true
+  - nome: manufacturer_part_profile_mprof
+    tipo: string
+    comentario: "Perfil de peça do fabricante."
+    pii: nenhum
+    nulo: true
+  - nome: outward_delivery_completed_flag_eglkz
+    tipo: string
+    comentario: "Indicador de entrega de saída concluída."
+    pii: nenhum
+    nulo: true
+  - nome: stock_transfer_kztlf
+    tipo: string
+    comentario: "Entrega parcial no nível do item (transferência de estoque)."
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_measure_usage_kzfme
+    tipo: string
+    comentario: "Utilização de unidade de medida."
+    pii: nenhum
+    nulo: true
+  - nome: rounding_profile_rdprf
+    tipo: string
+    comentario: "Perfil de arredondamento."
+    pii: nenhum
+    nulo: true
+  - nome: standard_variant_techs
+    tipo: string
+    comentario: "Variante padrão/parâmetro de variante."
+    pii: nenhum
+    nulo: true
+  - nome: configuration_changed_chg_srv
+    tipo: string
+    comentario: "Indicador de configuração alterada."
+    pii: nenhum
+    nulo: true
+  - nome: no_invoice_for_item_although_not_free_of_charge_chg_fplnr
+    tipo: string
+    comentario: "Sem fatura para este item embora não seja gratuito."
+    pii: nenhum
+    nulo: true
+  - nome: manufacturer_part_number_mfrpn
+    tipo: string
+    comentario: "Número de peça do fabricante."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_a_manufacturer_mfrnr
+    tipo: string
+    comentario: "Número do fabricante (código interno)."
+    pii: indireto
+    nulo: true
+  - nome: external_manufacturer_codename_or_number_emnfr
+    tipo: string
+    comentario: "Código ou número externo do fabricante."
+    pii: nenhum
+    nulo: true
+  - nome: item_blocked_for_sd_delivery_novet
+    tipo: string
+    comentario: "Item bloqueado para entrega SD."
+    pii: nenhum
+    nulo: true
+  - nome: name_of_requester_afnam
+    tipo: string
+    comentario: "Nome do solicitante/requisitante."
+    pii: direto
+    nulo: true
+  - nome: timezone_of_recipient_location_tzonrc
+    tipo: string
+    comentario: "Fuso horário do local do destinatário."
+    pii: nenhum
+    nulo: true
+  - nome: period_flag_for_shelf_life_expiration_date_iprkz
+    tipo: string
+    comentario: "Indicador de período para data de validade."
+    pii: nenhum
+    nulo: true
+  - nome: flag_for_service_based_invoice_verification_lebre
+    tipo: string
+    comentario: "Indicador de verificação de fatura baseada em serviço."
+    pii: nenhum
+    nulo: true
+  - nome: mrp_area_berid
+    tipo: string
+    comentario: "Área de MRP (planejamento de necessidades de material)."
+    pii: nenhum
+    nulo: true
+  - nome: conditions_for_item_although_no_invoice_xconditions
+    tipo: string
+    comentario: "Condições para o item mesmo sem fatura."
+    pii: nenhum
+    nulo: true
+  - nome: ap_oas_planning_system_apoms
+    tipo: string
+    comentario: "APO como sistema de planejamento."
+    pii: nenhum
+    nulo: true
+  - nome: posting_logic_in_the_case_of_stock_transfers_ccomp
+    tipo: string
+    comentario: "Lógica de lançamento em transferências de estoque."
+    pii: nenhum
+    nulo: true
+  - nome: grant_grant_nbr
+    tipo: string
+    comentario: "Número do subsídio/concessão."
+    pii: nenhum
+    nulo: true
+  - nome: functional_area_fkber
+    tipo: string
+    comentario: "Área funcional."
+    pii: nenhum
+    nulo: true
+  - nome: status_of_purchasing_document_item_status
+    tipo: string
+    comentario: "Status do item do documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: issuing_storage_location_for_stock_transport_order_reslo
+    tipo: string
+    comentario: "Depósito emissor para ordem de transporte de estoque."
+    pii: nenhum
+    nulo: true
+  - nome: document_number_for_earmarked_funds_kblnr
+    tipo: string
+    comentario: "Número do documento de fundos reservados."
+    pii: nenhum
+    nulo: true
+  - nome: earmarked_funds_document_item_kblpos
+    tipo: string
+    comentario: "Item do documento de fundos reservados."
+    pii: nenhum
+    nulo: true
+  - nome: acceptance_at_origin_weora
+    tipo: string
+    comentario: "Aceitação na origem."
+    pii: nenhum
+    nulo: true
+  - nome: service_based_commitment_srv_bas_com
+    tipo: string
+    comentario: "Comprometimento baseado em serviço."
+    pii: nenhum
+    nulo: true
+  - nome: requirement_urgency_prio_urg
+    tipo: string
+    comentario: "Urgência da necessidade."
+    pii: nenhum
+    nulo: true
+  - nome: requirement_priority_prio_req
+    tipo: string
+    comentario: "Prioridade da necessidade."
+    pii: nenhum
+    nulo: true
+  - nome: receiving_point_empst
+    tipo: string
+    comentario: "Ponto de recebimento."
+    pii: nenhum
+    nulo: true
+  - nome: differential_invoicing_diff_invoice
+    tipo: string
+    comentario: "Faturamento diferencial."
+    pii: nenhum
+    nulo: true
+  - nome: risk_relevancyin_purchasing_trmrisk_relevant
+    tipo: string
+    comentario: "Relevância de risco em compras."
+    pii: nenhum
+    nulo: true
+  - nome: reason_for_rejection_of_quotations_and_sales_orders_spe_abgru
+    tipo: string
+    comentario: "Motivo de rejeição de cotações e pedidos de vendas."
+    pii: nenhum
+    nulo: true
+  - nome: crm_sales_order_number_for_tpop_spe_crm_so
+    tipo: string
+    comentario: "Número do pedido de vendas CRM para o processo TPOP."
+    pii: nenhum
+    nulo: true
+  - nome: crm_sales_order_item_number_in_tpop_spe_crm_so_item
+    tipo: string
+    comentario: "Número do item do pedido de vendas CRM no processo TPOP."
+    pii: nenhum
+    nulo: true
+  - nome: crm_reference_order_number_for_tpop_spe_crm_ref_so
+    tipo: string
+    comentario: "Número do pedido de referência CRM para o processo TPOP."
+    pii: nenhum
+    nulo: true
+  - nome: crm_reference_sales_order_item_number_in_tpop_spe_crm_ref_item
+    tipo: string
+    comentario: "Número do item do pedido de referência CRM no processo TPOP."
+    pii: nenhum
+    nulo: true
+  - nome: billing_relevance_crm_spe_crm_fkrel
+    tipo: string
+    comentario: "Relevância de faturamento CRM."
+    pii: nenhum
+    nulo: true
+  - nome: last_changer_system_type_spe_chng_sys
+    tipo: string
+    comentario: "Tipo de sistema do último modificador."
+    pii: nenhum
+    nulo: true
+  - nome: stock_typeof_source_storage_location_in_sto_spe_insmk_src
+    tipo: string
+    comentario: "Tipo de estoque do depósito de origem em ordem de transporte de estoque."
+    pii: nenhum
+    nulo: true
+  - nome: cq_control_type_spe_cq_ctrltype
+    tipo: string
+    comentario: "Tipo de controle CQ."
+    pii: nenhum
+    nulo: true
+  - nome: no_transmission_of_cumulative_quantities_in_sa_release_spe_cq_nocq
+    tipo: string
+    comentario: "Sem transmissão de quantidades acumuladas na liberação do SA."
+    pii: nenhum
+    nulo: true
+  - nome: goods_receipt_reason_code_reason_code
+    tipo: string
+    comentario: "Código de motivo do recebimento de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: cumulative_goods_receipts_cqu_sar
+    tipo: string
+    comentario: "Recebimentos de mercadorias acumulados de pedidos redirecionados."
+    pii: nenhum
+    nulo: true
+  - nome: number_of_serial_numbers_anzsn
+    tipo: int
+    comentario: "Número de números de série."
+    pii: nenhum
+    nulo: true
+  - nome: ewm_delivery_based_tolerance_check_spe_ewm_dtc
+    tipo: string
+    comentario: "Verificação de tolerância baseada em entrega EWM."
+    pii: nenhum
+    nulo: true
+  - nome: item_number_length_exlin
+    tipo: string
+    comentario: "Comprimento do número do item."
+    pii: nenhum
+    nulo: true
+  - nome: external_sorting_exsnr
+    tipo: string
+    comentario: "Número de classificação externo."
+    pii: nenhum
+    nulo: true
+  - nome: external_hierarchy_category_ehtyp
+    tipo: string
+    comentario: "Categoria de hierarquia externa."
+    pii: nenhum
+    nulo: true
+  - nome: retention_in_percent_retpc
+    tipo: decimal(23,2)
+    comentario: "Retenção em percentual."
+    pii: nenhum
+    nulo: true
+  - nome: down_payment_flag_dptyp
+    tipo: string
+    comentario: "Indicador de antecipação de pagamento."
+    pii: nenhum
+    nulo: true
+  - nome: down_payment_percentage_dppct
+    tipo: decimal(23,2)
+    comentario: "Percentual de antecipação de pagamento."
+    pii: nenhum
+    nulo: true
+  - nome: down_payment_in_document_currency_dpamt
+    tipo: decimal(23,2)
+    comentario: "Valor de antecipação de pagamento na moeda do documento."
+    pii: nenhum
+    nulo: true
+  - nome: due_date_for_down_payment_dpdat
+    tipo: date
+    comentario: "Data de vencimento da antecipação de pagamento."
+    pii: nenhum
+    nulo: true
+  - nome: store_return_with_inbound_and_outbound_delivery_fls_rsto
+    tipo: string
+    comentario: "Devolução de loja com entrega de entrada e saída."
+    pii: nenhum
+    nulo: true
+  - nome: document_number_of_external_document_ext_rfx_number
+    tipo: string
+    comentario: "Número do documento externo (RFx)."
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_external_document_ext_rfx_item
+    tipo: string
+    comentario: "Número do item do documento externo (RFx)."
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_ext_rfx_system
+    tipo: string
+    comentario: "Sistema lógico do documento externo."
+    pii: nenhum
+    nulo: true
+  - nome: central_contract_srm_contract_id
+    tipo: string
+    comentario: "Contrato central (SRM)."
+    pii: nenhum
+    nulo: true
+  - nome: central_contract_item_number_srm_contract_itm
+    tipo: string
+    comentario: "Número do item do contrato central."
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_id_blk_reason_id
+    tipo: string
+    comentario: "Identificador do motivo de bloqueio."
+    pii: nenhum
+    nulo: true
+  - nome: blocking_reason_text_blk_reason_txt
+    tipo: string
+    comentario: "Texto do motivo de bloqueio."
+    pii: nenhum
+    nulo: true
+  - nome: real_time_consumption_posting_of_subcontracting_components_itcons
+    tipo: string
+    comentario: "Lançamento de consumo em tempo real de componentes de subcontratação."
+    pii: nenhum
+    nulo: true
+  - nome: delivery_date_and_quantity_fixed_fixmg
+    tipo: string
+    comentario: "Data de entrega e quantidade fixadas."
+    pii: nenhum
+    nulo: true
+  - nome: flag_for_gi_based_goods_receipt_wabwe
+    tipo: string
+    comentario: "Indicador de recebimento de mercadorias baseado em saída de mercadorias."
+    pii: nenhum
+    nulo: true
+  - nome: tax_code_automatically_determined_tc_aut_det
+    tipo: string
+    comentario: "Código de imposto determinado automaticamente."
+    pii: nenhum
+    nulo: true
+  - nome: manual_tax_code_reason_manual_tc_reason
+    tipo: string
+    comentario: "Motivo do código de imposto manual."
+    pii: nenhum
+    nulo: true
+  - nome: tax_incentive_type_fiscal_incentive
+    tipo: string
+    comentario: "Tipo de incentivo fiscal."
+    pii: nenhum
+    nulo: true
+  - nome: tax_subject_tax_subject_st
+    tipo: string
+    comentario: "Sujeito à substituição tributária."
+    pii: nenhum
+    nulo: true
+  - nome: incentive_id_fiscal_incentive_id
+    tipo: string
+    comentario: "Identificador do incentivo fiscal."
+    pii: nenhum
+    nulo: true
+  - nome: advice_code_advcode
+    tipo: string
+    comentario: "Código de aviso."
+    pii: nenhum
+    nulo: true
+  - nome: fm_budget_period_budget_pd
+    tipo: string
+    comentario: "Período orçamentário (FM)."
+    pii: nenhum
+    nulo: true
+  - nome: acceptance_period_excpe
+    tipo: string
+    comentario: "Período de aceitação."
+    pii: nenhum
+    nulo: true
+  - nome: iuid_relevant_iuid_relevant
+    tipo: string
+    comentario: "Indicador de relevância para IUID."
+    pii: nenhum
+    nulo: true
+  - nome: retail_price_relevant_mrpind
+    tipo: string
+    comentario: "Relevância do preço máximo ao consumidor."
+    pii: nenhum
+    nulo: true
+  - nome: reference_site_for_purchasing_refsite
+    tipo: string
+    comentario: "Centro de referência para compras."
+    pii: nenhum
+    nulo: true
+  - nome: type_of_subcontracting_serru
+    tipo: string
+    comentario: "Tipo de subcontratação."
+    pii: nenhum
+    nulo: true
+  - nome: serial_number_profile_sernp
+    tipo: string
+    comentario: "Perfil de número de série."
+    pii: nenhum
+    nulo: true
+  - nome: special_stock_flag_subcontracting_disub_sobkz
+    tipo: string
+    comentario: "Indicador de estoque especial para subcontratação."
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_disub_pspnr
+    tipo: string
+    comentario: "Elemento WBS (estrutura analítica do projeto)."
+    pii: nenhum
+    nulo: true
+  - nome: customer_number_disub_kunnr
+    tipo: string
+    comentario: "Número do cliente para subcontratação (KUNNR)."
+    pii: indireto
+    nulo: true
+  - nome: sales_and_distribution_document_number_disub_vbeln
+    tipo: string
+    comentario: "Número do documento de vendas para subcontratação."
+    pii: nenhum
+    nulo: true
+  - nome: item_number_of_the_sd_document_disub_posnr
+    tipo: string
+    comentario: "Número do item do documento SD para subcontratação."
+    pii: nenhum
+    nulo: true
+  - nome: owner_of_stock_disub_owner
+    tipo: string
+    comentario: "Proprietário do estoque."
+    pii: nenhum
+    nulo: true
+  - nome: reference_item_for_remaining_qty_cancellation_ref_item
+    tipo: string
+    comentario: "Item de referência para cancelamento de quantidade restante."
+    pii: nenhum
+    nulo: true
+  - nome: origin_profile_source_id
+    tipo: string
+    comentario: "Perfil de origem."
+    pii: nenhum
+    nulo: true
+  - nome: keyin_source_system_source_key
+    tipo: string
+    comentario: "Chave no sistema de origem."
+    pii: nenhum
+    nulo: true
+  - nome: flag_for_putting_back_from_grouped_po_document_put_back
+    tipo: string
+    comentario: "Indicador de recolocação a partir de documento de pedido agrupado."
+    pii: nenhum
+    nulo: true
+  - nome: order_list_item_number_pol_id
+    tipo: string
+    comentario: "Número do item da lista de pedidos."
+    pii: nenhum
+    nulo: true
+  - nome: purchase_order_for_consignment_cons_order
+    tipo: string
+    comentario: "Pedido de compra para consignação."
+    pii: nenhum
+    nulo: true
+  - nome: currency_key_waers
+    tipo: string
+    comentario: "Chave de moeda."
+    pii: nenhum
+    nulo: true
+  - nome: net_price_netpr
+    tipo: decimal(23,2)
+    comentario: "Preço líquido no documento de compras (na moeda do documento)."
+    pii: nenhum
+    nulo: true
+  - nome: net_order_value_in_po_currency_netwr
+    tipo: decimal(23,2)
+    comentario: "Valor líquido do pedido na moeda do documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: gross_order_value_in_po_currency_brtwr
+    tipo: decimal(23,2)
+    comentario: "Valor bruto do pedido na moeda do documento de compras."
+    pii: nenhum
+    nulo: true
+  - nome: target_value_for_outline_agreement_in_document_currency_zwert
+    tipo: decimal(23,2)
+    comentario: "Valor alvo do contrato de fornecimento na moeda do documento."
+    pii: nenhum
+    nulo: true
+  - nome: effective_value_of_item_effwr
+    tipo: decimal(23,2)
+    comentario: "Valor efetivo do item."
+    pii: nenhum
+    nulo: true
+  - nome: rebate_basis1_bonba
+    tipo: decimal(23,2)
+    comentario: "Base de bonificação 1."
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data e hora da última atualização na fonte."
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data e hora de carga no BigQuery."
+    pii: nenhum
+    nulo: true

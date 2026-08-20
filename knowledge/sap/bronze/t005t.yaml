@@ -1,0 +1,47 @@
+tabela: t005t
+camada: bronze
+comentario: "Nomes de países por idioma"
+ingestao: cdc
+fonte: sap.t005t
+chave_primaria: [mandt, spras, land1]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: land1
+    tipo: string
+    comentario: "Chave do país"
+    pii: nenhum
+    nulo: false
+  - nome: landx
+    tipo: string
+    comentario: "Nome do país (abreviado)"
+    pii: nenhum
+    nulo: true
+  - nome: natio
+    tipo: string
+    comentario: "Nacionalidade (abreviada)"
+    pii: nenhum
+    nulo: true
+  - nome: landx50
+    tipo: string
+    comentario: "Nome do país (50 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: natio50
+    tipo: string
+    comentario: "Nacionalidade (nome longo)"
+    pii: nenhum
+    nulo: true
+  - nome: prq_spregt
+    tipo: string
+    comentario: "Superregião"
+    pii: nenhum
+    nulo: true

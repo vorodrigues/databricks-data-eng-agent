@@ -1,0 +1,163 @@
+tabela: units_of_measurement
+camada: gold
+comentario: "Visão padronizada das unidades de medida SAP (T006/T006A/T006T), incluindo pesos, volumes, dimensões e temperaturas, com mapeamento para códigos ISO."
+entidade: obt
+ingestao: custom
+fontes: [silver.t006, silver.t006a, silver.t006t]
+chave_primaria: [client_mandt, unit_of_measurement_msehi, language_key_spras]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: unit_of_measurement_msehi
+    tipo: string
+    comentario: "Unidade de medida interna SAP"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: three_char_indicator_for_external_unit_of_measurement_kzex3
+    tipo: string
+    comentario: "Identificador externo da unidade de medida (3 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: six_char_id_for_external_unit_of_measurement_kzex6
+    tipo: string
+    comentario: "Identificador externo da unidade de medida (6 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: iso_code_isocode
+    tipo: string
+    comentario: "Código ISO da unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: primary_code_primary
+    tipo: string
+    comentario: "Campo de seleção para conversão de código ISO para código interno"
+    pii: nenhum
+    nulo: true
+  - nome: commercial_measurement_unit_kzkeh
+    tipo: string
+    comentario: "Indicador de unidade de medida comercial"
+    pii: nenhum
+    nulo: true
+  - nome: decimal_rounding_andec
+    tipo: string
+    comentario: "Número de casas decimais para arredondamento"
+    pii: nenhum
+    nulo: true
+  - nome: decimal_places_decan
+    tipo: string
+    comentario: "Número de casas decimais para exibição"
+    pii: nenhum
+    nulo: true
+  - nome: exponent_exp10
+    tipo: string
+    comentario: "Expoente de base 10 para conversão à unidade SI"
+    pii: nenhum
+    nulo: true
+  - nome: exponent_floating_point_expon
+    tipo: string
+    comentario: "Expoente de base 10 para exibição em ponto flutuante"
+    pii: nenhum
+    nulo: true
+  - nome: numerator_zaehl
+    tipo: string
+    comentario: "Numerador para conversão à unidade SI"
+    pii: nenhum
+    nulo: true
+  - nome: denominator_nennr
+    tipo: string
+    comentario: "Denominador para conversão à unidade SI"
+    pii: nenhum
+    nulo: true
+  - nome: additive_constant_addko
+    tipo: string
+    comentario: "Constante aditiva para conversão à unidade SI"
+    pii: nenhum
+    nulo: true
+  - nome: dimension_dimid
+    tipo: string
+    comentario: "Chave de dimensão"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_measurement_family_famunit
+    tipo: string
+    comentario: "Família da unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: temperature_temp_value
+    tipo: string
+    comentario: "Valor de temperatura"
+    pii: nenhum
+    nulo: true
+  - nome: temperature_unit_temp_unit
+    tipo: string
+    comentario: "Unidade de temperatura"
+    pii: nenhum
+    nulo: true
+  - nome: pressure_value_press_val
+    tipo: string
+    comentario: "Valor de pressão"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_pressure_press_unit
+    tipo: string
+    comentario: "Unidade de pressão"
+    pii: nenhum
+    nulo: true
+  - nome: measuremt_unit_text_mseht
+    tipo: string
+    comentario: "Texto da unidade de medida (máx. 10 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: unit_text_msehl
+    tipo: string
+    comentario: "Texto da unidade de medida (máx. 30 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: three_char_commercial_text_mseh3
+    tipo: string
+    comentario: "Texto comercial da unidade (máx. 3 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: six_char_technical_text_mseh6
+    tipo: string
+    comentario: "Texto técnico da unidade (máx. 6 caracteres)"
+    pii: nenhum
+    nulo: true
+  - nome: dimension_text_txdim
+    tipo: string
+    comentario: "Texto da dimensão"
+    pii: nenhum
+    nulo: true
+  - nome: one_unit_kz1eh
+    tipo: string
+    comentario: "Indicador: 1 unidade (ainda não definido)"
+    pii: nenhum
+    nulo: true
+  - nome: two_unit_kz2eh
+    tipo: string
+    comentario: "Indicador: 2 unidades (ainda não definido)"
+    pii: nenhum
+    nulo: true
+  - nome: value_based_commitment_indicator_kzwob
+    tipo: string
+    comentario: "Indicador de compromisso baseado em valor"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery"
+    pii: nenhum
+    nulo: true

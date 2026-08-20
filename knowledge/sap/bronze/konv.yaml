@@ -1,0 +1,347 @@
+tabela: konv
+camada: bronze
+comentario: "Condições de precificação - dados de transação (KONV)"
+ingestao: cdc
+fonte: sap.konv
+chave_primaria: [mandt, knumv, kposn, stunr, zaehk]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: knumv
+    tipo: string
+    comentario: "Número de condição do documento (knumv)"
+    pii: nenhum
+    nulo: false
+  - nome: kposn
+    tipo: string
+    comentario: "Item de condição (kposn)"
+    pii: nenhum
+    nulo: false
+  - nome: stunr
+    tipo: int
+    comentario: "Número de etapa na sequência de cálculo (stunr)"
+    pii: nenhum
+    nulo: false
+  - nome: zaehk
+    tipo: int
+    comentario: "Contador de condição (zaehk)"
+    pii: nenhum
+    nulo: false
+  - nome: kappl
+    tipo: string
+    comentario: "Aplicação de precificação (kappl)"
+    pii: nenhum
+    nulo: true
+  - nome: kschl
+    tipo: string
+    comentario: "Tipo de condição (kschl)"
+    pii: nenhum
+    nulo: true
+  - nome: kdatu
+    tipo: date
+    comentario: "Data de precificação da condição"
+    pii: nenhum
+    nulo: true
+  - nome: krech
+    tipo: string
+    comentario: "Tipo de cálculo da condição"
+    pii: nenhum
+    nulo: true
+  - nome: kawrt
+    tipo: decimal(23,2)
+    comentario: "Valor base da condição"
+    pii: nenhum
+    nulo: true
+  - nome: kbetr
+    tipo: decimal(23,2)
+    comentario: "Taxa da condição"
+    pii: nenhum
+    nulo: true
+  - nome: waers
+    tipo: string
+    comentario: "Moeda da condição (waers)"
+    pii: nenhum
+    nulo: true
+  - nome: kkurs
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio da condição"
+    pii: nenhum
+    nulo: true
+  - nome: kpein
+    tipo: int
+    comentario: "Unidade de precificação (kpein)"
+    pii: nenhum
+    nulo: true
+  - nome: kmein
+    tipo: string
+    comentario: "Unidade de medida da condição (kmein)"
+    pii: nenhum
+    nulo: true
+  - nome: kumza
+    tipo: int
+    comentario: "Numerador para conversão de unidade"
+    pii: nenhum
+    nulo: true
+  - nome: kumne
+    tipo: int
+    comentario: "Denominador para conversão de unidade"
+    pii: nenhum
+    nulo: true
+  - nome: kntyp
+    tipo: string
+    comentario: "Categoria da condição (kntyp)"
+    pii: nenhum
+    nulo: true
+  - nome: kstat
+    tipo: string
+    comentario: "Indicador: condição estatística"
+    pii: nenhum
+    nulo: true
+  - nome: knprs
+    tipo: string
+    comentario: "Tipo de escala da condição"
+    pii: nenhum
+    nulo: true
+  - nome: kruek
+    tipo: string
+    comentario: "Indicador: provisão/acumulação"
+    pii: nenhum
+    nulo: true
+  - nome: kreli
+    tipo: string
+    comentario: "Indicador: condição de lista de faturas"
+    pii: nenhum
+    nulo: true
+  - nome: kherk
+    tipo: string
+    comentario: "Origem da condição (kherk)"
+    pii: nenhum
+    nulo: true
+  - nome: kgrpe
+    tipo: string
+    comentario: "Indicador: condição de grupo"
+    pii: nenhum
+    nulo: true
+  - nome: koupd
+    tipo: string
+    comentario: "Indicador: atualização da condição"
+    pii: nenhum
+    nulo: true
+  - nome: kolnr
+    tipo: string
+    comentario: "Número de acesso à tabela de condições"
+    pii: nenhum
+    nulo: true
+  - nome: knumh
+    tipo: string
+    comentario: "Número de registro de condição (knumh)"
+    pii: nenhum
+    nulo: true
+  - nome: kopos
+    tipo: string
+    comentario: "Número sequencial da condição (kopos)"
+    pii: nenhum
+    nulo: true
+  - nome: kvsl1
+    tipo: string
+    comentario: "Chave de conta contábil principal (kvsl1)"
+    pii: nenhum
+    nulo: true
+  - nome: sakn1
+    tipo: string
+    comentario: "Conta contábil principal (G/L account)"
+    pii: nenhum
+    nulo: true
+  - nome: mwsk1
+    tipo: string
+    comentario: "Código de imposto principal"
+    pii: nenhum
+    nulo: true
+  - nome: kvsl2
+    tipo: string
+    comentario: "Chave de conta de provisão (kvsl2)"
+    pii: nenhum
+    nulo: true
+  - nome: sakn2
+    tipo: string
+    comentario: "Conta de provisão (G/L account)"
+    pii: nenhum
+    nulo: true
+  - nome: mwsk2
+    tipo: string
+    comentario: "Código de retenção na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Código do fornecedor (lifnr)"
+    pii: indireto
+    nulo: true
+  - nome: kunnr
+    tipo: string
+    comentario: "Código do cliente (kunnr)"
+    pii: indireto
+    nulo: true
+  - nome: kdiff
+    tipo: decimal(23,2)
+    comentario: "Diferença de arredondamento da condição"
+    pii: nenhum
+    nulo: true
+  - nome: kwert
+    tipo: decimal(23,2)
+    comentario: "Valor da condição (kwert)"
+    pii: nenhum
+    nulo: true
+  - nome: ksteu
+    tipo: string
+    comentario: "Controle da condição (ksteu)"
+    pii: nenhum
+    nulo: true
+  - nome: kinak
+    tipo: string
+    comentario: "Indicador: condição inativa"
+    pii: nenhum
+    nulo: true
+  - nome: koaid
+    tipo: string
+    comentario: "Classe da condição (koaid)"
+    pii: nenhum
+    nulo: true
+  - nome: zaeko
+    tipo: string
+    comentario: "Contador de condição de cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: kmxaw
+    tipo: decimal(23,2)
+    comentario: "Valor base máximo da condição"
+    pii: nenhum
+    nulo: true
+  - nome: kmxwr
+    tipo: decimal(23,2)
+    comentario: "Valor máximo da condição"
+    pii: nenhum
+    nulo: true
+  - nome: kfaktor
+    tipo: decimal(23,2)
+    comentario: "Fator de condição (kfaktor)"
+    pii: nenhum
+    nulo: true
+  - nome: kdupl
+    tipo: string
+    comentario: "Indicador: condição estruturada"
+    pii: nenhum
+    nulo: true
+  - nome: kfaktor1
+    tipo: decimal(23,2)
+    comentario: "Fator de condição 1 (kfaktor1)"
+    pii: nenhum
+    nulo: true
+  - nome: kzbzg
+    tipo: string
+    comentario: "Base de escala da condição"
+    pii: nenhum
+    nulo: true
+  - nome: kstbs
+    tipo: decimal(23,2)
+    comentario: "Valor base de escala"
+    pii: nenhum
+    nulo: true
+  - nome: konms
+    tipo: string
+    comentario: "Unidade de medida de escala"
+    pii: nenhum
+    nulo: true
+  - nome: konws
+    tipo: string
+    comentario: "Moeda de escala"
+    pii: nenhum
+    nulo: true
+  - nome: kawrt_k
+    tipo: decimal(23,2)
+    comentario: "Valor base da condição (moeda da condição)"
+    pii: nenhum
+    nulo: true
+  - nome: kwaeh
+    tipo: string
+    comentario: "Moeda da condição (kwaeh)"
+    pii: nenhum
+    nulo: true
+  - nome: kwert_k
+    tipo: decimal(23,2)
+    comentario: "Valor da condição (moeda da condição)"
+    pii: nenhum
+    nulo: true
+  - nome: kfkiv
+    tipo: string
+    comentario: "Indicador: condição de faturamento intercompanhia"
+    pii: nenhum
+    nulo: true
+  - nome: kvarc
+    tipo: string
+    comentario: "Indicador: condição de variante"
+    pii: nenhum
+    nulo: true
+  - nome: kmprs
+    tipo: string
+    comentario: "Indicador: alterado manualmente"
+    pii: nenhum
+    nulo: true
+  - nome: prsqu
+    tipo: string
+    comentario: "Origem do preço (prsqu)"
+    pii: nenhum
+    nulo: true
+  - nome: varcond
+    tipo: string
+    comentario: "Variante de condição"
+    pii: nenhum
+    nulo: true
+  - nome: stufe
+    tipo: string
+    comentario: "Nível de escala"
+    pii: nenhum
+    nulo: true
+  - nome: wegxx
+    tipo: string
+    comentario: "Caminho de escala"
+    pii: nenhum
+    nulo: true
+  - nome: ktrel
+    tipo: string
+    comentario: "Indicador: relevante para imputação contábil"
+    pii: nenhum
+    nulo: true
+  - nome: mdflg
+    tipo: string
+    comentario: "Indicador: manutenção em matriz"
+    pii: nenhum
+    nulo: true
+  - nome: txjlv
+    tipo: string
+    comentario: "Nível de jurisdição fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: kbflag
+    tipo: string
+    comentario: "Flags de criptografia de bits"
+    pii: nenhum
+    nulo: true
+  - nome: kolnr3
+    tipo: string
+    comentario: "Número de acesso alternativo (kolnr3)"
+    pii: nenhum
+    nulo: true
+  - nome: cpf_guid
+    tipo: string
+    comentario: "ID de fórmula de precificação no documento"
+    pii: nenhum
+    nulo: true
+  - nome: kaqty
+    tipo: decimal(23,2)
+    comentario: "Quantidade ajustada da condição"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,97 @@
+tabela: ska1
+camada: bronze
+comentario: "Mestre de contas contábeis (plano de contas)"
+ingestao: cdc
+fonte: sap.ska1
+chave_primaria: [mandt, ktopl, saknr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: ktopl
+    tipo: string
+    comentario: "Plano de contas"
+    pii: nenhum
+    nulo: false
+  - nome: saknr
+    tipo: string
+    comentario: "Número da conta contábil"
+    pii: nenhum
+    nulo: false
+  - nome: xbilk
+    tipo: string
+    comentario: "Conta de balanço patrimonial (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: sakan
+    tipo: string
+    comentario: "Conta contábil (tipo de conta de resultado)"
+    pii: nenhum
+    nulo: true
+  - nome: bilkt
+    tipo: string
+    comentario: "Número de conta do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Criado em"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: gvtyp
+    tipo: string
+    comentario: "Tipo de conta de resultado (DRE)"
+    pii: nenhum
+    nulo: true
+  - nome: ktoks
+    tipo: string
+    comentario: "Grupo de contas"
+    pii: nenhum
+    nulo: true
+  - nome: mustr
+    tipo: string
+    comentario: "Conta modelo"
+    pii: nenhum
+    nulo: true
+  - nome: vbund
+    tipo: string
+    comentario: "Parceiro comercial (empresa relacionada)"
+    pii: nenhum
+    nulo: true
+  - nome: xloev
+    tipo: string
+    comentario: "Marcado para exclusão (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: xspea
+    tipo: string
+    comentario: "Bloqueado para criação (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: xspeb
+    tipo: string
+    comentario: "Bloqueado para lançamento (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: xspep
+    tipo: string
+    comentario: "Bloqueado para planejamento (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: mcod1
+    tipo: string
+    comentario: "Termo de pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: func_area
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true

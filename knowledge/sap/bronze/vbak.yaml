@@ -1,0 +1,982 @@
+tabela: vbak
+camada: bronze
+comentario: "Cabeçalho do documento de vendas (SD)"
+ingestao: cdc
+fonte: sap.vbak
+chave_primaria: [mandt, vbeln]
+colunas:
+  - nome: abdis
+    tipo: string
+    comentario: "Tipo MRP para tipo de entrega agendada"
+    pii: nenhum
+    nulo: true
+  - nome: abhob
+    tipo: string
+    comentario: "Hora de coleta"
+    pii: nenhum
+    nulo: true
+  - nome: abhod
+    tipo: date
+    comentario: "Data de coleta"
+    pii: nenhum
+    nulo: true
+  - nome: abhov
+    tipo: string
+    comentario: "Horário de coleta"
+    pii: nenhum
+    nulo: true
+  - nome: abruf_part
+    tipo: string
+    comentario: "Verificação de autorização de parceiro de chamada"
+    pii: nenhum
+    nulo: true
+  - nome: abrvw
+    tipo: string
+    comentario: "Utilização"
+    pii: nenhum
+    nulo: true
+  - nome: abstk
+    tipo: string
+    comentario: "Status de rejeição"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data de alteração"
+    pii: nenhum
+    nulo: true
+  - nome: agrzr
+    tipo: string
+    comentario: "Período de acumulação"
+    pii: nenhum
+    nulo: true
+  - nome: amtbl
+    tipo: decimal(23,2)
+    comentario: "Valor de crédito relevante"
+    pii: nenhum
+    nulo: true
+  - nome: angdt
+    tipo: date
+    comentario: "Data de início de validade da cotação"
+    pii: nenhum
+    nulo: true
+  - nome: auart
+    tipo: string
+    comentario: "Tipo de documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: audat
+    tipo: date
+    comentario: "Data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: aufnr
+    tipo: string
+    comentario: "Ordem de produção/manutenção referenciada"
+    pii: nenhum
+    nulo: true
+  - nome: augru
+    tipo: string
+    comentario: "Motivo do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: autlf
+    tipo: string
+    comentario: "Indicador de entrega completa"
+    pii: nenhum
+    nulo: true
+  - nome: awahr
+    tipo: string
+    comentario: "Probabilidade do pedido"
+    pii: nenhum
+    nulo: true
+  - nome: betc
+    tipo: string
+    comentario: "Código de tipo de evento de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: bestk
+    tipo: string
+    comentario: "Status de confirmação de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: bname
+    tipo: string
+    comentario: "Nome"
+    pii: direto
+    nulo: true
+  - nome: bnddt
+    tipo: date
+    comentario: "Data de validade final da cotação"
+    pii: nenhum
+    nulo: true
+  - nome: bpn
+    tipo: string
+    comentario: "Número do parceiro de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: bsark
+    tipo: string
+    comentario: "Tipo de ordem de compra do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: bstdk
+    tipo: date
+    comentario: "Data da ordem de compra do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: bstnk
+    tipo: string
+    comentario: "Número da ordem de compra do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: bstzd
+    tipo: string
+    comentario: "Complemento da ordem de compra"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs_vf
+    tipo: string
+    comentario: "Empresa a faturar"
+    pii: nenhum
+    nulo: true
+  - nome: cancel_allow
+    tipo: string
+    comentario: "Cancelamento permitido"
+    pii: nenhum
+    nulo: true
+  - nome: cmfre
+    tipo: date
+    comentario: "Data de liberação de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmps_cm
+    tipo: string
+    comentario: "Status da gestão de crédito SAP"
+    pii: nenhum
+    nulo: true
+  - nome: cmps_te
+    tipo: string
+    comentario: "Status TE da gestão de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsc
+    tipo: string
+    comentario: "Valor máximo de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsd
+    tipo: string
+    comentario: "Condições de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsi
+    tipo: string
+    comentario: "Documento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsj
+    tipo: string
+    comentario: "Seguro de crédito à exportação"
+    pii: nenhum
+    nulo: true
+  - nome: cmpsk
+    tipo: string
+    comentario: "Status do cartão de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: cmngv
+    tipo: date
+    comentario: "Próxima data de verificação de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmnup
+    tipo: date
+    comentario: "Próxima verificação de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmwae
+    tipo: string
+    comentario: "Moeda de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: cmgst
+    tipo: string
+    comentario: "Status de crédito geral"
+    pii: nenhum
+    nulo: true
+  - nome: costa
+    tipo: string
+    comentario: "Status de confirmação"
+    pii: nenhum
+    nulo: true
+  - nome: cont_dg
+    tipo: string
+    comentario: "Contém mercadoria perigosa"
+    pii: nenhum
+    nulo: true
+  - nome: crm_guid
+    tipo: string
+    comentario: "GUID CRM (Char 70)"
+    pii: nenhum
+    nulo: true
+  - nome: ctlpc
+    tipo: string
+    comentario: "Categoria de risco de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: dcstk
+    tipo: string
+    comentario: "Status de atraso"
+    pii: nenhum
+    nulo: true
+  - nome: dat_fzau
+    tipo: date
+    comentario: "Data de quantidade cumulativa"
+    pii: nenhum
+    nulo: true
+  - nome: enqueue_grp
+    tipo: string
+    comentario: "Grupo de bloqueio (enqueue) do documento."
+    pii: nenhum
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: ernam
+    tipo: string
+    comentario: "Criado por"
+    pii: nenhum
+    nulo: true
+  - nome: erzet
+    tipo: string
+    comentario: "Hora de criação"
+    pii: nenhum
+    nulo: true
+  - nome: faksk
+    tipo: string
+    comentario: "Bloqueio de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: fkara
+    tipo: string
+    comentario: "Tipo de faturamento vinculado a pedido"
+    pii: nenhum
+    nulo: true
+  - nome: fksak
+    tipo: string
+    comentario: "Status de faturamento vinculado a pedido"
+    pii: nenhum
+    nulo: true
+  - nome: fmbdat
+    tipo: date
+    comentario: "Data de disponibilidade de material"
+    pii: nenhum
+    nulo: true
+  - nome: fmstk
+    tipo: string
+    comentario: "Status de gestão de fundos"
+    pii: nenhum
+    nulo: true
+  - nome: fsstk
+    tipo: string
+    comentario: "Status de bloqueio de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_candate
+    tipo: date
+    comentario: "Data de cancelamento"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_cq_check
+    tipo: string
+    comentario: "Relevante para requisito"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_kvgr10
+    tipo: string
+    comentario: "Grupo de cliente 10"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_kvgr6
+    tipo: string
+    comentario: "Grupo de cliente 6"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_kvgr7
+    tipo: string
+    comentario: "Grupo de cliente 7"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_kvgr8
+    tipo: string
+    comentario: "Grupo de cliente 8"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_kvgr9
+    tipo: string
+    comentario: "Grupo de cliente 9"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_os_stg_change
+    tipo: string
+    comentario: "Alteração de campos específicos de estratégia OS"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_rereg
+    tipo: string
+    comentario: "Regra de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_ss
+    tipo: string
+    comentario: "Estratégia de programação de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_transaction
+    tipo: string
+    comentario: "Número de transação"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vas_cg
+    tipo: string
+    comentario: "Grupo de cliente VAS"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vrsn_status
+    tipo: string
+    comentario: "Status do snapshot"
+    pii: nenhum
+    nulo: true
+  - nome: glo_log_ref1_hd
+    tipo: string
+    comentario: "Referência específica de país 1"
+    pii: nenhum
+    nulo: true
+  - nome: gbstk
+    tipo: string
+    comentario: "Status geral"
+    pii: nenhum
+    nulo: true
+  - nome: grupp
+    tipo: string
+    comentario: "Grupo de crédito de cliente"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Área de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: gskst
+    tipo: string
+    comentario: "Área de negócio (status)"
+    pii: nenhum
+    nulo: true
+  - nome: guebg
+    tipo: date
+    comentario: "Data de início de validade"
+    pii: nenhum
+    nulo: true
+  - nome: gueen
+    tipo: date
+    comentario: "Data de fim de validade"
+    pii: nenhum
+    nulo: true
+  - nome: gwldt
+    tipo: date
+    comentario: "Data de garantia"
+    pii: nenhum
+    nulo: true
+  - nome: handle
+    tipo: string
+    comentario: "ID interno"
+    pii: nenhum
+    nulo: true
+  - nome: handoverloc
+    tipo: string
+    comentario: "Local de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: hb_cont_reason
+    tipo: string
+    comentario: "Motivo de contingência"
+    pii: nenhum
+    nulo: true
+  - nome: hb_expdate
+    tipo: date
+    comentario: "Data de vencimento"
+    pii: nenhum
+    nulo: true
+  - nome: hb_resdate
+    tipo: date
+    comentario: "Data de resolução"
+    pii: nenhum
+    nulo: true
+  - nome: hityp_pr
+    tipo: string
+    comentario: "Tipo de hierarquia de precificação"
+    pii: nenhum
+    nulo: true
+  - nome: ihrez
+    tipo: string
+    comentario: "Referência do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: kalcd
+    tipo: string
+    comentario: "Determinação de campanha de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm
+    tipo: string
+    comentario: "Procedimento de precificação"
+    pii: nenhum
+    nulo: true
+  - nome: kalsm_ch
+    tipo: string
+    comentario: "Procedimento de pesquisa"
+    pii: nenhum
+    nulo: true
+  - nome: kkber
+    tipo: string
+    comentario: "Área de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: knkli
+    tipo: string
+    comentario: "Conta de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: knuma
+    tipo: string
+    comentario: "Contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: knumv
+    tipo: string
+    comentario: "Número de condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controlling"
+    pii: nenhum
+    nulo: true
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: ktext
+    tipo: string
+    comentario: "Descrição"
+    pii: nenhum
+    nulo: true
+  - nome: kunnr
+    tipo: string
+    comentario: "Cliente solicitante (sold-to party)"
+    pii: indireto
+    nulo: true
+  - nome: kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: kvgr1
+    tipo: string
+    comentario: "Grupo de cliente 1"
+    pii: nenhum
+    nulo: true
+  - nome: kvgr2
+    tipo: string
+    comentario: "Grupo de cliente 2"
+    pii: nenhum
+    nulo: true
+  - nome: kvgr3
+    tipo: string
+    comentario: "Grupo de cliente 3"
+    pii: nenhum
+    nulo: true
+  - nome: kvgr4
+    tipo: string
+    comentario: "Grupo de cliente 4"
+    pii: nenhum
+    nulo: true
+  - nome: kvgr5
+    tipo: string
+    comentario: "Grupo de cliente 5"
+    pii: nenhum
+    nulo: true
+  - nome: landtx
+    tipo: string
+    comentario: "País de destino tributário"
+    pii: nenhum
+    nulo: true
+  - nome: lifsk
+    tipo: string
+    comentario: "Bloqueio de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: lfgsk
+    tipo: string
+    comentario: "Status geral de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: lfstk
+    tipo: string
+    comentario: "Status de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: lsstk
+    tipo: string
+    comentario: "Status geral de bloqueio de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: logsysb
+    tipo: string
+    comentario: "Sistema lógico"
+    pii: nenhum
+    nulo: true
+  - nome: mahdt
+    tipo: date
+    comentario: "Data do último contato"
+    pii: nenhum
+    nulo: true
+  - nome: mahza
+    tipo: int
+    comentario: "Número de contatos"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: manek
+    tipo: string
+    comentario: "Conclusão manual do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: mill_appl_id
+    tipo: string
+    comentario: "ID da aplicação"
+    pii: nenhum
+    nulo: true
+  - nome: mod_allow
+    tipo: string
+    comentario: "Modificação permitida"
+    pii: nenhum
+    nulo: true
+  - nome: msr_id
+    tipo: string
+    comentario: "Número de ID do processo"
+    pii: nenhum
+    nulo: true
+  - nome: mtlaur
+    tipo: string
+    comentario: "Receita alvo"
+    pii: nenhum
+    nulo: true
+  - nome: multi
+    tipo: string
+    comentario: "Múltiplas promoções"
+    pii: nenhum
+    nulo: true
+  - nome: netwr
+    tipo: decimal(23,2)
+    comentario: "Valor líquido do documento"
+    pii: nenhum
+    nulo: true
+  - nome: objnr
+    tipo: string
+    comentario: "Número do objeto do cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: pay_method
+    tipo: string
+    comentario: "Métodos de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: phase
+    tipo: string
+    comentario: "Fase de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: proli
+    tipo: string
+    comentario: "Perfil de gestão de mercadoria perigosa"
+    pii: nenhum
+    nulo: true
+  - nome: psm_budat
+    tipo: date
+    comentario: "Data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: ps_psp_pnr
+    tipo: string
+    comentario: "Elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: qmnum
+    tipo: string
+    comentario: "Notificação"
+    pii: nenhum
+    nulo: true
+  - nome: rep_freq
+    tipo: string
+    comentario: "Frequência de relatório"
+    pii: nenhum
+    nulo: true
+  - nome: rfgsk
+    tipo: string
+    comentario: "Status geral de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rfstk
+    tipo: string
+    comentario: "Status de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rplnr
+    tipo: string
+    comentario: "Número do plano de cartão de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: sbgrp
+    tipo: string
+    comentario: "Grupo de representante de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: scheme_grp
+    tipo: string
+    comentario: "Referência de grupo de procedimento"
+    pii: nenhum
+    nulo: true
+  - nome: smenr
+    tipo: string
+    comentario: "Número da unidade"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: sppaym
+    tipo: string
+    comentario: "Método de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: spstg
+    tipo: string
+    comentario: "Status geral de bloqueio"
+    pii: nenhum
+    nulo: true
+  - nome: stafo
+    tipo: string
+    comentario: "Grupo de atualização (estatísticas)"
+    pii: nenhum
+    nulo: true
+  - nome: stage
+    tipo: string
+    comentario: "Fase de construção"
+    pii: nenhum
+    nulo: true
+  - nome: stceg_l
+    tipo: string
+    comentario: "País de destino fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: stwae
+    tipo: string
+    comentario: "Moeda de estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: submi
+    tipo: string
+    comentario: "Número coletivo"
+    pii: nenhum
+    nulo: true
+  - nome: swenr
+    tipo: string
+    comentario: "Entidade de negócio"
+    pii: nenhum
+    nulo: true
+  - nome: tas
+    tipo: string
+    comentario: "Símbolo de conta do tesouro"
+    pii: nenhum
+    nulo: true
+  - nome: taxk1
+    tipo: string
+    comentario: "Classificação fiscal de cliente 1"
+    pii: nenhum
+    nulo: true
+  - nome: taxk2
+    tipo: string
+    comentario: "Classificação fiscal de cliente 2"
+    pii: nenhum
+    nulo: true
+  - nome: taxk3
+    tipo: string
+    comentario: "Classificação fiscal de cliente 3"
+    pii: nenhum
+    nulo: true
+  - nome: taxk4
+    tipo: string
+    comentario: "Classificação fiscal de cliente 4"
+    pii: nenhum
+    nulo: true
+  - nome: taxk5
+    tipo: string
+    comentario: "Classificação fiscal de cliente 5"
+    pii: nenhum
+    nulo: true
+  - nome: taxk6
+    tipo: string
+    comentario: "Classificação fiscal de cliente 6"
+    pii: nenhum
+    nulo: true
+  - nome: taxk7
+    tipo: string
+    comentario: "Classificação fiscal de cliente 7"
+    pii: nenhum
+    nulo: true
+  - nome: taxk8
+    tipo: string
+    comentario: "Classificação fiscal de cliente 8"
+    pii: nenhum
+    nulo: true
+  - nome: taxk9
+    tipo: string
+    comentario: "Classificação fiscal de cliente 9"
+    pii: nenhum
+    nulo: true
+  - nome: telf1
+    tipo: string
+    comentario: "Telefone"
+    pii: direto
+    nulo: true
+  - nome: tm_ctrl_key
+    tipo: string
+    comentario: "Chave de controle"
+    pii: nenhum
+    nulo: true
+  - nome: trsta
+    tipo: string
+    comentario: "Status de planejamento de transporte"
+    pii: nenhum
+    nulo: true
+  - nome: trvog
+    tipo: string
+    comentario: "Grupo de transação"
+    pii: nenhum
+    nulo: true
+  - nome: upd_tmstmp
+    tipo: timestamp
+    comentario: "Timestamp de atualização"
+    pii: nenhum
+    nulo: true
+  - nome: uvall
+    tipo: string
+    comentario: "Cabeçalho geral"
+    pii: nenhum
+    nulo: true
+  - nome: uvals
+    tipo: string
+    comentario: "Todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: uvfak
+    tipo: string
+    comentario: "Faturamento – Cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: uvfas
+    tipo: string
+    comentario: "Faturamento – Todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: uvk01
+    tipo: string
+    comentario: "Reserva de cabeçalho 1"
+    pii: nenhum
+    nulo: true
+  - nome: uvk02
+    tipo: string
+    comentario: "Reserva de cabeçalho 2"
+    pii: nenhum
+    nulo: true
+  - nome: uvk03
+    tipo: string
+    comentario: "Reserva de cabeçalho 3"
+    pii: nenhum
+    nulo: true
+  - nome: uvk04
+    tipo: string
+    comentario: "Reserva de cabeçalho 4"
+    pii: nenhum
+    nulo: true
+  - nome: uvk05
+    tipo: string
+    comentario: "Reserva de cabeçalho 5"
+    pii: nenhum
+    nulo: true
+  - nome: uvprs
+    tipo: string
+    comentario: "Precificação – Todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: uvs01
+    tipo: string
+    comentario: "Reserva total 1"
+    pii: nenhum
+    nulo: true
+  - nome: uvs02
+    tipo: string
+    comentario: "Reserva total 2"
+    pii: nenhum
+    nulo: true
+  - nome: uvs03
+    tipo: string
+    comentario: "Reserva total 3"
+    pii: nenhum
+    nulo: true
+  - nome: uvs04
+    tipo: string
+    comentario: "Reserva total 4"
+    pii: nenhum
+    nulo: true
+  - nome: uvs05
+    tipo: string
+    comentario: "Reserva total 5"
+    pii: nenhum
+    nulo: true
+  - nome: uvvlk
+    tipo: string
+    comentario: "Entrega – Cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: uvvls
+    tipo: string
+    comentario: "Entrega – Todos os itens"
+    pii: nenhum
+    nulo: true
+  - nome: vbeln
+    tipo: string
+    comentario: "Número do documento de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: vbeln_grp
+    tipo: string
+    comentario: "Contrato mestre"
+    pii: nenhum
+    nulo: true
+  - nome: vbkla
+    tipo: string
+    comentario: "Sistema original"
+    pii: nenhum
+    nulo: true
+  - nome: vbklt
+    tipo: string
+    comentario: "Indicador"
+    pii: nenhum
+    nulo: true
+  - nome: vbtyp
+    tipo: string
+    comentario: "Categoria do documento SD"
+    pii: nenhum
+    nulo: true
+  - nome: vdatu
+    tipo: date
+    comentario: "Data de entrega solicitada"
+    pii: nenhum
+    nulo: true
+  - nome: vgbel
+    tipo: string
+    comentario: "Documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: vgtyp
+    tipo: string
+    comentario: "Categoria do documento precedente"
+    pii: nenhum
+    nulo: true
+  - nome: vkbur
+    tipo: string
+    comentario: "Escritório de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vkgrp
+    tipo: string
+    comentario: "Grupo de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vprgr
+    tipo: string
+    comentario: "Tipo de data proposta"
+    pii: nenhum
+    nulo: true
+  - nome: vsbed
+    tipo: string
+    comentario: "Condições de expedição"
+    pii: nenhum
+    nulo: true
+  - nome: vsnmr_v
+    tipo: string
+    comentario: "Versão"
+    pii: nenhum
+    nulo: true
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: vzeit
+    tipo: string
+    comentario: "Hora de entrega solicitada"
+    pii: nenhum
+    nulo: true
+  - nome: waerk
+    tipo: string
+    comentario: "Moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: wbstk
+    tipo: string
+    comentario: "Status de movimentação de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: wtysc_clm_hdr
+    tipo: string
+    comentario: "Cabeçalho de reclamação de garantia"
+    pii: nenhum
+    nulo: true
+  - nome: xblnr
+    tipo: string
+    comentario: "Referência"
+    pii: nenhum
+    nulo: true
+  - nome: xegdr
+    tipo: string
+    comentario: "Negócio triangular UE"
+    pii: nenhum
+    nulo: true
+  - nome: zuonr
+    tipo: string
+    comentario: "Atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: _dataaging
+    tipo: string
+    comentario: "Data de referencia para Data Aging (arquivamento)."
+    pii: nenhum
+    nulo: true

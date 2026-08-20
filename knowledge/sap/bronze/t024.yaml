@@ -1,0 +1,52 @@
+tabela: t024
+camada: bronze
+comentario: "Grupos de compras"
+ingestao: cdc
+fonte: sap.t024
+chave_primaria: [mandt, ekgrp]
+colunas:
+  - nome: ekgrp
+    tipo: string
+    comentario: "Grupo de compras"
+    pii: nenhum
+    nulo: false
+  - nome: eknam
+    tipo: string
+    comentario: "Descrição do grupo de compras"
+    pii: nenhum
+    nulo: true
+  - nome: ektel
+    tipo: string
+    comentario: "Telefone do grupo de compras"
+    pii: direto
+    nulo: true
+  - nome: ldest
+    tipo: string
+    comentario: "Dispositivo de saída (impressora)"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: smtp_addr
+    tipo: string
+    comentario: "Endereço de e-mail"
+    pii: direto
+    nulo: true
+  - nome: telfx
+    tipo: string
+    comentario: "Número de fax"
+    pii: direto
+    nulo: true
+  - nome: tel_extens
+    tipo: string
+    comentario: "Ramal telefônico"
+    pii: direto
+    nulo: true
+  - nome: tel_number
+    tipo: string
+    comentario: "Número de telefone"
+    pii: direto
+    nulo: true

@@ -1,0 +1,122 @@
+tabela: setheader
+camada: bronze
+comentario: "Cabecalho e diretorio de conjunto SAP (set)"
+ingestao: cdc
+fonte: sap.setheader
+chave_primaria: [mandt, setclass, setname]
+colunas:
+  - nome: authgr
+    tipo: string
+    comentario: "Grupo de autorizacao"
+    pii: nenhum
+    nulo: true
+  - nome: credate
+    tipo: date
+    comentario: "Data de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: cretime
+    tipo: string
+    comentario: "Hora de criacao"
+    pii: nenhum
+    nulo: true
+  - nome: creuser
+    tipo: string
+    comentario: "Criado por (usuario SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: fieldname
+    tipo: string
+    comentario: "Nome do campo"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: no_rwsheader
+    tipo: string
+    comentario: "Numero de cabecalhos de relatorio"
+    pii: nenhum
+    nulo: true
+  - nome: no_rwsline
+    tipo: string
+    comentario: "Numero de linhas de relatorio"
+    pii: nenhum
+    nulo: true
+  - nome: no_setlinet
+    tipo: string
+    comentario: "Numero de textos de linha do conjunto"
+    pii: nenhum
+    nulo: true
+  - nome: rollname
+    tipo: string
+    comentario: "Elemento de dados representativo"
+    pii: nenhum
+    nulo: true
+  - nome: rvalue
+    tipo: string
+    comentario: "Valor representativo"
+    pii: nenhum
+    nulo: true
+  - nome: saprl
+    tipo: string
+    comentario: "Release SAP"
+    pii: nenhum
+    nulo: true
+  - nome: setclass
+    tipo: string
+    comentario: "Classe do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: setname
+    tipo: string
+    comentario: "Nome do conjunto"
+    pii: nenhum
+    nulo: false
+  - nome: settype
+    tipo: string
+    comentario: "Tipo do conjunto"
+    pii: nenhum
+    nulo: true
+  - nome: set_olangu
+    tipo: string
+    comentario: "Idioma original do conjunto"
+    pii: nenhum
+    nulo: true
+  - nome: subclass
+    tipo: string
+    comentario: "Unidade organizacional (sub-classe)"
+    pii: nenhum
+    nulo: true
+  - nome: tabname
+    tipo: string
+    comentario: "Nome da tabela"
+    pii: nenhum
+    nulo: true
+  - nome: upddate
+    tipo: date
+    comentario: "Data da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: updtime
+    tipo: string
+    comentario: "Hora da ultima alteracao"
+    pii: nenhum
+    nulo: true
+  - nome: upduser
+    tipo: string
+    comentario: "Ultima alteracao por (usuario SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: xdynamic
+    tipo: string
+    comentario: "Conjunto dinamico"
+    pii: nenhum
+    nulo: true
+  - nome: xuniq
+    tipo: string
+    comentario: "Deve ser unico"
+    pii: nenhum
+    nulo: true

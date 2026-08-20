@@ -1,0 +1,82 @@
+tabela: prte
+camada: bronze
+comentario: "Dados de programação do item de projeto"
+ingestao: cdc
+fonte: sap.prte
+chave_primaria: [mandt, posnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: posnr
+    tipo: string
+    comentario: "Número interno do item de projeto"
+    pii: nenhum
+    nulo: false
+  - nome: psphi
+    tipo: string
+    comentario: "Número interno da definição de projeto"
+    pii: nenhum
+    nulo: true
+  - nome: pstrt
+    tipo: date
+    comentario: "Data de início programada"
+    pii: nenhum
+    nulo: true
+  - nome: pende
+    tipo: date
+    comentario: "Data de término programada"
+    pii: nenhum
+    nulo: true
+  - nome: estrt
+    tipo: date
+    comentario: "Início previsto"
+    pii: nenhum
+    nulo: true
+  - nome: eende
+    tipo: date
+    comentario: "Término previsto"
+    pii: nenhum
+    nulo: true
+  - nome: istrt
+    tipo: date
+    comentario: "Início real"
+    pii: nenhum
+    nulo: true
+  - nome: iende
+    tipo: date
+    comentario: "Término real"
+    pii: nenhum
+    nulo: true
+  - nome: pdaur
+    tipo: string
+    comentario: "Duração nas datas básicas"
+    pii: nenhum
+    nulo: true
+  - nome: edaur
+    tipo: string
+    comentario: "Duração prevista"
+    pii: nenhum
+    nulo: true
+  - nome: idaur
+    tipo: string
+    comentario: "Duração real"
+    pii: nenhum
+    nulo: true
+  - nome: peinh
+    tipo: string
+    comentario: "Unidade de duração básica"
+    pii: nenhum
+    nulo: true
+  - nome: eeinh
+    tipo: string
+    comentario: "Unidade de duração prevista"
+    pii: nenhum
+    nulo: true
+  - nome: ieinh
+    tipo: string
+    comentario: "Unidade de duração real"
+    pii: nenhum
+    nulo: true

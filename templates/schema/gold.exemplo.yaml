@@ -1,0 +1,46 @@
+# Exemplo — camada GOLD (modelo DESTINO, orientado a negocio).
+# Gold e um star schema com dimensoes SCD Tipo 1 e fatos, gerado a partir deste YAML pelo
+# notebook transform_gold.py. Colunas com 'origem' sao projetadas da silver; colunas sem
+# 'origem' sao geradas: a chave surrogada pelo scd_type1, e metricas/derivadas pela funcao
+# transformar (joins/agregacoes). 'entidade' distingue dimensao de fato.
+tabela: dim_cliente
+camada: gold
+comentario: "Dimensao de clientes (SCD Tipo 1) — visao de negocio consolidada."
+
+ingestao: scd_type1
+fonte: silver.clientes
+entidade: dimensao                # dimensao | fato
+chave_negocio: [cod_cliente]      # chave natural usada no MERGE do SCD Tipo 1
+chave_surrogada: sk_cliente       # coluna gerada pelo scd_type1
+
+chave_primaria: [sk_cliente]
+
+colunas:
+  - nome: sk_cliente
+    tipo: bigint
+    comentario: "Chave surrogada da dimensao cliente (gerada)."
+    pii: nenhum
+    nulo: false
+  - nome: cod_cliente
+    tipo: string
+    origem: kunnr                 # projetada da silver.clientes (renomeada de kunnr)
+    comentario: "Chave natural do cliente (origem)."
+    pii: indireto
+    nulo: false
+  - nome: nome
+    tipo: string
+    origem: nome                  # projetada da silver.clientes
+    comentario: "Nome do cliente."
+    pii: direto
+    nulo: true
+  - nome: cod_pais
+    tipo: string
+    origem: cod_pais              # projetada da silver.clientes
+    comentario: "Chave do pais."
+    pii: nenhum
+    nulo: true
+  - nome: _atualizado_em
+    tipo: timestamp
+    comentario: "Timestamp da ultima atualizacao do registro (gerado pelo SCD Tipo 1)."
+    pii: nenhum
+    nulo: false

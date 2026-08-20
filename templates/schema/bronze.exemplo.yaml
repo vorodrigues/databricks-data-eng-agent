@@ -1,0 +1,42 @@
+# Exemplo — camada BRONZE (modelo de dados FONTE, dados brutos do sistema originador).
+# Bronze espelha a origem sem transformacao de negocio; ingestao incremental e idempotente.
+tabela: kna1
+camada: bronze
+comentario: "Cadastro de clientes SAP (KNA1) — dados brutos ingeridos do sistema originador."
+
+ingestao: cdc
+fonte: sap.kna1
+
+chave_primaria: [mandt, kunnr]
+
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante SAP (client)."
+    pii: nenhum
+    nulo: false
+  - nome: kunnr
+    tipo: string
+    comentario: "Numero do cliente."
+    pii: indireto
+    nulo: false
+  - nome: name1
+    tipo: string
+    comentario: "Nome do cliente."
+    pii: direto
+    nulo: true
+  - nome: stcd1
+    tipo: string
+    comentario: "Numero de identificacao fiscal (CNPJ/CPF)."
+    pii: sensivel
+    nulo: true
+  - nome: land1
+    tipo: string
+    comentario: "Chave do pais."
+    pii: nenhum
+    nulo: true
+  - nome: _ingerido_em
+    tipo: timestamp
+    comentario: "Timestamp de ingestao na bronze (auditoria)."
+    pii: nenhum
+    nulo: false

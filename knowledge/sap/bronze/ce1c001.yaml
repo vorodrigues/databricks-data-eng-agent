@@ -1,0 +1,592 @@
+tabela: ce1c001
+camada: bronze
+comentario: "Itens de resultado por setor de negócio C001 — tabela de linhas CO-PA (Operating Concern CE1C001)"
+ingestao: cdc
+fonte: sap.ce1c001
+chave_primaria: [mandt, belnr, posnr] # inferido pelo dicionário SAP (PK padrão CE1XXXX); baixa confiança — paobjnr pode ser necessário
+colunas:
+  - nome: absmg
+    tipo: decimal(23,2)
+    comentario: "Quantidade de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: absmg_me
+    tipo: string
+    comentario: "Unidade de medida base"
+    pii: nenhum
+    nulo: true
+  - nome: altperio
+    tipo: string
+    comentario: "Semana/ano do período alternativo"
+    pii: nenhum
+    nulo: true
+  - nome: artnr
+    tipo: string
+    comentario: "Código do produto"
+    pii: nenhum
+    nulo: true
+  - nome: ausfr
+    tipo: decimal(23,2)
+    comentario: "Frete de saída"
+    pii: nenhum
+    nulo: true
+  - nome: belnr
+    tipo: string
+    comentario: "Número do documento CO-PA"
+    pii: nenhum
+    nulo: false
+  - nome: beskz
+    tipo: string
+    comentario: "Tipo de suprimento/procurement"
+    pii: nenhum
+    nulo: true
+  - nome: budat
+    tipo: date
+    comentario: "Data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: copa_aworg
+    tipo: string
+    comentario: "Unidade organizacional de referência CO-PA"
+    pii: nenhum
+    nulo: true
+  - nome: copa_awsys
+    tipo: string
+    comentario: "Sistema lógico de origem CO-PA"
+    pii: nenhum
+    nulo: true
+  - nome: copa_awtyp
+    tipo: string
+    comentario: "Procedimento de referência CO-PA"
+    pii: nenhum
+    nulo: true
+  - nome: copa_bwzpt
+    tipo: string
+    comentario: "Ponto de avaliação CO-PA"
+    pii: nenhum
+    nulo: true
+  - nome: erlos
+    tipo: decimal(23,2)
+    comentario: "Receita"
+    pii: nenhum
+    nulo: true
+  - nome: fadat
+    tipo: date
+    comentario: "Data da fatura"
+    pii: nenhum
+    nulo: true
+  - nome: fkart
+    tipo: string
+    comentario: "Tipo de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: frwae
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: gjahr
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: gsber
+    tipo: string
+    comentario: "Área de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: hrkft
+    tipo: string
+    comentario: "Origem do lançamento CO"
+    pii: nenhum
+    nulo: true
+  - nome: hzdat
+    tipo: date
+    comentario: "Data de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: kaufn
+    tipo: string
+    comentario: "Número do pedido de venda"
+    pii: nenhum
+    nulo: true
+  - nome: kdgrp
+    tipo: string
+    comentario: "Grupo de clientes"
+    pii: nenhum
+    nulo: true
+  - nome: kdpos
+    tipo: string
+    comentario: "Item do pedido de venda"
+    pii: nenhum
+    nulo: true
+  - nome: kmvtnr
+    tipo: string
+    comentario: "Código do funcionário de vendas"
+    pii: indireto
+    nulo: true
+  - nome: kndnr
+    tipo: string
+    comentario: "Código do cliente"
+    pii: indireto
+    nulo: true
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controlling"
+    pii: nenhum
+    nulo: true
+  - nome: kstar
+    tipo: string
+    comentario: "Elemento de custo"
+    pii: nenhum
+    nulo: true
+  - nome: kstrg
+    tipo: string
+    comentario: "Objeto de custo"
+    pii: nenhum
+    nulo: true
+  - nome: kunre
+    tipo: string
+    comentario: "Código do destinatário da fatura (bill-to party)"
+    pii: indireto
+    nulo: true
+  - nome: kunwe
+    tipo: string
+    comentario: "Código do destinatário da mercadoria (ship-to party)"
+    pii: indireto
+    nulo: true
+  - nome: kursbk
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: kursf
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: kurskz
+    tipo: string
+    comentario: "Moeda do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: kwboni
+    tipo: decimal(23,2)
+    comentario: "Bônus"
+    pii: nenhum
+    nulo: true
+  - nome: kwfrgr
+    tipo: decimal(23,2)
+    comentario: "Frete"
+    pii: nenhum
+    nulo: true
+  - nome: kwgohd
+    tipo: decimal(23,2)
+    comentario: "Custos de administração geral"
+    pii: nenhum
+    nulo: true
+  - nome: kwinsr
+    tipo: decimal(23,2)
+    comentario: "Seguro"
+    pii: nenhum
+    nulo: true
+  - nome: kwkdrb
+    tipo: decimal(23,2)
+    comentario: "Desconto ao cliente"
+    pii: nenhum
+    nulo: true
+  - nome: kwmarb
+    tipo: decimal(23,2)
+    comentario: "Desconto de material"
+    pii: nenhum
+    nulo: true
+  - nome: kwmkad
+    tipo: decimal(23,2)
+    comentario: "Publicidade"
+    pii: nenhum
+    nulo: true
+  - nome: kwmkpr
+    tipo: decimal(23,2)
+    comentario: "Promoção"
+    pii: nenhum
+    nulo: true
+  - nome: kwsgek
+    tipo: decimal(23,2)
+    comentario: "Outros custos gerais"
+    pii: nenhum
+    nulo: true
+  - nome: kwskto
+    tipo: decimal(23,2)
+    comentario: "Desconto financeiro (caixa)"
+    pii: nenhum
+    nulo: true
+  - nome: kwvkpv
+    tipo: decimal(23,2)
+    comentario: "Comissão de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: kwwtva
+    tipo: decimal(23,2)
+    comentario: "Custos variáveis de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: land1
+    tipo: string
+    comentario: "País"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mraba
+    tipo: decimal(23,2)
+    comentario: "Desconto por quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: paledger
+    tipo: string
+    comentario: "Tipo de moeda do razão PA"
+    pii: nenhum
+    nulo: true
+  - nome: paobjnr
+    tipo: string
+    comentario: "Número do segmento de rentabilidade"
+    pii: nenhum
+    nulo: true
+  - nome: papaobjnr
+    tipo: string
+    comentario: "Número do segmento de rentabilidade parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: papasubnr
+    tipo: string
+    comentario: "Subnúmero do segmento parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: paph1
+    tipo: string
+    comentario: "Hierarquia de produto nível 1"
+    pii: nenhum
+    nulo: true
+  - nome: paph2
+    tipo: string
+    comentario: "Hierarquia de produto nível 2"
+    pii: nenhum
+    nulo: true
+  - nome: paph3
+    tipo: string
+    comentario: "Hierarquia de produto nível 3"
+    pii: nenhum
+    nulo: true
+  - nome: pasubnr
+    tipo: string
+    comentario: "Subnúmero do segmento de rentabilidade"
+    pii: nenhum
+    nulo: true
+  - nome: perde
+    tipo: string
+    comentario: "Período contábil"
+    pii: nenhum
+    nulo: true
+  - nome: perio
+    tipo: string
+    comentario: "Período/ano"
+    pii: nenhum
+    nulo: true
+  - nome: plikz
+    tipo: string
+    comentario: "Indicador plano/real"
+    pii: nenhum
+    nulo: true
+  - nome: posnr
+    tipo: string
+    comentario: "Número do item do documento CO-PA"
+    pii: nenhum
+    nulo: false
+  - nome: pprctr
+    tipo: string
+    comentario: "Centro de lucro parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: prznr
+    tipo: string
+    comentario: "Processo de negócios remetente"
+    pii: nenhum
+    nulo: true
+  - nome: pspnr
+    tipo: string
+    comentario: "Elemento WBS"
+    pii: nenhum
+    nulo: true
+  - nome: pstyv
+    tipo: string
+    comentario: "Categoria do item de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: rabat
+    tipo: decimal(23,2)
+    comentario: "Outros descontos"
+    pii: nenhum
+    nulo: true
+  - nome: rbeln
+    tipo: string
+    comentario: "Documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rec_waers
+    tipo: string
+    comentario: "Moeda do registro"
+    pii: nenhum
+    nulo: true
+  - nome: rkaufnr
+    tipo: string
+    comentario: "Ordem CO de referência"
+    pii: nenhum
+    nulo: true
+  - nome: rkestatu
+    tipo: string
+    comentario: "Status de atualização do lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: rposn
+    tipo: string
+    comentario: "Número do item de referência"
+    pii: nenhum
+    nulo: true
+  - nome: skost
+    tipo: string
+    comentario: "Centro de custo remetente"
+    pii: nenhum
+    nulo: true
+  - nome: spart
+    tipo: string
+    comentario: "Divisão de produtos"
+    pii: nenhum
+    nulo: true
+  - nome: sto_belnr
+    tipo: string
+    comentario: "Número do documento cancelado"
+    pii: nenhum
+    nulo: true
+  - nome: sto_posnr
+    tipo: string
+    comentario: "Item do documento cancelado"
+    pii: nenhum
+    nulo: true
+  - nome: timestmp
+    tipo: timestamp
+    comentario: "Timestamp de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: usnam
+    tipo: string
+    comentario: "Usuário criador do registro"
+    pii: indireto
+    nulo: true
+  - nome: versi
+    tipo: string
+    comentario: "Versão de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: vkbur
+    tipo: string
+    comentario: "Escritório de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vrgar
+    tipo: string
+    comentario: "Tipo de registro (real/plano)"
+    pii: nenhum
+    nulo: true
+  - nome: vrprs
+    tipo: decimal(23,2)
+    comentario: "Valor do estoque"
+    pii: nenhum
+    nulo: true
+  - nome: vtrgk
+    tipo: decimal(23,2)
+    comentario: "Overhead de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: vv910
+    tipo: decimal(23,2)
+    comentario: "Receita de despesas/viagens"
+    pii: nenhum
+    nulo: true
+  - nome: vv950
+    tipo: decimal(23,2)
+    comentario: "Despesas de viagem"
+    pii: nenhum
+    nulo: true
+  - nome: vv970
+    tipo: decimal(23,2)
+    comentario: "Custos de terceiros"
+    pii: nenhum
+    nulo: true
+  - nome: vvfgs
+    tipo: decimal(23,2)
+    comentario: "Mercadorias gratuitas (free goods)"
+    pii: nenhum
+    nulo: true
+  - nome: vvipv
+    tipo: decimal(23,2)
+    comentario: "Variação de preço de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: vviqv
+    tipo: decimal(23,2)
+    comentario: "Variação de quantidade de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: vvlcf
+    tipo: decimal(23,2)
+    comentario: "Custos de mão de obra fixos"
+    pii: nenhum
+    nulo: true
+  - nome: vvlcv
+    tipo: decimal(23,2)
+    comentario: "Custos de mão de obra variáveis"
+    pii: nenhum
+    nulo: true
+  - nome: vvlsv
+    tipo: decimal(23,2)
+    comentario: "Variação de tamanho de lote"
+    pii: nenhum
+    nulo: true
+  - nome: vvmat
+    tipo: decimal(23,2)
+    comentario: "Custos de material"
+    pii: nenhum
+    nulo: true
+  - nome: vvmcf
+    tipo: decimal(23,2)
+    comentario: "Custos de fabricação fixos"
+    pii: nenhum
+    nulo: true
+  - nome: vvmcv
+    tipo: decimal(23,2)
+    comentario: "Custos de fabricação variáveis"
+    pii: nenhum
+    nulo: true
+  - nome: vvmdi
+    tipo: decimal(23,2)
+    comentario: "Diferença de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: vvmep
+    tipo: decimal(23,2)
+    comentario: "Preço externo de material"
+    pii: nenhum
+    nulo: true
+  - nome: vvmpv
+    tipo: decimal(23,2)
+    comentario: "Variação de preço misto"
+    pii: nenhum
+    nulo: true
+  - nome: vvmsk
+    tipo: decimal(23,2)
+    comentario: "Marketing"
+    pii: nenhum
+    nulo: true
+  - nome: vvn10
+    tipo: decimal(23,2)
+    comentario: "Receita não operacional"
+    pii: nenhum
+    nulo: true
+  - nome: vvn20
+    tipo: decimal(23,2)
+    comentario: "Despesa não operacional"
+    pii: nenhum
+    nulo: true
+  - nome: vvn30
+    tipo: decimal(23,2)
+    comentario: "Impostos"
+    pii: nenhum
+    nulo: true
+  - nome: vvocf
+    tipo: decimal(23,2)
+    comentario: "Overhead fixo"
+    pii: nenhum
+    nulo: true
+  - nome: vvocv
+    tipo: decimal(23,2)
+    comentario: "Overhead variável"
+    pii: nenhum
+    nulo: true
+  - nome: vvopv
+    tipo: decimal(23,2)
+    comentario: "Variação de preço de saída"
+    pii: nenhum
+    nulo: true
+  - nome: vvrdc
+    tipo: decimal(23,2)
+    comentario: "Pesquisa e desenvolvimento (P&D)"
+    pii: nenhum
+    nulo: true
+  - nome: vvrem
+    tipo: decimal(23,2)
+    comentario: "Variação de entrada residual"
+    pii: nenhum
+    nulo: true
+  - nome: vvres
+    tipo: decimal(23,2)
+    comentario: "Variação de utilização de recursos"
+    pii: nenhum
+    nulo: true
+  - nome: vvrva
+    tipo: decimal(23,2)
+    comentario: "Variação residual"
+    pii: nenhum
+    nulo: true
+  - nome: vvscr
+    tipo: decimal(23,2)
+    comentario: "Sucata"
+    pii: nenhum
+    nulo: true
+  - nome: vvy01
+    tipo: decimal(23,2)
+    comentario: "Custos de material via bypass CO"
+    pii: nenhum
+    nulo: true
+  - nome: vwgk
+    tipo: decimal(23,2)
+    comentario: "Overhead administrativo"
+    pii: nenhum
+    nulo: true
+  - nome: wadat
+    tipo: date
+    comentario: "Data de saída de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro produtivo (plant)"
+    pii: nenhum
+    nulo: true
+  - nome: wwcst
+    tipo: string
+    comentario: "País de destino da mercadoria (ship-to country)"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,227 @@
+tabela: vbup
+camada: bronze
+comentario: "Documento de vendas: status do item"
+ingestao: cdc
+fonte: sap.vbup
+chave_primaria: [mandt, vbeln, posnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: vbeln
+    tipo: string
+    comentario: "Numero do documento de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: posnr
+    tipo: string
+    comentario: "Item do documento de vendas (SD)"
+    pii: nenhum
+    nulo: false
+  - nome: rfsta
+    tipo: string
+    comentario: "Status de referencia do item"
+    pii: nenhum
+    nulo: true
+  - nome: rfgsa
+    tipo: string
+    comentario: "Status global de referencia do item"
+    pii: nenhum
+    nulo: true
+  - nome: besta
+    tipo: string
+    comentario: "Status de confirmacao do item"
+    pii: nenhum
+    nulo: true
+  - nome: lfsta
+    tipo: string
+    comentario: "Status de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: lfgsa
+    tipo: string
+    comentario: "Status global de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: wbsta
+    tipo: string
+    comentario: "Status de movimento de mercadoria do item"
+    pii: nenhum
+    nulo: true
+  - nome: fksta
+    tipo: string
+    comentario: "Status de faturamento do item"
+    pii: nenhum
+    nulo: true
+  - nome: fksaa
+    tipo: string
+    comentario: "Status de faturamento baseado em pedido"
+    pii: nenhum
+    nulo: true
+  - nome: absta
+    tipo: string
+    comentario: "Status de rejeicao do item"
+    pii: nenhum
+    nulo: true
+  - nome: gbsta
+    tipo: string
+    comentario: "Status global de processamento do item"
+    pii: nenhum
+    nulo: true
+  - nome: kosta
+    tipo: string
+    comentario: "Status de separacao (picking) do item"
+    pii: nenhum
+    nulo: true
+  - nome: lvsta
+    tipo: string
+    comentario: "Status de atividades de gestao de deposito (WM)"
+    pii: nenhum
+    nulo: true
+  - nome: uvall
+    tipo: string
+    comentario: "Status de incompletude geral do item"
+    pii: nenhum
+    nulo: true
+  - nome: uvvlk
+    tipo: string
+    comentario: "Status de incompletude do item em relacao a entrega"
+    pii: nenhum
+    nulo: true
+  - nome: uvfak
+    tipo: string
+    comentario: "Status de incompletude do item em relacao ao faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: uvprs
+    tipo: string
+    comentario: "Indicador de precificacao incompleta do item"
+    pii: nenhum
+    nulo: true
+  - nome: fkivp
+    tipo: string
+    comentario: "Status de faturamento intercompanhia do item"
+    pii: nenhum
+    nulo: true
+  - nome: uvp01
+    tipo: string
+    comentario: "Reserva de status de item 1"
+    pii: nenhum
+    nulo: true
+  - nome: uvp02
+    tipo: string
+    comentario: "Reserva de status de item 2"
+    pii: nenhum
+    nulo: true
+  - nome: uvp03
+    tipo: string
+    comentario: "Reserva de status de item 3"
+    pii: nenhum
+    nulo: true
+  - nome: uvp04
+    tipo: string
+    comentario: "Reserva de status de item 4"
+    pii: nenhum
+    nulo: true
+  - nome: uvp05
+    tipo: string
+    comentario: "Reserva de status de item 5"
+    pii: nenhum
+    nulo: true
+  - nome: pksta
+    tipo: string
+    comentario: "Status de embalagem do item"
+    pii: nenhum
+    nulo: true
+  - nome: koqua
+    tipo: string
+    comentario: "Status de confirmacao de separacao/armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: costa
+    tipo: string
+    comentario: "Status de confirmacao do item"
+    pii: nenhum
+    nulo: true
+  - nome: cmppi
+    tipo: string
+    comentario: "Status de verificacao de credito contra documento financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: cmppj
+    tipo: string
+    comentario: "Status de verificacao de credito contra seguro de exportacao"
+    pii: nenhum
+    nulo: true
+  - nome: uvpik
+    tipo: string
+    comentario: "Status de incompletude do item para separacao/armazenamento"
+    pii: nenhum
+    nulo: true
+  - nome: uvpak
+    tipo: string
+    comentario: "Status de incompletude do item para embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: uvwak
+    tipo: string
+    comentario: "Status de incompletude do item para saida de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: dcsta
+    tipo: string
+    comentario: "Status de atraso do item"
+    pii: nenhum
+    nulo: true
+  - nome: rrsta
+    tipo: string
+    comentario: "Status de determinacao de receita do item"
+    pii: nenhum
+    nulo: true
+  - nome: vlstp
+    tipo: string
+    comentario: "Indicador de processamento descentralizado de deposito"
+    pii: nenhum
+    nulo: true
+  - nome: fssta
+    tipo: string
+    comentario: "Status de bloqueio de faturamento do item"
+    pii: nenhum
+    nulo: true
+  - nome: lssta
+    tipo: string
+    comentario: "Status de bloqueio de entrega do item"
+    pii: nenhum
+    nulo: true
+  - nome: pdsta
+    tipo: string
+    comentario: "Status de prova de entrega (POD) do item"
+    pii: nenhum
+    nulo: true
+  - nome: manek
+    tipo: string
+    comentario: "Conclusao manual do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: hdall
+    tipo: string
+    comentario: "Item de entrega de entrada nao concluido"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_ar_stat_itm
+    tipo: string
+    comentario: "Status de execucao automatica (ARun) no nivel do item"
+    pii: nenhum
+    nulo: true
+  - nome: mill_vs_vssta
+    tipo: string
+    comentario: "Status do item (setor Mill)"
+    pii: nenhum
+    nulo: true
+  - nome: ltsps
+    tipo: string
+    comentario: "Tipo estocavel convertido para producao padrao"
+    pii: nenhum
+    nulo: true

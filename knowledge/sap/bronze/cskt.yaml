@@ -1,0 +1,47 @@
+tabela: cskt
+camada: bronze
+comentario: "Textos de centro de custo"
+ingestao: cdc
+fonte: sap.cskt
+chave_primaria: [mandt, spras, kokrs, kostl, datbi]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controle"
+    pii: nenhum
+    nulo: false
+  - nome: kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: false
+  - nome: datbi
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: false
+  - nome: ktext
+    tipo: string
+    comentario: "Nome do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: ltext
+    tipo: string
+    comentario: "Descrição do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: mctxt
+    tipo: string
+    comentario: "Texto de pesquisa do centro de custo"
+    pii: nenhum
+    nulo: true

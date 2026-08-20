@@ -1,0 +1,43 @@
+tabela: billing_blocking_reasons
+camada: gold
+comentario: "Captura descrições e códigos de motivos de bloqueio de faturamento por idioma (SAP TVFST) para auditoria do fluxo order-to-cash."
+entidade: obt
+ingestao: custom
+fontes: [silver.vbrk, silver.vbrp, silver.tvfst]
+chave_primaria: [client_mandt, language_key_spras, block_faksp]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: language_key_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: block_faksp
+    tipo: string
+    comentario: "Código de bloqueio de faturamento"
+    pii: nenhum
+    nulo: false
+  - nome: billing_blocking_reason_vtext
+    tipo: string
+    comentario: "Descrição do motivo de bloqueio de faturamento"
+    pii: nenhum
+    nulo: true
+  - nome: recordstamp
+    tipo: timestamp
+    comentario: "Timestamp do registro"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

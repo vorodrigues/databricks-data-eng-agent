@@ -1,0 +1,568 @@
+tabela: sales_document_headers
+camada: gold
+comentario: "Detalhes do cabeçalho de documentos de vendas do SAP VBAK, incluindo contas de clientes, valor líquido, categorias de documento e datas."
+entidade: obt
+ingestao: custom
+fontes: [silver.vbak, silver.vbap, silver.vbep, silver.vbpa, silver.tcurx, silver.vbfa, silver.vbuk, silver.vbup, silver.lips]
+chave_primaria: [client_mandt, document_number_vbeln]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: document_number_vbeln
+    tipo: string
+    comentario: "Número do documento de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: creation_date_erdat
+    tipo: date
+    comentario: "Data de criação do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: creation_time_erzet
+    tipo: string
+    comentario: "Hora de criação do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: created_by_ernam
+    tipo: string
+    comentario: "Usuário que criou o documento de vendas"
+    pii: indireto
+    nulo: true
+  - nome: quotation_date_from_angdt
+    tipo: date
+    comentario: "Cotação/consulta válida a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: quotation_date_to_bnddt
+    tipo: date
+    comentario: "Cotação válida até (data de validade)"
+    pii: nenhum
+    nulo: true
+  - nome: document_date_audat
+    tipo: date
+    comentario: "Data do documento (recebimento/envio)"
+    pii: nenhum
+    nulo: true
+  - nome: document_category_vbtyp
+    tipo: string
+    comentario: "Categoria de documento de vendas e entrega"
+    pii: nenhum
+    nulo: true
+  - nome: transaction_group_trvog
+    tipo: string
+    comentario: "Grupo de transação"
+    pii: nenhum
+    nulo: true
+  - nome: document_type_auart
+    tipo: string
+    comentario: "Tipo de documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: reason_augru
+    tipo: string
+    comentario: "Motivo do pedido (razão da transação)"
+    pii: nenhum
+    nulo: true
+  - nome: warranty_date_gwldt
+    tipo: date
+    comentario: "Data de garantia"
+    pii: nenhum
+    nulo: true
+  - nome: collective_number_submi
+    tipo: string
+    comentario: "Número coletivo (SD)"
+    pii: nenhum
+    nulo: true
+  - nome: delivery_block_lifsk
+    tipo: string
+    comentario: "Bloqueio de entrega (cabeçalho do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: billing_block_faksk
+    tipo: string
+    comentario: "Bloqueio de faturamento no documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: net_value_of_the_sales_document_in_document_currency_netwr
+    tipo: decimal(23,2)
+    comentario: "Valor líquido do documento de vendas na moeda do documento"
+    pii: nenhum
+    nulo: true
+  - nome: document_currency_waerk
+    tipo: string
+    comentario: "Moeda do documento de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: sales_organization_vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: distribution_channel_vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: division_spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: true
+  - nome: sales_group_vkgrp
+    tipo: string
+    comentario: "Grupo de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: sales_office_vkbur
+    tipo: string
+    comentario: "Escritório de vendas"
+    pii: nenhum
+    nulo: true
+  - nome: business_area_gsber
+    tipo: string
+    comentario: "Área de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: cost_ctr_business_area_gskst
+    tipo: string
+    comentario: "Área de negócios proveniente do centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: agreement_valid_from_guebg
+    tipo: date
+    comentario: "Data de início de vigência do contrato (acordos gerais)"
+    pii: nenhum
+    nulo: true
+  - nome: agreement_valid_to_gueen
+    tipo: date
+    comentario: "Data de término de vigência do contrato (acordos gerais)"
+    pii: nenhum
+    nulo: true
+  - nome: condition_number_knumv
+    tipo: string
+    comentario: "Número da condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: requested_delivery_date_vdatu
+    tipo: date
+    comentario: "Data de entrega solicitada"
+    pii: nenhum
+    nulo: true
+  - nome: proposed_date_type_vprgr
+    tipo: string
+    comentario: "Tipo de data proposta"
+    pii: nenhum
+    nulo: true
+  - nome: complete_delivery_flag_autlf
+    tipo: string
+    comentario: "Indicador: entrega completa definida por pedido"
+    pii: nenhum
+    nulo: true
+  - nome: original_system_vbkla
+    tipo: string
+    comentario: "Sistema de origem com controle de release e transação"
+    pii: nenhum
+    nulo: true
+  - nome: document_indicator_vbklt
+    tipo: string
+    comentario: "Indicador do documento de vendas e entrega"
+    pii: nenhum
+    nulo: true
+  - nome: pricing_procedure_kalsm
+    tipo: string
+    comentario: "Procedimento de precificação"
+    pii: nenhum
+    nulo: true
+  - nome: shipping_conditions_vsbed
+    tipo: string
+    comentario: "Condições de envio"
+    pii: nenhum
+    nulo: true
+  - nome: proposed_billing_type_fkara
+    tipo: string
+    comentario: "Tipo de faturamento proposto para documento faturado por pedido"
+    pii: nenhum
+    nulo: true
+  - nome: sales_probability_awahr
+    tipo: int
+    comentario: "Probabilidade de venda (%)"
+    pii: nenhum
+    nulo: true
+  - nome: search_term_for_product_proposal_ktext
+    tipo: string
+    comentario: "Termo de busca para proposta de produto"
+    pii: nenhum
+    nulo: true
+  - nome: customer_purchase_order_number_bstnk
+    tipo: string
+    comentario: "Referência do pedido do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: customer_purchase_order_type_bsark
+    tipo: string
+    comentario: "Tipo de pedido do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: customer_purchase_order_date_bstdk
+    tipo: date
+    comentario: "Data do pedido do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: purchase_order_number_supplement_bstzd
+    tipo: string
+    comentario: "Complemento do número do pedido de compra"
+    pii: nenhum
+    nulo: true
+  - nome: your_reference_ihrez
+    tipo: string
+    comentario: "Sua referência"
+    pii: nenhum
+    nulo: true
+  - nome: name_of_orderer_bname
+    tipo: string
+    comentario: "Nome do solicitante"
+    pii: direto
+    nulo: true
+  - nome: telephone_number_telf1
+    tipo: string
+    comentario: "Número de telefone"
+    pii: direto
+    nulo: true
+  - nome: number_of_contacts_from_the_customer_mahza
+    tipo: int
+    comentario: "Número de contatos do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: last_customer_contact_date_mahdt
+    tipo: date
+    comentario: "Data do último contato com o cliente"
+    pii: nenhum
+    nulo: true
+  - nome: sold_to_party_kunnr
+    tipo: string
+    comentario: "Cliente (sold-to party)"
+    pii: indireto
+    nulo: true
+  - nome: cost_center_kostl
+    tipo: string
+    comentario: "Centro de custo"
+    pii: nenhum
+    nulo: true
+  - nome: update_group_for_statistics_stafo
+    tipo: string
+    comentario: "Grupo de atualização para estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: statistic_scurrency_stwae
+    tipo: string
+    comentario: "Moeda de estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: changed_on_aedat
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: customer_group1_kvgr1
+    tipo: string
+    comentario: "Grupo de clientes 1"
+    pii: nenhum
+    nulo: true
+  - nome: customer_group2_kvgr2
+    tipo: string
+    comentario: "Grupo de clientes 2"
+    pii: nenhum
+    nulo: true
+  - nome: customer_group3_kvgr3
+    tipo: string
+    comentario: "Grupo de clientes 3"
+    pii: nenhum
+    nulo: true
+  - nome: customer_group4_kvgr4
+    tipo: string
+    comentario: "Grupo de clientes 4"
+    pii: nenhum
+    nulo: true
+  - nome: customer_group5_kvgr5
+    tipo: string
+    comentario: "Grupo de clientes 5"
+    pii: nenhum
+    nulo: true
+  - nome: agreement_knuma
+    tipo: string
+    comentario: "Acordo (grupo de condições)"
+    pii: nenhum
+    nulo: true
+  - nome: controlling_area_kokrs
+    tipo: string
+    comentario: "Área de controlling"
+    pii: nenhum
+    nulo: true
+  - nome: wbs_element_ps_psp_pnr
+    tipo: string
+    comentario: "Elemento da estrutura analítica de projeto (EAP)"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_type_kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: credit_control_area_kkber
+    tipo: string
+    comentario: "Área de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: customer_credit_limit_ref_knkli
+    tipo: string
+    comentario: "Número da conta do cliente para referência de limite de crédito"
+    pii: indireto
+    nulo: true
+  - nome: customer_credit_group_grupp
+    tipo: string
+    comentario: "Grupo de crédito do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: credit_representative_group_for_credit_management_sbgrp
+    tipo: string
+    comentario: "Grupo de representantes de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: risk_category_ctlpc
+    tipo: string
+    comentario: "Categoria de risco (gestão de crédito)"
+    pii: nenhum
+    nulo: true
+  - nome: currency_key_of_credit_control_area_cmwae
+    tipo: string
+    comentario: "Moeda da área de controle de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: rele_a_se_date_of_the_document_determined_by_credit_management_cmfre
+    tipo: date
+    comentario: "Data de liberação do documento pela gestão de crédito"
+    pii: nenhum
+    nulo: true
+  - nome: date_of_next_credit_check_of_document_cmnup
+    tipo: date
+    comentario: "Data da próxima verificação de crédito do documento"
+    pii: nenhum
+    nulo: true
+  - nome: next_date_cmngv
+    tipo: date
+    comentario: "Próxima data"
+    pii: nenhum
+    nulo: true
+  - nome: released_credit_value_of_the_document_amtbl
+    tipo: decimal(23,2)
+    comentario: "Valor de crédito liberado do documento"
+    pii: nenhum
+    nulo: true
+  - nome: hierarchy_type_for_pricing_hityp_pr
+    tipo: string
+    comentario: "Tipo de hierarquia para precificação"
+    pii: nenhum
+    nulo: true
+  - nome: usage_indicator_abrvw
+    tipo: string
+    comentario: "Indicador de uso"
+    pii: nenhum
+    nulo: true
+  - nome: mrp_for_delivery_schedule_types_abdis
+    tipo: string
+    comentario: "MRP para tipos de programação de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: document_number_of_the_reference_document_vgbel
+    tipo: string
+    comentario: "Número do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: object_number_at_header_level_objnr
+    tipo: string
+    comentario: "Número do objeto no nível de cabeçalho"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_to_be_billed_bukrs_vf
+    tipo: string
+    comentario: "Código da empresa a ser faturada"
+    pii: nenhum
+    nulo: true
+  - nome: alternative_tax_classification_taxk1
+    tipo: string
+    comentario: "Classificação fiscal alternativa"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification2_taxk2
+    tipo: string
+    comentario: "Classificação fiscal 2 do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification3_taxk3
+    tipo: string
+    comentario: "Classificação fiscal 3 do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification4_taxk4
+    tipo: string
+    comentario: "Classificação fiscal 4 do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification5_taxk5
+    tipo: string
+    comentario: "Classificação fiscal 5 do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification6_taxk6
+    tipo: string
+    comentario: "Classificação fiscal 6 do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification7_taxk7
+    tipo: string
+    comentario: "Classificação fiscal 7 do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification8_taxk8
+    tipo: string
+    comentario: "Classificação fiscal 8 do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: tax_classification9_taxk9
+    tipo: string
+    comentario: "Classificação fiscal 9 do cliente"
+    pii: nenhum
+    nulo: true
+  - nome: reference_document_number_xblnr
+    tipo: string
+    comentario: "Número do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: assignment_number_zuonr
+    tipo: string
+    comentario: "Número de atribuição"
+    pii: nenhum
+    nulo: true
+  - nome: pre_doc_category_vgtyp
+    tipo: string
+    comentario: "Categoria do documento predecessor"
+    pii: nenhum
+    nulo: true
+  - nome: order_number_aufnr
+    tipo: string
+    comentario: "Número da ordem"
+    pii: nenhum
+    nulo: true
+  - nome: notification_no_qmnum
+    tipo: string
+    comentario: "Número da notificação"
+    pii: nenhum
+    nulo: true
+  - nome: master_contract_number_vbeln_grp
+    tipo: string
+    comentario: "Número do contrato mestre"
+    pii: nenhum
+    nulo: true
+  - nome: tax_destination_country_stceg_l
+    tipo: string
+    comentario: "País de destino para fins fiscais"
+    pii: nenhum
+    nulo: true
+  - nome: tax_departure_country_landtx
+    tipo: string
+    comentario: "País de origem para fins fiscais"
+    pii: nenhum
+    nulo: true
+  - nome: international_unique_key_handle
+    tipo: string
+    comentario: "Chave única internacional para VBAK-VBELN"
+    pii: nenhum
+    nulo: true
+  - nome: dangerous_goods_management_profile_proli
+    tipo: string
+    comentario: "Perfil de gestão de produtos perigosos"
+    pii: nenhum
+    nulo: true
+  - nome: dangerous_goods_flag_cont_dg
+    tipo: string
+    comentario: "Indicador de produtos perigosos no documento"
+    pii: nenhum
+    nulo: true
+  - nome: utc_time_stamp_l_upd_tmstmp
+    tipo: timestamp
+    comentario: "Timestamp UTC longo da última atualização"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_creation_date_erdat
+    tipo: int
+    comentario: "Ano da data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_creation_date_erdat
+    tipo: int
+    comentario: "Mês da data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_creation_date_erdat
+    tipo: int
+    comentario: "Trimestre da data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_creation_date_erdat
+    tipo: string
+    comentario: "Semana da data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_document_date_audat
+    tipo: int
+    comentario: "Ano da data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_document_date_audat
+    tipo: int
+    comentario: "Mês da data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_document_date_audat
+    tipo: int
+    comentario: "Trimestre da data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_document_date_audat
+    tipo: string
+    comentario: "Semana da data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_requested_delivery_date_vdatu
+    tipo: int
+    comentario: "Ano da data de entrega solicitada"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_requested_delivery_date_vdatu
+    tipo: int
+    comentario: "Mês da data de entrega solicitada"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_requested_delivery_date_vdatu
+    tipo: int
+    comentario: "Trimestre da data de entrega solicitada"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_requested_delivery_date_vdatu
+    tipo: string
+    comentario: "Semana da data de entrega solicitada"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

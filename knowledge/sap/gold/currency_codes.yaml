@@ -1,0 +1,53 @@
+tabela: currency_codes
+camada: gold
+comentario: "Dicionário global padronizado de códigos de moeda ativos a partir de TCURC, TCURT e TCURX, com referências ISO-4217, configuração de decimais e nomes multilíngues."
+entidade: obt
+ingestao: custom
+fontes: [silver.tcurc, silver.tcurt, silver.tcurf, silver.tcurr, silver.tcurx]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: currency_code_waers
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: currency_iso_isocd
+    tipo: string
+    comentario: "Código ISO da moeda"
+    pii: nenhum
+    nulo: true
+  - nome: currency_decimals_currdec
+    tipo: string
+    comentario: "Número de casas decimais da moeda"
+    pii: nenhum
+    nulo: true
+  - nome: language_spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: true
+  - nome: curr_short_text_ktext
+    tipo: string
+    comentario: "Texto curto da moeda"
+    pii: nenhum
+    nulo: true
+  - nome: curr_long_text_ltext
+    tipo: string
+    comentario: "Texto longo da moeda"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

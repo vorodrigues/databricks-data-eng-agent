@@ -1,0 +1,287 @@
+tabela: t161
+camada: bronze
+comentario: "Tipos de documento de compras (T161)"
+ingestao: cdc
+fonte: sap.t161
+chave_primaria: [mandt, bsart]
+colunas:
+  - nome: /sapmp/atnam
+    tipo: string
+    comentario: "Nome de característica (uso SCM/APO)"
+    pii: nenhum
+    nulo: true
+  - nome: /sapmp/ceact
+    tipo: string
+    comentario: "Indicador: entrada rápida de características ativa"
+    pii: nenhum
+    nulo: true
+  - nome: /sapmp/gauf
+    tipo: string
+    comentario: "Indicador: agrupamento global/local pode ser desfeito"
+    pii: nenhum
+    nulo: true
+  - nome: /sapmp/pausw
+    tipo: string
+    comentario: "Indicador: herança de lista de seleção de características"
+    pii: nenhum
+    nulo: true
+  - nome: /sapmp/pdact
+    tipo: string
+    comentario: "Indicador: herança de características ativada"
+    pii: nenhum
+    nulo: true
+  - nome: /sapmp/pprot
+    tipo: string
+    comentario: "Indicador: log de herança de características"
+    pii: nenhum
+    nulo: true
+  - nome: /sapmp/puser
+    tipo: string
+    comentario: "Indicador: herança sobrescreve valores do usuário"
+    pii: nenhum
+    nulo: true
+  - nome: abgebot
+    tipo: string
+    comentario: "Indicador: concorrência global (licitação)"
+    pii: nenhum
+    nulo: true
+  - nome: abvor
+    tipo: string
+    comentario: "Quantidade padrão de ordem de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: ar_object
+    tipo: string
+    comentario: "Tipo de documento para arquivamento"
+    pii: nenhum
+    nulo: true
+  - nome: brefn
+    tipo: string
+    comentario: "Chave de seleção de campo"
+    pii: nenhum
+    nulo: true
+  - nome: bsakz
+    tipo: string
+    comentario: "Indicador de controle do documento"
+    pii: nenhum
+    nulo: true
+  - nome: bsart
+    tipo: string
+    comentario: "Tipo de documento de compras (bsart)"
+    pii: nenhum
+    nulo: false
+  - nome: bstyp
+    tipo: string
+    comentario: "Categoria do documento de compras"
+    pii: nenhum
+    nulo: true
+  - nome: cptype
+    tipo: string
+    comentario: "Categoria do plano de comunicação"
+    pii: nenhum
+    nulo: true
+  - nome: cp_aktive
+    tipo: string
+    comentario: "Indicador: plano de comunicação ativo"
+    pii: nenhum
+    nulo: true
+  - nome: fls_rsto
+    tipo: string
+    comentario: "Indicador: devolução aprimorada para loja"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_auto_dc
+    tipo: string
+    comentario: "Indicador: distribuição automática (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_dpr_detpro
+    tipo: string
+    comentario: "Procedimento de determinação (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_excl_return
+    tipo: string
+    comentario: "Indicador: excluir itens de devolução"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_po_idoc
+    tipo: string
+    comentario: "Indicador: criação de artigo genérico via IDoc"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_var_kalsm
+    tipo: string
+    comentario: "Procedimento de determinação de variante"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vas_act
+    tipo: string
+    comentario: "Indicador: VAS (Value Added Services) ativo"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vas_del
+    tipo: string
+    comentario: "Critério de exclusão de VAS"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vas_detdt
+    tipo: string
+    comentario: "Data de determinação de VAS"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_vas_kalsm
+    tipo: string
+    comentario: "Procedimento de determinação de VAS"
+    pii: nenhum
+    nulo: true
+  - nome: gsfrg
+    tipo: string
+    comentario: "Indicador: liberação global de requisições"
+    pii: nenhum
+    nulo: true
+  - nome: hityp
+    tipo: string
+    comentario: "Categoria de hierarquia de fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: koako
+    tipo: string
+    comentario: "Campo de controle interno (koako)"
+    pii: nenhum
+    nulo: true
+  - nome: koett
+    tipo: string
+    comentario: "Campo de controle interno (koett)"
+    pii: nenhum
+    nulo: true
+  - nome: kornr
+    tipo: string
+    comentario: "Correção de provisões diversas"
+    pii: nenhum
+    nulo: true
+  - nome: kzale
+    tipo: string
+    comentario: "Indicador: contrato distribuído via ALE"
+    pii: nenhum
+    nulo: true
+  - nome: lphis
+    tipo: string
+    comentario: "Indicador: documentação de liberação"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mill_omkz
+    tipo: string
+    comentario: "Indicador: usar características de referência (indústria de papel)"
+    pii: nenhum
+    nulo: true
+  - nome: msr_active
+    tipo: string
+    comentario: "Indicador: devoluções avançadas ativas"
+    pii: nenhum
+    nulo: true
+  - nome: numka
+    tipo: string
+    comentario: "Faixa de numeração ALE"
+    pii: nenhum
+    nulo: true
+  - nome: numkc
+    tipo: string
+    comentario: "Faixa de numeração de contrato SRM"
+    pii: nenhum
+    nulo: true
+  - nome: numke
+    tipo: string
+    comentario: "Faixa de numeração - atribuição externa"
+    pii: nenhum
+    nulo: true
+  - nome: numki
+    tipo: string
+    comentario: "Faixa de numeração - atribuição interna"
+    pii: nenhum
+    nulo: true
+  - nome: oicsegi
+    tipo: string
+    comentario: "Indicador: programação por quantidade permitida"
+    pii: nenhum
+    nulo: true
+  - nome: oirfqreq
+    tipo: string
+    comentario: "Indicador: precedência de solicitação/RFQ"
+    pii: nenhum
+    nulo: true
+  - nome: pargr
+    tipo: string
+    comentario: "Procedimento de determinação de parceiros"
+    pii: nenhum
+    nulo: true
+  - nome: pincr
+    tipo: string
+    comentario: "Intervalo de numeração de itens"
+    pii: nenhum
+    nulo: true
+  - nome: rdp_profile
+    tipo: string
+    comentario: "Perfil RDP (Responsive Demand Planning)"
+    pii: nenhum
+    nulo: true
+  - nome: refba
+    tipo: string
+    comentario: "Tipo de documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: shenq
+    tipo: string
+    comentario: "Indicador: somente bloqueio compartilhado"
+    pii: nenhum
+    nulo: true
+  - nome: stafo
+    tipo: string
+    comentario: "Grupo de atualização de estatísticas"
+    pii: nenhum
+    nulo: true
+  - nome: stako
+    tipo: string
+    comentario: "Indicador: condições dependentes de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: tolsl
+    tipo: string
+    comentario: "Chave de tolerância"
+    pii: nenhum
+    nulo: true
+  - nome: umlif
+    tipo: string
+    comentario: "Indicador: dados de fornecedor obrigatórios"
+    pii: nenhum
+    nulo: true
+  - nome: upinc
+    tipo: string
+    comentario: "Intervalo de numeração de subitem"
+    pii: nenhum
+    nulo: true
+  - nome: variante
+    tipo: string
+    comentario: "Layout de exibição"
+    pii: nenhum
+    nulo: true
+  - nome: wrf_enable_dateline
+    tipo: string
+    comentario: "Indicador: habilitar linha de data (varejo)"
+    pii: nenhum
+    nulo: true
+  - nome: wvvkz
+    tipo: string
+    comentario: "Indicador: processamento posterior de documentos resumidos"
+    pii: nenhum
+    nulo: true
+  - nome: xlokz
+    tipo: string
+    comentario: "Indicador: trânsito entre sistemas"
+    pii: nenhum
+    nulo: true

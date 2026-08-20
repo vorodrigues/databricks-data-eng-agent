@@ -1,0 +1,202 @@
+tabela: tf200
+camada: bronze
+comentario: "Versoes de consolidacao"
+ingestao: cdc
+fonte: sap.tf200
+chave_primaria: [mandt, rvers]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: rvers
+    tipo: string
+    comentario: "Versao de consolidacao"
+    pii: nenhum
+    nulo: false
+  - nome: strvs
+    tipo: string
+    comentario: "Versao: estruturas"
+    pii: nenhum
+    nulo: true
+  - nome: inpvs
+    tipo: string
+    comentario: "Versao de entrada de dados"
+    pii: nenhum
+    nulo: true
+  - nome: ctrvs
+    tipo: string
+    comentario: "Versao: metodo de traducao"
+    pii: nenhum
+    nulo: true
+  - nome: curvs
+    tipo: string
+    comentario: "Versao: taxas de cambio"
+    pii: nenhum
+    nulo: true
+  - nome: ldrvs
+    tipo: string
+    comentario: "Versao do razao"
+    pii: nenhum
+    nulo: true
+  - nome: fixvs
+    tipo: string
+    comentario: "Versao fixa"
+    pii: nenhum
+    nulo: true
+  - nome: taxvs
+    tipo: string
+    comentario: "Versao: aliquota de imposto"
+    pii: nenhum
+    nulo: true
+  - nome: coivs
+    tipo: string
+    comentario: "Versao: metodo de consolidacao intercompanhia (C/I)"
+    pii: nenhum
+    nulo: true
+  - nome: invvs
+    tipo: string
+    comentario: "Versao: alteracoes em investimentos"
+    pii: nenhum
+    nulo: true
+  - nome: equvs
+    tipo: string
+    comentario: "Versao: alteracoes no patrimonio"
+    pii: nenhum
+    nulo: true
+  - nome: gwavs
+    tipo: string
+    comentario: "Versao: goodwill"
+    pii: nenhum
+    nulo: true
+  - nome: hirvs
+    tipo: string
+    comentario: "Versao: reservas ocultas"
+    pii: nenhum
+    nulo: true
+  - nome: rhrvs
+    tipo: string
+    comentario: "Versao auxiliar"
+    pii: nenhum
+    nulo: true
+  - nome: assvs
+    tipo: string
+    comentario: "Versao: participacoes acionarias"
+    pii: nenhum
+    nulo: true
+  - nome: rclvs
+    tipo: string
+    comentario: "Versao: reclassificacao"
+    pii: nenhum
+    nulo: true
+  - nome: ipivs
+    tipo: string
+    comentario: "Versao: IPI (imposto)"
+    pii: nenhum
+    nulo: true
+  - nome: atrvs
+    tipo: string
+    comentario: "Versao: atributos"
+    pii: nenhum
+    nulo: true
+  - nome: rrlvs
+    tipo: string
+    comentario: "Versao de regra de relatorio"
+    pii: nenhum
+    nulo: true
+  - nome: impvs
+    tipo: string
+    comentario: "Versao de mapeamento de item de demonstrativo financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: iatvs
+    tipo: string
+    comentario: "Versao de atributos de item de demonstrativo financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: dbsvs
+    tipo: string
+    comentario: "Versao base"
+    pii: nenhum
+    nulo: true
+  - nome: bcfind
+    tipo: string
+    comentario: "Transportar versao para frente (carry forward)"
+    pii: nenhum
+    nulo: true
+  - nome: cpyrd
+    tipo: string
+    comentario: "Copiar dados reais"
+    pii: nenhum
+    nulo: true
+  - nome: cpyce
+    tipo: string
+    comentario: "Copiar dados de consolidacao"
+    pii: nenhum
+    nulo: true
+  - nome: ovrrd
+    tipo: string
+    comentario: "Sobrescrever dados reais"
+    pii: nenhum
+    nulo: true
+  - nome: ovrce
+    tipo: string
+    comentario: "Sobrescrever dados de consolidacao"
+    pii: nenhum
+    nulo: true
+  - nome: planvers
+    tipo: string
+    comentario: "Versao para dados de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: category_src
+    tipo: string
+    comentario: "Categoria fonte para consolidacao de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: rldnr_src
+    tipo: string
+    comentario: "Razao fonte para consolidacao de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: periv
+    tipo: string
+    comentario: "Variante do ano fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: ref_version
+    tipo: string
+    comentario: "Versao de referencia"
+    pii: nenhum
+    nulo: true
+  - nome: ext_version_type
+    tipo: string
+    comentario: "Tipo de versao externa"
+    pii: nenhum
+    nulo: true
+  - nome: exec_mode
+    tipo: string
+    comentario: "Modo de execucao"
+    pii: nenhum
+    nulo: true
+  - nome: group_curr
+    tipo: string
+    comentario: "Moeda de grupo da versao de consolidacao"
+    pii: nenhum
+    nulo: true
+  - nome: rldnr_source
+    tipo: string
+    comentario: "Razao fonte"
+    pii: nenhum
+    nulo: true
+  - nome: rldnr_cons
+    tipo: string
+    comentario: "Razao da versao de consolidacao"
+    pii: nenhum
+    nulo: true
+  - nome: cuavs
+    tipo: string
+    comentario: "Atributos da unidade de consolidacao"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,37 @@
+tabela: t093t
+camada: bronze
+comentario: "Textos de areas de depreciacao do ativo imobilizado"
+ingestao: cdc
+fonte: sap.t093t
+chave_primaria: [mandt, spras, afapl, afaber]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: afapl
+    tipo: string
+    comentario: "Plano de depreciacao (chart of depreciation)"
+    pii: nenhum
+    nulo: false
+  - nome: afaber
+    tipo: string
+    comentario: "Area de depreciacao"
+    pii: nenhum
+    nulo: false
+  - nome: afbktx
+    tipo: string
+    comentario: "Nome abreviado da area de depreciacao"
+    pii: nenhum
+    nulo: true
+  - nome: afbtxt
+    tipo: string
+    comentario: "Descricao da area de depreciacao"
+    pii: nenhum
+    nulo: true

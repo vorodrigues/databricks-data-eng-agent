@@ -1,0 +1,842 @@
+tabela: coss
+camada: bronze
+comentario: "Objeto CO: totais de custo para lançamentos internos (COSS)"
+ingestao: cdc
+fonte: sap.coss
+chave_primaria: [mandt, lednr, objnr, gjahr, wrttp, versn, kstar, hrkft, vrgng, parob, uspob, beknz, twaer, perbl]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: lednr
+    tipo: string
+    comentario: "Razão contábil"
+    pii: nenhum
+    nulo: false
+  - nome: objnr
+    tipo: string
+    comentario: "Número do objeto CO"
+    pii: nenhum
+    nulo: false
+  - nome: gjahr
+    tipo: string
+    comentario: "Ano fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: wrttp
+    tipo: string
+    comentario: "Tipo de valor"
+    pii: nenhum
+    nulo: false
+  - nome: versn
+    tipo: string
+    comentario: "Versão"
+    pii: nenhum
+    nulo: false
+  - nome: kstar
+    tipo: string
+    comentario: "Elemento de custo"
+    pii: nenhum
+    nulo: false
+  - nome: hrkft
+    tipo: string
+    comentario: "Subchave de origem CO"
+    pii: nenhum
+    nulo: false
+  - nome: vrgng
+    tipo: string
+    comentario: "Transação de negócios"
+    pii: nenhum
+    nulo: false
+  - nome: parob
+    tipo: string
+    comentario: "Objeto parceiro"
+    pii: nenhum
+    nulo: false
+  - nome: uspob
+    tipo: string
+    comentario: "Objeto de origem"
+    pii: nenhum
+    nulo: false
+  - nome: beknz
+    tipo: string
+    comentario: "Indicador débito/crédito"
+    pii: nenhum
+    nulo: false
+  - nome: twaer
+    tipo: string
+    comentario: "Moeda da transação"
+    pii: nenhum
+    nulo: false
+  - nome: perbl
+    tipo: string
+    comentario: "Bloco de período"
+    pii: nenhum
+    nulo: false
+  - nome: meinh
+    tipo: string
+    comentario: "Unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: wtg001
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 1"
+    pii: nenhum
+    nulo: true
+  - nome: wtg002
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 2"
+    pii: nenhum
+    nulo: true
+  - nome: wtg003
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 3"
+    pii: nenhum
+    nulo: true
+  - nome: wtg004
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 4"
+    pii: nenhum
+    nulo: true
+  - nome: wtg005
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 5"
+    pii: nenhum
+    nulo: true
+  - nome: wtg006
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 6"
+    pii: nenhum
+    nulo: true
+  - nome: wtg007
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 7"
+    pii: nenhum
+    nulo: true
+  - nome: wtg008
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 8"
+    pii: nenhum
+    nulo: true
+  - nome: wtg009
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 9"
+    pii: nenhum
+    nulo: true
+  - nome: wtg010
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: wtg011
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: wtg012
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: wtg013
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: wtg014
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: wtg015
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: wtg016
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda de transação — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: wog001
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 1"
+    pii: nenhum
+    nulo: true
+  - nome: wog002
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 2"
+    pii: nenhum
+    nulo: true
+  - nome: wog003
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 3"
+    pii: nenhum
+    nulo: true
+  - nome: wog004
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 4"
+    pii: nenhum
+    nulo: true
+  - nome: wog005
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 5"
+    pii: nenhum
+    nulo: true
+  - nome: wog006
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 6"
+    pii: nenhum
+    nulo: true
+  - nome: wog007
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 7"
+    pii: nenhum
+    nulo: true
+  - nome: wog008
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 8"
+    pii: nenhum
+    nulo: true
+  - nome: wog009
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 9"
+    pii: nenhum
+    nulo: true
+  - nome: wog010
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: wog011
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: wog012
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: wog013
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: wog014
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: wog015
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: wog016
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda do objeto — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: wkg001
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 1"
+    pii: nenhum
+    nulo: true
+  - nome: wkg002
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 2"
+    pii: nenhum
+    nulo: true
+  - nome: wkg003
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 3"
+    pii: nenhum
+    nulo: true
+  - nome: wkg004
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 4"
+    pii: nenhum
+    nulo: true
+  - nome: wkg005
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 5"
+    pii: nenhum
+    nulo: true
+  - nome: wkg006
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 6"
+    pii: nenhum
+    nulo: true
+  - nome: wkg007
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 7"
+    pii: nenhum
+    nulo: true
+  - nome: wkg008
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 8"
+    pii: nenhum
+    nulo: true
+  - nome: wkg009
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 9"
+    pii: nenhum
+    nulo: true
+  - nome: wkg010
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: wkg011
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: wkg012
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: wkg013
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: wkg014
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: wkg015
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: wkg016
+    tipo: decimal(23,2)
+    comentario: "Valor em moeda da área CO — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: wkf001
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 1"
+    pii: nenhum
+    nulo: true
+  - nome: wkf002
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 2"
+    pii: nenhum
+    nulo: true
+  - nome: wkf003
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 3"
+    pii: nenhum
+    nulo: true
+  - nome: wkf004
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 4"
+    pii: nenhum
+    nulo: true
+  - nome: wkf005
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 5"
+    pii: nenhum
+    nulo: true
+  - nome: wkf006
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 6"
+    pii: nenhum
+    nulo: true
+  - nome: wkf007
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 7"
+    pii: nenhum
+    nulo: true
+  - nome: wkf008
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 8"
+    pii: nenhum
+    nulo: true
+  - nome: wkf009
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 9"
+    pii: nenhum
+    nulo: true
+  - nome: wkf010
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: wkf011
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: wkf012
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: wkf013
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: wkf014
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: wkf015
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: wkf016
+    tipo: decimal(23,2)
+    comentario: "Valor fixo em moeda da área CO — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: pag001
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 1"
+    pii: nenhum
+    nulo: true
+  - nome: pag002
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 2"
+    pii: nenhum
+    nulo: true
+  - nome: pag003
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 3"
+    pii: nenhum
+    nulo: true
+  - nome: pag004
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 4"
+    pii: nenhum
+    nulo: true
+  - nome: pag005
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 5"
+    pii: nenhum
+    nulo: true
+  - nome: pag006
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 6"
+    pii: nenhum
+    nulo: true
+  - nome: pag007
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 7"
+    pii: nenhum
+    nulo: true
+  - nome: pag008
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 8"
+    pii: nenhum
+    nulo: true
+  - nome: pag009
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 9"
+    pii: nenhum
+    nulo: true
+  - nome: pag010
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: pag011
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: pag012
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: pag013
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: pag014
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: pag015
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: pag016
+    tipo: decimal(23,2)
+    comentario: "Variação de preço — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: paf001
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 1"
+    pii: nenhum
+    nulo: true
+  - nome: paf002
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 2"
+    pii: nenhum
+    nulo: true
+  - nome: paf003
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 3"
+    pii: nenhum
+    nulo: true
+  - nome: paf004
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 4"
+    pii: nenhum
+    nulo: true
+  - nome: paf005
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 5"
+    pii: nenhum
+    nulo: true
+  - nome: paf006
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 6"
+    pii: nenhum
+    nulo: true
+  - nome: paf007
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 7"
+    pii: nenhum
+    nulo: true
+  - nome: paf008
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 8"
+    pii: nenhum
+    nulo: true
+  - nome: paf009
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 9"
+    pii: nenhum
+    nulo: true
+  - nome: paf010
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: paf011
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: paf012
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: paf013
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: paf014
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: paf015
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: paf016
+    tipo: decimal(23,2)
+    comentario: "Variação de preço fixa — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: meg001
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 1"
+    pii: nenhum
+    nulo: true
+  - nome: meg002
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 2"
+    pii: nenhum
+    nulo: true
+  - nome: meg003
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 3"
+    pii: nenhum
+    nulo: true
+  - nome: meg004
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 4"
+    pii: nenhum
+    nulo: true
+  - nome: meg005
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 5"
+    pii: nenhum
+    nulo: true
+  - nome: meg006
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 6"
+    pii: nenhum
+    nulo: true
+  - nome: meg007
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 7"
+    pii: nenhum
+    nulo: true
+  - nome: meg008
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 8"
+    pii: nenhum
+    nulo: true
+  - nome: meg009
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 9"
+    pii: nenhum
+    nulo: true
+  - nome: meg010
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: meg011
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: meg012
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: meg013
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: meg014
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: meg015
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: meg016
+    tipo: decimal(23,2)
+    comentario: "Quantidade total — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: mef001
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 1"
+    pii: nenhum
+    nulo: true
+  - nome: mef002
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 2"
+    pii: nenhum
+    nulo: true
+  - nome: mef003
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 3"
+    pii: nenhum
+    nulo: true
+  - nome: mef004
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 4"
+    pii: nenhum
+    nulo: true
+  - nome: mef005
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 5"
+    pii: nenhum
+    nulo: true
+  - nome: mef006
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 6"
+    pii: nenhum
+    nulo: true
+  - nome: mef007
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 7"
+    pii: nenhum
+    nulo: true
+  - nome: mef008
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 8"
+    pii: nenhum
+    nulo: true
+  - nome: mef009
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 9"
+    pii: nenhum
+    nulo: true
+  - nome: mef010
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: mef011
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: mef012
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: mef013
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: mef014
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: mef015
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: mef016
+    tipo: decimal(23,2)
+    comentario: "Quantidade fixa — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: muv001
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 1"
+    pii: nenhum
+    nulo: true
+  - nome: muv002
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 2"
+    pii: nenhum
+    nulo: true
+  - nome: muv003
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 3"
+    pii: nenhum
+    nulo: true
+  - nome: muv004
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 4"
+    pii: nenhum
+    nulo: true
+  - nome: muv005
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 5"
+    pii: nenhum
+    nulo: true
+  - nome: muv006
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 6"
+    pii: nenhum
+    nulo: true
+  - nome: muv007
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 7"
+    pii: nenhum
+    nulo: true
+  - nome: muv008
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 8"
+    pii: nenhum
+    nulo: true
+  - nome: muv009
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 9"
+    pii: nenhum
+    nulo: true
+  - nome: muv010
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 10"
+    pii: nenhum
+    nulo: true
+  - nome: muv011
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 11"
+    pii: nenhum
+    nulo: true
+  - nome: muv012
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 12"
+    pii: nenhum
+    nulo: true
+  - nome: muv013
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 13"
+    pii: nenhum
+    nulo: true
+  - nome: muv014
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 14"
+    pii: nenhum
+    nulo: true
+  - nome: muv015
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 15"
+    pii: nenhum
+    nulo: true
+  - nome: muv016
+    tipo: decimal(23,2)
+    comentario: "Quantidade incompleta — período 16"
+    pii: nenhum
+    nulo: true
+  - nome: beltp
+    tipo: string
+    comentario: "Tipo de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: timestmp
+    tipo: timestamp
+    comentario: "Timestamp de criação do registro"
+    pii: nenhum
+    nulo: true
+  - nome: bukrs
+    tipo: string
+    comentario: "Código da empresa"
+    pii: nenhum
+    nulo: true
+  - nome: fkber
+    tipo: string
+    comentario: "Área funcional"
+    pii: nenhum
+    nulo: true
+  - nome: segment
+    tipo: string
+    comentario: "Segmento"
+    pii: nenhum
+    nulo: true
+  - nome: geber
+    tipo: string
+    comentario: "Fundo"
+    pii: nenhum
+    nulo: true
+  - nome: grant_nbr
+    tipo: string
+    comentario: "Subvenção/concessão"
+    pii: nenhum
+    nulo: true
+  - nome: budget_pd
+    tipo: string
+    comentario: "Período orçamentário"
+    pii: nenhum
+    nulo: true

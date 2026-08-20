@@ -1,0 +1,153 @@
+tabela: condition_contracts_item
+camada: gold
+comentario: "Regras de liquidação por item dos contratos de condição SAP (WCOCOI), incluindo critérios de elegibilidade, materiais e parâmetros de liquidação."
+entidade: obt
+ingestao: custom
+fontes: [silver.wb2_d_bvdetail, silver.wb2_d_settl_cal, silver.wcocoh, silver.wcocoi]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: condition_contract_num
+    tipo: string
+    comentario: "Número do contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: item_guid
+    tipo: string
+    comentario: "GUID do item do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: condition_contract_guid
+    tipo: string
+    comentario: "GUID do contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: eligible_customer_eligible_cust
+    tipo: string
+    comentario: "Cliente elegível"
+    pii: indireto
+    nulo: true
+  - nome: eligible_supplier_eligible_vendor
+    tipo: string
+    comentario: "Fornecedor elegível"
+    pii: indireto
+    nulo: true
+  - nome: list_number_list_num
+    tipo: string
+    comentario: "Número de lista"
+    pii: nenhum
+    nulo: true
+  - nome: exclude_partner_exclusion
+    tipo: string
+    comentario: "Excluir parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: reference_f_partner_reference
+    tipo: string
+    comentario: "Referência para parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: inactive_cc_partner_deact
+    tipo: string
+    comentario: "Indicador: contrato de condição/parceiro inativo"
+    pii: nenhum
+    nulo: true
+  - nome: valid_from_date_from
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to_date_to
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: plant_eligible_plant
+    tipo: string
+    comentario: "Centro produtivo elegível"
+    pii: nenhum
+    nulo: true
+  - nome: quantity
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_measure
+    tipo: string
+    comentario: "Unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: amount
+    tipo: decimal(23,2)
+    comentario: "Valor monetário"
+    pii: nenhum
+    nulo: true
+  - nome: currency
+    tipo: string
+    comentario: "Moeda"
+    pii: nenhum
+    nulo: true
+  - nome: material
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: true
+  - nome: external_eligible_guid_ext_guid
+    tipo: string
+    comentario: "GUID externo do elegível"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_valid_from_date_from
+    tipo: string
+    comentario: "Ano da data de validade inicial"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_valid_from_date_from
+    tipo: string
+    comentario: "Trimestre da data de validade inicial"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_valid_from_date_from
+    tipo: string
+    comentario: "Mês da data de validade inicial"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_valid_from_date_from
+    tipo: string
+    comentario: "Semana da data de validade inicial"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_valid_to_date_to
+    tipo: string
+    comentario: "Ano da data de validade final"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_valid_to_date_to
+    tipo: string
+    comentario: "Trimestre da data de validade final"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_valid_to_date_to
+    tipo: string
+    comentario: "Mês da data de validade final"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_valid_to_date_to
+    tipo: string
+    comentario: "Semana da data de validade final"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery"
+    pii: nenhum
+    nulo: true

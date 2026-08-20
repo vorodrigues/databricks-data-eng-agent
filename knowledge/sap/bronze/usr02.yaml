@@ -1,0 +1,227 @@
+tabela: usr02
+camada: bronze
+comentario: "Dados de logon do usuário SAP (uso interno do kernel)"
+ingestao: cdc
+fonte: sap.usr02
+chave_primaria: [mandt, bname]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bname
+    tipo: string
+    comentario: "Nome de usuário SAP"
+    pii: indireto
+    nulo: false
+  - nome: bcode
+    tipo: string
+    comentario: "Senha inicial (hash)"
+    pii: sensivel
+    nulo: true
+  - nome: gltgv
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: gltgb
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: ustyp
+    tipo: string
+    comentario: "Tipo de usuário"
+    pii: nenhum
+    nulo: true
+  - nome: class
+    tipo: string
+    comentario: "Grupo de usuário"
+    pii: nenhum
+    nulo: true
+  - nome: locnt
+    tipo: int
+    comentario: "Número de tentativas de logon mal-sucedidas"
+    pii: nenhum
+    nulo: true
+  - nome: uflag
+    tipo: int
+    comentario: "Status de bloqueio do usuário"
+    pii: nenhum
+    nulo: true
+  - nome: accnt
+    tipo: string
+    comentario: "Número de conta"
+    pii: nenhum
+    nulo: true
+  - nome: aname
+    tipo: string
+    comentario: "Criador do registro mestre de usuário"
+    pii: indireto
+    nulo: true
+  - nome: erdat
+    tipo: date
+    comentario: "Data de criação do registro mestre de usuário"
+    pii: nenhum
+    nulo: true
+  - nome: trdat
+    tipo: date
+    comentario: "Data do último logon"
+    pii: nenhum
+    nulo: true
+  - nome: ltime
+    tipo: string
+    comentario: "Hora do último logon"
+    pii: nenhum
+    nulo: true
+  - nome: ocod1
+    tipo: string
+    comentario: "Senha inicial 1 (hash)"
+    pii: sensivel
+    nulo: true
+  - nome: bcda1
+    tipo: date
+    comentario: "Data da última alteração de senha 1"
+    pii: nenhum
+    nulo: true
+  - nome: codv1
+    tipo: string
+    comentario: "Versão do código de senha 1"
+    pii: nenhum
+    nulo: true
+  - nome: ocod2
+    tipo: string
+    comentario: "Senha inicial 2 (hash)"
+    pii: sensivel
+    nulo: true
+  - nome: bcda2
+    tipo: date
+    comentario: "Data da última alteração de senha 2"
+    pii: nenhum
+    nulo: true
+  - nome: codv2
+    tipo: string
+    comentario: "Versão do código de senha 2"
+    pii: nenhum
+    nulo: true
+  - nome: ocod3
+    tipo: string
+    comentario: "Senha inicial 3 (hash)"
+    pii: sensivel
+    nulo: true
+  - nome: bcda3
+    tipo: date
+    comentario: "Data da última alteração de senha 3"
+    pii: nenhum
+    nulo: true
+  - nome: codv3
+    tipo: string
+    comentario: "Versão do código de senha 3"
+    pii: nenhum
+    nulo: true
+  - nome: ocod4
+    tipo: string
+    comentario: "Senha inicial 4 (hash)"
+    pii: sensivel
+    nulo: true
+  - nome: bcda4
+    tipo: date
+    comentario: "Data da última alteração de senha 4"
+    pii: nenhum
+    nulo: true
+  - nome: codv4
+    tipo: string
+    comentario: "Versão do código de senha 4"
+    pii: nenhum
+    nulo: true
+  - nome: ocod5
+    tipo: string
+    comentario: "Senha inicial 5 (hash)"
+    pii: sensivel
+    nulo: true
+  - nome: bcda5
+    tipo: date
+    comentario: "Data da última alteração de senha 5"
+    pii: nenhum
+    nulo: true
+  - nome: codv5
+    tipo: string
+    comentario: "Versão do código de senha 5"
+    pii: nenhum
+    nulo: true
+  - nome: versn
+    tipo: string
+    comentario: "Numero de versao do registro."
+    pii: nenhum
+    nulo: true
+  - nome: codvn
+    tipo: string
+    comentario: "Versão do código de senha atual"
+    pii: nenhum
+    nulo: true
+  - nome: tzone
+    tipo: string
+    comentario: "Fuso horário"
+    pii: nenhum
+    nulo: true
+  - nome: zbvmaster
+    tipo: string
+    comentario: "Template de usuário CUA"
+    pii: nenhum
+    nulo: true
+  - nome: passcode
+    tipo: string
+    comentario: "Hash de senha (SHA1, 160 bits)"
+    pii: sensivel
+    nulo: true
+  - nome: pwdchgdate
+    tipo: date
+    comentario: "Data da última alteração de senha"
+    pii: nenhum
+    nulo: true
+  - nome: pwdstate
+    tipo: string
+    comentario: "Status de alteração de senha"
+    pii: nenhum
+    nulo: true
+  - nome: reserved
+    tipo: string
+    comentario: "Informação de controle CUA"
+    pii: nenhum
+    nulo: true
+  - nome: pwdhistory
+    tipo: string
+    comentario: "Histórico externo de senhas (USRPWDHISTORY)"
+    pii: sensivel
+    nulo: true
+  - nome: pwdlgndate
+    tipo: date
+    comentario: "Data do último logon com senha"
+    pii: nenhum
+    nulo: true
+  - nome: pwdsetdate
+    tipo: date
+    comentario: "Data de redefinição de senha pelo administrador"
+    pii: nenhum
+    nulo: true
+  - nome: pwdinitial
+    tipo: string
+    comentario: "Indicador: senha é inicial"
+    pii: nenhum
+    nulo: true
+  - nome: pwdlockdate
+    tipo: date
+    comentario: "Data de bloqueio de senha"
+    pii: nenhum
+    nulo: true
+  - nome: pwdsaltedhash
+    tipo: string
+    comentario: "Valor hash de senha (salgado)"
+    pii: sensivel
+    nulo: true
+  - nome: security_policy
+    tipo: string
+    comentario: "Política de segurança"
+    pii: nenhum
+    nulo: true

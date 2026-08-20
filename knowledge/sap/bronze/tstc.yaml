@@ -1,0 +1,37 @@
+tabela: tstc
+camada: bronze
+comentario: "Codigos de transacao SAP (tabela independente de mandante)"
+ingestao: cdc
+fonte: sap.tstc
+chave_primaria: [tcode]
+colunas:
+  - nome: tcode
+    tipo: string
+    comentario: "Codigo de transacao"
+    pii: nenhum
+    nulo: false
+  - nome: pgmna
+    tipo: string
+    comentario: "Nome do programa ABAP associado"
+    pii: nenhum
+    nulo: true
+  - nome: dypno
+    tipo: string
+    comentario: "Numero do dynpro (tela)"
+    pii: nenhum
+    nulo: true
+  - nome: menue
+    tipo: string
+    comentario: "Indicador de menu"
+    pii: nenhum
+    nulo: true
+  - nome: cinfo
+    tipo: string
+    comentario: "Informacao de controle da transacao"
+    pii: nenhum
+    nulo: true
+  - nome: arbgb
+    tipo: string
+    comentario: "Classe de mensagem"
+    pii: nenhum
+    nulo: true

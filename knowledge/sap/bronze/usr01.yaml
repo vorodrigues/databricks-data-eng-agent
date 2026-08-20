@@ -1,0 +1,97 @@
+tabela: usr01
+camada: bronze
+comentario: "Registro mestre de usuário (dados de runtime)"
+ingestao: cdc
+fonte: sap.usr01
+chave_primaria: [mandt, bname]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: bname
+    tipo: string
+    comentario: "Nome de usuário"
+    pii: indireto
+    nulo: false
+  - nome: stcod
+    tipo: string
+    comentario: "Menu inicial"
+    pii: nenhum
+    nulo: true
+  - nome: spld
+    tipo: string
+    comentario: "Dispositivo de saída (impressora)"
+    pii: nenhum
+    nulo: true
+  - nome: splg
+    tipo: string
+    comentario: "Configuração de saída de impressão"
+    pii: nenhum
+    nulo: true
+  - nome: spdb
+    tipo: string
+    comentario: "Imprimir imediatamente (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: spda
+    tipo: string
+    comentario: "Excluir após impressão (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: datfm
+    tipo: string
+    comentario: "Formato de data"
+    pii: nenhum
+    nulo: true
+  - nome: dcpfm
+    tipo: string
+    comentario: "Formato decimal"
+    pii: nenhum
+    nulo: true
+  - nome: hdest
+    tipo: string
+    comentario: "Sistema destino"
+    pii: nenhum
+    nulo: true
+  - nome: hmand
+    tipo: string
+    comentario: "Mandante do host padrão"
+    pii: nenhum
+    nulo: true
+  - nome: hname
+    tipo: string
+    comentario: "Usuário do host padrão"
+    pii: nenhum
+    nulo: true
+  - nome: menon
+    tipo: string
+    comentario: "Configuração de menu"
+    pii: nenhum
+    nulo: true
+  - nome: menue
+    tipo: string
+    comentario: "Menu do usuário"
+    pii: nenhum
+    nulo: true
+  - nome: strtt
+    tipo: string
+    comentario: "Tipo de menu inicial"
+    pii: nenhum
+    nulo: true
+  - nome: langu
+    tipo: string
+    comentario: "Idioma de logon"
+    pii: nenhum
+    nulo: true
+  - nome: cattkennz
+    tipo: string
+    comentario: "CATT: status do teste"
+    pii: nenhum
+    nulo: true
+  - nome: timefm
+    tipo: string
+    comentario: "Formato de hora (12/24h)"
+    pii: nenhum
+    nulo: true

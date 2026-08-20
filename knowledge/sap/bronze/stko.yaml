@@ -1,0 +1,167 @@
+tabela: stko
+camada: bronze
+comentario: "Cabeçalho da lista de materiais (BOM Header, SAP STKO)."
+ingestao: cdc
+fonte: sap.stko
+chave_primaria: [mandt, stlty, stlnr, stlal]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: stlty
+    tipo: string
+    comentario: "Categoria da lista de materiais (BOM)"
+    pii: nenhum
+    nulo: false
+  - nome: stlnr
+    tipo: string
+    comentario: "Número da lista de materiais"
+    pii: nenhum
+    nulo: false
+  - nome: stlal
+    tipo: string
+    comentario: "BOM alternativa"
+    pii: nenhum
+    nulo: false
+  - nome: stkoz
+    tipo: int
+    comentario: "Contador do cabeçalho da BOM"
+    pii: nenhum
+    nulo: true
+  - nome: datuv
+    tipo: date
+    comentario: "Válido a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: techv
+    tipo: string
+    comentario: "Status técnico a partir de"
+    pii: nenhum
+    nulo: true
+  - nome: aennr
+    tipo: string
+    comentario: "Número de alteração (ECN)"
+    pii: nenhum
+    nulo: true
+  - nome: lkenz
+    tipo: string
+    comentario: "Indicador de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: loekz
+    tipo: string
+    comentario: "Flag de exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: vgkzl
+    tipo: string
+    comentario: "Contador do cabeçalho anterior"
+    pii: nenhum
+    nulo: true
+  - nome: andat
+    tipo: date
+    comentario: "Data de criação"
+    pii: nenhum
+    nulo: true
+  - nome: annam
+    tipo: string
+    comentario: "Criado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: aedat
+    tipo: date
+    comentario: "Data da última alteração"
+    pii: nenhum
+    nulo: true
+  - nome: aenam
+    tipo: string
+    comentario: "Alterado por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: bmein
+    tipo: string
+    comentario: "Unidade de medida base da BOM"
+    pii: nenhum
+    nulo: true
+  - nome: bmeng
+    tipo: decimal(23,2)
+    comentario: "Quantidade base da BOM"
+    pii: nenhum
+    nulo: true
+  - nome: cadkz
+    tipo: string
+    comentario: "Indicador CAD"
+    pii: nenhum
+    nulo: true
+  - nome: labor
+    tipo: string
+    comentario: "Laboratório/escritório responsável"
+    pii: nenhum
+    nulo: true
+  - nome: ltxsp
+    tipo: string
+    comentario: "Idioma do texto longo"
+    pii: nenhum
+    nulo: true
+  - nome: stktx
+    tipo: string
+    comentario: "Texto alternativo da BOM"
+    pii: nenhum
+    nulo: true
+  - nome: stlst
+    tipo: string
+    comentario: "Status da lista de materiais"
+    pii: nenhum
+    nulo: true
+  - nome: wrkan
+    tipo: string
+    comentario: "Centro produtivo de criação"
+    pii: nenhum
+    nulo: true
+  - nome: dvdat
+    tipo: date
+    comentario: "Data de agendamento da alteração"
+    pii: nenhum
+    nulo: true
+  - nome: dvnam
+    tipo: string
+    comentario: "Data deslocada por (usuário SAP)"
+    pii: nenhum
+    nulo: true
+  - nome: aehlp
+    tipo: string
+    comentario: "Campo de trabalho auxiliar"
+    pii: nenhum
+    nulo: true
+  - nome: alekz
+    tipo: string
+    comentario: "Indicador ALE"
+    pii: nenhum
+    nulo: true
+  - nome: guidx
+    tipo: string
+    comentario: "ID do status de alteração do item"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: true
+  - nome: ecn_to
+    tipo: string
+    comentario: "Número de alteração final (ECN To)"
+    pii: nenhum
+    nulo: true
+  - nome: ecn_to_rkey
+    tipo: string
+    comentario: "Chave de referência do número de alteração final"
+    pii: nenhum
+    nulo: true
+  - nome: valid_to_rkey
+    tipo: string
+    comentario: "Chave de referência de validade final"
+    pii: nenhum
+    nulo: true

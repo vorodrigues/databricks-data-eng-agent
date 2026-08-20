@@ -1,0 +1,652 @@
+tabela: crhd
+camada: bronze
+comentario: "Cabecalho do centro de trabalho"
+ingestao: cdc
+fonte: sap.crhd
+chave_primaria: [mandt, objty, objid]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: objty
+    tipo: string
+    comentario: "Tipo de objeto"
+    pii: nenhum
+    nulo: false
+  - nome: objid
+    tipo: string
+    comentario: "ID do objeto"
+    pii: nenhum
+    nulo: false
+  - nome: begda
+    tipo: date
+    comentario: "Data de inicio da validade"
+    pii: nenhum
+    nulo: true
+  - nome: endda
+    tipo: date
+    comentario: "Data de fim da validade"
+    pii: nenhum
+    nulo: true
+  - nome: aedat_grnd
+    tipo: date
+    comentario: "Alterado em (dados gerais)"
+    pii: nenhum
+    nulo: true
+  - nome: aenam_grnd
+    tipo: string
+    comentario: "Usuario (dados gerais)"
+    pii: nenhum
+    nulo: true
+  - nome: aedat_vora
+    tipo: date
+    comentario: "Alterado em (valores padrao)"
+    pii: nenhum
+    nulo: true
+  - nome: aenam_vora
+    tipo: string
+    comentario: "Usuario (valores padrao)"
+    pii: nenhum
+    nulo: true
+  - nome: aedat_term
+    tipo: date
+    comentario: "Alterado em (programacao)"
+    pii: nenhum
+    nulo: true
+  - nome: aenam_term
+    tipo: string
+    comentario: "Usuario (programacao)"
+    pii: nenhum
+    nulo: true
+  - nome: aedat_tech
+    tipo: date
+    comentario: "Alterado em (dados tecnicos)"
+    pii: nenhum
+    nulo: true
+  - nome: aenam_tech
+    tipo: string
+    comentario: "Usuario (dados tecnicos)"
+    pii: nenhum
+    nulo: true
+  - nome: arbpl
+    tipo: string
+    comentario: "Centro de trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: true
+  - nome: verwe
+    tipo: string
+    comentario: "Categoria do centro de trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: lvorm
+    tipo: string
+    comentario: "Indicador de exclusao"
+    pii: nenhum
+    nulo: true
+  - nome: par01
+    tipo: string
+    comentario: "1o parametro"
+    pii: nenhum
+    nulo: true
+  - nome: par02
+    tipo: string
+    comentario: "2o parametro"
+    pii: nenhum
+    nulo: true
+  - nome: par03
+    tipo: string
+    comentario: "3o parametro"
+    pii: nenhum
+    nulo: true
+  - nome: par04
+    tipo: string
+    comentario: "4o parametro"
+    pii: nenhum
+    nulo: true
+  - nome: par05
+    tipo: string
+    comentario: "5o parametro"
+    pii: nenhum
+    nulo: true
+  - nome: par06
+    tipo: string
+    comentario: "6o parametro"
+    pii: nenhum
+    nulo: true
+  - nome: paru1
+    tipo: string
+    comentario: "Unidade do parametro 1"
+    pii: nenhum
+    nulo: true
+  - nome: paru2
+    tipo: string
+    comentario: "Unidade do parametro 2"
+    pii: nenhum
+    nulo: true
+  - nome: paru3
+    tipo: string
+    comentario: "Unidade do parametro 3"
+    pii: nenhum
+    nulo: true
+  - nome: paru4
+    tipo: string
+    comentario: "Unidade do parametro 4"
+    pii: nenhum
+    nulo: true
+  - nome: paru5
+    tipo: string
+    comentario: "Unidade do parametro 5"
+    pii: nenhum
+    nulo: true
+  - nome: paru6
+    tipo: string
+    comentario: "Unidade do parametro 6"
+    pii: nenhum
+    nulo: true
+  - nome: parv1
+    tipo: string
+    comentario: "Valor do parametro 1"
+    pii: nenhum
+    nulo: true
+  - nome: parv2
+    tipo: string
+    comentario: "Valor do parametro 2"
+    pii: nenhum
+    nulo: true
+  - nome: parv3
+    tipo: string
+    comentario: "Valor do parametro 3"
+    pii: nenhum
+    nulo: true
+  - nome: parv4
+    tipo: string
+    comentario: "Valor do parametro 4"
+    pii: nenhum
+    nulo: true
+  - nome: parv5
+    tipo: string
+    comentario: "Valor do parametro 5"
+    pii: nenhum
+    nulo: true
+  - nome: parv6
+    tipo: string
+    comentario: "Valor do parametro 6"
+    pii: nenhum
+    nulo: true
+  - nome: planv
+    tipo: string
+    comentario: "Uso"
+    pii: nenhum
+    nulo: true
+  - nome: stand
+    tipo: string
+    comentario: "Localizacao"
+    pii: nenhum
+    nulo: true
+  - nome: veran
+    tipo: string
+    comentario: "Responsavel"
+    pii: nenhum
+    nulo: true
+  - nome: vgwts
+    tipo: string
+    comentario: "Chave de valor padrao"
+    pii: nenhum
+    nulo: true
+  - nome: vgm01
+    tipo: string
+    comentario: "Regra de manutencao 1"
+    pii: nenhum
+    nulo: true
+  - nome: vgm02
+    tipo: string
+    comentario: "Regra de manutencao 2"
+    pii: nenhum
+    nulo: true
+  - nome: vgm03
+    tipo: string
+    comentario: "Regra de manutencao 3"
+    pii: nenhum
+    nulo: true
+  - nome: vgm04
+    tipo: string
+    comentario: "Regra de manutencao 4"
+    pii: nenhum
+    nulo: true
+  - nome: vgm05
+    tipo: string
+    comentario: "Regra de manutencao 5"
+    pii: nenhum
+    nulo: true
+  - nome: vgm06
+    tipo: string
+    comentario: "Regra de manutencao 6"
+    pii: nenhum
+    nulo: true
+  - nome: xdefa
+    tipo: string
+    comentario: "Valores padrao"
+    pii: nenhum
+    nulo: true
+  - nome: xkost
+    tipo: string
+    comentario: "Custeio"
+    pii: nenhum
+    nulo: true
+  - nome: xsprr
+    tipo: string
+    comentario: "Bloqueado"
+    pii: nenhum
+    nulo: true
+  - nome: xterm
+    tipo: string
+    comentario: "Programacao"
+    pii: nenhum
+    nulo: true
+  - nome: zgr01
+    tipo: decimal(23,2)
+    comentario: "Taxa de eficiencia 1"
+    pii: nenhum
+    nulo: true
+  - nome: zgr02
+    tipo: decimal(23,2)
+    comentario: "Taxa de eficiencia 2"
+    pii: nenhum
+    nulo: true
+  - nome: zgr03
+    tipo: decimal(23,2)
+    comentario: "Taxa de eficiencia 3"
+    pii: nenhum
+    nulo: true
+  - nome: zgr04
+    tipo: decimal(23,2)
+    comentario: "Taxa de eficiencia 4"
+    pii: nenhum
+    nulo: true
+  - nome: zgr05
+    tipo: decimal(23,2)
+    comentario: "Taxa de eficiencia 5"
+    pii: nenhum
+    nulo: true
+  - nome: zgr06
+    tipo: decimal(23,2)
+    comentario: "Taxa de eficiencia 6"
+    pii: nenhum
+    nulo: true
+  - nome: ktsch
+    tipo: string
+    comentario: "Chave de texto padrao"
+    pii: nenhum
+    nulo: true
+  - nome: loanz
+    tipo: string
+    comentario: "Numero de cartoes de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: loart
+    tipo: string
+    comentario: "Tipo de salario"
+    pii: nenhum
+    nulo: true
+  - nome: logrp
+    tipo: string
+    comentario: "Grupo salarial"
+    pii: nenhum
+    nulo: true
+  - nome: qualf
+    tipo: string
+    comentario: "Aptidao"
+    pii: nenhum
+    nulo: true
+  - nome: rasch
+    tipo: string
+    comentario: "Chave do tipo de setup"
+    pii: nenhum
+    nulo: true
+  - nome: steus
+    tipo: string
+    comentario: "Chave de controle"
+    pii: nenhum
+    nulo: true
+  - nome: vge01
+    tipo: string
+    comentario: "Unidade do valor padrao 1"
+    pii: nenhum
+    nulo: true
+  - nome: vge02
+    tipo: string
+    comentario: "Unidade do valor padrao 2"
+    pii: nenhum
+    nulo: true
+  - nome: vge03
+    tipo: string
+    comentario: "Unidade do valor padrao 3"
+    pii: nenhum
+    nulo: true
+  - nome: vge04
+    tipo: string
+    comentario: "Unidade do valor padrao 4"
+    pii: nenhum
+    nulo: true
+  - nome: vge05
+    tipo: string
+    comentario: "Unidade do valor padrao 5"
+    pii: nenhum
+    nulo: true
+  - nome: vge06
+    tipo: string
+    comentario: "Unidade do valor padrao 6"
+    pii: nenhum
+    nulo: true
+  - nome: ktsch_ref
+    tipo: string
+    comentario: "Texto padrao referenciado"
+    pii: nenhum
+    nulo: true
+  - nome: loart_ref
+    tipo: string
+    comentario: "Tipo de salario referenciado"
+    pii: nenhum
+    nulo: true
+  - nome: loanz_ref
+    tipo: string
+    comentario: "Numero de cartoes de tempo referenciados"
+    pii: nenhum
+    nulo: true
+  - nome: logrp_ref
+    tipo: string
+    comentario: "Grupo salarial referenciado"
+    pii: nenhum
+    nulo: true
+  - nome: qualf_ref
+    tipo: string
+    comentario: "Aptidao referenciada"
+    pii: nenhum
+    nulo: true
+  - nome: rasch_ref
+    tipo: string
+    comentario: "Chave do tipo de setup referenciada"
+    pii: nenhum
+    nulo: true
+  - nome: steus_ref
+    tipo: string
+    comentario: "Chave de controle referenciada"
+    pii: nenhum
+    nulo: true
+  - nome: fort1
+    tipo: string
+    comentario: "Formula da duracao do setup"
+    pii: nenhum
+    nulo: true
+  - nome: fort2
+    tipo: string
+    comentario: "Formula de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: fort3
+    tipo: string
+    comentario: "Formula de desmonte"
+    pii: nenhum
+    nulo: true
+  - nome: kapid
+    tipo: string
+    comentario: "ID de capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: ortgr
+    tipo: string
+    comentario: "Grupo de localizacao"
+    pii: nenhum
+    nulo: true
+  - nome: zeiwn
+    tipo: string
+    comentario: "Unidade da fila padrao"
+    pii: nenhum
+    nulo: true
+  - nome: zwnor
+    tipo: decimal(23,2)
+    comentario: "Tempo de fila padrao"
+    pii: nenhum
+    nulo: true
+  - nome: zeiwm
+    tipo: string
+    comentario: "Unidade da fila minima"
+    pii: nenhum
+    nulo: true
+  - nome: zwmin
+    tipo: decimal(23,2)
+    comentario: "Tempo minimo de fila"
+    pii: nenhum
+    nulo: true
+  - nome: formr
+    tipo: string
+    comentario: "Formula da categoria de capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: matyp
+    tipo: string
+    comentario: "Tipo de maquina"
+    pii: nenhum
+    nulo: true
+  - nome: cplgr
+    tipo: string
+    comentario: "Grupo do planejador CAPP"
+    pii: nenhum
+    nulo: true
+  - nome: sortb
+    tipo: string
+    comentario: "Campo de classificacao"
+    pii: nenhum
+    nulo: true
+  - nome: mtrvp
+    tipo: string
+    comentario: "Setup"
+    pii: nenhum
+    nulo: true
+  - nome: mtmvp
+    tipo: string
+    comentario: "Maquina"
+    pii: nenhum
+    nulo: true
+  - nome: mtpvp
+    tipo: string
+    comentario: "Mao de obra"
+    pii: nenhum
+    nulo: true
+  - nome: rsanz
+    tipo: string
+    comentario: "Numero de tickets de confirmacao"
+    pii: nenhum
+    nulo: true
+  - nome: pdest
+    tipo: string
+    comentario: "Impressora"
+    pii: nenhum
+    nulo: true
+  - nome: hroid
+    tipo: string
+    comentario: "ID do objeto HR"
+    pii: nenhum
+    nulo: true
+  - nome: fortn
+    tipo: string
+    comentario: "Outra formula"
+    pii: nenhum
+    nulo: true
+  - nome: zgr01_ref
+    tipo: string
+    comentario: "Indicador de referencia 1"
+    pii: nenhum
+    nulo: true
+  - nome: zgr02_ref
+    tipo: string
+    comentario: "Indicador de referencia 2"
+    pii: nenhum
+    nulo: true
+  - nome: zgr03_ref
+    tipo: string
+    comentario: "Indicador de referencia 3"
+    pii: nenhum
+    nulo: true
+  - nome: zgr04_ref
+    tipo: string
+    comentario: "Indicador de referencia 4"
+    pii: nenhum
+    nulo: true
+  - nome: zgr05_ref
+    tipo: string
+    comentario: "Indicador de referencia 5"
+    pii: nenhum
+    nulo: true
+  - nome: zgr06_ref
+    tipo: string
+    comentario: "Indicador de referencia 6"
+    pii: nenhum
+    nulo: true
+  - nome: steus_c
+    tipo: string
+    comentario: "Chave de controle C"
+    pii: nenhum
+    nulo: true
+  - nome: steus_i
+    tipo: string
+    comentario: "Chave de controle I"
+    pii: nenhum
+    nulo: true
+  - nome: steus_n
+    tipo: string
+    comentario: "Chave de controle N"
+    pii: nenhum
+    nulo: true
+  - nome: steus_q
+    tipo: string
+    comentario: "Chave de controle Q"
+    pii: nenhum
+    nulo: true
+  - nome: ruzus
+    tipo: string
+    comentario: "Arredondamento e valor adicional"
+    pii: nenhum
+    nulo: true
+  - nome: rsanz_ref
+    tipo: string
+    comentario: "Numero de tickets de confirmacao referenciados"
+    pii: nenhum
+    nulo: true
+  - nome: hr
+    tipo: string
+    comentario: "Centro de trabalho reside no modulo HR"
+    pii: nenhum
+    nulo: true
+  - nome: prvbe
+    tipo: string
+    comentario: "Area de abastecimento de producao"
+    pii: nenhum
+    nulo: true
+  - nome: subsys
+    tipo: string
+    comentario: "Sistema QDR"
+    pii: nenhum
+    nulo: true
+  - nome: bdegr
+    tipo: string
+    comentario: "Agrupamento de subsistema"
+    pii: nenhum
+    nulo: true
+  - nome: rgekz
+    tipo: string
+    comentario: "Backflush"
+    pii: nenhum
+    nulo: true
+  - nome: hrtyp
+    tipo: string
+    comentario: "Tipo de objeto HR"
+    pii: nenhum
+    nulo: true
+  - nome: slwid
+    tipo: string
+    comentario: "Chave de campo"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Codigo do fornecedor (subcontratacao)"
+    pii: indireto
+    nulo: true
+  - nome: slwid_ref
+    tipo: string
+    comentario: "Indicador de referencia do campo"
+    pii: nenhum
+    nulo: true
+  - nome: lifnr_ref
+    tipo: string
+    comentario: "Indicador de referencia do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: vgarb
+    tipo: string
+    comentario: "Unidade de trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: vgdim
+    tipo: string
+    comentario: "Dimensao do trabalho"
+    pii: nenhum
+    nulo: true
+  - nome: hrplvar
+    tipo: string
+    comentario: "Versao do plano HR"
+    pii: nenhum
+    nulo: true
+  - nome: vgdau
+    tipo: string
+    comentario: "Unidade de duracao normal"
+    pii: nenhum
+    nulo: true
+  - nome: stobj
+    tipo: string
+    comentario: "Numero do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: resgr
+    tipo: string
+    comentario: "Matriz de transicao"
+    pii: nenhum
+    nulo: true
+  - nome: lgort_res
+    tipo: string
+    comentario: "Local de armazenamento do recurso"
+    pii: nenhum
+    nulo: true
+  - nome: mixmat
+    tipo: string
+    comentario: "Material misto permitido"
+    pii: nenhum
+    nulo: true
+  - nome: istbed_kz
+    tipo: string
+    comentario: "Calcular necessidades reais de capacidade"
+    pii: nenhum
+    nulo: true
+  - nome: ppskz
+    tipo: string
+    comentario: "Planejamento avancado"
+    pii: nenhum
+    nulo: true
+  - nome: srtype
+    tipo: string
+    comentario: "Tipo de relatorio de turno"
+    pii: nenhum
+    nulo: true
+  - nome: sntype
+    tipo: string
+    comentario: "Tipo de nota de turno"
+    pii: nenhum
+    nulo: true

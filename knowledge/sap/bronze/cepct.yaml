@@ -1,0 +1,47 @@
+tabela: cepct
+camada: bronze
+comentario: "Textos do mestre de centro de lucro"
+ingestao: cdc
+fonte: sap.cepct
+chave_primaria: [mandt, spras, kokrs, prctr, datbi]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: false
+  - nome: datbi
+    tipo: date
+    comentario: "Válido até"
+    pii: nenhum
+    nulo: false
+  - nome: kokrs
+    tipo: string
+    comentario: "Área de controle"
+    pii: nenhum
+    nulo: false
+  - nome: ktext
+    tipo: string
+    comentario: "Nome do centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: ltext
+    tipo: string
+    comentario: "Texto longo do centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: mctxt
+    tipo: string
+    comentario: "Texto de pesquisa do centro de lucro"
+    pii: nenhum
+    nulo: true

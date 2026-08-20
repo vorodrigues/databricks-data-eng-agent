@@ -1,0 +1,1257 @@
+tabela: marc
+camada: bronze
+comentario: "Dados de material por centro (Plant Data for Material)"
+ingestao: cdc
+fonte: sap.marc
+chave_primaria: [mandt, matnr, werks]
+colunas:
+  - nome: /sapmp/tolprmi
+    tipo: decimal(23,2)
+    comentario: "Tolerância percentual negativa"
+    pii: nenhum
+    nulo: true
+  - nome: /sapmp/tolprpl
+    tipo: decimal(23,2)
+    comentario: "Tolerância percentual positiva"
+    pii: nenhum
+    nulo: true
+  - nome: /vso/r_fork_dir
+    tipo: string
+    comentario: "Direção do garfo PKM (longitudinal)"
+    pii: nenhum
+    nulo: true
+  - nome: /vso/r_lane_num
+    tipo: string
+    comentario: "Linha de separação (picking)"
+    pii: nenhum
+    nulo: true
+  - nome: /vso/r_pal_vend
+    tipo: string
+    comentario: "Número de material do fornecedor PKM"
+    pii: nenhum
+    nulo: true
+  - nome: /vso/r_pkgrp
+    tipo: string
+    comentario: "Grupo de embalagem"
+    pii: nenhum
+    nulo: true
+  - nome: abcin
+    tipo: string
+    comentario: "Indicador de inventário físico por ciclo (CC)"
+    pii: nenhum
+    nulo: true
+  - nome: abfac
+    tipo: string
+    comentario: "Fator de impulsão do ar"
+    pii: nenhum
+    nulo: true
+  - nome: ahdis
+    tipo: string
+    comentario: "Necessidades dependentes MRP"
+    pii: nenhum
+    nulo: true
+  - nome: altsl
+    tipo: string
+    comentario: "Método de seleção (material alternativo)"
+    pii: nenhum
+    nulo: true
+  - nome: aplal
+    tipo: int
+    comentario: "Contador do grupo (lista de tarefas)"
+    pii: nenhum
+    nulo: true
+  - nome: apokz
+    tipo: string
+    comentario: "Relevante para APO"
+    pii: nenhum
+    nulo: true
+  - nome: atpkz
+    tipo: string
+    comentario: "Peça de reposição"
+    pii: nenhum
+    nulo: true
+  - nome: auftl
+    tipo: string
+    comentario: "Indicador de divisão de ordens"
+    pii: nenhum
+    nulo: true
+  - nome: ausdt
+    tipo: date
+    comentario: "Data de saída efetiva"
+    pii: nenhum
+    nulo: true
+  - nome: ausme
+    tipo: string
+    comentario: "Unidade de emissão"
+    pii: nenhum
+    nulo: true
+  - nome: ausss
+    tipo: decimal(23,2)
+    comentario: "Refugo de montagem (%)"
+    pii: nenhum
+    nulo: true
+  - nome: autru
+    tipo: string
+    comentario: "Reset automático"
+    pii: nenhum
+    nulo: true
+  - nome: awsls
+    tipo: string
+    comentario: "Chave de variância"
+    pii: nenhum
+    nulo: true
+  - nome: basmg
+    tipo: decimal(23,2)
+    comentario: "Quantidade base"
+    pii: nenhum
+    nulo: true
+  - nome: bearz
+    tipo: decimal(23,2)
+    comentario: "Tempo de processamento"
+    pii: nenhum
+    nulo: true
+  - nome: beskz
+    tipo: string
+    comentario: "Tipo de suprimento"
+    pii: nenhum
+    nulo: true
+  - nome: bstfe
+    tipo: decimal(23,2)
+    comentario: "Tamanho de lote fixo"
+    pii: nenhum
+    nulo: true
+  - nome: bstma
+    tipo: decimal(23,2)
+    comentario: "Tamanho máximo de lote"
+    pii: nenhum
+    nulo: true
+  - nome: bstmi
+    tipo: decimal(23,2)
+    comentario: "Tamanho mínimo de lote"
+    pii: nenhum
+    nulo: true
+  - nome: bstrf
+    tipo: decimal(23,2)
+    comentario: "Valor de arredondamento"
+    pii: nenhum
+    nulo: true
+  - nome: bwesb
+    tipo: decimal(23,2)
+    comentario: "Estoque bloqueado de entrada de mercadorias avaliado"
+    pii: nenhum
+    nulo: true
+  - nome: bwscl
+    tipo: string
+    comentario: "Fonte de suprimento"
+    pii: nenhum
+    nulo: true
+  - nome: bwtty
+    tipo: string
+    comentario: "Categoria de avaliação"
+    pii: nenhum
+    nulo: true
+  - nome: casnr
+    tipo: string
+    comentario: "Número CAS (farmacêutico)"
+    pii: nenhum
+    nulo: true
+  - nome: ccfix
+    tipo: string
+    comentario: "Indicador CC fixo"
+    pii: nenhum
+    nulo: true
+  - nome: compl
+    tipo: string
+    comentario: "Nível de completude do material"
+    pii: nenhum
+    nulo: true
+  - nome: cons_procg
+    tipo: string
+    comentario: "Controle de consignação"
+    pii: nenhum
+    nulo: true
+  - nome: convt
+    tipo: string
+    comentario: "Tipo de conversão"
+    pii: nenhum
+    nulo: true
+  - nome: copam
+    tipo: string
+    comentario: "Nome do campo"
+    pii: nenhum
+    nulo: true
+  - nome: cuobj
+    tipo: string
+    comentario: "Número interno do objeto (configuração)"
+    pii: nenhum
+    nulo: true
+  - nome: cuobv
+    tipo: string
+    comentario: "Número interno do objeto (alternativo)"
+    pii: nenhum
+    nulo: true
+  - nome: diber
+    tipo: string
+    comentario: "Área MRP existente"
+    pii: nenhum
+    nulo: true
+  - nome: disgr
+    tipo: string
+    comentario: "Grupo MRP"
+    pii: nenhum
+    nulo: true
+  - nome: disls
+    tipo: string
+    comentario: "Tamanho de lote"
+    pii: nenhum
+    nulo: true
+  - nome: dismm
+    tipo: string
+    comentario: "Tipo de MRP"
+    pii: nenhum
+    nulo: true
+  - nome: dispo
+    tipo: string
+    comentario: "Controlador MRP"
+    pii: nenhum
+    nulo: true
+  - nome: dispr
+    tipo: string
+    comentario: "Perfil de MRP"
+    pii: nenhum
+    nulo: true
+  - nome: dplfs
+    tipo: string
+    comentario: "Regra de distribuição justa"
+    pii: nenhum
+    nulo: true
+  - nome: dplho
+    tipo: int
+    comentario: "Horizonte de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: dplpu
+    tipo: string
+    comentario: "Distribuição push"
+    pii: nenhum
+    nulo: true
+  - nome: dzeit
+    tipo: decimal(23,2)
+    comentario: "Tempo de produção interna"
+    pii: nenhum
+    nulo: true
+  - nome: eisbe
+    tipo: decimal(23,2)
+    comentario: "Estoque de segurança"
+    pii: nenhum
+    nulo: true
+  - nome: eislo
+    tipo: decimal(23,2)
+    comentario: "Estoque mínimo de segurança"
+    pii: nenhum
+    nulo: true
+  - nome: ekgrp
+    tipo: string
+    comentario: "Grupo de compras"
+    pii: nenhum
+    nulo: true
+  - nome: eprio
+    tipo: string
+    comentario: "Grupo de determinação de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: expme
+    tipo: string
+    comentario: "Unidade do código de mercadoria"
+    pii: nenhum
+    nulo: true
+  - nome: fabkz
+    tipo: string
+    comentario: "Indicador de programação JIT"
+    pii: nenhum
+    nulo: true
+  - nome: fevor
+    tipo: string
+    comentario: "Supervisor de produção"
+    pii: nenhum
+    nulo: true
+  - nome: ffrei
+    tipo: string
+    comentario: "Liberação automática"
+    pii: nenhum
+    nulo: true
+  - nome: fhori
+    tipo: string
+    comentario: "Chave de margem de agendamento"
+    pii: nenhum
+    nulo: true
+  - nome: fixls
+    tipo: decimal(23,2)
+    comentario: "Tamanho de lote fixo (MRP)"
+    pii: nenhum
+    nulo: true
+  - nome: fprfm
+    tipo: string
+    comentario: "Perfil de distribuição"
+    pii: nenhum
+    nulo: true
+  - nome: frtme
+    tipo: string
+    comentario: "Unidade de produção"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_calendar_group
+    tipo: string
+    comentario: "Grupo de calendário (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_kzech
+    tipo: string
+    comentario: "Atribuição de lote (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_mg_arun_req
+    tipo: string
+    comentario: "Execução de alocação de ordens (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_seaim
+    tipo: string
+    comentario: "Temporada ativa no gerenciamento de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: fsh_var_group
+    tipo: string
+    comentario: "Grupo de variantes (moda)"
+    pii: nenhum
+    nulo: true
+  - nome: fvidk
+    tipo: string
+    comentario: "Versão de produção"
+    pii: nenhum
+    nulo: true
+  - nome: fxhor
+    tipo: int
+    comentario: "Fence de planejamento (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: fxpru
+    tipo: string
+    comentario: "Coproduto de preço fixo"
+    pii: nenhum
+    nulo: true
+  - nome: gi_pr_time
+    tipo: int
+    comentario: "Tempo de processamento de saída de mercadorias (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: glgmg
+    tipo: decimal(23,2)
+    comentario: "Embalagens retornáveis vinculadas"
+    pii: nenhum
+    nulo: true
+  - nome: gpmkz
+    tipo: string
+    comentario: "Planejamento de capacidade macro"
+    pii: nenhum
+    nulo: true
+  - nome: gpnum
+    tipo: string
+    comentario: "Número PRODCOM"
+    pii: nenhum
+    nulo: true
+  - nome: herbl
+    tipo: string
+    comentario: "Estado de fabricação"
+    pii: nenhum
+    nulo: true
+  - nome: herkl
+    tipo: string
+    comentario: "País de origem"
+    pii: nenhum
+    nulo: true
+  - nome: herkr
+    tipo: string
+    comentario: "Região de origem"
+    pii: nenhum
+    nulo: true
+  - nome: indus
+    tipo: string
+    comentario: "Categoria CFOP do material"
+    pii: nenhum
+    nulo: true
+  - nome: insmk
+    tipo: string
+    comentario: "Lançar em estoque de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: itark
+    tipo: string
+    comentario: "Mercadoria de uso militar"
+    pii: nenhum
+    nulo: true
+  - nome: iuid_relevant
+    tipo: string
+    comentario: "Relevante para IUID"
+    pii: nenhum
+    nulo: true
+  - nome: iuid_type
+    tipo: string
+    comentario: "Tipo IUID"
+    pii: nenhum
+    nulo: true
+  - nome: kausf
+    tipo: decimal(23,2)
+    comentario: "Refugo de componente (%)"
+    pii: nenhum
+    nulo: true
+  - nome: kautb
+    tipo: string
+    comentario: "Ordem de compra automática"
+    pii: nenhum
+    nulo: true
+  - nome: kordb
+    tipo: string
+    comentario: "Lista de fontes"
+    pii: nenhum
+    nulo: true
+  - nome: kzagl
+    tipo: string
+    comentario: "Suavização do consumo promocional"
+    pii: nenhum
+    nulo: true
+  - nome: kzaus
+    tipo: string
+    comentario: "Indicador de descontinuação"
+    pii: nenhum
+    nulo: true
+  - nome: kzbed
+    tipo: string
+    comentario: "Grupo de necessidades"
+    pii: nenhum
+    nulo: true
+  - nome: kzdie
+    tipo: string
+    comentario: "Controlador MRP igual ao comprador"
+    pii: nenhum
+    nulo: true
+  - nome: kzdkz
+    tipo: string
+    comentario: "Documentação necessária"
+    pii: nenhum
+    nulo: true
+  - nome: kzech
+    tipo: string
+    comentario: "Entrada de lote"
+    pii: nenhum
+    nulo: true
+  - nome: kzkfk
+    tipo: string
+    comentario: "Fatores de correção"
+    pii: nenhum
+    nulo: true
+  - nome: kzkri
+    tipo: string
+    comentario: "Peça crítica"
+    pii: nenhum
+    nulo: true
+  - nome: kzkup
+    tipo: string
+    comentario: "Coproduto"
+    pii: nenhum
+    nulo: true
+  - nome: kzppv
+    tipo: string
+    comentario: "Indicador de plano de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: kzpro
+    tipo: string
+    comentario: "Retirada do bin de produção"
+    pii: nenhum
+    nulo: true
+  - nome: kzpsp
+    tipo: string
+    comentario: "Material entre projetos"
+    pii: nenhum
+    nulo: true
+  - nome: ladgr
+    tipo: string
+    comentario: "Grupo de carregamento"
+    pii: nenhum
+    nulo: true
+  - nome: lagpr
+    tipo: string
+    comentario: "Indicador de custo de armazenagem"
+    pii: nenhum
+    nulo: true
+  - nome: lfgja
+    tipo: string
+    comentario: "Ano do período corrente"
+    pii: nenhum
+    nulo: true
+  - nome: lfmon
+    tipo: string
+    comentario: "Período corrente"
+    pii: nenhum
+    nulo: true
+  - nome: lfrhy
+    tipo: string
+    comentario: "Ciclo de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: lgfsb
+    tipo: string
+    comentario: "Local de estoque para suprimento externo"
+    pii: nenhum
+    nulo: true
+  - nome: lgpro
+    tipo: string
+    comentario: "Local de armazenagem de produção"
+    pii: nenhum
+    nulo: true
+  - nome: lgrad
+    tipo: decimal(23,2)
+    comentario: "Nível de serviço (%)"
+    pii: nenhum
+    nulo: true
+  - nome: lizyk
+    tipo: string
+    comentario: "Ciclo de entrega"
+    pii: nenhum
+    nulo: true
+  - nome: loggr
+    tipo: string
+    comentario: "Grupo de manuseio logístico"
+    pii: nenhum
+    nulo: true
+  - nome: losfx
+    tipo: decimal(23,2)
+    comentario: "Custos de pedido"
+    pii: nenhum
+    nulo: true
+  - nome: losgr
+    tipo: decimal(23,2)
+    comentario: "Tamanho de lote para custeio"
+    pii: nenhum
+    nulo: true
+  - nome: ltinc
+    tipo: decimal(23,2)
+    comentario: "Incremento do tamanho de lote"
+    pii: nenhum
+    nulo: true
+  - nome: lvorm
+    tipo: string
+    comentario: "Sinalizador de exclusão no nível do centro"
+    pii: nenhum
+    nulo: true
+  - nome: lzeih
+    tipo: string
+    comentario: "Unidade de tempo"
+    pii: nenhum
+    nulo: true
+  - nome: maabc
+    tipo: string
+    comentario: "Indicador ABC"
+    pii: nenhum
+    nulo: true
+  - nome: mabst
+    tipo: decimal(23,2)
+    comentario: "Nível máximo de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: matgr
+    tipo: string
+    comentario: "Agrupamento de material"
+    pii: nenhum
+    nulo: true
+  - nome: matnr
+    tipo: string
+    comentario: "Número do material"
+    pii: nenhum
+    nulo: false
+  - nome: maxls
+    tipo: decimal(23,2)
+    comentario: "Tamanho máximo de lote"
+    pii: nenhum
+    nulo: true
+  - nome: maxlz
+    tipo: int
+    comentario: "Período máximo de armazenagem"
+    pii: nenhum
+    nulo: true
+  - nome: max_troc
+    tipo: decimal(23,2)
+    comentario: "Faixa alvo máxima"
+    pii: nenhum
+    nulo: true
+  - nome: mcrue
+    tipo: string
+    comentario: "Informação de controle MRP (uso interno)"
+    pii: nenhum
+    nulo: true
+  - nome: mdach
+    tipo: string
+    comentario: "Controle de ação MRP"
+    pii: nenhum
+    nulo: true
+  - nome: megru
+    tipo: string
+    comentario: "Grupo de unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: mfrgr
+    tipo: string
+    comentario: "Grupo de frete do material"
+    pii: nenhum
+    nulo: true
+  - nome: minbe
+    tipo: decimal(23,2)
+    comentario: "Ponto de reposição"
+    pii: nenhum
+    nulo: true
+  - nome: minls
+    tipo: decimal(23,2)
+    comentario: "Tamanho mínimo de lote"
+    pii: nenhum
+    nulo: true
+  - nome: min_troc
+    tipo: decimal(23,2)
+    comentario: "Faixa alvo mínima"
+    pii: nenhum
+    nulo: true
+  - nome: miskz
+    tipo: string
+    comentario: "MRP misto"
+    pii: nenhum
+    nulo: true
+  - nome: mmsta
+    tipo: string
+    comentario: "Status do material específico por centro"
+    pii: nenhum
+    nulo: true
+  - nome: mmstd
+    tipo: date
+    comentario: "Válido a partir de (status do material por centro)"
+    pii: nenhum
+    nulo: true
+  - nome: mogru
+    tipo: string
+    comentario: "Grupo de produto PAC"
+    pii: nenhum
+    nulo: true
+  - nome: mownr
+    tipo: string
+    comentario: "Número da lista de produtos PAC"
+    pii: nenhum
+    nulo: true
+  - nome: mpdau
+    tipo: decimal(23,2)
+    comentario: "Duração média de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: mrppp
+    tipo: string
+    comentario: "Calendário de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: mtver
+    tipo: string
+    comentario: "Grupo de exportação/importação"
+    pii: nenhum
+    nulo: true
+  - nome: mtvfp
+    tipo: string
+    comentario: "Verificação de disponibilidade"
+    pii: nenhum
+    nulo: true
+  - nome: multiple_ekgrp
+    tipo: string
+    comentario: "Compras com múltiplos grupos de compras"
+    pii: nenhum
+    nulo: true
+  - nome: ncost
+    tipo: string
+    comentario: "Não calcular custo"
+    pii: nenhum
+    nulo: true
+  - nome: nfmat
+    tipo: string
+    comentario: "Material substituto"
+    pii: nenhum
+    nulo: true
+  - nome: nkmpr
+    tipo: string
+    comentario: "Próxima inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: objid
+    tipo: string
+    comentario: "ID do objeto"
+    pii: nenhum
+    nulo: true
+  - nome: ocmpf
+    tipo: string
+    comentario: "Alterar perfil geral"
+    pii: nenhum
+    nulo: true
+  - nome: otype
+    tipo: string
+    comentario: "Tipo de objeto"
+    pii: nenhum
+    nulo: true
+  - nome: periv
+    tipo: string
+    comentario: "Variante do exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: perkz
+    tipo: string
+    comentario: "Indicador de período"
+    pii: nenhum
+    nulo: true
+  - nome: pfrei
+    tipo: string
+    comentario: "Fixação automática de ordens planejadas"
+    pii: nenhum
+    nulo: true
+  - nome: plifz
+    tipo: int
+    comentario: "Prazo de entrega planejado (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: plnnr
+    tipo: string
+    comentario: "Grupo da lista de tarefas"
+    pii: nenhum
+    nulo: true
+  - nome: plnty
+    tipo: string
+    comentario: "Tipo de lista de tarefas"
+    pii: nenhum
+    nulo: true
+  - nome: plvar
+    tipo: string
+    comentario: "Versão do plano"
+    pii: nenhum
+    nulo: true
+  - nome: ppskz
+    tipo: string
+    comentario: "Planejamento avançado (APO)"
+    pii: nenhum
+    nulo: true
+  - nome: pps_atpcheck
+    tipo: string
+    comentario: "Verificação ATP no planejamento avançado"
+    pii: nenhum
+    nulo: true
+  - nome: pps_conhap
+    tipo: decimal(23,2)
+    comentario: "Consumo do bucket de capacidade de manuseio na entrada de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: pps_conhap_out
+    tipo: decimal(23,2)
+    comentario: "Consumo do bucket de capacidade de manuseio na saída de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: pps_fixpeg
+    tipo: string
+    comentario: "Fixação de pegging"
+    pii: nenhum
+    nulo: true
+  - nome: pps_giprt
+    tipo: decimal(23,2)
+    comentario: "Tempo de processamento de saída de mercadorias (APO)"
+    pii: nenhum
+    nulo: true
+  - nome: pps_grprt
+    tipo: decimal(23,2)
+    comentario: "Tempo de processamento de entrada de mercadorias (APO)"
+    pii: nenhum
+    nulo: true
+  - nome: pps_heur_id
+    tipo: string
+    comentario: "ID de heurística do produto"
+    pii: nenhum
+    nulo: true
+  - nome: pps_hunit
+    tipo: string
+    comentario: "UM: capacidade de manuseio na entrada de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: pps_hunit_out
+    tipo: string
+    comentario: "UM: capacidade de manuseio na saída de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: pps_peg_fut_al
+    tipo: string
+    comentario: "Alerta de pegging para recebimentos futuros"
+    pii: nenhum
+    nulo: true
+  - nome: pps_peg_past_al
+    tipo: string
+    comentario: "Alerta de pegging retroativo"
+    pii: nenhum
+    nulo: true
+  - nome: pps_peg_strategy
+    tipo: string
+    comentario: "Estratégia de pegging"
+    pii: nenhum
+    nulo: true
+  - nome: pps_planning_type
+    tipo: string
+    comentario: "Procedimento de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: pps_strategy
+    tipo: string
+    comentario: "Estratégia proposta"
+    pii: nenhum
+    nulo: true
+  - nome: prctr
+    tipo: string
+    comentario: "Centro de lucro"
+    pii: nenhum
+    nulo: true
+  - nome: prefe
+    tipo: string
+    comentario: "Autorização de preferência (exportação)"
+    pii: nenhum
+    nulo: true
+  - nome: prenc
+    tipo: string
+    comentario: "Certificado de isenção"
+    pii: nenhum
+    nulo: true
+  - nome: prend
+    tipo: date
+    comentario: "Data de emissão do certificado de isenção"
+    pii: nenhum
+    nulo: true
+  - nome: prene
+    tipo: string
+    comentario: "Código da declaração do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: preng
+    tipo: date
+    comentario: "Data da declaração do fornecedor"
+    pii: nenhum
+    nulo: true
+  - nome: preno
+    tipo: string
+    comentario: "Número do certificado de isenção"
+    pii: nenhum
+    nulo: true
+  - nome: prfrq
+    tipo: int
+    comentario: "Intervalo de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: pstat
+    tipo: string
+    comentario: "Status de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: qmata
+    tipo: string
+    comentario: "Autorização de material QM"
+    pii: nenhum
+    nulo: true
+  - nome: qmatv
+    tipo: string
+    comentario: "Configuração de inspeção"
+    pii: nenhum
+    nulo: true
+  - nome: qssys
+    tipo: string
+    comentario: "Sistema QM alvo"
+    pii: nenhum
+    nulo: true
+  - nome: quazt
+    tipo: decimal(23,2)
+    comentario: "Período de quarentena"
+    pii: nenhum
+    nulo: true
+  - nome: qzgtp
+    tipo: string
+    comentario: "Tipo de certificado"
+    pii: nenhum
+    nulo: true
+  - nome: rdprf
+    tipo: string
+    comentario: "Perfil de arredondamento"
+    pii: nenhum
+    nulo: true
+  - nome: ref_schema
+    tipo: string
+    comentario: "Esquema de determinação"
+    pii: nenhum
+    nulo: true
+  - nome: resvp
+    tipo: int
+    comentario: "Período de ajuste para necessidades individuais"
+    pii: nenhum
+    nulo: true
+  - nome: rgekz
+    tipo: string
+    comentario: "Baixa retroativa (backflush)"
+    pii: nenhum
+    nulo: true
+  - nome: rotation_date
+    tipo: string
+    comentario: "Estratégia de entrada/saída de estoque (FEFO/FIFO)"
+    pii: nenhum
+    nulo: true
+  - nome: ruezt
+    tipo: decimal(23,2)
+    comentario: "Tempo de setup"
+    pii: nenhum
+    nulo: true
+  - nome: rwpro
+    tipo: string
+    comentario: "Perfil de cobertura"
+    pii: nenhum
+    nulo: true
+  - nome: sauft
+    tipo: string
+    comentario: "Fabricação repetitiva"
+    pii: nenhum
+    nulo: true
+  - nome: sbdkz
+    tipo: string
+    comentario: "Individual/coletivo"
+    pii: nenhum
+    nulo: true
+  - nome: schgt
+    tipo: string
+    comentario: "Material a granel"
+    pii: nenhum
+    nulo: true
+  - nome: sernp
+    tipo: string
+    comentario: "Perfil de número de série"
+    pii: nenhum
+    nulo: true
+  - nome: servg
+    tipo: string
+    comentario: "Nível de serviço"
+    pii: nenhum
+    nulo: true
+  - nome: sfcpf
+    tipo: string
+    comentario: "Perfil de programação de produção"
+    pii: nenhum
+    nulo: true
+  - nome: sfepr
+    tipo: string
+    comentario: "Perfil de fabricação repetitiva (REM)"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_chint
+    tipo: string
+    comentario: "Número de lote discreto"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_covs
+    tipo: string
+    comentario: "Estratégia de segmentação"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_defsc
+    tipo: string
+    comentario: "Segmento de estoque padrão"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_mmstd
+    tipo: date
+    comentario: "Válido a partir de (segmentação)"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_mrpsi
+    tipo: string
+    comentario: "Classificar estoque por segmento"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_mrp_atp_status
+    tipo: string
+    comentario: "Status ATP/MRP para material e segmento"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_prcm
+    tipo: string
+    comentario: "Prioridade de consumo"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_scope
+    tipo: string
+    comentario: "Escopo da estratégia de segmentação"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_statc
+    tipo: string
+    comentario: "Status de segmentação MRP"
+    pii: nenhum
+    nulo: true
+  - nome: sgt_stk_prt
+    tipo: string
+    comentario: "Indicador de proteção de estoque"
+    pii: nenhum
+    nulo: true
+  - nome: shflg
+    tipo: string
+    comentario: "Indicador de tempo de segurança"
+    pii: nenhum
+    nulo: true
+  - nome: shpro
+    tipo: string
+    comentario: "Perfil de período de tempo de segurança"
+    pii: nenhum
+    nulo: true
+  - nome: shzet
+    tipo: int
+    comentario: "Tempo de segurança / cobertura atual (dias)"
+    pii: nenhum
+    nulo: true
+  - nome: sobsk
+    tipo: string
+    comentario: "Tipo especial de suprimento para custeio"
+    pii: nenhum
+    nulo: true
+  - nome: sobsl
+    tipo: string
+    comentario: "Tipo especial de suprimento"
+    pii: nenhum
+    nulo: true
+  - nome: sproz
+    tipo: decimal(23,2)
+    comentario: "Amostra (%)"
+    pii: nenhum
+    nulo: true
+  - nome: ssqss
+    tipo: string
+    comentario: "Chave de controle QM"
+    pii: nenhum
+    nulo: true
+  - nome: stawn
+    tipo: string
+    comentario: "Número do código de mercadoria (importação/exportação)"
+    pii: nenhum
+    nulo: true
+  - nome: stdpd
+    tipo: string
+    comentario: "Material configurável"
+    pii: nenhum
+    nulo: true
+  - nome: steuc
+    tipo: string
+    comentario: "Código de controle"
+    pii: nenhum
+    nulo: true
+  - nome: stlal
+    tipo: string
+    comentario: "Lista técnica alternativa"
+    pii: nenhum
+    nulo: true
+  - nome: stlan
+    tipo: string
+    comentario: "Uso da lista técnica"
+    pii: nenhum
+    nulo: true
+  - nome: strgr
+    tipo: string
+    comentario: "Grupo de estratégia de planejamento"
+    pii: nenhum
+    nulo: true
+  - nome: takzt
+    tipo: decimal(23,2)
+    comentario: "Tempo takt"
+    pii: nenhum
+    nulo: true
+  - nome: target_stock
+    tipo: decimal(23,2)
+    comentario: "Estoque alvo"
+    pii: nenhum
+    nulo: true
+  - nome: trame
+    tipo: decimal(23,2)
+    comentario: "Estoque em trânsito"
+    pii: nenhum
+    nulo: true
+  - nome: tranz
+    tipo: decimal(23,2)
+    comentario: "Tempo interoperacional"
+    pii: nenhum
+    nulo: true
+  - nome: uchkz
+    tipo: string
+    comentario: "Indicador de gestão de lote original"
+    pii: nenhum
+    nulo: true
+  - nome: ucmat
+    tipo: string
+    comentario: "Material de referência do lote original"
+    pii: nenhum
+    nulo: true
+  - nome: ueetk
+    tipo: string
+    comentario: "Indicador de sobreentrega ilimitada"
+    pii: nenhum
+    nulo: true
+  - nome: ueeto
+    tipo: decimal(23,2)
+    comentario: "Tolerância de sobreentrega (%)"
+    pii: nenhum
+    nulo: true
+  - nome: uid_iea
+    tipo: string
+    comentario: "Alocação externa de UII"
+    pii: nenhum
+    nulo: true
+  - nome: umlmc
+    tipo: decimal(23,2)
+    comentario: "Quantidade em transferência (centro)"
+    pii: nenhum
+    nulo: true
+  - nome: umrsl
+    tipo: string
+    comentario: "Grupo de conversão"
+    pii: nenhum
+    nulo: true
+  - nome: uneto
+    tipo: decimal(23,2)
+    comentario: "Tolerância de subentrega (%)"
+    pii: nenhum
+    nulo: true
+  - nome: uomgr
+    tipo: string
+    comentario: "Grupo de unidades de medida"
+    pii: nenhum
+    nulo: true
+  - nome: usequ
+    tipo: string
+    comentario: "Uso de cota de fornecimento"
+    pii: nenhum
+    nulo: true
+  - nome: vbamg
+    tipo: decimal(23,2)
+    comentario: "Quantidade base (previsão de consumo)"
+    pii: nenhum
+    nulo: true
+  - nome: vbeaz
+    tipo: decimal(23,2)
+    comentario: "Tempo de processamento (previsão de consumo)"
+    pii: nenhum
+    nulo: true
+  - nome: verkz
+    tipo: string
+    comentario: "Indicador de versão"
+    pii: nenhum
+    nulo: true
+  - nome: vint1
+    tipo: int
+    comentario: "Período de consumo retroativo"
+    pii: nenhum
+    nulo: true
+  - nome: vint2
+    tipo: int
+    comentario: "Período de consumo prospectivo"
+    pii: nenhum
+    nulo: true
+  - nome: vkglg
+    tipo: decimal(23,2)
+    comentario: "Valor de vendas de embalagens retornáveis"
+    pii: nenhum
+    nulo: true
+  - nome: vktrw
+    tipo: decimal(23,2)
+    comentario: "Estoque em trânsito / suprimento especial (valor)"
+    pii: nenhum
+    nulo: true
+  - nome: vkumc
+    tipo: decimal(23,2)
+    comentario: "Transferência de estoque (valor de vendas)"
+    pii: nenhum
+    nulo: true
+  - nome: vrbdt
+    tipo: date
+    comentario: "Data final de referência de consumo"
+    pii: nenhum
+    nulo: true
+  - nome: vrbfk
+    tipo: decimal(23,2)
+    comentario: "Fator multiplicador"
+    pii: nenhum
+    nulo: true
+  - nome: vrbmt
+    tipo: string
+    comentario: "Material de referência para consumo"
+    pii: nenhum
+    nulo: true
+  - nome: vrbwk
+    tipo: string
+    comentario: "Centro de referência para consumo"
+    pii: nenhum
+    nulo: true
+  - nome: vrmod
+    tipo: string
+    comentario: "Modo de consumo"
+    pii: nenhum
+    nulo: true
+  - nome: vrvez
+    tipo: decimal(23,2)
+    comentario: "Tempo de setup (consumo)"
+    pii: nenhum
+    nulo: true
+  - nome: vspvb
+    tipo: string
+    comentario: "Área de suprimento padrão"
+    pii: nenhum
+    nulo: true
+  - nome: vzusl
+    tipo: decimal(23,2)
+    comentario: "Fator de sobretaxa (%)"
+    pii: nenhum
+    nulo: true
+  - nome: webaz
+    tipo: decimal(23,2)
+    comentario: "Tempo de processamento de entrada de mercadorias"
+    pii: nenhum
+    nulo: true
+  - nome: werks
+    tipo: string
+    comentario: "Centro"
+    pii: nenhum
+    nulo: false
+  - nome: wstgh
+    tipo: decimal(23,2)
+    comentario: "Teor atual de substância ativa (%)"
+    pii: nenhum
+    nulo: true
+  - nome: wzeit
+    tipo: decimal(23,2)
+    comentario: "Prazo total de reposição"
+    pii: nenhum
+    nulo: true
+  - nome: xchar
+    tipo: string
+    comentario: "Gestão de lotes"
+    pii: nenhum
+    nulo: true
+  - nome: xchpf
+    tipo: string
+    comentario: "Gestão obrigatória de lotes"
+    pii: nenhum
+    nulo: true
+  - nome: xmcng
+    tipo: string
+    comentario: "Indicador de estoque negativo no centro"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,913 @@
+tabela: accounting_documents_header
+camada: gold
+comentario: "Metadados do cabeçalho de documentos contábeis do SAP BKPF (ex.: datas de lançamento e entrada, dados de usuário, status do documento e chave de moeda), enriquecidos com dimensões de datas do calendário para relatórios financeiros."
+entidade: obt              # tabela larga denormalizada (one-big-table)
+ingestao: custom
+fontes: [silver.bkpf, silver.bseg, silver.tcurx, silver.t005]   # tabelas SAP de origem (join custom no transform)
+chave_primaria: [client_mandt, company_code_bukrs, document_number_belnr, fiscal_year_gjahr]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: company_code_bukrs
+    tipo: string
+    comentario: "Código da empresa (bukrs)"
+    pii: nenhum
+    nulo: false
+  - nome: document_number_belnr
+    tipo: string
+    comentario: "Número do documento contábil (belnr)"
+    pii: nenhum
+    nulo: false
+  - nome: fiscal_year_gjahr
+    tipo: string
+    comentario: "Ano fiscal (gjahr)"
+    pii: nenhum
+    nulo: false
+  - nome: document_type_blart
+    tipo: string
+    comentario: "Tipo de documento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: document_date_bldat
+    tipo: date
+    comentario: "Data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: posting_date_budat
+    tipo: date
+    comentario: "Data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: posting_period_monat
+    tipo: string
+    comentario: "Período de lançamento (período fiscal)"
+    pii: nenhum
+    nulo: true
+  - nome: entry_date_cpudt
+    tipo: date
+    comentario: "Data de entrada do documento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: time_of_entry_cputm
+    tipo: string
+    comentario: "Hora de entrada do documento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: changed_on_aedat
+    tipo: date
+    comentario: "Data de alteração do documento"
+    pii: nenhum
+    nulo: true
+  - nome: last_update_upddt
+    tipo: date
+    comentario: "Data da última atualização"
+    pii: nenhum
+    nulo: true
+  - nome: translation_date_wwert
+    tipo: date
+    comentario: "Data de conversão de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: user_name_usnam
+    tipo: string
+    comentario: "Nome de usuário SAP responsável pelo lançamento"
+    pii: indireto
+    nulo: true
+  - nome: transaction_code_tcode
+    tipo: string
+    comentario: "Código de transação SAP"
+    pii: nenhum
+    nulo: true
+  - nome: cross_comp_code_no_bvorg
+    tipo: string
+    comentario: "Número de operação entre empresas"
+    pii: nenhum
+    nulo: true
+  - nome: reference_document_number_xblnr
+    tipo: string
+    comentario: "Número do documento de referência"
+    pii: nenhum
+    nulo: true
+  - nome: recurring_entry_doc_dbblg
+    tipo: string
+    comentario: "Documento de lançamento recorrente"
+    pii: nenhum
+    nulo: true
+  - nome: recurring_entry_fiscal_year_dbblg_gjahr
+    tipo: string
+    comentario: "Ano fiscal do lançamento recorrente"
+    pii: nenhum
+    nulo: true
+  - nome: recurring_entry_company_code_dbblg_bukrs
+    tipo: string
+    comentario: "Empresa do lançamento recorrente"
+    pii: nenhum
+    nulo: true
+  - nome: reversed_with_stblg
+    tipo: string
+    comentario: "Estornado com (número do documento de estorno)"
+    pii: nenhum
+    nulo: true
+  - nome: year_stjah
+    tipo: string
+    comentario: "Ano do documento de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: document_header_text_bktxt
+    tipo: string
+    comentario: "Texto do cabeçalho do documento"
+    pii: nenhum
+    nulo: true
+  - nome: currency_key_waers
+    tipo: string
+    comentario: "Chave de moeda"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_kursf
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: group_currency_kzwrs
+    tipo: string
+    comentario: "Moeda do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: group_fx_rate_kzkrs
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio do grupo"
+    pii: nenhum
+    nulo: true
+  - nome: document_status_bstat
+    tipo: string
+    comentario: "Status do documento"
+    pii: nenhum
+    nulo: true
+  - nome: net_document_type_xnetb
+    tipo: string
+    comentario: "Indicador: documento lançado líquido"
+    pii: nenhum
+    nulo: true
+  - nome: unpl_del_costs_frath
+    tipo: decimal(23,2)
+    comentario: "Custos de entrega não planejados"
+    pii: nenhum
+    nulo: true
+  - nome: document_is_back_posted_xrueb
+    tipo: string
+    comentario: "Indicador: documento lançado retroativamente"
+    pii: nenhum
+    nulo: true
+  - nome: business_transaction_glvor
+    tipo: string
+    comentario: "Transação de negócios do razão geral"
+    pii: nenhum
+    nulo: true
+  - nome: session_name_grpid
+    tipo: string
+    comentario: "Nome da sessão (grupo de lançamentos)"
+    pii: nenhum
+    nulo: true
+  - nome: document_name_dokid
+    tipo: string
+    comentario: "Nome do documento"
+    pii: nenhum
+    nulo: true
+  - nome: extract_id_arcid
+    tipo: string
+    comentario: "ID de extração (arquivo)"
+    pii: nenhum
+    nulo: true
+  - nome: internal_document_type_iblar
+    tipo: string
+    comentario: "Tipo de documento interno"
+    pii: nenhum
+    nulo: true
+  - nome: reference_procedure_awtyp
+    tipo: string
+    comentario: "Procedimento de referência (origem do documento)"
+    pii: nenhum
+    nulo: true
+  - nome: object_key_awkey
+    tipo: string
+    comentario: "Chave do objeto de referência"
+    pii: nenhum
+    nulo: true
+  - nome: fm_area_fikrs
+    tipo: string
+    comentario: "Área de gestão financeira (FM)"
+    pii: nenhum
+    nulo: true
+  - nome: local_currency_hwaer
+    tipo: string
+    comentario: "Moeda local (1)"
+    pii: nenhum
+    nulo: true
+  - nome: local_currency_2_hwae2
+    tipo: string
+    comentario: "Moeda local 2"
+    pii: nenhum
+    nulo: true
+  - nome: local_currency_3_hwae3
+    tipo: string
+    comentario: "Moeda local 3"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_2_kurs2
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio 2"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_3_kurs3
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio 3"
+    pii: nenhum
+    nulo: true
+  - nome: source_currency_basw2
+    tipo: string
+    comentario: "Moeda de origem 2"
+    pii: nenhum
+    nulo: true
+  - nome: source_currency_basw3
+    tipo: string
+    comentario: "Moeda de origem 3"
+    pii: nenhum
+    nulo: true
+  - nome: translation_date_umrd2
+    tipo: date
+    comentario: "Data de conversão 2"
+    pii: nenhum
+    nulo: true
+  - nome: translation_date_umrd3
+    tipo: date
+    comentario: "Data de conversão 3"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_flag_xstov
+    tipo: string
+    comentario: "Indicador: documento marcado para estorno"
+    pii: nenhum
+    nulo: true
+  - nome: reverse_posting_date_stodt
+    tipo: date
+    comentario: "Data de lançamento do estorno"
+    pii: nenhum
+    nulo: true
+  - nome: calculate_tax_xmwst
+    tipo: string
+    comentario: "Indicador: calcular imposto automaticamente"
+    pii: nenhum
+    nulo: true
+  - nome: lc2_currency_type_curt2
+    tipo: string
+    comentario: "Tipo de moeda LC2"
+    pii: nenhum
+    nulo: true
+  - nome: lc3_currency_type_curt3
+    tipo: string
+    comentario: "Tipo de moeda LC3"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_type_kuty2
+    tipo: string
+    comentario: "Tipo de taxa de câmbio 2"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_type_kuty3
+    tipo: string
+    comentario: "Tipo de taxa de câmbio 3"
+    pii: nenhum
+    nulo: true
+  - nome: calculate_taxes_on_net_amount_xsnet
+    tipo: string
+    comentario: "Indicador: calcular impostos sobre valor líquido"
+    pii: nenhum
+    nulo: true
+  - nome: source_company_code_ausbk
+    tipo: string
+    comentario: "Empresa de origem"
+    pii: nenhum
+    nulo: true
+  - nome: tax_details_changed_xusvr
+    tipo: string
+    comentario: "Indicador: detalhes do imposto alterados"
+    pii: nenhum
+    nulo: true
+  - nome: status_of_data_transfer_to_next_release_duefl
+    tipo: string
+    comentario: "Status da transferência de dados para próxima versão"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_awsys
+    tipo: string
+    comentario: "Sistema lógico de origem"
+    pii: nenhum
+    nulo: true
+  - nome: rate_for_taxes_txkrs
+    tipo: decimal(23,2)
+    comentario: "Taxa para cálculo de impostos"
+    pii: nenhum
+    nulo: true
+  - nome: tax_rate_local_crcy_ctxkrs
+    tipo: decimal(23,2)
+    comentario: "Taxa de imposto em moeda local"
+    pii: nenhum
+    nulo: true
+  - nome: request_number_lotkz
+    tipo: string
+    comentario: "Número do lote de solicitações"
+    pii: nenhum
+    nulo: true
+  - nome: boe_before_due_date_xwvof
+    tipo: string
+    comentario: "Indicador: título antes do vencimento (BoE)"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_reason_stgrd
+    tipo: string
+    comentario: "Motivo do estorno"
+    pii: nenhum
+    nulo: true
+  - nome: parked_by_ppnam
+    tipo: string
+    comentario: "Usuário SAP que estacionou o documento"
+    pii: indireto
+    nulo: true
+  - nome: date_of_parking_ppdat
+    tipo: date
+    comentario: "Data de estacionamento do documento"
+    pii: nenhum
+    nulo: true
+  - nome: time_of_parking_pptme
+    tipo: string
+    comentario: "Hora de estacionamento do documento"
+    pii: nenhum
+    nulo: true
+  - nome: parking_tcode_pptcod
+    tipo: string
+    comentario: "Código de transação SAP do estacionamento"
+    pii: nenhum
+    nulo: true
+  - nome: branch_number_brnch
+    tipo: string
+    comentario: "Número da filial"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_pages_numpg
+    tipo: int
+    comentario: "Número de páginas do documento"
+    pii: nenhum
+    nulo: true
+  - nome: discount_document_adisc
+    tipo: string
+    comentario: "Indicador: documento de desconto financeiro"
+    pii: nenhum
+    nulo: true
+  - nome: ref_key_header_1_xref1_hd
+    tipo: string
+    comentario: "Chave de referência do cabeçalho 1"
+    pii: nenhum
+    nulo: true
+  - nome: ref_key_header_2_xref2_hd
+    tipo: string
+    comentario: "Chave de referência do cabeçalho 2"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_indicator_xreversal
+    tipo: string
+    comentario: "Indicador de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_receipt_date_reindat
+    tipo: date
+    comentario: "Data de recebimento da nota fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: ledger_rldnr
+    tipo: string
+    comentario: "Razão contábil (ledger)"
+    pii: nenhum
+    nulo: true
+  - nome: ledger_group_ldgrp
+    tipo: string
+    comentario: "Grupo de razão (ledger group)"
+    pii: nenhum
+    nulo: true
+  - nome: mandate_thrd_prty_mgmt_propmano
+    tipo: string
+    comentario: "Mandato de gestão por terceiros"
+    pii: nenhum
+    nulo: true
+  - nome: alt_reference_number_xblnr_alt
+    tipo: string
+    comentario: "Número de referência alternativo"
+    pii: nenhum
+    nulo: true
+  - nome: tax_reporting_date_vatdate
+    tipo: date
+    comentario: "Data de apuração do imposto (VAT)"
+    pii: nenhum
+    nulo: true
+  - nome: tax_fulfillement_date_fulfilldate
+    tipo: date
+    comentario: "Data de cumprimento fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: doc_type_doccat
+    tipo: string
+    comentario: "Categoria do tipo de documento"
+    pii: nenhum
+    nulo: true
+  - nome: split_posting_xsplit
+    tipo: string
+    comentario: "Indicador: lançamento com divisão"
+    pii: nenhum
+    nulo: true
+  - nome: cash_flow_relevant_doc_cash_alloc
+    tipo: string
+    comentario: "Indicador: documento relevante para fluxo de caixa"
+    pii: nenhum
+    nulo: true
+  - nome: follow_on
+    tipo: string
+    comentario: "Indicador: documento subsequente"
+    pii: nenhum
+    nulo: true
+  - nome: open_itm_reorganized_xreorg
+    tipo: string
+    comentario: "Indicador: itens em aberto reorganizados"
+    pii: nenhum
+    nulo: true
+  - nome: subset
+    tipo: string
+    comentario: "Subconjunto de dados"
+    pii: nenhum
+    nulo: true
+  - nome: exchange_rate_type_kurst
+    tipo: string
+    comentario: "Tipo de taxa de câmbio"
+    pii: nenhum
+    nulo: true
+  - nome: market_data_exchange_rate_kursx
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio de mercado"
+    pii: nenhum
+    nulo: true
+  - nome: market_data_exchange_rate_2_kur2x
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio de mercado 2"
+    pii: nenhum
+    nulo: true
+  - nome: market_data_exchange_rate_3_kur3x
+    tipo: decimal(23,2)
+    comentario: "Taxa de câmbio de mercado 3"
+    pii: nenhum
+    nulo: true
+  - nome: document_from_multi_curr_accounting_xmca
+    tipo: string
+    comentario: "Indicador: documento de contabilidade multicâmbio"
+    pii: nenhum
+    nulo: true
+  - nome: resubmission_date_resubmission
+    tipo: date
+    comentario: "Data de reapresentação do documento"
+    pii: nenhum
+    nulo: true
+  - nome: logical_system_of_the_sender_logsystem_sender
+    tipo: string
+    comentario: "Sistema lógico do remetente"
+    pii: nenhum
+    nulo: true
+  - nome: company_code_in_sender_system_bukrs_sender
+    tipo: string
+    comentario: "Empresa no sistema remetente"
+    pii: nenhum
+    nulo: true
+  - nome: document_no_in_sender_system_belnr_sender
+    tipo: string
+    comentario: "Número do documento no sistema remetente"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_year_in_sender_system_gjahr_sender
+    tipo: string
+    comentario: "Ano fiscal no sistema remetente"
+    pii: nenhum
+    nulo: true
+  - nome: int_assigned_subid_for_awkey_intsubid
+    tipo: string
+    comentario: "Subidentificador interno da chave do objeto (AWKEY)"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_organizatns_aworg_rev
+    tipo: string
+    comentario: "Organização de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_ref_no_awref_rev
+    tipo: string
+    comentario: "Número de referência do estorno"
+    pii: nenhum
+    nulo: true
+  - nome: reversal_document_xreversing
+    tipo: string
+    comentario: "Indicador: documento de estorno"
+    pii: nenhum
+    nulo: true
+  - nome: reversed_xreversed
+    tipo: string
+    comentario: "Indicador: documento estornado"
+    pii: nenhum
+    nulo: true
+  - nome: general_ledger_bus_transaction_group_glbtgrp
+    tipo: string
+    comentario: "Grupo de transações do razão geral"
+    pii: nenhum
+    nulo: true
+  - nome: business_transaction_co_vrgng
+    tipo: string
+    comentario: "Transação de negócios CO"
+    pii: nenhum
+    nulo: true
+  - nome: ref_document_type_co_refbt
+    tipo: string
+    comentario: "Tipo de documento de referência CO"
+    pii: nenhum
+    nulo: true
+  - nome: ale_original_docnr_co_alebn
+    tipo: string
+    comentario: "ALE: número do documento original CO"
+    pii: nenhum
+    nulo: true
+  - nome: valuation_date_co_valdt
+    tipo: date
+    comentario: "Data de avaliação CO"
+    pii: nenhum
+    nulo: true
+  - nome: co_document_no_in_sender_system_co_belnr_sender
+    tipo: string
+    comentario: "Número do documento CO no sistema remetente"
+    pii: nenhum
+    nulo: true
+  - nome: controlling_area_in_sender_system_kokrs_sender
+    tipo: string
+    comentario: "Área de controladoria no sistema remetente"
+    pii: nenhum
+    nulo: true
+  - nome: accounting_principle_acc_principle
+    tipo: string
+    comentario: "Princípio contábil"
+    pii: nenhum
+    nulo: true
+  - nome: transfer_variant_trava_pn
+    tipo: string
+    comentario: "Variante de transferência"
+    pii: nenhum
+    nulo: true
+  - nome: ldgrp_specific_entry_ldgrpspec_pn
+    tipo: string
+    comentario: "Entrada específica do grupo de razão (LDGRP)"
+    pii: nenhum
+    nulo: true
+  - nome: posting_with_area_limitation_afabespec_pn
+    tipo: string
+    comentario: "Lançamento com limitação de área"
+    pii: nenhum
+    nulo: true
+  - nome: secondary_journal_entry_xsecondary
+    tipo: string
+    comentario: "Indicador: lançamento de diário secundário"
+    pii: nenhum
+    nulo: true
+  - nome: reprocessing_status_code
+    tipo: string
+    comentario: "Código de status de reprocessamento"
+    pii: nenhum
+    nulo: true
+  - nome: partial_processing_indicator_trr_partial_ind
+    tipo: string
+    comentario: "Indicador de processamento parcial"
+    pii: nenhum
+    nulo: true
+  - nome: journal_entry_item_removal_status
+    tipo: string
+    comentario: "Status de remoção de item de lançamento contábil"
+    pii: nenhum
+    nulo: true
+  - nome: reason_for_late_pmnt_penrc
+    tipo: string
+    comentario: "Motivo do pagamento em atraso"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_reference_1_glo_ref1_hd
+    tipo: string
+    comentario: "Referência específica de país 1"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_date_1_glo_dat1_hd
+    tipo: date
+    comentario: "Data específica de país 1"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_reference2_glo_ref2_hd
+    tipo: string
+    comentario: "Referência específica de país 2"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_date_2_glo_dat2_hd
+    tipo: date
+    comentario: "Data específica de país 2"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_reference_3_glo_ref3_hd
+    tipo: string
+    comentario: "Referência específica de país 3"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_date_3_glo_dat3_hd
+    tipo: date
+    comentario: "Data específica de país 3"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_reference_4_glo_ref4_hd
+    tipo: string
+    comentario: "Referência específica de país 4"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_date_4_glo_dat4_hd
+    tipo: date
+    comentario: "Data específica de país 4"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_reference_5_glo_ref5_hd
+    tipo: string
+    comentario: "Referência específica de país 5"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_date_5_glo_dat5_hd
+    tipo: date
+    comentario: "Data específica de país 5"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_business_partner_1_glo_bp1_hd
+    tipo: string
+    comentario: "Parceiro de negócios específico de país 1"
+    pii: nenhum
+    nulo: true
+  - nome: country_specific_business_partner_2_glo_bp2_hd
+    tipo: string
+    comentario: "Parceiro de negócios específico de país 2"
+    pii: nenhum
+    nulo: true
+  - nome: postcntrentryview_ev_postng_ctrl
+    tipo: string
+    comentario: "Visão de controle de lançamento (PostCntrEntryView)"
+    pii: nenhum
+    nulo: true
+  - nome: invoice_type_for_annexation_anxtype
+    tipo: string
+    comentario: "Tipo de nota fiscal para anexação"
+    pii: nenhum
+    nulo: true
+  - nome: annexation_amount_anxamnt
+    tipo: decimal(23,2)
+    comentario: "Valor de anexação"
+    pii: nenhum
+    nulo: true
+  - nome: annexation_percentage_anxperc
+    tipo: decimal(23,2)
+    comentario: "Percentual de anexação"
+    pii: nenhum
+    nulo: true
+  - nome: v_a_t_indicator_zvat_indc
+    tipo: string
+    comentario: "Indicador de IVA/ICMS (VAT)"
+    pii: nenhum
+    nulo: true
+  - nome: request_category_psoty
+    tipo: string
+    comentario: "Categoria de solicitação"
+    pii: nenhum
+    nulo: true
+  - nome: reason_psoak
+    tipo: string
+    comentario: "Motivo"
+    pii: nenhum
+    nulo: true
+  - nome: region_psoks
+    tipo: string
+    comentario: "Região"
+    pii: nenhum
+    nulo: true
+  - nome: reason_for_reversal_psosg
+    tipo: string
+    comentario: "Motivo do estorno"
+    pii: nenhum
+    nulo: true
+  - nome: file_number_psofn
+    tipo: string
+    comentario: "Número do arquivo"
+    pii: nenhum
+    nulo: true
+  - nome: interest_formula_intform
+    tipo: string
+    comentario: "Fórmula de cálculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: interest_calc_date_intdate
+    tipo: date
+    comentario: "Data de cálculo de juros"
+    pii: nenhum
+    nulo: true
+  - nome: posting_day_psobt
+    tipo: string
+    comentario: "Dia de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: actual_posting_psozl
+    tipo: string
+    comentario: "Indicador: lançamento efetivo"
+    pii: nenhum
+    nulo: true
+  - nome: changed_on_psodt
+    tipo: date
+    comentario: "Alterado em (data)"
+    pii: nenhum
+    nulo: true
+  - nome: changed_at_psotm
+    tipo: string
+    comentario: "Alterado às (hora)"
+    pii: nenhum
+    nulo: true
+  - nome: transfer_type_fm_umart
+    tipo: string
+    comentario: "Tipo de transferência FM"
+    pii: nenhum
+    nulo: true
+  - nome: card_type_ccins
+    tipo: string
+    comentario: "Tipo de cartão de pagamento"
+    pii: indireto
+    nulo: true
+  - nome: card_number_ccnum
+    tipo: string
+    comentario: "Número do cartão de pagamento"
+    pii: sensivel
+    nulo: true
+  - nome: payment_sampling_block_ssblk
+    tipo: string
+    comentario: "Bloqueio de amostragem de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: lot_number_batch
+    tipo: string
+    comentario: "Número do lote"
+    pii: nenhum
+    nulo: true
+  - nome: user_name_sname
+    tipo: string
+    comentario: "Nome de usuário SAP do aprovador"
+    pii: indireto
+    nulo: true
+  - nome: sampled_invoice_by_payment_stat_samplin_sampled
+    tipo: string
+    comentario: "Indicador: nota fiscal amostrada por estatística de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: ppa_exclude_ind_exclude_flag
+    tipo: string
+    comentario: "Indicador: excluir do PPA"
+    pii: nenhum
+    nulo: true
+  - nome: budgetary_ledger_indicator_blind
+    tipo: string
+    comentario: "Indicador de razão orçamentário"
+    pii: nenhum
+    nulo: true
+  - nome: treasury_offset_status
+    tipo: string
+    comentario: "Status de compensação com a tesouraria"
+    pii: nenhum
+    nulo: true
+  - nome: date_record_referred_to_treasury_offset_refer_dat
+    tipo: date
+    comentario: "Data de encaminhamento à compensação com a tesouraria"
+    pii: nenhum
+    nulo: true
+  - nome: doc_condition_no_knumv
+    tipo: string
+    comentario: "Número da condição do documento"
+    pii: nenhum
+    nulo: true
+  - nome: document_block_blo
+    tipo: string
+    comentario: "Bloqueio do documento"
+    pii: nenhum
+    nulo: true
+  - nome: contract_no_cnt
+    tipo: string
+    comentario: "Número do contrato"
+    pii: nenhum
+    nulo: true
+  - nome: payt_against_pybastyp
+    tipo: string
+    comentario: "Tipo de base de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: payt_ground_no_pybasno
+    tipo: string
+    comentario: "Número da base de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: payt_ground_date_pybasdat
+    tipo: date
+    comentario: "Data da base de pagamento"
+    pii: nenhum
+    nulo: true
+  - nome: iban_pyiban
+    tipo: string
+    comentario: "IBAN da conta bancária"
+    pii: sensivel
+    nulo: true
+  - nome: incoming_doc_nmbr_inwardno_hd
+    tipo: string
+    comentario: "Número do documento de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: incoming_doc_date_inwarddt_hd
+    tipo: date
+    comentario: "Data do documento de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_document_date_bldat
+    tipo: int
+    comentario: "Ano da data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_document_date_bldat
+    tipo: int
+    comentario: "Mês da data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_document_date_bldat
+    tipo: int
+    comentario: "Trimestre da data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_document_date_bldat
+    tipo: int
+    comentario: "Semana da data do documento"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_posting_date_budat
+    tipo: int
+    comentario: "Ano da data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_posting_date_budat
+    tipo: int
+    comentario: "Mês da data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_posting_date_budat
+    tipo: int
+    comentario: "Trimestre da data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_posting_date_budat
+    tipo: int
+    comentario: "Semana da data de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_entry_date_cpudt
+    tipo: int
+    comentario: "Ano da data de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_entry_date_cpudt
+    tipo: int
+    comentario: "Mês da data de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_entry_date_cpudt
+    tipo: int
+    comentario: "Trimestre da data de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_entry_date_cpudt
+    tipo: int
+    comentario: "Semana da data de entrada"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Data/hora da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Data/hora de carga no BigQuery"
+    pii: nenhum
+    nulo: true

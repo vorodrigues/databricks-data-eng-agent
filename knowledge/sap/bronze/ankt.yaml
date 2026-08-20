@@ -1,0 +1,47 @@
+tabela: ankt
+camada: bronze
+comentario: "Descrições de classes de ativo"
+ingestao: cdc
+fonte: sap.ankt
+chave_primaria: [mandt, spras, anlkl]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: anlkl
+    tipo: string
+    comentario: "Classe de ativo"
+    pii: nenhum
+    nulo: false
+  - nome: txk20
+    tipo: string
+    comentario: "Texto curto da classe de ativo"
+    pii: nenhum
+    nulo: true
+  - nome: txk50
+    tipo: string
+    comentario: "Descrição da classe de ativo (50 car.)"
+    pii: nenhum
+    nulo: true
+  - nome: txt50
+    tipo: string
+    comentario: "Descrição adicional da classe de ativo"
+    pii: nenhum
+    nulo: true
+  - nome: txa50
+    tipo: string
+    comentario: "Texto alternativo da classe de ativo"
+    pii: nenhum
+    nulo: true
+  - nome: xltxid
+    tipo: string
+    comentario: "Texto longo existente (indicador)"
+    pii: nenhum
+    nulo: true

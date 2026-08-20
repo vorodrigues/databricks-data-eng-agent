@@ -1,0 +1,72 @@
+tabela: knvp
+camada: bronze
+comentario: "Funções de parceiro do mestre de clientes"
+ingestao: cdc
+fonte: sap.knvp
+chave_primaria: [mandt, kunnr, vkorg, vtweg, spart, parvw, parza]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: kunnr
+    tipo: string
+    comentario: "Número do cliente"
+    pii: indireto
+    nulo: false
+  - nome: vkorg
+    tipo: string
+    comentario: "Organização de vendas"
+    pii: nenhum
+    nulo: false
+  - nome: vtweg
+    tipo: string
+    comentario: "Canal de distribuição"
+    pii: nenhum
+    nulo: false
+  - nome: spart
+    tipo: string
+    comentario: "Divisão"
+    pii: nenhum
+    nulo: false
+  - nome: parvw
+    tipo: string
+    comentario: "Função do parceiro"
+    pii: nenhum
+    nulo: false
+  - nome: parza
+    tipo: string
+    comentario: "Contador de parceiro"
+    pii: nenhum
+    nulo: false
+  - nome: kunn2
+    tipo: string
+    comentario: "Número do cliente parceiro"
+    pii: indireto
+    nulo: true
+  - nome: lifnr
+    tipo: string
+    comentario: "Número do fornecedor"
+    pii: indireto
+    nulo: true
+  - nome: pernr
+    tipo: string
+    comentario: "Número do funcionário (pessoal)"
+    pii: sensivel
+    nulo: true
+  - nome: parnr
+    tipo: string
+    comentario: "Pessoa de contato"
+    pii: indireto
+    nulo: true
+  - nome: knref
+    tipo: string
+    comentario: "Descrição do parceiro"
+    pii: nenhum
+    nulo: true
+  - nome: defpa
+    tipo: string
+    comentario: "Parceiro padrão (indicador)"
+    pii: nenhum
+    nulo: true

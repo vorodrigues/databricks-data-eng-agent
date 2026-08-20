@@ -1,0 +1,187 @@
+tabela: t134
+camada: bronze
+comentario: "Tipos de material"
+ingestao: cdc
+fonte: sap.t134
+chave_primaria: [mandt, mtart]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: mtart
+    tipo: string
+    comentario: "Tipo de material"
+    pii: nenhum
+    nulo: false
+  - nome: mtref
+    tipo: string
+    comentario: "Tipo de material de referência"
+    pii: nenhum
+    nulo: true
+  - nome: mbref
+    tipo: string
+    comentario: "Tipo de material de referência para SA"
+    pii: nenhum
+    nulo: true
+  - nome: flref
+    tipo: string
+    comentario: "Referência de campo"
+    pii: nenhum
+    nulo: true
+  - nome: numki
+    tipo: string
+    comentario: "Faixa de numeração interna"
+    pii: nenhum
+    nulo: true
+  - nome: numke
+    tipo: string
+    comentario: "Faixa de numeração externa"
+    pii: nenhum
+    nulo: true
+  - nome: envop
+    tipo: string
+    comentario: "Atribuição de número externo sem verificação"
+    pii: nenhum
+    nulo: true
+  - nome: bsext
+    tipo: string
+    comentario: "Ordens de compra externas"
+    pii: nenhum
+    nulo: true
+  - nome: bsint
+    tipo: string
+    comentario: "Ordens de compra internas"
+    pii: nenhum
+    nulo: true
+  - nome: pstat
+    tipo: string
+    comentario: "Status de manutenção"
+    pii: nenhum
+    nulo: true
+  - nome: kkref
+    tipo: string
+    comentario: "Referência de categoria de conta"
+    pii: nenhum
+    nulo: true
+  - nome: vprsv
+    tipo: string
+    comentario: "Controle de preço"
+    pii: nenhum
+    nulo: true
+  - nome: kzvpr
+    tipo: string
+    comentario: "Controle de preço obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: vmtpo
+    tipo: string
+    comentario: "Grupo de categoria de item"
+    pii: nenhum
+    nulo: true
+  - nome: ekalr
+    tipo: string
+    comentario: "Com estrutura de quantidades para custeio"
+    pii: nenhum
+    nulo: true
+  - nome: kzgrp
+    tipo: string
+    comentario: "Indicador de agrupamento"
+    pii: nenhum
+    nulo: true
+  - nome: kzkfg
+    tipo: string
+    comentario: "Material configurável"
+    pii: nenhum
+    nulo: true
+  - nome: begru
+    tipo: string
+    comentario: "Grupo de autorização"
+    pii: nenhum
+    nulo: true
+  - nome: kzprc
+    tipo: string
+    comentario: "Material para processo"
+    pii: nenhum
+    nulo: true
+  - nome: kzpip
+    tipo: string
+    comentario: "Pipeline obrigatório"
+    pii: nenhum
+    nulo: true
+  - nome: prdru
+    tipo: string
+    comentario: "Imprimir preço"
+    pii: nenhum
+    nulo: true
+  - nome: aranz
+    tipo: string
+    comentario: "Exibição do material"
+    pii: nenhum
+    nulo: true
+  - nome: wmakg
+    tipo: string
+    comentario: "Identificação do tipo de material (WM)"
+    pii: nenhum
+    nulo: true
+  - nome: izust
+    tipo: string
+    comentario: "Status inicial do lote"
+    pii: nenhum
+    nulo: true
+  - nome: ardel
+    tipo: string
+    comentario: "Tempo até exclusão"
+    pii: nenhum
+    nulo: true
+  - nome: kzmpn
+    tipo: string
+    comentario: "Peça de fabricante"
+    pii: nenhum
+    nulo: true
+  - nome: mstae
+    tipo: string
+    comentario: "Status do material entre centros"
+    pii: nenhum
+    nulo: true
+  - nome: cchis
+    tipo: string
+    comentario: "Requisito de histórico"
+    pii: nenhum
+    nulo: true
+  - nome: ctype
+    tipo: string
+    comentario: "Tipo de classe"
+    pii: nenhum
+    nulo: true
+  - nome: class
+    tipo: string
+    comentario: "Classe"
+    pii: nenhum
+    nulo: true
+  - nome: chneu
+    tipo: string
+    comentario: "Criar novo lote"
+    pii: nenhum
+    nulo: true
+  - nome: vtype
+    tipo: string
+    comentario: "Categoria de versão"
+    pii: nenhum
+    nulo: true
+  - nome: vnumki
+    tipo: string
+    comentario: "Faixa de numeração interna (versão)"
+    pii: nenhum
+    nulo: true
+  - nome: vnumke
+    tipo: string
+    comentario: "Faixa de numeração externa (versão)"
+    pii: nenhum
+    nulo: true
+  - nome: kzrac
+    tipo: string
+    comentario: "Logística de planejamento de necessidades obrigatória"
+    pii: nenhum
+    nulo: true

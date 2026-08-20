@@ -1,0 +1,57 @@
+tabela: t009
+camada: bronze
+comentario: "Variantes de exercício fiscal"
+ingestao: cdc
+fonte: sap.t009
+chave_primaria: [mandt, periv]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: periv
+    tipo: string
+    comentario: "Variante de exercício fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: xkale
+    tipo: string
+    comentario: "Ano civil (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: xjabh
+    tipo: string
+    comentario: "Dependente do ano (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: anzbp
+    tipo: string
+    comentario: "Número de períodos de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: anzsp
+    tipo: string
+    comentario: "Número de períodos especiais"
+    pii: nenhum
+    nulo: true
+  - nome: xweek
+    tipo: string
+    comentario: "Semanas fiscais a partir do início do exercício"
+    pii: nenhum
+    nulo: true
+  - nome: fyofb
+    tipo: string
+    comentario: "Deslocamento antes do exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: fyofe
+    tipo: string
+    comentario: "Deslocamento após o exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: xweekquart
+    tipo: string
+    comentario: "Calendário semanal (indicador)"
+    pii: nenhum
+    nulo: true

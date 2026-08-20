@@ -1,0 +1,222 @@
+tabela: t881
+camada: bronze
+comentario: "Mestre do razao contabil (T881)"
+ingestao: cdc
+fonte: sap.t881
+chave_primaria: [mandt, rldnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: rldnr
+    tipo: string
+    comentario: "Codigo do razao contabil"
+    pii: nenhum
+    nulo: false
+  - nome: gcurr
+    tipo: string
+    comentario: "Moeda do razao contabil"
+    pii: nenhum
+    nulo: true
+  - nome: class
+    tipo: string
+    comentario: "Classe do razao contabil"
+    pii: nenhum
+    nulo: true
+  - nome: typ
+    tipo: string
+    comentario: "Tipo do razao contabil"
+    pii: nenhum
+    nulo: true
+  - nome: trcur
+    tipo: string
+    comentario: "Armazenar moeda de transacao"
+    pii: nenhum
+    nulo: true
+  - nome: lccur
+    tipo: string
+    comentario: "Armazenar segunda moeda"
+    pii: nenhum
+    nulo: true
+  - nome: rccur
+    tipo: string
+    comentario: "Armazenar terceira moeda"
+    pii: nenhum
+    nulo: true
+  - nome: occur
+    tipo: string
+    comentario: "Gerenciar quarta moeda"
+    pii: nenhum
+    nulo: true
+  - nome: quant
+    tipo: string
+    comentario: "Armazenar quantidades"
+    pii: nenhum
+    nulo: true
+  - nome: atqnt
+    tipo: string
+    comentario: "Armazenar quantidade adicional"
+    pii: nenhum
+    nulo: true
+  - nome: tab
+    tipo: string
+    comentario: "Tabela de totais do razao"
+    pii: nenhum
+    nulo: true
+  - nome: rcopy
+    tipo: string
+    comentario: "Manutencao por copia permitida"
+    pii: nenhum
+    nulo: true
+  - nome: shkz
+    tipo: string
+    comentario: "Indicador de debito/credito"
+    pii: nenhum
+    nulo: true
+  - nome: glsip
+    tipo: string
+    comentario: "Gravar itens de linha do razao"
+    pii: nenhum
+    nulo: true
+  - nome: vortrag
+    tipo: string
+    comentario: "Configurar saldo de transporte (carry forward)"
+    pii: nenhum
+    nulo: true
+  - nome: dldnr
+    tipo: string
+    comentario: "Razao de saldo medio"
+    pii: nenhum
+    nulo: true
+  - nome: xdldnr
+    tipo: string
+    comentario: "Armazenar media"
+    pii: nenhum
+    nulo: true
+  - nome: curt1
+    tipo: string
+    comentario: "Tipo de moeda local (LC)"
+    pii: nenhum
+    nulo: true
+  - nome: curt2
+    tipo: string
+    comentario: "Tipo de moeda de grupo (GC)"
+    pii: nenhum
+    nulo: true
+  - nome: curt3
+    tipo: string
+    comentario: "Tipo de moeda - moeda 4"
+    pii: nenhum
+    nulo: true
+  - nome: v2post
+    tipo: string
+    comentario: "Lancamento diferido (delay update)"
+    pii: nenhum
+    nulo: true
+  - nome: lctyp
+    tipo: string
+    comentario: "Tipo de consolidacao"
+    pii: nenhum
+    nulo: true
+  - nome: fix
+    tipo: string
+    comentario: "Razao padrao (standard ledger)"
+    pii: nenhum
+    nulo: true
+  - nome: post
+    tipo: string
+    comentario: "Lancamentos permitidos no razao"
+    pii: nenhum
+    nulo: true
+  - nome: rollup
+    tipo: string
+    comentario: "Consolidacao (rollup) permitida"
+    pii: nenhum
+    nulo: true
+  - nome: depld
+    tipo: string
+    comentario: "Razao adicional"
+    pii: nenhum
+    nulo: true
+  - nome: appl
+    tipo: string
+    comentario: "Aplicacao"
+    pii: nenhum
+    nulo: true
+  - nome: subappl
+    tipo: string
+    comentario: "Sub-aplicacao"
+    pii: nenhum
+    nulo: true
+  - nome: komp
+    tipo: string
+    comentario: "Componente"
+    pii: nenhum
+    nulo: true
+  - nome: gzledger
+    tipo: string
+    comentario: "Indicador de razao produtivo"
+    pii: nenhum
+    nulo: true
+  - nome: exit
+    tipo: string
+    comentario: "Numero de saida de usuario (exit)"
+    pii: nenhum
+    nulo: true
+  - nome: kldnr
+    tipo: string
+    comentario: "Razao de exportacao"
+    pii: nenhum
+    nulo: true
+  - nome: logsys
+    tipo: string
+    comentario: "Sistema logico"
+    pii: nenhum
+    nulo: true
+  - nome: valutyp
+    tipo: string
+    comentario: "Tipo de avaliacao"
+    pii: nenhum
+    nulo: true
+  - nome: gcompress
+    tipo: string
+    comentario: "Indicador de sumarizacao"
+    pii: nenhum
+    nulo: true
+  - nome: splitmethd
+    tipo: string
+    comentario: "Metodo de divisao de documento"
+    pii: nenhum
+    nulo: true
+  - nome: date_det_poper
+    tipo: string
+    comentario: "Data de determinacao do periodo de lancamento"
+    pii: nenhum
+    nulo: true
+  - nome: glflex
+    tipo: string
+    comentario: "Tipo de razao contabil (GL)"
+    pii: nenhum
+    nulo: true
+  - nome: xleading
+    tipo: string
+    comentario: "Razao contabil lider (leading ledger)"
+    pii: nenhum
+    nulo: true
+  - nome: orient_ledger
+    tipo: string
+    comentario: "Razao de referencia para contabilidade geral"
+    pii: nenhum
+    nulo: true
+  - nome: avg_rollup
+    tipo: string
+    comentario: "Razao de saldo medio (rollup)"
+    pii: nenhum
+    nulo: true
+  - nome: xcash_ledger
+    tipo: string
+    comentario: "Razao de caixa (cash ledger)"
+    pii: nenhum
+    nulo: true

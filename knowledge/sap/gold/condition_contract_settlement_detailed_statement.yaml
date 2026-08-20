@@ -1,0 +1,168 @@
+tabela: condition_contract_settlement_detailed_statement
+camada: gold
+comentario: "Demonstrativo detalhado de liquidação (WB2_D_BVDETAIL) com volume de negócios e valores liquidados para auditoria de bonificações comerciais."
+entidade: obt
+ingestao: custom
+fontes: [silver.wb2_d_bvdetail, silver.wb2_d_settl_cal, silver.wcocoh, silver.wcocoi]
+chave_primaria: []
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: true
+  - nome: condition_contract_num
+    tipo: string
+    comentario: "Número do contrato de condição"
+    pii: nenhum
+    nulo: true
+  - nome: document_wbeln
+    tipo: string
+    comentario: "Número do documento de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: document_item_posnr
+    tipo: string
+    comentario: "Item do documento de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: document_type_business_volume_doc_type
+    tipo: string
+    comentario: "Tipo de documento do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: document_id_business_volume_doc_id
+    tipo: string
+    comentario: "ID do documento do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: document_id_business_volume_2_doc_id2
+    tipo: string
+    comentario: "ID do documento do volume de negócios 2"
+    pii: nenhum
+    nulo: true
+  - nome: document_id_business_volume_3_doc_id3
+    tipo: string
+    comentario: "ID do documento do volume de negócios 3"
+    pii: nenhum
+    nulo: true
+  - nome: document_item_business_volume_doc_item
+    tipo: string
+    comentario: "Item do documento do volume de negócios"
+    pii: nenhum
+    nulo: true
+  - nome: date_for_settlement_bv_date
+    tipo: date
+    comentario: "Data de referência para liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: quantity_menge
+    tipo: decimal(23,2)
+    comentario: "Quantidade"
+    pii: nenhum
+    nulo: true
+  - nome: unit_of_measure_meina
+    tipo: string
+    comentario: "Unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: currency_waers
+    tipo: string
+    comentario: "Moeda"
+    pii: nenhum
+    nulo: true
+  - nome: net_weight_ntgew
+    tipo: decimal(23,2)
+    comentario: "Peso líquido"
+    pii: nenhum
+    nulo: true
+  - nome: gross_weight_brgew
+    tipo: decimal(23,2)
+    comentario: "Peso bruto"
+    pii: nenhum
+    nulo: true
+  - nome: weight_unit_gewei
+    tipo: string
+    comentario: "Unidade de peso"
+    pii: nenhum
+    nulo: true
+  - nome: volume_volum
+    tipo: decimal(23,2)
+    comentario: "Volume"
+    pii: nenhum
+    nulo: true
+  - nome: volume_unit_voleh
+    tipo: string
+    comentario: "Unidade de volume"
+    pii: nenhum
+    nulo: true
+  - nome: points_anzpu
+    tipo: decimal(23,2)
+    comentario: "Pontos"
+    pii: nenhum
+    nulo: true
+  - nome: points_unit_punei
+    tipo: string
+    comentario: "Unidade de pontos"
+    pii: nenhum
+    nulo: true
+  - nome: settlement_document_type_settl_doc_type
+    tipo: string
+    comentario: "Tipo de documento de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: business_volume_1_busvol_1
+    tipo: decimal(23,2)
+    comentario: "Volume de negócios 1"
+    pii: nenhum
+    nulo: true
+  - nome: business_volume_2_busvol_2
+    tipo: decimal(23,2)
+    comentario: "Volume de negócios 2"
+    pii: nenhum
+    nulo: true
+  - nome: business_volume_3_busvol_3
+    tipo: decimal(23,2)
+    comentario: "Volume de negócios 3"
+    pii: nenhum
+    nulo: true
+  - nome: business_volume_4_busvol_4
+    tipo: decimal(23,2)
+    comentario: "Volume de negócios 4"
+    pii: nenhum
+    nulo: true
+  - nome: dummy_function_in_length_1_dummy1
+    tipo: string
+    comentario: "Campo fictício de comprimento 1"
+    pii: nenhum
+    nulo: true
+  - nome: year_of_date_for_settlement_bv_date
+    tipo: string
+    comentario: "Ano da data de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: quarter_of_date_for_settlement_bv_date
+    tipo: string
+    comentario: "Trimestre da data de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: month_of_date_for_settlement_bv_date
+    tipo: string
+    comentario: "Mês da data de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: week_of_date_for_settlement_bv_date
+    tipo: string
+    comentario: "Semana da data de liquidação"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp da última carga no BigQuery"
+    pii: nenhum
+    nulo: true

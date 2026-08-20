@@ -1,0 +1,52 @@
+tabela: dd04t
+camada: bronze
+comentario: "Textos de elementos de dado ABAP (DD)"
+ingestao: cdc
+fonte: sap.dd04t
+chave_primaria: [rollname, ddlanguage, as4local, as4vers] # client-independent; sem mandt
+colunas:
+  - nome: rollname
+    tipo: string
+    comentario: "Elemento de dado"
+    pii: nenhum
+    nulo: false
+  - nome: ddlanguage
+    tipo: string
+    comentario: "Idioma"
+    pii: nenhum
+    nulo: false
+  - nome: as4local
+    tipo: string
+    comentario: "Status de ativação do objeto"
+    pii: nenhum
+    nulo: false
+  - nome: as4vers
+    tipo: string
+    comentario: "Versão da entrada"
+    pii: nenhum
+    nulo: false
+  - nome: ddtext
+    tipo: string
+    comentario: "Descrição curta"
+    pii: nenhum
+    nulo: true
+  - nome: reptext
+    tipo: string
+    comentario: "Cabeçalho de coluna"
+    pii: nenhum
+    nulo: true
+  - nome: scrtext_s
+    tipo: string
+    comentario: "Rótulo de campo curto"
+    pii: nenhum
+    nulo: true
+  - nome: scrtext_m
+    tipo: string
+    comentario: "Rótulo de campo médio"
+    pii: nenhum
+    nulo: true
+  - nome: scrtext_l
+    tipo: string
+    comentario: "Rótulo de campo longo"
+    pii: nenhum
+    nulo: true

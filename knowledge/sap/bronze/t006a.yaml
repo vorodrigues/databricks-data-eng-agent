@@ -1,0 +1,42 @@
+tabela: t006a
+camada: bronze
+comentario: "Atribuição de unidade de medida interna à unidade dependente de idioma (T006A)"
+ingestao: cdc
+fonte: sap.t006a
+chave_primaria: [mandt, spras, msehi]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: msehi
+    tipo: string
+    comentario: "Unidade de medida interna"
+    pii: nenhum
+    nulo: false
+  - nome: mseh3
+    tipo: string
+    comentario: "Abreviatura comercial da unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: mseh6
+    tipo: string
+    comentario: "Abreviatura técnica da unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: mseht
+    tipo: string
+    comentario: "Texto descritivo da unidade de medida"
+    pii: nenhum
+    nulo: true
+  - nome: msehl
+    tipo: string
+    comentario: "Texto longo da unidade de medida"
+    pii: nenhum
+    nulo: true

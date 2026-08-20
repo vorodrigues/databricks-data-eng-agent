@@ -1,0 +1,27 @@
+tabela: t881t
+camada: bronze
+comentario: "Textos de razao contabil do FI-SL (dependente de idioma)"
+ingestao: cdc
+fonte: sap.t881t
+chave_primaria: [mandt, langu, rldnr]
+colunas:
+  - nome: mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: langu
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: rldnr
+    tipo: string
+    comentario: "Identificador do razao contabil"
+    pii: nenhum
+    nulo: false
+  - nome: name
+    tipo: string
+    comentario: "Nome do razao contabil"
+    pii: nenhum
+    nulo: true

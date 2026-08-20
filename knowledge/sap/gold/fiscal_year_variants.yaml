@@ -1,0 +1,68 @@
+tabela: fiscal_year_variants
+camada: gold
+comentario: "Definições mestres das variantes de exercício fiscal SAP a partir de T009, incluindo indicadores de ano civil, dependência do ano e quantidade de períodos de lançamento e especiais."
+entidade: obt
+ingestao: custom
+fontes: [silver.t009, silver.t009b]
+chave_primaria: [client_mandt, fiscal_year_variant_periv]
+colunas:
+  - nome: client_mandt
+    tipo: string
+    comentario: "Mandante (client)"
+    pii: nenhum
+    nulo: false
+  - nome: fiscal_year_variant_periv
+    tipo: string
+    comentario: "Variante de exercício fiscal"
+    pii: nenhum
+    nulo: false
+  - nome: calendar_year_xkale
+    tipo: string
+    comentario: "Ano civil (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: year_dependent_xjabh
+    tipo: string
+    comentario: "Dependente do ano (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_posting_periods_anzbp
+    tipo: string
+    comentario: "Número de períodos de lançamento"
+    pii: nenhum
+    nulo: true
+  - nome: number_of_special_periods_anzsp
+    tipo: string
+    comentario: "Número de períodos especiais"
+    pii: nenhum
+    nulo: true
+  - nome: fiscal_weeks_from_fy_start_xweek
+    tipo: string
+    comentario: "Semanas fiscais a partir do início do exercício"
+    pii: nenhum
+    nulo: true
+  - nome: offset_before_fiscal_year_fyofb
+    tipo: string
+    comentario: "Deslocamento antes do exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: offset_after_fiscal_year_fyofe
+    tipo: string
+    comentario: "Deslocamento após o exercício fiscal"
+    pii: nenhum
+    nulo: true
+  - nome: weekly_calendar_xweekquart
+    tipo: string
+    comentario: "Calendário semanal (indicador)"
+    pii: nenhum
+    nulo: true
+  - nome: source_last_updated_at
+    tipo: timestamp
+    comentario: "Timestamp da última atualização na fonte"
+    pii: nenhum
+    nulo: true
+  - nome: bq_loaded_at
+    tipo: timestamp
+    comentario: "Timestamp de carga no BigQuery"
+    pii: nenhum
+    nulo: true

@@ -1,0 +1,22 @@
+tabela: tfact
+camada: bronze
+comentario: "Textos do calendario de fabrica (independente de mandante)"
+ingestao: cdc
+fonte: sap.tfact
+chave_primaria: [ident, spras]
+colunas:
+  - nome: ident
+    tipo: string
+    comentario: "Identificador do calendario de fabrica"
+    pii: nenhum
+    nulo: false
+  - nome: spras
+    tipo: string
+    comentario: "Chave de idioma"
+    pii: nenhum
+    nulo: false
+  - nome: ltext
+    tipo: string
+    comentario: "Texto descritivo do calendario de fabrica"
+    pii: nenhum
+    nulo: true
