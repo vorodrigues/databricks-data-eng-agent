@@ -59,17 +59,10 @@ O `init` cria o scaffold (`.data-eng/`, `schemas/`, `resources/`, `src/notebooks
 ## Ciclo de trabalho
 
 ```
-init  ->  specify  ->  plan  ->  run
+Specify  ->  Plan  ->  Run
 ```
 
-1. **Use `/init` para inicializar o projeto de dados** — cria o scaffold (`.data-eng/`,
-   `schemas/`, `resources/`, `src/notebooks/`, `databricks.yml`) e aplica as permissões.
-
-```
-/init
-```
-
-2. **Use `/specify` para descrever a mudança no modelo de dados** — escreve uma SPEC
+1. **Use `/specify` para descrever a mudança no modelo de dados** — escreve uma SPEC
    incremental do que deve mudar (bronze/silver/gold e transformações). Valida o estado
    local contra o Unity Catalog automaticamente antes de especificar e consulta a KB para
    referenciar tabelas já existentes.
@@ -78,14 +71,14 @@ init  ->  specify  ->  plan  ->  run
 /specify crie a ingestão do modelo de dados de destino com base no modelo de dados de origem
 ```
 
-3. **Use `/plan` para gerar o plano faseado** — deriva da SPEC as fases, tarefas e critérios
+2. **Use `/plan` para gerar o plano faseado** — deriva da SPEC as fases, tarefas e critérios
    de sucesso verificáveis.
 
 ```
 /plan <opcional: nome da spec>
 ```
 
-4. **Use `/run` para executar o plano de ponta a ponta** — assume o papel de ORCHESTRATOR e
+3. **Use `/run` para executar o plano de ponta a ponta** — assume o papel de ORCHESTRATOR e
    coordena os subagentes GENERATOR (produz os entregáveis) e EVALUATOR (verifica cada
    critério de forma independente), registrando as evidências.
 
