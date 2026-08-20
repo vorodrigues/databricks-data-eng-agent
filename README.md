@@ -46,30 +46,7 @@ e pode ser instalado diretamente do GitHub.
 /plugin install data-eng-agent@databricks-data-eng-agent
 ```
 
-Quando solicitado, escolha o escopo (**User**, **Project** ou **Local**).
-
-**Alternativa via CLI** (não-interativa):
-
-```bash
-claude plugin marketplace add vorodrigues/databricks-data-eng-agent
-claude plugin install data-eng-agent@databricks-data-eng-agent
-```
-
-Para fixar uma versão específica, use a tag no marketplace: `.../databricks-data-eng-agent@v0.1.0`.
-
-**2. Verifique e gerencie a instalação:**
-
-```bash
-claude plugin list                                     # lista plugins instalados
-claude plugin enable  data-eng-agent@databricks-data-eng-agent
-claude plugin disable data-eng-agent@databricks-data-eng-agent
-claude plugin uninstall data-eng-agent@databricks-data-eng-agent
-```
-
-O menu interativo `/plugin` oferece as mesmas operações, e `/plugin marketplace update
-databricks-data-eng-agent` atualiza o marketplace para a versão mais recente.
-
-**3. Inicialize um projeto de dados** e siga o ciclo de trabalho:
+**2. Inicialize um projeto de dados** e siga o ciclo de trabalho:
 
 ```
 /data-eng-agent:init
@@ -79,19 +56,48 @@ O `init` cria o scaffold (`.data-eng/`, `schemas/`, `resources/`, `src/notebooks
 `databricks.yml`) e aplica as permissões. Em seguida, preencha os campos `<PREENCHER>` em
 `databricks.yml` (catálogo, schemas por camada, warehouse, host, profile).
 
-> **Nota** — para ser instalável do GitHub, o repositório precisa conter
-> `.claude-plugin/marketplace.json` (definindo o marketplace `databricks-data-eng-agent` e
-> apontando para o plugin `data-eng-agent`) e o `.claude-plugin/plugin.json` do plugin.
-
 ---
 
 ## Ciclo de trabalho
 
 ```
-validate-state  ->  specify   ->   plan    ->   run
- (diff local        (SPEC do       (plano       (ORCHESTRATOR +
-  x Unity Catalog)   incremental)   faseado)     GENERATOR / EVALUATOR)
+init  ->  specify  ->  plan  ->  run
 ```
+
+1. **Use `/init` para inicializar o projeto de dados** — cria o scaffold (`.data-eng/`,
+   `schemas/`, `resources/`, `src/notebooks/`, `databricks.yml`) e aplica as permissões.
+
+```
+/init
+```
+
+2. **Use `/specify` para descrever a mudança no modelo de dados** — escreve uma SPEC
+   incremental do que deve mudar (bronze/silver/gold e transformações). Valida o estado
+   local contra o Unity Catalog automaticamente antes de especificar e consulta a KB para
+   referenciar tabelas já existentes.
+
+```
+/specify crie a ingestão do modelo de dados de destino com base no modelo de dados de origem
+```
+
+3. **Use `/plan` para gerar o plano faseado** — deriva da SPEC as fases, tarefas e critérios
+   de sucesso verificáveis.
+
+```
+/plan <opcional: nome da spec>
+```
+
+4. **Use `/run` para executar o plano de ponta a ponta** — assume o papel de ORCHESTRATOR e
+   coordena os subagentes GENERATOR (produz os entregáveis) e EVALUATOR (verifica cada
+   critério de forma independente), registrando as evidências.
+
+```
+/run <opcional: nome do plano>
+```
+
+---
+
+## Skills
 
 | Skill | O que faz |
 |-------|-----------|
@@ -100,10 +106,6 @@ validate-state  ->  specify   ->   plan    ->   run
 | `specify` | Valida o estado e escreve uma SPEC incremental (bronze/silver/gold, transformações de ingestão, Metric Views, Genie, governança). Consulta a KB e referencia o que já existe. |
 | `plan` | Gera um plano faseado com tarefas e critérios de sucesso verificáveis. |
 | `run` | Executa o plano com o padrão ORCHESTRATOR / GENERATOR / EVALUATOR, registrando evidências. |
-
-O `run` delega cada fase a subagentes isolados: o **GENERATOR** produz os entregáveis e o
-**EVALUATOR** verifica cada critério de sucesso de forma independente; o ORCHESTRATOR é a
-única ponte entre eles e decide quando avançar.
 
 ---
 
