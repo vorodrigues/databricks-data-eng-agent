@@ -25,13 +25,11 @@ sempre que possível; abordagens agênticas ficam reservadas às exceções.
 
 ### Pré-requisitos
 
-| Requisito | Detalhe |
-|-----------|---------|
-| **Claude Code** | Versão recente (recomendado v2.1.195+) com suporte a plugins e marketplaces. |
-| **Databricks CLI** | Autenticada (perfil em `~/.databrickscfg`) e um SQL warehouse para a validação de estado. |
-| **Python 3** | Com `pyyaml` instalado (usado pelos scripts e notebooks). |
-| **jq** | Necessário para o `init.sh` (merge não-destrutivo de permissões). |
-| **Git** | Acesso ao repositório público do plugin no GitHub. |
+- **Claude Code**: Versão recente (recomendado v2.1.195+) com suporte a plugins e marketplaces.
+- **Databricks CLI**: Autenticada (perfil em `~/.databrickscfg`) e um SQL warehouse para a validação de estado.
+- **Python 3**: Com `pyyaml` instalado (usado pelos scripts e notebooks).
+- **jq**: Necessário para o `init.sh` (merge não-destrutivo de permissões).
+- **Git**: Acesso ao repositório público do plugin no GitHub.
 
 ### Plugin
 
