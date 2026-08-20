@@ -68,14 +68,14 @@ Specify  ->  Plan  ->  Run
    referenciar tabelas já existentes.
 
 ```
-/specify crie a ingestão do modelo de dados de destino com base no modelo de dados de origem
+/data-eng-agent:specify crie a ingestão do modelo de dados de destino com base no modelo de dados de origem
 ```
 
 2. **Use `/plan` para gerar o plano faseado** — deriva da SPEC as fases, tarefas e critérios
    de sucesso verificáveis.
 
 ```
-/plan <opcional: nome da spec>
+/data-eng-agent:plan <opcional: nome da spec>
 ```
 
 3. **Use `/run` para executar o plano de ponta a ponta** — assume o papel de ORCHESTRATOR e
@@ -83,7 +83,7 @@ Specify  ->  Plan  ->  Run
    critério de forma independente), registrando as evidências.
 
 ```
-/run <opcional: nome do plano>
+/data-eng-agent:run <opcional: nome do plano>
 ```
 
 ---
