@@ -1,5 +1,7 @@
 # data-eng-agent
 
+**Português** | [English](README.en.md) | [Español](README.es.md)
+
 > Plugin do Claude Code para **spec-driven development** de pipelines de engenharia de dados no Databricks.
 
 Especifica, planeja e desenvolve código **determinístico** para a arquitetura medallion
